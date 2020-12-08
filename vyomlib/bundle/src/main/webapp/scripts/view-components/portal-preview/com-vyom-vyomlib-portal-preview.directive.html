@@ -1,0 +1,226 @@
+<script>
+    $(document).ready(function() {
+
+        $("#myCarousel").carousel();
+    });
+    $(function() {
+        $('[data-toggle="popover"]').popover()
+    })
+
+</script>
+
+
+<div class="wrapper">
+
+    <div class="row">
+        <div class="col-4">
+            <div class="searchcontainer ">
+                <input type="text" class="searchinput w3-{{SearchColor}}" ng-model="query" placeholder="Search...">
+                <div class="search w3-{{SearchColor}}" ng-click="clearSearchContainer()"></div>
+            </div>
+        </div>
+        <div class="col-8">
+            <h1 style="font-size: 55px;" class="w3-text-{{titleColor}}">{{Greetings}} {{CurrentUserFullName}}</h1>
+            <p></p>
+        </div>
+
+    </div>
+
+    <div class="content">
+        <div class="container-fluid">
+
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="{{carouselSpeed}}">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="{{firstSlideImage}}" alt="" ng-click="redirecturl(cardList[0][BannerURL])" style="width:100%;height: 400px">
+                        <div class="carousel-caption">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{{secondSlideImage}}" alt="" ng-click="redirecturl(cardList[1][BannerURL])" style="width:100%;height: 400px">
+                        <div class="carousel-caption">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="{{thirdSlideImage}}" alt="" ng-click="redirecturl(cardList[2][BannerURL])" style="width:100%;height: 400px">
+                        <div class="carousel-caption">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left and right controls -->
+            </div>
+
+        </div>
+    </div>
+    <div class="container-fluid" style="padding-bottom: 0px; padding-top: 10px">
+            <div class="text-center" style="">
+            <span>
+                <!-- sort-by dropdown -->
+                <label style="vertical-align: bottom;float: left; color:black;"> Sort By: </label>
+                <select ng-model="selectedValue" ng-change="sortByViews()" style="float:left;">
+                    <option value="" selected="selected">-select-</option>
+                    <option value="fav">Favourites</option>
+                    <option value={{Views}}>Max-views</option>
+                    <option value={{ratingCount}}>Max-ratings</option>
+                    <option value="status">Active</option>
+                    <option value="clear">Clear</option>
+                    <tbody>
+                        <!---->
+                        <tr>
+                            <td>user_card</td>
+                            <td><span class="bigfont d-icon-user_card"></span></td>
+                        </tr>
+                        <!---->
+                        <tr>
+                            <td>user_check</td>
+                            <td><span class="bigfont d-icon-user_check"></span></td>
+                        </tr>
+                        <!---->
+                        <tr>
+                            <td>user_check_circle</td>
+                            <td><span class="bigfont d-icon-user_check_circle"></span></td>
+                        </tr>
+
+                        <!---->
+                    </tbody>
+                </select>
+
+                <button class="w3-button w3-hover-purple w3-round-xxlarge  w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category1" ng-click="assignCurrentCategory(Category1)">{{Category1}}</button>
+                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category2" ng-click="assignCurrentCategory(Category2)">{{Category2}}</button>
+                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category3" ng-click="assignCurrentCategory(Category3)">{{Category3}}</button>
+                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category4" ng-click="assignCurrentCategory(Category4)">{{Category4}}</button>
+                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category5" ng-click="assignCurrentCategory(Category5)">{{Category5}}</button>
+                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category6" ng-click="assignCurrentCategory(Category6)">{{Category6}}</button>
+                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category7" ng-click="assignCurrentCategory(Category7)">{{Category7}}</button>
+                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category8" ng-click="assignCurrentCategory(Category8)">{{Category8}}</button>
+                <!-- switch button -->
+                <label class="switch" style="/*vertical-align: bottom;*/">
+                    <input type="checkbox" ng-model="vm.isActive" ng-change="show_hide_recordGrid()">
+                    <span class="slider round hide-off" style="padding-top: 5px;margin-bottom: 10px">
+                        <span ng-class=" { 'off' : !vm.isActive } ">{{vm.isActive ? 'Card' : 'List'}}</span>
+                    </span>
+                </label>
+                <!-- end switch button -->
+            </span>
+        </div>
+    </div>
+    <div class="content hideme">
+        <div class="container-fluid">
+            <div class="row" id="reverse" ng-init="limit = 8">
+                <div class="selector col-lg-3 col-md-4 col-sm-4" ng-repeat="x in cardList | filter:query  | limitTo: limit as results ">
+                    <div class="card card-stats w3-card-4 h-75 ">
+                        <div class="card-header card-header-{{x[Color]}} card-header-icon h-75">
+                            <div ng-click="setSelectedCardInstanceId(x[179]);executeAction(cardActionGuid);updateViewsCounter(x[179],x[Views])" data-toggle="modal" data-target="#portalpreviewmodal">
+                                <div class="card-icon">
+                                    <div class="material-icons">
+
+                                        <p class="d-icon-{{x[Icon]}}"></p>
+
+                                    </div>
+                                </div>
+
+                                <h5 class="card-title">{{x[ApplicationName]}}</h5>
+
+
+                                <p class="card-category" ng-if="x[Views]>0">
+                                    <span class="d-icon-eye"></span>
+                                    <span>{{numFormatter(x[Views])}} views</span>
+                                </p>
+
+                            </div>
+                            <p class="card-category" ng-init="generateRating(x[ratingCount],x[179])">
+
+
+                                <span ng-repeat="star in starsobj[x[179]] track by $index" class="{{star.icon}}" style="{{star.style}}"></span>
+                                <span style="margin-left: 5px;">
+                                    <button type="button" class="d-button d-button_link d-button_small d-icon-left-user_star" style="" ng-click="setSelectedCardInstanceId(x[179]);executeAction(rateMeActionGuid)"><span>Rate App</span></button>
+                                </span>
+
+                            </p>
+                            <p class="card-category" style="float: left;left:0;margin-left: 8px;margin-bottom: 0px;margin-top: -10px">
+                                <span ng-if="x[cardStatus]" class="d-icon-circle" style="margin-right: 5px;font-size: 21px" ng-class="getCardStatusCSS(x[cardStatus])" rel="tooltip" title="{{x[cardStatus]}}" ng-mouseover="hoverIn('tooltip')">
+                                </span>
+
+                                <span ng-if="x[cardFavourite]=='true' ||x[cardFavourite]=='false'" class="{{getCardFavouriteClass(x[cardFavourite])}}" style="margin-right: 5px;font-size:21px" ng-click="updateCardFavourite(x[179],x[cardFavourite])" rel="tooltip" title="Favourite" ng-mouseover="hoverIn('tooltip')">
+                                </span>
+
+                                <span ng-if="x[cardScope]" ng-class="getCardScopeCSS(x[cardScope])" style="margin-right: 5px;font-size: 21px; color: skyblue" rel="tooltip" title="{{x[cardScope]=='true'?'Global':'Local'}}" ng-mouseover="hoverIn('tooltip')">
+                                </span>
+
+
+                            </p>
+
+                            <div class="card-category togglebutton" ng-if="adminConfiguration">
+                                <em style="margin-right: 5px">Visible for All-{{x[cardVisible]}} </em>
+                                <label><input type="checkbox" ng-model="x[cardVisible]" ng-change="updateCardVisibility(x[179],x[cardVisible])" ng-checked="{{x[cardVisible]}}" ng-disabled="x[cardVisible]=='ERROR'"> <span class="toggle"></span></label>
+
+                                <span ng-if="x[cardVisible]=='ERROR'" class="d-icon-exclamation_triangle" style="margin-right: 5px;font-size: 21px; color: red" rel="tooltip" data-html="true" data-placement="left" title="{{x[cardErrorInformation]}}" ng-mouseover="hoverIn('tooltip')">
+                                </span>
+                            </div>
+
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+
+                                <div class="material-icons">
+
+                                    <p class="d-icon-info_circle" rel="popover" data-container="body" data-original-title="{{x[tooltipHeader]}}" data-color="primary" data-content="{{x[tooltipDescription]}}" ng-mouseover="hoverIn('popover')">
+
+                                    </p>
+
+
+
+                                </div>
+                                <a href="javascript:;" style="color: black"><em>{{x[Description]}}</em></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: right">
+                <button class="d-button d-icon-right-angle_down d-button_secondary" ng-hide="results.length === cardList.length" ng-click="limit = limit +8">show more...</button>
+                <button class="d-button d-icon-right-angle_up d-button_secondary" ng-hide="results.length <= 8" ng-click="limit = limit -8">show less...</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $(".switch input").on("change", function(e) {
+            const isOn = e.currentTarget.checked;
+
+            //show/hide div
+            if (isOn) {
+                $(".hideme").hide();
+            } else {
+                $(".hideme").show();
+            }
+        });
+
+        //toggle text inside switch button
+        let vm = this;
+        vm.isActive = false;
+
+        vm.toggle = function() {
+            vm.isActive = !vm.isActive;
+        }
+    });
+
+</script>

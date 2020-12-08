@@ -1,5 +1,4 @@
-// This code is run at "design" phase, in Innovation Studio.
-// used in "comExampleSamplelibraryDisplayDataDesign" factory.
+
 (function () {
     'use strict';
 

@@ -15,7 +15,7 @@
                     var _config;
                     var eventManager = rxViewComponentEventManager.getInstance($scope);
 
-                    // Getting the view component input parameters
+                    
                     _config = $scope.rxConfiguration.propertiesByName;
 
                     $scope.Colour = _config.Colour;
@@ -28,19 +28,14 @@
                     $scope.URL = _config.URL;
 
                     $scope.myFunction = function(){
-                       // window.location = "https://developer6095.innovate.bmc.com/com.bmc.arsys.rx.innovationstudio/index.html#/app/view/com.vyom.Payslip:PaySlip%20Download";
+                      
                         if ($scope.URL  && $scope.URL.trim() != ''){
                             window.location = $scope.URL;
+                            
                         }
 
                     }
-                    // $scope.displayOutputParameter = _config.inputParameter + ', hello world';
-                    //
-                    // eventManager.propertyChanged({
-                    //     property: 'outputParameter',
-                    //     oldValue: null,
-                    //     newValue: $scope.displayOutputParameter
-                    // });
+                  
                 }
             };
         });

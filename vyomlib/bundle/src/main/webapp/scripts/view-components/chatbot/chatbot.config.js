@@ -3,24 +3,20 @@
 
     angular.module('com.vyom.vyomlib.view-components.chatbot')
         .config(function (rxViewComponentProvider) {
-            rxViewComponentProvider.registerComponent([
-                {
-                    name: 'chatbot',
-                    group: 'vyomlib',
-                    icon: 'layout_preview',
-                    type: 'com-vyom-vyomlib-chatbot',
-                    designType: 'com-vyom-vyomlib-chatbot-design',
-                    bundleId: 'com.vyom.vyomlib',
-                    propertiesByName: [
-                        {
-                            name: 'url',
-                            label: 'Url',
-                            isConfig: true,
-                            isRequired: true,
-                            enableExpressionEvaluation: true
-                        }
-                    ]
-                }
-            ]);
+            var starRatingDescriptor = {
+                name: 'Chatbot',
+                group: 'vyomlib',
+                icon: 'at',
+                type: 'com-vyom-vyomlib-chatbot',  // the name of runtime directive
+                designType: 'com-vyom-vyomlib-chatbot-design', // register design directive
+                bundleId: 'com.vyom.vyomlib',
+
+                // define component properties
+                propertiesByName: [
+
+                ]
+            };
+
+            rxViewComponentProvider.registerComponent(starRatingDescriptor);
         });
 })();

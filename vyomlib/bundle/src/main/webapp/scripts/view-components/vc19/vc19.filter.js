@@ -2,9 +2,12 @@
     'use strict';
 
     angular.module('com.vyom.vyomlib.view-components.vc19')
-        .filter('comVyomVyomlibMyFilter', function () {
-            return function (labelText) {
-                return labelText;
-            };
-        });
+        .filter('comVyomVyomlibRemoveSpace', function() {
+    return function(string) {
+        if (!angular.isString(string)) {
+            return string;
+        }
+        return string.replace(/[\s]/g, '');
+    };
+});
 })();

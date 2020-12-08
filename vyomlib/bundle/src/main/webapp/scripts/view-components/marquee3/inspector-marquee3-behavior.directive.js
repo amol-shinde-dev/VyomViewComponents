@@ -12,34 +12,33 @@
                     fields: [],
                     selectedField: null
                 };
-           
-            $scope.names = ["scroll","slide","alternate"];
-            
+
+                $scope.names = ["scroll", "slide", "alternate"];
 
 
 
-                
-              
-                
-                
-        
-                          
-                function initMaxStarValue() {
-                   $scope.MBehavior = $scope.cell.prop($scope.path);
-                   
+
+
+
+
+
+
+                function initValue() {
+                    $scope.MBehavior = $scope.cell.prop($scope.path);
+
                 }
 
                 // Saving the parameter
-                function saveMaxStarValue() {
+                function saveValue() {
                     $scope.cell.prop($scope.path, $scope.MBehavior);
-           
+
                 }
 
                 // We watch "$scope.minSliderValue" to save it.
-                $scope.$watch('MBehavior', saveMaxStarValue)
-   
+                $scope.$watch('MBehavior', saveValue)
 
-                initMaxStarValue();
+
+                initValue();
             }
         };
     });

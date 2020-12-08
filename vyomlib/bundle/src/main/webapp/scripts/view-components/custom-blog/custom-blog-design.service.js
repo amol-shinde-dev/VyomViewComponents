@@ -15,10 +15,11 @@
 
         // Getting configuration defined in Innovation Studio parameters.
         // We can also setup default values.
-        // below code is used to return/store the edited data on view designer when clicked on Save
         function getRxData(componentDefinition, componentDescriptor) {
 
-
+            var defaultEnableEditButton = _.find(componentDescriptor.propertiesByName, {
+                name: 'enableEditButton'
+            }).defaultValue;
 
             return {
 
@@ -26,6 +27,9 @@
                 HTMLField: componentDefinition.propertiesByName.HTMLField,
                 RecInstanceId: componentDefinition.propertiesByName.RecInstanceId,
                 editorInstance: componentDefinition.guid || rxGUID.generate(),
+                enableEditButton: componentDefinition.propertiesByName.enableEditButton || defaultEnableEditButton,
+                enableEditPane: componentDefinition.propertiesByName.enableEditPane == 'true' ? true : false
+
 
             };
         }
@@ -43,27 +47,45 @@
                             group: 'General',
                             index: 1
                         },
-                        //obeserve that in below section, cutom type html is used which is designed 
                         HTMLField: {
                             label: 'HTML',
                             type: 'com-vyom-vyomlib-inspector-custom-blog-fields',
                             group: 'General',
                             index: 2
                         },
-                        //obeserve that in below section, cutom type html is used which is designed 
                         RecInstanceId: {
                             label: 'Record Instance Id',
-                            type: 'com-vyom-vyomlib-inspector-custom-blog-guid',
+                            type: 'rx-inspector-expression-node-field',
                             group: 'General',
                             index: 3
                         },
-                        //obeserve that in below section, cutom type html is used which is designed 
+
                         editorInstance: {
                             label: 'editor Instance Id',
                             type: 'rx-inspector-expression-node-field',
                             group: 'General',
                             index: 4
                         },
+
+                        enableEditButton: {
+                            label: 'View Edit Button',
+                            type: 'rx-inspector-expression-node-field',
+                            tooltip: {
+                                text: "To enable edit button set values as (true/false).",
+                                placement: "left"
+                            },
+                            group: 'General',
+                            index: 5
+
+                        },
+                        enableEditPane: {
+                            label: 'View Blog Header',
+                            type: 'rx-inspector-toggle-field',
+                            group: 'General',
+                            index: 6
+
+                        }
+
 
                     }
                 },

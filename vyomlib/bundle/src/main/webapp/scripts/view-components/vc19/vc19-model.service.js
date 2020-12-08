@@ -5,7 +5,7 @@
 
     angular.module('com.vyom.vyomlib.view-components.vc19').factory('comVyomVyomlibVc19Model', function (rxViewComponentModel, rxRecordDefinitionResource) {
         return rxViewComponentModel.extend({
-            initialize: function () {
+           initialize: function () {
                 // launch parent initialize method
                 rxViewComponentModel.prototype.initialize.apply(this, arguments);
 
@@ -16,21 +16,22 @@
             },
 
             _initRecordDefinition: function () {
-                if (this.prop('rxData/recordDefinitionName')) {
+                if (this.prop('rxData/recordDefinitionFullName')) {
                     var me = this;
 
                     // load Record Definition
-                    rxRecordDefinitionResource.get(this.prop('rxData/recordDefinitionName')).then(function (recordDefinition) {
-                        me.recordDefinition = recordDefinition;
+                    rxRecordDefinitionResource.get(this.prop('rxData/recordDefinitionFullName')).then(function (recordDefinition) {
+                        me.recordDefinitionFullName = recordDefinition;
                     }).catch(function () {
-                        me.recordDefinition = null;
+                        me.recordDefinitionFullName = null;
                     });
                 } else {
-                    this.recordDefinition = null;
+                    this.recordDefinitionFullName = null;
                 }
             },
+
             _onChangeRxData: function (model, rxData, changedProperty) {
-                if (changedProperty.propertyPath === 'rxData/recordDefinitionName') {
+                if (changedProperty.propertyPath === 'rxData/recordDefinitionFullName') {
                     this._initRecordDefinition();
                 }
             }

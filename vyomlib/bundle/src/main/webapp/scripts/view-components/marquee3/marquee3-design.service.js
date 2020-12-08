@@ -14,8 +14,7 @@ The factory is defined in the 'config.js':
             };
         }
 
-        // Getting configuration defined in Innovation Studio parameters.
-        // We can also setup default values.
+        
         function getRxData(componentDefinition, componentDescriptor) {
             
              var defaultSeparator = _.find(componentDescriptor.propertiesByName, {
@@ -58,7 +57,7 @@ The factory is defined in the 'config.js':
 				IncidentRecDef: componentDefinition.propertiesByName.IncidentRecDef,
                 Separator:componentDefinition.propertiesByName.Separator||defaultSeparator,
                 MWidth:componentDefinition.propertiesByName.MWidth||defaultMWidth,
-                MHeight:componentDefinition.propertiesByName.Height||defaultMHeight,
+                MHeight:componentDefinition.propertiesByName.MHeight||defaultMHeight,
                 MAllignment:componentDefinition.propertiesByName.MAllignment||defaultMAllignment,
                 MDirection:componentDefinition.propertiesByName.MDirection||defaultMDirection,
                 MSpeed:componentDefinition.propertiesByName.MSpeed||defaultMSpeed,
@@ -144,20 +143,14 @@ The factory is defined in the 'config.js':
                                         text: "Enter a condition to control which items should appear on the list with marquee effect in the deployed application.",
                                         placement: "left"
                                     },
-							//isReadOnly: _.isEmpty(e.name),
+							
 							when: {and: [{ne: {"rxData/IncidentRecDef": void 0}}, {ne: {"rxData/IncidentRecDef": ""}}]},
                             group: 'filter',
                             index: 1
                         },
-						/*ColourHeader: {
-                            label: 'Background Colour of Marquee Header',
-                            type: 'com-vyom-vyomlib-inspector-marquee2-color-picker-select', // Custom inspector 'comExampleSamplelibraryInspectorStarClickRatingColorPickerSelect'
-                            group: 'color',
-                            index: 1
-                        },*/
+						
                         MBGColor: {
                             label: 'Background Colour of Marquee Text',
-                          //  type: 'com-vyom-vyomlib-inspector-marquee3-color-picker-select',  // Custom inspector 
                             type: 'com-vyom-vyomlib-inspector-marquee3-mbgcolor',
                             group: 'Marquee',
                             index: 1

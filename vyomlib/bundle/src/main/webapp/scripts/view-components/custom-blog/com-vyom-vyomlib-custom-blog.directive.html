@@ -2,23 +2,34 @@
 
 <head>
 
+
+
+
 </head>
 
 <body>
 
-    <div>
-        <div>
-            <!-- below code is for template of CKEDITOR which will be displayed under div id="{{editorID}}  -->
-            <!-- and 2 buttons, save and edit -->
-            <div id="{{editorID}}" contenteditable="true">
-                <p>Here goes the initial content of the editor.</p>
+
+    <div class="card">
+        <div class="card-header" style="text-align: right">
+            <button type="button" id="refresh" class="d-button d-button_action d-icon-left-refresh" ng-click="onRefresh()"></button>
+            <button type="button" id="edit" class="d-button d-button_action d-icon-left-pencil" ng-click="toggleReadOnly(false);"></button>
+        </div>
+        <div class="card-body">
+            <div id="{{editorID}}">
+
+            </div>
+            <div id="CustomBlogEditor" ng-bind-html="staticHtml">
+
             </div>
         </div>
-        <div>
+        <div class="card-footer">
             <button type="button" class="d-button d-button_primary" ng-click="updateHTML();">Save
             </button>
-            <button type="button" class="d-button d-button_primary">Edit
+
+            <button type="button" class="d-button d-button_primary" ng-click="toggleReadOnly(true)">Cancel
             </button>
+
         </div>
     </div>
 </body>

@@ -14,18 +14,44 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
   'use strict';
 
   $templateCache.put('scripts/view-components/chatbot/com-vyom-vyomlib-chatbot-design.directive.html',
-    "<h1>Chatbot</h1>"
+    "<!DOCTYPE html><html><body><p4>chatbot</p4></body></html>"
   );
 
 
   $templateCache.put('scripts/view-components/chatbot/com-vyom-vyomlib-chatbot.directive.html',
-    "<!DOCTYPE html><html><head><meta charset=\"ISO-8859-1\"><title>Vyom Chatbot</title></head><body><!-- <script id=\"rx-view-loader-script\" src=\"view-loader.js\"></script> --><script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script><!-- <script id=\"rx-view-loader-script\" src=\"https://vyom-platform.trybmc.com/innovationsuite/view-loader.js\"></script> --> <button class=\"rx-view-loader-button\" data-bot-id=\"IDGADG1AANVNNAPS90V8PRLVOBB9GO\"></button><!--  <button class=\"rx-view-loader-button\" data-rsso-server=\"https://vyom-rsso2.trybmc.com\"></button>\r" +
+    "<html><head></head><body><img src=\"/com.vyom.vyomlib/resources/chatbot/vyom1.PNG\" alt=\"Vyom\" width=\"100%\" height=\"333\"> <img src=\"/com.vyom.vyomlib/resources/chatbot/vyom2.PNG\" alt=\"Trulli\" width=\"100%\" height=\"333\"> <img src=\"/com.vyom.vyomlib/resources/chatbot/vyom3.PNG\" alt=\" Trulli\" width=\"100%\" height=\"333\"> <button class=\"rx-view-loader-button\" data-bot-id=\"AGGADGG8ECDC0AP0PA6EPJSIGS75QX\"></button><!--<script id=\"rx-view-loader-script\"\r" +
     "\n" +
-    " --><script type=\"text/javascript\">rxViewLoader.onRequestJwt(function () {\r" +
+    "		src=\"https://ericsson02-tailoring-is.onbmc.com/innovationsuite/view-loader.js\"></script> --><script id=\"rx-view-loader-script\" src=\"https://ericsson02-tailoring-is.onbmc.com/innovationsuite/\"></script><script src=\"/com.vyom.vyomlib/resources/chatbot/view-loader.js\"></script></body></html>"
+  );
+
+
+  $templateCache.put('scripts/view-components/comment-box/com-vyom-vyomlib-comment-box-design.directive.html',
+    "<span class=\"d-icon-comments_o\" style=\"font-size: 100px;text-align: center\"></span>"
+  );
+
+
+  $templateCache.put('scripts/view-components/comment-box/com-vyom-vyomlib-comment-box.directive.html',
+    "<!doctype html><html><head><meta charset=\"utf-8\"><meta name=\"description\" content=\"\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Jquery Comments Plugin</title><!-- Styles --><link rel=\"stylesheet\" type=\"text/css\" href=\"/com.vyom.vyomlib/resources/test/css/jquery-comments.css\"><!-- Libraries --><script type=\"text/javascript\" src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js\"></script><script type=\"text/javascript\" src=\"/com.vyom.vyomlib/resources/test/js/jquery.textcomplete.js\"></script><script type=\"text/javascript\" src=\"/com.vyom.vyomlib/resources/test/js/jquery-comments.js\"></script><style type=\"text/css\">body {\r" +
     "\n" +
-    "             // return JWT token\r" +
+    "            padding: 20px;\r" +
     "\n" +
-    "         });</script></body></html>"
+    "            margin: 0px;\r" +
+    "\n" +
+    "            font-size: 14px;\r" +
+    "\n" +
+    "            font-family: \"Arial\", Georgia, Serif;\r" +
+    "\n" +
+    "        }</style><!-- Init jquery-comments --><script type=\"text/javascript\"></script></head><body><div id=\"comments-container\"></div></body></html>"
+  );
+
+
+  $templateCache.put('scripts/view-components/comment-box/com-vyom-vyomlib-inspector-comment-box-fields.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\"><select class=\"select\" ng-options=\"field.name for field in data.fields track by field.id \" ng-model=\"data.selectedField\"></select></div><div ng-if=\"!data.fields.length\">Record Definition is must.</div>"
+  );
+
+
+  $templateCache.put('scripts/view-components/comment-box/com-vyom-vyomlib-inspector-comment-box-guid.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\"><select class=\"select\" ng-options=\"field[applicationFieldID] for field in data.fields \" ng-model=\"data.selectedField\"></select></div><div ng-if=\"!data.fields.length\">Application Name Field is not selected.</div>"
   );
 
 
@@ -35,17 +61,17 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
 
 
   $templateCache.put('scripts/view-components/custom-blog/com-vyom-vyomlib-custom-blog.directive.html',
-    "<html><head></head><body><div><div><!-- below code is for template of CKEDITOR which will be displayed under div id=\"{{editorID}}  --><!-- and 2 buttons, save and edit --><div id=\"{{editorID}}\" contenteditable=\"true\"><p>Here goes the initial content of the editor.</p></div></div><div><button type=\"button\" class=\"d-button d-button_primary\" ng-click=\"updateHTML();\">Save</button> <button type=\"button\" class=\"d-button d-button_primary\">Edit</button></div></div></body></html>"
+    "<html><head></head><body><div class=\"card\"><div class=\"card-header\" style=\"text-align: right\"><button type=\"button\" id=\"refresh\" class=\"d-button d-button_action d-icon-left-refresh\" ng-click=\"onRefresh()\"></button> <button type=\"button\" id=\"edit\" class=\"d-button d-button_action d-icon-left-pencil\" ng-click=\"toggleReadOnly(false);\"></button></div><div class=\"card-body\"><div id=\"{{editorID}}\"></div><div id=\"CustomBlogEditor\" ng-bind-html=\"staticHtml\"></div></div><div class=\"card-footer\"><button type=\"button\" class=\"d-button d-button_primary\" ng-click=\"updateHTML();\">Save</button> <button type=\"button\" class=\"d-button d-button_primary\" ng-click=\"toggleReadOnly(true)\">Cancel</button></div></div></body></html>"
   );
 
 
   $templateCache.put('scripts/view-components/custom-blog/com-vyom-vyomlib-inspector-custom-blog-fields.directive.html',
-    "<!-- below code is used to populate the options in design phase under General section --><!-- this populates the fiend lables of record defination selected --><label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\"><select class=\"select\" ng-options=\"field.name for field in data.fields track by field.id \" ng-model=\"data.selectedField\"></select></div><div ng-if=\"!data.fields.length\">Record Definition is must.</div>"
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\"><select class=\"select\" ng-options=\"field.name for field in data.fields track by field.id \" ng-model=\"data.selectedField\"></select></div><div ng-if=\"!data.fields.length\">Record Definition is must.</div>"
   );
 
 
   $templateCache.put('scripts/view-components/custom-blog/com-vyom-vyomlib-inspector-custom-blog-guid.directive.html',
-    "<!-- below code is used to populate the options in design phase under General section --><!-- this populates the GUID of record defination selected --><label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\"><select class=\"select\" ng-options=\"field[179] for field in data.fields \" ng-model=\"data.selectedField\"></select></div><div ng-if=\"!data.fields.length\">Records not available.</div>"
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\"><select class=\"select\" ng-options=\"field[8] for field in data.fields \" ng-model=\"data.selectedField\"></select></div><div ng-if=\"!data.fields.length\">Records not available.</div>"
   );
 
 
@@ -55,189 +81,61 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
 
 
   $templateCache.put('scripts/view-components/custom-card/com-vyom-vyomlib-custom-card.directive.html',
-    "<style>.tile{float:left; margin:0 5px 0 0; padding:2px; }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    .container {\r" +
-    "\n" +
-    "        padding: 2px 16px;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    }</style><!--<a href=\"{{URL}}\" target=\"_blank\">--><div style=\"height: {{Height}}px; width: {{Width}}px; background-color:{{Colour}}\" class=\"tile card\"><p><img src=\"/com.vyom.vyomlib/resources/img/{{Icon}}\" style=\"width:{{ImgWidth}}px;height:{{ImgHeight}}px\"></p><h6 align=\"center\" style=\"color: white\">{{Text}}</h6><div class=\"container\"></div></div><!--</a>-->"
-  );
-
-
-  $templateCache.put('scripts/view-components/custom-html/com-vyom-vyomlib-custom-html-design.directive.html',
-    "<h4>CustomHTMl</h4>"
-  );
-
-
-  $templateCache.put('scripts/view-components/custom-html/com-vyom-vyomlib-custom-html.directive.html',
-    "<html><head><script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js\"></script><script src=\"https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-sanitize.js\"></script></head><body><p ng-bind-html=\"customHTMLscript\"></p></body></html>"
+    "<div style=\"height: {{Height}}px; width: {{Width}}px; background-color:{{Colour}}\" class=\"tile card\"><p><img src=\"/com.vyom.vyomlib/resources/img/{{Icon}}\" style=\"width:{{ImgWidth}}px;height:{{ImgHeight}}px\"></p><h6 align=\"center\" style=\"color: {{Colour}}\">{{Text}}</h6><div class=\"container\"></div></div>"
   );
 
 
   $templateCache.put('scripts/view-components/dashboard1/com-vyom-vyomlib-dashboard1-design.directive.html',
-    "<!DOCTYPE html><html><body><img src=\"/com.vyom.vyomlib/resources/MyPage_Vyom/images/ViewComp/MyPage_Vyomlabs1.png\"><!--<img src=/com.vyom.vyomlib/resources/MyPage_Vyom/images/ViewComp/MyPage_Vyomlabs.png width=\"200\" height=\"115\">    --></body></html>"
+    "<!DOCTYPE html><html><body><!-- laptop_user --> <span class=\"d-icon-laptop_user\" style=\"font-size: 100px;\r" +
+    "\n" +
+    "    text-align: center;\r" +
+    "\n" +
+    "    display: block\"></span></body></html>"
   );
 
 
   $templateCache.put('scripts/view-components/dashboard1/com-vyom-vyomlib-dashboard1.directive.html',
-    "<!DOCTYPE html><html lang=\"en\"><head><title>MyPage</title><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\"><script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script><script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script><!-- Font Awesome --><link href=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/css/font-awesome.min.css\" rel=\"stylesheet\"><!-- NProgress --><!-- <link href=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/css/nprogress.css\" rel=\"stylesheet\"> --><!-- iCheck --><link href=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/css/green.css\" rel=\"stylesheet\"><!-- bootstrap-progressbar --><link href=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/css/bootstrap-progressbar-3.3.4.min.css\" rel=\"stylesheet\"><!-- JQVMap --><link href=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/css/jqvmap.min.css\" rel=\"stylesheet\"><!-- bootstrap-daterangepicker --><link href=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/css/daterangepicker.css\" rel=\"stylesheet\"><script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js\"></script><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/css/myPage.css\"></head><body><div class=\"container\"><div class=\"row\"><div class=\"widgetTable\"><table style=\"margin-left: 4%\"><tr><td id=\"profileWidgetTD\"><div class=\"widget panelbox\"><div class=\"profile\" ng-if=\"logedInUser\"><p class=\"profile-image\" style=\"text-align:center\"><img src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/icons/personicon.png\" align=\"middle\" style=\"border-radius: 50%\"></p><h3 align=\"center\" style=\"color: black\" class=\"name\">{{logedInUser[11093002]}}</h3><p style=\"text-align:center; font-size: 12px\" class=\"des\">{{logedInUser[11093003]}}<br>{{logedInUser[11093004]}}<br></p><hr><p></p><p style=\"text-align:center; font-size: 12px\" class=\"des\">Contact Info: {{logedInUser[11093005]}}<br>{{logedInUser[8]}}</p></div></div></td><td><div class=\"widget panelbox\"><div class=\"financial\"><img class=\"img-responsive icons\" src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/icons/financial.png\" alt=\"\" title=\"Finance\"><p class=\"title\">My Financials</p><div id=\"myfinancials\"><!--Payslip HTML--><div id=\"quicklink\"><div id=\"Payslip_widget\" class=\"quicklink\"><a data-fancybox=\"\" data-type=\"iframe\" id=\"ohrcustom\" href=\"https://soagnpc.intranet.genpact.com/widget/oraclepayroll/resources/pages/oraclePayroll.jsp?id=ND1WH%2BkWowmB7HdPPgJTow%3D%3D\"><img class=\"img-responsive\" src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/quicklinks/payslip.png\" alt=\"payslip\"></a></div></div><!--Payslip HTML--><!--Payslip HTML--><div id=\"quicklink\"><div id=\"Payslip_widget\" class=\"quicklink\"><a data-fancybox=\"\" data-type=\"iframe\" id=\"ohrcustom\" href=\"https://soagnpc.intranet.genpact.com/widget/oraclepayroll/resources/pages/oraclePayroll.jsp?id=ND1WH%2BkWowmB7HdPPgJTow%3D%3D\"><img class=\"img-responsive\" src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/quicklinks/address.png\" alt=\"payslip\"></a></div></div><!--Payslip HTML--><!--Payslip HTML--><div id=\"quicklink\"><div id=\"Payslip_widget\" class=\"quicklink\"><a data-fancybox=\"\" data-type=\"iframe\" id=\"ohrcustom\" href=\"https://soagnpc.intranet.genpact.com/widget/oraclepayroll/resources/pages/oraclePayroll.jsp?id=ND1WH%2BkWowmB7HdPPgJTow%3D%3D\"><img class=\"img-responsive\" src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/quicklinks/PF.png\" alt=\"payslip\"></a></div></div><!--Payslip HTML--><!--Payslip HTML--><div id=\"quicklink\"><div id=\"Payslip_widget\" class=\"quicklink\"><a data-fancybox=\"\" data-type=\"iframe\" id=\"ohrcustom\" href=\"https://soagnpc.intranet.genpact.com/widget/oraclepayroll/resources/pages/oraclePayroll.jsp?id=ND1WH%2BkWowmB7HdPPgJTow%3D%3D\"><img class=\"img-responsive\" src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/quicklinks/employeement.png\" alt=\"payslip\"></a></div></div><!--Payslip HTML--><!--Payslip HTML--><div id=\"quicklink\"><div id=\"Payslip_widget\" class=\"quicklink\"><a data-fancybox=\"\" data-type=\"iframe\" id=\"ohrcustom\" href=\"https://soagnpc.intranet.genpact.com/widget/oraclepayroll/resources/pages/oraclePayroll.jsp?id=ND1WH%2BkWowmB7HdPPgJTow%3D%3D\"><img class=\"img-responsive\" src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/quicklinks/bonus1.png\" alt=\"payslip\"></a></div></div><div id=\"quicklink\"><div id=\"Payslip_widget\" class=\"quicklink\"><a data-fancybox=\"\" data-type=\"iframe\" id=\"ohrcustom\" href=\"https://soagnpc.intranet.genpact.com/widget/oraclepayroll/resources/pages/oraclePayroll.jsp?id=ND1WH%2BkWowmB7HdPPgJTow%3D%3D\"><img class=\"img-responsive\" src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/quicklinks/softloan.png\" alt=\"payslip\"></a></div></div></div></div></div></td><td><div class=\"panelbox\"><img alt=\"suggestion_icon\" class=\"img-responsive icons\" src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/icons/faq.png\"><p class=\"title\" style=\"margin-bottom: 0px\">Ask for Help</p><!--Help HTML--><div id=\"FAQ\"><a href=\"https://hr.genpact.com/hr/peopleFirst/?env=cpub\"><img src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/chatbot.jpg\" class=\"chatbotimg\"></a><br><a href=\"https://genpact-myit.onbmc.com/ux/\"><img src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/helpmate2.png\" class=\"helpmateimg\"></a><br><a href=\"https://genpactonline.sharepoint.com/sites/Ess-Beta/FAQDocuments/\"><p class=\"policieshelp\">Vyomlabs Policies</p></a><a href=\"https://genpactonline.sharepoint.com/sites/ESS_QA/SitePages/Newsfeed.aspx\"><p class=\"suggestionbox\">Suggestion Box</p></a></div></div></td><!-- <td>\r" +
+    "<!DOCTYPE html><html lang=\"en\"><head><title>MyPage</title><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\"><script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script><script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script><!-- Font Awesome --><link href=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/css/font-awesome.min.css\" rel=\"stylesheet\"><!-- bootstrap-progressbar --><link href=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/css/bootstrap-progressbar-3.3.4.min.css\" rel=\"stylesheet\"><!-- JQVMap --><link href=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/css/jqvmap.min.css\" rel=\"stylesheet\"><!-- matro ui for showing icon on card --><link rel=\"stylesheet\" href=\"https://cdn.metroui.org.ua/v4.3.2/css/metro-all.min.css\"><script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js\"></script></head><body><div class=\"container\"><div class=\"row\"><div class=\"widgetTable\"><table style=\"margin-left: 12%\"><tr><td style=\"vertical-align: bottom\"><div class=\"widget panelbox\"><div class=\"profile\" ng-if=\"logedInUser\"><p class=\"profile-image\" style=\"text-align:center\"><img src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/images1/icons/personicon.png\" align=\"middle\" style=\"border-radius: 50%\"></p><h3 align=\"center\" style=\"color: black\" class=\"name\">{{logedInUser[11093002]}}<!-- {{logedInUser[10740003]}} --><!-- Allen Allbrook --></h3><p style=\"text-align:center; font-size: 12px\" class=\"des\">{{logedInUser[11093003]}}<!-- {{logedInUser[10740004]}} --><br>{{logedInUser[11093004]}}<!-- {{logedInUser[10740005]}} --><br></p><hr><p></p><p style=\"text-align:center; font-size: 12px\" class=\"des\">Contact Info: {{logedInUser[11093005]}}<!-- {{logedInUser[10740006]}} --><br>{{logedInUser[8]}}</p><!-- </div> --></div></div></td><td><div class=\"widget panelbox\"><div class=\"financial\"><img class=\"img-responsive icons\" src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/images1/icons/financial.png\" alt=\"\" title=\"Finance\"><p class=\"title\" ng-if=\"secondCardTitle\"><!-- My Financials --> {{secondCardTitle}}</p><div id=\"myfinancials\"><div class=\"quicklink\" data-size=\"medium\" data-role=\"tile\" data-effect=\"hover-slide-left\" style=\"padding:10px; text-align: center\" ng-style=\"{'background-color': color1}\"><div class=\"slide-front\"><span ng-class=\"'d-icon-'+icon1\" class=\"bmc-icon\"></span><p style=\"color: white;font-weight: 700;display: inline-block\">{{text1}}</p></div><div class=\"slide-back op-mauve p-4\" style=\"color: black\">{{description1}}<br><br><a ng-href=\"{{url1}}\" target=\"_blank\" class=\"text-center\" style=\"font-size: large\">Click here</a></div></div><div class=\"quicklink\" data-size=\"medium\" data-role=\"tile\" data-effect=\"hover-slide-left\" data-effect=\"hover-slide-left\" style=\"padding:10px;text-align: center\" ng-style=\"{'background-color': color2}\"><div class=\"slide-front\"><span ng-class=\"'d-icon-'+icon2\" class=\"bmc-icon\"></span><p style=\"color: white;font-weight: 700;display: inline-block\">{{text2}}</p></div><div class=\"slide-back op-mauve p-4\" style=\"color: black\">{{description2}}<br><br><a ng-href=\"{{url2}}\" target=\"_blank\" class=\"text-center\" style=\"font-size: large\">Click here</a></div></div><div class=\"quicklink\" data-size=\"medium\" data-role=\"tile\" data-effect=\"hover-slide-left\" style=\"padding:10px; text-align: center\" ng-style=\"{'background-color': color3}\"><div class=\"slide-front\"><span ng-class=\"'d-icon-'+icon3\" class=\"bmc-icon\"></span><p style=\"color: white;font-weight: 700;display: inline-block\">{{text3}}</p></div><div class=\"slide-back op-mauve p-4\" style=\"color: black\">{{description3}}<br><br><a ng-href=\"{{url3}}\" target=\"_blank\" class=\"text-center\" style=\"font-size: large\">Click here</a></div></div><div class=\"quicklink\" data-size=\"medium\" data-role=\"tile\" data-effect=\"hover-slide-left\" style=\"padding:10px; text-align: center\" ng-style=\"{'background-color': color4}\"><div class=\"slide-front\"><span ng-class=\"'d-icon-'+icon4\" class=\"bmc-icon\"></span><p style=\"color: white;font-weight: 700;display: inline-block\">{{text4}}</p></div><div class=\"slide-back op-mauve p-4\" style=\"color: black\">{{description4}}<br><br><a ng-href=\"{{url4}}\" target=\"_blank\" class=\"text-center\" style=\"font-size: large\">Click here</a></div></div><div class=\"quicklink\" data-size=\"medium\" data-role=\"tile\" data-effect=\"hover-slide-left\" style=\"padding:10px;text-align: center\" ng-style=\"{'background-color': color5}\"><div class=\"slide-front\"><span ng-class=\"'d-icon-'+icon5\" class=\"bmc-icon\"></span><p style=\"color: white;font-weight: 700;display: inline-block\">{{text5}}</p></div><div class=\"slide-back op-mauve p-4\" style=\"color: black\">{{description5}}<br><br><a ng-href=\"{{url5}}\" target=\"_blank\" class=\"text-center\" style=\"font-size: large\">Click here</a></div></div><div class=\"quicklink\" data-size=\"medium\" data-role=\"tile\" data-effect=\"hover-slide-left\" style=\"padding:10px;text-align: center\" ng-style=\"{'background-color': color6}\"><div class=\"slide-front\"><span ng-class=\"'d-icon-'+icon6\" class=\"bmc-icon\"></span><p style=\"color: white;font-weight: 700;display: inline-block\">{{text6}}</p></div><div class=\"slide-back op-mauve p-4\" style=\"color: black\">{{description6}}<br><br><a ng-href=\"{{url6}}\" target=\"_blank\" class=\"text-center\" style=\"font-size: large\">Click here</a></div></div></div><!-- <div id=\"myfinancials\">\r" +
     "\n" +
-    "							<div id=\"ER1\" class=\"panelbox ER\">\r" +
+    "										<div id=\"quicklink\">\r" +
     "\n" +
-    "								<div class=\"ER-main\" style=\"padding-left: 8px;\">\r" +
+    "											<div data-role=\"tile\" class=\"quicklink\" data-size=\"medium\"\r" +
     "\n" +
-    "									<img alt=\"suggestion_icon\" class=\"img-responsive icons\"\r" +
+    "												data-effect=\"hover-slide-left\" ng-repeat=\"x in pictureData\">\r" +
     "\n" +
-    "										src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/icons/ERicon.png\">\r" +
+    "												<div class=\"slide-front\">\r" +
     "\n" +
-    "									<p class=\"title\">Employee Reimbursement\r" +
-    "\n" +
-    "										<a id=\"erhelp\" href=\"#\">\r" +
-    "\n" +
-    "											<i class=\"fa fa-question-circle ERhelp\" title=\"Ask for Help\"\r" +
-    "\n" +
-    "												aria-hidden=\"true\"></i>\r" +
-    "\n" +
-    "										</a>\r" +
-    "\n" +
-    "										<a id=\"ERReport\" href=\"#\">\r" +
-    "\n" +
-    "											<i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\"\r" +
-    "\n" +
-    "												aria-hidden=\"true\"></i>\r" +
-    "\n" +
-    "										</a>\r" +
-    "\n" +
-    "										<a id=\"ERadminconsole\" href=\"#\">\r" +
-    "\n" +
-    "											<i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\"\r" +
-    "\n" +
-    "												aria-hidden=\"true\"></i>\r" +
-    "\n" +
-    "										</a>\r" +
-    "\n" +
-    "									</p>\r" +
-    "\n" +
-    "									<div id=\"ER\">\r" +
-    "\n" +
-    "										<div class=\"ERhexbox\">\r" +
-    "\n" +
-    "											<a href=\"#\">\r" +
-    "\n" +
-    "												<div id=\"pendingapproval\" class=\"pendingapproval\">\r" +
-    "\n" +
-    "													<br>\r" +
-    "\n" +
-    "													<b>12</b>\r" +
-    "\n" +
-    "													<p>Pending for Approval</p>\r" +
+    "													<img src=\"{{x}}\" class=\"h-100 w-100\">\r" +
     "\n" +
     "												</div>\r" +
     "\n" +
-    "											</a>\r" +
+    "												<div class=\"slide-back op-mauve p-4\">\r" +
     "\n" +
-    "											<a href=\"#\">\r" +
+    "													<p class=\"text-center\">\r" +
     "\n" +
-    "												<div id=\"pendingclarification\" class=\"pendingclarification\">\r" +
+    "														Bubos mori in moscua! Tumultumque de brevis historia, aperto\r" +
     "\n" +
-    "													<br>\r" +
+    "														heuretes!\r" +
     "\n" +
-    "													<b>03</b>\r" +
-    "\n" +
-    "													<p>Pending Clarification</p>\r" +
+    "													</p>\r" +
     "\n" +
     "												</div>\r" +
-    "\n" +
-    "											</a>\r" +
-    "\n" +
-    "										</div>\r" +
-    "\n" +
-    "										<div class=\"ERname\">\r" +
-    "\n" +
-    "											<div class=\"list-type3\">\r" +
-    "\n" +
-    "												<ol>\r" +
-    "\n" +
-    "													<li id=\"ERapproval\" class=\"ERli\">\r" +
-    "\n" +
-    "														<a href=\"#\">\r" +
-    "\n" +
-    "															ER Approval Form\r" +
-    "\n" +
-    "														</a>\r" +
-    "\n" +
-    "													</li>\r" +
-    "\n" +
-    "													<li id=\"myapproval\" class=\"ERli\">\r" +
-    "\n" +
-    "														<a href=\"#\">\r" +
-    "\n" +
-    "															My Approval Requests\r" +
-    "\n" +
-    "														</a>\r" +
-    "\n" +
-    "													</li>\r" +
-    "\n" +
-    "													<li id=\"claimsubmission\" class=\"ERli\">\r" +
-    "\n" +
-    "														<a href=\"#\">\r" +
-    "\n" +
-    "															Claim Submission\r" +
-    "\n" +
-    "														</a>\r" +
-    "\n" +
-    "													</li>\r" +
-    "\n" +
-    "													<li id=\"claimrequest\" class=\"ERli\">\r" +
-    "\n" +
-    "														<a href=\"#\">\r" +
-    "\n" +
-    "															My Claim Requests\r" +
-    "\n" +
-    "														</a>\r" +
-    "\n" +
-    "													</li>\r" +
-    "\n" +
-    "													<li id=\"approvaldelegation\" class=\"ERli\">\r" +
-    "\n" +
-    "														<a href=\"#\">\r" +
-    "\n" +
-    "															Delegation\r" +
-    "\n" +
-    "														</a>\r" +
-    "\n" +
-    "													</li>\r" +
-    "\n" +
-    "												</ol>\r" +
     "\n" +
     "											</div>\r" +
     "\n" +
     "										</div>\r" +
     "\n" +
-    "									</div>\r" +
+    "									</div> --></div></div></td><td><div class=\"widget panelbox\"><img alt=\"suggestion_icon\" class=\"img-responsive icons\" src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/images1/icons/faq.png\"><p class=\"title\" style=\"margin-bottom: 0px\">Ask for Help</p><!--Help HTML--><div id=\"FAQ\"><a href=\"https://hr.genpact.com/hr/peopleFirst/?env=cpub\"><img src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/images1/chatbot.jpg\" class=\"chatbotimg\"></a><br><a href=\"https://genpact-myit.onbmc.com/ux/\"><img src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/images1/helpmate2.png\" class=\"helpmateimg\"></a><br><a href=\"https://genpactonline.sharepoint.com/sites/Ess-Beta/FAQDocuments/\"><p class=\"policieshelp\">Policies</p></a><a href=\"https://genpactonline.sharepoint.com/sites/ESS_QA/SitePages/Newsfeed.aspx\"><p class=\"suggestionbox\">Suggestion Box</p></a></div></div></td></tr><tr><td style=\"vertical-align: middle\"><link href=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/css/custom.min.css\" rel=\"stylesheet\"><div class=\"widget\" style=\"margin-left:20px\"><div class=\"container body\"><div class=\"main_container\"><!-- page content --><div role=\"main\"><div class=\"row\"><div style=\"width: 475px;height: 324px\"><div class=\"x_panel tile fixed_height_340\" style=\"height: 325px\"><div class=\"x_title\"><h2 style=\"color: #0f548c\">My Trainings</h2><ul class=\"nav navbar-right panel_toolbox\"><li><a class=\"collapse-link\"><i class=\"fa fa-chevron-up\"></i></a></li><li class=\"dropdown\"><a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\"><i class=\"fa fa-wrench\"></i></a><div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\"><a class=\"dropdown-item\" href=\"#\">Settings 1</a> <a class=\"dropdown-item\" href=\"#\">Settings 2</a></div></li><li><a class=\"close-link\"><i class=\"fa fa-close\"></i></a></li></ul><div class=\"clearfix\"></div></div><div class=\"x_content\"><div class=\"dashboard-widget-content\"><ul class=\"quick-list\"><li><i class=\"fa fa-calendar\"></i> <a href=\"#\">Angular</a></li><li><i class=\"fa fa-bars\"></i> <a href=\"#\">Java - 18%</a></li><li><i class=\"fa fa-bar-chart\"></i> <a href=\"#\">Python - 44%</a></li><li><i class=\"fa fa-line-chart\"></i> <a href=\"#\">Helix Platform - 62%</a></li><li><i class=\"fa fa-bars\"></i> <a href=\"#\">On Going Trainings</a></li><li><i class=\"fa fa-calendar\"></i> <a href=\"#\">Start New</a></li></ul><div class=\"sidebar-widget\"><h4>Training Completion</h4><canvas width=\"150\" height=\"80\" id=\"chart_gauge_01\" class=\"\" style=\"width: 160px; height: 100px\"></canvas><div class=\"goal-wrapper\"><span id=\"gauge-text\" class=\"gauge-value pull-left\">40%</span><!--                          <span class=\"gauge-value pull-left\">%</span>--> <span id=\"goal-text\" class=\"goal-value pull-right\">6000%</span></div></div></div></div></div></div></div></div></div></div></div><div class=\"row\"><!-- jQuery --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/jquery.min.js\"></script><!-- Bootstrap --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/bootstrap.bundle.min.js\"></script><!-- FastClick --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/fastclick.js\"></script><!-- Chart.js --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/Chart.min.js\"></script><!-- gauge.js --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/gauge.min.js\"></script><!-- bootstrap-progressbar --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/bootstrap-progressbar.min.js\"></script><!-- iCheck --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/icheck.min.js\"></script><!-- Skycons --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/skycons.js\"></script><!-- Flot --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/jquery.flot.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/jquery.flot.pie.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/jquery.flot.time.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/jquery.flot.stack.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/jquery.flot.resize.js\"></script><!-- Flot plugins --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/jquery.flot.orderBars.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/jquery.flot.spline.min.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/curvedLines.js\"></script><!-- DateJS --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/date.js\"></script><!-- JQVMap --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/jquery.vmap.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/jquery.vmap.world.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/jquery.vmap.sampledata.js\"></script><!-- bootstrap-daterangepicker --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/moment.min.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/daterangepicker.js\"></script><!-- Custom Theme Scripts --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/js/custom.min.js\"></script><!-- <td> --></div></td><td><div id=\"ER1\" class=\"widget panelbox ER\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"https://img.icons8.com/color/48/000000/parse-from-clipboard.png\" width=\"40px\"><p class=\"request-title\">Skills <span class=\"glyphicon glyphicon-pencil glyphicon-icon\"></span> <a id=\"erhelp\" href=\"#\"><i class=\"fa fa-question-circle ERhelp\" title=\"Ask for Help\" aria-hidden=\"true\"></i> </a><!-- <a id=\"ERReport\" href=\"#\">\r" +
     "\n" +
-    "								</div> \r" +
+    "											<i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\"\r" +
     "\n" +
-    "							</div>\r" +
+    "												aria-hidden=\"true\"></i>\r" +
     "\n" +
-    "						</td>--></tr><tr><td><link href=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/css/custom.min.css\" rel=\"stylesheet\"><div class=\"nav-md\"><div class=\"container body\"><div class=\"main_container\"><!-- page content --><div role=\"main\"><div class=\"row\"><div class=\"col-md-4 col-sm-4\" style=\"width: 480px;height: 324px\"><div class=\"x_panel tile fixed_height_340\" style=\"height: 325px\"><div class=\"x_title\"><h2 style=\"color: #0f548c\">My Trainings</h2><ul class=\"nav navbar-right panel_toolbox\"><li><a class=\"collapse-link\"><i class=\"fa fa-chevron-up\"></i></a></li><li class=\"dropdown\"><a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\"><i class=\"fa fa-wrench\"></i></a><div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\"><a class=\"dropdown-item\" href=\"#\">Settings 1</a> <a class=\"dropdown-item\" href=\"#\">Settings 2</a></div></li><li><a class=\"close-link\"><i class=\"fa fa-close\"></i></a></li></ul><div class=\"clearfix\"></div></div><div class=\"x_content\"><div class=\"dashboard-widget-content\"><ul class=\"quick-list\"><li><i class=\"fa fa-calendar-o\"></i> <a href=\"#\"></a></li><li><i class=\"fa fa-bars\"></i> <a href=\"#\">Java - 18%</a></li><li><i class=\"fa fa-bar-chart\"></i> <a href=\"#\">Python - 44%</a></li><li><i class=\"fa fa-line-chart\"></i> <a href=\"#\">Helix Platform - 62%</a></li><li><i class=\"fa fa-bar-chart\"></i> <a href=\"#\">On Going Trainings</a></li><li><i class=\"fa fa-line-chart\"></i> <a href=\"#\">Start New</a></li></ul><div class=\"sidebar-widget\"><h4>Training Completion</h4><canvas width=\"150\" height=\"80\" id=\"chart_gauge_01\" class=\"\" style=\"width: 160px; height: 100px\"></canvas><div class=\"goal-wrapper\"><span id=\"gauge-text\" class=\"gauge-value pull-left\">40%</span><!--                          <span class=\"gauge-value pull-left\">%</span>--> <span id=\"goal-text\" class=\"goal-value pull-right\">6000%</span></div></div></div></div></div></div></div></div></div></div></div><div class=\"row\"><!-- jQuery --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.min.js\"></script><!-- Bootstrap --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/bootstrap.bundle.min.js\"></script><!-- FastClick --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/fastclick.js\"></script><!-- Chart.js --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/Chart.min.js\"></script><!-- gauge.js --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/gauge.min.js\"></script><!-- bootstrap-progressbar --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/bootstrap-progressbar.min.js\"></script><!-- iCheck --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/icheck.min.js\"></script><!-- Skycons --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/skycons.js\"></script><!-- Flot --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.pie.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.time.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.stack.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.resize.js\"></script><!-- Flot plugins --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.orderBars.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.spline.min.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/curvedLines.js\"></script><!-- DateJS --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/date.js\"></script><!-- JQVMap --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.vmap.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.vmap.world.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.vmap.sampledata.js\"></script><!-- bootstrap-daterangepicker --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/moment.min.js\"></script><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/daterangepicker.js\"></script><!-- Custom Theme Scripts --><script src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/js/custom.min.js\"></script><!-- <td> --></div></td><td><div id=\"ER1\" class=\"panelbox ER\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/png/016-web-management.png\" width=\"40px\"><p class=\"request-title\">VmWare <span class=\"glyphicon glyphicon-pencil glyphicon-icon\"></span> <a id=\"erhelp\" href=\"#\"><i class=\"fa fa-question-circle ERhelp\" title=\"Ask for Help\" aria-hidden=\"true\"></i> </a><a id=\"ERReport\" href=\"#\"><i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\" aria-hidden=\"true\"></i> </a><a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\" style=\"width: 378px\"><div class=\"description\" style=\"height: 192px\"><table id=\"Table1\" class=\"table table-striped table-hover custom-table\"><thead><th></th><th>Name</th><th>Description</th></thead><tbody ng-repeat=\"onedata in myData\"><tr><td><input type=\"checkbox\" name=\"\"></td><td>{{onedata['11093002']}}</td><td>{{onedata['8']}}</td></tr></tbody></table></div></div></div><div class=\"RequestButtons\"><div class=\"large-image\"><img src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/png/016-web-management.png\" style=\"margin-left: 142px\"></div><div class=\"buttons\"><div class=\"count\" style=\"margin-left: 132px\"><div class=\"active\"><b>03</b><br>Active</div><br><div class=\"disabled\"><b>12</b><br>Disabled</div></div></div></div><br><br><br><div class=\"request-button-bottom\"><button class=\"btn btn-primary\" id=\"btnGet\" ng-click=\"clickButton()\" style=\"margin-left: 10px;margin-right: 5px\">Request</button> <button class=\"btn btn-warning\" style=\"margin-left: 5px;margin-right: 5px\">Refresh</button><!-- <button class=\"btn btn-success\"\r" +
-    "\n" +
-    "												style=\"margin-left: 5px;margin-right: 5px;\">Launch</button>\r" +
-    "\n" +
-    "											<button class=\"btn btn-danger\"\r" +
-    "\n" +
-    "												style=\"margin-left: 5px;margin-right: 5px;\">Release</button> --></div></div></div><!--ER HTML--></div></td><td><div id=\"ER1\" class=\"panelbox ER\" style=\"margin-left: 12px\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/png/016-web-management.png\" width=\"40px\"><p class=\"request-title\">VmWare <span class=\"glyphicon glyphicon-pencil glyphicon-icon\"></span> <a id=\"erhelp\" href=\"#\"><i class=\"fa fa-question-circle ERhelp\" title=\"Ask for Help\" aria-hidden=\"true\"></i> </a><a id=\"ERReport\" href=\"#\"><i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\" aria-hidden=\"true\"></i> </a><a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\" style=\"width: 378px\"><div class=\"description\" style=\"height: 250px\"><table id=\"Table1\" class=\"table table-striped table-hover custom-table\"><thead><th>Name</th><th>Description</th></thead><tbody ng-repeat=\"data in checkedData\"><tr><td>{{data[11093002]}}</td><!-- <td>{{onedata['11093002']}}</td>\r" +
-    "\n" +
-    "																<td>{{onedata['8']}}</td> --></tr></tbody></table></div></div></div><!-- <div class=\"RequestButtons\">\r" +
+    "										</a> --> <a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\" style=\"width: 378px\"><div class=\"description\" style=\"height: 210px\"><table id=\"Table1\" class=\"table table-striped table-hover custom-table\"><thead><th></th><th>Technology</th><th>Description</th></thead><tbody ng-repeat=\"onedata in myData\"><!-- <tbody> --><tr><td><input type=\"checkbox\" name=\"\"></td><td>{{onedata['11093002']}}</td><!-- <td>{{onedata['10740003']}}</td> --><td>{{onedata['8']}}</td></tr></tbody></table></div></div></div><!-- <div class=\"RequestButtons\">\r" +
     "\n" +
     "											<div class=\"large-image\">\r" +
     "\n" +
-    "												<img src=\"/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/png/016-web-management.png\"\r" +
+    "												<img src=\"https://img.icons8.com/color/48/000000/pin-2.png\"\r" +
     "\n" +
     "													style=\"margin-left: 142px\">\r" +
     "\n" +
@@ -265,383 +163,415 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
     "\n" +
     "											</div>\r" +
     "\n" +
-    "										</div> --><!-- <br>\r" +
+    "										</div> --><br><br><br><div class=\"request-button-bottom\"><button class=\"btn btn-primary\" id=\"btnGet\" ng-click=\"clickButton()\" style=\"margin-left: 10px;margin-right: 5px\">Add</button> <button class=\"btn btn-warning\" style=\"margin-left: 5px;margin-right: 5px\">Refresh</button></div></div></div><!--ER HTML--></div></td><td><div id=\"ER1\" class=\"widget panelbox ER\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"/com.vyom.vyomlib/resources/MyPage_Vyom3/images1/png/018-search-engine.png\" width=\"40px\"><p class=\"request-title\">My Skills <span class=\"glyphicon glyphicon-pencil glyphicon-icon\"></span> <a id=\"erhelp\" href=\"#\"><i class=\"fa fa-question-circle ERhelp\" title=\"Ask for Help\" aria-hidden=\"true\"></i> </a><!-- <a id=\"ERReport\" href=\"#\">\r" +
     "\n" +
-    "										<br>\r" +
+    "											<i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\"\r" +
     "\n" +
-    "										<br> --><div class=\"request-button-bottom\" style=\"float: right; margin-right: 15px\"><button class=\"btn btn-primary\" id=\"btnGet\" ng-click=\"clickButton()\" style=\"margin-left: 5px\">Request</button><br><button class=\"btn btn-warning\" style=\"margin-left: 5px\">Refresh</button><br><button class=\"btn btn-success\" style=\"margin-left: 5px\">Launch</button><br><button class=\"btn btn-danger\" style=\"margin-left: 5px\">Release</button></div></div></div><!--ER HTML--></div></td><!-- </td> --></tr></table></div></div></div></body></html>"
+    "												aria-hidden=\"true\"></i>\r" +
+    "\n" +
+    "										</a> --> <a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\" style=\"width: 378px\"><div class=\"description\" style=\"height: 210px\"><table id=\"Table2\" class=\"table table-striped table-hover custom-table\"><thead><th></th><th>ID</th><th>Technology</th></thead><tbody ng-repeat=\"data in checkedData\"><!-- <tbody> --><tr></tr><tr><td><input type=\"checkbox\" name=\"\"></td><td>{{data[1]}}</td><td>{{data[11093002]}}</td><!-- <td>{{data[10740003]}}</td> --></tr><!-- <tr>\r" +
+    "\n" +
+    "																<td><input type=\"checkbox\" name=\"\" /></td>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "																<td>Angular</td>\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "																<td>Version 9</td>\r" +
+    "\n" +
+    "															</tr> --></tbody></table></div></div></div><!-- <div class=\"RequestButtons\">\r" +
+    "\n" +
+    "											<div class=\"large-image\">\r" +
+    "\n" +
+    "												<img src=\"https://img.icons8.com/color/48/000000/pin-2.png\"\r" +
+    "\n" +
+    "													style=\"margin-left: 142px\">\r" +
+    "\n" +
+    "											</div>\r" +
+    "\n" +
+    "											<div class=\"buttons\">\r" +
+    "\n" +
+    "												<div class=\"count\" style=\"margin-left: 132px;\">\r" +
+    "\n" +
+    "													<div class=\"active\">\r" +
+    "\n" +
+    "														<b>03</b><br>Active\r" +
+    "\n" +
+    "													</div>\r" +
+    "\n" +
+    "													<br>\r" +
+    "\n" +
+    "													<div class=\"disabled\">\r" +
+    "\n" +
+    "														<b>12</b><br>Disabled\r" +
+    "\n" +
+    "													</div>\r" +
+    "\n" +
+    "												</div>\r" +
+    "\n" +
+    "											</div>\r" +
+    "\n" +
+    "										</div> --><br><br><br><div class=\"request-button-bottom\"><button class=\"btn btn-primary\" id=\"btnRmv\" ng-click=\"clickButton1()\" style=\"margin-left: 5px\">Remove</button> <button class=\"btn btn-warning\" style=\"margin-left: 5px\">Refresh</button></div></div></div><!--ER HTML--></div></td><!-- </td> --></tr></table></div></div></div><!-- metro ui --><script src=\"https://cdn.metroui.org.ua/v4.3.2/js/metro.min.js\"></script></body></html>"
   );
 
 
-  $templateCache.put('scripts/view-components/draggable/com-vyom-vyomlib-kanban1-design.directive.html',
-    "<h4>Kanban1</h4>"
+  $templateCache.put('scripts/view-components/dashboard1/com-vyom-vyomlib-inspector-dashboard1-bgcolor.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<select ng-model=\"HChange\" ng-options=\"x for x in names\"></select></label>"
   );
 
 
-  $templateCache.put('scripts/view-components/draggable/com-vyom-vyomlib-kanban1.directive.html',
-    "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link href=\"https://fonts.googleapis.com/css?family=Lato\" rel=\"stylesheet\"><link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\"><title>Kanban</title><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban1/dist/jkanban4.css\"><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban1/dist/jkanban_form.css\"><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban1/dist/card_layout1.css\"><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban1/dist/jkanban_material_popup1.css\"><script src=\"/com.vyom.vyomlib/resources/kanban1/dist/jkanban.js\"></script></head><style>body {\r" +
+  $templateCache.put('scripts/view-components/dashboard1/com-vyom-vyomlib-inspector-dashboard1-icon.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<select ng-model=\"HChange\" ng-options=\"x for x in names\"></select></label>"
+  );
+
+
+  $templateCache.put('scripts/view-components/hierarchy/com-vyom-vyomlib-hierarchy-design.directive.html',
+    "<span class=\"d-icon-word_square\"></span>"
+  );
+
+
+  $templateCache.put('scripts/view-components/hierarchy/com-vyom-vyomlib-hierarchy.directive.html',
+    "<!DOCTYPE html><html lang=\"en\"><head><link href=\"https://www.jqueryscript.net/css/jquerysctipttop.css\" rel=\"stylesheet\" type=\"text/css\"><style>body {\r" +
     "\n" +
-    "        font-family: \"Lato\";\r" +
+    "            background-color: #fafafa;\r" +
     "\n" +
-    "        margin: 0;\r" +
+    "            font-family: 'Roboto';\r" +
     "\n" +
-    "        padding: 0;\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "        overflow:overlay;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "      }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      .modal.fade .modal-dialog {\r" +
-    "\n" +
-    "    transition: -webkit-transform .3s ease-out;\r" +
-    "\n" +
-    "    transition: transform .3s ease-out;\r" +
-    "\n" +
-    "    transition: transform .3s ease-out,-webkit-transform .3s ease-out;\r" +
-    "\n" +
-    "    -webkit-transform: translate(0,-50px);\r" +
-    "\n" +
-    "    transform: translate(0,-50px);\r" +
-    "\n" +
-    "}\r" +
+    "        }\r" +
     "\n" +
     "\r" +
     "\n" +
-    "\r" +
+    "        button {\r" +
+    "\n" +
+    "            background-color: #fafafa;\r" +
+    "\n" +
+    "            font-family: 'Roboto';\r" +
+    "\n" +
+    "        }\r" +
     "\n" +
     "\r" +
     "\n" +
-    "      .fade:not(.show){\r" +
+    "        button:active,\r" +
     "\n" +
-    "        opacity: 100%;\r" +
+    "        button.onclick {\r" +
     "\n" +
-    "        background: #0c0c0c26;\r" +
+    "            background-color: #3498db;\r" +
     "\n" +
-    "      }\r" +
+    "            font-family: 'Roboto';\r" +
     "\n" +
-    "\r" +
-    "\n" +
-    "      #myKanban {\r" +
-    "\n" +
-    "        overflow-x: auto;\r" +
-    "\n" +
-    "        padding: 20px 0;\r" +
-    "\n" +
-    "        /* background-color: #6d6d6d; */\r" +
-    "\n" +
-    "        border-top-style: groove;\r" +
-    "\n" +
-    "      }\r" +
-    "\n" +
-    "      .bkgclr\r" +
-    "\n" +
-    "      {\r" +
-    "\n" +
-    "        background-color: #6d6d6d;\r" +
-    "\n" +
-    "        height: 1000px;\r" +
-    "\n" +
-    "      }\r" +
+    "        }\r" +
     "\n" +
     "\r" +
     "\n" +
-    "      .success {\r" +
+    "        button {\r" +
     "\n" +
-    "        background: #00b961;\r" +
+    "            outline: 0px;\r" +
     "\n" +
-    "      }\r" +
+    "            border: 0px;\r" +
     "\n" +
-    "\r" +
-    "\n" +
-    "      .info {\r" +
-    "\n" +
-    "        background: #2a265f;\r" +
-    "\n" +
-    "      }\r" +
+    "        }\r" +
     "\n" +
     "\r" +
     "\n" +
-    "      .warning {\r" +
+    "        .ilearnright {\r" +
     "\n" +
-    "        background: #f4ce46;\r" +
+    "            /*width: 34%;*/\r" +
     "\n" +
-    "      }\r" +
+    "            /*margin-right: 15%;*/\r" +
     "\n" +
-    "\r" +
+    "            float: right;\r" +
     "\n" +
-    "      .error {\r" +
-    "\n" +
-    "        background: #fb7d44;\r" +
-    "\n" +
-    "      }</style><body><div><div id=\"myKanban\"></div><div><div class=\"email\" onclick=\"this.classList.add('expand')\"><div class=\"from\"><div class=\"from-contents\"><div class=\"avatar me\"></div><div class=\"name\">+ New Ticket</div></div></div><div class=\"to\"><div class=\"to-contents\"><div class=\"top\"><div class=\"avatar-large me\"></div><div class=\"name-large\">New Ticket</div><div class=\"x-touch\" onclick=\"document.querySelector('.email').classList.remove('expand');event.stopPropagation();\"><div class=\"x\"><div class=\"line1\"></div><div class=\"line2\"></div></div></div></div><div class=\"bottom\"><div id=\"myForm1\"><div class=\"form-container\"><label><b>Requestor</b></label><input type=\"text\" id=\"searchTxt\" placeholder=\"Requestor\" name=\"email1\" required><label><b>Summary</b></label><input type=\"text\" placeholder=\"Enter Summary\" name=\"psw1\" required> <button class=\"btn btn-success\" id=\"addToDo\">Create</button></div><!-- <button type=\"button\" class=\"btn cancel\" onclick=\"closeForm()\">Close</button> --></div></div><div class=\"row\"></div></div></div></div></div></div><script>function openForm() {\r" +
-    "\n" +
-    "  document.getElementById(\"myForm\").style.display = \"block\";\r" +
-    "\n" +
-    "}\r" +
+    "        }\r" +
     "\n" +
     "\r" +
     "\n" +
-    "function closeForm() {\r" +
+    "        .ilearnleft {\r" +
     "\n" +
-    "  document.getElementById(\"myForm\").style.display = \"none\";\r" +
+    "            /*width: 66%;*/\r" +
     "\n" +
-    "}</script><script>var KanbanTest = new jKanban({\r" +
+    "            float: left;\r" +
     "\n" +
-    "        element: \"#myKanban\",\r" +
+    "            padding-top: 10px;\r" +
     "\n" +
-    "        gutter: \"10px\",\r" +
+    "        }\r" +
     "\n" +
-    "        widthBoard: \"512px\",\r" +
+    "\r" +
     "\n" +
-    "        itemHandleOptions:{\r" +
+    "        .overlay {\r" +
     "\n" +
-    "          enabled: true,\r" +
+    "            bottom: 0;\r" +
     "\n" +
-    "        },\r" +
+    "            left: 0;\r" +
     "\n" +
-    "        click: function(el) {\r" +
+    "            position: fixed;\r" +
     "\n" +
-    "          console.log(\"Trigger on all items click!\");\r" +
+    "            right: 0;\r" +
     "\n" +
-    "        },\r" +
+    "            top: 0;\r" +
     "\n" +
-    "        dropEl: function(el, target, source, sibling){\r" +
+    "            background-color: #000;\r" +
     "\n" +
-    "          console.log(target.parentElement.getAttribute('data-id'));\r" +
+    "            opacity: .45;\r" +
     "\n" +
-    "          console.log(el, target, source, sibling)\r" +
+    "        }\r" +
     "\n" +
-    "          // alert(target.parentElement.getAttribute('data-id'));\r" +
+    "\r" +
     "\n" +
-    "          var parentcardid = target.parentElement.getAttribute('data-id');\r" +
+    "        .titletext {\r" +
     "\n" +
-    "            if(parentcardid == \"_working\")\r" +
+    "            font-size: 25px;\r" +
     "\n" +
-    "            {\r" +
+    "            padding: 12px 20px 12px 40px;\r" +
     "\n" +
-    "              window.clickButton1();\r" +
+    "            color: #b8860b;\r" +
+    "\n" +
+    "            /*!Important*/\r" +
+    "\n" +
+    "        }</style><style>* {\r" +
+    "\n" +
+    "            box-sizing: border-box;\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        #myTable {\r" +
+    "\n" +
+    "            border-collapse: collapse;\r" +
+    "\n" +
+    "            width: 100%;\r" +
+    "\n" +
+    "            border: 1px solid #ddd;\r" +
+    "\n" +
+    "            font-size: 14px;\r" +
+    "\n" +
+    "            /*background-color:#ffffff47;*/\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        #myTable th {\r" +
+    "\n" +
+    "            cursor: pointer;\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        #myTable th,\r" +
+    "\n" +
+    "        #myTable td {\r" +
+    "\n" +
+    "            text-align: left;\r" +
+    "\n" +
+    "            padding: 12px;\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        #myTable th {\r" +
+    "\n" +
+    "            background-color: #005293;\r" +
+    "\n" +
+    "            /*#3498db;*/\r" +
+    "\n" +
+    "            color: white;\r" +
+    "\n" +
+    "            background-clip: none;\r" +
+    "\n" +
+    "            border-top-color: #005293;\r" +
+    "\n" +
+    "            border-right-color: initial;\r" +
+    "\n" +
+    "            border-left-color: initial;\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        #myTable td:last-child {\r" +
+    "\n" +
+    "            border-bottom-right-radius: 8px;\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        #myTable th:last-child {\r" +
+    "\n" +
+    "            border-top-right-radius: 8px;\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        #myTable th:nth-child(1) {\r" +
+    "\n" +
+    "            border-top-left-radius: 8px;\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        #myTable tr {\r" +
+    "\n" +
+    "            border-bottom: 1px solid #ddd;\r" +
+    "\n" +
+    "            border-radius: 8px;\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        #myTable tr.header,\r" +
+    "\n" +
+    "        #myTable tr:hover {\r" +
+    "\n" +
+    "            background-color: #f1f1f1;\r" +
+    "\n" +
+    "        }</style><script>function sortTable(n) {\r" +
+    "\n" +
+    "            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;\r" +
+    "\n" +
+    "            table = document.getElementById(\"myTable\");\r" +
+    "\n" +
+    "            switching = true;\r" +
+    "\n" +
+    "            //Set the sorting direction to ascending:\r" +
+    "\n" +
+    "            dir = \"asc\";\r" +
+    "\n" +
+    "            /*Make a loop that will continue until\r" +
+    "\n" +
+    "            no switching has been done:*/\r" +
+    "\n" +
+    "            while (switching) {\r" +
+    "\n" +
+    "                //start by saying: no switching is done:\r" +
+    "\n" +
+    "                switching = false;\r" +
+    "\n" +
+    "                rows = table.rows;\r" +
+    "\n" +
+    "                /*Loop through all table rows (except the\r" +
+    "\n" +
+    "                first, which contains table headers):*/\r" +
+    "\n" +
+    "                for (i = 1; i < (rows.length - 1); i++) {\r" +
+    "\n" +
+    "                    //start by saying there should be no switching:\r" +
+    "\n" +
+    "                    shouldSwitch = false;\r" +
+    "\n" +
+    "                    /*Get the two elements you want to compare,\r" +
+    "\n" +
+    "                    one from current row and one from the next:*/\r" +
+    "\n" +
+    "                    x = rows[i].getElementsByTagName(\"TD\")[n];\r" +
+    "\n" +
+    "                    y = rows[i + 1].getElementsByTagName(\"TD\")[n];\r" +
+    "\n" +
+    "                    /*check if the two rows should switch place,\r" +
+    "\n" +
+    "                    based on the direction, asc or desc:*/\r" +
+    "\n" +
+    "                    if (dir == \"asc\") {\r" +
+    "\n" +
+    "                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {\r" +
+    "\n" +
+    "                            //if so, mark as a switch and break the loop:\r" +
+    "\n" +
+    "                            shouldSwitch = true;\r" +
+    "\n" +
+    "                            break;\r" +
+    "\n" +
+    "                        }\r" +
+    "\n" +
+    "                    } else if (dir == \"desc\") {\r" +
+    "\n" +
+    "                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {\r" +
+    "\n" +
+    "                            //if so, mark as a switch and break the loop:\r" +
+    "\n" +
+    "                            shouldSwitch = true;\r" +
+    "\n" +
+    "                            break;\r" +
+    "\n" +
+    "                        }\r" +
+    "\n" +
+    "                    }\r" +
+    "\n" +
+    "                }\r" +
+    "\n" +
+    "                if (shouldSwitch) {\r" +
+    "\n" +
+    "                    /*If a switch has been marked, make the switch\r" +
+    "\n" +
+    "                    and mark that a switch has been done:*/\r" +
+    "\n" +
+    "                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);\r" +
+    "\n" +
+    "                    switching = true;\r" +
+    "\n" +
+    "                    //Each time a switch is done, increase this count by 1:\r" +
+    "\n" +
+    "                    switchcount++;\r" +
+    "\n" +
+    "                } else {\r" +
+    "\n" +
+    "                    /*If no switching has been done AND the direction is \"asc\",\r" +
+    "\n" +
+    "                    set the direction to \"desc\" and run the while loop again.*/\r" +
+    "\n" +
+    "                    if (switchcount == 0 && dir == \"asc\") {\r" +
+    "\n" +
+    "                        dir = \"desc\";\r" +
+    "\n" +
+    "                        switching = true;\r" +
+    "\n" +
+    "                    }\r" +
+    "\n" +
+    "                }\r" +
     "\n" +
     "            }\r" +
     "\n" +
-    "        },\r" +
+    "        }</script></head><body style=\"background-color: white\"><div class=\"row\"><div class=\"col-sm-12\"><script src=\"https://code.jquery.com/jquery-3.1.1.min.js\"></script><script src=\"/com.vyom.vyomlib/resources/hierarchy-resources/stiffchart.js\"></script><script>$(document).ready(function() {\r" +
     "\n" +
-    "        \r" +
-    "\n" +
-    "       \r" +
-    "\n" +
-    "        addItemButton: true,\r" +
-    "\n" +
-    "        boards: [\r" +
-    "\n" +
-    "          {\r" +
-    "\n" +
-    "            id: \"_todo\",\r" +
-    "\n" +
-    "            title: \"New Tickets\",\r" +
-    "\n" +
-    "            class: \"info,good\",\r" +
-    "\n" +
-    "            dragTo: [\"_working\"],\r" +
-    "\n" +
-    "            item: [\r" +
+    "                    $('#your-chart-name').stiffChart({\r" +
     "\n" +
     "\r" +
     "\n" +
-    "            {\r" +
+    "                    });\r" +
     "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2321</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"new\"></div><span class=\"progress-text\">New</span></div><h6>Summary</h6><div id=\"demo1\" class=\"sumcontent\">Database Issue</h6><button class=\"btn1\" ng-click=\"ViewButton()\">View</button></div></div></div></div>'\r" +
+    "                });</script><script type=\"text/javascript\">var _gaq = _gaq || [];\r" +
     "\n" +
-    "            },\r" +
+    "                _gaq.push(['_setAccount', 'UA-36251023-1']);\r" +
     "\n" +
-    "\r" +
+    "                _gaq.push(['_setDomainName', 'jqueryscript.net']);\r" +
     "\n" +
-    "            {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2322</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"rejected\"></div><span class=\"progress-text\">Rejected</span></div><h6>Summary</h6><div class=\"sumcontent\">Email engine not working</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "            },\r" +
-    "\n" +
-    "            \r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2324</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"completed\"></div><span class=\"progress-text\">Completed</span></div><h6>Summary</h6><div class=\"sumcontent\">Password Reset</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "            },\r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2325</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"new\"></div><span class=\"progress-text\">New</span></div><h6>Summary</h6><div class=\"sumcontent\">Lan issue</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "            },\r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2326</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"new\"></div><span class=\"progress-text\">New</span></div><h6>Summary</h6><div class=\"sumcontent\">Lan issue</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "            },\r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2327</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"new\"></div><span class=\"progress-text\">New</span></div><h6>Summary</h6><div class=\"sumcontent\">Lan issue</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "            },\r" +
-    "\n" +
-    "            ]\r" +
-    "\n" +
-    "          },\r" +
-    "\n" +
-    "          {\r" +
+    "                _gaq.push(['_trackPageview']);\r" +
     "\n" +
     "\r" +
     "\n" +
-    "            id: \"_working\",\r" +
+    "                (function() {\r" +
     "\n" +
-    "            title: \"In Progress\",\r" +
+    "                    var ga = document.createElement('script');\r" +
     "\n" +
-    "            class: \"warning\",\r" +
+    "                    ga.type = 'text/javascript';\r" +
     "\n" +
-    "            item: [\r" +
+    "                    ga.async = true;\r" +
     "\n" +
-    "              {\r" +
+    "                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\r" +
     "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2332</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"progress\"></div><span class=\"progress-text\">In Progress</span></div><h6>Summary</h6><div class=\"sumcontent\">AD locked</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
+    "                    var s = document.getElementsByTagName('script')[0];\r" +
     "\n" +
-    "              },\r" +
+    "                    s.parentNode.insertBefore(ga, s);\r" +
     "\n" +
-    "              {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2333</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"progress\"></div><span class=\"progress-text\">In Progress</span></div><h6>Summary</h6><div class=\"sumcontent\">AD locked</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "              },\r" +
-    "\n" +
-    "              {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2324</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"progress\"></div><span class=\"progress-text\">In Progress</span></div><h6>Summary</h6><div class=\"sumcontent\">AD locked</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "              },\r" +
-    "\n" +
-    "              {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2325</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"progress\"></div><span class=\"progress-text\">In Progress</span></div><h6>Summary</h6><div class=\"sumcontent\">AD locked</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "              },\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            ]\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "          },\r" +
-    "\n" +
-    "          {\r" +
-    "\n" +
-    "            id: \"_done\",\r" +
-    "\n" +
-    "            title: \"Completed/Closed\",\r" +
-    "\n" +
-    "            class: \"success\",\r" +
-    "\n" +
-    "            dragTo: [\"_working\"],\r" +
-    "\n" +
-    "            item: [\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "              {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2323</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"completed\"></div><span class=\"progress-text\">Completed</span></div><h6>Summary</h6><div class=\"sumcontent\">AD locked</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "              },\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            ]\r" +
-    "\n" +
-    "          }\r" +
-    "\n" +
-    "        ]\r" +
-    "\n" +
-    "      });\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      var toDoButton = document.getElementById(\"addToDo\");\r" +
-    "\n" +
-    "      toDoButton.addEventListener(\"click\", function() {\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "        // var div11 = document.createElement('div');\r" +
-    "\n" +
-    "        // div11.innerHTML = 'Hi there!';\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        KanbanTest.addElement(\"_todo\", {\r" +
-    "\n" +
-    "          \r" +
-    "\n" +
-    "          \r" +
-    "\n" +
-    "          title: '<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2321</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"progress\"></div><span class=\"progress-text\">In Progress</span></div><h6>Summary</h6><div class=\"sumcontent\">Callbacks & Closures</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "                 \r" +
-    "\n" +
-    "        });\r" +
-    "\n" +
-    "      });\r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "      var toDoButton = document.getElementById(\"addToDo1\");\r" +
-    "\n" +
-    "      toDoButton.addEventListener(\"click\", function() {\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "        KanbanTest.addElement(\"_todo\", {\r" +
-    "\n" +
-    "          title: \"Test Add\"\r" +
-    "\n" +
-    "      \r" +
-    "\n" +
-    "        });\r" +
-    "\n" +
-    "      });\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      var removeElement = document.getElementById(\"removeElement\");\r" +
-    "\n" +
-    "      removeElement.addEventListener(\"click\", function() {\r" +
-    "\n" +
-    "        KanbanTest.removeElement(\"_test_delete\");\r" +
-    "\n" +
-    "      });\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      var allEle = KanbanTest.getBoardElements(\"_todo\");\r" +
-    "\n" +
-    "      allEle.forEach(function(item, index) {\r" +
-    "\n" +
-    "        //console.log(item);\r" +
-    "\n" +
-    "      });</script></body></html>"
+    "                })();</script><div class=\"chart-container\"><div id=\"your-chart-name\"><div class=\"stiff-chart-inner\"><div class=\"stiff-chart-level\" data-level=\"01\"><div class=\"stiff-main-parent\"><ul><li data-parent=\"a\"><div id=\"coma\" class=\"the-chart\" onclick=\"document.getElementById('piechartdefault').innerHTML='';document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><!-- onclick=\"selectcompany(this.id)\"> --> <img src=\"../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/stats_area_chart.png\" alt=\"\"><br><p style=\"font-size: 18px; font-family:sans-serif\">Bahrain Credit</p></div></li><li data-parent=\"b\"><div id=\"comb\" class=\"the-chart\" onclick=\"document.getElementById('piechartdefault').innerHTML='';document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><img src=\"../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/3d_file.png\" alt=\"\"><br><p style=\"font-size: 18px; font-family:sans-serif\">TAC</p></div></li><li data-parent=\"c\"><div id=\"comc\" class=\"the-chart\" onclick=\"document.getElementById('piechartdefault').innerHTML='';document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><img src=\"../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/service_waste_disposal.png\" alt=\"\"><br><p style=\"font-size: 18px; font-family:sans-serif\">TCL</p></div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"02\"><div class=\"stiff-child\" data-child-from=\"a\"><ul><li data-parent=\"a01\" id=\"deptInitiatives\"><div class=\"the-chart\" id=\"Initiatives\" onclick=\"selectcompany(this.id,'Initiatives')\"><p style=\"font-size:17px; font-family: sans-serif\">Initiatives &nbsp; <img src=\"../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/calendar1.png\" alt=\"Initiatives\"></p></div></li><li data-parent=\"a02\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><p style=\"font-size:17px; font-family: sans-serif\">Projects &nbsp; <img src=\"../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/deal.png\" alt=\"\"></p></div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"02\"><div class=\"stiff-child\" data-child-from=\"b\"><ul><li data-parent=\"b01\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Dept 1</div></li><li data-parent=\"b02\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Dept 2</div></li><li data-parent=\"b03\"><div class=\"the-chart\">Dept 3</div></li><li data-parent=\"b04\"><div class=\"the-chart\">Dept 4</div></li><li data-parent=\"b05\"><div class=\"the-chart\">Dept 5</div></li><li data-parent=\"b06\"><div class=\"the-chart\">Dept 6</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"02\"><div class=\"stiff-child\" data-child-from=\"c\"><ul><li data-parent=\"c01\"><div class=\"the-chart\" id=\"comcdept1\" onclick=\"selectcompany(this.id,'change')\">Dept 1</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"03\"><div class=\"stiff-child\" data-child-from=\"a01\"><ul><li data-parent=\"a0101\"><div class=\"the-chart\" id=\"InitiativesNewBuilding\" onclick=\"selectcompany(this.id,'InitiativesNewBuilding')\"><p style=\"font-size:14px; font-family: sans-serif\">New Building &nbsp; <img src=\"../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/bank.png\" alt=\"Initiatives\"></p></div></li><li data-parent=\"a0102\"><div class=\"the-chart\" id=\"InitiativesNewBranch\" onclick=\"selectcompany(this.id,'InitiativesNewBranch')\"><p style=\"font-size:14px; font-family: sans-serif\">New Branch &nbsp; <img src=\"../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/key.png\" alt=\"New Branch\"></p></div></li><li data-parent=\"a0103\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><p style=\"font-size:14px; font-family: sans-serif\">Credit Card &nbsp; &nbsp;&nbsp;&nbsp; <img src=\"../../com.vyomlabs.new/resources/images/Hierarchy/credit-card.png\" alt=\"New Credit Card\"></p></div></li><li data-parent=\"a0104\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><p style=\"font-size:14px; font-family: sans-serif\">System &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src=\"../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/settings.png\" alt=\"System Replacement\"></p></div></li><li data-parent=\"a0105\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><p style=\"font-size:14px; font-family: sans-serif\">TISCO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src=\"../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/earth-globe.png\" alt=\"TISCO\"></p></div></li><li data-parent=\"a0106\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><p style=\"font-size:14px; font-family: sans-serif\">NMC &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <img src=\"../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/download.png\" alt=\"NMC\"></p></div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"04\"><div class=\"stiff-child\" data-child-from=\"a0101\"><ul><li data-parent=\"a010101\"><div class=\"the-chart\" id=\"InitiativesNewBuildingMeetings\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingMeetings')\">Meetings</div></li><li data-parent=\"a010102\"><div class=\"the-chart\" id=\"InitiativesNewBuildingMinutesOfMeetings\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingMinutesOfMeetings')\">Minutes of Meetings</div></li><li data-parent=\"a010103\"><div class=\"the-chart\" id=\"InitiativesNewBuildingProjects\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingProjects')\">Projects</div></li><li data-parent=\"a010104\"><div class=\"the-chart\" id=\"InitiativesNewBuildingApprovals\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingApprovals')\">Approvals</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"03\"><div class=\"stiff-child\" data-child-from=\"a02\"><ul><li data-parent=\"a0201\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">New Building</div></li><li data-parent=\"a0202\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">New Building DC-IT</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"04\"><div class=\"stiff-child\" data-child-from=\"a010103\"><ul><li data-parent=\"a020101\"><div class=\"the-chart\" id=\"InitiativesNewBuildingProjectsNewbuildingAdmin\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingProjectsNewbuildingAdmin')\">New Building Admin</div></li><li data-parent=\"a020102\"><a style=\"text-decoration: none;color: inherit\" href=\"https://201911080406190633.my.salesforce.com/a652v000000Ptke\" target=\"_blank\"><div class=\"the-chart\" id=\"InitiativesNewBuildingProjectsNewBuldingDCIT\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingProjectsNewBuldingDCIT')\">New Building DC-IT</div></a></li><li data-parent=\"a020103\"><div class=\"the-chart\" id=\"InitiativesNewBuildingProjectsNewBuildingemployeesHR\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingProjectsNewBuildingemployeesHR')\">New Building Employees-HR</div></li><li data-parent=\"a020104\"><div class=\"the-chart\" id=\"InitiativesNewBuildingProjectsNewBuildingInfoSecurity\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingProjectsNewBuildingInfoSecurity')\">New Building Security-Information Security</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"04\"><div class=\"stiff-child\" data-child-from=\"a020102\"><ul><li data-parent=\"a020201\"><div class=\"the-chart\" id=\"InitiativesNewBranchProjectsNewBranchITProjectPlan\" onclick=\"selectcompany(this.id,'InitiativesNewBranchProjectsNewBranchITProjectPlan')\">Project Plan</div></li><li data-parent=\"a020202\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Project Tasks</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"05\"><div class=\"stiff-child\" data-child-from=\"a020201\"><ul><li data-parent=\"a02020101\"><div class=\"the-chart\" id=\"ProjectTasks1\" onclick=\"selectcompany(this.id,'task')\">Project Tasks</div></li><li data-parent=\"a02020102\"><div class=\"the-chart\" id=\"ChangeRequests1\" onclick=\"selectcompany(this.id,'change')\">Change Requests</div></li><li data-parent=\"a02020103\"><div class=\"the-chart\" id=\"HelpDeskTickets1\" onclick=\"selectcompany(this.id,'incident')\">Help Desk Tickets</div></li><li data-parent=\"a02020104\"><div class=\"the-chart\" id=\"Incidentsreporting1\" onclick=\"selectcompany(this.id,'incident')\">Incident Reporting</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"04\"><div class=\"stiff-child\" data-child-from=\"a0102\"><ul><li data-parent=\"a010201\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Meetings</div></li><li data-parent=\"a010202\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Minutes of Meetings</div></li><li data-parent=\"a010203\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Projects</div></li><li data-parent=\"a010204\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Approvals</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"04\"><div class=\"stiff-child\" data-child-from=\"a010203\"><ul><li data-parent=\"a01020301\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">New Branch Admin</div></li><li data-parent=\"a01020302\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">New Branch-IT</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"04\"><div class=\"stiff-child\" data-child-from=\"a01020302\"><ul><li data-parent=\"a0102030201\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Project Plan</div></li><li data-parent=\"a0102030202\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Project Tasks</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"05\"><div class=\"stiff-child\" data-child-from=\"a0102030201\"><ul><li data-parent=\"a010203020101\"><div class=\"the-chart\" id=\"ProjectTasks2\" onclick=\"selectcompany(this.id,'task')\">Project Tasks</div></li><li data-parent=\"a010203020102\"><div class=\"the-chart\" id=\"ChangeRequests2\" onclick=\"selectcompany(this.id,'change')\">Change Requests</div></li><li data-parent=\"a010203020103\"><div class=\"the-chart\" id=\"HelpDeskTickets2\" onclick=\"selectcompany(this.id,'incident')\">Help Desk Tickets</div></li><li data-parent=\"a010203020104\"><div class=\"the-chart\" id=\"Incidentsreporting2\" onclick=\"selectcompany(this.id,'incident')\">Incident Reporting</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"03\"><div class=\"stiff-child\" data-child-from=\"b01\"><ul><li data-parent=\"b0101\"><div class=\"the-chart\" id=\"combdept1\" onclick=\"selectcompany(this.id,'task')\">Dept 1</div></li></ul></div></div></div></div></div></div></div></body></html>"
   );
 
 
@@ -651,7 +581,7 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
 
 
   $templateCache.put('scripts/view-components/iframe/com-vyom-vyomlib-iframe.directive.html',
-    "{{url}}::<br><iframe ng-src=\"{{trustSrc(url)}}\" width=\"100%\" height=\"500px\"></iframe>"
+    "<iframe ng-src=\"{{trustSrc(url)}}\" width=\"100%\" height=\"500px\"></iframe>"
   );
 
 
@@ -661,1227 +591,12 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
 
 
   $templateCache.put('scripts/view-components/iframe2/com-vyom-vyomlib-iframe2.directive.html',
-    "{{url}}::<br><html><body><div style=\"width:{{containerWidth}}px;height:{{containerHeight}}px;position:relative;border:1px solid black;overflow: hidden\"><iframe ng-src=\"{{trustSrc(url)}}\" style=\"position:absolute;width: {{iframeWidth}}px;height:{{iframeHeight}}px;top: {{iframeTop}}px;right: {{iframeRight}}px\" scrolling=\"no\" frameborder=\"no\"></iframe></div></body></html>"
+    "<html><body><div style=\"width:{{containerWidth}}px;height:{{containerHeight}}px;position:relative;border:1px solid black;overflow: hidden\"><iframe ng-src=\"{{trustSrc(url)}}\" style=\"position:absolute;width: {{iframeWidth}}px;height:{{iframeHeight}}px;top: {{iframeTop}}px;right: {{iframeRight}}px\" scrolling=\"no\" frameborder=\"no\"></iframe></div></body></html>"
   );
 
 
-  $templateCache.put('scripts/view-components/kanban2/com-vyom-vyomlib-kanban2-design.directive.html',
-    "<h4>Kanban2</h4>"
-  );
-
-
-  $templateCache.put('scripts/view-components/kanban2/com-vyom-vyomlib-kanban2.directive.html',
-    "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link href=\"https://fonts.googleapis.com/css?family=Lato\" rel=\"stylesheet\"><!-- <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\"> --><!-- Sidebar --><!-- <script src=\"js/jquery.min.js\"></script> --><script src=\"/com.vyom.vyomlib/resources/kanban2/sidebar/js/popper.js\"></script><script src=\"/com.vyom.vyomlib/resources/kanban2/sidebar/js/bootstrap.min.js\"></script><script src=\"/com.vyom.vyomlib/resources/kanban2/sidebar/js/main.js\"></script><link href=\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900\" rel=\"stylesheet\"><link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\"><!-- <link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban2/sidebar/css/style3.css\"> --><!-- Menubar --><!-- <link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban2/menubar/menu2.css\">\r" +
-    "\n" +
-    "    <script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script> --><title>Kanban</title><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban2/dist/jkanban4.css\"><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban2/dist/jkanban_form.css\"><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban2/dist/card_layout1.css\"><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban2/dist/jkanban_material_popup1.css\"><script src=\"/com.vyom.vyomlib/resources/kanban2/dist/jkanban.js\"></script></head><style>body {\r" +
-    "\n" +
-    "        font-family: \"Lato\";\r" +
-    "\n" +
-    "        margin: 0;\r" +
-    "\n" +
-    "        padding: 0;\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "        overflow:overlay;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "      }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      .modal.fade .modal-dialog {\r" +
-    "\n" +
-    "    transition: -webkit-transform .3s ease-out;\r" +
-    "\n" +
-    "    transition: transform .3s ease-out;\r" +
-    "\n" +
-    "    transition: transform .3s ease-out,-webkit-transform .3s ease-out;\r" +
-    "\n" +
-    "    -webkit-transform: translate(0,-50px);\r" +
-    "\n" +
-    "    transform: translate(0,-50px);\r" +
-    "\n" +
-    "}\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      .fade:not(.show){\r" +
-    "\n" +
-    "        opacity: 100%;\r" +
-    "\n" +
-    "        background: #0c0c0c26;\r" +
-    "\n" +
-    "      }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      #myKanban {\r" +
-    "\n" +
-    "        overflow-x: auto;\r" +
-    "\n" +
-    "        /* right: -2278px; */\r" +
-    "\n" +
-    "        position: relative;\r" +
-    "\n" +
-    "        top: -7px;\r" +
-    "\n" +
-    "        left: -5px;\r" +
-    "\n" +
-    "        padding: 7px 0;\r" +
-    "\n" +
-    "        /* background-color: #6d6d6d; */\r" +
-    "\n" +
-    "        /* border-top-style: groove; */\r" +
-    "\n" +
-    "      }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      .bkgclr\r" +
-    "\n" +
-    "      {\r" +
-    "\n" +
-    "        background-color: #6d6d6d;\r" +
-    "\n" +
-    "        height: 1000px;\r" +
-    "\n" +
-    "      }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      .success {\r" +
-    "\n" +
-    "        background: #00b961;\r" +
-    "\n" +
-    "      }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      .info {\r" +
-    "\n" +
-    "        background: #2a265f;\r" +
-    "\n" +
-    "      }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      .warning {\r" +
-    "\n" +
-    "        background: #f4ce46;\r" +
-    "\n" +
-    "      }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      .error {\r" +
-    "\n" +
-    "        background: #fb7d44;\r" +
-    "\n" +
-    "      }</style><body><!-- --------------------------------------------------------------------------------------------------- --><!-- --------------------------------------Menubar Start ------------------------------------------------- --><!-- --------------------------------------------------------------------------------------------------- --><!-- --------------------------------------Menubar End ------------------------------------------------- --><!-- --------------------------------------------------------------------------------------------------- --><!-- --------------------------------------Sidebar Start ------------------------------------------------- --><div class=\"wrapper d-flex align-items-stretch\"><nav id=\"sidebar\" class=\"active\"><div class=\"custom-menu\"><button type=\"button\" id=\"sidebarCollapse\" class=\"btn btn-primary\"><i class=\"fa fa-bars\"></i> <span class=\"sr-only\">Toggle Menu</span></button></div><div class=\"p-4\"><h1><a href=\"index.html\" class=\"logo\">Flash</a></h1><ul class=\"list-unstyled components mb-5\"><li class=\"active\"><a href=\"#\"><span class=\"fa fa-home mr-3\"></span> Cases</a></li><li><a href=\"#\"><span class=\"fa fa-user mr-3\"></span> About</a></li><li><a href=\"#\"><span class=\"fa fa-briefcase mr-3\"></span> Portfolio</a></li><!-- <li>\r" +
-    "\n" +
-    "              <a href=\"#\"><span class=\"fa fa-sticky-note mr-3\"></span> Blog</a>\r" +
-    "\n" +
-    "	          </li> --><li><a href=\"#\"><span class=\"fa fa-paper-plane mr-3\"></span> Contact</a></li></ul><div class=\"mb-5\"><h3 class=\"h6 mb-3\">Subscribe for newsletter</h3><form action=\"#\" class=\"subscribe-form\"><div class=\"form-group d-flex\"><div class=\"icon\"><span class=\"icon-paper-plane\"></span></div><input type=\"text\" class=\"form-control\" placeholder=\"Enter Email Address\"></div></form></div></div></nav><!-- Page Content  --><!-- --------------------------------------------------------------------------------------------------- --><!-- --------------------------------------Sidebar End ------------------------------------------------- --><div><div id=\"myKanban\"></div><div><div class=\"email\" onclick=\"this.classList.add('expand')\"><div class=\"from\"><div class=\"from-contents\"><div class=\"avatar me\"></div><div class=\"name\">+ Create Ticket</div></div></div><div class=\"to\"><div class=\"to-contents\"><div class=\"top\"><div class=\"avatar-large me\"></div><div class=\"name-large\">New Ticket</div><div class=\"x-touch\" onclick=\"document.querySelector('.email').classList.remove('expand');event.stopPropagation();\"><div class=\"x\"><div class=\"line1\"></div><div class=\"line2\"></div></div></div></div><div class=\"bottom\"><div id=\"myForm1\"><div class=\"form-container\"><label><b>Requestor</b></label><input type=\"text\" id=\"searchTxt\" placeholder=\"Requestor\" name=\"email1\" required><label><b>Summary</b></label><input type=\"text\" placeholder=\"Enter Summary\" name=\"psw1\" required> <button class=\"btn btn-success\" id=\"addToDo\">Create</button></div><!-- <button type=\"button\" class=\"btn cancel\" onclick=\"closeForm()\">Close</button> --></div></div><div class=\"row\"></div></div></div></div></div></div><script>function openForm() {\r" +
-    "\n" +
-    "  document.getElementById(\"myForm\").style.display = \"block\";\r" +
-    "\n" +
-    "}\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "function closeForm() {\r" +
-    "\n" +
-    "  document.getElementById(\"myForm\").style.display = \"none\";\r" +
-    "\n" +
-    "}</script><script>var KanbanTest = new jKanban({\r" +
-    "\n" +
-    "        element: \"#myKanban\",\r" +
-    "\n" +
-    "        gutter: \"10px\",\r" +
-    "\n" +
-    "        widthBoard: \"512px\",\r" +
-    "\n" +
-    "        itemHandleOptions:{\r" +
-    "\n" +
-    "          enabled: true,\r" +
-    "\n" +
-    "        },\r" +
-    "\n" +
-    "        click: function(el) {\r" +
-    "\n" +
-    "          console.log(\"Trigger on all items click!\");\r" +
-    "\n" +
-    "        },\r" +
-    "\n" +
-    "        dropEl: function(el, target, source, sibling){\r" +
-    "\n" +
-    "          console.log(target.parentElement.getAttribute('data-id'));\r" +
-    "\n" +
-    "          console.log(el, target, source, sibling)\r" +
-    "\n" +
-    "          // alert(target.parentElement.getAttribute('data-id'));\r" +
-    "\n" +
-    "          var parentcardid = target.parentElement.getAttribute('data-id');\r" +
-    "\n" +
-    "            if(parentcardid == \"_working\")\r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "              window.clickButton1();\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "        },\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "       \r" +
-    "\n" +
-    "        addItemButton: true,\r" +
-    "\n" +
-    "        boards: [\r" +
-    "\n" +
-    "          {\r" +
-    "\n" +
-    "            id: \"_todo\",\r" +
-    "\n" +
-    "            title: \"New Tickets\",\r" +
-    "\n" +
-    "            class: \"info,good\",\r" +
-    "\n" +
-    "            dragTo: [\"_working\"],\r" +
-    "\n" +
-    "            item: [\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2321</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"new\"></div><span class=\"progress-text\">New</span></div><h6>Summary</h6><div id=\"demo1\" class=\"sumcontent\">Database Issue</h6><button class=\"btn1\" ng-click=\"ViewButton()\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "            },\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2322</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"rejected\"></div><span class=\"progress-text\">Rejected</span></div><h6>Summary</h6><div class=\"sumcontent\">Email engine not working</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "            },\r" +
-    "\n" +
-    "            \r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2324</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"completed\"></div><span class=\"progress-text\">Completed</span></div><h6>Summary</h6><div class=\"sumcontent\">Password Reset</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "            },\r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2325</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"new\"></div><span class=\"progress-text\">New</span></div><h6>Summary</h6><div class=\"sumcontent\">Lan issue</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "            },\r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2326</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"new\"></div><span class=\"progress-text\">New</span></div><h6>Summary</h6><div class=\"sumcontent\">Lan issue</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "            },\r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2327</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"new\"></div><span class=\"progress-text\">New</span></div><h6>Summary</h6><div class=\"sumcontent\">Lan issue</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "            },\r" +
-    "\n" +
-    "            ]\r" +
-    "\n" +
-    "          },\r" +
-    "\n" +
-    "          {\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            id: \"_working\",\r" +
-    "\n" +
-    "            title: \"In Progress\",\r" +
-    "\n" +
-    "            class: \"warning\",\r" +
-    "\n" +
-    "            item: [\r" +
-    "\n" +
-    "              {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2332</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"progress\"></div><span class=\"progress-text\">In Progress</span></div><h6>Summary</h6><div class=\"sumcontent\">AD locked</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "              },\r" +
-    "\n" +
-    "              {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2333</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"progress\"></div><span class=\"progress-text\">In Progress</span></div><h6>Summary</h6><div class=\"sumcontent\">AD locked</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "              },\r" +
-    "\n" +
-    "              {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2324</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"progress\"></div><span class=\"progress-text\">In Progress</span></div><h6>Summary</h6><div class=\"sumcontent\">AD locked</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "              },\r" +
-    "\n" +
-    "              {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2325</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"progress\"></div><span class=\"progress-text\">In Progress</span></div><h6>Summary</h6><div class=\"sumcontent\">AD locked</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "              },\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            ]\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "          },\r" +
-    "\n" +
-    "          {\r" +
-    "\n" +
-    "            id: \"_done\",\r" +
-    "\n" +
-    "            title: \"Completed/Closed\",\r" +
-    "\n" +
-    "            class: \"success\",\r" +
-    "\n" +
-    "            dragTo: [\"_working\"],\r" +
-    "\n" +
-    "            item: [\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "              {\r" +
-    "\n" +
-    "                title:'<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2323</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"completed\"></div><span class=\"progress-text\">Completed</span></div><h6>Summary</h6><div class=\"sumcontent\">AD locked</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "              },\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            ]\r" +
-    "\n" +
-    "          }\r" +
-    "\n" +
-    "        ]\r" +
-    "\n" +
-    "      });\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      var toDoButton = document.getElementById(\"addToDo\");\r" +
-    "\n" +
-    "      toDoButton.addEventListener(\"click\", function() {\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "        // var div11 = document.createElement('div');\r" +
-    "\n" +
-    "        // div11.innerHTML = 'Hi there!';\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        KanbanTest.addElement(\"_todo\", {\r" +
-    "\n" +
-    "          \r" +
-    "\n" +
-    "          \r" +
-    "\n" +
-    "          title: '<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2321</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"progress\"></div><span class=\"progress-text\">In Progress</span></div><h6>Summary</h6><div class=\"sumcontent\">Callbacks & Closures</h6><button class=\"btn1\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "                 \r" +
-    "\n" +
-    "        });\r" +
-    "\n" +
-    "      });\r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "      var toDoButton = document.getElementById(\"addToDo1\");\r" +
-    "\n" +
-    "      toDoButton.addEventListener(\"click\", function() {\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "        KanbanTest.addElement(\"_todo\", {\r" +
-    "\n" +
-    "          title: \"Test Add\"\r" +
-    "\n" +
-    "      \r" +
-    "\n" +
-    "        });\r" +
-    "\n" +
-    "      });\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      var removeElement = document.getElementById(\"removeElement\");\r" +
-    "\n" +
-    "      removeElement.addEventListener(\"click\", function() {\r" +
-    "\n" +
-    "        KanbanTest.removeElement(\"_test_delete\");\r" +
-    "\n" +
-    "      });\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "      var allEle = KanbanTest.getBoardElements(\"_todo\");\r" +
-    "\n" +
-    "      allEle.forEach(function(item, index) {\r" +
-    "\n" +
-    "        //console.log(item);\r" +
-    "\n" +
-    "      });</script></div><!-- sidbar end div --></body></html>"
-  );
-
-
-  $templateCache.put('scripts/view-components/kanbanadv/com-vyom-vyomlib-kanbanadv-design.directive.html',
-    "<img src=\"/com.vyom.vyomlib/resources/kanban1/dist/kanbanimage3.png\" width=\"1002\" height=\"420\">"
-  );
-
-
-  $templateCache.put('scripts/view-components/kanbanadv/com-vyom-vyomlib-kanbanadv.directive.html',
-    "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link href=\"https://fonts.googleapis.com/css?family=Lato\" rel=\"stylesheet\"><!-- Sidebar --><script src=\"/com.vyom.vyomlib/resources/kanban1/sidebar/js/popper.js\"></script><script src=\"/com.vyom.vyomlib/resources/kanban1/dist/rxloader.js\"></script><!-- <script src=\"/com.vyom.vyomlib.new/resources/kanban1/sidebar/js/bootstrap.min.js\"></script> --><script src=\"/com.vyom.vyomlib/resources/kanban1/sidebar/js/main.js\"></script><link href=\"https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900\" rel=\"stylesheet\"><link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\"><title>Kanban</title><!-- <link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban1/dist/criticalicon.css\"> --><script src=\"https://kit.fontawesome.com/a076d05399.js\"></script><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban1/dist/card_layout5.css\"><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban1/dist/jkanban.css\"><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban1/dist/jkanban_form.css\"><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/kanban1/dist/jkanban_material_popup.css\"><script src=\"/com.vyom.vyomlib/resources/kanban1/dist/jkanban1.js\"></script></head><style>body {\r" +
-    "\n" +
-    "    font-family: \"Lato\";\r" +
-    "\n" +
-    "    margin: 0;\r" +
-    "\n" +
-    "    padding: 0;\r" +
-    "\n" +
-    "    overflow: overlay;\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  .modal-content {\r" +
-    "\n" +
-    "  \r" +
-    "\n" +
-    "    width: 100%;\r" +
-    "\n" +
-    "}\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  .header {\r" +
-    "\n" +
-    "    font-size: 15px;\r" +
-    "\n" +
-    "    font-weight: bold;\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  img {\r" +
-    "\n" +
-    "    height: 45px;\r" +
-    "\n" +
-    "    float: right;\r" +
-    "\n" +
-    "    margin-top: -10px\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  .modal.fade .modal-dialog {\r" +
-    "\n" +
-    "    transition: -webkit-transform .3s ease-out;\r" +
-    "\n" +
-    "    transition: transform .3s ease-out;\r" +
-    "\n" +
-    "    transition: transform .3s ease-out, -webkit-transform .3s ease-out;\r" +
-    "\n" +
-    "    -webkit-transform: translate(0, -50px);\r" +
-    "\n" +
-    "    transform: translate(0, -50px);\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  .fade:not(.show) {\r" +
-    "\n" +
-    "    opacity: 100%;\r" +
-    "\n" +
-    "    background: #0c0c0c26;\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  #myKanban {\r" +
-    "\n" +
-    "    overflow-x: auto;\r" +
-    "\n" +
-    "    position: relative;\r" +
-    "\n" +
-    "    top: -12px;\r" +
-    "\n" +
-    "    left: -5px;\r" +
-    "\n" +
-    "    padding: 7px 0;\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  .critical {\r" +
-    "\n" +
-    "    color: red;\r" +
-    "\n" +
-    "    font-weight: bolder;\r" +
-    "\n" +
-    "    margin-top: 5px;\r" +
-    "\n" +
-    "    font-family: Arial;\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  .bkgclr {\r" +
-    "\n" +
-    "    background-color: #6d6d6d;\r" +
-    "\n" +
-    "    height: 1000px;\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  .success {\r" +
-    "\n" +
-    "    background: #00b961;\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  .info {\r" +
-    "\n" +
-    "    background: #2a265f;\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  .warning {\r" +
-    "\n" +
-    "    background: #f4ce46;\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  .progress1 {\r" +
-    "\n" +
-    "    background: #039ee8;\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  .error {\r" +
-    "\n" +
-    "    background: #fb7d44;\r" +
-    "\n" +
-    "  }</style><body><div class=\"wrapper d-flex align-items-stretch\"><nav id=\"sidebar\" class=\"\"><div class=\"custom-menu\"><button type=\"button\" id=\"sidebarCollapse\" class=\"btn btn-primary\"><i class=\"fa fa-bars\"></i> <span class=\"sr-only\">Toggle Menu</span></button></div><div class=\"p-4\"><h1><a href=\"index.html\" class=\"logo\">Business Workflows</a></h1><ul class=\"list-unstyled components mb-5\"><li class=\"active\"><a href=\"#\"><span class=\"fa fa-home mr-3\"></span> Cases</a></li><li><a href=\"#\"><span class=\"fa fa-user mr-3\"></span> About</a></li><li><a href=\"#\"><span class=\"fa fa-briefcase mr-3\"></span> Portfolio</a></li><li><a href=\"#\"><span class=\"fa fa-paper-plane mr-3\"></span> Contact</a></li></ul><div class=\"mb-5\"><h3 class=\"h6 mb-3\">Subscribe for newsletter</h3><form action=\"#\" class=\"subscribe-form\"><div class=\"form-group d-flex\"><div class=\"icon\"><span class=\"icon-paper-plane\"></span></div><input type=\"text\" class=\"form-control\" placeholder=\"Enter Email Address\"></div></form></div></div></nav><div><div id=\"myKanban\"></div><script>var KanbanTest = new jKanban({\r" +
-    "\n" +
-    "          element: \"#myKanban\",\r" +
-    "\n" +
-    "          // gutter: \"10px\",\r" +
-    "\n" +
-    "          widthBoard: \"490px\",\r" +
-    "\n" +
-    "          itemHandleOptions: {\r" +
-    "\n" +
-    "            enabled: true,\r" +
-    "\n" +
-    "          },\r" +
-    "\n" +
-    "          click: function (el) {\r" +
-    "\n" +
-    "            // console.log(\"Trigger on all items click!\");\r" +
-    "\n" +
-    "          },\r" +
-    "\n" +
-    "          // dropEl: function (el, target, source, sibling) {\r" +
-    "\n" +
-    "          //   // console.log(target.parentElement.getAttribute('data-id'));\r" +
-    "\n" +
-    "          //   // console.log(el, target, source, sibling)\r" +
-    "\n" +
-    "          //   // alert(target.parentElement.getAttribute('data-id'));\r" +
-    "\n" +
-    "          //   var parentcardid = target.parentElement.getAttribute('data-id');\r" +
-    "\n" +
-    "          //   if (parentcardid == \"_working\") {\r" +
-    "\n" +
-    "          //     window.dropcardworking();\r" +
-    "\n" +
-    "          //   }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            \r" +
-    "\n" +
-    "          // },\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "          dropEl: function (el, target, source, sibling) {\r" +
-    "\n" +
-    "            console.log(target.parentElement.getAttribute('data-id'));\r" +
-    "\n" +
-    "            var parentcardid = target.parentElement.getAttribute('data-id');\r" +
-    "\n" +
-    "            if (parentcardid == \"_working\") {\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "             window.dropcardworking();\r" +
-    "\n" +
-    "               }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            if (parentcardid == \"_todo\") {\r" +
-    "\n" +
-    "              $(el).find('.progress1').addClass('info').removeClass(\"progress1\");\r" +
-    "\n" +
-    "              $(el).find('.progress-barprogress').addClass('progress-barnew').removeClass('progress-barprogress')\r" +
-    "\n" +
-    "              $(el).find('span').empty().text(\"New\");\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            else if (parentcardid == \"_working\") {\r" +
-    "\n" +
-    "              $(el).find('.info').addClass('progress1').removeClass(\"info\");\r" +
-    "\n" +
-    "              $(el).find('.success').addClass('progress1').removeClass(\"success\");\r" +
-    "\n" +
-    "              $(el).find('span').empty().text(\"In Progress\");\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "              \r" +
-    "\n" +
-    "                         \r" +
-    "\n" +
-    "              \r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "              $(el).find('.progress-barnew').addClass('progress-barprogress').removeClass('progress-barnew');\r" +
-    "\n" +
-    "              $(el).find('.progress-barsuccess').addClass('progress-barprogress').removeClass('progress-barsuccess');\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "             \r" +
-    "\n" +
-    "              \r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "            else if (parentcardid == \"_done\") {\r" +
-    "\n" +
-    "              $(el).find('.progress1').addClass('success').removeClass(\"progress1\");\r" +
-    "\n" +
-    "              $(el).find('.progress-barprogress').addClass('progress-barsuccess').removeClass('progress-barprogress');\r" +
-    "\n" +
-    "              $(el).find('span').empty().text(\"Completed\");\r" +
-    "\n" +
-    "              \r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "          },\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "          addItemButton: true,\r" +
-    "\n" +
-    "          boards: [\r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "              id: \"_todo\",\r" +
-    "\n" +
-    "              title: \"New Tickets\",\r" +
-    "\n" +
-    "              class: \"info,good\",\r" +
-    "\n" +
-    "              dragTo: [\"_working\"],\r" +
-    "\n" +
-    "              item: [\r" +
-    "\n" +
-    "                // {\r" +
-    "\n" +
-    "                //   title: '<div class=\"body1\"><div class=\"courses-container\"><div class=\"course\"><div class=\"course-preview item_handle drag_handler\"><div class=\"fontsize\">Ticket</div><div class=\"fontsize\">INC2321</div></div><div class=\"course-info\"><div class=\"progress-container\"><div class=\"new\"></div><span class=\"progress-text\">New</span></div><h6>Summary</h6><div id=\"demo1\" class=\"sumcontent\">Database Issue</h6><button class=\"btn1\" ng-click=\"ViewButton()\">View</button></div></div></div></div>'\r" +
-    "\n" +
-    "                // },\r" +
-    "\n" +
-    "              ]\r" +
-    "\n" +
-    "            },\r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "              id: \"_working\",\r" +
-    "\n" +
-    "              title: \"In Progress\",\r" +
-    "\n" +
-    "              class: \"progress1\",\r" +
-    "\n" +
-    "              item: [\r" +
-    "\n" +
-    "            //     {\r" +
-    "\n" +
-    "            //       title: `<div class=\"course\">\r" +
-    "\n" +
-    "            //                 <div class=\"course-preview item_handle drag_handler progress1\"></div>\r" +
-    "\n" +
-    "            //                 <div class=\"course-info\">\r" +
-    "\n" +
-    "            //                   <div class=\"fontsize\">Case ID: INC2332\r" +
-    "\n" +
-    "            //                   <div>\r" +
-    "\n" +
-    "            //                         <img src=\"https://vyom-platform.trybmc.com/api/rx/application/record/attachment/com.bmc.arsys.rx.foundation:Person/AGGCEME2HPULZAOQMFDZOPQCW7RGOW/304411861\" class=\"main-profile-img\" />\r" +
-    "\n" +
-    "            //                   </div>\r" +
-    "\n" +
-    "            //                   </div>\r" +
-    "\n" +
-    "            //                   <div class=\"header\">Summary</div>\r" +
-    "\n" +
-    "            //                   <div class=\"col-10 sumcontent\">AD locked Lorem ipsumLorem Ipsum is simply dummy. Lorem Ipsum has been the i</div>\r" +
-    "\n" +
-    "                              \r" +
-    "\n" +
-    "            //                     <div class=\"progress\">\r" +
-    "\n" +
-    "            //                       <div class=\"progress-bar\" style=\"width:70%\"></div>\r" +
-    "\n" +
-    "            //                     </div>\r" +
-    "\n" +
-    "            //                     <span style=\"font-size: 11px;font-style: italic;\">In Progress</span>\r" +
-    "\n" +
-    "            //                   <div> \r" +
-    "\n" +
-    "            //                     <div class=\"critical\">\r" +
-    "\n" +
-    "            //                       <i class=\"fab fa-gripfire\"></i>\r" +
-    "\n" +
-    "            //                        Critical\r" +
-    "\n" +
-    "            //                     </div>\r" +
-    "\n" +
-    "            //                     <div>\r" +
-    "\n" +
-    "            //                        <button class=\"btn1\" id=\"1\" onClick=\"fun(this)\">View</button>\r" +
-    "\n" +
-    "            //                     </div>\r" +
-    "\n" +
-    "            //                   </div>\r" +
-    "\n" +
-    "            //                   </div>\r" +
-    "\n" +
-    "            //               </div>`\r" +
-    "\n" +
-    "            //     },\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            //     {\r" +
-    "\n" +
-    "            //       title: `<div class=\"course\">\r" +
-    "\n" +
-    "            //                 <div class=\"course-preview item_handle drag_handler progress1\"></div>\r" +
-    "\n" +
-    "            //                 <div class=\"course-info\">\r" +
-    "\n" +
-    "            //                   <div class=\"fontsize\">Case ID: INC2332\r" +
-    "\n" +
-    "            //                     <div>\r" +
-    "\n" +
-    "            //                         <img src=\"https://vyom-platform.trybmc.com/api/rx/application/record/attachment/com.bmc.arsys.rx.foundation:Person/AGGCEME2HPULZAOQMFDZOPQCW7RGOW/304411861\" class=\"main-profile-img\" />\r" +
-    "\n" +
-    "            //                   </div>  \r" +
-    "\n" +
-    "            //                   </div>\r" +
-    "\n" +
-    "            //                   <div class=\"header\">Summary</div>\r" +
-    "\n" +
-    "            //                   <div class=\"col-10 sumcontent\">AD locked Lorem ipsumLorem Ipsum is simply dummy. Lorem Ipsum has been the i</div>\r" +
-    "\n" +
-    "                             \r" +
-    "\n" +
-    "            //                     <div class=\"progress\">\r" +
-    "\n" +
-    "            //                       <div class=\"progress-bar\" style=\"width:70%; \"></div>\r" +
-    "\n" +
-    "            //                     </div>\r" +
-    "\n" +
-    "            //                     <span style=\"font-size: 11px;font-style: italic;\">In Progress</span>\r" +
-    "\n" +
-    "            //                   <div> \r" +
-    "\n" +
-    "            //                     <div class=\"critical\">\r" +
-    "\n" +
-    "            //                       <i class=\"fab fa-gripfire\"></i>\r" +
-    "\n" +
-    "            //                       Critical\r" +
-    "\n" +
-    "            //                     </div>\r" +
-    "\n" +
-    "            //                     <div>\r" +
-    "\n" +
-    "            //                       <button class=\"btn1\" id=\"1\" onClick=\"fun(this)\">View</button>\r" +
-    "\n" +
-    "            //                     </div>\r" +
-    "\n" +
-    "            //                   </div>\r" +
-    "\n" +
-    "            //                   </div>\r" +
-    "\n" +
-    "            //               </div>`\r" +
-    "\n" +
-    "            //     }\r" +
-    "\n" +
-    "              ]\r" +
-    "\n" +
-    "            },\r" +
-    "\n" +
-    "            {\r" +
-    "\n" +
-    "              id: \"_done\",\r" +
-    "\n" +
-    "              title: \"Completed/Closed\",\r" +
-    "\n" +
-    "              class: \"success\",\r" +
-    "\n" +
-    "              dragTo: [\"_working\"],\r" +
-    "\n" +
-    "              item: [\r" +
-    "\n" +
-    "                {\r" +
-    "\n" +
-    "                  title: `<div class=\"course\">\r" +
-    "\n" +
-    "                            <div class=\"course-preview item_handle drag_handler success\"></div>\r" +
-    "\n" +
-    "                            <div class=\"course-info\">\r" +
-    "\n" +
-    "                              <div class=\"fontsize\">Case ID: INC2332\r" +
-    "\n" +
-    "                                <div>\r" +
-    "\n" +
-    "                                  <img src=\"https://vyom-dsom-platform.trybmc.com/api/rx/application/record/attachment/com.bmc.arsys.rx.foundation:Person/d3ac4a3fdf17045a2d3eef467b44c72de7ab30f4da236942051b7f9876ac4b353987c8539236a6ac26fadd9eb2acc8b25e547635bbe7ba8f41cb5de79b1397e5/304411861\" class=\"main-profile-img\">\r" +
-    "\n" +
-    "                              </div>  \r" +
-    "\n" +
-    "                              </div>\r" +
-    "\n" +
-    "                              <div class=\"header\">Summary</div>\r" +
-    "\n" +
-    "                              <div class=\"col-10 sumcontent\">AD locked Lorem ipsumLorem Ipsum is simply dummy. Lorem Ipsum has been the i</div>\r" +
-    "\n" +
-    "                              \r" +
-    "\n" +
-    "                                <div class=\"progress\">\r" +
-    "\n" +
-    "                                  <div class=\"progress-barsuccess\"></div>\r" +
-    "\n" +
-    "                                </div>\r" +
-    "\n" +
-    "                                <span style=\"font-size: 11px;font-style: italic;\">Completed</span>\r" +
-    "\n" +
-    "                              <div> \r" +
-    "\n" +
-    "                                <button class=\"btn1\" onClick=\"fun(this)\">View</button>\r" +
-    "\n" +
-    "                              </div>\r" +
-    "\n" +
-    "                              </div>\r" +
-    "\n" +
-    "                          </div>`\r" +
-    "\n" +
-    "                },\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "              ]\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "          ]\r" +
-    "\n" +
-    "        });\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "function defprogress() {\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "for (let index = 0; index < data.length; index++) {\r" +
-    "\n" +
-    "  const element = data;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  const value = element[index][priority];\r" +
-    "\n" +
-    "  const statusvalue = element[index][Status];\r" +
-    "\n" +
-    "  console.log(\"The status value is \" + statusvalue);\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "if(statusvalue == \"14\")\r" +
-    "\n" +
-    "{\r" +
-    "\n" +
-    "  KanbanTest.addElement(\"_working\", {\r" +
-    "\n" +
-    "    title: `<div class=\"course\">\r" +
-    "\n" +
-    "              <div class=\"course-preview item_handle drag_handler progress1\"></div>\r" +
-    "\n" +
-    "                  <div class=\"course-info\">\r" +
-    "\n" +
-    "                    <div class=\"fontsize\">Case ID : `+ element[index][ID] + `\r" +
-    "\n" +
-    "                      <div>\r" +
-    "\n" +
-    "                        <img src=\"https://vyom-dsom-platform.trybmc.com/api/rx/application/record/attachment/com.bmc.arsys.rx.foundation:Person/d3ac4a3fdf17045a2d3eef467b44c72de7ab30f4da236942051b7f9876ac4b353987c8539236a6ac26fadd9eb2acc8b25e547635bbe7ba8f41cb5de79b1397e5/304411861\" class=\"main-profile-img\">\r" +
-    "\n" +
-    "                    </div>  \r" +
-    "\n" +
-    "                    </div>\r" +
-    "\n" +
-    "                    <div class=\"header\">Summary</div>\r" +
-    "\n" +
-    "                    <div class=\"col-10 sumcontent\"> ` + element[index][summary] + `   </div>\r" +
-    "\n" +
-    "                    \r" +
-    "\n" +
-    "                      <div class=\"progress\">\r" +
-    "\n" +
-    "                        <div class=\"progress-barprogress\"></div>\r" +
-    "\n" +
-    "                      </div>\r" +
-    "\n" +
-    "                      <span class=\"statusstyleprogress\">In Progress</span>\r" +
-    "\n" +
-    "                    <div> \r" +
-    "\n" +
-    "                      <div class=\"critical priority\">\r" +
-    "\n" +
-    "                        <i class=\"fab fa-gripfire\"></i>\r" +
-    "\n" +
-    "                          Critical\r" +
-    "\n" +
-    "                      </div>\r" +
-    "\n" +
-    "                      <div>\r" +
-    "\n" +
-    "                        <button class=\"btn1\" id=ViewButton ng-click=\"viewbuttonscope()\">View</button>\r" +
-    "\n" +
-    "                        \r" +
-    "\n" +
-    "                      </div>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "                    </div>\r" +
-    "\n" +
-    "                  </div>\r" +
-    "\n" +
-    "            </div>`\r" +
-    "\n" +
-    "  });\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "   if (value != \"Critical\") {\r" +
-    "\n" +
-    "    const elementArray = document.getElementsByClassName('priority');\r" +
-    "\n" +
-    "    var p = elementArray[elementArray.length - 1];\r" +
-    "\n" +
-    "    p.classList.add(\"ng-hide\");\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "}\r" +
-    "\n" +
-    "  \r" +
-    "\n" +
-    "  // var ViewButtonclk = document.getElementById(\"ViewButton\");\r" +
-    "\n" +
-    "  //  ViewButtonclk.onclick = function() {ViewButton()};\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "  //  var CreateCase = document.getElementById(\"CreateCase\");\r" +
-    "\n" +
-    "  //  CreateCase.onclick = function() {CreateTicket()};\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "}\r" +
-    "\n" +
-    "}\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        function def() {\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "          for (let index = 0; index < data.length; index++) {\r" +
-    "\n" +
-    "            const element = data;\r" +
-    "\n" +
-    "            const value = element[index][priority];\r" +
-    "\n" +
-    "            const statusvalue = element[index][Status];\r" +
-    "\n" +
-    "            if(statusvalue == \"0\")\r" +
-    "\n" +
-    " {\r" +
-    "\n" +
-    "          \r" +
-    "\n" +
-    "            KanbanTest.addElement(\"_todo\", {\r" +
-    "\n" +
-    "              title: `<div class=\"course\">\r" +
-    "\n" +
-    "                        <div class=\"course-preview item_handle drag_handler info\"></div>\r" +
-    "\n" +
-    "                            <div class=\"course-info\">\r" +
-    "\n" +
-    "                              <div class=\"fontsize\">Case ID : `+ element[index][ID] + `\r" +
-    "\n" +
-    "                                <div>\r" +
-    "\n" +
-    "                                  <img src=\"https://vyom-dsom-platform.trybmc.com/api/rx/application/record/attachment/com.bmc.arsys.rx.foundation:Person/d3ac4a3fdf17045a2d3eef467b44c72de7ab30f4da236942051b7f9876ac4b353987c8539236a6ac26fadd9eb2acc8b25e547635bbe7ba8f41cb5de79b1397e5/304411861\" class=\"main-profile-img\">\r" +
-    "\n" +
-    "                              </div>  \r" +
-    "\n" +
-    "                              </div>\r" +
-    "\n" +
-    "                              <div class=\"header\">Summary</div>\r" +
-    "\n" +
-    "                              <div class=\"col-10 sumcontent\"> ` + element[index][summary] + `   </div>\r" +
-    "\n" +
-    "                              \r" +
-    "\n" +
-    "                                <div class=\"progress\">\r" +
-    "\n" +
-    "                                  <div class=\"progress-barnew\"></div>\r" +
-    "\n" +
-    "                                </div>\r" +
-    "\n" +
-    "                                <span style=\"font-size: 11px;font-style: italic;\">New</span>\r" +
-    "\n" +
-    "                              <div> \r" +
-    "\n" +
-    "                                <div class=\"critical priority\">\r" +
-    "\n" +
-    "                                  <i class=\"fab fa-gripfire\"></i>\r" +
-    "\n" +
-    "                                    Critical\r" +
-    "\n" +
-    "                                </div>\r" +
-    "\n" +
-    "                                <div>\r" +
-    "\n" +
-    "                                  <button class=\"btn1\" id=ViewButton ng-click=\"viewbuttonscope()\">View</button>\r" +
-    "\n" +
-    "                                  \r" +
-    "\n" +
-    "                                </div>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "                              </div>\r" +
-    "\n" +
-    "                            </div>\r" +
-    "\n" +
-    "                      </div>`\r" +
-    "\n" +
-    "            });\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "             if (value != \"Critical\") {\r" +
-    "\n" +
-    "              const elementArray = document.getElementsByClassName('priority');\r" +
-    "\n" +
-    "              var p = elementArray[elementArray.length - 1];\r" +
-    "\n" +
-    "              p.classList.add(\"ng-hide\");\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "          }          \r" +
-    "\n" +
-    "            var ViewButtonclk = document.getElementById(\"ViewButton\");\r" +
-    "\n" +
-    "             ViewButtonclk.onclick = function() {ViewButton()};\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "             var CreateCase = document.getElementById(\"CreateCase\");\r" +
-    "\n" +
-    "             CreateCase.onclick = function() {CreateTicket()};\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "          }\r" +
-    "\n" +
-    "        }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        var search = document.getElementById(\"searchCase\");\r" +
-    "\n" +
-    "        search.onclick = function()\r" +
-    "\n" +
-    "        {\r" +
-    "\n" +
-    "          console.log(\"innerfunction called\");\r" +
-    "\n" +
-    "          console.log(search);\r" +
-    "\n" +
-    "        console.log(\"searchbuttoncalled\");\r" +
-    "\n" +
-    "        }\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "        search.addEventListener(\"click\", function () {\r" +
-    "\n" +
-    "          var input, filter, ul, li, a, i, txtValue;\r" +
-    "\n" +
-    "          input = document.getElementById(\"number\");\r" +
-    "\n" +
-    "          filter = input.value.toUpperCase();\r" +
-    "\n" +
-    "          ul = KanbanTest.getBoardElements(\"_todo\");\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "          for (i = 0; i < ul.length; i++) {\r" +
-    "\n" +
-    "            a = ul[i];\r" +
-    "\n" +
-    "            console.log(a);\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            txtValue = a.textContent || a.innerText;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            if (txtValue.toUpperCase().indexOf(filter) > -1) {\r" +
-    "\n" +
-    "              ul[i].style.display = \"\";\r" +
-    "\n" +
-    "            } else {\r" +
-    "\n" +
-    "              ul[i].style.display = \"none\";\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "          }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        });\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        var allEle = KanbanTest.getBoardElements(\"_todo\");\r" +
-    "\n" +
-    "        allEle.forEach(function (item, index) {\r" +
-    "\n" +
-    "          console.log(item);\r" +
-    "\n" +
-    "        });\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        // var removeElement = document.getElementById(\"removeElement\");\r" +
-    "\n" +
-    "      // removeElement.addEventListener(\"click\", function () {\r" +
-    "\n" +
-    "      //   KanbanTest.removeElement(\"_test_delete\");\r" +
-    "\n" +
-    "      // });</script></div></div><!-- Chatbot Script --><script id=\"rx-view-loader-script\" src=\"https://vyom-platform.trybmc.com/innovationsuite/view-loader.js\"></script><button class=\"rx-view-loader-button\" data-bot-id=\"IDGADG1AANVNNAQJ6AV1QI839NESAV\"></button><script type=\"text/javascript\">rxViewLoader.onRequestJwt(function () {\r" +
-    "\n" +
-    "             // return JWT token\r" +
-    "\n" +
-    "			 \r" +
-    "\n" +
-    "         });</script><!-- End of Chatbot Script --></body></html>"
+  $templateCache.put('scripts/view-components/landing-console/com-vyom-vyomlib-inspector-landing-console-attachment.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\"><select class=\"select\" ng-options=\"field.name for field in data.fields track by field.id\" ng-model=\"data.selectedField\"></select></div><div ng-if=\"!data.fields.length\">There are no attachment fields in this record definition.</div>"
   );
 
 
@@ -1890,28 +605,13 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
   );
 
 
-  $templateCache.put('scripts/view-components/landing-console/com-vyom-vyomlib-inspector-landing-console-bgcolor2.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<select ng-model=\"HChange\" ng-options=\"x for x in names\"></select></label>"
+  $templateCache.put('scripts/view-components/landing-console/com-vyom-vyomlib-inspector-landing-console-fields.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\"><select class=\"select\" ng-options=\"field.name for field in data.fields track by field.id \" ng-model=\"data.selectedField\"></select></div><div ng-if=\"!data.fields.length\">Record Definition is must.</div>"
   );
 
 
-  $templateCache.put('scripts/view-components/landing-console/com-vyom-vyomlib-inspector-landing-console-button.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:<div class=\"input-group\"><span class=\"input-group-btn\"><button type=\"button\" class=\"rx-editor-header__button d-button d-button_primary d-button_small\" ng-click=\"saveObject();\" ng-disabled=\"false\">Add Card</button> </span><span class=\"input-group-btn\"><button type=\"button\" class=\"rx-editor-header__button rx-editor-header__button_save rx-editor-header__button_divider-before d-button d-button_primary d-button_small\" ng-click=\"updateObject();\" ng-disabled=\"false\">Update</button> </span><span class=\"input-group-btn\"><button type=\"button\" class=\"rx-editor-header__button rx-editor-header__button_save rx-editor-header__button_divider-before d-button d-button_primary d-button_small\" ng-click=\"clearFields();\" ng-disabled=\"false\">Clear</button></span></div></label>"
-  );
-
-
-  $templateCache.put('scripts/view-components/landing-console/com-vyom-vyomlib-inspector-landing-console-cards.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div ng-if=\"cards.length\"><div ng-repeat=\"i in cards\" style=\"\" class=\"selected-options\"><!----><div class=\"rx-inspector-record-grid-column-editor__container\"><span title=\"{{i.ApplicationName}}\" class=\"rx-inspector-record-grid-column-editor__card-title\">{{i.ApplicationName}} </span><span class=\"action-button d-icon-left-pencil\" ng-click=\"setObject($index);\" role=\"button\" tabindex=\"0\"></span> <span class=\"action-button d-icon-left-cross\" ng-click=\"remove($index);\" role=\"button\" tabindex=\"0\"></span></div><div class=\"column-type\" ng-if=\"i.Description\"><div class=\"rx-inspector-record-grid-column-editor__card-title\">Description:</div><em>{{i.Description}}</em></div><div class=\"column-type\" ng-if=\"i.URL\"><div class=\"rx-inspector-record-grid-column-editor__card-title\">URL:</div><a href=\"#\"><em>{{i.URL}}</em></a></div><div class=\"column-type\" ng-if=\"i.Icon\"><div class=\"rx-inspector-record-grid-column-editor__card-title\">Icon:</div><p class=\"d-icon-{{i.Icon}}\"></p></div><div class=\"column-type\" ng-if=\"i.Color\"><div class=\"rx-inspector-record-grid-column-editor__card-title\">Color:</div><div class=\"btn btn-{{i.Color}}\"><em>{{i.Color}}</em></div></div><div class=\"column-type\" ng-if=\"i.tooltipHeader\"><div class=\"rx-inspector-record-grid-column-editor__card-title\">Tooltip Header:</div><em>{{i.tooltipHeader}}</em></div><div class=\"column-type\" ng-if=\"i.tooltipDescription\"><div class=\"rx-inspector-record-grid-column-editor__card-title\">Tooltip Description:</div><em>{{i.tooltipDescription}}</em></div><div class=\"column-type\" ng-if=\"i.permissions\"><div class=\"rx-inspector-record-grid-column-editor__card-title\">Permission:</div><em>{{i.permissions}}</em></div></div></div><div ng-if=\"!cards.length\">Cards not Available.</div>"
-  );
-
-
-  $templateCache.put('scripts/view-components/landing-console/com-vyom-vyomlib-inspector-landing-console-icon.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><select ng-model=\"selectedName\" ng-options=\"item for item in names\"></select>"
-  );
-
-
-  $templateCache.put('scripts/view-components/landing-console/com-vyom-vyomlib-inspector-landing-console-permission.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:</label><div><select ng-model=\"data.selectedField\" ng-options=\"x[1721] for x in data.fields\"></select></div>"
+  $templateCache.put('scripts/view-components/landing-console/com-vyom-vyomlib-inspector-landing-console-integer.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\"><select class=\"select\" ng-options=\"field.name for field in data.fields track by field.id\" ng-model=\"data.selectedField\"></select></div><div ng-if=\"!data.fields.length\">There are no integer fields in this record definition.</div>"
   );
 
 
@@ -1921,13 +621,53 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
 
 
   $templateCache.put('scripts/view-components/landing-console/com-vyom-vyomlib-landing-console.directive.html',
-    "<!DOCTYPE html><html lang=\"en\"><head><!-- <link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/landing-console/css/landing-console.css\"> --><script>$(document).ready(function(){\r" +
+    "<script>$(document).ready(function() {\r" +
     "\n" +
-    "             $('[data-toggle=\"popover\"]').popover();\r" +
+    "\r" +
     "\n" +
-    "             $(\"#myCarousel\").carousel();\r" +
+    "        $(\"#myCarousel\").carousel();\r" +
     "\n" +
-    "         });</script></head><body><div class=\"wrapper\"><div id=\"block_container\" class=\"content\"><div class=\"searchcontainer\" id=\"bloc\"><input type=\"text\" class=\"searchinput w3-{{SearchColor}}\" placeholder=\"Search...\"><div class=\"search w3-{{SearchColor}}\"></div></div><div id=\"bloc\" class=\"tim-typo\" style=\"margin-top: 44px\"><h1 style=\"font-size: 58px\">Welcome {{CurrentUserFullName}}</h1><p></p></div></div><div class=\"content\"><div class=\"container-fluid\"><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\"><!-- Indicators --><ol class=\"carousel-indicators\"><li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li><li data-target=\"#myCarousel\" data-slide-to=\"1\"></li><li data-target=\"#myCarousel\" data-slide-to=\"2\"></li></ol><!-- Wrapper for slides --><div class=\"carousel-inner\"><div class=\"item active\"><img src=\"/com.vyom.vyomlib/resources/landing-console/statistics4.jpg\" alt=\"Los Angeles\" style=\"width:100%;height: 500px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"/com.vyom.vyomlib/resources/landing-console/bgimg2.jpg\" alt=\"Chicago\" style=\"width:100%;height: 500px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"/com.vyom.vyomlib/resources/landing-console/statistics5.jpg\" alt=\"New York\" style=\"width:100%;height: 500px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div></div><!-- Left and right controls --></div></div></div><div class=\"content\"><div class=\"container-fluid\"><div class=\"row\"><div class=\"col-lg-3 col-md-6 col-sm-6\" ng-repeat=\"x in permittedCards \"><div class=\"card card-stats w3-card-4 h-75\"><div class=\"card-header card-header-{{x.Color}} card-header-icon\" ng-click=\"setUrlTOModal(x.URL)\" data-toggle=\"modal\" data-target=\"#landingconsolemodal\"><div class=\"card-icon\"><div class=\"material-icons\"><p class=\"d-icon-{{x.Icon}}\"></p></div></div><h3 class=\"card-title\">{{x.ApplicationName}}<!--<small>GB</small>--></h3><p class=\"card-category\"><span class=\"d-icon-star\" style=\"color:orange\"></span> <span class=\"d-icon-star_o\"></span> <span class=\"d-icon-star_o\"></span> <span class=\"d-icon-star_o\"></span> <span class=\"d-icon-star_o\"></span></p></div><div class=\"card-footer\"><div class=\"stats\"><div class=\"material-icons\"><p class=\"d-icon-info_circle\" data-toggle=\"popover\" data-container=\"body\" data-original-title=\"{{x.tooltipHeader}}\" data-color=\"primary\" data-content=\"{{x.tooltipDescription}}\"></p></div><a href=\"javascript:;\"><em>{{x.Description}}</em></a></div></div></div></div></div></div></div></div><div class=\"modal fade right\" id=\"landingconsolemodal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"landingconsolemodalLabel\" aria-hidden=\"true\"><div class=\"modal-dialog\" role=\"document\"><div class=\"modal-content\"><a href=\"\" class=\"d-icon-cross\" data-dismiss=\"modal\"></a><iframe ng-if=\"::modalUrl\" ng-src=\"{{trustSrc(modalUrl)}}\" src=\"{{trustSrc(modalUrl)}}\" class=\"modal-iframe\" style=\"\"></iframe></div></div></div><!---/ modal end ---></body></html>"
+    "    });</script><div class=\"wrapper\"><div class=\"row\"><div class=\"col-4\"><div class=\"searchcontainer\"><input type=\"text\" class=\"searchinput w3-{{SearchColor}}\" ng-model=\"query\" placeholder=\"Search...\"><div class=\"search w3-{{SearchColor}}\" ng-click=\"clearSearchContainer()\"></div></div></div><div class=\"col-8\"><h1 style=\"font-size: 40px\" class=\"w3-text-{{titleColor}}\">{{Greetings}} {{CurrentUserFullName}}</h1><p></p></div></div><div class=\"content\"><div class=\"container-fluid\"><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\" data-interval=\"{{carouselSpeed}}\"><!-- Indicators --><ol class=\"carousel-indicators\"><li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li><li data-target=\"#myCarousel\" data-slide-to=\"1\"></li><li data-target=\"#myCarousel\" data-slide-to=\"2\"></li></ol><!-- Wrapper for slides --><div class=\"carousel-inner\"><div class=\"item active\"><img src=\"{{firstSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[0][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"{{secondSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[1][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"{{thirdSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[2][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div></div><!-- Left and right controls --></div></div></div><div class=\"container-fluid\" style=\"padding-bottom: 0px; padding-top: 10px\"><div class=\"text-center\" style=\"\"><span><!-- sort-by dropdown --><label style=\"vertical-align: bottom;float: left; color:black\">Sort By:</label><select ng-model=\"selectedValue\" ng-change=\"sortByViews()\" style=\"float:left\"><option value=\"\" selected=\"selected\">-select-</option><option value=\"fav\">Favourites</option><option value=\"{{Views}}\">Max-views</option><option value=\"{{ratingCount}}\">Max-ratings</option><option value=\"status\">Active</option><option value=\"clear\">Clear</option><tbody><!----><tr><td>user_card</td><td><span class=\"bigfont d-icon-user_card\"></span></td></tr><!----><tr><td>user_check</td><td><span class=\"bigfont d-icon-user_check\"></span></td></tr><!----><tr><td>user_check_circle</td><td><span class=\"bigfont d-icon-user_check_circle\"></span></td></tr><!----></tbody></select><button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category1\" ng-click=\"assignCurrentCategory(Category1)\">{{Category1}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category2\" ng-click=\"assignCurrentCategory(Category2)\">{{Category2}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category3\" ng-click=\"assignCurrentCategory(Category3)\">{{Category3}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category4\" ng-click=\"assignCurrentCategory(Category4)\">{{Category4}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category5\" ng-click=\"assignCurrentCategory(Category5)\">{{Category5}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category6\" ng-click=\"assignCurrentCategory(Category6)\">{{Category6}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category7\" ng-click=\"assignCurrentCategory(Category7)\">{{Category7}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category8\" ng-click=\"assignCurrentCategory(Category8)\">{{Category8}}</button><!-- switch button --><label class=\"switch\" style=\"/*vertical-align: bottom;*/\"><input type=\"checkbox\" ng-model=\"vm.isActive\" ng-change=\"show_hide_recordGrid()\"> <span class=\"slider round hide-off\" style=\"padding-top: 5px;margin-bottom: 10px\"><span ng-class=\" { 'off' : !vm.isActive } \">{{vm.isActive ? 'Card' : 'List'}}</span></span></label><!-- end switch button --></span></div></div><div class=\"content hideme\"><div class=\"container-fluid\"><div class=\"row\" id=\"reverse\" ng-init=\"limit = 6\"><div class=\"selector col-lg-4 col-md-4 col-sm-4\" ng-repeat=\"x in cardList  | filter:query    | limitTo: limit as results\"><div class=\"card card-stats w3-card-4 h-75\"><div class=\"card-header card-header-{{x[Color]}} card-header-icon h-75\"><div ng-click=\"setSelectedCardInstanceId(x[179]);executeAction(cardActionGuid);updateViewsCounter(x[179],x[Views])\" data-toggle=\"modal\" data-target=\"#landingconsolemodal\"><div class=\"card-icon\"><div class=\"material-icons\"><p class=\"d-icon-{{x[Icon]}}\"></p></div></div><h5 class=\"card-title\">{{x[ApplicationName]}}</h5><p class=\"card-category\" ng-if=\"x[Views]>0\"><span class=\"d-icon-eye\"></span> <span>{{numFormatter(x[Views])}} views</span></p></div><p class=\"card-category\" ng-init=\"generateRating(x[ratingCount],x[179])\"><span ng-repeat=\"star in starsobj[x[179]] track by $index\" class=\"{{star.icon}}\" style=\"{{star.style}}\"></span> <span style=\"margin-left: 5px\"><button type=\"button\" class=\"d-button d-button_link d-button_small d-icon-left-user_star\" style=\"\" ng-click=\"setSelectedCardInstanceId(x[179]);executeAction(rateMeActionGuid)\"><span>Rate App</span></button></span></p><p class=\"card-category\" style=\"float: left;left:0;margin-left: 8px;margin-bottom: 0px;margin-top: -10px\"><span ng-if=\"x[cardStatus]\" class=\"d-icon-circle\" ng-class=\"getCardStatusCSS(x[cardStatus])\" style=\"margin-right: 5px;font-size: 21px\" rel=\"tooltip\" title=\"{{x[cardStatus]}}\" ng-mouseover=\"hoverIn('tooltip')\"></span> <span ng-if=\"x[cardFavourite]=='true' ||x[cardFavourite]=='false'\" class=\"{{getCardFavouriteClass(x[cardFavourite])}}\" style=\"margin-right: 5px;font-size:21px\" ng-click=\"updateCardFavourite(x[179],x[cardFavourite])\" rel=\"tooltip\" title=\"Favourite\" ng-mouseover=\"hoverIn('tooltip')\"></span> <span ng-if=\"x[cardScope]\" ng-class=\"getCardScopeCSS(x[cardScope])\" style=\"margin-right: 5px;font-size: 21px; color: skyblue\" rel=\"tooltip\" title=\"{{x[cardScope]=='true'?'Global':'Local'}}\" ng-mouseover=\"hoverIn('tooltip')\"></span></p><div class=\"card-category togglebutton\" ng-if=\"adminConfiguration\"><em style=\"margin-right: 5px\">Visible for All-{{x[cardVisible]}}</em><label><input type=\"checkbox\" ng-model=\"x[cardVisible]\" ng-change=\"updateCardVisibility(x[179],x[cardVisible])\" ng-checked=\"{{x[cardVisible]}}\" ng-disabled=\"x[cardVisible]=='ERROR'\"> <span class=\"toggle\"></span></label><span ng-if=\"x[cardVisible]=='ERROR'\" class=\"d-icon-exclamation_triangle\" style=\"margin-right: 5px;font-size: 21px; color: red\" rel=\"tooltip\" data-html=\"true\" data-placement=\"left\" title=\"{{x[cardErrorInformation]}}\" ng-mouseover=\"hoverIn('tooltip')\"></span></div></div><div class=\"card-footer\"><div class=\"stats\"><div class=\"material-icons\"><p class=\"d-icon-info_circle\" rel=\"popover\" data-container=\"body\" data-original-title=\"{{x[tooltipHeader]}}\" data-color=\"primary\" data-content=\"{{x[tooltipDescription]}}\" ng-mouseover=\"hoverIn('popover')\"></p></div><a href=\"javascript:;\" style=\"color:black\"><em>{{x[Description]}}</em></a></div></div></div></div></div><div style=\"text-align: right\"><button class=\"d-button d-icon-right-angle_down d-button_secondary\" ng-hide=\"results.length === cardList.length\" ng-click=\"limit = limit +6\">show more...</button> <button class=\"d-button d-icon-right-angle_up d-button_secondary\" ng-hide=\"results.length <= 6\" ng-click=\"limit = limit -6\">show less...</button></div></div></div></div><script type=\"text/javascript\">$(document).ready(function() {\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        $(\".switch input\").on(\"change\", function(e) {\r" +
+    "\n" +
+    "            const isOn = e.currentTarget.checked;\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "            //show/hide div\r" +
+    "\n" +
+    "            if (isOn) {\r" +
+    "\n" +
+    "                $(\".hideme\").hide();\r" +
+    "\n" +
+    "            } else {\r" +
+    "\n" +
+    "                $(\".hideme\").show();\r" +
+    "\n" +
+    "            }\r" +
+    "\n" +
+    "        });\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        //toggle text inside switch button\r" +
+    "\n" +
+    "        let vm = this;\r" +
+    "\n" +
+    "        vm.isActive = false;\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        vm.toggle = function() {\r" +
+    "\n" +
+    "            vm.isActive = !vm.isActive;\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "    });</script>"
   );
 
 
@@ -1952,11 +692,7 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
 
 
   $templateCache.put('scripts/view-components/marquee3/com-vyom-vyomlib-inspector-marquee3-mbgcolor.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<select ng-model=\"HChange\" ng-options=\"x for x in names\"></select><!-- <select ng-model=\"MBgcolor\">\n" +
-    "    <option value=\"{{x}}\" class=\"w3-container w3-{{x}}\" ng-repeat=\"x in names\">\n" +
-    "        {{x}}\n" +
-    "    </option>\n" +
-    "</select>--></label>"
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<select ng-model=\"HChange\" ng-options=\"x for x in names\"></select></label>"
   );
 
 
@@ -1966,1191 +702,199 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
 
 
   $templateCache.put('scripts/view-components/marquee3/com-vyom-vyomlib-marquee3.directive.html',
-    "<!DOCTYPE html><html><head></head><body><div align=\"{{MAllignment}}\"><marquee width=\"{{MWidth}}\" direction=\"{{MDirection}}\" direction=\"{{MDirection}}\" scrollamount=\"{{MSpeed}}\" behavior=\"{{MBehavior}}\" loop=\"infinite\" class=\"vy_silver w3-container w3-{{MBGColor}}\" scrolldelay=\"100\" onmouseover=\"this.stop();\" onmouseout=\"this.start();\"><table height=\"{{MHeight}}\" class=\"w3-text-white\"><tr><td ng-repeat=\"x in mydata\"><span ng-if=\"FieldID1Title||x[FieldID1]\">{{FieldID1Title}} : {{fromhtml(FieldID1,x[FieldID1])}} </span><span ng-if=\"(FieldID1Title||x[FieldID1])&&(FieldID2Title||x[FieldID2])\">,</span><!-- {{fromhtml(FieldID2,x[FieldID2])}} --> <span ng-if=\"FieldID2Title||x[FieldID2]\">{{FieldID2Title}}: {{fromhtml(FieldID2,x[FieldID2])}} </span><span ng-if=\"((FieldID1Title||x[FieldID1])||(FieldID2Title||x[FieldID2]))&&(FieldID3Title||x[FieldID3])\">,</span> <span ng-if=\"FieldID3Title||x[FieldID3]\">{{FieldID3Title}} : {{fromhtml(FieldID3,x[FieldID3])}}</span> <span ng-if=\"((FieldID1Title||x[FieldID1])||(FieldID2Title||x[FieldID2])||(FieldID3Title||x[FieldID3]))&&(FieldID4Title||x[FieldID4])\">,</span> <span ng-if=\"FieldID4Title||x[FieldID4]\">{{FieldID4Title}} : {{fromhtml(FieldID4,x[FieldID4])}} </span><span>{{Separator}}</span></td></tr></table></marquee></div></body></html>"
+    "<!DOCTYPE html><html><head></head><body><div align=\"{{MAllignment}}\"><marquee width=\"{{MWidth}}\" direction=\"{{MDirection}}\" direction=\"{{MDirection}}\" scrollamount=\"{{MSpeed}}\" behavior=\"{{MBehavior}}\" loop=\"infinite\" class=\"vy_silver w3-container w3-{{MBGColor}}\" scrolldelay=\"100\" onmouseover=\"this.stop();\" onmouseout=\"this.start();\"><table height=\"{{MHeight}}\" class=\"w3-text-white\"><tr><td ng-repeat=\"x in mydata\"><span ng-if=\"FieldID1Title||x[FieldID1]\">{{FieldID1Title}}: {{fromhtml(FieldID1,x[FieldID1])}} </span><span ng-if=\"(FieldID1Title||x[FieldID1])&&(FieldID2Title||x[FieldID2])\">,</span><!-- {{fromhtml(FieldID2,x[FieldID2])}} --> <span ng-if=\"FieldID2Title||x[FieldID2]\">{{FieldID2Title}}: {{fromhtml(FieldID2,x[FieldID2])}}</span> <span ng-if=\"((FieldID1Title||x[FieldID1])||(FieldID2Title||x[FieldID2]))&&(FieldID3Title||x[FieldID3])\">,</span> <span ng-if=\"FieldID3Title||x[FieldID3]\">{{FieldID3Title}}: {{fromhtml(FieldID3,x[FieldID3])}}</span> <span ng-if=\"((FieldID1Title||x[FieldID1])||(FieldID2Title||x[FieldID2])||(FieldID3Title||x[FieldID3]))&&(FieldID4Title||x[FieldID4])\">,</span> <span ng-if=\"FieldID4Title||x[FieldID4]\">{{FieldID4Title}}: {{fromhtml(FieldID4,x[FieldID4])}}</span> <span style=\"margin-left: 10px;margin-right: 10px\">{{Separator}}</span></td></tr></table></marquee></div></body></html>"
   );
 
 
-  $templateCache.put('scripts/view-components/menubaradv/com-vyom-vyomlib-menubaradv-design.directive.html',
-    "<img src=\"/com.vyom.vyomlib/resources/kanban1/dist/menubarimage.png\" width=\"1002\" height=\"38\">"
+  $templateCache.put('scripts/view-components/nvd3-chart/com-vyom-vyomlib-nvd3-chart-design.html',
+    "<span class=\"d-icon-chart_donut\" style=\"font-size: 100px;\n" +
+    "text-align: center;\n" +
+    "display: block\"></span>"
   );
 
 
-  $templateCache.put('scripts/view-components/menubaradv/com-vyom-vyomlib-menubaradv.directive.html',
-    "<html><head><!-- <link href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\"> --><!-- <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js\"></script> --><!-- <link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\" type=\"text/css\"\r" +
+  $templateCache.put('scripts/view-components/nvd3-chart/com-vyom-vyomlib-nvd3-chart-picker.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div class=\"input-group\"><input colorpicker=\"hex\" type=\"text\" ng-model=\"color\"> <span class=\"input-group-btn\"><button type=\"button\" class=\"rx-editor-header__button rx-editor-header__button_save rx-editor-header__button_divider-before d-button d-button_primary d-button_small\" ng-click=\"saveColor();\" ng-disabled=\"false\">Apply</button></span></div>"
+  );
+
+
+  $templateCache.put('scripts/view-components/nvd3-chart/com-vyom-vyomlib-nvd3-chart.html',
+    "<body style=\"padding-left: 0%; margin-left: 0%\"><div>{{pieChartConfiguration.title}}</div><div style=\"padding-left: 0%; margin-left: 0%\" class=\"svg-container container-{{pieChartConfiguration.className}}\"><svg class=\"{{pieChartConfiguration.className}} svg-content\"></svg></div></body>"
+  );
+
+
+  $templateCache.put('scripts/view-components/portal-preview/com-vyom-vyomlib-inspector-portal-preview-attachment.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\"><select class=\"select\" ng-options=\"field.name for field in data.fields track by field.id\" ng-model=\"data.selectedField\"></select></div><div ng-if=\"!data.fields.length\">There are no attachment fields in this record definition.</div>"
+  );
+
+
+  $templateCache.put('scripts/view-components/portal-preview/com-vyom-vyomlib-inspector-portal-preview-bgcolor.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<select ng-model=\"HChange\" ng-options=\"x for x in names\"></select></label>"
+  );
+
+
+  $templateCache.put('scripts/view-components/portal-preview/com-vyom-vyomlib-inspector-portal-preview-fields.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\"><select class=\"select\" ng-options=\"field.name for field in data.fields track by field.id \" ng-model=\"data.selectedField\"></select></div><div ng-if=\"!data.fields.length\">Record Definition is must.</div>"
+  );
+
+
+  $templateCache.put('scripts/view-components/portal-preview/com-vyom-vyomlib-inspector-portal-preview-integer.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\"><select class=\"select\" ng-options=\"field.name for field in data.fields track by field.id\" ng-model=\"data.selectedField\"></select></div><div ng-if=\"!data.fields.length\">There are no integer fields in this record definition.</div>"
+  );
+
+
+  $templateCache.put('scripts/view-components/portal-preview/com-vyom-vyomlib-portal-preview-design.directive.html',
+    "<span class=\"d-icon-app_arrow_chart_up\" style=\"font-size: 100px;text-align: center\"></span>"
+  );
+
+
+  $templateCache.put('scripts/view-components/portal-preview/com-vyom-vyomlib-portal-preview.directive.html',
+    "<script>$(document).ready(function() {\r" +
     "\n" +
-    "        rel=\"stylesheet\" /> --><!-- <script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script> --><!-- <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script> --><script src=\"//code.jquery.com/jquery-1.11.1.min.js\"></script><link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css\"><!-- <link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/menubar/menu2.css\">\" --><style>.modal {\r" +
+    "\r" +
     "\n" +
-    "            display: none;\r" +
+    "        $(\"#myCarousel\").carousel();\r" +
     "\n" +
-    "            /* Hidden by default */\r" +
+    "    });\r" +
     "\n" +
-    "            position: fixed;\r" +
+    "    $(function() {\r" +
     "\n" +
-    "            /* Stay in place */\r" +
+    "        $('[data-toggle=\"popover\"]').popover()\r" +
     "\n" +
-    "            z-index: 1;\r" +
+    "    })</script><div class=\"wrapper\"><div class=\"row\"><div class=\"col-4\"><div class=\"searchcontainer\"><input type=\"text\" class=\"searchinput w3-{{SearchColor}}\" ng-model=\"query\" placeholder=\"Search...\"><div class=\"search w3-{{SearchColor}}\" ng-click=\"clearSearchContainer()\"></div></div></div><div class=\"col-8\"><h1 style=\"font-size: 55px\" class=\"w3-text-{{titleColor}}\">{{Greetings}} {{CurrentUserFullName}}</h1><p></p></div></div><div class=\"content\"><div class=\"container-fluid\"><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\" data-interval=\"{{carouselSpeed}}\"><!-- Indicators --><ol class=\"carousel-indicators\"><li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li><li data-target=\"#myCarousel\" data-slide-to=\"1\"></li><li data-target=\"#myCarousel\" data-slide-to=\"2\"></li></ol><!-- Wrapper for slides --><div class=\"carousel-inner\"><div class=\"item active\"><img src=\"{{firstSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[0][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"{{secondSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[1][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"{{thirdSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[2][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div></div><!-- Left and right controls --></div></div></div><div class=\"container-fluid\" style=\"padding-bottom: 0px; padding-top: 10px\"><div class=\"text-center\" style=\"\"><span><!-- sort-by dropdown --><label style=\"vertical-align: bottom;float: left; color:black\">Sort By:</label><select ng-model=\"selectedValue\" ng-change=\"sortByViews()\" style=\"float:left\"><option value=\"\" selected=\"selected\">-select-</option><option value=\"fav\">Favourites</option><option value=\"{{Views}}\">Max-views</option><option value=\"{{ratingCount}}\">Max-ratings</option><option value=\"status\">Active</option><option value=\"clear\">Clear</option><tbody><!----><tr><td>user_card</td><td><span class=\"bigfont d-icon-user_card\"></span></td></tr><!----><tr><td>user_check</td><td><span class=\"bigfont d-icon-user_check\"></span></td></tr><!----><tr><td>user_check_circle</td><td><span class=\"bigfont d-icon-user_check_circle\"></span></td></tr><!----></tbody></select><button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category1\" ng-click=\"assignCurrentCategory(Category1)\">{{Category1}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category2\" ng-click=\"assignCurrentCategory(Category2)\">{{Category2}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category3\" ng-click=\"assignCurrentCategory(Category3)\">{{Category3}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category4\" ng-click=\"assignCurrentCategory(Category4)\">{{Category4}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category5\" ng-click=\"assignCurrentCategory(Category5)\">{{Category5}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category6\" ng-click=\"assignCurrentCategory(Category6)\">{{Category6}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category7\" ng-click=\"assignCurrentCategory(Category7)\">{{Category7}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category8\" ng-click=\"assignCurrentCategory(Category8)\">{{Category8}}</button><!-- switch button --><label class=\"switch\" style=\"/*vertical-align: bottom;*/\"><input type=\"checkbox\" ng-model=\"vm.isActive\" ng-change=\"show_hide_recordGrid()\"> <span class=\"slider round hide-off\" style=\"padding-top: 5px;margin-bottom: 10px\"><span ng-class=\" { 'off' : !vm.isActive } \">{{vm.isActive ? 'Card' : 'List'}}</span></span></label><!-- end switch button --></span></div></div><div class=\"content hideme\"><div class=\"container-fluid\"><div class=\"row\" id=\"reverse\" ng-init=\"limit = 8\"><div class=\"selector col-lg-3 col-md-4 col-sm-4\" ng-repeat=\"x in cardList | filter:query  | limitTo: limit as results \"><div class=\"card card-stats w3-card-4 h-75\"><div class=\"card-header card-header-{{x[Color]}} card-header-icon h-75\"><div ng-click=\"setSelectedCardInstanceId(x[179]);executeAction(cardActionGuid);updateViewsCounter(x[179],x[Views])\" data-toggle=\"modal\" data-target=\"#portalpreviewmodal\"><div class=\"card-icon\"><div class=\"material-icons\"><p class=\"d-icon-{{x[Icon]}}\"></p></div></div><h5 class=\"card-title\">{{x[ApplicationName]}}</h5><p class=\"card-category\" ng-if=\"x[Views]>0\"><span class=\"d-icon-eye\"></span> <span>{{numFormatter(x[Views])}} views</span></p></div><p class=\"card-category\" ng-init=\"generateRating(x[ratingCount],x[179])\"><span ng-repeat=\"star in starsobj[x[179]] track by $index\" class=\"{{star.icon}}\" style=\"{{star.style}}\"></span> <span style=\"margin-left: 5px\"><button type=\"button\" class=\"d-button d-button_link d-button_small d-icon-left-user_star\" style=\"\" ng-click=\"setSelectedCardInstanceId(x[179]);executeAction(rateMeActionGuid)\"><span>Rate App</span></button></span></p><p class=\"card-category\" style=\"float: left;left:0;margin-left: 8px;margin-bottom: 0px;margin-top: -10px\"><span ng-if=\"x[cardStatus]\" class=\"d-icon-circle\" style=\"margin-right: 5px;font-size: 21px\" ng-class=\"getCardStatusCSS(x[cardStatus])\" rel=\"tooltip\" title=\"{{x[cardStatus]}}\" ng-mouseover=\"hoverIn('tooltip')\"></span> <span ng-if=\"x[cardFavourite]=='true' ||x[cardFavourite]=='false'\" class=\"{{getCardFavouriteClass(x[cardFavourite])}}\" style=\"margin-right: 5px;font-size:21px\" ng-click=\"updateCardFavourite(x[179],x[cardFavourite])\" rel=\"tooltip\" title=\"Favourite\" ng-mouseover=\"hoverIn('tooltip')\"></span> <span ng-if=\"x[cardScope]\" ng-class=\"getCardScopeCSS(x[cardScope])\" style=\"margin-right: 5px;font-size: 21px; color: skyblue\" rel=\"tooltip\" title=\"{{x[cardScope]=='true'?'Global':'Local'}}\" ng-mouseover=\"hoverIn('tooltip')\"></span></p><div class=\"card-category togglebutton\" ng-if=\"adminConfiguration\"><em style=\"margin-right: 5px\">Visible for All-{{x[cardVisible]}}</em><label><input type=\"checkbox\" ng-model=\"x[cardVisible]\" ng-change=\"updateCardVisibility(x[179],x[cardVisible])\" ng-checked=\"{{x[cardVisible]}}\" ng-disabled=\"x[cardVisible]=='ERROR'\"> <span class=\"toggle\"></span></label><span ng-if=\"x[cardVisible]=='ERROR'\" class=\"d-icon-exclamation_triangle\" style=\"margin-right: 5px;font-size: 21px; color: red\" rel=\"tooltip\" data-html=\"true\" data-placement=\"left\" title=\"{{x[cardErrorInformation]}}\" ng-mouseover=\"hoverIn('tooltip')\"></span></div></div><div class=\"card-footer\"><div class=\"stats\"><div class=\"material-icons\"><p class=\"d-icon-info_circle\" rel=\"popover\" data-container=\"body\" data-original-title=\"{{x[tooltipHeader]}}\" data-color=\"primary\" data-content=\"{{x[tooltipDescription]}}\" ng-mouseover=\"hoverIn('popover')\"></p></div><a href=\"javascript:;\" style=\"color: black\"><em>{{x[Description]}}</em></a></div></div></div></div></div><div style=\"text-align: right\"><button class=\"d-button d-icon-right-angle_down d-button_secondary\" ng-hide=\"results.length === cardList.length\" ng-click=\"limit = limit +8\">show more...</button> <button class=\"d-button d-icon-right-angle_up d-button_secondary\" ng-hide=\"results.length <= 8\" ng-click=\"limit = limit -8\">show less...</button></div></div></div></div><script type=\"text/javascript\">$(document).ready(function() {\r" +
     "\n" +
-    "            /* Sit on top */\r" +
+    "\r" +
     "\n" +
-    "            padding-top: 100px;\r" +
+    "        $(\".switch input\").on(\"change\", function(e) {\r" +
     "\n" +
-    "            /* Location of the box */\r" +
+    "            const isOn = e.currentTarget.checked;\r" +
     "\n" +
-    "            left: 0;\r" +
+    "\r" +
     "\n" +
-    "            top: 0;\r" +
+    "            //show/hide div\r" +
     "\n" +
-    "            width: 100%;\r" +
+    "            if (isOn) {\r" +
     "\n" +
-    "            /* Full width */\r" +
+    "                $(\".hideme\").hide();\r" +
     "\n" +
-    "            height: 100%;\r" +
+    "            } else {\r" +
     "\n" +
-    "            /* Full height */\r" +
+    "                $(\".hideme\").show();\r" +
     "\n" +
-    "            overflow: auto;\r" +
+    "            }\r" +
     "\n" +
-    "            /* Enable scroll if needed */\r" +
+    "        });\r" +
     "\n" +
-    "            background-color: rgb(0, 0, 0);\r" +
+    "\r" +
     "\n" +
-    "            /* Fallback color */\r" +
+    "        //toggle text inside switch button\r" +
     "\n" +
-    "            background-color: rgba(0, 0, 0, 0.4);\r" +
+    "        let vm = this;\r" +
     "\n" +
-    "            /* Black w/ opacity */\r" +
+    "        vm.isActive = false;\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        vm.toggle = function() {\r" +
+    "\n" +
+    "            vm.isActive = !vm.isActive;\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "    });</script>"
+  );
+
+
+  $templateCache.put('scripts/view-components/recent-activity/com-vyom-vyomlib-inspector-recent-activity-color.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><select ng-model=\"HChange\" ng-options=\"x for x in names\"></select>"
+  );
+
+
+  $templateCache.put('scripts/view-components/recent-activity/com-vyom-vyomlib-inspector-recent-activity-icon.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:</label><select ng-model=\"HChange\" ng-options=\"x for x in names\"></select>"
+  );
+
+
+  $templateCache.put('scripts/view-components/recent-activity/com-vyom-vyomlib-recent-activity-design.directive.html',
+    "<span class=\"d-icon-activity_feed_clock_o\" style=\"font-size: 100px;text-align: center\"></span>"
+  );
+
+
+  $templateCache.put('scripts/view-components/recent-activity/com-vyom-vyomlib-recent-activity.directive.html',
+    "<html><head><style></style></head><body><div class=\"container\"><div class=\"\"><div class=\"col-md-7\"><h4></h4><ul class=\"timeline\"><li><div class=\"timeline-badge w3-{{Color1}}\"><i class=\"glyphicon glyphicon-{{Icon1}}\"></i></div><div class=\"timeline-panel\"><div class=\"timeline-heading\"><h4 class=\"timeline-title\"><a target=\"_blank\" href=\"{{URL1}}\">{{Label1}}</a></h4></div><p></p></div></li><li><div class=\"timeline-badge w3-{{Color2}}\"><i class=\"glyphicon glyphicon-{{Icon2}}\"></i></div><div class=\"timeline-panel\"><div class=\"timeline-heading\"><h4 class=\"timeline-title\"><a target=\"_blank\" href=\"{{URL2}}\">{{Label2}}</a></h4></div><p></p></div></li><li><div class=\"timeline-badge w3-{{Color3}}\"><i class=\"glyphicon glyphicon-{{Icon3}}\"></i></div><div class=\"timeline-panel\"><div class=\"timeline-heading\"><h4 class=\"timeline-title\"><a target=\"_blank\" href=\"{{URL3}}\">{{Label3}}</a></h4></div><p></p></div></li></ul></div></div></div></body></html>"
+  );
+
+
+  $templateCache.put('scripts/view-components/topheader-param/com-vyom-vyomlib-inspector-topheader-param-bgcolor.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<select ng-model=\"HChange\" ng-options=\"x for x in names\"></select></label>"
+  );
+
+
+  $templateCache.put('scripts/view-components/topheader-param/com-vyom-vyomlib-topheader-param-design.directive.html',
+    "<span class=\"d-icon-app\"></span>"
+  );
+
+
+  $templateCache.put('scripts/view-components/topheader-param/com-vyom-vyomlib-topheader-param.directive.html',
+    "<!DOCTYPE html><html><head><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><style>@font-face {\r" +
+    "\n" +
+    "            font-family: 'Ericfont';\r" +
+    "\n" +
+    "            src: url('/com.vyom.vyomlib/resources/Fonts/UTM Ericsson Capital.ttf') format('woff'),\r" +
+    "\n" +
+    "                /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\r" +
+    "\n" +
+    "                url('/com.vyom.vyomlib/resources/Fonts/UTM Ericsson Capital.ttf') format('truetype');\r" +
+    "\n" +
+    "            /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */\r" +
     "\n" +
     "        }\r" +
     "\n" +
     "\r" +
     "\n" +
-    "        /* Modal Content */\r" +
+    "        /* Style the buttons inside the tab */\r" +
     "\n" +
-    "        .modal-contentCase {\r" +
+    "        .tab button {\r" +
     "\n" +
-    "            background-color: #fefefe;\r" +
+    "            background-color: #022461;\r" +
     "\n" +
-    "            margin: auto;\r" +
+    "            float: left;\r" +
     "\n" +
-    "            width: 35%;\r" +
+    "            border: none;\r" +
     "\n" +
-    "        }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        /* The Close Button */\r" +
-    "\n" +
-    "        .close {\r" +
-    "\n" +
-    "            color: #aaaaaa;\r" +
-    "\n" +
-    "            float: right;\r" +
-    "\n" +
-    "            font-size: 28px;\r" +
-    "\n" +
-    "            font-weight: bold;\r" +
-    "\n" +
-    "        }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        .close:hover,\r" +
-    "\n" +
-    "        .close:focus {\r" +
-    "\n" +
-    "            color: #000;\r" +
-    "\n" +
-    "            text-decoration: none;\r" +
+    "            outline: none;\r" +
     "\n" +
     "            cursor: pointer;\r" +
     "\n" +
-    "        }</style></head><body><div class=\"container\" style=\"width: 1750px; padding-left: 0px\"><nav class=\"navbar navbar-icon-top navbar-default\" style=\"margin-bottom: 5px; border-bottom: groove\"><div class=\"container-fluid\"><!-- Brand and toggle get grouped for better mobile display --><div class=\"navbar-header\"><button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\"><span class=\"sr-only\">Toggle navigation</span> <span class=\"icon-bar\"></span> <span class=\"icon-bar\"></span> <span class=\"icon-bar\"></span></button> <a class=\"navbar-brand\" style=\"font-size: 33px;\r" +
+    "            padding: 4px 12px;\r" +
     "\n" +
-    "                color: #2a265f;\r" +
+    "            transition: 0.3s;\r" +
     "\n" +
-    "                font-weight: bold\">My Application Dashboard</a></div><div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\"><ul class=\"nav navbar-nav\"><li class=\"active\"><a href=\"#\">All Cases <span class=\"sr-only\">(current)</span></a></li></ul><form class=\"navbar-form navbar-left\"><div class=\"form-group\"><input type=\"text\" class=\"form-control\" placeholder=\"INC Number\" id=\"number\"></div><button type=\"submit\" id=\"searchCase\" class=\"btn btn-default\">Submit</button></form><ul class=\"nav navbar-nav navbar-right\"><li><a href=\"#\"><i class=\"fa fa-fire\"><span class=\"badge badge-danger\">11</span> </i>My Activity</a></li><li><!-- <i class=\"fa fa-user-circle-o\"></i> --> <button id=\"myBtn\" class=\"btn btn-success\" style=\"margin-top: 20px\">Quick Case</button></li></ul></div><!-- /.navbar-collapse --><!-- new ticket modal --><div id=\"myModal\" class=\"modal\"><!-- Modal content --><div class=\"modal-contentCase\"><div class=\"modal-header\"><h5 class=\"modal-title\">Quick Case</h5><button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\" style=\"margin:  -3rem 0 -2rem -2rem\"><span aria-hidden=\"true\">×</span></button></div><div class=\"modal-body p-4\" id=\"result\"><div id=\"myForm1\"><div class=\"form-container\"><label><b>Requestor</b></label><input type=\"text\" id=\"searchTxt\" placeholder=\"Requestor\" name=\"email1\" required><label><b>Summary</b></label><input type=\"text\" placeholder=\"Enter Summary\" name=\"psw1\" required></div></div></div><div class=\"modal-footer\"><button class=\"btn btn-success\" id=\"CreateCase\">Create Quick Case</button></div></div></div><!-- modal end --></div><!-- /container-fluid --></nav></div><script>// $('#myModal').removeClass('modal fade in');\r" +
+    "            font-size: 30px;\r" +
     "\n" +
-    "        // Get the modal\r" +
-    "\n" +
-    "        var modal = document.getElementById(\"myModal\");\r" +
+    "            color: white;\r" +
     "\n" +
     "\r" +
     "\n" +
-    "        // Get the button that opens the modal\r" +
+    "            /*  font-family:Comic Sans MS;*/\r" +
     "\n" +
-    "        var btn = document.getElementById(\"myBtn\");\r" +
+    "            font-family: {\r" +
     "\n" +
-    "\r" +
+    "                    {\r" +
     "\n" +
-    "        // Get the <span> element that closes the modal\r" +
-    "\n" +
-    "        var span = document.getElementsByClassName(\"close\")[0];\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        // When the user clicks the button, open the modal \r" +
-    "\n" +
-    "        btn.onclick = function () {\r" +
-    "\n" +
-    "            modal.style.display = \"block\";\r" +
-    "\n" +
-    "        }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        // When the user clicks on <span> (x), close the modal\r" +
-    "\n" +
-    "        span.onclick = function () {\r" +
-    "\n" +
-    "            modal.style.display = \"none\";\r" +
-    "\n" +
-    "        }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        // When the user clicks anywhere outside of the modal, close it\r" +
-    "\n" +
-    "        window.onclick = function (event) {\r" +
-    "\n" +
-    "            if (event.target == modal) {\r" +
-    "\n" +
-    "                modal.style.display = \"none\";\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "        }</script></body></html>"
-  );
-
-
-  $templateCache.put('scripts/view-components/mypageadv/com-vyom-vyomlib-mypageadv-design.directive.html',
-    "<h1>dragdrop</h1>"
-  );
-
-
-  $templateCache.put('scripts/view-components/mypageadv/com-vyom-vyomlib-mypageadv.directive.html',
-    "<html><head><script src=\"/com.vyom.vyomlib/resources/mypageadv/mypageadv2.js\"></script></head><body><h1>FlagstoneJS <span class=\"yellow\">4.0.0</span><span class=\"slogan\">Dynamic &#38; responsive tiling</span></h1><p class=\"quick-info\"><span class=\"yellow\">12.5 KB</span> | No dependencies | Loaded with options</p><div class=\"adjust\"><table><thead><tr><th>Property</th><th>Value</th></tr></thead><tbody><tr><td>margin:</td><td><input type=\"number\" min=\"0\" max=\"1000\" disabled=\"disabled\" id=\"adjust-margin\"></td></tr><tr><td>bedPadding:</td><td><input type=\"number\" min=\"0\" max=\"1000\" value=\"10\" id=\"adjust-bed-padding\"></td></tr><tr><td>stonesMargin:</td><td><input type=\"number\" min=\"0\" max=\"1000\" value=\"10\" id=\"adjust-stones-margin\"></td></tr><tr><td>minWidth:</td><td><input type=\"number\" min=\"0\" max=\"1000\" value=\"280\" id=\"adjust-min-width\"></td></tr><tr><td>maxColumns:</td><td><input type=\"number\" min=\"0\" max=\"1000\" value=\"5\" id=\"adjust-max-columns\"></td></tr><tr><td>dragAndDrop:</td><td><input type=\"checkbox\" checked=\"checked\" id=\"adjust-drag-and-drop\"></td></tr><tr><td>dropCallback:</td><td><textarea id=\"adjust-drop-callback\">function(dragElem, targetElem) {\r" +
-    "\n" +
-    "    return true;\r" +
-    "\n" +
-    "  }</textarea></td></tr><tr><td>callback:</td><td><textarea id=\"adjust-callback\">function(elem, index) {\r" +
-    "\n" +
-    "    if (index === 3) {\r" +
-    "\n" +
-    "      elem.classList.add('highlight');\r" +
-    "\n" +
-    "    } else {\r" +
-    "\n" +
-    "      elem.classList.remove('highlight');\r" +
-    "\n" +
-    "    }\r" +
-    "\n" +
-    "  }</textarea></td></tr></tbody><tfoot><tr><td><button class=\"apply-adjustments\">Apply</button></td><td></td></tr></tfoot></table><div class=\"toggle-widget\"><p>Toggle Adjust Widget</p><button>&#x21D5;</button></div></div><button class=\"add-card\">Inject a card</button><article style=\"visibility:hidden\"><section class=\"flagstone-drag-handle\"><h2>1</h2><button class=\"flagstone-remove\">&#215;</button><p class=\"p-animate\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p><button class=\"toggle-more show-more flagstone-resize-height\">Show More</button> <button class=\"toggle-more show-less flagstone-resize-height\">Show Less</button></section><section class=\"flagstone-drag-handle\"><h2>2</h2><button class=\"flagstone-remove\">&#215;</button><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p><img src=\"http://placebear.com/160/160\" alt=\"\" style=\"float:left;width:80px;margin:10px 10px 10px 0\"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p></section><section class=\"flagstone-drag-handle\"><h2>3</h2><button class=\"flagstone-remove\">&#215;</button> <img src=\"http://placebear.com/260/80\" alt=\"\" id=\"change-my-source\"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></section><section class=\"flagstone-drag-handle\"><h2>4</h2><button class=\"flagstone-remove\">&#215;</button><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Lorem ipsum dolor sit amet hic cupiditate sapiente placeat temporibus.</p></section><section class=\"flagstone-drag-handle\"><h2>5</h2><button class=\"flagstone-remove\">&#215;</button><p>Lorem ipsum dolor sit amet. Hic cupiditate sapiente placeat temporibus, placeat temporibus, fugiat eos.</p></section><section class=\"flagstone-drag-handle\"><h2>6</h2><button class=\"flagstone-remove\">&#215;</button><p>Lorem ipsum dolor sit amet. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p></section><section class=\"flagstone-drag-handle\"><h2>7</h2><button class=\"flagstone-remove\">&#215;</button><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus. Accusamus ducimus unde amet quam omnis.</p></section><section class=\"flagstone-drag-handle\"><h2>8</h2><button class=\"flagstone-remove\">&#215;</button><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quibusdam placeat dolorum natus voluptatum reiciendis cupiditate, cum veritatis accusamus labore consectetur ab amet, sit commodi laudantium beatae molestiae iste repellendus.</p></section><section class=\"flagstone-drag-handle\"><h2>9</h2><button class=\"flagstone-remove\">&#215;</button><p>Lorem ipsum dolor sit amet.</p></section><section class=\"flagstone-drag-handle\"><h2>10</h2><button class=\"flagstone-remove\">&#215;</button><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p></section><section class=\"flagstone-drag-handle\"><h2>11</h2><button class=\"flagstone-remove\">&#215;</button><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus.</p></section></article><!-- <article>\r" +
-    "\n" +
-    "  <section>\r" +
-    "\n" +
-    "    <h2>1</h2>\r" +
-    "\n" +
-    "    <button class=\"flagstone-remove\">&#215;</button>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p>\r" +
-    "\n" +
-    "  </section>\r" +
-    "\n" +
-    "  <section>\r" +
-    "\n" +
-    "    <h2>2</h2>\r" +
-    "\n" +
-    "    <button class=\"flagstone-remove\">&#215;</button>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p>\r" +
-    "\n" +
-    "    <img src=\"http://placebear.com/160/160\" alt=\"\" style=\"float:left;width:80px;margin:10px 10px 10px 0;\"/>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p>\r" +
-    "\n" +
-    "  </section>\r" +
-    "\n" +
-    "  <section>\r" +
-    "\n" +
-    "    <h2>3</h2>\r" +
-    "\n" +
-    "    <button class=\"flagstone-remove\">&#215;</button>\r" +
-    "\n" +
-    "    <img src=\"http://placebear.com/260/80\" alt=\"\" />\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>\r" +
-    "\n" +
-    "  </section>\r" +
-    "\n" +
-    "  <section>\r" +
-    "\n" +
-    "    <h2>4</h2>\r" +
-    "\n" +
-    "    <button class=\"flagstone-remove\">&#215;</button>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Lorem ipsum dolor sit amet hic cupiditate sapiente placeat temporibus.</p>\r" +
-    "\n" +
-    "  </section>\r" +
-    "\n" +
-    "  <section>\r" +
-    "\n" +
-    "    <h2>5</h2>\r" +
-    "\n" +
-    "    <button class=\"flagstone-remove\">&#215;</button>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet. Hic cupiditate sapiente placeat temporibus, placeat temporibus, fugiat eos.</p>\r" +
-    "\n" +
-    "  </section>\r" +
-    "\n" +
-    "  <section>\r" +
-    "\n" +
-    "    <h2>6</h2>\r" +
-    "\n" +
-    "    <button class=\"flagstone-remove\">&#215;</button>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p>\r" +
-    "\n" +
-    "  </section>\r" +
-    "\n" +
-    "  <section>\r" +
-    "\n" +
-    "    <h2>7</h2>\r" +
-    "\n" +
-    "    <button class=\"flagstone-remove\">&#215;</button>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus. Accusamus ducimus unde amet quam omnis.</p>\r" +
-    "\n" +
-    "  </section>\r" +
-    "\n" +
-    "  <section>\r" +
-    "\n" +
-    "    <h2>8</h2>\r" +
-    "\n" +
-    "    <button class=\"flagstone-remove\">&#215;</button>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quibusdam placeat dolorum natus voluptatum reiciendis cupiditate, cum veritatis accusamus labore consectetur ab amet, sit commodi laudantium beatae molestiae iste repellendus.</p>\r" +
-    "\n" +
-    "  </section>\r" +
-    "\n" +
-    "  <section>\r" +
-    "\n" +
-    "    <h2>9</h2>\r" +
-    "\n" +
-    "    <button class=\"flagstone-remove\">&#215;</button>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet.</p>\r" +
-    "\n" +
-    "  </section>\r" +
-    "\n" +
-    "  <section>\r" +
-    "\n" +
-    "    <h2>10</h2>\r" +
-    "\n" +
-    "    <button class=\"flagstone-remove\">&#215;</button>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ducimus unde amet quam omnis aliquid aliquam culpa, explicabo ut officia illum doloremque debitis, fugiat eos. Hic cupiditate sapiente placeat temporibus.</p>\r" +
-    "\n" +
-    "  </section>\r" +
-    "\n" +
-    "  <section>\r" +
-    "\n" +
-    "    <h2>11</h2>\r" +
-    "\n" +
-    "    <button class=\"flagstone-remove\">&#215;</button>\r" +
-    "\n" +
-    "    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus.</p>\r" +
-    "\n" +
-    "  </section>\r" +
-    "\n" +
-    "</article> --><div style=\"position:absolute;z-index:9999;top:0;right:0;display:block;width:100px;height:100px;border-radius:50% 0 50% 50%;padding:2px;color:#fff;box-shadow:inset 0 0 15px 0 #000;background:#333;font-family:'Georgia',sans-serif;font-size:14px;text-align:center\"><p style=\"margin-top:10px\"><span style=\"display:block\">On</span><a href=\"https://github.com/depthdev\" target=\"_blank\" style=\"display:block;color:#08f\">Github</a><span style=\"display:block\">and</span><a href=\"http://depthdev.com/\" target=\"_blank\" style=\"color:#08f\">Depth</a></p></div><script>// Download plugin from https://github.com/depthdev/flagstonejs\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "/*\r" +
-    "\n" +
-    "  FlagstoneJS v4.0.0\r" +
-    "\n" +
-    "  (c) 2015-2018 Depth Development. http://depthdev.com\r" +
-    "\n" +
-    "  License: MIT\r" +
-    "\n" +
-    "*/\r" +
-    "\n" +
-    "!function(e,t){\"use strict\";e.flagstone=function(n,r){function a(n,r){function a(){for(var e=0,t=k.length;e<t;e++)Math.random()<q&&k.splice(e,0,!1)}function o(){L.style.visibility=\"hidden\"}function s(){L.style.visibility=\"visible\"}function i(){var t=[w],n=0,r=O.length;for(M=[];n<r;n++){if(n<w)k[n]?(k[n].style.transform=\"translate(\"+(A*n+(n?C*n+E:E))+\"px,\"+E+\"px)\",Z&&(k[n].style.height=k[n].style.width),t[n]=O[n]+E,ae(k[n],n),M.push([k[n]])):w>1&&(t[n]=A+E);else{var a=Math.min.apply(null,t),o=t.indexOf(a);k[n]?(k[n].style.transform=\"translate(\"+(A*o+(o?C*o+E:E))+\"px,\"+(a+C)+\"px)\",Z&&(k[n].style.height=k[n].style.width),t[o]+=O[n]+C,ae(k[n],n),M[o].push(k[n])):w>1&&(t[o]+=A+C)}b=(Math.max.apply(null,t)||O[0]+E)+E,L.style.height=b+\"px\"}e.setTimeout(s)}function l(t){if(k.length){y=L.offsetWidth,y<T+(E?2*E:0)&&(y=T),D=Math.floor(y/T),w=D>x?x:D,A=y/w-(C*(w-1)+2*E)/w,O=[];for(var n=0,r=k.length;n<r;n++)k[n]&&(k[n].style.width=A+\"px\",k[n].style.marginTop=\"0px\"),O.push(Z||!k[n]?A:k[n].offsetHeight);y===L.offsetWidth||t?i():l(!0),t||e.setTimeout(function(){l(!0)},W)}}function g(t){if(\"keydown\"!==t.type||13===t.keyCode||32===t.keyCode){for(var n=t.target;n&&!n.classList.contains(B);)n=n.parentElement;L.removeChild(n),e.MutationObserver||!oe&&!se||de()}}function d(t){\"keydown\"===t.type&&13!==t.keyCode&&32!==t.keyCode||e.setTimeout(l,Q)}function c(t){function n(){for(var t=0,n=M.length,r=0,a=0;t<n&&!g;t++)for(r=0,a=M[t].length;r<a;r++)g&&(i.push(M[t][r]),l.push(e.parseInt(M[t][r].style.marginTop,10)||0)),M[t][r]===o&&(g=!0)}function r(){for(var t=0,n=w,a=[];t<n;t++){var o=M[t][M[t].length-1],s=e.parseInt(o.style.transform.match(/\\d+px/)[0],10)+(e.parseInt(o.style.marginTop,10)||0)+o.offsetHeight+E;a.push(s)}var i=Math.max.apply(null,a);L.style.height=i+\"px\",V=e[($?\"request\":\"cancel\")+\"AnimationFrame\"](r)}function a(){function t(){for(var r=o.offsetHeight+s,g=r-a,d=0;d<n;d++)i[d].style.marginTop=g+l[d]+\"px\";te=e[(ne?\"request\":\"cancel\")+\"AnimationFrame\"](t)}var n=i.length,a=e.parseInt(i[0].style.transform.match(/\\d+px/)[0],10)-C+l[0];ne=!0,te=e.requestAnimationFrame(t),re=e.setTimeout(function(){ne=!1,e.cancelAnimationFrame(te)},U),$=!0,V=e.requestAnimationFrame(r),ee=e.setTimeout(function(){$=!1,e.cancelAnimationFrame(V)},U)}for(var o=t;o&&!o.classList.contains(B);)o=o.parentElement;var s=e.parseInt(o.style.transform.match(/\\d+px/)[0],10)+(e.parseInt(o.style.marginTop,10)||0),i=[],l=[],g=!1;return n(),$=!1,e.cancelAnimationFrame(V),e.clearTimeout(ee),ne=!1,e.cancelAnimationFrame(te),e.clearTimeout(re),i.length?void a():($=!0,V=e.requestAnimationFrame(r),void(ee=e.setTimeout(function(){$=!1,e.cancelAnimationFrame(V)},U)))}function m(e){\"keydown\"===e.type&&13!==e.keyCode&&32!==e.keyCode||c(e.target)}function f(){e.clearTimeout(le),le=e.setTimeout(l,Y)}function v(){e.clearTimeout(ge),ge=e.setTimeout(de)}function u(){e.removeEventListener(\"resize\",f),t.head.removeChild(t.getElementById(\"flagstone-\"+S+\"-styles\"))}function h(e){e.margin||0===e.margin?(E=e.margin,C=e.margin):(E=e.bedPadding||E,C=e.stonesMargin||C),T=e.minWidth||T,x=e.maxColumns||x,G=e.dragAndDrop===!0||e.dragAndDrop===!1?e.dragAndDrop:G,K=e.dropCallback||K,ae=e.callback||ae,de()}var S=e.flagstone.index,p=r||{},L=n?\"string\"==typeof n?t.querySelector(n):n:t.getElementsByClassName(\"flagstone\")[0],E=p.margin||0===p.margin?p.margin:p.bedPadding||0===p.bedPadding?p.bedPadding:10,y=0,b=0,T=p.minWidth||280,x=p.maxColumns||5,D=0,w=0,k=[],C=p.margin||0===p.margin?p.margin:p.stonesMargin||0===p.stonesMargin?p.stonesMargin:10,A=y/w-C*(w+1)/w,O=[],M=[],B=\"flagstone-\"+S+\"-bed__stone\",F=p.flow,z=p.direction?p.direction.toLowerCase():\"left\",I=p.assignReverseZIndexes,P=p.random,q=p.spaceFrequency||.4,N=p.space,W=p.animationDuration||0,H=p.animationDuration/1e3,R=p.animationTimingFunction||\"linear\",_=p.heightAnimationDuration||0,X=p.heightAnimationDuration/1e3,j=p.heightAnimationTimingFunction||\"linear\",Y=p.resizeDelay||0===p.resizeDelay?p.resizeDelay:250,Z=p.square,G=p.dragAndDrop,J=p.dragAndDropAutoDelay,K=p.dropCallback||function(){return!0},Q=p.eventResetDelay||0,U=p.eventResizeHeightDuration||0,V=null,$=!1,ee=null,te=null,ne=!1,re=null,ae=p.callback||function(){},oe=p.watch!==!1,se=p.watchAll,ie=p.watchImages!==!1,le=null,ge=null,de=null,ce={targetElem:null,dragStone:null,targetStone:null,targetStoneOverLeft:0,autoDropTimer:null,autoDrop:function(){ce.targetStone&&ce.targetStone.classList.contains(B)&&(ce.targetStoneOverLeft?ce.dragStone!==ce.targetStone.previousElementSibling&&(ce.targetStone.parentElement.insertBefore(ce.dragStone,ce.targetStone),ce.targetStone.classList.remove(\"flagstone-left\"),ce.targetStone.classList.remove(\"flagstone-dragover\")):ce.dragStone!==ce.targetStone.nextElementSibling&&(ce.targetStone.parentElement.insertBefore(ce.dragStone,ce.targetStone.nextElementSibling),ce.targetStone.classList.remove(\"flagstone-right\"),ce.targetStone.classList.remove(\"flagstone-dragover\")),e.clearTimeout(ce.autoDropTimer),ce.autoDropTimer=e.setTimeout(ce.autoDrop,J))},clear:function(){ce.dragStone&&(ce.dragStone.classList.remove(\"flagstone-drag\"),ce.dragStone=null),ce.targetStone&&(ce.targetStoneOverLeft=0,ce.targetStone.classList.remove(\"flagstone-dragover\"),ce.targetStone.classList.remove(\"flagstone-left\"),ce.targetStone.classList.remove(\"flagstone-right\"),ce.targetStone=null),L.classList.remove(\"flagstone-dragover\")},getTargetElem:function(e){for(ce.targetElem=e.target instanceof HTMLElement?e.target:e.target.parentElement;ce.targetElem&&!ce.targetElem.classList.contains(\"flagstone-drag-handle\");)ce.targetElem=ce.targetElem.parentElement;if(ce.targetElem)for(ce.dragStone=ce.targetElem;ce.dragStone&&!ce.dragStone.classList.contains(B);)ce.dragStone=ce.dragStone.parentElement},mouseDown:function(e){ce.getTargetElem(e)},dragStart:function(e){return!!ce.targetElem&&(ce.dragStone.classList.add(\"flagstone-drag\"),void(e.dataTransfer&&e.dataTransfer.setData(\"text\",this.id)))},touchStart:function(e){ce.getTargetElem(e),ce.dragStart(e)},dragEnter:function(t){t.preventDefault(),t.stopPropagation(),this!==ce.dragStone&&this!==ce.targetStone&&this!==L&&(e.clearTimeout(ce.autoDropTimer),ce.autoDropTimer=e.setTimeout(ce.autoDrop,J))},touchMove:function(e){if(!ce.dragStone)return!1;e.preventDefault(),e.stopPropagation();for(var n=t.elementFromPoint(e.touches[0].clientX,e.touches[0].clientY),r=n;r&&!r.classList.contains(B);)r=r.parentElement;r?(L.classList.remove(\"flagstone-dragover\"),ce.targetStoneOverLeft=r.getBoundingClientRect().left+r.offsetWidth/2>e.touches[0].clientX,ce.targetStone&&ce.targetStone!==r&&(ce.targetStone.classList.remove(\"flagstone-dragover\"),ce.targetStone.classList.remove(\"flagstone-left\"),ce.targetStone.classList.remove(\"flagstone-right\")),ce.targetStone=r,ce.targetStone.classList.contains(\"flagstone-lock\")||(ce.targetStone.classList.add(\"flagstone-dragover\"),ce.targetStoneOverLeft?(ce.targetStone.classList.remove(\"flagstone-right\"),ce.targetStone.classList.add(\"flagstone-left\")):(ce.targetStone.classList.remove(\"flagstone-left\"),ce.targetStone.classList.add(\"flagstone-right\")))):n===L&&(ce.targetStone.classList.remove(\"flagstone-dragover\"),ce.targetStone.classList.remove(\"flagstone-left\"),ce.targetStone.classList.remove(\"flagstone-right\"),L.classList.add(\"flagstone-dragover\"),ce.targetStone=L)},dragOver:function(e){return!!ce.dragStone&&(e.preventDefault(),e.stopPropagation(),e.dataTransfer.dropEffect=\"move\",void(this!==ce.dragStone&&this.classList.contains(B)?(ce.targetStone=this,ce.targetStone.classList.add(\"flagstone-dragover\"),ce.targetStoneOverLeft=this.getBoundingClientRect().left+this.offsetWidth/2>e.clientX,ce.targetStoneOverLeft?(ce.targetStone.classList.remove(\"flagstone-right\"),ce.targetStone.classList.add(\"flagstone-left\")):(ce.targetStone.classList.remove(\"flagstone-left\"),ce.targetStone.classList.add(\"flagstone-right\")),this.classList.remove(\"flagstone-dragover\"),ce.targetStone!==L&&L.classList.remove(\"flagstone-dragover\")):this===L&&this.classList.add(\"flagstone-dragover\")))},dragEnd:function(){ce.clear()},touchEnd:function(){ce.dragStone&&ce.targetStone&&!ce.targetStone.classList.contains(\"flagstone-lock\")&&K(ce.dropStone,ce.targetStone)&&(ce.targetStone===L?L.appendChild(ce.dragStone):ce.targetStoneOverLeft?L.insertBefore(ce.dragStone,ce.targetStone):L.insertBefore(ce.dragStone,ce.targetStone.nextElementSibling)),ce.clear()},dragLeave:function(){ce.targetStone&&(ce.targetStone.classList.remove(\"flagstone-dragover\"),ce.targetStone.classList.remove(\"flagstone-left\"),ce.targetStone.classList.remove(\"flagstone-right\"),L.classList.remove(\"flagstone-dragover\"))},drop:function(t){if(!ce.dragStone)return!1;if(t.stopPropagation(),e.clearTimeout(ce.autoDropTimer),ce.dragStone!==this&&(this.classList.contains(B)||this===L)){if(ce.targetStone=this,ce.targetStone===L){if(!K(ce.dragStone,ce.targetStone))return ce.clear(),!1;ce.targetStone.appendChild(ce.dragStone)}else if(ce.targetStoneOverLeft){if(!K(ce.dragStone,ce.targetStone))return ce.clear(),!1;ce.targetStone.parentElement.insertBefore(ce.dragStone,ce.targetStone)}else{if(!K(ce.dragStone,ce.targetStone.nextElementSibling))return ce.clear(),!1;ce.targetStone.parentElement.insertBefore(ce.dragStone,ce.targetStone.nextElementSibling)}ce.clear(),e.MutationObserver||!oe&&!se||de()}return!1}};return de=function(){k=Array.prototype.slice.call(L.children);for(var t=0,n=k.length;t<n;t++)k[t].classList.add(B),I&&(k[t].style.zIndex=n-t);if(ie)for(var r=L.getElementsByTagName(\"img\"),o=0,s=r.length;o<s;o++)r[o].naturalWidth||(r[o].removeEventListener(\"load\",l),r[o].addEventListener(\"load\",l),r[o].removeEventListener(\"error\",l),r[o].addEventListener(\"error\",l));for(t=0;t<n;t++)k[t].removeAttribute(\"draggable\"),k[t].removeEventListener(\"mousedown\",ce.mouseDown),k[t].removeEventListener(\"dragstart\",ce.dragStart),k[t].removeEventListener(\"touchstart\",ce.touchStart),k[t].removeEventListener(\"touchmove\",ce.touchMove),k[t].removeEventListener(\"dragover\",ce.dragOver),k[t].removeEventListener(\"dragleave\",ce.dragLeave),k[t].removeEventListener(\"dragend\",ce.dragEnd),k[t].removeEventListener(\"touchend\",ce.touchEnd),k[t].removeEventListener(\"drop\",ce.drop),k[t].removeEventListener(\"touchend\",ce.drop),k[t].removeEventListener(\"dragenter\",ce.dragEnter);if(L.removeEventListener(\"dragover\",ce.dragOver),L.removeEventListener(\"drop\",ce.drop),G){for(t=0;t<n;t++)k[t].classList.contains(\"flagstone-lock\")||(k[t].setAttribute(\"draggable\",\"true\"),k[t].addEventListener(\"mousedown\",ce.mouseDown),k[t].addEventListener(\"dragstart\",ce.dragStart),k[t].addEventListener(\"touchstart\",ce.touchStart),k[t].addEventListener(\"touchmove\",ce.touchMove),k[t].addEventListener(\"dragover\",ce.dragOver),k[t].addEventListener(\"dragleave\",ce.dragLeave),k[t].addEventListener(\"dragend\",ce.dragEnd),k[t].addEventListener(\"touchend\",ce.touchEnd),k[t].addEventListener(\"drop\",ce.drop),k[t].addEventListener(\"touchend\",ce.drop),J&&k[t].addEventListener(\"dragenter\",ce.dragEnter),k[t].getElementsByClassName(\"flagstone-drag-handle\").length||k[t].classList.add(\"flagstone-drag-handle\"));L.addEventListener(\"dragover\",ce.dragOver),L.addEventListener(\"drop\",ce.drop)}(P||N)&&(P&&k.sort(function(){return.5-Math.random()}),N&&a());var i=L.getElementsByClassName(\"flagstone-remove\");for(t=0,n=i.length;t<n;t++)i[t].removeEventListener(\"click\",g),i[t].addEventListener(\"click\",g),i[t].removeEventListener(\"keydown\",g),i[t].addEventListener(\"keydown\",g);for(i=L.getElementsByClassName(\"flagstone-reset\"),t=0,n=i.length;t<n;t++)i[t].removeEventListener(\"click\",d),i[t].addEventListener(\"click\",d),i[t].removeEventListener(\"keydown\",d),i[t].addEventListener(\"keydown\",d);for(i=L.getElementsByClassName(\"flagstone-resize-height\"),t=0,n=i.length;t<n;t++)i[t].removeEventListener(\"click\",m),i[t].addEventListener(\"click\",m),i[t].removeEventListener(\"keydown\",m),i[t].addEventListener(\"keydown\",m);l(),e.setTimeout(function(){l(!0)},W)},function(){if(o(),L.classList.add(\"flagstone-\"+S+\"-bed\"),!t.getElementById(\"flagstone-\"+S+\"-styles\")){var n=\".flagstone-\"+S+\"-bed{box-sizing:border-box;list-style-type:none;overflow:hidden;position:relative;min-width:\"+(T+2*E)+\"px;}\",r=\".flagstone-\"+S+\"-bed__stone{box-sizing:border-box;position:absolute;top:0px;\"+z+\":0px;margin:0;}\",a=\".flagstone-\"+S+\"-bed__stone{transition:transform \"+H+\"s \"+R+(F?\",width \"+H+\"s \"+R:\"\")+(_?\",height \"+X+\"s \"+j:\"\")+\";}\",s=n+r+a,i=t.createElement(\"style\");i.type=\"text/css\",i.id=\"flagstone-\"+S+\"-styles\",i.appendChild(t.createTextNode(s)),t.head.appendChild(i)}if(de(),e.removeEventListener(\"resize\",f),e.addEventListener(\"resize\",f),e.MutationObserver&&(oe||se)){var l=new e.MutationObserver(v);se&&ie?l.observe(L,{childList:!0,subtree:!0,attributes:!0,attributeFilter:[\"src\"]}):l.observe(L,{childList:!0,subtree:se})}}(),{adjust:h,destroy:u,resizeHeight:c,hide:o,reset:f,hardReset:de}}return e.flagstone.index++,new a(n,r)},e.flagstone.index=-1}(window,document);</script></body></html>"
-  );
-
-
-  $templateCache.put('scripts/view-components/pwidget/com-vyom-vyomlib-pwidget-design.directive.html',
-    "<h5>No Edit</h5>"
-  );
-
-
-  $templateCache.put('scripts/view-components/pwidget/com-vyom-vyomlib-pwidget.directive.html',
-    "<html><head><link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\"><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/pwidget3/css/myPage.css\"></head><body><!-----------------temp table-------><div class=\"container\"><div class=\"row\"><div class=\"widgetTable\"><table id=\"mytable\" class=\"grid-table\" style=\"table-layout: fixed; width: 100%\"><tr><td><div id=\"Profile\"><div id=\"profileWidgetTD\"><div class=\"widget panelbox\"><div class=\"profile\"><p class=\"profile-image\" style=\"text-align:center\"><img src=\"/com.vyom.vyomlib/resources/pwidget3/images/icons/personicon.png\" align=\"middle\" style=\"border-radius: 50%\"></p><h3 align=\"center\" style=\"color: black\" class=\"name\">{{CurrentUserFullName}}</h3><p style=\"text-align:center; font-size: 10px\" class=\"des\">Software Engineer<br>Delhi Gurgaon</p><p class=\"profile-details\" style=\"text-align:center; font-size: 11px\"><b>Email: </b>{{rxCurrentUser.getemailAddress()}}<br><b>Phone: </b>9865785432</p></div></div></div></div></td><td><div id=\"VmWare\"><div id=\"ER1\" class=\"panelbox ER\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"/com.vyom.vyomlib/resources/pwidget3/images/png/016-web-management.png\" width=\"40px\"><p class=\"request-title\">VmWare <a id=\"ERReport\" href=\"#\"><i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\" aria-hidden=\"true\"></i> </a><a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\"><b class=\"b\">Details:</b><div class=\"description\"><table class=\"table table-striped table-hover custom-table\"><thead><th>ID</th><th>Name</th><th>Description</th></thead><tbody><tr ng-repeat=\"m in vmData\"><td>{{$index+1}}</td><td><a href=\"\">{{m[vmNameId]}}</a></td><td>{{m[vmDescId]}}</td></tr></tbody></table></div><div class=\"request-button-bottom\"><button class=\"btn btn-primary\" style=\"margin-left: 10px;margin-right: 5px\">Request</button> <button class=\"btn btn-warning\" style=\"margin-left: 5px;margin-right: 5px\">Refresh</button> <button class=\"btn btn-success\" style=\"margin-left: 5px;margin-right: 5px\">Launch</button> <button class=\"btn btn-danger\" style=\"margin-left: 5px;margin-right: 5px\">Release</button></div></div></div><div class=\"RequestButtons\"><div class=\"large-image\"><img src=\"/com.vyom.vyomlib/resources/pwidget3/images/png/016-web-management.png\"></div><div class=\"buttons\"><div class=\"count\"><div class=\"active\"><b>03</b><br>Active</div><br><div class=\"disabled\"><b>12</b><br>Disabled</div></div></div></div></div></div><!--ER HTML--></div></div></td><td><div id=\"Shared Folder Access\"><div id=\"ER1\" class=\"panelbox ER\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"/com.vyom.vyomlib/resources/pwidget3/images/png/024-ads.png\" width=\"40px\"><p class=\"request-title\">Shared Folder Access <a id=\"ERReport\" href=\"#\"><i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\" aria-hidden=\"true\"></i> </a><a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\"><b class=\"b\">Folder Name:</b> <a href=\"#\"><p class=\"description1\">Unix</p></a><b class=\"b\">Type:</b><p>public</p><div class=\"request-keywords\"><b class=\"b\">Description:</b><br><p>Unable to access</p></div><div class=\"request-keywords\"><b class=\"b\">Access Type:</b><p>classic</p></div></div></div><div class=\"RequestButtons\"><div class=\"large-image\"><img src=\"/com.vyom.vyomlib/resources/pwidget3/images/png/024-ads.png\"></div><div class=\"buttons\"><button class=\"btn btn-success\">Release</button><br><button class=\"btn btn-success\">Backup</button><br><button class=\"btn btn-success\">Share</button></div></div></div></div><!--ER HTML--></div></div></td></tr><tr><td><div id=\"Jira\"><div id=\"ER1\" class=\"panelbox ER\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"/com.vyom.vyomlib/resources/pwidget3/images/png/jira.png\" width=\"40px\"><p class=\"request-title\">Jira <a id=\"ERReport\" href=\"#\"><i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\" aria-hidden=\"true\"></i> </a><a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\"><b class=\"b\">Projects assigned:</b><div class=\"description1 project-assigned\"><ul class=\"poject-assigned\"><a href=\"#\"><li>Windows Phone App</li></a><a href=\"#\"><li>New Web Applicaion</li></a><a href=\"#\"><li>Android Resrvation</li></a><a href=\"#\"><li>Project 4</li></a></ul></div><b class=\"b\">Issues assigned:</b><div class=\"description1 project-assigned\"><ul class=\"poject-assigned\"><a href=\"#\"><li>Email Exchange Server</li></a><a href=\"#\"><li>Database Down</li></a><a href=\"#\"><li>Unable to access folder</li></a><a href=\"#\"><li>Issue 4</li></a></ul></div></div></div><div class=\"RequestButtons\"><div class=\"large-image\"><img src=\"/com.vyom.vyomlib/resources/pwidget3/images/png/jira.png\"></div><div class=\"buttons\"><button class=\"btn btn-success\">Request</button><br><button class=\"btn btn-success\">Assign</button><br><button class=\"btn btn-success\">Launch</button></div></div></div></div><!--ER HTML--></div></div></td><td><div id=\"Box Enterprise\"><div id=\"ER1\" class=\"panelbox ER\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"/com.vyom.vyomlib/resources/pwidget3/images/png/008-marketing-strategy.png\" width=\"40px\"><p class=\"request-title\">Box Enterprise<!--                            <span class=\"glyphicon glyphicon-pencil glyphicon-icon\"></span>--><!--\r" +
-    "\n" +
-    "                            <a id=\"erhelp\" href=\"#\" >\r" +
-    "\n" +
-    "                                <i class=\"fa fa-question-circle ERhelp\" title=\"Ask for Help\" aria-hidden=\"true\"></i>\r" +
-    "\n" +
-    "                            </a>\r" +
-    "\n" +
-    "--> <a id=\"ERReport\" href=\"#\"><i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\" aria-hidden=\"true\"></i> </a><a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\"><b class=\"b\">Details:</b><p class=\"description1\">Description and Details of the Service will appear in this section of the widget.</p><b class=\"b\">Status:</b><p>Scheduled for Approval</p><div class=\"request-keywords\"><b class=\"b\">Keywords:</b><br><button class=\"btn btn-primary\" style=\"margin-left: 10px\">VmWare</button> <button class=\"btn btn-success\">VirtualBox</button> <button class=\"btn btn-warning\">Virtual</button> <button class=\"btn btn-danger\">VM</button></div></div></div><div class=\"RequestButtons\"><div class=\"large-image\"><img src=\"/com.vyom.vyomlib/resources/pwidget3/images/png/008-marketing-strategy.png\"></div><div class=\"buttons\"><button class=\"btn btn-success\">Request</button><br><button class=\"btn btn-success\">Release</button><br><button class=\"btn btn-success\">Launch</button></div></div></div></div><!--ER HTML--></div></div></td><td><div id=\"Widget 1\"><div id=\"ER1\" class=\"panelbox ER\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"/com.vyom.vyomlib/resources/pwidget3/images/png/023-target-1.png\" width=\"40px\"><p class=\"request-title\">Widget 1 <a id=\"ERReport\" href=\"#\"><i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\" aria-hidden=\"true\"></i> </a><a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\"><b class=\"b\">Details:</b><p class=\"description1\">Description and Details of the Service will appear in this section of the widget.</p><b class=\"b\">Status:</b><p>Scheduled for Approval</p><div class=\"request-keywords\"><b class=\"b\">Keywords:</b><br><button class=\"btn btn-primary\" style=\"margin-left: 10px\">VmWare</button> <button class=\"btn btn-success\">VirtualBox</button> <button class=\"btn btn-warning\">Virtual</button> <button class=\"btn btn-danger\">VM</button></div></div></div><div class=\"RequestButtons\"><div class=\"large-image\"><img src=\"/com.vyom.vyomlib/resources/pwidget3/images/png/023-target-1.png\"></div><div class=\"buttons\"><button class=\"btn btn-success\">Request</button><br><button class=\"btn btn-success\">Release</button><br><button class=\"btn btn-success\">Launch</button></div></div></div></div><!--ER HTML--></div></div></td></tr></table></div></div></div></body></html>"
-  );
-
-
-  $templateCache.put('scripts/view-components/registration/com-vyom-vyomlib-registration-design.directive.html',
-    "<h3>This is test vc</h3>"
-  );
-
-
-  $templateCache.put('scripts/view-components/registration/com-vyom-vyomlib-registration.directive.html',
-    "<!doctype html>\r" +
-    "\n" +
-    "<html lang=\"en\">\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "<head>\r" +
-    "\n" +
-    "    <meta charset=\"utf-8\" />\r" +
-    "\n" +
-    "    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\" />\r" +
-    "\n" +
-    "    <title>Material Bootstrap</title>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />\r" +
-    "\n" +
-    "    <meta name=\"viewport\" content=\"width=device-width\" />\r" +
-    "\n" +
-    "    <!-- bootstrap-min.css -->\r" +
-    "\n" +
-    "    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\"\r" +
-    "\n" +
-    "        integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">\r" +
-    "\n" +
-    "    <!-- <link rel=\"apple-touch-icon\" sizes=\"76x76\" href=\"assets/img/apple-icon.png\" />\r" +
-    "\n" +
-    "    <link rel=\"icon\" type=\"image/png\" href=\"assets/img/favicon.png\" /> -->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    <!--     Fonts and icons     -->\r" +
-    "\n" +
-    "    <link rel=\"stylesheet\" type=\"text/css\"\r" +
-    "\n" +
-    "        href=\"https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons\" />\r" +
-    "\n" +
-    "    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css\" />\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    <!-- CSS Files -->\r" +
-    "\n" +
-    "    <!-- <link href=\"assets/css/bootstrap.min.css\" rel=\"stylesheet\" /> -->\r" +
-    "\n" +
-    "    <!-- <link href=\"assets/css/material-bootstrap-wizard.css\" rel=\"stylesheet\" /> -->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    <!-- CSS Just for demo purpose, don't include it in your project -->\r" +
-    "\n" +
-    "    <!-- <link href=\"assets/css/demo.css\" rel=\"stylesheet\" /> -->\r" +
-    "\n" +
-    "</head>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "<body>\r" +
-    "\n" +
-    "    <div class=\"image-container set-full-height\"\r" +
-    "\n" +
-    "        style=\"background-image: url('/com.vyom.vyomlib/resources/wizard_reg/images/wizard-book.jpg')\">\r" +
-    "\n" +
-    "        <!--   Creative Tim Branding   -->\r" +
-    "\n" +
-    "        <!-- <a href=\"http://creative-tim.com\">\r" +
-    "\n" +
-    "            <div class=\"logo-container\">\r" +
-    "\n" +
-    "                <div class=\"logo\">\r" +
-    "\n" +
-    "                    <img src=\"assets/img/new_logo.png\">\r" +
-    "\n" +
-    "                </div>\r" +
-    "\n" +
-    "                <div class=\"brand\">\r" +
-    "\n" +
-    "                    Creative Tim\r" +
-    "\n" +
-    "                </div>\r" +
-    "\n" +
-    "            </div>\r" +
-    "\n" +
-    "        </a> -->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        <!--  Made With Material Kit  -->\r" +
-    "\n" +
-    "        <!-- <a href=\"http://demos.creative-tim.com/material-kit/index.html?ref=material-bootstrap-wizard\"\r" +
-    "\n" +
-    "            class=\"made-with-mk\">\r" +
-    "\n" +
-    "            <div class=\"brand\">MK</div>\r" +
-    "\n" +
-    "            <div class=\"made-with\">Made with <strong>Material Kit</strong></div>\r" +
-    "\n" +
-    "        </a> -->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "        <!--   Big container   -->\r" +
-    "\n" +
-    "        <div class=\"container\">\r" +
-    "\n" +
-    "            <div class=\"row\">\r" +
-    "\n" +
-    "                <div class=\"col-sm-12\">\r" +
-    "\n" +
-    "                    <!--      Wizard container        -->\r" +
-    "\n" +
-    "                    <div class=\"wizard-container\">\r" +
-    "\n" +
-    "                        <div class=\"card wizard-card\" data-color=\"green\" id=\"wizard\">\r" +
-    "\n" +
-    "                            <form action=\"\" method=\"\">\r" +
-    "\n" +
-    "                                <!--        You can switch \" data-color=\"blue\" \"  with one of the next bright colors: \"green\", \"orange\", \"red\", \"purple\"             -->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "                                <div class=\"wizard-header\">\r" +
-    "\n" +
-    "                                    <h3 class=\"wizard-title\">\r" +
-    "\n" +
-    "                                        Onboard a New User\r" +
-    "\n" +
-    "                                    </h3>\r" +
-    "\n" +
-    "                                    <h5>This information will let us know more about you.</h5>\r" +
-    "\n" +
-    "                                </div>\r" +
-    "\n" +
-    "                                <div class=\"wizard-navigation\">\r" +
-    "\n" +
-    "                                    <ul class=\"nav nav-pills\">\r" +
-    "\n" +
-    "                                        <li style=\"width:33% !important\"><a href=\"#details\"\r" +
-    "\n" +
-    "                                                data-toggle=\"tab\">Account</a></li>\r" +
-    "\n" +
-    "                                        <li style=\"width:33% !important\"><a href=\"#captain\"\r" +
-    "\n" +
-    "                                                data-toggle=\"tab\">Vertical</a></li>\r" +
-    "\n" +
-    "                                        <li style=\"width:33% !important\"><a href=\"#description\" data-toggle=\"tab\">\r" +
-    "\n" +
-    "                                                Details</a>\r" +
-    "\n" +
-    "                                        </li>\r" +
-    "\n" +
-    "                                    </ul>\r" +
-    "\n" +
-    "                                </div>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "                                <div class=\"tab-content\">\r" +
-    "\n" +
-    "                                    <div class=\"tab-pane\" id=\"details\">\r" +
-    "\n" +
-    "                                        <div class=\"row\">\r" +
-    "\n" +
-    "                                            <div class=\"col-sm-12\">\r" +
-    "\n" +
-    "                                                <h4 class=\"info-text\"> Let's start with the basic details.</h4>\r" +
-    "\n" +
-    "                                            </div>\r" +
-    "\n" +
-    "                                            <div class=\"col-sm-6\">\r" +
-    "\n" +
-    "                                                <div class=\"input-group\">\r" +
-    "\n" +
-    "                                                    <span class=\"input-group-addon\">\r" +
-    "\n" +
-    "                                                        <i class=\"material-icons\">email</i>\r" +
-    "\n" +
-    "                                                    </span>\r" +
-    "\n" +
-    "                                                    <div class=\"form-group label-floating\">\r" +
-    "\n" +
-    "                                                        <label class=\"control-label\">Your Email</label>\r" +
-    "\n" +
-    "                                                        <input name=\"name\" type=\"text\" class=\"form-control\">\r" +
-    "\n" +
-    "                                                    </div>\r" +
-    "\n" +
-    "                                                </div>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "                                                <div class=\"input-group\">\r" +
-    "\n" +
-    "                                                    <span class=\"input-group-addon\">\r" +
-    "\n" +
-    "                                                        <i class=\"material-icons\">lock_outline</i>\r" +
-    "\n" +
-    "                                                    </span>\r" +
-    "\n" +
-    "                                                    <div class=\"form-group label-floating\">\r" +
-    "\n" +
-    "                                                        <label class=\"control-label\">Your Password</label>\r" +
-    "\n" +
-    "                                                        <input name=\"name2\" type=\"password\" class=\"form-control\">\r" +
-    "\n" +
-    "                                                    </div>\r" +
-    "\n" +
-    "                                                </div>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "                                            </div>\r" +
-    "\n" +
-    "                                            <div class=\"col-sm-6\">\r" +
-    "\n" +
-    "                                                <div class=\"form-group label-floating\">\r" +
-    "\n" +
-    "                                                    <label class=\"control-label\">Country</label>\r" +
-    "\n" +
-    "                                                    <select class=\"form-control\">\r" +
-    "\n" +
-    "                                                        <option disabled=\"\" selected=\"\"></option>\r" +
-    "\n" +
-    "                                                        <option value=\"Afghanistan\"> Afghanistan </option>\r" +
-    "\n" +
-    "                                                        <option value=\"Albania\"> Albania </option>\r" +
-    "\n" +
-    "                                                        <option value=\"Algeria\"> Algeria </option>\r" +
-    "\n" +
-    "                                                        <option value=\"American Samoa\"> American Samoa </option>\r" +
-    "\n" +
-    "                                                        <option value=\"Andorra\"> Andorra </option>\r" +
-    "\n" +
-    "                                                        <option value=\"Angola\"> Angola </option>\r" +
-    "\n" +
-    "                                                        <option value=\"Anguilla\"> Anguilla </option>\r" +
-    "\n" +
-    "                                                        <option value=\"Antarctica\"> Antarctica </option>\r" +
-    "\n" +
-    "                                                        <option value=\"...\">...</option>\r" +
-    "\n" +
-    "                                                    </select>\r" +
-    "\n" +
-    "                                                </div>\r" +
-    "\n" +
-    "                                                <div class=\"form-group label-floating\">\r" +
-    "\n" +
-    "                                                    <label class=\"control-label\">Company Name</label>\r" +
-    "\n" +
-    "                                                    <select class=\"form-control\">\r" +
-    "\n" +
-    "                                                        <option disabled=\"\" selected=\"\"></option>\r" +
-    "\n" +
-    "                                                        <option value=\"Afghanistan\">\r" +
-    "\n" +
-    "                                                            < $100 </option>\r" +
-    "\n" +
-    "                                                        <option value=\"Albania\"> $100 - $499 </option>\r" +
-    "\n" +
-    "                                                        <option value=\"Algeria\"> $499 - $999 </option>\r" +
-    "\n" +
-    "                                                        <option value=\"American Samoa\"> $999+ </option>\r" +
-    "\n" +
-    "                                                    </select>\r" +
-    "\n" +
-    "                                                </div>\r" +
-    "\n" +
-    "                                            </div>\r" +
-    "\n" +
-    "                                        </div>\r" +
-    "\n" +
-    "                                    </div>\r" +
-    "\n" +
-    "                                    <div class=\"tab-pane\" id=\"captain\">\r" +
-    "\n" +
-    "                                        <h4 class=\"info-text\">Select your vertical </h4>\r" +
-    "\n" +
-    "                                        <div class=\"row\">\r" +
-    "\n" +
-    "                                            <div class=\"col-sm-10 col-sm-offset-1\">\r" +
-    "\n" +
-    "                                                <div class=\"col-sm-4\">\r" +
-    "\n" +
-    "                                                    <div class=\"choice\" data-toggle=\"wizard-radio\" rel=\"tooltip\"\r" +
-    "\n" +
-    "                                                        title=\"Select this option your vertical is Finance.\">\r" +
-    "\n" +
-    "                                                        <input type=\"radio\" name=\"job\" value=\"Design\">\r" +
-    "\n" +
-    "                                                        <div class=\"icon\" style=\"display: block;\">\r" +
-    "\n" +
-    "                                                            <i class=\"fa fa-dollar\"></i>\r" +
-    "\n" +
-    "                                                        </div>\r" +
-    "\n" +
-    "                                                        <h6>Finance</h6>\r" +
-    "\n" +
-    "                                                    </div>\r" +
-    "\n" +
-    "                                                </div>\r" +
-    "\n" +
-    "                                                <div class=\"col-sm-4\">\r" +
-    "\n" +
-    "                                                    <div class=\"choice\" data-toggle=\"wizard-radio\" rel=\"tooltip\"\r" +
-    "\n" +
-    "                                                        title=\"Select this option your vertical is HR.\">\r" +
-    "\n" +
-    "                                                        <input type=\"radio\" name=\"job\" value=\"Code\">\r" +
-    "\n" +
-    "                                                        <div class=\"icon\" style=\"display: block;\">\r" +
-    "\n" +
-    "                                                            <i class=\"fa fa-user\"></i>\r" +
-    "\n" +
-    "                                                        </div>\r" +
-    "\n" +
-    "                                                        <h6>HR</h6>\r" +
-    "\n" +
-    "                                                    </div>\r" +
-    "\n" +
-    "                                                </div>\r" +
-    "\n" +
-    "                                                <div class=\"col-sm-4\">\r" +
-    "\n" +
-    "                                                    <div class=\"choice\" data-toggle=\"wizard-radio\" rel=\"tooltip\"\r" +
-    "\n" +
-    "                                                        title=\"Select this option your vertical is IT.\">\r" +
-    "\n" +
-    "                                                        <input type=\"radio\" name=\"job\" value=\"Code\">\r" +
-    "\n" +
-    "                                                        <div class=\"icon\" style=\"display: block;\">\r" +
-    "\n" +
-    "                                                            <i class=\"material-icons\">business</i>\r" +
-    "\n" +
-    "                                                        </div>\r" +
-    "\n" +
-    "                                                        <h6>IT</h6>\r" +
-    "\n" +
-    "                                                    </div>\r" +
-    "\n" +
-    "                                                </div>\r" +
-    "\n" +
-    "                                            </div>\r" +
-    "\n" +
-    "                                        </div>\r" +
-    "\n" +
-    "                                    </div>\r" +
-    "\n" +
-    "                                    <div class=\"tab-pane\" id=\"description\">\r" +
-    "\n" +
-    "                                        <div class=\"row\" style=\"display: block;\">\r" +
-    "\n" +
-    "                                            <h4 class=\"info-text\"> Drop us a small description.</h4>\r" +
-    "\n" +
-    "                                            <div class=\"col-sm-6 col-sm-offset-1\">\r" +
-    "\n" +
-    "                                                <div class=\"form-group\">\r" +
-    "\n" +
-    "                                                    <label>User description</label>\r" +
-    "\n" +
-    "                                                    <textarea class=\"form-control\" placeholder=\"\" rows=\"6\"></textarea>\r" +
-    "\n" +
-    "                                                </div>\r" +
-    "\n" +
-    "                                            </div>\r" +
-    "\n" +
-    "                                            <!-- <div class=\"col-sm-4\">\r" +
-    "\n" +
-    "                                                <div class=\"form-group\">\r" +
-    "\n" +
-    "                                                    <label class=\"control-label\">Description</label>\r" +
-    "\n" +
-    "                                                    <p class=\"description\">Your Description</p>\r" +
-    "\n" +
-    "                                                </div>\r" +
-    "\n" +
-    "                                            </div> -->\r" +
-    "\n" +
-    "                                        </div>\r" +
-    "\n" +
-    "                                    </div>\r" +
-    "\n" +
-    "                                </div>\r" +
-    "\n" +
-    "                                <div class=\"wizard-footer\">\r" +
-    "\n" +
-    "                                    <div class=\"pull-right\">\r" +
-    "\n" +
-    "                                        <input type='button' class='btn btn-next btn-fill btn-success btn-wd'\r" +
-    "\n" +
-    "                                            name='next' value='Next' />\r" +
-    "\n" +
-    "                                        <input type='button' class='btn btn-finish btn-fill btn-success btn-wd'\r" +
-    "\n" +
-    "                                            name='finish' value='Finish' />\r" +
-    "\n" +
-    "                                    </div>\r" +
-    "\n" +
-    "                                    <div class=\"pull-left\">\r" +
-    "\n" +
-    "                                        <input type='button' class='btn btn-previous btn-fill btn-default btn-wd'\r" +
-    "\n" +
-    "                                            name='previous' value='Previous' />\r" +
-    "\n" +
-    "                                    </div>\r" +
-    "\n" +
-    "                                    <!-- <div class=\"clearfix\"></div> -->\r" +
-    "\n" +
-    "                                </div>\r" +
-    "\n" +
-    "                            </form>\r" +
-    "\n" +
-    "                        </div>\r" +
-    "\n" +
-    "                    </div> <!-- wizard container -->\r" +
-    "\n" +
-    "                </div>\r" +
-    "\n" +
-    "            </div> <!-- row -->\r" +
-    "\n" +
-    "        </div> <!--  big container -->\r" +
-    "\n" +
-    "    </div>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "</body>\r" +
-    "\n" +
-    "<!--   Core JS Files   -->\r" +
-    "\n" +
-    "<script src=\"/com.vyom.vyomlib/resources/wizard_reg/js/jquery-2.2.4.min.js\" type=\"text/javascript\"></script>\r" +
-    "\n" +
-    "<!-- <script src=\"assets/js/jquery-2.2.4.min.js\" type=\"text/javascript\"></script> -->\r" +
-    "\n" +
-    "<script src=\"/com.vyom.vyomlib/resources/wizard_reg/js/bootstrap.min.js\" type=\"text/javascript\"></script>\r" +
-    "\n" +
-    "<!-- <script src=\"assets/js/bootstrap.min.js\" type=\"text/javascript\"></script> -->\r" +
-    "\n" +
-    "<script src=\"/com.vyom.vyomlib/resources/wizard_reg/js/jquery.bootstrap.js\" type=\"text/javascript\"></script>\r" +
-    "\n" +
-    "<!-- <script src=\"assets/js/jquery.bootstrap.js\" type=\"text/javascript\"></script> -->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "<!--  Plugin for the Wizard -->\r" +
-    "\n" +
-    "<script src=\"/com.vyom.vyomlib/resources/wizard_reg/js/material-bootstrap-wizard.js\" type=\"text/javascript\"></script>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "<!-- <script src=\"assets/js/material-bootstrap-wizard.js\"></script> -->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "<!--  More information about jquery.validate here: http://jqueryvalidation.org/	 -->\r" +
-    "\n" +
-    "<script src=\"/com.vyom.vyomlib/resources/wizard_reg/js/jquery.validate.min.js\" type=\"text/javascript\"></script>\r" +
-    "\n" +
-    "<!-- <script src=\"assets/js/jquery.validate.min.js\"></script> -->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "</html>"
-  );
-
-
-  $templateCache.put('scripts/view-components/simple-widget/com-vyom-vyomlib-simple-widget-design.directive.html',
-    "<h3>Simple Widget</h3>"
-  );
-
-
-  $templateCache.put('scripts/view-components/simple-widget/com-vyom-vyomlib-simple-widget.directive.html',
-    "<!-- <div ng-style=\"{'background-color': displayColor, height: displayHeight, width: displayWidth, color: displayFontColor, font-family: displayFont}\">\r" +
-    "\n" +
-    "    {{displayOP}}    \r" +
-    "\n" +
-    "</div> --><!-- style=\"width:300px; margin:35px auto; border:black;\" --><html><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><head><title></title><link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css?family=Montserrat\"><link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\"><script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js\"></script><script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js\"></script><link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css\"></head><body><div class=\"body1\"><!-- <div id=\"ex1\" class=\"modal modal-dialog \" style=\"width: 100%;height: 100%;max-width: 100%;max-height: 100%;border: none;\">\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "        <iframe ng-src=\"{{URL1}}\" src=\"{{URL1}}\" style=\"width:100%;height: 100%;border: none;\"></iframe>\r" +
-    "\n" +
-    "        <a href=\"#ex1\" rel=\"modal:close\" class=\"close-modal \">Close</a>\r" +
-    "\n" +
-    "    </div> --><div class=\"hover\"><span>More Details</span><!-- <a href=\"#ex1\" class=\"social-link\" rel=\"modal:open\" target=\"_blank\"> --> <a class=\"social-link\" ng-click=\"ViewButton()\" target=\"_blank\"><!-- <i class=\"fa fa-twitter\"></i></a> --> <i class=\"fa fa-th-list\" style=\"font-size:18px\"></i></a> <a href=\"https://codepen.io/joshuaward/\" class=\"social-link\" target=\"_blank\"><i class=\"fa fa-codepen\" style=\"font-size:18px\"></i></a> <a href=\"https://github.com/akshaypatwa/\" class=\"social-link\" target=\"_blank\"><i class=\"fa fa-tachometer\" style=\"font-size:18px\"></i></a> <a href=\"https://github.com/akshaypatwa\" class=\"social-link\" target=\"_blank\"><i class=\"fa fa-github\" style=\"font-size:18px\"></i></a></div></div></body></html><!-- div.hover\r" +
-    "\n" +
-    "span Hover Me\r" +
-    "\n" +
-    "a.social-link(href=\"https://twitter.com/twitter\" target=\"_blank\")\r" +
-    "\n" +
-    "i.fab.fa-twitter\r" +
-    "\n" +
-    "a.social-link(href=\"https://codepen.io/joshuaward/\" target=\"_blank\")\r" +
-    "\n" +
-    "i.fab.fa-codepen\r" +
-    "\n" +
-    "a.social-link(href=\"https://www.instagram.com/joshuaward/\" target=\"_blank\")\r" +
-    "\n" +
-    "i.fab.fa-instagram\r" +
-    "\n" +
-    "a.social-link(href=\"https://github.com/joshuaward\" target=\"_blank\")\r" +
-    "\n" +
-    "i.fab.fa-github -->"
-  );
-
-
-  $templateCache.put('scripts/view-components/test-vc1/com-vyom-vyomlib-test-vc1-design.directive.html',
-    "<h3>Hierarchy1</h3>"
-  );
-
-
-  $templateCache.put('scripts/view-components/test-vc1/com-vyom-vyomlib-test-vc1.directive.html',
-    "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\"><!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame\r" +
-    "\n" +
-    "		Remove this if you use the .htaccess --><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,minimum-scale=1\"><title>jQuery Stiff Chart Plugin Demo</title><link href=\"https://www.jqueryscript.net/css/jquerysctipttop.css\" rel=\"stylesheet\" type=\"text/css\"><style>body { background-color:#fafafa; font-family:'Roboto';}\r" +
-    "\n" +
-    "		    button {background-color:#fafafa; font-family:'Roboto';}\r" +
-    "\n" +
-    "		    button:active,button.onclick {background-color:#3498db; font-family:'Roboto';}\r" +
-    "\n" +
-    "		    button {  outline: 0px; border:0px; }\r" +
-    "\n" +
-    "            \r" +
-    "\n" +
-    "		    .ilearnright {\r" +
-    "\n" +
-    "		    	/*width: 34%;*/\r" +
-    "\n" +
-    "		    	/*margin-right: 15%;*/\r" +
-    "\n" +
-    "		    	float:right;\r" +
-    "\n" +
-    "		    }\r" +
-    "\n" +
-    "		    .ilearnleft {\r" +
-    "\n" +
-    "		    	/*width: 66%;*/\r" +
-    "\n" +
-    "		    	float:left;\r" +
-    "\n" +
-    "		    	padding-top: 10px;\r" +
-    "\n" +
-    "		    }\r" +
-    "\n" +
-    "		    .overlay {\r" +
-    "\n" +
-    "		    		bottom: 0;\r" +
-    "\n" +
-    "		    		left: 0;\r" +
-    "\n" +
-    "		    		position: fixed;\r" +
-    "\n" +
-    "		    		right: 0;\r" +
-    "\n" +
-    "		    		top: 0;\r" +
-    "\n" +
-    "		    		background-color: #000;\r" +
-    "\n" +
-    "		    		opacity: .45;\r" +
-    "\n" +
-    "		    }\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "		    .titletext\r" +
-    "\n" +
-    "		    {\r" +
-    "\n" +
-    "		    	font-size: 25px;\r" +
-    "\n" +
-    "		    	padding: 12px 20px 12px 40px;\r" +
-    "\n" +
-    "		    	color:#b8860b;/*!Important*/\r" +
-    "\n" +
-    "		    }</style><style>* {\r" +
-    "\n" +
-    "              box-sizing: border-box;\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            #myTable {\r" +
-    "\n" +
-    "              border-collapse: collapse;\r" +
-    "\n" +
-    "              width: 100%;\r" +
-    "\n" +
-    "              border: 1px solid #ddd;\r" +
-    "\n" +
-    "              font-size: 14px;	\r" +
-    "\n" +
-    "              /*background-color:#ffffff47;*/\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "            #myTable th {\r" +
-    "\n" +
-    "              cursor: pointer;\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            #myTable th, #myTable td {\r" +
-    "\n" +
-    "              text-align: left;\r" +
-    "\n" +
-    "              padding: 12px;\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "            #myTable th {\r" +
-    "\n" +
-    "              background-color:#005293; /*#3498db;*/\r" +
-    "\n" +
-    "              color:white;	\r" +
-    "\n" +
-    "              background-clip: none;\r" +
-    "\n" +
-    "              border-top-color: #005293;\r" +
-    "\n" +
-    "              border-right-color: initial;\r" +
-    "\n" +
-    "              border-left-color: initial;\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "             #myTable td:last-child{\r" +
-    "\n" +
-    "              border-bottom-right-radius: 8px;\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            #myTable th:last-child  {\r" +
-    "\n" +
-    "                border-top-right-radius: 8px;\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "            #myTable th:nth-child(1)  {\r" +
-    "\n" +
-    "                border-top-left-radius: 8px;\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            #myTable tr {\r" +
-    "\n" +
-    "              border-bottom: 1px solid #ddd;\r" +
-    "\n" +
-    "              border-radius: 8px;\r" +
-    "\n" +
-    "            }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            #myTable tr.header, #myTable tr:hover {\r" +
-    "\n" +
-    "              background-color: #f1f1f1;\r" +
-    "\n" +
-    "            }</style><script>function sortTable(n) {\r" +
-    "\n" +
-    "            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;\r" +
-    "\n" +
-    "            table = document.getElementById(\"myTable\");\r" +
-    "\n" +
-    "            switching = true;\r" +
-    "\n" +
-    "            //Set the sorting direction to ascending:\r" +
-    "\n" +
-    "            dir = \"asc\"; \r" +
-    "\n" +
-    "            /*Make a loop that will continue until\r" +
-    "\n" +
-    "            no switching has been done:*/\r" +
-    "\n" +
-    "            while (switching) {\r" +
-    "\n" +
-    "                //start by saying: no switching is done:\r" +
-    "\n" +
-    "                switching = false;\r" +
-    "\n" +
-    "                rows = table.rows;\r" +
-    "\n" +
-    "                /*Loop through all table rows (except the\r" +
-    "\n" +
-    "                first, which contains table headers):*/\r" +
-    "\n" +
-    "                for (i = 1; i < (rows.length - 1); i++) {\r" +
-    "\n" +
-    "                //start by saying there should be no switching:\r" +
-    "\n" +
-    "                shouldSwitch = false;\r" +
-    "\n" +
-    "                /*Get the two elements you want to compare,\r" +
-    "\n" +
-    "                one from current row and one from the next:*/\r" +
-    "\n" +
-    "                x = rows[i].getElementsByTagName(\"TD\")[n];\r" +
-    "\n" +
-    "                y = rows[i + 1].getElementsByTagName(\"TD\")[n];\r" +
-    "\n" +
-    "                /*check if the two rows should switch place,\r" +
-    "\n" +
-    "                based on the direction, asc or desc:*/\r" +
-    "\n" +
-    "                if (dir == \"asc\") {\r" +
-    "\n" +
-    "                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {\r" +
-    "\n" +
-    "                    //if so, mark as a switch and break the loop:\r" +
-    "\n" +
-    "                    shouldSwitch= true;\r" +
-    "\n" +
-    "                    break;\r" +
-    "\n" +
-    "                    }\r" +
-    "\n" +
-    "                } else if (dir == \"desc\") {\r" +
-    "\n" +
-    "                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {\r" +
-    "\n" +
-    "                    //if so, mark as a switch and break the loop:\r" +
-    "\n" +
-    "                    shouldSwitch = true;\r" +
-    "\n" +
-    "                    break;\r" +
-    "\n" +
-    "                    }\r" +
-    "\n" +
-    "                }\r" +
-    "\n" +
-    "                }\r" +
-    "\n" +
-    "                if (shouldSwitch) {\r" +
-    "\n" +
-    "                /*If a switch has been marked, make the switch\r" +
-    "\n" +
-    "                and mark that a switch has been done:*/\r" +
-    "\n" +
-    "                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);\r" +
-    "\n" +
-    "                switching = true;\r" +
-    "\n" +
-    "                //Each time a switch is done, increase this count by 1:\r" +
-    "\n" +
-    "                switchcount ++;      \r" +
-    "\n" +
-    "                } else {\r" +
-    "\n" +
-    "                /*If no switching has been done AND the direction is \"asc\",\r" +
-    "\n" +
-    "                set the direction to \"desc\" and run the while loop again.*/\r" +
-    "\n" +
-    "                if (switchcount == 0 && dir == \"asc\") {\r" +
-    "\n" +
-    "                    dir = \"desc\";\r" +
-    "\n" +
-    "                    switching = true;\r" +
-    "\n" +
-    "                }\r" +
+    "                    cfg.font\r" +
     "\n" +
     "                }\r" +
     "\n" +
     "            }\r" +
     "\n" +
-    "            }</script></head><body style=\"background-color: white\"><div class=\"row\"><div class=\"col-sm-12\"><script src=\"https://code.jquery.com/jquery-3.1.1.min.js\"></script><script src=\"/com.vyom.vyomlib/resources/hierarchy/js/stiffchart.js\"></script><script>$(document).ready(function() {\r" +
+    "\r" +
     "\n" +
-    "					  $('#your-chart-name').stiffChart({\r" +
-    "\n" +
-    "						\r" +
-    "\n" +
-    "					  });\r" +
-    "\n" +
-    "					});</script><script type=\"text/javascript\">var _gaq = _gaq || [];\r" +
-    "\n" +
-    "					  _gaq.push(['_setAccount', 'UA-36251023-1']);\r" +
-    "\n" +
-    "					  _gaq.push(['_setDomainName', 'jqueryscript.net']);\r" +
-    "\n" +
-    "					  _gaq.push(['_trackPageview']);\r" +
+    "            ;\r" +
     "\n" +
     "\r" +
     "\n" +
-    "					  (function() {\r" +
-    "\n" +
-    "						var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;\r" +
-    "\n" +
-    "						ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\r" +
-    "\n" +
-    "						var s = document.getElementsByTagName('script')[0]; \r" +
-    "\n" +
-    "						s.parentNode.insertBefore(ga, s);\r" +
-    "\n" +
-    "					  })();</script><!-- <div class=\"text-center titletext\" style=\"margin-top:20px;margin-bottom:-10px;\">					\r" +
-    "\n" +
-    "                    <p style=\"font-size: 58px; font-family:sans-serif; color:cornflowerblue\">BCFC</p><br>\r" +
-    "\n" +
-    "                </div> --><div class=\"chart-container\"><div id=\"your-chart-name\"><div class=\"stiff-chart-inner\"><div class=\"stiff-chart-level\" data-level=\"01\"><div class=\"stiff-main-parent\"><ul><li data-parent=\"a\"><div id=\"coma\" class=\"the-chart\" onclick=\"document.getElementById('piechartdefault').innerHTML='';document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><!-- onclick=\"selectcompany(this.id)\"> --> <img src=\"/com.vyom.vyomlib/resources/hierarchy/images/stats_area_chart.png\" alt=\"\"><br><p style=\"font-size: 18px; font-family:sans-serif\">Bahrain Credit</p></div></li><li data-parent=\"b\"><div id=\"comb\" class=\"the-chart\" onclick=\"document.getElementById('piechartdefault').innerHTML='';document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><img src=\"/com.vyom.vyomlib/resources/hierarchy/images/3d_file.png\" alt=\"\"><br><p style=\"font-size: 18px; font-family:sans-serif\">TAC</p></div></li><li data-parent=\"c\"><div id=\"comc\" class=\"the-chart\" onclick=\"document.getElementById('piechartdefault').innerHTML='';document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><img src=\"/com.vyom.vyomlib/resources/hierarchy/images/service_waste_disposal.png\" alt=\"\"><br><p style=\"font-size: 18px; font-family:sans-serif\">TCL</p></div></li><!-- <li data-parent=\"d\" onclick=\"document.getElementById('piechartdefault').innerHTML='';document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">\r" +
-    "\n" +
-    "                            <div id=\"comd\" class=\"the-chart\">\r" +
-    "\n" +
-    "                                <img src=\"../../com.vyomlabs.new/resources/images/1.jpg\" alt=\"\"><br>\r" +
-    "\n" +
-    "                                <p style=\"font-size: 18px; font-family:sans-serif\">TRESCO</p>\r" +
-    "\n" +
-    "                            </div>\r" +
-    "\n" +
-    "                          </li>\r" +
-    "\n" +
-    "                          <li data-parent=\"e\" onclick=\"document.getElementById('piechartdefault').innerHTML='';document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">\r" +
-    "\n" +
-    "                            <div id=\"come\" class=\"the-chart\">\r" +
-    "\n" +
-    "                                <img src=\"images1/stats_pie_chart.png\" alt=\"\"><br>\r" +
-    "\n" +
-    "                                <p style=\"font-size: 18px; font-family:sans-serif\">TISCO</p>\r" +
-    "\n" +
-    "                            </div>\r" +
-    "\n" +
-    "                          </li>\r" +
-    "\n" +
-    "                          <li data-parent=\"f\" onclick=\"document.getElementById('piechartdefault').innerHTML='';document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">\r" +
-    "\n" +
-    "                            <div id=\"comf\" class=\"the-chart\">\r" +
-    "\n" +
-    "                                <img src=\"images1/positioning.png\" alt=\"\">\r" +
-    "\n" +
-    "                                <p style=\"font-size: 18px; font-family:sans-serif\">NMC</p>\r" +
-    "\n" +
-    "                            </div>\r" +
-    "\n" +
-    "                          </li> --></ul></div></div><div class=\"stiff-chart-level\" data-level=\"02\"><div class=\"stiff-child\" data-child-from=\"a\"><ul><li data-parent=\"a01\" id=\"deptInitiatives\"><div class=\"the-chart\" id=\"Initiatives\" onclick=\"selectcompany(this.id,'Initiatives')\"><p style=\"font-size:17px; font-family: sans-serif\">Initiatives &nbsp; <img src=\"/com.vyom.vyomlib/resources/hierarchy/images/calendar1.png\" alt=\"Initiatives\"></p></div></li><li data-parent=\"a02\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><p style=\"font-size:17px; font-family: sans-serif\">Projects &nbsp; <img src=\"/com.vyom.vyomlib/resources/hierarchy/images/deal.png\" alt=\"\"></p></div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"02\"><div class=\"stiff-child\" data-child-from=\"b\"><ul><li data-parent=\"b01\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Dept 1</div></li><li data-parent=\"b02\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Dept 2</div></li><li data-parent=\"b03\"><div class=\"the-chart\">Dept 3</div></li><li data-parent=\"b04\"><div class=\"the-chart\">Dept 4</div></li><li data-parent=\"b05\"><div class=\"the-chart\">Dept 5</div></li><li data-parent=\"b06\"><div class=\"the-chart\">Dept 6</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"02\"><div class=\"stiff-child\" data-child-from=\"c\"><ul><li data-parent=\"c01\"><div class=\"the-chart\" id=\"comcdept1\" onclick=\"selectcompany(this.id,'change')\">Dept 1</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"03\"><div class=\"stiff-child\" data-child-from=\"a01\"><ul><li data-parent=\"a0101\"><div class=\"the-chart\" id=\"InitiativesNewBuilding\" onclick=\"selectcompany(this.id,'InitiativesNewBuilding')\"><p style=\"font-size:14px; font-family: sans-serif\">New Building &nbsp; <img src=\"/com.vyom.vyomlib/resources/hierarchy/images/bank.png\" alt=\"Initiatives\"></p></div></li><li data-parent=\"a0102\"><div class=\"the-chart\" id=\"InitiativesNewBranch\" onclick=\"selectcompany(this.id,'InitiativesNewBranch')\"><p style=\"font-size:14px; font-family: sans-serif\">New Branch &nbsp; <img src=\"/com.vyom.vyomlib/resources/hierarchy/images/key.png\" alt=\"New Branch\"></p></div></li><li data-parent=\"a0103\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><p style=\"font-size:14px; font-family: sans-serif\">Credit Card &nbsp; &nbsp;&nbsp;&nbsp; <img src=\"/com.vyom.vyomlib/resources/hierarchy/images/credit-card.png\" alt=\"New Credit Card\"></p></div></li><li data-parent=\"a0104\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><p style=\"font-size:14px; font-family: sans-serif\">System &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src=\"/com.vyom.vyomlib/resources/hierarchy/images/settings.png\" alt=\"System Replacement\"></p></div></li><li data-parent=\"a0105\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><p style=\"font-size:14px; font-family: sans-serif\">TISCO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src=\"/com.vyom.vyomlib/resources/hierarchy/images/earth-globe.png\" alt=\"TISCO\"></p></div></li><li data-parent=\"a0106\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\"><p style=\"font-size:14px; font-family: sans-serif\">NMC &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <img src=\"/com.vyom.vyomlib/resources/hierarchy/images/download.png\" alt=\"NMC\"></p></div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"04\"><div class=\"stiff-child\" data-child-from=\"a0101\"><ul><li data-parent=\"a010101\"><div class=\"the-chart\" id=\"InitiativesNewBuildingMeetings\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingMeetings')\">Meetings</div></li><li data-parent=\"a010102\"><div class=\"the-chart\" id=\"InitiativesNewBuildingMinutesOfMeetings\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingMinutesOfMeetings')\">Minutes of Meetings</div></li><li data-parent=\"a010103\"><div class=\"the-chart\" id=\"InitiativesNewBuildingProjects\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingProjects')\">Projects</div></li><li data-parent=\"a010104\"><div class=\"the-chart\" id=\"InitiativesNewBuildingApprovals\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingApprovals')\">Approvals</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"03\"><div class=\"stiff-child\" data-child-from=\"a02\"><ul><li data-parent=\"a0201\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">New Building</div></li><li data-parent=\"a0202\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">New Building DC-IT</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"04\"><div class=\"stiff-child\" data-child-from=\"a010103\"><ul><li data-parent=\"a020101\"><div class=\"the-chart\" id=\"InitiativesNewBuildingProjectsNewbuildingAdmin\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingProjectsNewbuildingAdmin')\">New Building Admin</div></li><li data-parent=\"a020102\"><a style=\"text-decoration: none;color: inherit\" href=\"https://201911080406190633.my.salesforce.com/a652v000000Ptke\" target=\"_blank\"><div class=\"the-chart\" id=\"InitiativesNewBuildingProjectsNewBuldingDCIT\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingProjectsNewBuldingDCIT')\">New Building DC-IT</div></a></li><li data-parent=\"a020103\"><div class=\"the-chart\" id=\"InitiativesNewBuildingProjectsNewBuildingemployeesHR\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingProjectsNewBuildingemployeesHR')\">New Building Employees-HR</div></li><li data-parent=\"a020104\"><div class=\"the-chart\" id=\"InitiativesNewBuildingProjectsNewBuildingInfoSecurity\" onclick=\"selectcompany(this.id,'InitiativesNewBuildingProjectsNewBuildingInfoSecurity')\">New Building Security-Information Security</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"04\"><div class=\"stiff-child\" data-child-from=\"a020102\"><ul><li data-parent=\"a020201\"><div class=\"the-chart\" id=\"InitiativesNewBranchProjectsNewBranchITProjectPlan\" onclick=\"selectcompany(this.id,'InitiativesNewBranchProjectsNewBranchITProjectPlan')\">Project Plan</div></li><li data-parent=\"a020202\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Project Tasks</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"05\"><div class=\"stiff-child\" data-child-from=\"a020201\"><ul><li data-parent=\"a02020101\"><div class=\"the-chart\" id=\"ProjectTasks1\" onclick=\"selectcompany(this.id,'task')\">Project Tasks</div></li><li data-parent=\"a02020102\"><div class=\"the-chart\" id=\"ChangeRequests1\" onclick=\"selectcompany(this.id,'change')\">Change Requests</div></li><li data-parent=\"a02020103\"><div class=\"the-chart\" id=\"HelpDeskTickets1\" onclick=\"selectcompany(this.id,'incident')\">Help Desk Tickets</div></li><li data-parent=\"a02020104\"><div class=\"the-chart\" id=\"Incidentsreporting1\" onclick=\"selectcompany(this.id,'incident')\">Incident Reporting</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"04\"><div class=\"stiff-child\" data-child-from=\"a0102\"><ul><li data-parent=\"a010201\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Meetings</div></li><li data-parent=\"a010202\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Minutes of Meetings</div></li><li data-parent=\"a010203\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Projects</div></li><li data-parent=\"a010204\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Approvals</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"04\"><div class=\"stiff-child\" data-child-from=\"a010203\"><ul><li data-parent=\"a01020301\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">New Branch Admin</div></li><li data-parent=\"a01020302\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">New Branch-IT</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"04\"><div class=\"stiff-child\" data-child-from=\"a01020302\"><ul><li data-parent=\"a0102030201\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Project Plan</div></li><li data-parent=\"a0102030202\"><div class=\"the-chart\" onclick=\"document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';\">Project Tasks</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"05\"><div class=\"stiff-child\" data-child-from=\"a0102030201\"><ul><li data-parent=\"a010203020101\"><div class=\"the-chart\" id=\"ProjectTasks2\" onclick=\"selectcompany(this.id,'task')\">Project Tasks</div></li><li data-parent=\"a010203020102\"><div class=\"the-chart\" id=\"ChangeRequests2\" onclick=\"selectcompany(this.id,'change')\">Change Requests</div></li><li data-parent=\"a010203020103\"><div class=\"the-chart\" id=\"HelpDeskTickets2\" onclick=\"selectcompany(this.id,'incident')\">Help Desk Tickets</div></li><li data-parent=\"a010203020104\"><div class=\"the-chart\" id=\"Incidentsreporting2\" onclick=\"selectcompany(this.id,'incident')\">Incident Reporting</div></li></ul></div></div><div class=\"stiff-chart-level\" data-level=\"03\"><div class=\"stiff-child\" data-child-from=\"b01\"><ul><li data-parent=\"b0101\"><div class=\"the-chart\" id=\"combdept1\" onclick=\"selectcompany(this.id,'task')\">Dept 1</div></li></ul></div></div></div></div></div></div></div></body></html>"
+    "        }</style></head><body><div class=\"tab w3-{{bgcolor}} w3-{{headerSize}}\"><button class=\"tablinks w3-{{bgcolor}} w3-{{headerSize}}\" ng-if=\"cfg.toggleicon=== '1' ? false : true\"><img src=\"/com.vyom.vyomlib/resources/images/img/eric4.png\" class=\"tablinks\" alt=\"\"></button> <button class=\"tablinks w3-{{bgcolor}} w3-{{headerSize}}\">{{cfg.text}}</button> <button class=\"tablinks w3-{{bgcolor}} w3-{{headerSize}}\"><button1 class=\"w3-{{bgcolor}} w3-{{headerSize}}\"><a href=\"{{cfg.hyperlink}}\">{{cfg.appname}}</a></button1></button></div></body></html>"
   );
 
 
@@ -3167,283 +911,108 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
   $templateCache.put('scripts/view-components/topheader/com-vyom-vyomlib-topheader.directive.html',
     "<!DOCTYPE html><html><head><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><style>@font-face {\r" +
     "\n" +
-    "  font-family: 'Ericfont';\r" +
+    "            font-family: 'Ericfont';\r" +
     "\n" +
-    "  src: url('/com.vyom.vyomlib/resources/Fonts/UTM Ericsson Capital.ttf') format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\r" +
+    "            src: url('/com.vyom.vyomlib/resources/Fonts/UTM Ericsson Capital.ttf') format('woff'),\r" +
     "\n" +
-    "   url('/com.vyom.vyomlib/resources/Fonts/UTM Ericsson Capital.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */\r" +
+    "                /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */\r" +
     "\n" +
-    "}   \r" +
+    "                url('/com.vyom.vyomlib/resources/Fonts/UTM Ericsson Capital.ttf') format('truetype');\r" +
     "\n" +
-    "    \r" +
+    "            /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */\r" +
     "\n" +
-    "    \r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "body {font-family: Arial;}\r" +
+    "        }\r" +
     "\n" +
     "\r" +
     "\n" +
-    "/* Style the tab */\r" +
+    "        /* Style the buttons inside the tab */\r" +
     "\n" +
-    ".tab {\r" +
+    "        .tab button {\r" +
     "\n" +
-    "  overflow: hidden;\r" +
+    "            background-color: #022461;\r" +
     "\n" +
-    "  border: 1px solid #ccc;\r" +
+    "            float: left;\r" +
     "\n" +
-    "   background-color: #022461;\r" +
+    "            border: none;\r" +
     "\n" +
-    "  \r" +
+    "            outline: none;\r" +
     "\n" +
-    "}\r" +
+    "            cursor: pointer;\r" +
     "\n" +
-    "\r" +
+    "            padding: 4px 12px;\r" +
     "\n" +
-    "/* Style the buttons inside the tab */\r" +
+    "            transition: 0.3s;\r" +
     "\n" +
-    ".tab button {\r" +
+    "            font-size: 30px;\r" +
     "\n" +
-    "   background-color: #022461;\r" +
-    "\n" +
-    "  float: left;\r" +
-    "\n" +
-    "  border: none;\r" +
-    "\n" +
-    "  outline: none;\r" +
-    "\n" +
-    "  cursor: pointer;\r" +
-    "\n" +
-    "  padding: 4px 12px;\r" +
-    "\n" +
-    "  transition: 0.3s;\r" +
-    "\n" +
-    "  font-size: 30px;\r" +
-    "\n" +
-    "  color:white;\r" +
-    "\n" +
-    "/*  font-family:Comic Sans MS;*/\r" +
-    "\n" +
-    "    font-family: {{cfg.font}};\r" +
+    "            color: white;\r" +
     "\n" +
     "\r" +
     "\n" +
-    "}\r" +
+    "            /*  font-family:Comic Sans MS;*/\r" +
     "\n" +
-    "    \r" +
+    "            font-family: {\r" +
     "\n" +
-    "    \r" +
+    "                    {\r" +
     "\n" +
-    "    .tab button1 {\r" +
+    "                    cfg.font\r" +
     "\n" +
-    "  background-color: #022461;\r" +
+    "                }\r" +
     "\n" +
-    "  float: left;\r" +
-    "\n" +
-    "  border: none;\r" +
-    "\n" +
-    "  outline: none;\r" +
-    "\n" +
-    "  cursor: pointer;\r" +
-    "\n" +
-    "  padding: 12px 16px;\r" +
-    "\n" +
-    "  transition: 0.3s;\r" +
-    "\n" +
-    "  font-size: 20px;\r" +
-    "\n" +
-    "  color:white;\r" +
-    "\n" +
-    "  font-family:Calibri;\r" +
-    "\n" +
-    "  \r" +
-    "\n" +
-    "}\r" +
+    "            }\r" +
     "\n" +
     "\r" +
     "\n" +
-    "/* Create an active/current tablink class */\r" +
-    "\n" +
-    ".tab button.active {\r" +
-    "\n" +
-    "  background-color: #ccc;\r" +
-    "\n" +
-    "}\r" +
+    "            ;\r" +
     "\n" +
     "\r" +
     "\n" +
-    "/* Style the tab content */\r" +
-    "\n" +
-    ".tabcontent {\r" +
-    "\n" +
-    "  display: none;\r" +
-    "\n" +
-    "  padding: 6px 12px;\r" +
-    "\n" +
-    "  border: 1px solid #ccc;\r" +
-    "\n" +
-    "  border-top: none;\r" +
-    "\n" +
-    "}</style></head><body><div class=\"tab w3-{{bgcolor}}\"><button class=\"tablinks w3-{{bgcolor}}\" ng-if=\"cfg.toggleicon=== '1' ? false : true\"><img src=\"/com.vyom.vyomlib/resources/images/img/eric4.png\" class=\"tablinks\" alt=\"\"></button> <button class=\"tablinks w3-{{bgcolor}}\">{{cfg.text}}</button> <button class=\"tablinks w3-{{bgcolor}}\"><!--    <a href=\"{{cfg.hyperlink}}\">{{cfg.appname}}</a>--><button1 class=\"w3-{{bgcolor}}\"><a href=\"{{cfg.hyperlink}}\">{{cfg.appname}}</a></button1></button></div></body></html>"
+    "        }</style></head><body><div class=\"tab w3-{{bgcolor}} w3-{{headerSize}}\"><button class=\"tablinks w3-{{bgcolor}} w3-{{headerSize}}\" ng-if=\"cfg.toggleicon=== '1' ? false : true\"><img src=\"/com.vyom.vyomlib/resources/images/img/eric4.png\" class=\"tablinks\" alt=\"\"></button> <button class=\"tablinks w3-{{bgcolor}} w3-{{headerSize}}\">{{cfg.text}}</button> <button class=\"tablinks w3-{{bgcolor}} w3-{{headerSize}}\"><button1 class=\"w3-{{bgcolor}} w3-{{headerSize}}\"><a href=\"{{cfg.hyperlink}}\">{{cfg.appname}}</a></button1></button></div></body></html>"
   );
 
 
-  $templateCache.put('scripts/view-components/vc10/com-vyom-vyomlib-vc10-design.directive.html',
-    "<span class=\"d-icon-server_web_node\" style=\"font-size: 100px;text-align: center\"></span>"
+  $templateCache.put('scripts/view-components/user-rating/com-vyom-vyomlib-inspector-user-rating-color-picker-select.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div class=\"input-group\"><input colorpicker=\"hex\" type=\"text\" ng-model=\"hexPickerColor\"> <span class=\"input-group-btn\"><button type=\"button\" class=\"rx-editor-header__button rx-editor-header__button_save rx-editor-header__button_divider-before d-button d-button_primary d-button_small\" ng-click=\"saveColor();\" ng-disabled=\"false\">Use Color</button></span></div>"
   );
 
 
-  $templateCache.put('scripts/view-components/vc10/com-vyom-vyomlib-vc10.directive.html',
-    "<!DOCTYPE HTML><html><head><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"keywords\" content=\"Shoppy Responsive web vyomlib, Bootstrap Web vyomlibs, Flat Web vyomlibs, Android Compatible web vyomlib, \r" +
-    "\n" +
-    "Smartphone Compatible web vyomlib, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design\"><script type=\"application/x-javascript\">addEventListener(\"load\", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }</script><!-- jQuery (necessary for Bootstrap's JavaScript plugins) --><link href=\"/com.vyom.vyomlib/resources/homepage/css/bootstrap.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\"><!-- Custom Theme files --><link href=\"/com.vyom.vyomlib/resources/homepage/css/style.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\"><!--js--><script src=\"/com.vyom.vyomlib/resources/homepage/js/jquery-2.1.1.min.js\"></script><!--icons-css--><link href=\"/com.vyom.vyomlib/resources/homepage/css/font-awesome.css\" rel=\"stylesheet\"><!--Google Fonts--><link href=\"//fonts.googleapis.com/css?family=Carrois+Gothic\" rel=\"stylesheet\" type=\"text/css\"><link href=\"//fonts.googleapis.com/css?family=Work+Sans:400,500,600\" rel=\"stylesheet\" type=\"text/css\"><!--static chart--><script src=\"/com.vyom.vyomlib/resources/homepage/js/Chart.min.js\"></script><!--//charts--><!-- geo chart --><script src=\"//cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js\" type=\"text/javascript\"></script><!--    <script>window.modernizr || document.write('<script src=\"lib/modernizr/modernizr-custom.js\"><\\/script>')</script>--><!--    <script src=\"lib/html5shiv/html5shiv.js\"></script>--><!--floating window --><style>.float{\r" +
-    "\n" +
-    "	position:fixed;\r" +
-    "\n" +
-    "	width:60px;\r" +
-    "\n" +
-    "	height:60px;\r" +
-    "\n" +
-    "	bottom:40px;\r" +
-    "\n" +
-    "	right:40px;\r" +
-    "\n" +
-    "	background-color:white;\r" +
-    "\n" +
-    "	color:black;\r" +
-    "\n" +
-    "	border-radius:50px;\r" +
-    "\n" +
-    "	text-align:center;\r" +
-    "\n" +
-    "	box-shadow: 2px 2px 3px #999;\r" +
-    "\n" +
-    "}\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    ".my-float{\r" +
-    "\n" +
-    "	margin-top:22px;\r" +
-    "\n" +
-    "}</style><!--skycons-icons--><script src=\"/com.vyom.vyomlib/resources/homepage/js/skycons.js\"></script><!--//skycons-icons--></head><body><div class=\"page-container\"><div class=\"\"><div class=\"mother-grid-inner\"><!--inner block start here--><div class=\"inner-block\" style=\"padding-top: 20px\"><!--climate start here--><div class=\"climate\"><div class=\"col-md-4 climate-grids\" style=\"margin-left: 100px\"><div class=\"climate-grid1\"><div class=\"climate-gd1-top\"><div class=\"col-md-6 climate-gd1top-left\"><h4>Details</h4><h3>MyIT Alerts</h3><p>Incidents:</p><p>Changes:</p><p>Subscriptions:</p></div><div class=\"col-md-6 climate-gd1top-right\" style=\"text-align-last: center\"><span class=\"clime-icon\"><span class=\"clime-icon\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <i class=\"fa fa-camera-retro fa-3x\"></i><figure class=\"icons\"><!--\r" +
-    "\n" +
-    "								<canvas id=\"partly-cloudy-day\" width=\"64\" height=\"64\">\r" +
-    "\n" +
-    "								</canvas>\r" +
-    "\n" +
-    "--></figure><script>var icons = new Skycons({\"color\": \"#fff\"}),\r" +
-    "\n" +
-    "								  list  = [\r" +
-    "\n" +
-    "									\"clear-night\", \"partly-cloudy-day\",\r" +
-    "\n" +
-    "									\"partly-cloudy-night\", \"cloudy\", \"rain\", \"sleet\", \"snow\", \"wind\",\r" +
-    "\n" +
-    "									\"fog\"\r" +
-    "\n" +
-    "								  ],\r" +
-    "\n" +
-    "								  i;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  for(i = list.length; i--; )\r" +
-    "\n" +
-    "								icons.set(list[i], list[i]);\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  icons.play();</script></span><br><p>{{rxConfiguration.propertiesByName.incidents | comVyomVyomlibMyFilter}}</p><p>{{rxConfiguration.propertiesByName.changes | comVyomVyomlibMyFilter}}</p><p>{{rxConfiguration.propertiesByName.subscribers | comVyomVyomlibMyFilter}}</p></span></div><div class=\"clearfix\"></div></div><div class=\"climate-gd1-bottom\"><div class=\"col-md-4 cloudy1\"><h4>{{rxConfiguration.propertiesByName.country1label | comVyomVyomlibMyFilter}}</h4><!--                        <i class=\"fa fa-camera-retro fa-3x\"></i>--><!--                            <i class=\"fa fa-bar-chart fa-2x\"></i>--> <i class=\"fa fa-globe fa-3x\" style=\"color:white\"><!-- icon --></i><figure class=\"icons\"><!--\r" +
-    "\n" +
-    "							<canvas id=\"sleet\" width=\"58\" height=\"58\">\r" +
-    "\n" +
-    "							</canvas>\r" +
-    "\n" +
-    "--></figure><script>var icons = new Skycons({\"color\": \"#fff\"}),\r" +
-    "\n" +
-    "									  list  = [\r" +
-    "\n" +
-    "										\"clear-night\", \"clear-day\",\r" +
-    "\n" +
-    "										\"partly-cloudy-night\", \"cloudy\", \"rain\", \"sleet\", \"snow\", \"wind\",\r" +
-    "\n" +
-    "										\"fog\"\r" +
-    "\n" +
-    "									  ],\r" +
-    "\n" +
-    "									  i;\r" +
-    "\n" +
-    "	\r" +
-    "\n" +
-    "								  for(i = list.length; i--; )\r" +
-    "\n" +
-    "									icons.set(list[i], list[i]);\r" +
-    "\n" +
-    "	\r" +
-    "\n" +
-    "								  icons.play();</script><h3>{{rxConfiguration.propertiesByName.country1value | comVyomVyomlibMyFilter}}</h3></div><div class=\"col-md-4 cloudy1\"><h4>{{rxConfiguration.propertiesByName.country2label | comVyomVyomlibMyFilter}}</h4><i class=\"fa fa-globe fa-3x\" style=\"color:white\"><!-- icon --></i><figure class=\"icons\"><!--					<canvas id=\"cloudy\" width=\"58\" height=\"58\"></canvas>--></figure><script>var icons = new Skycons({\"color\": \"#fff\"}),\r" +
-    "\n" +
-    "								  list  = [\r" +
-    "\n" +
-    "									\"clear-night\", \"cloudy\",\r" +
-    "\n" +
-    "									\"partly-cloudy-night\", \"cloudy\", \"rain\", \"sleet\", \"snow\", \"wind\",\r" +
-    "\n" +
-    "									\"fog\"\r" +
-    "\n" +
-    "								  ],\r" +
-    "\n" +
-    "								  i;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  for(i = list.length; i--; )\r" +
-    "\n" +
-    "								icons.set(list[i], list[i]);\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  icons.play();</script><h3>{{rxConfiguration.propertiesByName.country2value | comVyomVyomlibMyFilter}}</h3></div><div class=\"col-md-4 cloudy1\"><h4>{{rxConfiguration.propertiesByName.country3label | comVyomVyomlibMyFilter}}</h4><i class=\"fa fa-globe fa-3x\" style=\"color:white\"><!-- icon --></i><figure class=\"icons\"><!--							<canvas id=\"snow\" width=\"58\" height=\"58\"></canvas>--></figure><script>var icons = new Skycons({\"color\": \"#fff\"}),\r" +
-    "\n" +
-    "								  list  = [\r" +
-    "\n" +
-    "									\"clear-night\", \"clear-day\",\r" +
-    "\n" +
-    "									\"partly-cloudy-night\", \"cloudy\", \"rain\", \"sleet\", \"snow\", \"wind\",\r" +
-    "\n" +
-    "									\"fog\"\r" +
-    "\n" +
-    "								  ],\r" +
-    "\n" +
-    "								  i;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  for(i = list.length; i--; )\r" +
-    "\n" +
-    "								icons.set(list[i], list[i]);\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  icons.play();</script><h3>{{rxConfiguration.propertiesByName.country3value | comVyomVyomlibMyFilter}}</h3></div><div class=\"clearfix\"></div></div></div></div><div class=\"col-md-4 climate-grids\" style=\"margin-left: 184px\"><div class=\"climate-grid3\" style=\"width: 548px\"><div class=\"popular-brand\"><!--Change block--><div class=\"market-update-block clr-block-2\" ng-click=\"callAction('Iaction')\"><!--End of Change block--><!--\r" +
-    "\n" +
-    "                    \r" +
-    "\n" +
-    "                <div class=\"market-update-block clr-block-2\" >\r" +
-    "\n" +
-    "--><div class=\"col-md-8 market-update-left\"><!--					<h3>{{incidents}}</h3>--><!--                     <h3>22</h3>--><h3>{{rxConfiguration.propertiesByName.incidents | comVyomVyomlibMyFilter}}</h3><h4>Incident Management</h4><p>Restoring normal service operations.</p></div><div class=\"col-md-4 market-update-right\"><i class=\"fa fa-eye\"></i></div><div class=\"clearfix\"></div></div></div><div class=\"popular-follow\"><div class=\"market-update-block clr-block-3\" ng-click=\"callAction('Caction')\"><!--End of Change block  --><!--\r" +
-    "\n" +
-    "           \r" +
-    "\n" +
-    "                    <div class=\"market-update-block clr-block-3\" >\r" +
-    "\n" +
-    "--><div class=\"col-md-8 market-update-left\"><!--						<h3>{{changes}}</h3> --><!--                        <h3>15</h3>--><h3>{{rxConfiguration.propertiesByName.changes | comVyomVyomlibMyFilter}}</h3><h4>Change Management</h4><p>planning,scheduling & tracking changes</p></div><div class=\"col-md-4 market-update-right\"><i class=\"fa fa-cubes\" style=\"font-size:48px\"></i></div><div class=\"clearfix\"></div></div></div></div></div><div class=\"clearfix\"></div></div><!--climate end here--></div><!--inner block end here--></div></div></div></body></html>"
+  $templateCache.put('scripts/view-components/user-rating/com-vyom-vyomlib-inspector-user-rating-default-value.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div ng-click=\"onStarSelectHandler($event)\"><span ng-repeat=\"star in stars track by $index\" class=\"{{star.icon}}\"></span></div>"
+  );
+
+
+  $templateCache.put('scripts/view-components/user-rating/com-vyom-vyomlib-inspector-user-rating-slider-select.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><rzslider rz-slider-model=\"minSliderValue\" rz-slider-options=\"slider_all_options.options\"></rzslider>"
+  );
+
+
+  $templateCache.put('scripts/view-components/user-rating/com-vyom-vyomlib-user-rating-design.directive.html',
+    "<span ng-repeat=\"star in getStars() track by $index\" class=\"d-icon-star\"></span>"
+  );
+
+
+  $templateCache.put('scripts/view-components/user-rating/com-vyom-vyomlib-user-rating.directive.html',
+    "<div ng-click=\"onStarSelectHandler($event)\"><span ng-repeat=\"star in stars track by $index\" class=\"{{star.icon}}\" style=\"{{star.style}}\"></span></div>"
+  );
+
+
+  $templateCache.put('scripts/view-components/vc11/com-vyom-vyomlib-inspector-vc11-bgcolor.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide details</rx-tooltip>{{options.label}}:</label><select ng-model=\"HChange\" ng-options=\"x for x in names\"></select>"
+  );
+
+
+  $templateCache.put('scripts/view-components/vc11/com-vyom-vyomlib-inspector-vc11-color.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:<div class=\"input-group\"><input colorpicker=\"hex\" type=\"text\" ng-model=\"hexPickerColor\"> <span class=\"input-group-btn\"><button type=\"button\" class=\"rx-editor-header__button rx-editor-header__button_save rx-editor-header__button_divider-before d-button d-button_primary d-button_small\" ng-click=\"saveColor();\" ng-disabled=\"false\">Use Color</button></span></div></label>"
+  );
+
+
+  $templateCache.put('scripts/view-components/vc11/com-vyom-vyomlib-vc11-design.directive.html',
+    "<span class=\"d-icon-ellipsis_horizontal_bottom\" style=\"font-size: 100px;text-align: center\"></span>"
+  );
+
+
+  $templateCache.put('scripts/view-components/vc11/com-vyom-vyomlib-vc11.directive.html',
+    "<!DOCTYPE HTML><html><head><link href=\"/com.vyom.vyomlib/resources/homepage/css/font-awesome.css\" rel=\"stylesheet\"></head><body><div class=\"page-container\"><div class=\"mother-grid-inner\"><div class=\"inner-block\" style=\"padding-top: 20px;padding-bottom: 20px\" ng-style=\"{'width':innerBlockWidthstyle}\"><div class=\"market-updates\"><div class=\"col-md-4 market-update-gd\" id=\"subscriberW1\" style=\"padding-left: 0px\"><div class=\"market-update-block clr-block-1 w3-{{Color1}}\" ng-click=\"callAction('Saction')\"><div class=\"col-md-8 market-update-left\"><h3>{{rxConfiguration.propertiesByName.count1 | comVyomVyomlibMyFilter}}</h3><h4>{{header1}}</h4><p>{{note1}}</p></div><div class=\"col-md-4 market-update-right\"><i class=\"fa fa-envelope-o\" style=\"font-size:48px\"></i></div><div class=\"clearfix\"></div></div></div><div class=\"col-md-4 market-update-gd\" id=\"incidentW1\"><div class=\"market-update-block clr-block-2 w3-{{Color2}}\" ng-click=\"callAction('Iaction')\"><div class=\"col-md-8 market-update-left\"><h3>{{rxConfiguration.propertiesByName.count2 | comVyomVyomlibMyFilter}}</h3><h4>{{header2}}</h4><p>{{note2}}</p></div><div class=\"col-md-4 market-update-right\"><i class=\"fa fa-file-text-o\"></i></div><div class=\"clearfix\"></div></div></div><div class=\"col-md-4 market-update-gd\" id=\"changeW1\" style=\"padding-right: 0px\"><div class=\"market-update-block clr-block-3 c3 w3-{{Color3}}\" ng-click=\"callAction('Caction')\"><div class=\"col-md-8 market-update-left\"><h3>{{rxConfiguration.propertiesByName.count3 | comVyomVyomlibMyFilter}}</h3><h4>{{header3}}</h4><p>{{note3}}</p></div><div class=\"col-md-4 market-update-right\"><i class=\"fa fa-desktop\" style=\"font-size:48px\"></i></div><div class=\"clearfix\"></div></div></div><div class=\"clearfix\"></div></div></div></div></div></body></html>"
   );
 
 
@@ -3457,46 +1026,156 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
   );
 
 
-  $templateCache.put('scripts/view-components/vc13/com-vyom-vyomlib-inspector-vc13-bcolor.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:<div class=\"input-group\"><input colorpicker=\"hex\" type=\"text\" ng-model=\"hexPickerColor\"> <span class=\"input-group-btn\"><button type=\"button\" class=\"rx-editor-header__button rx-editor-header__button_save rx-editor-header__button_divider-before d-button d-button_primary d-button_small\" ng-click=\"saveColor();\" ng-disabled=\"false\">Use Color</button></span></div></label>"
+  $templateCache.put('scripts/view-components/vc13/com-vyom-vyomlib-inspector-vc13-ballignment.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:<select ng-model=\"selectedName\" ng-options=\"x for x in names\"></select></label>"
   );
 
 
-  $templateCache.put('scripts/view-components/vc13/com-vyom-vyomlib-inspector-vc13-bsize.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:<rzslider rz-slider-model=\"minSliderValue\" rz-slider-options=\"slider_all_options.options\"></rzslider></label>"
+  $templateCache.put('scripts/view-components/vc13/com-vyom-vyomlib-inspector-vc13-bcolor2.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<select ng-model=\"HChange\" ng-options=\"x for x in names\"></select></label>"
   );
 
 
-  $templateCache.put('scripts/view-components/vc13/com-vyom-vyomlib-inspector-vc13-btextcolor.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:<div class=\"input-group\"><input colorpicker=\"hex\" type=\"text\" ng-model=\"hexPickerColor\"> <span class=\"input-group-btn\"><button type=\"button\" class=\"rx-editor-header__button rx-editor-header__button_save rx-editor-header__button_divider-before d-button d-button_primary d-button_small\" ng-click=\"saveColor();\" ng-disabled=\"false\">Use Color</button></span></div></label>"
+  $templateCache.put('scripts/view-components/vc13/com-vyom-vyomlib-inspector-vc13-bfont.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:<select style=\"width:140px\" ng-model=\"selectedName\" ng-options=\"item for item in names\"></select></label>"
+  );
+
+
+  $templateCache.put('scripts/view-components/vc13/com-vyom-vyomlib-inspector-vc13-bicon.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:<select style=\"width:140px\" ng-model=\"selectedName\" ng-options=\"item for item in names\"></select></label>"
+  );
+
+
+  $templateCache.put('scripts/view-components/vc13/com-vyom-vyomlib-inspector-vc13-bsize2.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:<select ng-model=\"selectedName\" ng-options=\"x for x in names\"></select></label>"
   );
 
 
   $templateCache.put('scripts/view-components/vc13/com-vyom-vyomlib-vc13-design.directive.html',
-    "<div class=\"click-button\"><button type=\"button\" class=\"d-button d-button_secondary d-button_small\">ActionButton</button></div>"
+    "<style>.vy-custom-width{\r" +
+    "\n" +
+    "        contain: content;\r" +
+    "\n" +
+    "    }</style><div class=\"vy-custom-width\"><button type=\"button\" class=\"d-button {{buttonSize | lowercase}} {{buttonIcon | lowercase}} w3-{{bgcolor}}\" ng-class=\"buttonClasses\" style=\"{{style | lowercase}} padding-left: 14px;padding-right: 14px;padding-top: 7px;padding-bottom: 7px\">{{buttonlabel}}</button></div>"
   );
 
 
   $templateCache.put('scripts/view-components/vc13/com-vyom-vyomlib-vc13.directive.html',
-    "<style>.button {\r" +
+    "<head><style>.button {\r" +
     "\n" +
     "\r" +
     "\n" +
-    "  border: none;\r" +
+    "            border: none;\r" +
     "\n" +
-    "  padding: 15px 32px;\r" +
+    "            padding: 40px 80px;\r" +
     "\n" +
-    "  text-align: center;\r" +
+    "            text-align: center;\r" +
     "\n" +
-    "  text-decoration: none;\r" +
+    "            text-decoration: none;\r" +
     "\n" +
-    "  display: inline-block;\r" +
+    "            display: inline-block;\r" +
     "\n" +
-    "  margin: 4px 2px;\r" +
+    "            margin: 4px 2px;\r" +
     "\n" +
-    "  cursor: pointer;\r" +
+    "            cursor: pointer;\r" +
     "\n" +
-    "}</style><button type=\"button\" ng-click=\"clickButton()\" class=\"{{buttonStyle.icon}}\" style=\"{{buttonStyle.style}}\">{{buttonlabel}}</button>"
+    "        }</style><style>.c {\r" +
+    "\n" +
+    "            background-color: {\r" +
+    "\n" +
+    "                    {\r" +
+    "\n" +
+    "                    btnColor\r" +
+    "\n" +
+    "                }\r" +
+    "\n" +
+    "            }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "            ;\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "            color: {\r" +
+    "\n" +
+    "                    {\r" +
+    "\n" +
+    "                    btnTextColor\r" +
+    "\n" +
+    "                }\r" +
+    "\n" +
+    "            }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "            ;\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "            font-size: {\r" +
+    "\n" +
+    "                    {\r" +
+    "\n" +
+    "                    btSize\r" +
+    "\n" +
+    "                }\r" +
+    "\n" +
+    "            }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "            ;\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "            font-family: {\r" +
+    "\n" +
+    "                    {\r" +
+    "\n" +
+    "                    btnFontFamily\r" +
+    "\n" +
+    "                }\r" +
+    "\n" +
+    "            }\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        .d-button:hover {\r" +
+    "\n" +
+    "            opacity: 0.6\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        .d-button:ng-click {\r" +
+    "\n" +
+    "            opacity: 1;\r" +
+    "\n" +
+    "            transition: 0.3s;\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        .vy-custom-width {\r" +
+    "\n" +
+    "            contain: content;\r" +
+    "\n" +
+    "        }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        .vy-custom-margin {\r" +
+    "\n" +
+    "            margin-top: 5px;\r" +
+    "\n" +
+    "            margin-bottom: 5px;\r" +
+    "\n" +
+    "        }</style><!--padding-left: 14px;padding-right: 14px;padding-top: 7px;padding-bottom: 7px; --></head><div class=\"vy-custom-width\"><button type=\"button\" ng-click=\"clickButton()\" class=\"d-button {{buttonStyle.icon | lowercase}} vy-custom-margin w3-{{buttonColor}}\" ng-class=\"buttonClasses\" style=\"{{buttonStyle.style}}\"><span>{{buttonlabel}}</span><span class=\"rx-action-button-content\"></span></button></div>"
   );
 
 
@@ -3510,18 +1189,8 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
   );
 
 
-  $templateCache.put('scripts/view-components/vc17/com-vyom-vyomlib-inspector-vc17-bgcolor.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<div class=\"input-group\"><input colorpicker=\"hex\" type=\"text\" ng-model=\"hexPickerColor\"> <span class=\"input-group-btn\"><button type=\"button\" class=\"rx-editor-header__button rx-editor-header__button_save rx-editor-header__button_divider-before d-button d-button_primary d-button_small\" ng-click=\"saveColor();\" ng-disabled=\"false\">Use Color</button></span></div></label>"
-  );
-
-
   $templateCache.put('scripts/view-components/vc17/com-vyom-vyomlib-inspector-vc17-bgcolor2.directive.html',
     "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<select ng-model=\"HChange\" ng-options=\"x for x in names\"></select></label>"
-  );
-
-
-  $templateCache.put('scripts/view-components/vc17/com-vyom-vyomlib-inspector-vc17-icheckbox.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<select ng-model=\"HIncident\" ng-options=\"x for x in names\"></select></label>"
   );
 
 
@@ -3536,3350 +1205,283 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
 
 
   $templateCache.put('scripts/view-components/vc17/com-vyom-vyomlib-vc17.directive.html',
-    "<!DOCTYPE HTML><html><head><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"keywords\" content=\"Shoppy Responsive web vyomlib, Bootstrap Web vyomlibs, Flat Web vyomlibs, Android Compatible web vyomlib, \r" +
+    "<!DOCTYPE HTML><html><head><style>i.glyphicon {\r" +
     "\n" +
-    "Smartphone Compatible web vyomlib, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design\"><script type=\"application/x-javascript\">addEventListener(\"load\", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }</script><!-- jQuery (necessary for Bootstrap's JavaScript plugins) --><link href=\"/com.vyom.vyomlib/resources/homepage/css/bootstrap.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\"><!-- Custom Theme files --><link href=\"/com.vyom.vyomlib/resources/homepage/css/style.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\"><!--js--><script src=\"/com.vyom.vyomlib/resources/homepage/js/jquery-2.1.1.min.js\"></script><!--icons-css--><link href=\"/com.vyom.vyomlib/resources/homepage/css/font-awesome.css\" rel=\"stylesheet\"><!--Google Fonts--><link href=\"//fonts.googleapis.com/css?family=Carrois+Gothic\" rel=\"stylesheet\" type=\"text/css\"><link href=\"//fonts.googleapis.com/css?family=Work+Sans:400,500,600\" rel=\"stylesheet\" type=\"text/css\"><!--static chart--><script src=\"/com.vyom.vyomlib/resources/homepage/js/Chart.min.js\"></script><style>i.glyphicon {\r" +
+    "            display: block;\r" +
     "\n" +
-    "    display: block;\r" +
+    "            text-align: center;\r" +
     "\n" +
-    "    text-align: center;\r" +
+    "            margin-bottom: -0.5em;\r" +
     "\n" +
-    "    margin-bottom: -0.5em;\r" +
+    "            font-size: 1.5em;\r" +
     "\n" +
-    "    font-size: 1.5em;\r" +
+    "            color: #337AB7;\r" +
     "\n" +
-    "    color: #337AB7;\r" +
+    "        }\r" +
     "\n" +
-    "}\r" +
+    "\r" +
     "\n" +
-    "    .centered {\r" +
+    "        .centered {\r" +
     "\n" +
-    "  position: absolute;\r" +
+    "            position: absolute;\r" +
     "\n" +
-    "  top: 149px;\r" +
+    "            top: 149px;\r" +
     "\n" +
-    "  left: 135px;\r" +
+    "            left: 135px;\r" +
     "\n" +
-    "  transform: translate(-50%, -50%);\r" +
+    "            transform: translate(-50%, -50%);\r" +
     "\n" +
-    "  font-size: 14px;\r" +
+    "            font-size: 14px;\r" +
     "\n" +
-    "}</style></head><body><div class=\"page-container\" style=\"top:12px\"><div class=\"mother-grid-inner\"><div class=\"blockwidth inner-block\" style=\"padding-top: 20px;padding-bottom: 20px\"><!--climate start here--><div class=\"climate\"><div class=\"col-md-4 climate-grids\" style=\"padding-bottom: 0px\"><div class=\"boost-icons-list\"><ul><li ng-click=\"redirecturl(Url1)\"><br><i class=\"glyphicon glyphicon-{{Icon1}}\" aria-hidden=\"true\"></i><br><a href=\"\" target=\"_blank\">{{Title1}}</a></li><li ng-click=\"redirecturl(Url2)\"><br><i class=\"glyphicon glyphicon-{{Icon2}}\" aria-hidden=\"true\"></i><br><a href=\"{{Url2}}\" target=\"_blank\">{{Title2}}</a></li><li ng-click=\"redirecturl(Url3)\"><br><i class=\"glyphicon glyphicon-{{Icon3}}\" aria-hidden=\"true\"></i><br><a href=\"{{Url3}}\" target=\"_blank\">{{Title3}}</a></li><li ng-click=\"redirecturl(Url4)\"><br><i class=\"glyphicon glyphicon-{{Icon4}}\" aria-hidden=\"true\"></i><br><a href=\"{{Url4}}\" target=\"_blank\">{{Title4}}</a></li></ul><div class=\"clearfix\"></div></div></div><div class=\"col-md-4 climate-grids\"><div class=\"climate-grid3\"><div class=\"popular-brand\"><div class=\"col-md-6 popular-bran-left\" style=\"padding-bottom: 1px;height: 156.8px\"><h4>{{Slot1Title}}</h4><br><h6>{{Slot1Notes}}</h6></div><div class=\"col-md-6 popular-bran-right w3-{{Slot1ClickBGColor}}\"><a href=\"{{Slot1ClickURL}}\"><h3>Click</h3></a></div><div class=\"clearfix\"></div></div><div class=\"popular-follow\" style=\"height:171px\"><div class=\"col-md-6 popular-follo-left w3-{{Slot2NotesBGColor}}\" style=\"height: 112px;padding-top: 22px;height: 117.6px;padding-bottom: 148px\"><p>{{Slot2Notes}}</p></div><div class=\"col-md-6 popular-follo-right\"><h4>{{Slot2Title}}</h4><h5>{{rxConfiguration.propertiesByName.Slot2Followers | comVyomVyomlibMyFilter}}</h5></div><div class=\"clearfix\"></div></div></div></div><div class=\"col-md-4 climate-grids\"><div class=\"climate-grid3\" style=\"margin-top:100px\"><a href=\"{{URL}}\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/Vyomlabs.png\" style=\"width: 270px\"><!--<h4 class=\"centered\">{{subTitle}}</h4> --></a><div class=\"clearfix\"></div></div></div><div class=\"clearfix\"></div></div><!--climate end here--></div><!--inner block end here--></div></div></body></html>"
+    "        }</style></head><body><div class=\"page-container\" style=\"top:12px\"><div class=\"mother-grid-inner\"><div class=\"blockwidth inner-block\" style=\"padding-top: 20px;padding-bottom: 20px\"><div class=\"climate\"><div class=\"col-md-4 climate-grids\" style=\"padding-bottom: 0px\"><div class=\"boost-icons-list\"><ul><li ng-click=\"redirecturl(Url1)\"><br><i class=\"glyphicon glyphicon-{{Icon1}}\" aria-hidden=\"true\"></i><br><a href=\"\" target=\"_blank\">{{Title1}}</a></li><li ng-click=\"redirecturl(Url2)\"><br><i class=\"glyphicon glyphicon-{{Icon2}}\" aria-hidden=\"true\"></i><br><a href=\"{{Url2}}\" target=\"_blank\">{{Title2}}</a></li><li ng-click=\"redirecturl(Url3)\"><br><i class=\"glyphicon glyphicon-{{Icon3}}\" aria-hidden=\"true\"></i><br><a href=\"{{Url3}}\" target=\"_blank\">{{Title3}}</a></li><li ng-click=\"redirecturl(Url4)\"><br><i class=\"glyphicon glyphicon-{{Icon4}}\" aria-hidden=\"true\"></i><br><a href=\"{{Url4}}\" target=\"_blank\">{{Title4}}</a></li></ul><div class=\"clearfix\"></div></div></div><div class=\"col-md-4 climate-grids\"><div class=\"climate-grid3\"><div class=\"popular-brand\"><div class=\"col-md-6 popular-bran-left\" style=\"padding-bottom: 1px;height: 156.8px\"><h4>{{Slot1Title}}</h4><br><h6>{{Slot1Notes}}</h6></div><div class=\"col-md-6 popular-bran-right w3-{{Slot1ClickBGColor}}\"><a href=\"{{Slot1ClickURL}}\"><h3>Click</h3></a></div><div class=\"clearfix\"></div></div><div class=\"popular-follow\" style=\"height:140px\"><div class=\"col-md-6 popular-follo-left w3-{{Slot2NotesBGColor}}\" style=\"height: 112px;padding-top: 22px;height: 140.6px\"><p>{{Slot2Notes}}</p></div><div class=\"col-md-6 popular-follo-right\"><h4>{{Slot2Title}}</h4><h5>{{rxConfiguration.propertiesByName.Slot2Followers | comVyomVyomlibMyFilter}}</h5></div><div class=\"clearfix\"></div></div></div></div><div class=\"col-md-4 climate-grids\"><div class=\"climate-grid3\" style=\"margin-top:100px\"><a href=\"{{URL}}\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/EricIcon.png\" style=\"width: 270px\"></a><div class=\"clearfix\"></div></div></div><div class=\"clearfix\"></div></div></div></div></div></body></html>"
   );
 
 
-  $templateCache.put('scripts/view-components/vc19/com-vyom-vyomlib-inspector-vc19-bgcolor.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<!--<select  ng-model=\"HChange\" ng-options=\"x for x in names\">\n" +
-    "</select>--><select ng-model=\"HChange\"><option value=\"{{x}}\" class=\"w3-container w3-{{x}}\" ng-repeat=\"x in names\">{{x}}</option></select></label>"
+  $templateCache.put('scripts/view-components/vc18/com-vyom-vyomlib-inspector-vc18-bgcolor.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<select ng-model=\"HChange\" ng-options=\"x for x in names\"></select></label>"
   );
 
 
-  $templateCache.put('scripts/view-components/vc19/com-vyom-vyomlib-inspector-vc19-icon.directive.html',
+  $templateCache.put('scripts/view-components/vc18/com-vyom-vyomlib-inspector-vc18-icon.directive.html',
     "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide change details</rx-tooltip>{{options.label}}:<select ng-model=\"HChange\" ng-options=\"x for x in names\"></select></label>"
   );
 
 
-  $templateCache.put('scripts/view-components/vc19/com-vyom-vyomlib-inspector-vc19-size.directive.html',
+  $templateCache.put('scripts/view-components/vc18/com-vyom-vyomlib-inspector-vc18-size.directive.html',
     "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide change details</rx-tooltip>{{options.label}}:<select ng-model=\"HChange\" ng-options=\"x for x in names\"></select></label>"
   );
 
 
-  $templateCache.put('scripts/view-components/vc19/com-vyom-vyomlib-vc19-design.directive.html',
+  $templateCache.put('scripts/view-components/vc18/com-vyom-vyomlib-vc18-design.directive.html',
     "<span class=\"d-icon-field_custom\" style=\"font-size: 100px;text-align: center\"></span>"
   );
 
 
+  $templateCache.put('scripts/view-components/vc18/com-vyom-vyomlib-vc18.directive.html',
+    "<!DOCTYPE HTML><html><head></head><body><div class=\"page-container\"><div><div class=\"boost-icons-list\"><ul><li ng-click=\"redirecturl(Url)\" class=\"w3-container w3-{{BGcolor}}\" ng-style=\"iconaStyle\"><br><i class=\"glyphicon glyphicon-{{Icon}}\" aria-hidden=\"true\"></i><br><a href=\"\" target=\"_blank\">{{Title}}</a></li></ul></div></div></div></body></html>"
+  );
+
+
+  $templateCache.put('scripts/view-components/vc19/com-vyom-vyomlib-inspector-vc19-bgcolor.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:</label><select ng-model=\"HChange\" ng-options=\"x for x in names\"></select>"
+  );
+
+
+  $templateCache.put('scripts/view-components/vc19/com-vyom-vyomlib-inspector-vc19-color.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><select ng-model=\"HChange\" ng-options=\"x for x in names\"></select>"
+  );
+
+
+  $templateCache.put('scripts/view-components/vc19/com-vyom-vyomlib-inspector-vc19-fields.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\"><select class=\"select\" ng-options=\"field.name for field in data.fields track by field.id \" ng-model=\"data.selectedField\"></select></div><div ng-if=\"!data.fields.length\">Record Definition is must.</div>"
+  );
+
+
+  $templateCache.put('scripts/view-components/vc19/com-vyom-vyomlib-inspector-vc19-list.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div ng-if=\"arr.length\"><div ng-repeat=\"field in arr \" style=\"\" class=\"selected-options\"><!----><div class=\"rx-inspector-record-grid-column-editor__container\"><span title=\"{{field.name}}\" class=\"rx-inspector-record-grid-column-editor__card-title\">{{field.name}} </span><span class=\"action-button d-icon-left-cross\" ng-click=\"remove($index);\" role=\"button\" tabindex=\"0\"></span></div><div class=\"column-type\">{{field.id}}</div></div></div><div ng-if=\"!arr.length\">No field selected.</div>"
+  );
+
+
+  $templateCache.put('scripts/view-components/vc19/com-vyom-vyomlib-inspector-vc19-steps.directive.html',
+    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\"></rx-tooltip>{{options.label}}:</label><div ng-if=\"data.fields.length\" class=\"input-group\"><select class=\"select\" ng-options=\"field.name for field in data.fields track by field.id \" ng-model=\"data.selectedField\"></select><span class=\"input-group-btn\"><button type=\"button\" class=\"rx-editor-header__button rx-editor-header__button_save rx-editor-header__button_divider-before d-button d-button_primary d-button_small\" ng-click=\"Add();\" ng-disabled=\"\">Add</button></span></div><div ng-if=\"\"><p color=\"red\">Field is already exist in below list</p></div><div ng-if=\"!data.fields.length\">Record Definition is must.</div>"
+  );
+
+
+  $templateCache.put('scripts/view-components/vc19/com-vyom-vyomlib-vc19-design.directive.html',
+    "<span class=\"d-icon-approvals_change\" style=\"font-size: 100px;text-align: center\"></span>"
+  );
+
+
   $templateCache.put('scripts/view-components/vc19/com-vyom-vyomlib-vc19.directive.html',
-    "<!DOCTYPE HTML><html><head><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"keywords\" content=\"Shoppy Responsive web vyomlib, Bootstrap Web vyomlibs, Flat Web vyomlibs, Android Compatible web vyomlib, \r" +
-    "\n" +
-    "Smartphone Compatible web vyomlib, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design\"><script type=\"application/x-javascript\">addEventListener(\"load\", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }</script><!-- jQuery (necessary for Bootstrap's JavaScript plugins) --><link href=\"/com.vyom.vyomlib/resources/homepage/css/bootstrap.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\"><!-- Custom Theme files --><link href=\"/com.vyom.vyomlib/resources/homepage/css/style.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\"><!--js--><script src=\"/com.vyom.vyomlib/resources/homepage/js/jquery-2.1.1.min.js\"></script><!--icons-css--><link href=\"/com.vyom.vyomlib/resources/homepage/css/font-awesome.css\" rel=\"stylesheet\"><!--Google Fonts--><link href=\"//fonts.googleapis.com/css?family=Carrois+Gothic\" rel=\"stylesheet\" type=\"text/css\"><link href=\"//fonts.googleapis.com/css?family=Work+Sans:400,500,600\" rel=\"stylesheet\" type=\"text/css\"><!--static chart--><script src=\"/com.vyom.vyomlib/resources/homepage/js/Chart.min.js\"></script><!-- w3.css---><link href=\"/com.vyom.vyomlib/resources/css/w3.css\" rel=\"stylesheet\"><style>i.glyphicon {\r" +
-    "\n" +
-    "    display: block;\r" +
-    "\n" +
-    "    text-align: center;\r" +
-    "\n" +
-    "    margin-bottom: -0.5em;\r" +
-    "\n" +
-    "    font-size: 1.5em;\r" +
-    "\n" +
-    "    color: white;\r" +
-    "\n" +
-    "}\r" +
-    "\n" +
-    "a\r" +
-    "\n" +
-    "{\r" +
-    "\n" +
-    "   color: white;     \r" +
-    "\n" +
-    "}\r" +
-    "\n" +
-    ".centered {\r" +
-    "\n" +
-    "  position: absolute;\r" +
-    "\n" +
-    "  top: 149px;\r" +
-    "\n" +
-    "  left: 135px;\r" +
-    "\n" +
-    "  transform: translate(-50%, -50%);\r" +
-    "\n" +
-    "  font-size: 14px;\r" +
-    "\n" +
-    "}</style></head><body><div class=\"page-container\"><div class=\"mother-grid-inner\"><!--climate start here--><div class=\"climate\"><div class=\"col-md-{{Size}}\"><div class=\"boost-icons-list\"><ul><li ng-click=\"redirecturl(Url)\" class=\"w3-container w3-{{BGcolor}}\"><!-- style=\"background: \" --><br><i class=\"glyphicon glyphicon-{{Icon}}\" aria-hidden=\"true\"></i><br><a href=\"\" target=\"_blank\">{{Title}}</a></li></ul><div class=\"clearfix\"></div></div></div><div class=\"clearfix\"></div></div><!--climate end here--></div></div></body></html>"
+    "<html><body><div class=\"app-main__inner\"><div class=\"main-card mb-3 card\"><div class=\"card-header\"><button class=\"btn-pill btn-shadow btn-wide fsize-2 btn btn-success btn-lg\" ng-click=\"approveAll('Approved')\"><span class=\"mr-2 opacity-7\"></span> <span class=\"mr-1\">Approve Selected</span></button> <button class=\"btn-pill btn-shadow btn-wide fsize-2 btn btn-danger btn-lg\" ng-click=\"openModalOnCondition('rejectSelected')\"><span class=\"mr-2 opacity-7\"></span> <span class=\"mr-1\">Reject Selected</span></button><div class=\"w3-dropdown-hover\"><button class=\"d-icon-ellipsis d-button d-button_action-clear d-button_large\"></button><div class=\"w3-dropdown-content w3-bar-block w3-card-4\"><!-- -----><div ng-hide=\"displayIdField\" class=\"w3-bar-item w3-button\" style=\"white-space: nowrap\"><input ng-model=\"displayid\" class=\"w3-check\" type=\"checkbox\"><label style=\"margin-left: 14px\">ID</label></div><div ng-hide=\"ApprovalField\" class=\"w3-bar-item w3-button\" style=\"white-space: nowrap\"><input ng-model=\"status\" class=\"w3-check\" type=\"checkbox\"><label style=\"margin-left: 14px\">Status</label></div><div ng-hide=\"DueDateField\" class=\"w3-bar-item w3-button\" style=\"white-space: nowrap\"><input ng-model=\"duedate\" class=\"w3-check\" type=\"checkbox\"><label style=\"margin-left: 14px\">Due Date</label></div><div ng-hide=\"HiddenTargetAchievment\" class=\"w3-bar-item w3-button\" style=\"white-space: nowrap\"><input ng-model=\"target\" class=\"w3-check\" type=\"checkbox\"><label style=\"margin-left: 14px\">Target Achivement</label></div><div ng-repeat=\"c in list\" class=\"w3-bar-item w3-button\" style=\"white-space: nowrap\"><input ng-model=\"c.check\" class=\"w3-check\" type=\"checkbox\"><label style=\"margin-left: 14px\">{{c.name}}</label></div><!--- ----></div></div><button type=\"button\" class=\"d-button d-icon-left-refresh d-button_link\" style=\"\" ng-click=\"getRecordDefinition()\"><span></span></button> <button type=\"button\" id=\"approvalDownload\" class=\"d-button d-button_link d-icon-left-download\" style=\"float: right\" ng-click=\"downloadExcel(mydata,'Approval',true)\">Download</button></div><div class=\"table-responsive\"><table class=\"align-middle text-truncate mb-0 table table-borderless table-hover table-resizable\"><thead><tr><th class=\"text-center\"></th><th class=\"text-center\" ng-hide=\"displayid\">ID</th><th class=\"text-center\" ng-hide=\"status\">Status</th><th class=\"text-center\" ng-repeat=\"h in list| filter:hideColumn\">{{h.name}}</th><th class=\"text-center\" ng-hide=\"duedate\">Due Date</th><th class=\"text-center\" ng-hide=\"target\">Target Achievement</th><th class=\"text-center\">Actions</th></tr></thead><tbody><tr ng-repeat=\"x in mydata  \"><td class=\"text-center\"><div><input ng-model=\"selectedcheckbox[x[179]]\" class=\"w3-check\" type=\"checkbox\"></div></td><td class=\"text-center d-link\" style=\"width: 80px\" ng-hide=\"displayid\" ng-click=\"editAction(x[179],editActionGUID)\">#{{getValues(displayIdFieldID,x[displayIdFieldID])}}</td><td class=\"text-center\" ng-hide=\"status\"><div class=\"badge badge-pill badge-{{getValues(ApprovalFieldID,x[ApprovalFieldID]) |lowercase |comVyomVyomlibRemoveSpace}}\" ng-class=\"updatedStatusColor(getValues(ApprovalFieldID,x[ApprovalFieldID]) |lowercase |comVyomVyomlibRemoveSpace)\">{{getValues(ApprovalFieldID,x[ApprovalFieldID])}}</div></td><!-- --><td class=\"text-center\" ng-repeat=\"y in list |filter: hideColumn\">{{getValues(y.id,x[y.id])}}</td><!--- --><td class=\"text-center\" ng-hide=\"duedate\"><span class=\"pr-2 opacity-6\"><me class=\"fa fa-business-time\"></me></span>{{getValues(DueDateFieldID,x[DueDateFieldID])}}</td><td class=\"text-center\" style=\"width: 200px\" ng-hide=\"target\"><div class=\"widget-content p-0\"><div class=\"widget-content-outer\"><div class=\"widget-content-wrapper\"><div class=\"widget-content-left pr-2\"><div class=\"widget-numbers fsize-1 text-danger\">{{getTargetAchievment(x[CreatedDateFieldID],x[DueDateFieldID])}}%</div></div><div class=\"widget-content-right w-100\"><div class=\"progress-bar-xs progress\"><div aria-valuemax=\"100\" aria-valuemin=\"0\" aria-valuenow=\"71\" class=\"progress-bar\" role=\"progressbar\" style=\"width: {{getTargetAchievment(x[CreatedDateFieldID],x[DueDateFieldID])}}%\" ng-style=\"{ width: getTargetAchievment(x[CreatedDateFieldID],x[DueDateFieldID])+'%' }\" ng-class=\"{ 'bg-danger': getTargetAchievment(x[CreatedDateFieldID],x[DueDateFieldID]) > 75, 'bg-success': getTargetAchievment(x[CreatedDateFieldID],x[DueDateFieldID]) < 75}\"></div></div></div></div></div></div></td><td class=\"text-center\"><div class=\"btn-group-lg btn-group\" role=\"group\"><button class=\"btn-shadow btn btn-success\" ng-disabled=\"selectedcheckbox[x[179]] !=true\" ng-click=\"getApproval(x[179],'Approved')\">Approve</button> <button class=\"btn-shadow btn btn-danger\" ng-disabled=\"selectedcheckbox[x[179]] !=true  \" ng-click=\"editAction(x[179],approveActionGUID)\">Reject</button></div></td></tr></tbody></table></div><div class=\"d-block p-4 text-center card-footer\"><button class=\"btn-pill btn-shadow btn-wide fsize-3 btn w3-{{ViewReqColor}} btn-lg\" style=\"width: 300px\" ng-click=\"executeAction(ViewReqGuid)\"><span class=\"mr-2 opacity-7\"></span> <span class=\"mr-1\">{{ViewReqLabel}}</span></button></div></div></div><!--    Modal--><div id=\"{{modalID}}\" class=\"modal fade\" role=\"dialog\"><div class=\"modal-dialog\"><!-- Modal content--><div class=\"modal-content\"><div class=\"modal-header dialog-header-confirm\"><a href=\"\" class=\"d-icon-cross\" data-dismiss=\"modal\"></a><h4 class=\"modal-title\">Add Comments:</h4></div><div class=\"modal-body\"><p>Comment:</p><textarea ng-model=\"modalComment\" rows=\"4\" cols=\"50\" required></textarea></div><div class=\"modal-footer\"><button type=\"button\" id=\"modalApproval\" class=\"btn-pill btn-shadow btn-wide fsize-2 btn btn-success btn-lg\" ng-click=\"bulkedit('Approved')\">Submit</button> <button type=\"button\" id=\"modalReject\" class=\"btn-pill btn-shadow btn-wide fsize-2 btn btn-success btn-lg\" ng-click=\"bulkedit('Rejected')\">Submit</button> <button type=\"button\" class=\"btn-pill btn-shadow btn-wide fsize-2 btn btn-warning btn-lg\" data-dismiss=\"modal\">Close</button></div></div></div></div></body></html>"
   );
 
 
-  $templateCache.put('scripts/view-components/vc7/com-vyom-vyomlib-vc7-design.directive.html',
-    "<h5>HomePage</h5>"
+  $templateCache.put('scripts/view-components/vc5/com-vyom-vyomlib-vc5-design.directive.html',
+    "<span class=\"d-icon-widget\" style=\"font-size: 100px;text-align: center\"></span>"
   );
 
 
-  $templateCache.put('scripts/view-components/vc7/com-vyom-vyomlib-vc7.directive.html',
-    "<!--Author: W3layouts\r" +
+  $templateCache.put('scripts/view-components/vc5/com-vyom-vyomlib-vc5.directive.html',
+    "<html><head><link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\"><link rel=\"stylesheet\" href=\"/com.vyom.vyomlib/resources/css/myPage.css\"><script>function DragNSort(config) {\r" +
     "\n" +
-    "Author URL: http://w3layouts.com\r" +
+    "            this.$activeItem = null;\r" +
     "\n" +
-    "License: Creative Commons Attribution 3.0 Unported\r" +
+    "            this.$container = config.container;\r" +
     "\n" +
-    "License URL: http://creativecommons.org/licenses/by/3.0/\r" +
+    "            this.$items = this.$container.querySelectorAll('.' + config.itemClass);\r" +
     "\n" +
-    "--><!DOCTYPE HTML><html><head><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"keywords\" content=\"Shoppy Responsive web vyomlib, Bootstrap Web vyomlibs, Flat Web vyomlibs, Android Compatible web vyomlib, \r" +
+    "            this.dragStartClass = config.dragStartClass;\r" +
     "\n" +
-    "Smartphone Compatible web vyomlib, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design\"><script type=\"application/x-javascript\">addEventListener(\"load\", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }</script><!-- jQuery (necessary for Bootstrap's JavaScript plugins) --><link href=\"/com.vyom.vyomlib/resources/homepage/css/bootstrap.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\"><!-- Custom Theme files --><link href=\"/com.vyom.vyomlib/resources/homepage/css/style.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\"><!--js--><script src=\"/com.vyom.vyomlib/resources/homepage/js/jquery-2.1.1.min.js\"></script><!--icons-css--><link href=\"/com.vyom.vyomlib/resources/homepage/css/font-awesome.css\" rel=\"stylesheet\"><!--Google Fonts--><link href=\"//fonts.googleapis.com/css?family=Carrois+Gothic\" rel=\"stylesheet\" type=\"text/css\"><link href=\"//fonts.googleapis.com/css?family=Work+Sans:400,500,600\" rel=\"stylesheet\" type=\"text/css\"><!--static chart--><script src=\"/com.vyom.vyomlib/resources/homepage/js/Chart.min.js\"></script><!--//charts--><!-- geo chart --><!--   <script src=\"//cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js\" type=\"text/javascript\"></script>\r" +
+    "            this.dragEnterClass = config.dragEnterClass;\r" +
     "\n" +
-    "    <script>window.modernizr || document.write('<script src=\"lib/modernizr/modernizr-custom.js\"><\\/script>')</script>--><!--<script src=\"lib/html5shiv/html5shiv.js\"></script>--><!-- Chartinator  --><!--   <script src=\"/com.vyom.vyomlib/resources/homepage/js/chartinator.js\" ></script>\r" +
-    "\n" +
-    "    <script type=\"text/javascript\">\r" +
-    "\n" +
-    "        jQuery(function ($) {\r" +
+    "        }\r" +
     "\n" +
     "\r" +
     "\n" +
-    "            var chart3 = $('#geoChart').chartinator({\r" +
+    "        DragNSort.prototype.removeClasses = function() {\r" +
     "\n" +
-    "                tableSel: '.geoChart',\r" +
+    "            [].forEach.call(this.$items, function($item) {\r" +
     "\n" +
-    "\r" +
+    "                $item.classList.remove(this.dragStartClass, this.dragEnterClass);\r" +
     "\n" +
-    "                columns: [{role: 'tooltip', type: 'string'}],\r" +
+    "            }.bind(this));\r" +
     "\n" +
-    "         \r" +
-    "\n" +
-    "                colIndexes: [2],\r" +
-    "\n" +
-    "             \r" +
-    "\n" +
-    "                rows: [\r" +
-    "\n" +
-    "                    ['China - 2015'],\r" +
-    "\n" +
-    "                    ['Colombia - 2015'],\r" +
-    "\n" +
-    "                    ['France - 2015'],\r" +
-    "\n" +
-    "                    ['Italy - 2015'],\r" +
-    "\n" +
-    "                    ['Japan - 2015'],\r" +
-    "\n" +
-    "                    ['Kazakhstan - 2015'],\r" +
-    "\n" +
-    "                    ['Mexico - 2015'],\r" +
-    "\n" +
-    "                    ['Poland - 2015'],\r" +
-    "\n" +
-    "                    ['Russia - 2015'],\r" +
-    "\n" +
-    "                    ['Spain - 2015'],\r" +
-    "\n" +
-    "                    ['Tanzania - 2015'],\r" +
-    "\n" +
-    "                    ['Turkey - 2015']],\r" +
-    "\n" +
-    "              \r" +
-    "\n" +
-    "                ignoreCol: [2],\r" +
-    "\n" +
-    "              \r" +
-    "\n" +
-    "                chartType: 'GeoChart',\r" +
-    "\n" +
-    "              \r" +
-    "\n" +
-    "                chartAspectRatio: 1.5,\r" +
-    "\n" +
-    "             \r" +
-    "\n" +
-    "                chartZoom: 1.75,\r" +
-    "\n" +
-    "             \r" +
-    "\n" +
-    "                chartOffset: [-12,0],\r" +
-    "\n" +
-    "             \r" +
-    "\n" +
-    "                chartOptions: {\r" +
-    "\n" +
-    "                  \r" +
-    "\n" +
-    "                    width: null,\r" +
-    "\n" +
-    "                 \r" +
-    "\n" +
-    "                    backgroundColor: '#fff',\r" +
-    "\n" +
-    "                 \r" +
-    "\n" +
-    "                    datalessRegionColor: '#F5F5F5',\r" +
-    "\n" +
-    "               \r" +
-    "\n" +
-    "                    region: 'world',\r" +
-    "\n" +
-    "                  \r" +
-    "\n" +
-    "                    resolution: 'countries',\r" +
-    "\n" +
-    "                 \r" +
-    "\n" +
-    "                    legend: 'none',\r" +
+    "        };\r" +
     "\n" +
     "\r" +
     "\n" +
-    "                    colorAxis: {\r" +
+    "        DragNSort.prototype.on = function(elements, eventType, handler) {\r" +
     "\n" +
-    "                       \r" +
+    "            [].forEach.call(elements, function(element) {\r" +
     "\n" +
-    "                        colors: ['#679CCA', '#337AB7']\r" +
+    "                element.addEventListener(eventType, handler.bind(element, this), false);\r" +
     "\n" +
-    "                    },\r" +
+    "            }.bind(this));\r" +
     "\n" +
-    "                    tooltip: {\r" +
-    "\n" +
-    "                     \r" +
-    "\n" +
-    "                        trigger: 'focus',\r" +
+    "        };\r" +
     "\n" +
     "\r" +
     "\n" +
-    "                        isHtml: true\r" +
+    "        DragNSort.prototype.onDragStart = function(_this, event) {\r" +
     "\n" +
-    "                    }\r" +
-    "\n" +
-    "                }\r" +
+    "            _this.$activeItem = this;\r" +
     "\n" +
     "\r" +
     "\n" +
-    "               \r" +
+    "            this.classList.add(_this.dragStartClass);\r" +
     "\n" +
-    "            });                       \r" +
+    "            event.dataTransfer.effectAllowed = 'move';\r" +
+    "\n" +
+    "            event.dataTransfer.setData('text/html', this.innerHTML);\r" +
+    "\n" +
+    "        };\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        DragNSort.prototype.onDragEnd = function(_this) {\r" +
+    "\n" +
+    "            this.classList.remove(_this.dragStartClass);\r" +
+    "\n" +
+    "        };\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        DragNSort.prototype.onDragEnter = function(_this) {\r" +
+    "\n" +
+    "            this.classList.add(_this.dragEnterClass);\r" +
+    "\n" +
+    "        };\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        DragNSort.prototype.onDragLeave = function(_this) {\r" +
+    "\n" +
+    "            this.classList.remove(_this.dragEnterClass);\r" +
+    "\n" +
+    "        };\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        DragNSort.prototype.onDragOver = function(_this, event) {\r" +
+    "\n" +
+    "            if (event.preventDefault) {\r" +
+    "\n" +
+    "                event.preventDefault();\r" +
+    "\n" +
+    "            }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "            event.dataTransfer.dropEffect = 'move';\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "            return false;\r" +
+    "\n" +
+    "        };\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        DragNSort.prototype.onDrop = function(_this, event) {\r" +
+    "\n" +
+    "            if (event.stopPropagation) {\r" +
+    "\n" +
+    "                event.stopPropagation();\r" +
+    "\n" +
+    "            }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "            if (_this.$activeItem !== this) {\r" +
+    "\n" +
+    "                _this.$activeItem.innerHTML = this.innerHTML;\r" +
+    "\n" +
+    "                this.innerHTML = event.dataTransfer.getData('text/html');\r" +
+    "\n" +
+    "            }\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "            _this.removeClasses();\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "            return false;\r" +
+    "\n" +
+    "        };\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        DragNSort.prototype.bind = function() {\r" +
+    "\n" +
+    "            this.on(this.$items, 'dragstart', this.onDragStart);\r" +
+    "\n" +
+    "            this.on(this.$items, 'dragend', this.onDragEnd);\r" +
+    "\n" +
+    "            this.on(this.$items, 'dragover', this.onDragOver);\r" +
+    "\n" +
+    "            this.on(this.$items, 'dragenter', this.onDragEnter);\r" +
+    "\n" +
+    "            this.on(this.$items, 'dragleave', this.onDragLeave);\r" +
+    "\n" +
+    "            this.on(this.$items, 'drop', this.onDrop);\r" +
+    "\n" +
+    "        };\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        DragNSort.prototype.init = function() {\r" +
+    "\n" +
+    "            this.bind();\r" +
+    "\n" +
+    "        };\r" +
+    "\n" +
+    "\r" +
+    "\n" +
+    "        // Instantiate\r" +
+    "\n" +
+    "        var draggable = new DragNSort({\r" +
+    "\n" +
+    "            container: document.querySelector('.drag-list'),\r" +
+    "\n" +
+    "            itemClass: 'drag-item',\r" +
+    "\n" +
+    "            dragStartClass: 'drag-start',\r" +
+    "\n" +
+    "            dragEnterClass: 'drag-enter'\r" +
     "\n" +
     "        });\r" +
     "\n" +
-    "    </script>--><!--geo chart--><!--skycons-icons--><script src=\"/com.vyom.vyomlib/resources/homepage/js/skycons.js\"></script><!--//skycons-icons--><script>function display()\r" +
+    "        draggable.init();</script></head><body><!-----------------temp table-------><div class=\"container\"><div class=\"row\"><div class=\"widgetTable\"><!--class=\"grid-table\"--><table id=\"mytable\" class=\"drag-list\" style=\"table-layout: fixed; width: 100%\"><tr><td class=\"drag-item\" draggable=\"true\"><div id=\"Profile\"><div id=\"profileWidgetTD\"><div class=\"widget panelbox\"><div class=\"profile\"><p class=\"profile-image\" style=\"text-align:center\"><img src=\"/com.vyom.vyomlib/resources/images/icons/personicon.png\" align=\"middle\" style=\"border-radius: 50%\"></p><h3 align=\"center\" style=\"color: black\" class=\"name\">{{CurrentUserFullName}}</h3><p style=\"text-align:center; font-size: 10px\" class=\"des\">Software Engineer<br>Delhi Gurgaon</p><p class=\"profile-details\" style=\"text-align:center; font-size: 11px\"><b>Email: </b>{{rxCurrentUser.getemailAddress()}}<br><b>Phone: </b>9865785432</p></div></div></div></div></td><td class=\"drag-item\" draggable=\"true\"><div id=\"VmWare\"><div id=\"ER1\" class=\"panelbox ER\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"/com.vyom.vyomlib/resources/images/png/016-web-management.png\" width=\"40px\"><p class=\"request-title\">VmWare <a id=\"ERReport\" href=\"#\"><i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\" aria-hidden=\"true\"></i> </a><a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\"><b class=\"b\">Details:</b><div class=\"description\"><table class=\"table table-striped table-hover custom-table\"><thead><th>ID</th><th>Name</th><th>Description</th></thead><tbody><tr ng-repeat=\"m in vmData\"><td>{{$index+1}}</td><td><a href=\"\">{{m[vmNameId]}}</a></td><td>{{m[vmDescId]}}</td></tr></tbody></table></div><div class=\"request-button-bottom\"><button class=\"btn btn-primary\" style=\"margin-left: 10px;margin-right: 5px\">Request</button> <button class=\"btn btn-warning\" style=\"margin-left: 5px;margin-right: 5px\">Refresh</button> <button class=\"btn btn-success\" style=\"margin-left: 5px;margin-right: 5px\">Launch</button> <button class=\"btn btn-danger\" style=\"margin-left: 5px;margin-right: 5px\">Release</button></div></div></div><div class=\"RequestButtons\"><div class=\"large-image\"><img src=\"/com.vyom.vyomlib/resources/images/png/016-web-management.png\"></div><div class=\"buttons\"><div class=\"count\"><div class=\"active\"><b>03</b><br>Active</div><br><div class=\"disabled\"><b>12</b><br>Disabled</div></div></div></div></div></div><!--ER HTML--></div></div></td><td class=\"drag-item\" draggable=\"true\"><div id=\"Shared Folder Access\"><div id=\"ER1\" class=\"panelbox ER\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"/com.vyom.vyomlib/resources/images/png/024-ads.png\" width=\"40px\"><p class=\"request-title\">Shared Folder Access <a id=\"ERReport\" href=\"#\"><i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\" aria-hidden=\"true\"></i> </a><a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\"><b class=\"b\">Folder Name:</b> <a href=\"#\"><p class=\"description1\">Unix</p></a><b class=\"b\">Type:</b><p>public</p><div class=\"request-keywords\"><b class=\"b\">Description:</b><br><p>Unable to access</p></div><div class=\"request-keywords\"><b class=\"b\">Access Type:</b><p>classic</p></div></div></div><div class=\"RequestButtons\"><div class=\"large-image\"><img src=\"/com.vyom.vyomlib/resources/images/png/024-ads.png\"></div><div class=\"buttons\"><button class=\"btn btn-success\">Release</button><br><button class=\"btn btn-success\">Backup</button><br><button class=\"btn btn-success\">Share</button></div></div></div></div><!--ER HTML--></div></div></td></tr><tr><td class=\"drag-item\" draggable=\"true\"><div id=\"Jira\"><div id=\"ER1\" class=\"panelbox ER\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"/com.vyom.vyomlib/resources/images/png/jira.png\" width=\"40px\"><p class=\"request-title\">Jira <a id=\"ERReport\" href=\"#\"><i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\" aria-hidden=\"true\"></i> </a><a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\"><b class=\"b\">Projects assigned:</b><div class=\"description1 project-assigned\"><ul class=\"poject-assigned\"><a href=\"#\"><li>Windows Phone App</li></a><a href=\"#\"><li>New Web Applicaion</li></a><a href=\"#\"><li>Android Resrvation</li></a><a href=\"#\"><li>Project 4</li></a></ul></div><b class=\"b\">Issues assigned:</b><div class=\"description1 project-assigned\"><ul class=\"poject-assigned\"><a href=\"#\"><li>Email Exchange Server</li></a><a href=\"#\"><li>Database Down</li></a><a href=\"#\"><li>Unable to access folder</li></a><a href=\"#\"><li>Issue 4</li></a></ul></div></div></div><div class=\"RequestButtons\"><div class=\"large-image\"><img src=\"/com.vyom.vyomlib/resources/images/png/jira.png\"></div><div class=\"buttons\"><button class=\"btn btn-success\">Request</button><br><button class=\"btn btn-success\">Assign</button><br><button class=\"btn btn-success\">Launch</button></div></div></div></div><!--ER HTML--></div></div></td><td class=\"drag-item\" draggable=\"true\"><div id=\"Box Enterprise\"><div id=\"ER1\" class=\"panelbox ER\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"/com.vyom.vyomlib/resources/images/png/008-marketing-strategy.png\" width=\"40px\"><p class=\"request-title\">Box Enterprise<!--                            <span class=\"glyphicon glyphicon-pencil glyphicon-icon\"></span>--><!--\r" +
     "\n" +
-    "{\r" +
+    "                            <a id=\"erhelp\" href=\"#\" >\r" +
     "\n" +
-    "var arr=displayC.split(\",\"); \r" +
+    "                                <i class=\"fa fa-question-circle ERhelp\" title=\"Ask for Help\" aria-hidden=\"true\"></i>\r" +
     "\n" +
-    "    console.log(arr);\r" +
+    "                            </a>\r" +
     "\n" +
-    "if(arr.includes(\"1\"))\r" +
-    "\n" +
-    "    {\r" +
-    "\n" +
-    "        document.getElementById(\"secCol\").style.display=\"none\";\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "    }\r" +
-    "\n" +
-    " if (arr.includes(\"2\"))\r" +
-    "\n" +
-    "    {\r" +
-    "\n" +
-    "        document.getElementById(\"thirdCol\").style.display=\"none\";\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "    } \r" +
-    "\n" +
-    " if (arr.includes(\"3\"))\r" +
-    "\n" +
-    "    {\r" +
-    "\n" +
-    "        document.getElementById(\"fourthCol\").style.display=\"none\";\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "    } \r" +
-    "\n" +
-    "}</script></head><body onload=\"display()\"><div class=\"page-container\"><div class=\"\"><div class=\"mother-grid-inner\"><!--header start here--><!-- 	<div class=\"header-main\">\r" +
-    "\n" +
-    "					<div class=\"header-left\">\r" +
-    "\n" +
-    "							<div class=\"logo-name\">\r" +
-    "\n" +
-    "									 <a href=\"/com.vyom.vyomlib/resources/homepage/index.html\"> <h1>Shoppy</h1>  --><!--<img id=\"logo\" src=\"\" alt=\"Logo\"/>\r" +
-    "\n" +
-    "								  </a> 								\r" +
-    "\n" +
-    "							</div>--><!--search-box--><!-- <div class=\"search-box\">\r" +
-    "\n" +
-    "									<form>\r" +
-    "\n" +
-    "										<input type=\"text\" placeholder=\"Search...\" required=\"\">	\r" +
-    "\n" +
-    "										<input type=\"submit\" value=\"\">	--><!-- 	</form>\r" +
-    "\n" +
-    "								</div> --><!--//end-search-box--><!-- <div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "						 </div>\r" +
-    "\n" +
-    "						 <div class=\"header-right\">\r" +
-    "\n" +
-    "							<div class=\"profile_details_left\"> --><!--notifications of menu start --><!-- <ul class=\"nofitications-dropdown\">\r" +
-    "\n" +
-    "									<li class=\"dropdown head-dpdn\">\r" +
-    "\n" +
-    "										<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\"><i class=\"fa fa-envelope\"></i><span class=\"badge\">3</span></a>\r" +
-    "\n" +
-    "										<ul class=\"dropdown-menu\">\r" +
-    "\n" +
-    "											<li>\r" +
-    "\n" +
-    "												<div class=\"notification_header\">\r" +
-    "\n" +
-    "													<h3>You have 3 new messages</h3>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "											   <div class=\"user_img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p4.png\" alt=\"\"></div>\r" +
-    "\n" +
-    "											   <div class=\"notification_desc\">\r" +
-    "\n" +
-    "												<p>Lorem ipsum dolor</p>\r" +
-    "\n" +
-    "												<p><span>1 hour ago</span></p>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											   <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li class=\"odd\"><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"user_img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p2.png\" alt=\"\"></div>\r" +
-    "\n" +
-    "											   <div class=\"notification_desc\">\r" +
-    "\n" +
-    "												<p>Lorem ipsum dolor </p>\r" +
-    "\n" +
-    "												<p><span>1 hour ago</span></p>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											  <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "											   <div class=\"user_img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p3.png\" alt=\"\"></div>\r" +
-    "\n" +
-    "											   <div class=\"notification_desc\">\r" +
-    "\n" +
-    "												<p>Lorem ipsum dolor</p>\r" +
-    "\n" +
-    "												<p><span>1 hour ago</span></p>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											   <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li>\r" +
-    "\n" +
-    "												<div class=\"notification_bottom\">\r" +
-    "\n" +
-    "													<a href=\"#\">See all messages</a>\r" +
-    "\n" +
-    "												</div> \r" +
-    "\n" +
-    "											</li>\r" +
-    "\n" +
-    "										</ul>\r" +
-    "\n" +
-    "									</li>\r" +
-    "\n" +
-    "									<li class=\"dropdown head-dpdn\">\r" +
-    "\n" +
-    "										<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\"><i class=\"fa fa-bell\"></i><span class=\"badge blue\">3</span></a>\r" +
-    "\n" +
-    "										<ul class=\"dropdown-menu\">\r" +
-    "\n" +
-    "											<li>\r" +
-    "\n" +
-    "												<div class=\"notification_header\">\r" +
-    "\n" +
-    "													<h3>You have 3 new notification</h3>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"user_img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p5.png\" alt=\"\"></div>\r" +
-    "\n" +
-    "											   <div class=\"notification_desc\">\r" +
-    "\n" +
-    "												<p>Lorem ipsum dolor</p>\r" +
-    "\n" +
-    "												<p><span>1 hour ago</span></p>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											  <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											 </a></li>\r" +
-    "\n" +
-    "											 <li class=\"odd\"><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"user_img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p6.png\" alt=\"\"></div>\r" +
-    "\n" +
-    "											   <div class=\"notification_desc\">\r" +
-    "\n" +
-    "												<p>Lorem ipsum dolor</p>\r" +
-    "\n" +
-    "												<p><span>1 hour ago</span></p>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											   <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											 </a></li>\r" +
-    "\n" +
-    "											 <li><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"user_img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p7.png\" alt=\"\"></div>\r" +
-    "\n" +
-    "											   <div class=\"notification_desc\">\r" +
-    "\n" +
-    "												<p>Lorem ipsum dolor</p>\r" +
-    "\n" +
-    "												<p><span>1 hour ago</span></p>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											   <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											 </a></li>\r" +
-    "\n" +
-    "											 <li>\r" +
-    "\n" +
-    "												<div class=\"notification_bottom\">\r" +
-    "\n" +
-    "													<a href=\"#\">See all notifications</a>\r" +
-    "\n" +
-    "												</div> \r" +
-    "\n" +
-    "											</li>\r" +
-    "\n" +
-    "										</ul>\r" +
-    "\n" +
-    "									</li>	\r" +
-    "\n" +
-    "									<li class=\"dropdown head-dpdn\">\r" +
-    "\n" +
-    "										<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\"><i class=\"fa fa-tasks\"></i><span class=\"badge blue1\">9</span></a>\r" +
-    "\n" +
-    "										<ul class=\"dropdown-menu\">\r" +
-    "\n" +
-    "											<li>\r" +
-    "\n" +
-    "												<div class=\"notification_header\">\r" +
-    "\n" +
-    "													<h3>You have 8 pending task</h3>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"task-info\">\r" +
-    "\n" +
-    "													<span class=\"task-desc\">Database update</span><span class=\"percentage\">40%</span>\r" +
-    "\n" +
-    "													<div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "												<div class=\"progress progress-striped active\">\r" +
-    "\n" +
-    "													<div class=\"bar yellow\" style=\"width:40%;\"></div>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"task-info\">\r" +
-    "\n" +
-    "													<span class=\"task-desc\">Dashboard done</span><span class=\"percentage\">90%</span>\r" +
-    "\n" +
-    "												   <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "												<div class=\"progress progress-striped active\">\r" +
-    "\n" +
-    "													 <div class=\"bar green\" style=\"width:90%;\"></div>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"task-info\">\r" +
-    "\n" +
-    "													<span class=\"task-desc\">Mobile App</span><span class=\"percentage\">33%</span>\r" +
-    "\n" +
-    "													<div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											   <div class=\"progress progress-striped active\">\r" +
-    "\n" +
-    "													 <div class=\"bar red\" style=\"width: 33%;\"></div>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"task-info\">\r" +
-    "\n" +
-    "													<span class=\"task-desc\">Issues fixed</span><span class=\"percentage\">80%</span>\r" +
-    "\n" +
-    "												   <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "												<div class=\"progress progress-striped active\">\r" +
-    "\n" +
-    "													 <div class=\"bar  blue\" style=\"width: 80%;\"></div>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li>\r" +
-    "\n" +
-    "												<div class=\"notification_bottom\">\r" +
-    "\n" +
-    "													<a href=\"#\">See all pending tasks</a>\r" +
-    "\n" +
-    "												</div> \r" +
-    "\n" +
-    "											</li>\r" +
-    "\n" +
-    "										</ul>\r" +
-    "\n" +
-    "									</li>	\r" +
-    "\n" +
-    "								</ul>\r" +
-    "\n" +
-    "								<div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "							</div>  --><!--notification menu end --><!-- 		<div class=\"profile_details\">		\r" +
-    "\n" +
-    "								<ul>\r" +
-    "\n" +
-    "									<li class=\"dropdown profile_details_drop\">\r" +
-    "\n" +
-    "										<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\r" +
-    "\n" +
-    "											<div class=\"profile_img\">	\r" +
-    "\n" +
-    "												<span class=\"prfil-img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p1.png\" alt=\"\"> </span> \r" +
-    "\n" +
-    "												<div class=\"user-name\">\r" +
-    "\n" +
-    "													<p>Malorum</p>\r" +
-    "\n" +
-    "													<span>Administrator</span>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "												<i class=\"fa fa-angle-down lnr\"></i>\r" +
-    "\n" +
-    "												<i class=\"fa fa-angle-up lnr\"></i>\r" +
-    "\n" +
-    "												<div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											</div>	\r" +
-    "\n" +
-    "										</a>\r" +
-    "\n" +
-    "										<ul class=\"dropdown-menu drp-mnu\">\r" +
-    "\n" +
-    "											<li> <a href=\"#\"><i class=\"fa fa-cog\"></i> Settings</a> </li> \r" +
-    "\n" +
-    "											<li> <a href=\"#\"><i class=\"fa fa-user\"></i> Profile</a> </li> \r" +
-    "\n" +
-    "											<li> <a href=\"#\"><i class=\"fa fa-sign-out\"></i> Logout</a> </li>\r" +
-    "\n" +
-    "										</ul>\r" +
-    "\n" +
-    "									</li>\r" +
-    "\n" +
-    "								</ul>\r" +
-    "\n" +
-    "							</div>\r" +
-    "\n" +
-    "							<div class=\"clearfix\"> </div>				\r" +
-    "\n" +
-    "						</div>\r" +
-    "\n" +
-    "				     <div class=\"clearfix\"> </div>	\r" +
-    "\n" +
-    "				</div>   --><!--heder end here--><!-- script-for sticky-nav --><script>$(document).ready(function() {\r" +
-    "\n" +
-    "			 var navoffeset=$(\".header-main\").offset().top;\r" +
-    "\n" +
-    "			 $(window).scroll(function(){\r" +
-    "\n" +
-    "				var scrollpos=$(window).scrollTop(); \r" +
-    "\n" +
-    "				if(scrollpos >=navoffeset){\r" +
-    "\n" +
-    "					$(\".header-main\").addClass(\"fixed\");\r" +
-    "\n" +
-    "				}else{\r" +
-    "\n" +
-    "					$(\".header-main\").removeClass(\"fixed\");\r" +
-    "\n" +
-    "				}\r" +
-    "\n" +
-    "			 });\r" +
-    "\n" +
-    "			 \r" +
-    "\n" +
-    "		});</script><!-- /script-for sticky-nav --><!--inner block start here--><div class=\"inner-block\"><!--market updates updates--><div class=\"market-updates\"><div class=\"col-md-4 market-update-gd\"><!--\r" +
-    "\n" +
-    "Change block                \r" +
-    "\n" +
-    "				<div class=\"market-update-block clr-block-1\" ng-click=\"callAction('Saction')\">\r" +
-    "\n" +
-    "                \r" +
-    "\n" +
-    "End of Change block\r" +
-    "\n" +
-    "--><div class=\"market-update-block clr-block-1\"><div class=\"col-md-8 market-update-left\"><!--						<h3>{{subscribers}}</h3>--><h3>33</h3><h4>Manage Subscription</h4><p>Subscribe MYIT Alerts & get notification on mail.</p></div><div class=\"col-md-4 market-update-right\"><i class=\"fa fa-thumbs-o-up\" style=\"font-size:48px\"></i></div><div class=\"clearfix\"></div></div></div><div class=\"col-md-4 market-update-gd\"><!---------------- \r" +
-    "\n" +
-    "Change block\r" +
-    "\n" +
-    "				<div class=\"market-update-block clr-block-2\" ng-click=\"callAction('Iaction')\">\r" +
-    "\n" +
-    "End of Change block\r" +
-    "\n" +
-    "                \r" +
-    "\n" +
-    "                \r" +
-    "\n" +
-    "                 --><div class=\"market-update-block clr-block-2\"><div class=\"col-md-8 market-update-left\"><!--					<h3>{{incidents}}</h3>--><h3>22</h3><h4>Incident Management</h4><p>restoring normal service operation as quickly as possible.</p></div><div class=\"col-md-4 market-update-right\"><i class=\"fa fa-eye\"></i></div><div class=\"clearfix\"></div></div></div><div class=\"col-md-4 market-update-gd\"><!------------------ \r" +
-    "\n" +
-    "Change block  \r" +
-    "\n" +
-    "				<div class=\"market-update-block clr-block-3\" ng-click=\"callAction('Caction')\">\r" +
-    "\n" +
-    "End of Change block  \r" +
-    "\n" +
-    "                \r" +
-    "\n" +
-    "       ----------------------><div class=\"market-update-block clr-block-3\"><div class=\"col-md-8 market-update-left\"><!--						<h3>{{changes}}</h3>--><h3>15</h3><h4>Change Management</h4><p>planning,scheduling & tracking changes</p></div><div class=\"col-md-4 market-update-right\"><i class=\"fa fa-cubes\" style=\"font-size:48px\"></i></div><div class=\"clearfix\"></div></div></div><div class=\"clearfix\"></div></div><!--market updates end here--><!--mainpage chit-chating--><div class=\"chit-chat-layer1\"><div class=\"col-md-6 chit-chat-layer1-left\"><div class=\"work-progres\"><div class=\"chit-chat-heading\">Incident/Outages</div><div class=\"table-responsive\"><table class=\"table table-hover\"><thead><tr><th>#</th><th>IncidentID</th><th>Summary</th><th>Status</th></tr></thead><tbody><tr ng-repeat=\"x in mydata\"><td>{{$index+1}}</td><td>{{x['1']}}</td><td>{{x['8']}}</td><td><span class=\"label label-danger\">{{x['7']}}</span></td></tr><!--  <tr>\r" +
-    "\n" +
-    "                                  <td>2</td>\r" +
-    "\n" +
-    "                                  <td>Twitter</td>\r" +
-    "\n" +
-    "                                  <td>Evan</td>                               \r" +
-    "\n" +
-    "                                                                  \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-success\">completed</span></td>\r" +
-    "\n" +
-    "                                  <td><span class=\"badge badge-success\">100%</span></td>\r" +
-    "\n" +
-    "                              </tr>\r" +
-    "\n" +
-    "                              <tr>\r" +
-    "\n" +
-    "                                  <td>3</td>\r" +
-    "\n" +
-    "                                  <td>Google</td>\r" +
-    "\n" +
-    "                                  <td>John</td>                                \r" +
-    "\n" +
-    "                                  \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-warning\">in progress</span></td>\r" +
-    "\n" +
-    "                                  <td><span class=\"badge badge-warning\">75%</span></td>\r" +
-    "\n" +
-    "                              </tr>\r" +
-    "\n" +
-    "                              <tr>\r" +
-    "\n" +
-    "                                  <td>4</td>\r" +
-    "\n" +
-    "                                  <td>LinkedIn</td>\r" +
-    "\n" +
-    "                                  <td>Danial</td>                                 \r" +
-    "\n" +
-    "                                                             \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-info\">in progress</span></td>\r" +
-    "\n" +
-    "                                  <td><span class=\"badge badge-info\">65%</span></td>\r" +
-    "\n" +
-    "                              </tr>\r" +
-    "\n" +
-    "                              <tr>\r" +
-    "\n" +
-    "                                  <td>5</td>\r" +
-    "\n" +
-    "                                  <td>Tumblr</td>\r" +
-    "\n" +
-    "                                  <td>David</td>                                \r" +
-    "\n" +
-    "                                                                 \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-warning\">in progress</span></td>\r" +
-    "\n" +
-    "                                  <td><span class=\"badge badge-danger\">95%</span></td>\r" +
-    "\n" +
-    "                              </tr>\r" +
-    "\n" +
-    "                              <tr>\r" +
-    "\n" +
-    "                                  <td>6</td>\r" +
-    "\n" +
-    "                                  <td>Tesla</td>\r" +
-    "\n" +
-    "                                  <td>Mickey</td>                                  \r" +
-    "\n" +
-    "                                                             \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-info\">in progress</span></td>\r" +
-    "\n" +
-    "                                  <td><span class=\"badge badge-success\">95%</span></td>\r" +
-    "\n" +
-    "                              </tr>--></tbody></table></div></div></div><div class=\"col-md-6 chit-chat-layer1-rit\" id=\"secCol\"><div class=\"geo-chart\"><section id=\"charts1\" class=\"charts\"><div class=\"wrapper-flex\"><table id=\"myTable\" class=\"geoChart tableChart data-table col-table\" style=\"display:none\"><caption>Student Nationalities Table</caption><tr><th scope=\"col\" data-type=\"string\">Country</th><th scope=\"col\" data-type=\"number\">Number of Students</th><th scope=\"col\" data-role=\"annotation\">Annotation</th></tr><tr><td>China</td><td align=\"right\">20</td><td align=\"right\">20</td></tr><tr><td>Colombia</td><td align=\"right\">5</td><td align=\"right\">5</td></tr><tr><td>France</td><td align=\"right\">3</td><td align=\"right\">3</td></tr><tr><td>Italy</td><td align=\"right\">1</td><td align=\"right\">1</td></tr><tr><td>Japan</td><td align=\"right\">18</td><td align=\"right\">18</td></tr><tr><td>Kazakhstan</td><td align=\"right\">1</td><td align=\"right\">1</td></tr><tr><td>Mexico</td><td align=\"right\">1</td><td align=\"right\">1</td></tr><tr><td>Poland</td><td align=\"right\">1</td><td align=\"right\">1</td></tr><tr><td>Russia</td><td align=\"right\">11</td><td align=\"right\">11</td></tr><tr><td>Spain</td><td align=\"right\">2</td><td align=\"right\">2</td></tr><tr><td>Tanzania</td><td align=\"right\">1</td><td align=\"right\">1</td></tr><tr><td>Turkey</td><td align=\"right\">2</td><td align=\"right\">2</td></tr></table><div class=\"col geo_main\"><h3 id=\"geoChartTitle\">World Market</h3><div id=\"geoChart\" class=\"chart\"></div></div></div><!-- .wrapper-flex --></section></div></div><div class=\"clearfix\"></div></div><!--main page chit chating end here--><!--main page chart start here--><div class=\"main-page-charts\"><div class=\"main-page-chart-layer1\"><div class=\"col-md-6 chart-layer1-left\" id=\"thirdCol\"><div class=\"glocy-chart\"><div class=\"span-2c\"><h3 class=\"tlt\">Sales Analytics</h3><canvas id=\"bar\" height=\"300\" width=\"400\" style=\"width: 400px; height: 300px\"></canvas><script>var barChartData = {\r" +
-    "\n" +
-    "                            labels : [\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun\",\"jul\"],\r" +
-    "\n" +
-    "                            datasets : [\r" +
-    "\n" +
-    "                                {\r" +
-    "\n" +
-    "                                    fillColor : \"#FC8213\",\r" +
-    "\n" +
-    "                                    data : [65,59,90,81,56,55,40]\r" +
-    "\n" +
-    "                                },\r" +
-    "\n" +
-    "                                {\r" +
-    "\n" +
-    "                                    fillColor : \"#337AB7\",\r" +
-    "\n" +
-    "                                    data : [28,48,40,19,96,27,100]\r" +
-    "\n" +
-    "                                }\r" +
-    "\n" +
-    "                            ]\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "                        };\r" +
-    "\n" +
-    "                            new Chart(document.getElementById(\"bar\").getContext(\"2d\")).Bar(barChartData);</script></div></div></div><div class=\"col-md-6 chart-layer1-right\" id=\"fourthCol\"><div class=\"content-main revenue\"><h3>Total Revenue</h3><canvas id=\"radar\" height=\"300\" width=\"300\" style=\"width: 300px; height: 300px\"></canvas><script>var radarChartData = {\r" +
-    "\n" +
-    "								labels : [\"\",\"\",\"\",\"\",\"\",\"\",\"\"],\r" +
-    "\n" +
-    "								datasets : [\r" +
-    "\n" +
-    "									{\r" +
-    "\n" +
-    "										fillColor : \"rgba(104, 174, 0, 0.83)\",\r" +
-    "\n" +
-    "										strokeColor : \"#68ae00\",\r" +
-    "\n" +
-    "										pointColor : \"#68ae00\",\r" +
-    "\n" +
-    "										pointStrokeColor : \"#fff\",\r" +
-    "\n" +
-    "										data : [65,59,90,81,56,55,40]\r" +
-    "\n" +
-    "									},\r" +
-    "\n" +
-    "									{\r" +
-    "\n" +
-    "										fillColor : \"rgba(236, 133, 38, 0.82)\",\r" +
-    "\n" +
-    "										strokeColor : \"#ec8526\",\r" +
-    "\n" +
-    "										pointColor : \"#ec8526\",\r" +
-    "\n" +
-    "										pointStrokeColor : \"#fff\",\r" +
-    "\n" +
-    "										data : [28,48,40,19,96,27,100]\r" +
-    "\n" +
-    "									}\r" +
-    "\n" +
-    "								]\r" +
-    "\n" +
-    "								\r" +
-    "\n" +
-    "							};\r" +
-    "\n" +
-    "							new Chart(document.getElementById(\"radar\").getContext(\"2d\")).Radar(radarChartData);</script></div><!--<div class=\"user-marorm\">\r" +
-    "\n" +
-    "			<div class=\"malorum-top\">				\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "			<div class=\"malorm-bottom\">\r" +
-    "\n" +
-    "				<span class=\"malorum-pro\"> </span>\r" +
-    "\n" +
-    "			     <h4>unde omnis iste</h4>\r" +
-    "\n" +
-    "				 <h2>Melorum</h2>\r" +
-    "\n" +
-    "				<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising.</p>\r" +
-    "\n" +
-    "				<ul class=\"malorum-icons\">\r" +
-    "\n" +
-    "					<li><a href=\"#\"><i class=\"fa fa-facebook\"> </i>\r" +
-    "\n" +
-    "						<div class=\"tooltip\"><span>Facebook</span></div>\r" +
-    "\n" +
-    "					</a></li>\r" +
-    "\n" +
-    "					<li><a href=\"#\"><i class=\"fa fa-twitter\"> </i>\r" +
-    "\n" +
-    "						<div class=\"tooltip\"><span>Twitter</span></div>\r" +
-    "\n" +
-    "					</a></li>\r" +
-    "\n" +
-    "					<li><a href=\"#\"><i class=\"fa fa-google-plus\"> </i>\r" +
-    "\n" +
-    "						<div class=\"tooltip\"><span>Google</span></div>\r" +
-    "\n" +
-    "					</a></li>\r" +
-    "\n" +
-    "				</ul>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "		   </div>\r" +
-    "\n" +
-    "		</div>--><div class=\"clearfix\"></div></div></div><!--main page chart layer2--><div class=\"chart-layer-2\"><!--<div class=\"col-md-6 chart-layer2-right\">\r" +
-    "\n" +
-    "			<div class=\"prograc-blocks\">--><!--Progress bars--><!--   <div class=\"home-progres-main\">\r" +
-    "\n" +
-    "	           <h3>Total Sales</h3>\r" +
-    "\n" +
-    "	         </div>\r" +
-    "\n" +
-    "	        <div class='bar_group'>\r" +
-    "\n" +
-    "					<div class='bar_group__bar thin' label='Rating' show_values='true' tooltip='true' value='343'></div>\r" +
-    "\n" +
-    "					<div class='bar_group__bar thin' label='Quality' show_values='true' tooltip='true' value='235'></div>\r" +
-    "\n" +
-    "					<div class='bar_group__bar thin' label='Amount' show_values='true' tooltip='true' value='550'></div>\r" +
-    "\n" +
-    "					<div class='bar_group__bar thin' label='Farming' show_values='true' tooltip='true' value='456'></div>\r" +
-    "\n" +
-    "		    </div>\r" +
-    "\n" +
-    "				<script src=\"js/bars.js\"></script>--><!--//Progress bars--><!-- </div>\r" +
-    "\n" +
-    "	</div>--><div class=\"col-md-6 chart-layer2-left\"><!--- code  --></div><div class=\"clearfix\"></div></div><!--climate start here--><!-- <div class=\"climate\">\r" +
-    "\n" +
-    "	<div class=\"col-md-4 climate-grids\">\r" +
-    "\n" +
-    "		<div class=\"climate-grid1\">\r" +
-    "\n" +
-    "			<div class=\"climate-gd1-top\">\r" +
-    "\n" +
-    "				<div class=\"col-md-6 climate-gd1top-left\">\r" +
-    "\n" +
-    "					<h4>Aprill 6-wed</h4>\r" +
-    "\n" +
-    "					<h3>12:30<span class=\"timein-pms\">PM</span></h3>				\r" +
-    "\n" +
-    "					<p>Humidity:</p>					\r" +
-    "\n" +
-    "					<p>Sunset:</p>\r" +
-    "\n" +
-    "					<p>Sunrise:</p>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "				<div class=\"col-md-6 climate-gd1top-right\">\r" +
-    "\n" +
-    "					  <span class=\"clime-icon\"> \r" +
-    "\n" +
-    "					  	<figure class=\"icons\">\r" +
-    "\n" +
-    "								<canvas id=\"partly-cloudy-day\" width=\"64\" height=\"64\">\r" +
-    "\n" +
-    "								</canvas>\r" +
-    "\n" +
-    "							</figure>\r" +
-    "\n" +
-    "						<script>\r" +
-    "\n" +
-    "							 var icons = new Skycons({\"color\": \"#fff\"}),\r" +
-    "\n" +
-    "								  list  = [\r" +
-    "\n" +
-    "									\"clear-night\", \"partly-cloudy-day\",\r" +
-    "\n" +
-    "									\"partly-cloudy-night\", \"cloudy\", \"rain\", \"sleet\", \"snow\", \"wind\",\r" +
-    "\n" +
-    "									\"fog\"\r" +
-    "\n" +
-    "								  ],\r" +
-    "\n" +
-    "								  i;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  for(i = list.length; i--; )\r" +
-    "\n" +
-    "								icons.set(list[i], list[i]);\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  icons.play();\r" +
-    "\n" +
-    "						</script>					  \r" +
-    "\n" +
-    "				   </span>					\r" +
-    "\n" +
-    "					  <p>88%</p>					\r" +
-    "\n" +
-    "					  <p>5:40PM</p>\r" +
-    "\n" +
-    "					   <p>6:30AM</p>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "				<div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "			<div class=\"climate-gd1-bottom\">\r" +
-    "\n" +
-    "				<div class=\"col-md-4 cloudy1\">\r" +
-    "\n" +
-    "						<h4>Hongkong</h4>\r" +
-    "\n" +
-    "						  <figure class=\"icons\">\r" +
-    "\n" +
-    "							<canvas id=\"sleet\" width=\"58\" height=\"58\">\r" +
-    "\n" +
-    "							</canvas>\r" +
-    "\n" +
-    "					       </figure>\r" +
-    "\n" +
-    "					       <script>\r" +
-    "\n" +
-    "								 var icons = new Skycons({\"color\": \"#fff\"}),\r" +
-    "\n" +
-    "									  list  = [\r" +
-    "\n" +
-    "										\"clear-night\", \"clear-day\",\r" +
-    "\n" +
-    "										\"partly-cloudy-night\", \"cloudy\", \"rain\", \"sleet\", \"snow\", \"wind\",\r" +
-    "\n" +
-    "										\"fog\"\r" +
-    "\n" +
-    "									  ],\r" +
-    "\n" +
-    "									  i;\r" +
-    "\n" +
-    "	\r" +
-    "\n" +
-    "								  for(i = list.length; i--; )\r" +
-    "\n" +
-    "									icons.set(list[i], list[i]);\r" +
-    "\n" +
-    "	\r" +
-    "\n" +
-    "								  icons.play();\r" +
-    "\n" +
-    "							</script>\r" +
-    "\n" +
-    "						<h3>10c</h3>\r" +
-    "\n" +
-    "					</div>\r" +
-    "\n" +
-    "					<div class=\"col-md-4 cloudy1\">\r" +
-    "\n" +
-    "						<h4>UK</h4>\r" +
-    "\n" +
-    "						<figure class=\"icons\">\r" +
-    "\n" +
-    "					<canvas id=\"cloudy\" width=\"58\" height=\"58\"></canvas>\r" +
-    "\n" +
-    "				</figure>					\r" +
-    "\n" +
-    "					<script>\r" +
-    "\n" +
-    "							 var icons = new Skycons({\"color\": \"#fff\"}),\r" +
-    "\n" +
-    "								  list  = [\r" +
-    "\n" +
-    "									\"clear-night\", \"cloudy\",\r" +
-    "\n" +
-    "									\"partly-cloudy-night\", \"cloudy\", \"rain\", \"sleet\", \"snow\", \"wind\",\r" +
-    "\n" +
-    "									\"fog\"\r" +
-    "\n" +
-    "								  ],\r" +
-    "\n" +
-    "								  i;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  for(i = list.length; i--; )\r" +
-    "\n" +
-    "								icons.set(list[i], list[i]);\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  icons.play();\r" +
-    "\n" +
-    "						</script>\r" +
-    "\n" +
-    "						<h3>6c</h3>\r" +
-    "\n" +
-    "					</div>\r" +
-    "\n" +
-    "					<div class=\"col-md-4 cloudy1\">\r" +
-    "\n" +
-    "						<h4>USA</h4>\r" +
-    "\n" +
-    "						<figure class=\"icons\">\r" +
-    "\n" +
-    "							<canvas id=\"snow\" width=\"58\" height=\"58\">\r" +
-    "\n" +
-    "							</canvas>\r" +
-    "\n" +
-    "						</figure>\r" +
-    "\n" +
-    "				        <script>\r" +
-    "\n" +
-    "							 var icons = new Skycons({\"color\": \"#fff\"}),\r" +
-    "\n" +
-    "								  list  = [\r" +
-    "\n" +
-    "									\"clear-night\", \"clear-day\",\r" +
-    "\n" +
-    "									\"partly-cloudy-night\", \"cloudy\", \"rain\", \"sleet\", \"snow\", \"wind\",\r" +
-    "\n" +
-    "									\"fog\"\r" +
-    "\n" +
-    "								  ],\r" +
-    "\n" +
-    "								  i;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  for(i = list.length; i--; )\r" +
-    "\n" +
-    "								icons.set(list[i], list[i]);\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  icons.play();\r" +
-    "\n" +
-    "						</script>\r" +
-    "\n" +
-    "						<h3>10c</h3>\r" +
-    "\n" +
-    "					</div>\r" +
-    "\n" +
-    "				<div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "		</div>\r" +
-    "\n" +
-    "	</div>\r" +
-    "\n" +
-    "	<div class=\"col-md-4 climate-grids\">\r" +
-    "\n" +
-    "		<div class=\"climate-grid2\">\r" +
-    "\n" +
-    "			<span class=\"shoppy-rate\"><h4>$180</h4></span>\r" +
-    "\n" +
-    "			<ul>\r" +
-    "\n" +
-    "				<li> <i class=\"fa fa-credit-card\"> </i> </li>\r" +
-    "\n" +
-    "				<li> <i class=\"fa fa-usd\"> </i> </li>\r" +
-    "\n" +
-    "			</ul>\r" +
-    "\n" +
-    "		</div>\r" +
-    "\n" +
-    "		<div class=\"shoppy\">\r" +
-    "\n" +
-    "		<h3>Those Who Hate Shopping?</h3>\r" +
-    "\n" +
-    "		</div>\r" +
-    "\n" +
-    "	</div>\r" +
-    "\n" +
-    "	<div class=\"col-md-4 climate-grids\">\r" +
-    "\n" +
-    "		<div class=\"climate-grid3\">\r" +
-    "\n" +
-    "			<div class=\"popular-brand\">\r" +
-    "\n" +
-    "				<div class=\"col-md-6 popular-bran-left\">\r" +
-    "\n" +
-    "				     <h3>Popular</h3>\r" +
-    "\n" +
-    "				     <h4>Brand of this month</h4>\r" +
-    "\n" +
-    "				     <p> Duis aute irure  in reprehenderit.</p>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "				<div class=\"col-md-6 popular-bran-right\">\r" +
-    "\n" +
-    "					<h3>Polo</h3>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "			  <div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "			<div class=\"popular-follow\">\r" +
-    "\n" +
-    "				<div class=\"col-md-6 popular-follo-left\">\r" +
-    "\n" +
-    "					<p>Lorem ipsum dolor sit amet, adipiscing elit.</p>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "				<div class=\"col-md-6 popular-follo-right\">\r" +
-    "\n" +
-    "					<h4>Follower</h4>\r" +
-    "\n" +
-    "					<h5>2892</h5>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "			  <div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "		</div>\r" +
-    "\n" +
-    "	</div>\r" +
-    "\n" +
-    "	<div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "</div>--><!--climate end here--></div><!--inner block end here--></div></div><!--slider menu--><!--  <div class=\"sidebar-menu\">\r" +
-    "\n" +
-    "		  	<div class=\"logo\"> <a href=\"#\" class=\"sidebar-icon\"> <span class=\"fa fa-bars\"></span> </a> <a href=\"#\"> <span id=\"logo\" ></span> \r" +
-    "\n" +
-    "			      <img id=\"logo\" src=\"\" alt=\"Logo\"/>\r" +
-    "\n" +
-    "			  </a> </div>		  \r" +
-    "\n" +
-    "		    <div class=\"menu\">\r" +
-    "\n" +
-    "		      <ul id=\"menu\" >\r" +
-    "\n" +
-    "		        <li id=\"menu-home\" ><a href=\"index.html\"><i class=\"fa fa-tachometer\"></i><span>Dashboard</span></a></li>\r" +
-    "\n" +
-    "		        <li><a href=\"#\"><i class=\"fa fa-cogs\"></i><span>Components</span><span class=\"fa fa-angle-right\" style=\"float: right\"></span></a>\r" +
-    "\n" +
-    "		          <ul>\r" +
-    "\n" +
-    "		            <li><a href=\"grids.html\">Grids</a></li>\r" +
-    "\n" +
-    "		            <li><a href=\"portlet.html\">Portlets</a></li>		            \r" +
-    "\n" +
-    "		          </ul>\r" +
-    "\n" +
-    "		        </li>\r" +
-    "\n" +
-    "		        <li id=\"menu-comunicacao\" ><a href=\"#\"><i class=\"fa fa-book nav_icon\"></i><span>Element</span><span class=\"fa fa-angle-right\" style=\"float: right\"></span></a>\r" +
-    "\n" +
-    "		          <ul id=\"menu-comunicacao-sub\" >\r" +
-    "\n" +
-    "		            <li id=\"menu-mensagens\" style=\"width: 120px\" ><a href=\"buttons.html\">Buttons</a>		              \r" +
-    "\n" +
-    "		            </li>\r" +
-    "\n" +
-    "		            <li id=\"menu-arquivos\" ><a href=\"typography.html\">Typography</a></li>\r" +
-    "\n" +
-    "		            <li id=\"menu-arquivos\" ><a href=\"icons.html\">Icons</a></li>\r" +
-    "\n" +
-    "		          </ul>\r" +
-    "\n" +
-    "		        </li>\r" +
-    "\n" +
-    "		          <li><a href=\"maps.html\"><i class=\"fa fa-map-marker\"></i><span>Maps</span></a></li>\r" +
-    "\n" +
-    "		        <li id=\"menu-academico\" ><a href=\"#\"><i class=\"fa fa-file-text\"></i><span>Pages</span><span class=\"fa fa-angle-right\" style=\"float: right\"></span></a>\r" +
-    "\n" +
-    "		          <ul id=\"menu-academico-sub\" >\r" +
-    "\n" +
-    "		          	 <li id=\"menu-academico-boletim\" ><a href=\"login.html\">Login</a></li>\r" +
-    "\n" +
-    "		            <li id=\"menu-academico-avaliacoes\" ><a href=\"signup.html\">Sign Up</a></li>		           \r" +
-    "\n" +
-    "		          </ul>\r" +
-    "\n" +
-    "		        </li>\r" +
-    "\n" +
-    "		        \r" +
-    "\n" +
-    "		        <li><a href=\"charts.html\"><i class=\"fa fa-bar-chart\"></i><span>Charts</span></a></li>\r" +
-    "\n" +
-    "		        <li><a href=\"#\"><i class=\"fa fa-envelope\"></i><span>Mailbox</span><span class=\"fa fa-angle-right\" style=\"float: right\"></span></a>\r" +
-    "\n" +
-    "		        	 <ul id=\"menu-academico-sub\" >\r" +
-    "\n" +
-    "			            <li id=\"menu-academico-avaliacoes\" ><a href=\"inbox.html\">Inbox</a></li>\r" +
-    "\n" +
-    "			            <li id=\"menu-academico-boletim\" ><a href=\"inbox-details.html\">Compose email</a></li>\r" +
-    "\n" +
-    "		             </ul>\r" +
-    "\n" +
-    "		        </li>\r" +
-    "\n" +
-    "		         <li><a href=\"#\"><i class=\"fa fa-cog\"></i><span>System</span><span class=\"fa fa-angle-right\" style=\"float: right\"></span></a>\r" +
-    "\n" +
-    "		         	 <ul id=\"menu-academico-sub\" >\r" +
-    "\n" +
-    "			            <li id=\"menu-academico-avaliacoes\" ><a href=\"404.html\">404</a></li>\r" +
-    "\n" +
-    "			            <li id=\"menu-academico-boletim\" ><a href=\"blank.html\">Blank</a></li>\r" +
-    "\n" +
-    "		             </ul>\r" +
-    "\n" +
-    "		         </li>\r" +
-    "\n" +
-    "		         <li><a href=\"#\"><i class=\"fa fa-shopping-cart\"></i><span>E-Commerce</span><span class=\"fa fa-angle-right\" style=\"float: right\"></span></a>\r" +
-    "\n" +
-    "		         	<ul id=\"menu-academico-sub\" >\r" +
-    "\n" +
-    "			            <li id=\"menu-academico-avaliacoes\" ><a href=\"product.html\">Product</a></li>\r" +
-    "\n" +
-    "			            <li id=\"menu-academico-boletim\" ><a href=\"price.html\">Price</a></li>\r" +
-    "\n" +
-    "		             </ul>\r" +
-    "\n" +
-    "		         </li>\r" +
-    "\n" +
-    "		      </ul>\r" +
-    "\n" +
-    "		    </div>\r" +
-    "\n" +
-    "	 </div>\r" +
-    "\n" +
-    "	<div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "</div>--><!--slide bar menu end here--><script>var toggle = true;\r" +
-    "\n" +
-    "            \r" +
-    "\n" +
-    "$(\".sidebar-icon\").click(function() {                \r" +
-    "\n" +
-    "  if (toggle)\r" +
-    "\n" +
-    "  {\r" +
-    "\n" +
-    "    $(\".page-container\").addClass(\"sidebar-collapsed\").removeClass(\"sidebar-collapsed-back\");\r" +
-    "\n" +
-    "    $(\"#menu span\").css({\"position\":\"absolute\"});\r" +
-    "\n" +
-    "  }\r" +
-    "\n" +
-    "  else\r" +
-    "\n" +
-    "  {\r" +
-    "\n" +
-    "    $(\".page-container\").removeClass(\"sidebar-collapsed\").addClass(\"sidebar-collapsed-back\");\r" +
-    "\n" +
-    "    setTimeout(function() {\r" +
-    "\n" +
-    "      $(\"#menu span\").css({\"position\":\"relative\"});\r" +
-    "\n" +
-    "    }, 400);\r" +
-    "\n" +
-    "  }               \r" +
-    "\n" +
-    "                toggle = !toggle;\r" +
-    "\n" +
-    "            });</script><!--scrolling js--><script src=\"/com.vyom.vyomlib/resources/homepage/js/jquery.nicescroll.js\"></script><script src=\"/com.vyom.vyomlib/resources/homepage/js/scripts.js\"></script><!--//scrolling js--><script src=\"/com.vyom.vyomlib/resources/homepage/js/bootstrap.js\"></script><!-- mother grid end here--></div></div></body></html>"
-  );
-
-
-  $templateCache.put('scripts/view-components/vc9/com-vyom-vyomlib-inspector-vc9-ccheckbox.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide change details</rx-tooltip>{{options.label}}:<select ng-model=\"HChange\" ng-options=\"x for x in names\"></select></label>"
-  );
-
-
-  $templateCache.put('scripts/view-components/vc9/com-vyom-vyomlib-inspector-vc9-icheckbox.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<select ng-model=\"HIncident\" ng-options=\"x for x in names\"></select></label>"
-  );
-
-
-  $templateCache.put('scripts/view-components/vc9/com-vyom-vyomlib-inspector-vc9-scheckbox.directive.html',
-    "<label ng-class=\"options.attrs.label.class\"><rx-tooltip tooltip=\"options.tooltip\">select checkbox to hide incident details</rx-tooltip>{{options.label}}:<select ng-model=\"HSubscriber\" ng-options=\"x for x in names\"></select></label>"
-  );
-
-
-  $templateCache.put('scripts/view-components/vc9/com-vyom-vyomlib-vc9-design.directive.html',
-    "<span class=\"d-icon-server_web_node\" style=\"font-size: 100px;text-align: center\"></span>"
-  );
-
-
-  $templateCache.put('scripts/view-components/vc9/com-vyom-vyomlib-vc9.directive.html',
-    "<!DOCTYPE HTML>\r" +
-    "\n" +
-    "<html>\r" +
-    "\n" +
-    "<head>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r" +
-    "\n" +
-    "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\r" +
-    "\n" +
-    "<meta name=\"keywords\" content=\"Shoppy Responsive web vyomlib, Bootstrap Web vyomlibs, Flat Web vyomlibs, Android Compatible web vyomlib, \r" +
-    "\n" +
-    "Smartphone Compatible web vyomlib, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design\" />\r" +
-    "\n" +
-    "<script type=\"application/x-javascript\"> addEventListener(\"load\", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>\r" +
-    "\n" +
-    "<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->\r" +
-    "\n" +
-    "<link href=\"/com.vyom.vyomlib/resources/homepage/css/bootstrap.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\">\r" +
-    "\n" +
-    "<!-- Custom Theme files -->\r" +
-    "\n" +
-    "<link href=\"/com.vyom.vyomlib/resources/homepage/css/style.css\" rel=\"stylesheet\" type=\"text/css\" media=\"all\"/>\r" +
-    "\n" +
-    "<!--js-->\r" +
-    "\n" +
-    "<script src=\"/com.vyom.vyomlib/resources/homepage/js/jquery-2.1.1.min.js\"></script> \r" +
-    "\n" +
-    "<!--icons-css-->\r" +
-    "\n" +
-    "<link href=\"/com.vyom.vyomlib/resources/homepage/css/font-awesome.css\" rel=\"stylesheet\"> \r" +
-    "\n" +
-    "<!--Google Fonts-->\r" +
-    "\n" +
-    "<link href='//fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>\r" +
-    "\n" +
-    "<link href='//fonts.googleapis.com/css?family=Work+Sans:400,500,600' rel='stylesheet' type='text/css'>\r" +
-    "\n" +
-    "<!--static chart-->\r" +
-    "\n" +
-    "<script src=\"/com.vyom.vyomlib/resources/homepage/js/Chart.min.js\"></script>\r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "<!--//charts-->\r" +
-    "\n" +
-    "<!-- geo chart -->\r" +
-    "\n" +
-    " <script src=\"//cdn.jsdelivr.net/modernizr/2.8.3/modernizr.min.js\" type=\"text/javascript\"></script>\r" +
-    "\n" +
-    "<!--    <script>window.modernizr || document.write('<script src=\"lib/modernizr/modernizr-custom.js\"><\\/script>')</script>-->\r" +
-    "\n" +
-    "<!--    <script src=\"lib/html5shiv/html5shiv.js\"></script>-->\r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "    <!--floating window -->\r" +
-    "\n" +
-    "    <style>\r" +
-    "\n" +
-    "     .float{\r" +
-    "\n" +
-    "	position:fixed;\r" +
-    "\n" +
-    "	width:60px;\r" +
-    "\n" +
-    "	height:60px;\r" +
-    "\n" +
-    "	bottom:40px;\r" +
-    "\n" +
-    "	right:40px;\r" +
-    "\n" +
-    "	background-color:white;\r" +
-    "\n" +
-    "	color:black;\r" +
-    "\n" +
-    "	border-radius:50px;\r" +
-    "\n" +
-    "	text-align:center;\r" +
-    "\n" +
-    "	box-shadow: 2px 2px 3px #999;\r" +
-    "\n" +
-    "}\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    ".my-float{\r" +
-    "\n" +
-    "	margin-top:22px;\r" +
-    "\n" +
-    "}\r" +
-    "\n" +
-    "           </style>\r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "     <!-- Chartinator  -->\r" +
-    "\n" +
-    "<script src=\"/com.vyom.vyomlib/resources/homepage/js/chartinator.js\" ></script>\r" +
-    "\n" +
-    "    <script type=\"text/javascript\">\r" +
-    "\n" +
-    "        jQuery(function ($) {\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "            var chart3 = $('#geoChart').chartinator({\r" +
-    "\n" +
-    "                tableSel: '.geoChart',\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "                columns: [{role: 'tooltip', type: 'string'}],\r" +
-    "\n" +
-    "         \r" +
-    "\n" +
-    "                colIndexes: [2],\r" +
-    "\n" +
-    "             \r" +
-    "\n" +
-    "                rows: [\r" +
-    "\n" +
-    "                    ['China - 2015'],\r" +
-    "\n" +
-    "                    ['Colombia - 2015'],\r" +
-    "\n" +
-    "                    ['France - 2015'],\r" +
-    "\n" +
-    "                    ['Italy - 2015'],\r" +
-    "\n" +
-    "                    ['Japan - 2015'],\r" +
-    "\n" +
-    "                    ['Kazakhstan - 2015'],\r" +
-    "\n" +
-    "                    ['Mexico - 2015'],\r" +
-    "\n" +
-    "                    ['Poland - 2015'],\r" +
-    "\n" +
-    "                    ['India - 2019'],\r" +
-    "\n" +
-    "                    ['Spain - 2015'],\r" +
-    "\n" +
-    "                    ['Tanzania - 2015'],\r" +
-    "\n" +
-    "                    ['Turkey - 2015']],\r" +
-    "\n" +
-    "              \r" +
-    "\n" +
-    "                ignoreCol: [2],\r" +
-    "\n" +
-    "              \r" +
-    "\n" +
-    "                chartType: 'GeoChart',\r" +
-    "\n" +
-    "              \r" +
-    "\n" +
-    "                chartAspectRatio: 1.5,\r" +
-    "\n" +
-    "             \r" +
-    "\n" +
-    "                chartZoom: 0,\r" +
-    "\n" +
-    "             \r" +
-    "\n" +
-    "                chartOffset: [-12,0],\r" +
-    "\n" +
-    "             \r" +
-    "\n" +
-    "                chartOptions: {\r" +
-    "\n" +
-    "                  \r" +
-    "\n" +
-    "                    width: null,\r" +
-    "\n" +
-    "                 \r" +
-    "\n" +
-    "                    backgroundColor: '#fff',\r" +
-    "\n" +
-    "                 \r" +
-    "\n" +
-    "                    datalessRegionColor: '#F5F5F5',\r" +
-    "\n" +
-    "               \r" +
-    "\n" +
-    "                    region: 'world',\r" +
-    "\n" +
-    "                  \r" +
-    "\n" +
-    "                    resolution: 'countries',\r" +
-    "\n" +
-    "                 \r" +
-    "\n" +
-    "                    legend: 'none',\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "                    colorAxis: {\r" +
-    "\n" +
-    "                       \r" +
-    "\n" +
-    "                        colors: ['#679CCA', '#337AB7']\r" +
-    "\n" +
-    "                    },\r" +
-    "\n" +
-    "                    tooltip: {\r" +
-    "\n" +
-    "                     \r" +
-    "\n" +
-    "                        trigger: 'focus',\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "                        isHtml: true\r" +
-    "\n" +
-    "                    }\r" +
-    "\n" +
-    "                }\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "               \r" +
-    "\n" +
-    "            });                       \r" +
-    "\n" +
-    "        });\r" +
-    "\n" +
-    "    </script>\r" +
-    "\n" +
-    "<!--geo chart-->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "<!--skycons-icons-->\r" +
-    "\n" +
-    "<script src=\"/com.vyom.vyomlib/resources/homepage/js/skycons.js\"></script>\r" +
-    "\n" +
-    "<!--//skycons-icons-->\r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "<script>\r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "function hideWidget()\r" +
-    "\n" +
-    "    {\r" +
-    "\n" +
-    "        \r" +
-    "\n" +
-    "       if(HideIncident == 'true') \r" +
-    "\n" +
-    "           {\r" +
-    "\n" +
-    "               console.log(\"enter in function2\"+HideIncident);\r" +
-    "\n" +
-    "               document.getElementById(\"incidentW1\").style.display=\"none\";\r" +
-    "\n" +
-    "               document.getElementById(\"incidentW2\").style.display=\"none\";\r" +
-    "\n" +
-    "           }\r" +
-    "\n" +
-    "        if(HideChange == 'true') \r" +
-    "\n" +
-    "           {\r" +
-    "\n" +
-    "              \r" +
-    "\n" +
-    "               document.getElementById(\"changeW1\").style.display=\"none\";\r" +
-    "\n" +
-    "            \r" +
-    "\n" +
-    "           }\r" +
-    "\n" +
-    "        if(HideSubscriber == 'true') \r" +
-    "\n" +
-    "           {\r" +
-    "\n" +
-    "               \r" +
-    "\n" +
-    "               document.getElementById(\"subscriberW1\").style.display=\"none\";\r" +
-    "\n" +
-    "               \r" +
-    "\n" +
-    "           }\r" +
-    "\n" +
-    "    }\r" +
-    "\n" +
-    "//function display()\r" +
-    "\n" +
-    "//{\r" +
-    "\n" +
-    "//var arr=displayC.split(\",\"); \r" +
-    "\n" +
-    "//    console.log(arr);\r" +
-    "\n" +
-    "//if(arr.includes(\"1\"))\r" +
-    "\n" +
-    "//    {\r" +
-    "\n" +
-    "//        document.getElementById(\"secCol\").style.display=\"none\";\r" +
-    "\n" +
-    "//        \r" +
-    "\n" +
-    "//    }\r" +
-    "\n" +
-    "// if (arr.includes(\"2\"))\r" +
-    "\n" +
-    "//    {\r" +
-    "\n" +
-    "//        document.getElementById(\"thirdCol\").style.display=\"none\";\r" +
-    "\n" +
-    "//        \r" +
-    "\n" +
-    "//    } \r" +
-    "\n" +
-    "// if (arr.includes(\"3\"))\r" +
-    "\n" +
-    "//    {\r" +
-    "\n" +
-    "//        document.getElementById(\"fourthCol\").style.display=\"none\";\r" +
-    "\n" +
-    "//        \r" +
-    "\n" +
-    "//    } \r" +
-    "\n" +
-    "//}\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "</script>\r" +
-    "\n" +
-    "</head>\r" +
-    "\n" +
-    "<body onload=\"display()\">\r" +
-    "\n" +
-    "   \r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "<div class=\"page-container\">	\r" +
-    "\n" +
-    "   <div class=\"\">\r" +
-    "\n" +
-    "	   <div class=\"mother-grid-inner\">\r" +
-    "\n" +
-    "           \r" +
-    "\n" +
-    "<!--\r" +
-    "\n" +
-    "           \r" +
-    "\n" +
-    "               <div>\r" +
-    "\n" +
-    "        <h1>{{subscribers}}</h1>\r" +
-    "\n" +
-    "    </div>\r" +
-    "\n" +
-    "-->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "<div>\r" +
-    "\n" +
-    "   \r" +
-    "\n" +
-    "</div>\r" +
-    "\n" +
-    "           \r" +
-    "\n" +
-    "           \r" +
-    "\n" +
-    "           \r" +
-    "\n" +
-    "           \r" +
-    "\n" +
-    "           \r" +
-    "\n" +
-    "            <!--header start here-->\r" +
-    "\n" +
-    "<!--				<div class=\"header-main\">\r" +
-    "\n" +
-    "					<div class=\"header-left\">\r" +
-    "\n" +
-    "							<div class=\"logo-name\">\r" +
-    "\n" +
-    "									 <a href=\"/com.vyom.vyomlib/resources/homepage/index.html\"> \r" +
-    "\n" +
-    "                                \r" +
-    "\n" +
-    "                                <h1>MyIT Alerts</h1> \r" +
-    "\n" +
-    "                                 <img id=\"logo\" src=\"\" alt=\"Logo\"/>\r" +
-    "\n" +
-    "								  </a> 								\r" +
-    "\n" +
-    "							</div>\r" +
-    "\n" +
-    "  -->                      \r" +
-    "\n" +
-    "							<!--search-box-->\r" +
-    "\n" +
-    "<!--           \r" +
-    "\n" +
-    "								<div class=\"search-box\">\r" +
-    "\n" +
-    "									<form>\r" +
-    "\n" +
-    "										<input type=\"text\" placeholder=\"Search...\" required=\"\">	\r" +
-    "\n" +
-    "										<input type=\"submit\" value=\"\">\r" +
-    "\n" +
-    "									</form>\r" +
-    "\n" +
-    "								</div>\r" +
-    "\n" +
-    "                            <!--//end-search-box-->\r" +
-    "\n" +
-    "                      \r" +
-    "\n" +
-    "<!--\r" +
-    "\n" +
-    "						<div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "						 </div>\r" +
-    "\n" +
-    "						 <div class=\"header-right\">\r" +
-    "\n" +
-    "							<div class=\"profile_details_left\">\r" +
-    "\n" +
-    "-->\r" +
-    "\n" +
-    "                                \r" +
-    "\n" +
-    "                                <!--notifications of menu start -->\r" +
-    "\n" +
-    "<!--\r" +
-    "\n" +
-    "							<ul class=\"nofitications-dropdown\">\r" +
-    "\n" +
-    "									<li class=\"dropdown head-dpdn\">\r" +
-    "\n" +
-    "										<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\"><i class=\"fa fa-envelope\"></i><span class=\"badge\">3</span></a>\r" +
-    "\n" +
-    "										<ul class=\"dropdown-menu\">\r" +
-    "\n" +
-    "											<li>\r" +
-    "\n" +
-    "												<div class=\"notification_header\">\r" +
-    "\n" +
-    "													<h3>You have 3 new messages</h3>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "											   <div class=\"user_img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p4.png\" alt=\"\"></div>\r" +
-    "\n" +
-    "											   <div class=\"notification_desc\">\r" +
-    "\n" +
-    "												<p>Lorem ipsum dolor</p>\r" +
-    "\n" +
-    "												<p><span>1 hour ago</span></p>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											   <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li class=\"odd\"><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"user_img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p2.png\" alt=\"\"></div>\r" +
-    "\n" +
-    "											   <div class=\"notification_desc\">\r" +
-    "\n" +
-    "												<p>Lorem ipsum dolor </p>\r" +
-    "\n" +
-    "												<p><span>1 hour ago</span></p>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											  <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "											   <div class=\"user_img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p3.png\" alt=\"\"></div>\r" +
-    "\n" +
-    "											   <div class=\"notification_desc\">\r" +
-    "\n" +
-    "												<p>Lorem ipsum dolor</p>\r" +
-    "\n" +
-    "												<p><span>1 hour ago</span></p>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											   <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li>\r" +
-    "\n" +
-    "												<div class=\"notification_bottom\">\r" +
-    "\n" +
-    "													<a href=\"#\">See all messages</a>\r" +
-    "\n" +
-    "												</div> \r" +
-    "\n" +
-    "											</li>\r" +
-    "\n" +
-    "										</ul>\r" +
-    "\n" +
-    "									</li>\r" +
-    "\n" +
-    "									<li class=\"dropdown head-dpdn\">\r" +
-    "\n" +
-    "										<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\"><i class=\"fa fa-bell\"></i><span class=\"badge blue\">3</span></a>\r" +
-    "\n" +
-    "										<ul class=\"dropdown-menu\">\r" +
-    "\n" +
-    "											<li>\r" +
-    "\n" +
-    "												<div class=\"notification_header\">\r" +
-    "\n" +
-    "													<h3>You have 3 new notification</h3>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"user_img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p5.png\" alt=\"\"></div>\r" +
-    "\n" +
-    "											   <div class=\"notification_desc\">\r" +
-    "\n" +
-    "												<p>Lorem ipsum dolor</p>\r" +
-    "\n" +
-    "												<p><span>1 hour ago</span></p>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											  <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											 </a></li>\r" +
-    "\n" +
-    "											 <li class=\"odd\"><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"user_img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p6.png\" alt=\"\"></div>\r" +
-    "\n" +
-    "											   <div class=\"notification_desc\">\r" +
-    "\n" +
-    "												<p>Lorem ipsum dolor</p>\r" +
-    "\n" +
-    "												<p><span>1 hour ago</span></p>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											   <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											 </a></li>\r" +
-    "\n" +
-    "											 <li><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"user_img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p7.png\" alt=\"\"></div>\r" +
-    "\n" +
-    "											   <div class=\"notification_desc\">\r" +
-    "\n" +
-    "												<p>Lorem ipsum dolor</p>\r" +
-    "\n" +
-    "												<p><span>1 hour ago</span></p>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											   <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											 </a></li>\r" +
-    "\n" +
-    "											 <li>\r" +
-    "\n" +
-    "												<div class=\"notification_bottom\">\r" +
-    "\n" +
-    "													<a href=\"#\">See all notifications</a>\r" +
-    "\n" +
-    "												</div> \r" +
-    "\n" +
-    "											</li>\r" +
-    "\n" +
-    "										</ul>\r" +
-    "\n" +
-    "									</li>	\r" +
-    "\n" +
-    "									<li class=\"dropdown head-dpdn\">\r" +
-    "\n" +
-    "										<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\"><i class=\"fa fa-tasks\"></i><span class=\"badge blue1\">9</span></a>\r" +
-    "\n" +
-    "										<ul class=\"dropdown-menu\">\r" +
-    "\n" +
-    "											<li>\r" +
-    "\n" +
-    "												<div class=\"notification_header\">\r" +
-    "\n" +
-    "													<h3>You have 8 pending task</h3>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"task-info\">\r" +
-    "\n" +
-    "													<span class=\"task-desc\">Database update</span><span class=\"percentage\">40%</span>\r" +
-    "\n" +
-    "													<div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "												<div class=\"progress progress-striped active\">\r" +
-    "\n" +
-    "													<div class=\"bar yellow\" style=\"width:40%;\"></div>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"task-info\">\r" +
-    "\n" +
-    "													<span class=\"task-desc\">Dashboard done</span><span class=\"percentage\">90%</span>\r" +
-    "\n" +
-    "												   <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "												<div class=\"progress progress-striped active\">\r" +
-    "\n" +
-    "													 <div class=\"bar green\" style=\"width:90%;\"></div>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"task-info\">\r" +
-    "\n" +
-    "													<span class=\"task-desc\">Mobile App</span><span class=\"percentage\">33%</span>\r" +
-    "\n" +
-    "													<div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											   <div class=\"progress progress-striped active\">\r" +
-    "\n" +
-    "													 <div class=\"bar red\" style=\"width: 33%;\"></div>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li><a href=\"#\">\r" +
-    "\n" +
-    "												<div class=\"task-info\">\r" +
-    "\n" +
-    "													<span class=\"task-desc\">Issues fixed</span><span class=\"percentage\">80%</span>\r" +
-    "\n" +
-    "												   <div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "												<div class=\"progress progress-striped active\">\r" +
-    "\n" +
-    "													 <div class=\"bar  blue\" style=\"width: 80%;\"></div>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "											</a></li>\r" +
-    "\n" +
-    "											<li>\r" +
-    "\n" +
-    "												<div class=\"notification_bottom\">\r" +
-    "\n" +
-    "													<a href=\"#\">See all pending tasks</a>\r" +
-    "\n" +
-    "												</div> \r" +
-    "\n" +
-    "											</li>\r" +
-    "\n" +
-    "										</ul>\r" +
-    "\n" +
-    "									</li>	\r" +
-    "\n" +
-    "								</ul>\r" +
-    "\n" +
-    "								<div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "							</div>  \r" +
-    "\n" +
-    "-->\r" +
-    "\n" +
-    "						<!--notification menu end -->\r" +
-    "\n" +
-    "                              \r" +
-    "\n" +
-    "<!--\r" +
-    "\n" +
-    "						<div class=\"profile_details\">		\r" +
-    "\n" +
-    "								<ul>\r" +
-    "\n" +
-    "									<li class=\"dropdown profile_details_drop\">\r" +
-    "\n" +
-    "										<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-expanded=\"false\">\r" +
-    "\n" +
-    "											<div class=\"profile_img\">	\r" +
-    "\n" +
-    "												<span class=\"prfil-img\"><img src=\"/com.vyom.vyomlib/resources/homepage/images/p1.png\" alt=\"\"> </span> \r" +
-    "\n" +
-    "												<div class=\"user-name\">\r" +
-    "\n" +
-    "													<p>Malorum</p>\r" +
-    "\n" +
-    "													<span>Administrator</span>\r" +
-    "\n" +
-    "												</div>\r" +
-    "\n" +
-    "												<i class=\"fa fa-angle-down lnr\"></i>\r" +
-    "\n" +
-    "												<i class=\"fa fa-angle-up lnr\"></i>\r" +
-    "\n" +
-    "												<div class=\"clearfix\"></div>	\r" +
-    "\n" +
-    "											</div>	\r" +
-    "\n" +
-    "										</a>\r" +
-    "\n" +
-    "										<ul class=\"dropdown-menu drp-mnu\">\r" +
-    "\n" +
-    "											<li> <a href=\"#\"><i class=\"fa fa-cog\"></i> Settings</a> </li> \r" +
-    "\n" +
-    "											<li> <a href=\"#\"><i class=\"fa fa-user\"></i> Profile</a> </li> \r" +
-    "\n" +
-    "											<li> <a href=\"#\"><i class=\"fa fa-sign-out\"></i> Logout</a> </li>\r" +
-    "\n" +
-    "										</ul>\r" +
-    "\n" +
-    "									</li>\r" +
-    "\n" +
-    "								</ul>\r" +
-    "\n" +
-    "							</div>\r" +
-    "\n" +
-    "							<div class=\"clearfix\"> </div>				\r" +
-    "\n" +
-    "						</div>\r" +
-    "\n" +
-    "				     <div class=\"clearfix\"> </div>	\r" +
-    "\n" +
-    "				</div> \r" +
-    "\n" +
-    "-->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "<!--heder end here-->\r" +
-    "\n" +
-    "<!-- script-for sticky-nav -->\r" +
-    "\n" +
-    "		<script>\r" +
-    "\n" +
-    "		$(document).ready(function() {\r" +
-    "\n" +
-    "			 var navoffeset=$(\".header-main\").offset().top;\r" +
-    "\n" +
-    "			 $(window).scroll(function(){\r" +
-    "\n" +
-    "				var scrollpos=$(window).scrollTop(); \r" +
-    "\n" +
-    "				if(scrollpos >=navoffeset){\r" +
-    "\n" +
-    "					$(\".header-main\").addClass(\"fixed\");\r" +
-    "\n" +
-    "				}else{\r" +
-    "\n" +
-    "					$(\".header-main\").removeClass(\"fixed\");\r" +
-    "\n" +
-    "				}\r" +
-    "\n" +
-    "			 });\r" +
-    "\n" +
-    "			 \r" +
-    "\n" +
-    "		});\r" +
-    "\n" +
-    "		</script>\r" +
-    "\n" +
-    "		<!-- /script-for sticky-nav -->\r" +
-    "\n" +
-    "<!--inner block start here-->\r" +
-    "\n" +
-    "<div class=\"inner-block\" style=\"padding-top: 20px;\">\r" +
-    "\n" +
-    "<!--market updates updates-->\r" +
-    "\n" +
-    "	 <div class=\"market-updates\">\r" +
-    "\n" +
-    "			<div class=\"col-md-4 market-update-gd\" id=\"subscriberW1\">\r" +
-    "\n" +
-    "                \r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "<!--Change block                -->\r" +
-    "\n" +
-    "				<div class=\"market-update-block clr-block-1\" ng-click=\"callAction('Saction')\">\r" +
-    "\n" +
-    "                \r" +
-    "\n" +
-    "<!--End of Change block-->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "                \r" +
-    "\n" +
-    "<!--                <div class=\"market-update-block clr-block-1\" >-->\r" +
-    "\n" +
-    "					<div class=\"col-md-8 market-update-left\">\r" +
-    "\n" +
-    "<!--						<h3>{{subscribers}}</h3>-->\r" +
-    "\n" +
-    "<!--                        <h3>33</h3>-->\r" +
-    "\n" +
-    "                        <h3>{{rxConfiguration.propertiesByName.subscribers | comVyomVyomlibMyFilter}}</h3>\r" +
-    "\n" +
-    "						<h4>Manage Subscription</h4>\r" +
-    "\n" +
-    "						<p>Subscribe MYIT Alerts.</p>\r" +
-    "\n" +
-    "					</div>\r" +
-    "\n" +
-    "					<div class=\"col-md-4 market-update-right\">\r" +
-    "\n" +
-    "						<i class=\"fa fa-thumbs-o-up\" style=\"font-size:48px;\"> </i>\r" +
-    "\n" +
-    "					</div>\r" +
-    "\n" +
-    "				  <div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "			<div class=\"col-md-4 market-update-gd\" id=\"incidentW1\">\r" +
-    "\n" +
-    "                \r" +
-    "\n" +
-    "            \r" +
-    "\n" +
-    "<!--Change block-->\r" +
-    "\n" +
-    "				<div class=\"market-update-block clr-block-2\" ng-click=\"callAction('Iaction')\" >\r" +
-    "\n" +
-    "<!--End of Change block-->\r" +
-    "\n" +
-    "                \r" +
-    "\n" +
-    "                \r" +
-    "\n" +
-    "<!--\r" +
-    "\n" +
-    "                    \r" +
-    "\n" +
-    "                <div class=\"market-update-block clr-block-2\" >\r" +
-    "\n" +
-    "-->\r" +
-    "\n" +
-    "                \r" +
-    "\n" +
-    "                    \r" +
-    "\n" +
-    "                    \r" +
-    "\n" +
-    "				 <div class=\"col-md-8 market-update-left\">\r" +
-    "\n" +
-    "<!--					<h3>{{incidents}}</h3>-->\r" +
-    "\n" +
-    "<!--                     <h3>22</h3>-->\r" +
-    "\n" +
-    "                     <h3>{{rxConfiguration.propertiesByName.incidents | comVyomVyomlibMyFilter}}</h3>\r" +
-    "\n" +
-    "					<h4>Incident Management</h4>\r" +
-    "\n" +
-    "					<p>Restoring normal service operations.</p>\r" +
-    "\n" +
-    "				  </div>\r" +
-    "\n" +
-    "					<div class=\"col-md-4 market-update-right\">\r" +
-    "\n" +
-    "						<i class=\"fa fa-eye\"> </i>\r" +
-    "\n" +
-    "					</div>\r" +
-    "\n" +
-    "				  <div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "			<div class=\"col-md-4 market-update-gd\" id=\"changeW1\">\r" +
-    "\n" +
-    "                \r" +
-    "\n" +
-    "               \r" +
-    "\n" +
-    "<!--Change block  -->\r" +
-    "\n" +
-    "				<div class=\"market-update-block clr-block-3\" ng-click=\"callAction('Caction')\">\r" +
-    "\n" +
-    "<!--End of Change block  -->\r" +
-    "\n" +
-    "                \r" +
-    "\n" +
-    "<!--\r" +
-    "\n" +
-    "           \r" +
-    "\n" +
-    "                    <div class=\"market-update-block clr-block-3\" >\r" +
-    "\n" +
-    "-->\r" +
-    "\n" +
-    "                    \r" +
-    "\n" +
-    "                    \r" +
-    "\n" +
-    "					<div class=\"col-md-8 market-update-left\">\r" +
-    "\n" +
-    "<!--						<h3>{{changes}}</h3> -->\r" +
-    "\n" +
-    "<!--                        <h3>15</h3>-->\r" +
-    "\n" +
-    "                        <h3>{{rxConfiguration.propertiesByName.changes | comVyomVyomlibMyFilter}}</h3>\r" +
-    "\n" +
-    "						<h4>Change Management</h4>\r" +
-    "\n" +
-    "						<p>planning,scheduling & tracking changes </p>\r" +
-    "\n" +
-    "					</div>\r" +
-    "\n" +
-    "					<div class=\"col-md-4 market-update-right\">\r" +
-    "\n" +
-    "						<i class=\"fa fa-cubes\" style=\"font-size:48px;\"> </i>\r" +
-    "\n" +
-    "					</div>\r" +
-    "\n" +
-    "				  <div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "		   <div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "		</div>\r" +
-    "\n" +
-    "<!--market updates end here-->\r" +
-    "\n" +
-    "<!--mainpage chit-chating-->\r" +
-    "\n" +
-    "<div class=\"chit-chat-layer1\">\r" +
-    "\n" +
-    "	<div class=\"col-md-6 chit-chat-layer1-left\" id=\"incidentW2\">\r" +
-    "\n" +
-    "               <div class=\"work-progres\" style=\"  height: 400px; overflow-y: scroll;\" >\r" +
-    "\n" +
-    "                            <div class=\"chit-chat-heading\">\r" +
-    "\n" +
-    "                                  Incident/Outages\r" +
-    "\n" +
-    "                            </div>\r" +
-    "\n" +
-    "                            <div class=\"table-responsive\">\r" +
-    "\n" +
-    "                                <table class=\"table table-hover\">\r" +
-    "\n" +
-    "                                  <thead>\r" +
-    "\n" +
-    "                                    <tr>\r" +
-    "\n" +
-    "                                      <th>#</th>\r" +
-    "\n" +
-    "                                      <th>IncidentID</th>\r" +
-    "\n" +
-    "                                      <th>Summary</th>                                   \r" +
-    "\n" +
-    "                                                                        \r" +
-    "\n" +
-    "                                      <th>Status</th>\r" +
-    "\n" +
-    "                                  </tr>\r" +
-    "\n" +
-    "                              </thead>\r" +
-    "\n" +
-    "                              <tbody>\r" +
-    "\n" +
-    "<!--Change block-->\r" +
-    "\n" +
-    "                                <tr ng-repeat=\"x in mydata\">\r" +
-    "\n" +
-    "                                  <td>{{$index+1}}</td>\r" +
-    "\n" +
-    "                                  <td>{{x['1']}}</td>\r" +
-    "\n" +
-    "                                  <td>{{x['8']}}</td>                               \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-danger\">{{x['7']}}</span></td>\r" +
-    "\n" +
-    "                                 \r" +
-    "\n" +
-    "                              </tr>\r" +
-    "\n" +
-    "<!--End of Change block-->\r" +
-    "\n" +
-    "<!--\r" +
-    "\n" +
-    "                            <tr>\r" +
-    "\n" +
-    "                                  <td>1</td>\r" +
-    "\n" +
-    "                                  <td>INC000000092</td>\r" +
-    "\n" +
-    "                                  <td>Email Service</td>                               \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-success\">In Progress</span></td>\r" +
-    "\n" +
-    "                                 \r" +
-    "\n" +
-    "                              </tr>   \r" +
-    "\n" +
-    "                            <tr>\r" +
-    "\n" +
-    "                                  <td>2</td>\r" +
-    "\n" +
-    "                                  <td>INC000000093</td>\r" +
-    "\n" +
-    "                                  <td>Database</td>                               \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-success\">In Progress</span></td>\r" +
-    "\n" +
-    "                                 \r" +
-    "\n" +
-    "                              </tr> <tr>\r" +
-    "\n" +
-    "                                  <td>3</td>\r" +
-    "\n" +
-    "                                  <td>INC000000094</td>\r" +
-    "\n" +
-    "                                  <td>Email Service</td>                               \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-success\">In Progress</span></td>\r" +
-    "\n" +
-    "                                 \r" +
-    "\n" +
-    "                              </tr>   \r" +
-    "\n" +
-    "                            <tr>\r" +
-    "\n" +
-    "                                  <td>4</td>\r" +
-    "\n" +
-    "                                  <td>INC000000095</td>\r" +
-    "\n" +
-    "                                  <td>Database</td>                               \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-success\">In Progress</span></td>\r" +
-    "\n" +
-    "                                 \r" +
-    "\n" +
-    "                              </tr>\r" +
-    "\n" +
-    "                                                                </tr> <tr>\r" +
-    "\n" +
-    "                                  <td>5</td>\r" +
-    "\n" +
-    "                                  <td>INC000000096</td>\r" +
-    "\n" +
-    "                                  <td>Email Service</td>                               \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-success\">In Progress</span></td>\r" +
-    "\n" +
-    "                                 \r" +
-    "\n" +
-    "                              </tr>   \r" +
-    "\n" +
-    "                            <tr>\r" +
-    "\n" +
-    "                                  <td>6</td>\r" +
-    "\n" +
-    "                                  <td>INC000000097</td>\r" +
-    "\n" +
-    "                                  <td>Database</td>                               \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-success\">In Progress</span></td>\r" +
-    "\n" +
-    "                                 \r" +
-    "\n" +
-    "                              </tr>\r" +
-    "\n" +
-    "                                  \r" +
-    "\n" +
-    "                            <tr>\r" +
-    "\n" +
-    "                                  <td>5</td>\r" +
-    "\n" +
-    "                                  <td>INC000000098</td>\r" +
-    "\n" +
-    "                                  <td>Internet Service</td>                               \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-danger\">Closed</span></td>\r" +
-    "\n" +
-    "                                 \r" +
-    "\n" +
-    "                              </tr>  \r" +
-    "\n" +
-    "                                  \r" +
-    "\n" +
-    "-->\r" +
-    "\n" +
-    "                                  \r" +
-    "\n" +
-    "                            <!--  <tr>\r" +
-    "\n" +
-    "                                  <td>2</td>\r" +
-    "\n" +
-    "                                  <td>Twitter</td>\r" +
-    "\n" +
-    "                                  <td>Evan</td>                               \r" +
-    "\n" +
-    "                                                                  \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-success\">completed</span></td>\r" +
-    "\n" +
-    "                                  <td><span class=\"badge badge-success\">100%</span></td>\r" +
-    "\n" +
-    "                              </tr>\r" +
-    "\n" +
-    "                              <tr>\r" +
-    "\n" +
-    "                                  <td>3</td>\r" +
-    "\n" +
-    "                                  <td>Google</td>\r" +
-    "\n" +
-    "                                  <td>John</td>                                \r" +
-    "\n" +
-    "                                  \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-warning\">in progress</span></td>\r" +
-    "\n" +
-    "                                  <td><span class=\"badge badge-warning\">75%</span></td>\r" +
-    "\n" +
-    "                              </tr>\r" +
-    "\n" +
-    "                              <tr>\r" +
-    "\n" +
-    "                                  <td>4</td>\r" +
-    "\n" +
-    "                                  <td>LinkedIn</td>\r" +
-    "\n" +
-    "                                  <td>Danial</td>                                 \r" +
-    "\n" +
-    "                                                             \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-info\">in progress</span></td>\r" +
-    "\n" +
-    "                                  <td><span class=\"badge badge-info\">65%</span></td>\r" +
-    "\n" +
-    "                              </tr>\r" +
-    "\n" +
-    "                              <tr>\r" +
-    "\n" +
-    "                                  <td>5</td>\r" +
-    "\n" +
-    "                                  <td>Tumblr</td>\r" +
-    "\n" +
-    "                                  <td>David</td>                                \r" +
-    "\n" +
-    "                                                                 \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-warning\">in progress</span></td>\r" +
-    "\n" +
-    "                                  <td><span class=\"badge badge-danger\">95%</span></td>\r" +
-    "\n" +
-    "                              </tr>\r" +
-    "\n" +
-    "                              <tr>\r" +
-    "\n" +
-    "                                  <td>6</td>\r" +
-    "\n" +
-    "                                  <td>Tesla</td>\r" +
-    "\n" +
-    "                                  <td>Mickey</td>                                  \r" +
-    "\n" +
-    "                                                             \r" +
-    "\n" +
-    "                                  <td><span class=\"label label-info\">in progress</span></td>\r" +
-    "\n" +
-    "                                  <td><span class=\"badge badge-success\">95%</span></td>\r" +
-    "\n" +
-    "                              </tr>-->\r" +
-    "\n" +
-    "                          </tbody>\r" +
-    "\n" +
-    "                      </table>\r" +
-    "\n" +
-    "                  </div>\r" +
-    "\n" +
-    "             </div>\r" +
-    "\n" +
-    "      </div>\r" +
-    "\n" +
-    "    <!------- Geo Chart hide----------------->\r" +
-    "\n" +
-    "     <div class=\"col-md-6 chit-chat-layer1-rit\" id=\"secCol\" >    	\r" +
-    "\n" +
-    "      	  <div class=\"geo-chart\" style=\"  height: 400px;\">\r" +
-    "\n" +
-    "              \r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "				<section id=\"charts1\" class=\"charts\">\r" +
-    "\n" +
-    "				<div class=\"wrapper-flex\">\r" +
-    "\n" +
-    "				\r" +
-    "\n" +
-    "				    <table id=\"myTable\" class=\"geoChart tableChart data-table col-table\" style=\"display:none;\">\r" +
-    "\n" +
-    "				        <caption>Subscriber</caption>\r" +
-    "\n" +
-    "				        <tr>\r" +
-    "\n" +
-    "				            <th scope=\"col\" data-type=\"string\">Country</th>\r" +
-    "\n" +
-    "				            <th scope=\"col\" data-type=\"number\">Number of Subscribers</th>\r" +
-    "\n" +
-    "				            <th scope=\"col\" data-role=\"annotation\">Annotation</th>\r" +
-    "\n" +
-    "				        </tr>\r" +
-    "\n" +
-    "				        <tr>\r" +
-    "\n" +
-    "				            <td>China</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">1</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">1</td>\r" +
-    "\n" +
-    "				        </tr>\r" +
-    "\n" +
-    "				        <tr>\r" +
-    "\n" +
-    "				            <td>Colombia</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">5</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">5</td>\r" +
-    "\n" +
-    "				        </tr>\r" +
-    "\n" +
-    "				        <tr>\r" +
-    "\n" +
-    "				            <td>France</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">3</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">3</td>\r" +
-    "\n" +
-    "				        </tr>\r" +
-    "\n" +
-    "				        <tr>\r" +
-    "\n" +
-    "				            <td>Italy</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">1</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">1</td>\r" +
-    "\n" +
-    "				        </tr>\r" +
-    "\n" +
-    "				        <tr>\r" +
-    "\n" +
-    "				            <td>Japan</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">18</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">18</td>\r" +
-    "\n" +
-    "				        </tr>\r" +
-    "\n" +
-    "				        <tr>\r" +
-    "\n" +
-    "				            <td>Kazakhstan</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">1</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">1</td>\r" +
-    "\n" +
-    "				        </tr>\r" +
-    "\n" +
-    "				        <tr>\r" +
-    "\n" +
-    "				            <td>Mexico</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">1</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">1</td>\r" +
-    "\n" +
-    "				        </tr>\r" +
-    "\n" +
-    "				        <tr>\r" +
-    "\n" +
-    "				            <td>Poland</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">1</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">1</td>\r" +
-    "\n" +
-    "				        </tr>\r" +
-    "\n" +
-    "				        <tr>\r" +
-    "\n" +
-    "				            <td>India</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">11</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">11</td>\r" +
-    "\n" +
-    "				        </tr>\r" +
-    "\n" +
-    "				        <tr>\r" +
-    "\n" +
-    "				            <td>Spain</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">2</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">2</td>\r" +
-    "\n" +
-    "				        </tr>\r" +
-    "\n" +
-    "				        <tr>\r" +
-    "\n" +
-    "				            <td>Tanzania</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">1</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">1</td>\r" +
-    "\n" +
-    "				        </tr>\r" +
-    "\n" +
-    "				        <tr>\r" +
-    "\n" +
-    "				            <td>Turkey</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">2</td>\r" +
-    "\n" +
-    "				            <td align=\"right\">2</td>\r" +
-    "\n" +
-    "				        </tr>\r" +
-    "\n" +
-    "				\r" +
-    "\n" +
-    "				    </table>\r" +
-    "\n" +
-    "				\r" +
-    "\n" +
-    "				    <div class=\"col geo_main\">\r" +
-    "\n" +
-    "				         <h3 id=\"geoChartTitle\">World Market</h3>\r" +
-    "\n" +
-    "				        <div id=\"geoChart\" class=\"chart\"> </div>\r" +
-    "\n" +
-    "				    </div>\r" +
-    "\n" +
-    "				\r" +
-    "\n" +
-    "				\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "				</section>			\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "      </div> \r" +
-    "\n" +
-    "     <div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "</div>\r" +
-    "\n" +
-    "<!--main page chit chating end here-->\r" +
-    "\n" +
-    "<!--main page chart start here-->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "       \r" +
-    "\n" +
-    "<div class=\"main-page-charts\">\r" +
-    "\n" +
-    "   <div class=\"main-page-chart-layer1\">\r" +
-    "\n" +
-    "		<div class=\"col-md-6 chart-layer1-left\" id=\"thirdCol\"> \r" +
-    "\n" +
-    "        <!--    <div class=\"prograc-blocks\">\r" +
-    "\n" +
-    "		     Progress bars\r" +
-    "\n" +
-    "      <div class=\"home-progres-main\">\r" +
-    "\n" +
-    "	           <h3>Total Sales</h3>\r" +
-    "\n" +
-    "	         </div>\r" +
-    "\n" +
-    "	        <div class='bar_group'>\r" +
-    "\n" +
-    "					<div class='bar_group__bar thin' label='New' show_values='true' tooltip='true' value='{{statusValue[0]}}' style=\"width:{{statusValue[0]}}%;margin-bottom: 40px;\"></div>\r" +
-    "\n" +
-    "					<div class='bar_group__bar thin' label='Assigned' show_values='true' tooltip='true' value='{{statusValue[1]}}' style=\"width:{{statusValue[1]}}%;margin-bottom: 40px;\"></div>\r" +
-    "\n" +
-    "					<div class='bar_group__bar thin' label='Fixed' show_values='true' tooltip='true' value='{{statusValue[2]}}' style=\"width:{{statusValue[2]}}%;margin-bottom: 40px;\"></div>\r" +
-    "\n" +
-    "					<div class='bar_group__bar thin' label='Rejected' show_values='true' tooltip='true' value='{{statusValue[3]}}' style=\"width:{{statusValue[3]}}%;margin-bottom: 40px;\"></div>\r" +
-    "\n" +
-    "                    <div class='bar_group__bar thin' label='Closed' show_values='true' tooltip='true' value='{{statusValue[4]}}' style=\"width:{{statusValue[4]}}%;margin-bottom: 40px;\"></div>\r" +
-    "\n" +
-    "		    </div>\r" +
-    "\n" +
-    "				<script src=\"/com.vyom.vyomlib/resources/homepage/js/bars.js\"></script>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "	      <!--//Progress bars\r" +
-    "\n" +
-    "	     </div>-->\r" +
-    "\n" +
-    "		\r" +
-    "\n" +
-    "		</div>\r" +
-    "\n" +
-    "		 <div class=\"col-md-6 chart-layer1-right\" id=\"fourthCol\"> \r" +
-    "\n" +
-    "             <!--	<div class=\"content-main revenue\">			\r" +
-    "\n" +
-    "					<h3>Total Revenue</h3>\r" +
-    "\n" +
-    "					<canvas id=\"radar\" height=\"400\" width=\"300\" style=\"width: 300px; height: 400px;\"></canvas>\r" +
-    "\n" +
-    "						<script>\r" +
-    "\n" +
-    "							var radarChartData = {\r" +
-    "\n" +
-    "								labels : [\"\",\"\",\"\",\"\",\"\",\"\",\"\"],\r" +
-    "\n" +
-    "								datasets : [\r" +
-    "\n" +
-    "									{\r" +
-    "\n" +
-    "										fillColor : \"rgba(104, 174, 0, 0.83)\",\r" +
-    "\n" +
-    "										strokeColor : \"#68ae00\",\r" +
-    "\n" +
-    "										pointColor : \"#68ae00\",\r" +
-    "\n" +
-    "										pointStrokeColor : \"#fff\",\r" +
-    "\n" +
-    "										data : [65,59,90,81,56,55,40]\r" +
-    "\n" +
-    "									},\r" +
-    "\n" +
-    "									{\r" +
-    "\n" +
-    "										fillColor : \"rgba(236, 133, 38, 0.82)\",\r" +
-    "\n" +
-    "										strokeColor : \"#ec8526\",\r" +
-    "\n" +
-    "										pointColor : \"#ec8526\",\r" +
-    "\n" +
-    "										pointStrokeColor : \"#fff\",\r" +
-    "\n" +
-    "										data : [28,48,40,19,96,27,100]\r" +
-    "\n" +
-    "									}\r" +
-    "\n" +
-    "								]\r" +
-    "\n" +
-    "								\r" +
-    "\n" +
-    "							};\r" +
-    "\n" +
-    "							new Chart(document.getElementById(\"radar\").getContext(\"2d\")).Radar(radarChartData);\r" +
-    "\n" +
-    "						</script>\r" +
-    "\n" +
-    "		</div> -->\r" +
-    "\n" +
-    "             \r" +
-    "\n" +
-    "			<!--<div class=\"user-marorm\">\r" +
-    "\n" +
-    "			<div class=\"malorum-top\">				\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "			<div class=\"malorm-bottom\">\r" +
-    "\n" +
-    "				<span class=\"malorum-pro\"> </span>\r" +
-    "\n" +
-    "			     <h4>unde omnis iste</h4>\r" +
-    "\n" +
-    "				 <h2>Melorum</h2>\r" +
-    "\n" +
-    "				<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising.</p>\r" +
-    "\n" +
-    "				<ul class=\"malorum-icons\">\r" +
-    "\n" +
-    "					<li><a href=\"#\"><i class=\"fa fa-facebook\"> </i>\r" +
-    "\n" +
-    "						<div class=\"tooltip\"><span>Facebook</span></div>\r" +
-    "\n" +
-    "					</a></li>\r" +
-    "\n" +
-    "					<li><a href=\"#\"><i class=\"fa fa-twitter\"> </i>\r" +
-    "\n" +
-    "						<div class=\"tooltip\"><span>Twitter</span></div>\r" +
-    "\n" +
-    "					</a></li>\r" +
-    "\n" +
-    "					<li><a href=\"#\"><i class=\"fa fa-google-plus\"> </i>\r" +
-    "\n" +
-    "						<div class=\"tooltip\"><span>Google</span></div>\r" +
-    "\n" +
-    "					</a></li>\r" +
-    "\n" +
-    "				</ul>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "		   </div>\r" +
-    "\n" +
-    "		</div>-->\r" +
-    "\n" +
-    "	 <div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "  </div>\r" +
-    "\n" +
-    " </div>\r" +
-    "\n" +
-    "<!--main page chart layer2-->\r" +
-    "\n" +
-    " <div class=\"chart-layer-2\">\r" +
-    "\n" +
-    "	<!--\r" +
-    "\n" +
-    "	<div class=\"col-md-6 chart-layer2-right\">\r" +
-    "\n" +
-    "				<div class=\"glocy-chart\">\r" +
-    "\n" +
-    "			<div class=\"span-2c\">  \r" +
-    "\n" +
-    "                        <h3 class=\"tlt\">Incident Analytics</h3>\r" +
-    "\n" +
-    "                        <canvas id=\"bar\" height=\"300\" width=\"400\" style=\"width: 400px; height: 300px;\"></canvas>\r" +
-    "\n" +
-    "                        <script>\r" +
-    "\n" +
-    "                            var statusValue=[];\r" +
-    "\n" +
-    "                            console.log($scope.mydata);\r" +
-    "\n" +
-    "                            var barChartData = {\r" +
-    "\n" +
-    "                            labels : [\"New\",\"Assigned\",\"Fixed\",\"Rejected\",\"Closed\"],\r" +
-    "\n" +
-    "                            datasets : [\r" +
-    "\n" +
-    "                                {\r" +
-    "\n" +
-    "                                    fillColor : \"#FC8213\",\r" +
-    "\n" +
-    "                                    data :  $scope.mydata;\r" +
-    "\n" +
-    "                                  //  data : [12,11,0,0,0,0,0]\r" +
-    "\n" +
-    "                                   \r" +
-    "\n" +
-    "                                }/*,\r" +
-    "\n" +
-    "                                {\r" +
-    "\n" +
-    "                                    fillColor : \"#337AB7\",\r" +
-    "\n" +
-    "                                    data : [12,0,0,0,0,0,0]\r" +
-    "\n" +
-    "                                }*/\r" +
-    "\n" +
-    "                            ]\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "                        };\r" +
-    "\n" +
-    "                            new Chart(document.getElementById(\"bar\").getContext(\"2d\")).Bar(barChartData);\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "                        </script>\r" +
-    "\n" +
-    "                    </div> 			  		   			\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "	</div>-->\r" +
-    "\n" +
-    "	<div class=\"col-md-6 chart-layer2-left\">\r" +
-    "\n" +
-    "	<!--- code  -->\r" +
-    "\n" +
-    "	</div>\r" +
-    "\n" +
-    "  <div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "</div>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "<!--climate start here-->\r" +
-    "\n" +
-    " <div class=\"climate\">\r" +
-    "\n" +
-    "	<div class=\"col-md-4 climate-grids\">\r" +
-    "\n" +
-    "		<div class=\"climate-grid1\">\r" +
-    "\n" +
-    "			<div class=\"climate-gd1-top\">\r" +
-    "\n" +
-    "				<div class=\"col-md-6 climate-gd1top-left\">\r" +
-    "\n" +
-    "					<h4>   Details</h4>\r" +
-    "\n" +
-    "					<h3>MyIT Alerts</h3>				\r" +
-    "\n" +
-    "					<p>Incidents:</p>					\r" +
-    "\n" +
-    "					<p>Changes:</p>\r" +
-    "\n" +
-    "					<p>Subscriptions:</p>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "				<div class=\"col-md-6 climate-gd1top-right\" style=\"text-align-last: center;\">\r" +
-    "\n" +
-    "					  <span class=\"clime-icon\"> <span class=\"clime-icon\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <i class=\"fa fa-camera-retro fa-3x\"></i>\r" +
-    "\n" +
-    "					  	<figure class=\"icons\">\r" +
-    "\n" +
-    "<!--\r" +
-    "\n" +
-    "								<canvas id=\"partly-cloudy-day\" width=\"64\" height=\"64\">\r" +
-    "\n" +
-    "								</canvas>\r" +
-    "\n" +
-    "-->\r" +
-    "\n" +
-    "							</figure>\r" +
-    "\n" +
-    "						<script>\r" +
-    "\n" +
-    "							 var icons = new Skycons({\"color\": \"#fff\"}),\r" +
-    "\n" +
-    "								  list  = [\r" +
-    "\n" +
-    "									\"clear-night\", \"partly-cloudy-day\",\r" +
-    "\n" +
-    "									\"partly-cloudy-night\", \"cloudy\", \"rain\", \"sleet\", \"snow\", \"wind\",\r" +
-    "\n" +
-    "									\"fog\"\r" +
-    "\n" +
-    "								  ],\r" +
-    "\n" +
-    "								  i;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  for(i = list.length; i--; )\r" +
-    "\n" +
-    "								icons.set(list[i], list[i]);\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  icons.play();\r" +
-    "\n" +
-    "						</script>					  \r" +
-    "\n" +
-    "				   </span>	\r" +
-    "\n" +
-    "                          <br>\r" +
-    "\n" +
-    "					  <p>{{rxConfiguration.propertiesByName.incidents | comVyomVyomlibMyFilter}}</p>					\r" +
-    "\n" +
-    "					  <p>{{rxConfiguration.propertiesByName.changes | comVyomVyomlibMyFilter}}</p>\r" +
-    "\n" +
-    "					   <p>{{rxConfiguration.propertiesByName.subscribers | comVyomVyomlibMyFilter}}</p>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "				<div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "			<div class=\"climate-gd1-bottom\">\r" +
-    "\n" +
-    "				<div class=\"col-md-4 cloudy1\">\r" +
-    "\n" +
-    "						<h4>Hongkong</h4>\r" +
-    "\n" +
-    "<!--                        <i class=\"fa fa-camera-retro fa-3x\"></i>-->\r" +
-    "\n" +
-    "<!--                            <i class=\"fa fa-bar-chart fa-2x\"></i>-->\r" +
-    "\n" +
-    "                    <i class=\"fa fa-globe fa-3x\" style=\"color:white;\"><!-- icon --></i>\r" +
-    "\n" +
-    "                            \r" +
-    "\n" +
-    "						  <figure class=\"icons\">\r" +
-    "\n" +
-    "<!--\r" +
-    "\n" +
-    "							<canvas id=\"sleet\" width=\"58\" height=\"58\">\r" +
-    "\n" +
-    "							</canvas>\r" +
-    "\n" +
-    "-->\r" +
-    "\n" +
-    "					       </figure>\r" +
-    "\n" +
-    "					       <script>\r" +
-    "\n" +
-    "								 var icons = new Skycons({\"color\": \"#fff\"}),\r" +
-    "\n" +
-    "									  list  = [\r" +
-    "\n" +
-    "										\"clear-night\", \"clear-day\",\r" +
-    "\n" +
-    "										\"partly-cloudy-night\", \"cloudy\", \"rain\", \"sleet\", \"snow\", \"wind\",\r" +
-    "\n" +
-    "										\"fog\"\r" +
-    "\n" +
-    "									  ],\r" +
-    "\n" +
-    "									  i;\r" +
-    "\n" +
-    "	\r" +
-    "\n" +
-    "								  for(i = list.length; i--; )\r" +
-    "\n" +
-    "									icons.set(list[i], list[i]);\r" +
-    "\n" +
-    "	\r" +
-    "\n" +
-    "								  icons.play();\r" +
-    "\n" +
-    "							</script>\r" +
-    "\n" +
-    "						<h3>11</h3>\r" +
-    "\n" +
-    "					</div>\r" +
-    "\n" +
-    "					<div class=\"col-md-4 cloudy1\">\r" +
-    "\n" +
-    "						<h4>UK</h4>\r" +
-    "\n" +
-    "                        <i class=\"fa fa-globe fa-3x\" style=\"color:white;\"><!-- icon --></i>\r" +
-    "\n" +
-    "                        \r" +
-    "\n" +
-    "						<figure class=\"icons\">\r" +
-    "\n" +
-    "<!--					<canvas id=\"cloudy\" width=\"58\" height=\"58\"></canvas>-->\r" +
-    "\n" +
-    "				</figure>					\r" +
-    "\n" +
-    "					<script>\r" +
-    "\n" +
-    "							 var icons = new Skycons({\"color\": \"#fff\"}),\r" +
-    "\n" +
-    "								  list  = [\r" +
-    "\n" +
-    "									\"clear-night\", \"cloudy\",\r" +
-    "\n" +
-    "									\"partly-cloudy-night\", \"cloudy\", \"rain\", \"sleet\", \"snow\", \"wind\",\r" +
-    "\n" +
-    "									\"fog\"\r" +
-    "\n" +
-    "								  ],\r" +
-    "\n" +
-    "								  i;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  for(i = list.length; i--; )\r" +
-    "\n" +
-    "								icons.set(list[i], list[i]);\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  icons.play();\r" +
-    "\n" +
-    "						</script>\r" +
-    "\n" +
-    "						<h3>14</h3>\r" +
-    "\n" +
-    "					</div>\r" +
-    "\n" +
-    "					<div class=\"col-md-4 cloudy1\">\r" +
-    "\n" +
-    "						<h4>USA</h4>\r" +
-    "\n" +
-    "                        <i class=\"fa fa-globe fa-3x\" style=\"color:white;\"><!-- icon --></i>\r" +
-    "\n" +
-    "                   \r" +
-    "\n" +
-    "						<figure class=\"icons\">\r" +
-    "\n" +
-    "<!--							<canvas id=\"snow\" width=\"58\" height=\"58\"></canvas>-->\r" +
-    "\n" +
-    "						</figure>\r" +
-    "\n" +
-    "				        <script>\r" +
-    "\n" +
-    "							 var icons = new Skycons({\"color\": \"#fff\"}),\r" +
-    "\n" +
-    "								  list  = [\r" +
-    "\n" +
-    "									\"clear-night\", \"clear-day\",\r" +
-    "\n" +
-    "									\"partly-cloudy-night\", \"cloudy\", \"rain\", \"sleet\", \"snow\", \"wind\",\r" +
-    "\n" +
-    "									\"fog\"\r" +
-    "\n" +
-    "								  ],\r" +
-    "\n" +
-    "								  i;\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  for(i = list.length; i--; )\r" +
-    "\n" +
-    "								icons.set(list[i], list[i]);\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "							  icons.play();\r" +
-    "\n" +
-    "						</script>\r" +
-    "\n" +
-    "						<h3>12</h3>\r" +
-    "\n" +
-    "					</div>\r" +
-    "\n" +
-    "				<div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "		</div>\r" +
-    "\n" +
-    "	</div>\r" +
-    "\n" +
-    "	<div class=\"col-md-4 climate-grids\">\r" +
-    "\n" +
-    "        <div class=\"boost-icons-list\">\r" +
-    "\n" +
-    "					<ul>\r" +
-    "\n" +
-    "                        <li ng-click=\"redirecturl(url1)\"><br>	<i class=\"glyphicon glyphicon-home\" aria-hidden=\"true\"></i><br>\r" +
-    "\n" +
-    "                      <a href=\"{{url1}}\" target=\"_blank\">    </a></li>\r" +
-    "\n" +
-    "                        <li ng-click=\"redirecturl(url2)\"><br><i class=\"glyphicon glyphicon-asterisk\" aria-hidden=\"true\"></i>  <br> <a href=\"{{url2}}\" target=\"_blank\">    </a></li>\r" +
-    "\n" +
-    "						<li ng-click=\"redirecturl(url3)\"><br><i class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\"></i><br>\r" +
-    "\n" +
-    "                           <a href=\"{{url3}}\" target=\"_blank\">  </a></li>\r" +
-    "\n" +
-    "						<li ng-click=\"redirecturl(url4)\"> <br><i class=\"glyphicon glyphicon-euro\" aria-hidden=\"true\"></i><br>\r" +
-    "\n" +
-    "                            <a href=\"{{url4}}\" target=\"_blank\"> </a></li>\r" +
-    "\n" +
-    "					</ul>\r" +
-    "\n" +
-    "					<div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "	</div>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "	<div class=\"col-md-4 climate-grids\">\r" +
-    "\n" +
-    "		<div class=\"climate-grid3\">\r" +
-    "\n" +
-    "			<div class=\"popular-brand\">\r" +
-    "\n" +
-    "				<div class=\"col-md-6 popular-bran-left\">\r" +
-    "\n" +
-    "				     <h3></h3>\r" +
-    "\n" +
-    "				     <h4>Ericsson Global Services</h4>\r" +
-    "\n" +
-    "                    <br>\r" +
-    "\n" +
-    "                    <h5>West Gate Business Park, Corp H3, Bulevardul Iuliu Maniu 197, București</h5>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "				<div class=\"col-md-6 popular-bran-right\">\r" +
-    "\n" +
-    "                    <a href=https://www.google.com/maps/dir/18.5713009,73.7712419/ericsson+bucharest+romania/@26.0055421,12.6315864,3z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x40b200e47c0ddfcb:0x7f7b86105cfe2aca!2m2!1d25.9868508!2d44.4334329?hl=en-GB>\r" +
-    "\n" +
-    "					<h3>Click</h3>\r" +
-    "\n" +
-    "                    </a>    \r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "			  <div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "			<div class=\"popular-follow\">\r" +
-    "\n" +
-    "				<div class=\"col-md-6 popular-follo-left\">\r" +
-    "\n" +
-    "					<p>For more details and help on our services, you can visit our website   </p>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "				<div class=\"col-md-6 popular-follo-right\">\r" +
-    "\n" +
-    "					<h4>Followers</h4>\r" +
-    "\n" +
-    "					<h5>2892</h5>\r" +
-    "\n" +
-    "				</div>\r" +
-    "\n" +
-    "			  <div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "			</div>\r" +
-    "\n" +
-    "		</div>\r" +
-    "\n" +
-    "	</div>\r" +
-    "\n" +
-    "   \r" +
-    "\n" +
-    "	<div class=\"clearfix\"> </div>\r" +
-    "\n" +
-    "</div>\r" +
-    "\n" +
-    "<!--climate end here-->\r" +
-    "\n" +
-    "</div>\r" +
-    "\n" +
-    "<!--inner block end here-->\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "</div>\r" +
-    "\n" +
-    "</div>\r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "    \r" +
-    "\n" +
-    "\r" +
-    "\n" +
-    "           \r" +
-    "\n" +
-    "</body>\r" +
-    "\n" +
-    "</html>                     "
+    "--> <a id=\"ERReport\" href=\"#\"><i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\" aria-hidden=\"true\"></i> </a><a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\"><b class=\"b\">Details:</b><p class=\"description1\">Description and Details of the Service will appear in this section of the widget.</p><b class=\"b\">Status:</b><p>Scheduled for Approval</p><div class=\"request-keywords\"><b class=\"b\">Keywords:</b><br><button class=\"btn btn-primary\" style=\"margin-left: 10px\">VmWare</button> <button class=\"btn btn-success\">VirtualBox</button> <button class=\"btn btn-warning\">Virtual</button> <button class=\"btn btn-danger\">VM</button></div></div></div><div class=\"RequestButtons\"><div class=\"large-image\"><img src=\"/com.vyom.vyomlib/resources/images/png/008-marketing-strategy.png\"></div><div class=\"buttons\"><button class=\"btn btn-success\">Request</button><br><button class=\"btn btn-success\">Release</button><br><button class=\"btn btn-success\">Launch</button></div></div></div></div><!--ER HTML--></div></div></td><td class=\"drag-item\" draggable=\"true\"><div id=\"Widget 1\"><div id=\"ER1\" class=\"panelbox ER\"><!--ER HTML--><div class=\"ER-main\"><img alt=\"suggestion_icon\" class=\"img-responsive icons custom-widet\" src=\"/com.vyom.vyomlib/resources/images/png/023-target-1.png\" width=\"40px\"><p class=\"request-title\">Widget 1 <a id=\"ERReport\" href=\"#\"><i class=\"fa fa-file-excel-o ERadmin\" title=\"ER Reports\" aria-hidden=\"true\"></i> </a><a id=\"ERadminconsole\" href=\"#\"><i class=\"fa fa fa-user-o ERadminconsole\" title=\"Admin Console\" aria-hidden=\"true\"></i></a></p><hr style=\"height:2px; color:grey\"><div id=\"ER\"><div class=\"ERhexbox\"><div class=\"requestDetails\"><b class=\"b\">Details:</b><p class=\"description1\">Description and Details of the Service will appear in this section of the widget.</p><b class=\"b\">Status:</b><p>Scheduled for Approval</p><div class=\"request-keywords\"><b class=\"b\">Keywords:</b><br><button class=\"btn btn-primary\" style=\"margin-left: 10px\">VmWare</button> <button class=\"btn btn-success\">VirtualBox</button> <button class=\"btn btn-warning\">Virtual</button> <button class=\"btn btn-danger\">VM</button></div></div></div><div class=\"RequestButtons\"><div class=\"large-image\"><img src=\"/com.vyom.vyomlib/resources/images/png/023-target-1.png\"></div><div class=\"buttons\"><button class=\"btn btn-success\">Request</button><br><button class=\"btn btn-success\">Release</button><br><button class=\"btn btn-success\">Launch</button></div></div></div></div><!--ER HTML--></div></div></td></tr></table></div></div></div></body></html>"
   );
 
 }]);

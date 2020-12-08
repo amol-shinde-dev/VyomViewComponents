@@ -99,11 +99,7 @@
                         isConfig: true,
                         enableExpressionEvaluation: true
                     },
-                    {
-                        name: 'subTitle',
-                        isConfig: true,
-                        defaultValue: 'Ericsson Global Services'
-                    },
+                    
                     {
                         name: 'Title1',
                         isConfig: true,

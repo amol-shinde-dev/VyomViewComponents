@@ -12,34 +12,33 @@
                     fields: [],
                     selectedField: null
                 };
-           
-            $scope.names = ["left","right","center"];
-            
+
+                $scope.names = ["left", "right", "center"];
 
 
 
-                
-              
-                
-                
-        
-                          
-                function initMaxStarValue() {
-                   $scope.Mallign = $scope.cell.prop($scope.path);
-                   
+
+
+
+
+
+
+                function initValue() {
+                    $scope.Mallign = $scope.cell.prop($scope.path);
+
                 }
 
                 // Saving the parameter
-                function saveMaxStarValue() {
+                function saveValue() {
                     $scope.cell.prop($scope.path, $scope.Mallign);
-           
+
                 }
 
                 // We watch "$scope.minSliderValue" to save it.
-                $scope.$watch('Mallign', saveMaxStarValue)
-   
+                $scope.$watch('Mallign', saveValue)
 
-                initMaxStarValue();
+
+                initValue();
             }
         };
     });

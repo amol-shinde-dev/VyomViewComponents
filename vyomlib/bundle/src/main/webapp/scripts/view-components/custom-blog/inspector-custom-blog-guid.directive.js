@@ -43,7 +43,7 @@
                     if ($scope.cell.prop('rxData/recordDefinitionFullName')) {
                         var foo = rxRecordInstanceDataPageResource.withName($scope.cell.prop('rxData/recordDefinitionFullName'));
                         var queryParams = {
-                            propertySelection: "179,"
+                            propertySelection: "179,8,1,"
 
                         };
 

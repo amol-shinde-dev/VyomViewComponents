@@ -1,9 +1,4 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
+
 h4, h5, h6,
 h1, h2, h3 {margin: 0;}
 ul, ol {margin: 0;}
@@ -810,8 +805,8 @@ ul.dropdown-menu.drp-mnu li {
 /*--header strip end here-*/
 /*inner-block--*/
 .inner-block {
-    padding: 8em 2em 4em 2em;
-    background: #fafafa;
+/*     padding: 8em 2em 4em 2em;
+ */    background: #fafafa;
 }
 .market-update-block {
     padding: 2em 2em;
@@ -833,8 +828,8 @@ ul.dropdown-menu.drp-mnu li {
     font-size: 0.8em;
     line-height: 1.8em;
 }
-.market-update-block.clr-block-1 {
-    background: #68ae00;
+.market-update-block.clr-block-3 {
+    background: #10C372;
     margin-right: 0.8em;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     transition: 0.5s all;
@@ -842,7 +837,7 @@ ul.dropdown-menu.drp-mnu li {
   -moz-transition: 0.5s all;
   -o-transition: 0.5s all;
 }
-.market-update-block.clr-block-2 {
+.market-update-block.clr-block-1 {
     background:#FC8213;
     margin-right: -0.2em;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -851,7 +846,7 @@ ul.dropdown-menu.drp-mnu li {
   -moz-transition: 0.5s all;
   -o-transition: 0.5s all;
 }
-.market-update-block.clr-block-3 {
+.market-update-block.clr-block-2 {
     background:#337AB7;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     transition: 0.5s all;
@@ -919,7 +914,19 @@ ul.dropdown-menu.drp-mnu li {
     -o-border-radius:49px;
     line-height: 1.7em;
 }
-
+.market-update-right i.fa.fa-desktop {
+     font-size:3em;
+    color:#337AB7;
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    text-align: center;
+    border-radius: 49px;
+    -webkit-border-radius: 49px;
+    -moz-border-radius:49px;
+    -o-border-radius:49px;
+    line-height: 1.7em;
+}
 .market-update-right i.fa.fa-cubes
 {
      font-size:3em;
@@ -960,12 +967,12 @@ ul.dropdown-menu.drp-mnu li {
         background: #fff;
 }
 .prograc-blocks {
-    padding:2.2em 2em;
+    padding:0.2em 2em;
     background: #fff;
     box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15);
 }
 canvas#bar {
-    width: 584px !important;
+    width: 450px !important;
     height: 300px !important;
 }
 h3.tlt {
@@ -1359,7 +1366,7 @@ h3#geoChartTitle {
     margin-bottom:1.6em;
 }
 .climate-gd1-bottom {
-    padding: 1em 0em;
+    padding: 2em 0em;
     background:rgba(252, 130, 19, 0.86);
 }
 .cloudy1 h4 {
@@ -1498,10 +1505,10 @@ span.shoppy-rate h4 {
     text-align: center;
 }
 .popular-bran-right h3 {
-    font-size: 1.55em;
+    font-size: 1.19em;
     color: #fff;
     width: 77px;
-    height: 77px;
+    height: 60px;
     margin: 0 auto;
     line-height: 2.8em;
     border-radius: 62px;
@@ -1515,7 +1522,8 @@ span.shoppy-rate h4 {
     background: #FDBB30;
 }
 .popular-follow {
-    margin-top:2.35em;
+   /* margin-top:2.35em;*/
+	margin-top:12px;
     background: #fff;
     box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15);
 }
@@ -1525,12 +1533,15 @@ span.shoppy-rate h4 {
 }
 .popular-follo-left {
     background:#68AE00;
-    padding: 2.5em 1em;
+ /*   padding: 2.5em 1em;*/
+	 padding: 2em 1em;
 }
 .popular-follo-left p {
-    font-size: 1em;
+    /*font-size: 1em;*/
     color: #fff;
-    line-height: 1.8em;
+    /*line-height: 1em;*/
+	font-size: 13px;
+    line-height: 16px;
 }
 .popular-follo-right h4 {
     font-size: 1.5em;
@@ -1666,10 +1677,11 @@ code {
 	background-repeat: no-repeat;
     background-size: 123px 131px; */
     float: left;
-    width: 42%;
-     font-size: 1.5em;
-    margin: 3% 2% 2% 4%;
-    padding: 1em 0.5em;
+    width: 43%;
+     font-size: large;
+    margin: 0.4% 2% 4% 4%;
+    /* padding: 2.5em 0.5em; */
+	padding: 1.8em 0.5em;
     text-align: center;
     background: #FFFFFF;
     color:#000;
@@ -3310,6 +3322,12 @@ li.dropdown.head-dpdn a.dropdown-toggle {
     height: 60px;
     margin-top: 0.7em;
 }
+.market-update-right i.fa.desktop {
+	font-size: 2em;
+    width: 60px;
+    height: 60px;
+    margin-top: 0.7em;
+}
 .malorm-bottom p {
     font-size: 0.8em;
 }
@@ -3558,6 +3576,13 @@ li.dropdown.head-dpdn a.dropdown-toggle {
      margin-top: 0em;
 }
 .market-update-right i.fa.fa-envelope-o{
+	font-size: 2em;
+    width: 60px;
+    height: 60px;
+    line-height: 1.9em;
+    margin-top: 0px;
+}
+.market-update-right i.fa.fa-desktop{
 	font-size: 2em;
     width: 60px;
     height: 60px;
@@ -4300,7 +4325,8 @@ canvas#bar {
     margin-top: 0.5em;
 }
 .popular-follo-left {
-    padding: 1.5em 1em;
+    padding: 1.5em 1em;*
+	
 }
 .popular-follo-left p {
     font-size: 0.8em;
@@ -4499,9 +4525,9 @@ span.shoppy-rate h4 {
     padding: 0.7em 1em;
 }
 .popular-bran-right h3 {
-    font-size: 1.5em;
+    font-size: 1.19em;
     width: 70px;
-    height: 70px;
+    height: 60px;
 }
 .popular-follo-left {
     padding: 0.8em 1em;
@@ -4728,7 +4754,8 @@ ul.dropdown-menu {
     font-size: 0.85em;
 }
 .popular-follo-right {
-    padding: 1.45em 1em;
+    /* padding: 1.45em 1em; */
+	padding: 1.95em 1em;
 }
 .popular-bran-left h3 {
     font-size: 1em;

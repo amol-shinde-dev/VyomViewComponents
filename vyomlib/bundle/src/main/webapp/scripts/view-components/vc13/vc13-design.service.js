@@ -19,27 +19,31 @@
             var defaultbuttonlabel = _.find(componentDescriptor.propertiesByName, {
                 name: 'buttonlabel'
             }).defaultValue;
-            
+
             var defaultbuttonColor = _.find(componentDescriptor.propertiesByName, {
                 name: 'buttonColor'
             }).defaultValue;
             var defaultbuttonSize = _.find(componentDescriptor.propertiesByName, {
                 name: 'buttonSize'
             }).defaultValue;
-            var defaultbuttonTextColor = _.find(componentDescriptor.propertiesByName, {
-                name: 'buttonTextColor'
+
+
+            var defaultIconAllignment = _.find(componentDescriptor.propertiesByName, {
+                name: 'IconAllignment'
             }).defaultValue;
-            
-            
 
 
             return {
+                buttonGuid: componentDefinition.propertiesByName.buttonGuid,
                 buttonlabel: componentDefinition.propertiesByName.buttonlabel || defaultbuttonlabel,
-                buttonColor:componentDefinition.propertiesByName.buttonColor ||defaultbuttonColor,
-                buttonSize:componentDefinition.propertiesByName.buttonSize|| defaultbuttonSize,
-                buttonTextColor:componentDefinition.propertiesByName.buttonTextColor || defaultbuttonTextColor
-                
-                
+                buttonColor: componentDefinition.propertiesByName.buttonColor || defaultbuttonColor,
+                buttonSize: componentDefinition.propertiesByName.buttonSize || defaultbuttonSize,
+
+                fontFamily: componentDefinition.propertiesByName.fontFamily,
+                buttonIcon: componentDefinition.propertiesByName.buttonIcon,
+                IconAllignment: componentDefinition.propertiesByName.IconAllignment || defaultIconAllignment
+
+
             };
         }
 
@@ -48,7 +52,7 @@
             return {
                 inputs: {
                     rxData: {
-                       
+
                         buttonGuid: {
                             label: 'buttonGuid',
                             type: 'rx-inspector-expression-node-field',
@@ -63,21 +67,34 @@
                         },
                         buttonColor: {
                             label: 'buttonColor',
-                            type: 'com-vyom-vyomlib-inspector-vc13-bcolor',
+                            type: 'com-vyom-vyomlib-inspector-vc13-bcolor2',
                             group: 'general',
                             index: 3
                         },
                         buttonSize: {
                             label: 'buttonSize',
-                            type: 'com-vyom-vyomlib-inspector-vc13-bsize',
+                            type: 'com-vyom-vyomlib-inspector-vc13-bsize2',
                             group: 'general',
                             index: 4
                         },
-                        buttonTextColor: {
-                            label: 'buttonTextColor',
-                            type: 'com-vyom-vyomlib-inspector-vc13-btextcolor',
+                        IconAllignment: {
+                            label: 'IconAllignment',
+                            type: 'com-vyom-vyomlib-inspector-vc13-ballignment',
                             group: 'general',
                             index: 5
+                        },
+
+                        buttonIcon: {
+                            label: 'buttonIcon',
+                            type: 'com-vyom-vyomlib-inspector-vc13-bicon',
+                            group: 'general',
+                            index: 7
+                        },
+                        fontFamily: {
+                            label: 'fontFamily',
+                            type: 'com-vyom-vyomlib-inspector-vc13-bfont',
+                            group: 'general',
+                            index: 8
                         }
 
                     }

@@ -16,24 +16,57 @@
 
                             name: 'recordDefinitionFullName',
                             isConfig: true,
+                            isRequired: true
 
                     }, {
 
                             name: 'HTMLField',
                             isConfig: true,
+                            isRequired: true
 
                     }, {
 
                             name: 'RecInstanceId',
                             isConfig: true,
+                            isRequired: true,
+                            enableExpressionEvaluation: true
 
                     }, {
 
                             name: 'editorInstance',
                             isConfig: true,
-                            isDisabled: 0
 
-                    }
+
+                    },
+                        {
+
+                            name: 'enableEditButton',
+                            isConfig: true,
+                            type: 'string',
+                            enableExpressionEvaluation: true,
+                            defaultValue: '"true"'
+
+
+                    },
+
+                        {
+
+                            name: 'enableEditPane',
+                            isConfig: true,
+                            type: 'boolean',
+                            enableExpressionEvaluation: true,
+
+
+
+                    },
+                        {
+
+                            name: 'isRefresh',
+                            isProperty: true,
+
+
+}
+
 
 
                 ]

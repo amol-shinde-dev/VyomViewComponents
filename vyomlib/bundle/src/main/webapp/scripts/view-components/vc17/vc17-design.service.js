@@ -49,9 +49,7 @@
             var defaultSlot2NotesBGColor = _.find(componentDescriptor.propertiesByName, {
                 name: 'Slot2NotesBGColor'
             }).defaultValue;
-            var defaultsubTitle = _.find(componentDescriptor.propertiesByName, {
-                name: 'subTitle'
-            }).defaultValue;
+            
             var defaultTitle1 = _.find(componentDescriptor.propertiesByName, {
                 name: 'Title1'
             }).defaultValue;
@@ -82,7 +80,7 @@
                 Slot2Followers:componentDefinition.propertiesByName.Slot2Followers || defaultSlot2Followers,
                 Slot1ClickBGColor:componentDefinition.propertiesByName.Slot1ClickBGColor|| defaultSlot1ClickBGColor,
                 Slot2NotesBGColor:componentDefinition.propertiesByName.Slot2NotesBGColor||defaultSlot2NotesBGColor,
-                subTitle:componentDefinition.propertiesByName.subTitle ||defaultsubTitle,
+                
                 Title1:componentDefinition.propertiesByName.Title1 || defaultTitle1,
                 Title2:componentDefinition.propertiesByName.Title2 || defaultTitle2,
                 Title3:componentDefinition.propertiesByName.Title3 || defaultTitle3,
@@ -193,12 +191,7 @@
                             group: 'Logo',
                             index: 16
                         },
-                        subTitle: {
-                            label: 'subTitle',
-                            type: 'rx-inspector-expression-node-field',
-                            group: 'Logo',
-                            index: 17
-                        },
+                        
                         Title1: {
                             label: 'Title1',
                             type: 'rx-inspector-expression-node-field',

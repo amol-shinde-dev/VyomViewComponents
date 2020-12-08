@@ -12,35 +12,34 @@
                     fields: [],
                     selectedField: null
                 };
-           
-            
-            $scope.names = ["up","down","left","right"];
-            
+
+
+                $scope.names = ["up", "down", "left", "right"];
 
 
 
-                
-              
-                
-                
-        
-                          
-                function initMaxStarValue() {
-                   $scope.Mdirect = $scope.cell.prop($scope.path);
-                   
+
+
+
+
+
+
+                function initValue() {
+                    $scope.Mdirect = $scope.cell.prop($scope.path);
+
                 }
 
                 // Saving the parameter
-                function saveMaxStarValue() {
+                function saveValue() {
                     $scope.cell.prop($scope.path, $scope.Mdirect);
-           
+
                 }
 
                 // We watch "$scope.minSliderValue" to save it.
-                $scope.$watch('Mdirect', saveMaxStarValue)
-   
+                $scope.$watch('Mdirect', saveValue)
 
-                initMaxStarValue();
+
+                initValue();
             }
         };
     });

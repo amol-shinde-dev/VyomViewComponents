@@ -7,11 +7,10 @@
                 name: 'Custom Card',
                 group: 'vyomlib',
                 icon: 'at',
-                type: 'com-vyom-vyomlib-custom-card',  // the name of runtime directive
-                designType: 'com-vyom-vyomlib-custom-card-design', // register design directive
+                type: 'com-vyom-vyomlib-custom-card',  
+                designType: 'com-vyom-vyomlib-custom-card-design', 
                 bundleId: 'com.vyom.vyomlib',
 
-                // define component properties
                 propertiesByName: [
                     {
                         name: 'Colour',

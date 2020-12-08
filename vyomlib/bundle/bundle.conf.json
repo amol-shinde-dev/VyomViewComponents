@@ -13,7 +13,7 @@
             "livereload-port": 39005,
             "skip-tests": true,
             "skip-validation": true,
-            "api-host": "developer7816.innovate.bmc.com",
+            "api-host": "developer7894.innovate.bmc.com",
             "api-port": 443,
 			"api-https": true,
             "host": "localhost",
@@ -21,14 +21,15 @@
         },
         "packages": {
             "lib": {
-                "scripts": [],
+                "scripts": [
+                
+                ],
                 "styles": []
             },
 
             "app": {
-                "scripts": [
-                    "lib/landing-console/popper.min",
-                    "lib/landing-console/jquery.min",
+                "scripts": [ 
+                    
                     "lib/landing-console/bootstrap.min",
                     "lib/table-resize/custom",
                     "lib/marquee/marquee",

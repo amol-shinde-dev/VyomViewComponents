@@ -5,7 +5,5 @@
         'com.bmc.arsys.rx.standardlib.view-component',
         'com.bmc.arsys.rx.standardlib.record.definition',
         'com.bmc.arsys.rx.standardlib.record.instance',
-
-
     ]);
 })();

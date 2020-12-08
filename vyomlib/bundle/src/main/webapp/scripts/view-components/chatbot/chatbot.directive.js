@@ -1,23 +1,23 @@
 (function () {
     'use strict';
-
     angular.module('com.vyom.vyomlib.view-components.chatbot')
-        .directive('comVyomVyomlibChatbot', function ($sce) {
-            return {
-                restrict: 'E',
-                templateUrl: 'scripts/view-components/chatbot/com-vyom-vyomlib-chatbot.directive.html',
+        .directive('comVyomVyomlibChatbot',
+            function (rxRecordInstanceDataPageResource) {
+                return {
+                    restrict: 'E',
+                    templateUrl: 'scripts/view-components/chatbot/com-vyom-vyomlib-chatbot.directive.html',
 
-                scope: {
-                    rxConfiguration: '='
-                },
+                    // rxConfiguration is used to get input parameters:
+                    scope: {
+                        rxConfiguration: '='
+                    },
 
-                link: function ($scope) {
-                    $scope.trustSrc = function (url) {
-                        return $sce.trustAsResourceUrl(url);
-                    };
+                    link: function ($scope) {
+                        var _param;
+                        _param = $scope.rxConfiguration.propertiesByName;
 
-                    $scope.url = $scope.rxConfiguration.propertiesByName.url;
-                }
-            };
-        });
+
+                    }
+                };
+            });
 })();

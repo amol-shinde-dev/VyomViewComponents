@@ -2,8 +2,7 @@
 (function () {
     'use strict';
 
-    angular.module('com.vyom.vyomlib.view-components.custom-blog')
-           .directive('comVyomVyomlibInspectorCustomBlogFields', function (RX_RECORD_DEFINITION, $timeout) {
+    angular.module('com.vyom.vyomlib.view-components.custom-blog').directive('comVyomVyomlibInspectorCustomBlogFields', function (RX_RECORD_DEFINITION, $timeout) {
         return {
             restrict: 'E',
             templateUrl: 'scripts/view-components/custom-blog/com-vyom-vyomlib-inspector-custom-blog-fields.directive.html',

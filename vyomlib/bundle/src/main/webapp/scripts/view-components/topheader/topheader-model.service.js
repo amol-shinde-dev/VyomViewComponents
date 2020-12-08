@@ -1,7 +1,4 @@
-/*
-This code is run at "design" phase, in Innovation Studio.
-used in "comExampleSamplelibraryStarRatingDesign" factory (file "topheader-design-service.js").
-*/
+
 (function () {
     'use strict';
 
@@ -31,28 +28,7 @@ used in "comExampleSamplelibraryStarRatingDesign" factory (file "topheader-desig
                 }				
             },
 
-            // Validate is used to validate the input entered by an end user.
-            // The validation will take place when the view is saved.
-            /*validate: function () {
-                var me = this;
-
-                // execute default validation method
-                return rxViewComponentModel.prototype.validate.apply(this, arguments).then(function (validationIssues) {
-                    // check that the number of stars is at least 5
-                    if (me.prop('rxData/stars') < 5) {
-                        validationIssues.push({
-                            elementId: me.get('guid'),
-                            elementName: 'Star Rating',
-                            propertyName: 'stars',
-                            type: 'error',
-                            message: 'The number of stars should be greater or equal to 5.'
-                        });
-                    }
-
-                    return validationIssues;
-                });
-            },*/
-
+        
             _onChangeRxData: function (model, rxData, changedProperty) {				
                 if (changedProperty.propertyPath === 'rxData/recordDefinition') {
                     this._initRecordDefinition();

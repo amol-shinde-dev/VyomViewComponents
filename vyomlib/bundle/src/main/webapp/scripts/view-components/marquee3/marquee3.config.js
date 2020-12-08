@@ -21,6 +21,7 @@
 					{
                         name: 'FieldID1Title',
                         isConfig: true,
+                        
                         type: 'string'
     
                     },

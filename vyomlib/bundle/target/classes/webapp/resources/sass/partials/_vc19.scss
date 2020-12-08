@@ -1,6 +1,98 @@
-com-vyom-vyomlib-vc19
+com-vyom-vyomlib-vc19,com-vyom-vyomlib-inspector-vc19-list
 {
+//custom dropdown css
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+}
+
+.dropdown-content div {
+  color: black;
+  padding: 5px 40px;
+  text-decoration: solid;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+//end dropdown css
+
+
+.table-resizable {
+	&.resizing {
+		cursor: col-resize;
+		user-select: none;
+	}
+	
+	th {
+		position: relative;
+
+		// Show resize curson when hovering over column borders
+		&::before {
+			@extend .table-resizable.resizing;
+			content: '';
+			display: block;
+			height: 100%;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 1em;
+		}
+
+		&:last-of-type::before {
+			display: none;
+		}
+	}
+
+	// Add `th` to the selector below to allow shrinking a column all the way
+	td,th {
+		max-width: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}
+.table-hover td:hover , .table-hover  th:hover  {
+ background-color: #d1f4ff;
+}
+.selected-options .column-type
+{
+font-size: 10px;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.selected-options
+{
+margin-bottom: 5px;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+}    
 
 perfect-scrollbar {
   position: relative;
@@ -575,538 +667,7 @@ perfect-scrollbar.ps-show-active.ps-show-limits > .ps.ps--active-x > .ps-overlay
   content: ""; }
 .fa-ban:before {
   content: ""; }
-.fa-arrow-left:before {
-  content: ""; }
-.fa-arrow-right:before {
-  content: ""; }
-.fa-arrow-up:before {
-  content: ""; }
-.fa-arrow-down:before {
-  content: ""; }
-.fa-mail-forward:before,
-.fa-share:before {
-  content: ""; }
-.fa-expand:before {
-  content: ""; }
-.fa-compress:before {
-  content: ""; }
-.fa-plus:before {
-  content: ""; }
-.fa-minus:before {
-  content: ""; }
-.fa-asterisk:before {
-  content: ""; }
-.fa-exclamation-circle:before {
-  content: ""; }
-.fa-gift:before {
-  content: ""; }
-.fa-leaf:before {
-  content: ""; }
-.fa-fire:before {
-  content: ""; }
-.fa-eye:before {
-  content: ""; }
-.fa-eye-slash:before {
-  content: ""; }
-.fa-warning:before,
-.fa-exclamation-triangle:before {
-  content: ""; }
-.fa-plane:before {
-  content: ""; }
-.fa-calendar:before {
-  content: ""; }
-.fa-random:before {
-  content: ""; }
-.fa-comment:before {
-  content: ""; }
-.fa-magnet:before {
-  content: ""; }
-.fa-chevron-up:before {
-  content: ""; }
-.fa-chevron-down:before {
-  content: ""; }
-.fa-retweet:before {
-  content: ""; }
-.fa-shopping-cart:before {
-  content: ""; }
-.fa-folder:before {
-  content: ""; }
-.fa-folder-open:before {
-  content: ""; }
-.fa-arrows-v:before {
-  content: ""; }
-.fa-arrows-h:before {
-  content: ""; }
-.fa-bar-chart-o:before,
-.fa-bar-chart:before {
-  content: ""; }
-.fa-twitter-square:before {
-  content: ""; }
-.fa-facebook-square:before {
-  content: ""; }
-.fa-camera-retro:before {
-  content: ""; }
-.fa-key:before {
-  content: ""; }
-.fa-gears:before,
-.fa-cogs:before {
-  content: ""; }
-.fa-comments:before {
-  content: ""; }
-.fa-thumbs-o-up:before {
-  content: ""; }
-.fa-thumbs-o-down:before {
-  content: ""; }
-.fa-star-half:before {
-  content: ""; }
-.fa-heart-o:before {
-  content: ""; }
-.fa-sign-out:before {
-  content: ""; }
-.fa-linkedin-square:before {
-  content: ""; }
-.fa-thumb-tack:before {
-  content: ""; }
-.fa-external-link:before {
-  content: ""; }
-.fa-sign-in:before {
-  content: ""; }
-.fa-trophy:before {
-  content: ""; }
-.fa-github-square:before {
-  content: ""; }
-.fa-upload:before {
-  content: ""; }
-.fa-lemon-o:before {
-  content: ""; }
-.fa-phone:before {
-  content: ""; }
-.fa-square-o:before {
-  content: ""; }
-.fa-bookmark-o:before {
-  content: ""; }
-.fa-phone-square:before {
-  content: ""; }
-.fa-twitter:before {
-  content: ""; }
-.fa-facebook-f:before,
-.fa-facebook:before {
-  content: ""; }
-.fa-github:before {
-  content: ""; }
-.fa-unlock:before {
-  content: ""; }
-.fa-credit-card:before {
-  content: ""; }
-.fa-feed:before,
-.fa-rss:before {
-  content: ""; }
-.fa-hdd-o:before {
-  content: ""; }
-.fa-bullhorn:before {
-  content: ""; }
-.fa-bell:before {
-  content: ""; }
-.fa-certificate:before {
-  content: ""; }
-.fa-hand-o-right:before {
-  content: ""; }
-.fa-hand-o-left:before {
-  content: ""; }
-.fa-hand-o-up:before {
-  content: ""; }
-.fa-hand-o-down:before {
-  content: ""; }
-.fa-arrow-circle-left:before {
-  content: ""; }
-.fa-arrow-circle-right:before {
-  content: ""; }
-.fa-arrow-circle-up:before {
-  content: ""; }
-.fa-arrow-circle-down:before {
-  content: ""; }
-.fa-globe:before {
-  content: ""; }
-.fa-wrench:before {
-  content: ""; }
-.fa-tasks:before {
-  content: ""; }
-.fa-filter:before {
-  content: ""; }
-.fa-briefcase:before {
-  content: ""; }
-.fa-arrows-alt:before {
-  content: ""; }
-.fa-group:before,
-.fa-users:before {
-  content: ""; }
-.fa-chain:before,
-.fa-link:before {
-  content: ""; }
-.fa-cloud:before {
-  content: ""; }
-.fa-flask:before {
-  content: ""; }
-.fa-cut:before,
-.fa-scissors:before {
-  content: ""; }
-.fa-copy:before,
-.fa-files-o:before {
-  content: ""; }
-.fa-paperclip:before {
-  content: ""; }
-.fa-save:before,
-.fa-floppy-o:before {
-  content: ""; }
-.fa-square:before {
-  content: ""; }
-.fa-navicon:before,
-.fa-reorder:before,
-.fa-bars:before {
-  content: ""; }
-.fa-list-ul:before {
-  content: ""; }
-.fa-list-ol:before {
-  content: ""; }
-.fa-strikethrough:before {
-  content: ""; }
-.fa-underline:before {
-  content: ""; }
-.fa-table:before {
-  content: ""; }
-.fa-magic:before {
-  content: ""; }
-.fa-truck:before {
-  content: ""; }
-.fa-pinterest:before {
-  content: ""; }
-.fa-pinterest-square:before {
-  content: ""; }
-.fa-google-plus-square:before {
-  content: ""; }
-.fa-google-plus:before {
-  content: ""; }
-.fa-money:before {
-  content: ""; }
-.fa-caret-down:before {
-  content: ""; }
-.fa-caret-up:before {
-  content: ""; }
-.fa-caret-left:before {
-  content: ""; }
-.fa-caret-right:before {
-  content: ""; }
-.fa-columns:before {
-  content: ""; }
-.fa-unsorted:before,
-.fa-sort:before {
-  content: ""; }
-.fa-sort-down:before,
-.fa-sort-desc:before {
-  content: ""; }
-.fa-sort-up:before,
-.fa-sort-asc:before {
-  content: ""; }
-.fa-envelope:before {
-  content: ""; }
-.fa-linkedin:before {
-  content: ""; }
-.fa-rotate-left:before,
-.fa-undo:before {
-  content: ""; }
-.fa-legal:before,
-.fa-gavel:before {
-  content: ""; }
-.fa-dashboard:before,
-.fa-tachometer:before {
-  content: ""; }
-.fa-comment-o:before {
-  content: ""; }
-.fa-comments-o:before {
-  content: ""; }
-.fa-flash:before,
-.fa-bolt:before {
-  content: ""; }
-.fa-sitemap:before {
-  content: ""; }
-.fa-umbrella:before {
-  content: ""; }
-.fa-paste:before,
-.fa-clipboard:before {
-  content: ""; }
-.fa-lightbulb-o:before {
-  content: ""; }
-.fa-exchange:before {
-  content: ""; }
-.fa-cloud-download:before {
-  content: ""; }
-.fa-cloud-upload:before {
-  content: ""; }
-.fa-user-md:before {
-  content: ""; }
-.fa-stethoscope:before {
-  content: ""; }
-.fa-suitcase:before {
-  content: ""; }
-.fa-bell-o:before {
-  content: ""; }
-.fa-coffee:before {
-  content: ""; }
-.fa-cutlery:before {
-  content: ""; }
-.fa-file-text-o:before {
-  content: ""; }
-.fa-building-o:before {
-  content: ""; }
-.fa-hospital-o:before {
-  content: ""; }
-.fa-ambulance:before {
-  content: ""; }
-.fa-medkit:before {
-  content: ""; }
-.fa-fighter-jet:before {
-  content: ""; }
-.fa-beer:before {
-  content: ""; }
-.fa-h-square:before {
-  content: ""; }
-.fa-plus-square:before {
-  content: ""; }
-.fa-angle-double-left:before {
-  content: ""; }
-.fa-angle-double-right:before {
-  content: ""; }
-.fa-angle-double-up:before {
-  content: ""; }
-.fa-angle-double-down:before {
-  content: ""; }
-.fa-angle-left:before {
-  content: ""; }
-.fa-angle-right:before {
-  content: ""; }
-.fa-angle-up:before {
-  content: ""; }
-.fa-angle-down:before {
-  content: ""; }
-.fa-desktop:before {
-  content: ""; }
-.fa-laptop:before {
-  content: ""; }
-.fa-tablet:before {
-  content: ""; }
-.fa-mobile-phone:before,
-.fa-mobile:before {
-  content: ""; }
-.fa-circle-o:before {
-  content: ""; }
-.fa-quote-left:before {
-  content: ""; }
-.fa-quote-right:before {
-  content: ""; }
-.fa-spinner:before {
-  content: ""; }
-.fa-circle:before {
-  content: ""; }
-.fa-mail-reply:before,
-.fa-reply:before {
-  content: ""; }
-.fa-github-alt:before {
-  content: ""; }
-.fa-folder-o:before {
-  content: ""; }
-.fa-folder-open-o:before {
-  content: ""; }
-.fa-smile-o:before {
-  content: ""; }
-.fa-frown-o:before {
-  content: ""; }
-.fa-meh-o:before {
-  content: ""; }
-.fa-gamepad:before {
-  content: ""; }
-.fa-keyboard-o:before {
-  content: ""; }
-.fa-flag-o:before {
-  content: ""; }
-.fa-flag-checkered:before {
-  content: ""; }
-.fa-terminal:before {
-  content: ""; }
-.fa-code:before {
-  content: ""; }
-.fa-mail-reply-all:before,
-.fa-reply-all:before {
-  content: ""; }
-.fa-star-half-empty:before,
-.fa-star-half-full:before,
-.fa-star-half-o:before {
-  content: ""; }
-.fa-location-arrow:before {
-  content: ""; }
-.fa-crop:before {
-  content: ""; }
-.fa-code-fork:before {
-  content: ""; }
-.fa-unlink:before,
-.fa-chain-broken:before {
-  content: ""; }
-.fa-question:before {
-  content: ""; }
-.fa-info:before {
-  content: ""; }
-.fa-exclamation:before {
-  content: ""; }
-.fa-superscript:before {
-  content: ""; }
-.fa-subscript:before {
-  content: ""; }
-.fa-eraser:before {
-  content: ""; }
-.fa-puzzle-piece:before {
-  content: ""; }
-.fa-microphone:before {
-  content: ""; }
-.fa-microphone-slash:before {
-  content: ""; }
-.fa-shield:before {
-  content: ""; }
-.fa-calendar-o:before {
-  content: ""; }
-.fa-fire-extinguisher:before {
-  content: ""; }
-.fa-rocket:before {
-  content: ""; }
-.fa-maxcdn:before {
-  content: ""; }
-.fa-chevron-circle-left:before {
-  content: ""; }
-.fa-chevron-circle-right:before {
-  content: ""; }
-.fa-chevron-circle-up:before {
-  content: ""; }
-.fa-chevron-circle-down:before {
-  content: ""; }
-.fa-html5:before {
-  content: ""; }
-.fa-css3:before {
-  content: ""; }
-.fa-anchor:before {
-  content: ""; }
-.fa-unlock-alt:before {
-  content: ""; }
-.fa-bullseye:before {
-  content: ""; }
-.fa-ellipsis-h:before {
-  content: ""; }
-.fa-ellipsis-v:before {
-  content: ""; }
-.fa-rss-square:before {
-  content: ""; }
-.fa-play-circle:before {
-  content: ""; }
-.fa-ticket:before {
-  content: ""; }
-.fa-minus-square:before {
-  content: ""; }
-.fa-minus-square-o:before {
-  content: ""; }
-.fa-level-up:before {
-  content: ""; }
-.fa-level-down:before {
-  content: ""; }
-.fa-check-square:before {
-  content: ""; }
-.fa-pencil-square:before {
-  content: ""; }
-.fa-external-link-square:before {
-  content: ""; }
-.fa-share-square:before {
-  content: ""; }
-.fa-compass:before {
-  content: ""; }
-.fa-toggle-down:before,
-.fa-caret-square-o-down:before {
-  content: ""; }
-.fa-toggle-up:before,
-.fa-caret-square-o-up:before {
-  content: ""; }
-.fa-toggle-right:before,
-.fa-caret-square-o-right:before {
-  content: ""; }
-.fa-euro:before,
-.fa-eur:before {
-  content: ""; }
-.fa-gbp:before {
-  content: ""; }
-.fa-dollar:before,
-.fa-usd:before {
-  content: ""; }
-.fa-rupee:before,
-.fa-inr:before {
-  content: ""; }
-.fa-cny:before,
-.fa-rmb:before,
-.fa-yen:before,
-.fa-jpy:before {
-  content: ""; }
-.fa-ruble:before,
-.fa-rouble:before,
-.fa-rub:before {
-  content: ""; }
-.fa-won:before,
-.fa-krw:before {
-  content: ""; }
-.fa-bitcoin:before,
-.fa-btc:before {
-  content: ""; }
-.fa-file:before {
-  content: ""; }
-.fa-file-text:before {
-  content: ""; }
-.fa-sort-alpha-asc:before {
-  content: ""; }
-.fa-sort-alpha-desc:before {
-  content: ""; }
-.fa-sort-amount-asc:before {
-  content: ""; }
-.fa-sort-amount-desc:before {
-  content: ""; }
-.fa-sort-numeric-asc:before {
-  content: ""; }
-.fa-sort-numeric-desc:before {
-  content: ""; }
-.fa-thumbs-up:before {
-  content: ""; }
-.fa-thumbs-down:before {
-  content: ""; }
-.fa-youtube-square:before {
-  content: ""; }
-.fa-youtube:before {
-  content: ""; }
-.fa-xing:before {
-  content: ""; }
-.fa-xing-square:before {
-  content: ""; }
-.fa-youtube-play:before {
-  content: ""; }
-.fa-dropbox:before {
-  content: ""; }
-.fa-stack-overflow:before {
-  content: ""; }
-.fa-instagram:before {
-  content: ""; }
-.fa-flickr:before {
-  content: ""; }
-.fa-adn:before {
-  content: ""; }
-.fa-bitbucket:before {
-  content: ""; }
-.fa-bitbucket-square:before {
-  content: ""; }
-.fa-tumblr:before {
-  content: ""; }
-.fa-tumblr-square:before {
-  content: ""; }
+
 .fa-long-arrow-down:before {
   content: ""; }
 .fa-long-arrow-up:before {
@@ -2578,21 +2139,24 @@ a.badge-primary:hover, a.badge-primary:focus {
 a.badge-secondary:hover, a.badge-secondary:focus {
     color: #212529;
     background-color: #b1bbc4; }
-.badge-closed {
+.badge-approved {
   color: #fff;
   background-color: #73A839; }
 a.badge-success:hover, a.badge-success:focus {
     color: #fff;
     background-color: #59822c; }
-.badge-inprogress {
-  color: #fff;
-  background-color: #2FA4E7; }
-.badge-rejected {
-  color: #fff;
-  background-color: purple; }  
 .badge-new {
   color: #fff;
-  background-color: blueviolet; }
+  background-color: #6699ff; }
+.badge-inprogress {
+  color: #fff;
+  background-color: cadetblue; }
+.badge-closed {
+  color: #fff;
+  background-color: purple; }  
+.badge-rejected {
+  color: #fff;
+  background-color: #C71C22; }
 .badge-assigned {
   color: #fff;
   background-color: yellowgreen; }  
@@ -2605,9 +2169,7 @@ a.badge-info:hover, a.badge-info:focus {
 a.badge-warning:hover, a.badge-warning:focus {
     color: #fff;
     background-color: #aa4200; }
-.badge-new {
-  color: #fff;
-  background-color: #C71C22; }
+
 a.badge-danger:hover, a.badge-danger:focus {
     color: #fff;
     background-color: #9a161a; }
@@ -3013,12 +2575,7 @@ a.close.disabled {
   width: auto;
   margin: 0.5rem;
   pointer-events: none; }
-.modal.fade .modal-dialog {
-    transition: -webkit-transform 0.3s ease-out;
-    transition: transform 0.3s ease-out;
-    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-    -webkit-transform: translate(0, -50px);
-            transform: translate(0, -50px); }
+
 @media screen and (prefers-reduced-motion: reduce) {
       .modal.fade .modal-dialog {
         transition: none; } }
@@ -3056,17 +2613,7 @@ a.close.disabled {
     opacity: 0; }
 .modal-backdrop.show {
     opacity: 0.5; }
-.modal-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 1rem 1rem;
-  border-bottom: 1px solid #e9ecef;
-  border-top-left-radius: 0.3rem;
-  border-top-right-radius: 0.3rem; }
-.modal-header .close {
-    padding: 1rem 1rem;
-    margin: -1rem -1rem -1rem auto; }
+
 .modal-title {
   margin-bottom: 0;
   line-height: 1.5; }
@@ -3074,18 +2621,7 @@ a.close.disabled {
   position: relative;
   flex: 1 1 auto;
   padding: 1rem; }
-.modal-footer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 1rem;
-  border-top: 1px solid #e9ecef;
-  border-bottom-right-radius: 0.3rem;
-  border-bottom-left-radius: 0.3rem; }
-.modal-footer > :not(:first-child) {
-    margin-left: .25rem; }
-.modal-footer > :not(:last-child) {
-    margin-right: .25rem; }
+
 .modal-scrollbar-measure {
   position: absolute;
   top: -9999px;
@@ -6977,12 +6513,23 @@ body {
       border-bottom: transparent solid 1px; }
 .accordion-wrapper > .card .collapse.show {
         border-bottom-color: #e9ecef; }
-.modal-header,
-.modal-footer {
-  background: #f8f9fa; }
-.modal-footer {
-  border-bottom-right-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem; }
+.d-icon-cross
+{
+    position: absolute;
+    top: -18px;
+    right: -19px;
+    font-size: 17px;
+    color: white;
+    background: #de4040;
+    border-radius: 2px;
+    height: 18px;
+ }
+.d-icon-cross::before
+{
+position: relative;
+    top: -3px;
+} 
+
 .modal-dialog {
   box-shadow: 0 0.76875rem 2.4875rem rgba(52, 58, 64, 0.3), 0 1.3375rem 1.70625rem rgba(52, 58, 64, 0.3), 0 0.55rem 0.53125rem rgba(0, 0, 0, 0.05), 0 0.225rem 0.4375rem rgba(52, 58, 64, 0.3);
   border-radius: 0.25rem; }
@@ -8825,7 +8372,9 @@ button::-moz-focus-inner,
 input[type="radio"],
 input[type="checkbox"] {
   box-sizing: border-box;
-  padding: 0; }
+  padding: 0; 
+  
+  }
 input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
@@ -9530,12 +9079,16 @@ pre code {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  background-color: transparent; }
+  background-color: transparent;
+table-layout: fixed;
+    width: -webkit-fill-available;
+    }
 .table th,
   .table td {
     padding: 0.55rem;
     vertical-align: top;
-    border-top: 1px solid #e9ecef; }
+    border-top: 1px solid #e9ecef; 
+    }
 .table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #e9ecef; }
@@ -9561,8 +9114,8 @@ pre code {
   border: 0; }
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: rgba(0, 0, 0, 0.03); }
-.table-hover tbody tr:hover {
-  background-color: #d1f3ff; }
+//.table-hover tbody tr:hover ,.table-hover thead tr:hover{
+//  background-color: #d1f3ff; }
 .table-primary,
 .table-primary > th,
 .table-primary > td {
@@ -9773,6 +9326,10 @@ pre code {
   display: block;
   width: 100%;
   overflow-x: auto;
+      max-height: 480px;
+    overflow: auto;
+    white-space: nowrap;
+    scroll-behavior: auto;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar; }
 .table-responsive > .table-bordered {
@@ -10219,8 +9776,9 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0 rgba(136, 181, 87, 0.5); }
 .btn-info {
   color: #fff;
-  background: #2FA4E7 linear-gradient(180deg, #4eb2eb, #2FA4E7) repeat-x;
-  border-color: #2FA4E7; }
+  /*background: #2FA4E7 linear-gradient(180deg, #4eb2eb, #2FA4E7) repeat-x;*/
+  background: darkblue;
+  border-color: darkblue; }
 .btn-info:hover {
     color: #fff;
     background: #1992d7 linear-gradient(180deg, #3ba2dd, #1992d7) repeat-x;
@@ -10229,8 +9787,8 @@ fieldset:disabled a.btn {
     box-shadow: 0 0 0 0 rgba(78, 178, 235, 0.5); }
 .btn-info.disabled, .btn-info:disabled {
     color: #fff;
-    background-color: #2FA4E7;
-    border-color: #2FA4E7;
+    background-color: darkblue;
+    border-color: darkblue;
     background-image: none; }
 .btn-info:not(:disabled):not(.disabled):active, .btn-info:not(:disabled):not(.disabled).active,
   .show > .btn-info.dropdown-toggle {
@@ -10622,7 +10180,7 @@ input[type="button"].btn-block {
     .fade {
       transition: none; } }
 .fade:not(.show) {
-    opacity: 0; }
+    opacity: 1; }
 .collapse:not(.show) {
   display: none; }
 .collapsing {
@@ -11064,10 +10622,10 @@ input[type="button"].btn-block {
 .custom-control-label::before {
     position: absolute;
     top: 0.16rem;
-    left: -1.5rem;
+    left: -2.5rem;
     display: block;
-    width: 1rem;
-    height: 1rem;
+    width: 20px;
+    height: 20px;
     pointer-events: none;
     content: "";
     background-color: #fff;
@@ -11075,10 +10633,10 @@ input[type="button"].btn-block {
 .custom-control-label::after {
     position: absolute;
     top: 0.16rem;
-    left: -1.5rem;
+    left: -2.5rem;
     display: block;
-    width: 1rem;
-    height: 1rem;
+    width: 20px;
+    height: 20px;
     content: "";
     background-repeat: no-repeat;
     background-position: center center;
@@ -11366,3 +10924,4 @@ input[type="button"].btn-block {
 }
 
 }
+

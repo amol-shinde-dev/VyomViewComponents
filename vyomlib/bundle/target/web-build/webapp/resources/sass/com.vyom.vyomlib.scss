@@ -5,6 +5,7 @@
 @import "partials/custom-css";
 /* Importing Rzslider css file, used for sliders
 https://github.com/angular-slider/angularjs-slider
+
  */
 @import "rzslider.min";
 
@@ -23,19 +24,26 @@ https://github.com/angular-slider/angularjs-slider
 @import "partials/vc17";
 @import "partials/customheight";
 @import "partials/topheader";
+@import "partials/topheader_param";
 @import "partials/vc19";
-@import "partials/simpleWidget";
-
+@import "partials/vc19_2";
 @import "partials/landing_console";
 @import "partials/landing_console_2";/* w3css */
-@import "partials/landing_console_3";/* owl-carousel */
-@import "partials/bootstrap.min";
-@import "partials/material-bootstrap-wizard";
+ @import "partials/custom-card"; 
+@import "partials/vc18"; 
+@import "partials/custom-blog"; 
+@import "partials/hierarchy";
+@import "partials/recent-activity";
+@import "partials/portal_preview";
+@import "partials/portal_preview_2";
+@import "partials/pie";
+@import "partials/daterangepicker";
+@import "partials/green";
+@import "partials/myPage";
+@import "partials/comment-box";
 
-@import "partials/custom";
-@import "partials/micro-clearfix";
-@import "partials/reset-html5";
-@import "partials/stiff-chart";
-@import "partials/menubaradv";
-@import "partials/kanbanadv";
-// @import "partials/mypageadv";
+
+
+
+
+

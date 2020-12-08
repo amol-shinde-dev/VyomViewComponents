@@ -1,8 +1,3 @@
-/*
-This code is run at "design" phase, in Innovation Studio.
-The factory is defined in the "config.js":
-designManagerService: 'comExampleSamplelibraryStarRatingDesign',
-*/
 (function () {
     'use strict';
 
@@ -16,21 +11,19 @@ designManagerService: 'comExampleSamplelibraryStarRatingDesign',
             };
         }
 
-        // Getting configuration defined in Innovation Studio parameters.
-        // We can also setup default values.
+
         function getRxData(componentDefinition, componentDescriptor) {
-           var defaultbgcolor = _.find(componentDescriptor.propertiesByName, {
-                name: 'bgcolor'
-            }).defaultValue;
+
 
             return {
-             
-				text: componentDefinition.propertiesByName.text,
-				appname: componentDefinition.propertiesByName.appname,
-				hyperlink: componentDefinition.propertiesByName.hyperlink,
-				toggleicon: componentDefinition.propertiesByName.toggleicon,
-				togglefont: componentDefinition.propertiesByName.togglefont,
-                bgcolor: componentDefinition.propertiesByName.bgcolor || defaultbgcolor
+
+                text: componentDefinition.propertiesByName.text,
+                appname: componentDefinition.propertiesByName.appname,
+                hyperlink: componentDefinition.propertiesByName.hyperlink,
+                toggleicon: componentDefinition.propertiesByName.toggleicon,
+                togglefont: componentDefinition.propertiesByName.togglefont,
+                bgcolor: componentDefinition.propertiesByName.bgcolor,
+                headerSize: componentDefinition.propertiesByName.headerSize
             };
         }
 
@@ -39,46 +32,77 @@ designManagerService: 'comExampleSamplelibraryStarRatingDesign',
             return {
                 inputs: {
                     rxData: {
-						text: {
+                        text: {
                             label: 'text',
-                            type: 'text', //  special editor for selecting definitions                            
+                            type: 'text',
                             group: 'general',
                             index: 1
                         },
-						appname: {
+                        appname: {
                             label: 'appname',
-                            type: 'text', //  special editor for selecting definitions                           
+                            type: 'text',
                             group: 'general',
-							value: 'application',
+                            value: 'application',
                             index: 2
                         },
-						hyperlink: {
+                        hyperlink: {
                             label: 'hyperlink',
-                            type: 'text', //  special editor for selecting definitions                           
+                            type: 'text',
                             group: 'general',
                             index: 3
                         },
                         toggleicon: {
                             label: 'Hide Icon',
-							type: 'rx-inspector-optional-expression', //'rx-inspector-toggle-field',
+                            type: 'rx-inspector-optional-expression',
                             group: 'general',
-							
+
                             index: 4
                         },
                         togglefont: {
                             label: 'Show Ericfont',
-							type:  'rx-inspector-optional-expression',// //'rx-inspector-optional-expression',
+                            type: 'rx-inspector-optional-expression',
                             group: 'general',
-							
+
                             index: 5
                         },
                         bgcolor: {
                             label: 'Header Background Color',
-							type:  'com-vyom-vyomlib-inspector-topheader-bgcolor',// //'rx-inspector-optional-expression',
+                            type: 'com-vyom-vyomlib-inspector-topheader-bgcolor',
                             group: 'general',
                             index: 6
-                        }						
-                  
+                        },
+                        headerSize: {
+                            label: 'Size',
+                            type: 'select',
+                            options: [{
+                                value: "tiny",
+                                content: "Tiny"
+                                }, {
+                                value: "small",
+                                content: "Small"
+                                }, {
+                                value: "medium",
+                                content: "Medium (Default)"
+                                }, {
+                                value: "large",
+                                content: "Large"
+                                }, {
+                                value: "xlarge",
+                                content: "Extra Large"
+                                }, {
+                                value: "xxlarge",
+                                content: "Extra Extra Large"
+                                }, {
+                                value: "xxxlarge",
+                                content: "Extra Extra Extra Large"
+                                }, {
+                                value: "jumbo",
+                                content: "Jumbo"
+                                }],
+                            group: 'general',
+                            index: 7
+                        }
+
                     }
                 },
                 groups: {

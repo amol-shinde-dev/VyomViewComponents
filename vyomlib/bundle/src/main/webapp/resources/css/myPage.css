@@ -1,3 +1,4 @@
+
 body{
 	background-color: #dbdbdb;
 }
@@ -47,9 +48,9 @@ img{
 	
 }
 .profile-image img{
-	margin-top: 30px;
-	margin-left: 45px;
-	max-width: 90px;
+	margin-top: 10px;
+	margin-left: 0px;
+	max-width: 95px;
 }
 .icons{
 	max-width: 50px;

@@ -1,16 +1,670 @@
-.rx-img2 {  
-  background-size: 100%; 
-  min-width: 760px;
-  background: url(../../resources/img/light-teal.jpg) no-repeat 0px 0px;  
-  display: inline-block;  
-  vertical-align: middle;  
-  margin-left: 5px;  
-  margin-right: 5px;  
-  cursor: hand;  
-  cursor: pointer;  
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(https://use.fontawesome.com/releases/v5.3.1/css/all.css);
+
+.com-vyom-vyomlib-container-lightgreen-border {
+    border-bottom: 3px solid #2fa17e;
+    margin-top: 10px;
+    // color: white;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+
+    .nav-tabs.nav-justified>li>a {
+        color: black;
+        height: 50px;
+        border-left: 1px solid white;
+        font-family: system-ui;
+        font-weight: 800;
+    }
+
+    .rx-tab {
+        color: white;
+        background-color: #aee6d6;
+    }
+
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+        background-color: #aee6d6;
+    }
+
+    .nav-tabs>li.active>a {
+        background-color: #aee6d6;
+        border-bottom: 6px solid #2fa17e;
+    }
+
+    .rx-tab-panel .rx-tab_selected:focus {
+        background-color: #aee6d6 !important;
+    }
+
+    .rx-tab_selected:focus {
+        // background-color: red !important;
+        border-bottom: 6px solid #2fa17e;
+        background-color: #aee6d6 !important;
+    }
 }
-.rx-record-editor__form2 {
-   
-    background: transparent !important;
-    color: navajowhite;
+
+.com-vyom-vyomlib-container-red-border {
+    border-bottom: 3px solid red;
+    margin-top: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+
+    .nav-tabs.nav-justified>li>a {
+        color: white;
+        height: 50px;
+        border-bottom: 4px solid red;
+        border-left: 1px solid white;
+        font-family: system-ui;
+        font-weight: 800;
+    }
+
+    .rx-tab {
+        color: white;
+        background-color: black;
+    }
+
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+        background-color: red;
+    }
+
+    .rx-tab-panel .rx-tab_selected:focus {
+        background-color: red !important;
+    }
+
+    .rx-tab_selected:focus {
+        background-color: red !important;
+    }
+
+    .nav-tabs>li.active>a {
+        background-color: black;
+    }
+}
+
+.com-vyom-vyomlib-container-orange-border {
+    border-bottom: 1px solid #d46617;
+    margin-top: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    box-shadow: 4px 4px 0 0 lightgrey;
+
+    .nav-tabs.nav-justified>li>a {
+        color: black;
+        font-weight: 800;
+        border-bottom: 4px solid #d46617;
+        height: 50px;
+        box-shadow: 0 0 2px 2px lightgrey;
+    }
+
+    .rx-tab {
+        color: white;
+        background-color: white;
+    }
+
+    .rx-tab_selected {
+        background-color: #d46617;
+        color: white !important;
+    }
+
+    .rx-tab_selected:focus {
+        background-color: #d46617 !important;
+        box-shadow: 0 0 8px gray;
+    }
+
+    .nav-tabs>li.active>a {
+        background-color: #d46617;
+    }
+}
+
+.com-vyom-vyomlib-container-lightblue-border {
+    border-bottom: 1px solid black;
+    margin-top: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+
+    .nav-tabs.nav-justified>li>a {
+        color: black;
+        height: 50px;
+        border-left: 1px solid white;
+        font-family: system-ui;
+        font-weight: 800;
+    }
+
+    .rx-tab {
+        color: white;
+        background-color: #23969a;
+    }
+
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+        background-color: #23969a;
+    }
+
+    .rx-tab-panel .rx-tab_selected:focus {
+        background-color: #23969a !important;
+    }
+
+    .rx-tab_selected:focus {
+        // background-color: red !important;
+        border-bottom: 3px solid black;
+        background-color: #23969a !important;
+    }
+
+    .nav-tabs>li.active>a {
+        background-color: #23969a;
+    }
+}
+
+.com-vyom-vyomlib-container-green-border {
+    border-bottom: 1px solid #329864;
+    margin-top: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    transition: all 0.6s ease 0s;
+
+    .nav-tabs.nav-justified>li>a {
+        color: white;
+        height: 50px;
+        border-left: 2px solid white;
+        font-family: sans-serif;
+        box-shadow: 2px 2px 0 0;
+        margin-bottom: 10px;
+    }
+
+    .rx-tab {
+        color: white;
+        background-color: #329864;
+    }
+
+    .rx-tab_selected::before {
+        content: "\f107";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 25px;
+        font-weight: 700;
+        color: #329864;
+        margin: 5px auto;
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+    }
+
+    .rx-tab_selected::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: white;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s ease 0s;
+    }
+
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+        background-color: #329864;
+    }
+
+    .nav-tabs>li.active>a {
+        background-color: #329864;
+    }
+
+    .rx-tab-panel .rx-tab_selected:focus {
+        background-color: #329864 !important;
+    }
+
+    .rx-tab_selected:focus {
+        // border-bottom: 6px solid #7f87ad;
+        background-color: #329864 !important;
+    }
+}
+
+.com-vyom-vyomlib-container-skyblue-border {
+    border-bottom: 1px solid #1174e6;
+    margin-top: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    transition: all 0.6s ease 0s;
+
+    .nav-tabs.nav-justified>li>a {
+        color: white;
+        height: 50px;
+        border-left: 2px solid white;
+        font-family: sans-serif;
+        box-shadow: 2px 2px 0 0;
+        margin-bottom: 10px;
+    }
+
+    .rx-tab {
+        color: white;
+        background-color: #1174e6;
+    }
+
+    .rx-tab_selected::before {
+        content: "\f107";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 25px;
+        font-weight: 700;
+        color: #1174e6;
+        margin: 5px auto;
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+    }
+
+    .rx-tab_selected::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: white;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s ease 0s;
+    }
+
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+        background-color: #1174e6;
+    }
+
+    .nav-tabs>li.active>a {
+        background-color: #1174e6;
+    }
+
+    .rx-tab-panel .rx-tab_selected:focus {
+        background-color: #1174e6 !important;
+    }
+
+    .rx-tab_selected:focus {
+        // border-bottom: 6px solid #7f87ad;
+        background-color: #1174e6 !important;
+    }
+}
+
+.com-vyom-vyomlib-container-blue-border {
+    border-bottom: 3px solid #002561;
+    margin-top: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+
+    .nav-tabs.nav-justified>li>a {
+        color: darkgray;
+        font-weight: 800;
+        border-bottom: 2px solid #002561;
+        height: 50px;
+        box-shadow: 0 2px 0px 0px;
+        margin-bottom: 10px;
+    }
+
+    .rx-tab_selected::before {
+        content: "\f0d7";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 25px;
+        font-weight: 700;
+        color: #002561;
+        margin: 5px auto;
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+    }
+
+    .rx-tab_selected::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: white;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s ease 0s;
+    }
+
+    .rx-tab {
+        color: white;
+        background-color: white;
+    }
+
+    .rx-tab_selected {
+        background-color: #002561;
+    }
+
+    .rx-tab_selected:focus {
+        background-color: #002561 !important;
+        box-shadow: 0 0 8px gray;
+    }
+
+    .nav-tabs>li.active>a {
+        background: #002561;
+    }
+}
+
+.com-vyom-vyomlib-container-purple-border {
+    border-bottom: 3px solid #a56ebe;
+    margin-top: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+
+    .nav-tabs.nav-justified>li>a {
+        color: black;
+        font-weight: 800;
+        border-bottom: 2px solid #a56ebe;
+        height: 50px;
+        box-shadow: 0 2px 0px 0px;
+    }
+
+    .rx-tab_selected::before {
+        content: "\f107";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 25px;
+        font-weight: 700;
+        color: white;
+        margin: 20px auto;
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+    }
+
+    .rx-tab_selected::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: white;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s ease 0s;
+    }
+
+    .rx-tab {
+        color: white;
+        background-color: white;
+    }
+
+    .rx-tab_selected {
+        background-color: #a56ebe;
+        color: white !important;
+    }
+
+    .rx-tab_selected:focus {
+        background-color: #a56ebe !important;
+        box-shadow: 0 0 8px gray;
+    }
+
+    .nav-tabs>li.active>a {
+        background-color: #a56ebe;
+    }
+}
+
+.com-vyom-vyomlib-container-skyblue1-border {
+    border-bottom: 3px solid #1174e6;
+    margin-top: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+
+    .nav-tabs.nav-justified>li>a {
+        color: black;
+        font-weight: 800;
+        border-bottom: 2px solid #1174e6;
+        height: 50px;
+        box-shadow: 0 2px 0px 0px;
+        margin-bottom: 10px;
+    }
+
+    .rx-tab_selected::before {
+        content: "\f0d7";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 25px;
+        font-weight: 700;
+        color: #1174e6;
+        margin: 5px auto;
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        right: 0;
+    }
+
+    .rx-tab_selected::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: white;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s ease 0s;
+    }
+
+    .rx-tab {
+        color: white;
+        background-color: white;
+    }
+
+    .rx-tab_selected {
+        background-color: #1174e6;
+        color: white !important;
+    }
+
+    .rx-tab_selected:focus {
+        background-color: #1174e6 !important;
+        box-shadow: 0 0 8px gray;
+    }
+
+    .nav-tabs>li.active>a {
+        background-color: #1144e6;
+    }
+}
+
+.com-vyom-vyomlib-container-black-border {
+    border-bottom: 3px solid black;
+    margin-top: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+
+    .nav-tabs.nav-justified>li>a {
+        color: black;
+        font-weight: 800;
+        border-bottom: 2px solid black;
+        height: 50px;
+        box-shadow: 0 2px 0px 0px;
+        margin-bottom: 10px;
+    }
+
+    .rx-tab_selected::before {
+        content: "\f0d7";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 25px;
+        font-weight: 700;
+        color: black;
+        margin: 5px auto;
+        position: absolute;
+        bottom: -27px;
+        left: 0;
+        right: 0;
+    }
+
+    .rx-tab_selected::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: white;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s ease 0s;
+    }
+
+    .rx-tab {
+        color: white;
+        background-color: white;
+    }
+
+    .rx-tab_selected {
+        background-color: black;
+        color: white !important;
+    }
+
+    .rx-tab_selected:focus {
+        background-color: black !important;
+        box-shadow: 0 0 8px gray;
+    }
+
+    .nav-tabs>li.active>a {
+        background-color: black;
+    }
+}
+
+.com-vyom-vyomlib-container-ericlightblue-border {
+    border-bottom: 3px solid #2196f3;
+    margin-top: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+
+    .nav-tabs.nav-justified>li>a {
+        color: black;
+        font-weight: 800;
+        border-bottom: 2px solid #2196f3;
+        height: 50px;
+        box-shadow: 0 2px 0px 0px;
+        margin-bottom: 10px;
+    }
+
+    .rx-tab_selected::before {
+        content: "\f0d7";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 25px;
+        font-weight: 700;
+        color: #2196f3;
+        margin: 5px auto;
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+        right: 0;
+    }
+
+    .rx-tab_selected::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: white;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s ease 0s;
+    }
+
+    .rx-tab {
+        color: white;
+        background-color: white;
+    }
+
+    .rx-tab_selected {
+        background-color: #2196f3;
+        color: white !important;
+    }
+
+    .rx-tab_selected:focus {
+        background-color: #2196f3 !important;
+        box-shadow: 0 0 8px gray;
+    }
+
+    .nav-tabs>li.active>a {
+        background-color: #2196f3;
+    }
+}
+
+.com-vyom-vyomlib-container-arrow-border {
+    border: 1px solid #1174e6;
+    margin-top: 10px;
+
+    .nav-tabs.nav-justified>li>a {
+        border-bottom: none;
+        height: 50px;
+        border-radius: 0;
+        transition: all 0.6s ease 0s;
+    }
+
+    .rx-tab_selected::before {
+        content: "\f107";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 25px;
+        font-weight: 700;
+        color: #1174e6;
+        margin: 15px auto;
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        right: 0;
+    }
+
+    .rx-tab_selected::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: #1174e6;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s ease 0s;
+    }
+
+    .rx-tab_selected {
+        border-top: 2px solid #1174e6;
+    }
+
+    .nav>li>a:focus,
+    .nav>li>a:hover {
+        // background-color: #329864;
+        color: #1174e6;
+    }
+
+    // .rx-tab-panel .rx-tab_selected:focus {
+    // }
+
+    .rx-tab_selected:focus {
+        // border-bottom: 6px solid #7f87ad;
+        // background-color: #329864 !important;
+        color: #1174e6;
+        border-top: 2px solid #1174e6;
+
+    }
+}
+
+.com-vyom-vyomlib-container-validation {
+
+    // .d-textfield__input .rx-character-field__input 
+    // .rx-content .d-textfield__label {
+    .rx-record-editor-component-renderer {
+        font-family: fantasy;
+    }
+
 }

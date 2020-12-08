@@ -24,6 +24,7 @@
                             label: 'containerWidth',
                             isConfig: true,
                             isRequired: true,
+                            defaultValue:'1196',
                             enableExpressionEvaluation: true
                         },
                         {
@@ -31,6 +32,7 @@
                             label: 'containerHeight',
                             isConfig: true,
                             isRequired: true,
+                            defaultValue:'500',
                             enableExpressionEvaluation: true
                         }
                         ,
@@ -39,6 +41,7 @@
                             label: 'iframeWidth',
                             isConfig: true,
                             isRequired: true,
+                            defaultValue: '1214',
                             enableExpressionEvaluation: true
                         },
                         
@@ -47,6 +50,7 @@
                             label: 'iframeHeight',
                             isConfig: true,
                             isRequired: true,
+                            defaultValue: '800',
                             enableExpressionEvaluation: true
                         },
                         
@@ -55,6 +59,7 @@
                             label: 'iframeTop',
                             isConfig: true,
                             isRequired: true,
+                            defaultValue:'-94',
                             enableExpressionEvaluation: true
                         },
                         
@@ -63,6 +68,8 @@
                             label: 'iframeRight',
                             isConfig: true,
                             isRequired: true,
+                            defaultValue:'10',
+                            toolTip: 'Iframe Right Side',
                             enableExpressionEvaluation: true
                         }
                     ]

@@ -7,12 +7,12 @@
                 name: 'Top Header',
                 group: 'vyomlib',
                 icon: 'app',
-                type: 'com-vyom-vyomlib-topheader',  // the name of runtime directive
+                type: 'com-vyom-vyomlib-topheader', // the name of runtime directive
                 designType: 'com-vyom-vyomlib-topheader-design', // register design directive
-				designManagerService: 'comVyomVyomlibTopheaderDesign',
+                designManagerService: 'comVyomVyomlibTopheaderDesign',
                 bundleId: 'com.vyom.vyomlib',
 
-                // define component properties
+
                 propertiesByName: [
                     {
 
@@ -20,41 +20,46 @@
                         isConfig: true,
                         type: "string"
                 },
-                    
-                
+
+
                     {
                         name: 'appname',
                         isConfig: true,
                         type: "string"
-                   
+
                     },
-                   {
+                    {
                         name: 'hyperlink',
                         isConfig: true,
                         type: "string"
-                   
+
                     },
-					{
+                    {
                         name: 'toggleicon',
                         isConfig: true,
-                        isProperty: true,    // property will be available for building expressions
-                        
-						
+                        isProperty: true,
+
+
                     },
-					{
+                    {
                         name: 'togglefont',
                         isConfig: true,
-                        isProperty: true,    // property will be available for building expressions
-                        
-						
+                        isProperty: true,
+
                     },
-					{
+                    {
                         name: 'bgcolor',
-                        isConfig: true,
-                        defaultValue: 'erric_default'
-                           // property will be available for building expressions
-                        
-						
+                        isConfig: true
+
+
+
+                    },
+                    {
+                        name: 'headerSize',
+                        isConfig: true
+
+
+
                     }
                 ]
             };

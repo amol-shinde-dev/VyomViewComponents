@@ -1,0 +1,11 @@
+<label ng-class="options.attrs.label.class">
+    <rx-tooltip tooltip="options.tooltip"></rx-tooltip>
+    {{options.label}}:
+</label>
+<div ng-if="data.fields.length">
+    <select class="select" ng-options="field[applicationFieldID] for field in data.fields " ng-model="data.selectedField"></select>
+</div>
+
+<div ng-if="!data.fields.length">
+    Application Name Field is not selected.
+</div>
