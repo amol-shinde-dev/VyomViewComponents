@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+
+      
+      <!-- <link rel="stylesheet" href="/com.vyom.vyomlib/resources/landing-console/css/landing-console.css"> -->
+
+      <script>
+         $(document).ready(function(){
+             $('[data-toggle="popover"]').popover();
+             $("#myCarousel").carousel();
+         });
+      </script>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div id="block_container" class="content">
+            <div class="searchcontainer " id="bloc">
+               <input type="text" class="searchinput w3-{{SearchColor}}" placeholder="Search...">
+               <div class="search w3-{{SearchColor}}"></div>
+            </div>
+            <div id="bloc"  class="tim-typo" style="margin-top: 44px;">
+               <h1 style="font-size: 58px;">Welcome {{CurrentUserFullName}}</h1>
+               <p></p>
+            </div>
+         </div>
+         <div class="content">
+            <div class="container-fluid">
+               <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                     <li data-target="#myCarousel" data-slide-to="1"></li>
+                     <li data-target="#myCarousel" data-slide-to="2"></li>
+                  </ol>
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+                     <div class="item active">
+                        <img src="/com.vyom.vyomlib/resources/landing-console/statistics4.jpg" alt="Los Angeles" style="width:100%;height: 500px">
+                        <div class="carousel-caption">
+                           <h3></h3>
+                           <p></p>
+                        </div>
+                     </div>
+                     <div class="item">
+                        <img src="/com.vyom.vyomlib/resources/landing-console/bgimg2.jpg" alt="Chicago" style="width:100%;height: 500px">
+                        <div class="carousel-caption">
+                           <h3></h3>
+                           <p></p>
+                        </div>
+                     </div>
+                     <div class="item">
+                        <img src="/com.vyom.vyomlib/resources/landing-console/statistics5.jpg" alt="New York" style="width:100%;height: 500px">
+                        <div class="carousel-caption">
+                           <h3></h3>
+                           <p></p>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- Left and right controls -->
+               </div>
+            </div>
+         </div>
+         <div class="content">
+            <div class="container-fluid">
+               <div class="row">
+                  <div class="col-lg-3 col-md-6 col-sm-6" ng-repeat="x in permittedCards ">
+                     <div class="card card-stats w3-card-4 h-75">
+                        <div class="card-header card-header-{{x.Color}} card-header-icon" ng-click="setUrlTOModal(x.URL)"data-toggle="modal"  data-target="#landingconsolemodal" >
+                           <div class="card-icon">
+                              <div class="material-icons">
+                                 <p class="d-icon-{{x.Icon}}" ></p>
+                              </div>
+                           </div>
+                           <h3 class="card-title">
+                              {{x.ApplicationName}}
+                              <!--<small>GB</small>-->
+                           </h3>
+                           <p class="card-category">
+                              <span class="d-icon-star" style="color:orange"></span>
+                              <span class="d-icon-star_o"></span>
+                              <span class="d-icon-star_o"></span>
+                              <span class="d-icon-star_o"></span>
+                              <span class="d-icon-star_o"></span>
+                           </p>
+                        </div>
+                        <div class="card-footer">
+                           <div class="stats">
+                              <div class="material-icons">
+                                 <p class="d-icon-info_circle" data-toggle="popover" data-container="body" data-original-title="{{x.tooltipHeader}}"  data-color="primary" data-content="{{x.tooltipDescription}}">
+                                 </p>
+                              </div>
+                              <a href="javascript:;"><em>{{x.Description}}</em></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal fade right" id="landingconsolemodal" tabindex="-1" role="dialog" aria-labelledby="landingconsolemodalLabel" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <a href="" class="d-icon-cross" data-dismiss="modal"></a>
+               <iframe ng-if="::modalUrl" ng-src="{{trustSrc(modalUrl)}}" src="{{trustSrc(modalUrl)}}" class="modal-iframe" style=""></iframe>
+            </div>
+         </div>
+      </div>
+      <!---/ modal end --->       
+   </body>
+</html>

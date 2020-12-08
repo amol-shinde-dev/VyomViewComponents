@@ -1,0 +1,21 @@
+.vy_redbackground
+{
+background-color:red;
+}
+.vy_blackbackground
+{
+background-color:black;
+}
+.vy_pink
+{
+background-color:#ffe6e6;
+}
+.vy_center
+{
+text-align: center;
+}
+.vy_horizontal
+{    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;}

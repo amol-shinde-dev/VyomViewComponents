@@ -1,0 +1,179 @@
+<html>
+
+<head>
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
+
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css"
+        rel="stylesheet" /> -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- <link rel="stylesheet" href="/com.vyom.vyomlib/resources/menubar/menu2.css">" -->
+    <style>
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-contentCase {
+            background-color: #fefefe;
+            margin: auto;
+            width: 35%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container" style="width: 1750px; padding-left: 0px;">
+        <nav class="navbar navbar-icon-top navbar-default" style="margin-bottom: 5px; border-bottom: groove;">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" style="
+                font-size: 33px;
+                color: #2a265f;
+                font-weight: bold;">My Application Dashboard</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">All Cases <span class="sr-only">(current)</span></a></li>
+                    </ul>
+                    <form class="navbar-form navbar-left">
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="INC Number" id="number">
+                        </div>
+                        <button type="submit" id="searchCase" class="btn btn-default">Submit</button>
+
+                        
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-fire">
+                                    <span class="badge badge-danger">11</span>
+                                </i>
+                                My Activity
+                            </a>
+                        </li>
+
+                        <li>
+                            <!-- <i class="fa fa-user-circle-o"></i> -->
+                            <button id="myBtn" class="btn btn-success" style="margin-top: 20px;">Quick Case</button>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+                <!-- new ticket modal -->
+
+                <div id="myModal" class="modal">
+                    <!-- Modal content -->
+                    <div class="modal-contentCase">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Quick Case</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="margin:  -3rem 0 -2rem -2rem;">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body p-4" id="result">
+                            <div id="myForm1">
+                                <div class="form-container">
+                                    <label><b>Requestor</b></label>
+                                    <input type="text" id="searchTxt" placeholder="Requestor" name="email1" required>
+                                    <label><b>Summary</b></label>
+                                    <input type="text" placeholder="Enter Summary" name="psw1" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-success" id="CreateCase">Create Quick Case</button>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- modal end -->
+            </div><!-- /container-fluid -->
+        </nav>
+    </div>
+    <script>
+        // $('#myModal').removeClass('modal fade in');
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

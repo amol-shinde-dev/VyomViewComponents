@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+
+    <title>Kanban</title>
+    <link rel="stylesheet" href="/com.vyom.vyomlib/resources/kanban1/dist/jkanban4.css">
+    <link rel="stylesheet" href="/com.vyom.vyomlib/resources/kanban1/dist/jkanban_form.css">  
+    <link rel="stylesheet" href="/com.vyom.vyomlib/resources/kanban1/dist/card_layout1.css">
+    <link rel="stylesheet" href="/com.vyom.vyomlib/resources/kanban1/dist/jkanban_material_popup1.css">
+    <script src="/com.vyom.vyomlib/resources/kanban1/dist/jkanban.js"></script>
+  </head>
+
+    <style>
+      body {
+        font-family: "Lato";
+        margin: 0;
+        padding: 0;
+        
+        overflow:overlay;
+
+        
+      }
+
+      .modal.fade .modal-dialog {
+    transition: -webkit-transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+    -webkit-transform: translate(0,-50px);
+    transform: translate(0,-50px);
+}
+
+
+
+      .fade:not(.show){
+        opacity: 100%;
+        background: #0c0c0c26;
+      }
+
+      #myKanban {
+        overflow-x: auto;
+        padding: 20px 0;
+        /* background-color: #6d6d6d; */
+        border-top-style: groove;
+      }
+      .bkgclr
+      {
+        background-color: #6d6d6d;
+        height: 1000px;
+      }
+
+      .success {
+        background: #00b961;
+      }
+
+      .info {
+        background: #2a265f;
+      }
+
+      .warning {
+        background: #f4ce46;
+      }
+
+      .error {
+        background: #fb7d44;
+      }
+    </style>
+ 
+  <body>
+    
+ <div>
+    <div id="myKanban"></div>
+    <div >
+      <div class="email" onclick="this.classList.add('expand')">
+        <div class="from">
+          <div class="from-contents">
+            <div class="avatar me"></div>
+            <div class="name">+ New Ticket</div>
+          </div>
+        </div>
+        <div class="to">
+          <div class="to-contents">
+            <div class="top">
+              <div class="avatar-large me"></div>
+              <div class="name-large">New Ticket</div>
+              <div class="x-touch" onclick="document.querySelector('.email').classList.remove('expand');event.stopPropagation();">
+                <div class="x">
+                  <div class="line1"></div>
+                  <div class="line2"></div>
+                </div>
+              </div>
+            </div>
+            <div class="bottom">
+
+                    <div id="myForm1">
+                      <div  class="form-container">
+  
+                        <label><b>Requestor</b></label>
+                        <input type="text" id= "searchTxt" placeholder="Requestor" name="email1" required>
+                    
+                        <label><b>Summary</b></label>
+                        <input type="text" placeholder="Enter Summary" name="psw1" required>
+                        <button class ="btn btn-success" id="addToDo" >Create</button>
+                      </div>
+                
+                        <!-- <button type="button" class="btn cancel" onclick="closeForm()">Close</button> -->
+                      
+                        </div>
+  
+
+              </div>
+              <div class="row">
+
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<script>
+  function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+</script>
+    
+    <script>
+
+      var KanbanTest = new jKanban({
+        element: "#myKanban",
+        gutter: "10px",
+        widthBoard: "512px",
+        itemHandleOptions:{
+          enabled: true,
+        },
+        click: function(el) {
+          console.log("Trigger on all items click!");
+        },
+        dropEl: function(el, target, source, sibling){
+          console.log(target.parentElement.getAttribute('data-id'));
+          console.log(el, target, source, sibling)
+          // alert(target.parentElement.getAttribute('data-id'));
+          var parentcardid = target.parentElement.getAttribute('data-id');
+            if(parentcardid == "_working")
+            {
+              window.clickButton1();
+            }
+        },
+        
+       
+        addItemButton: true,
+        boards: [
+          {
+            id: "_todo",
+            title: "New Tickets",
+            class: "info,good",
+            dragTo: ["_working"],
+            item: [
+
+            {
+                title:'<div class="body1"><div class="courses-container"><div class="course"><div class="course-preview item_handle drag_handler"><div class="fontsize">Ticket</div><div class="fontsize">INC2321</div></div><div class="course-info"><div class="progress-container"><div class="new"></div><span class="progress-text">New</span></div><h6>Summary</h6><div id="demo1" class="sumcontent">Database Issue</h6><button class="btn1" ng-click="ViewButton()">View</button></div></div></div></div>'
+            },
+
+            {
+                title:'<div class="body1"><div class="courses-container"><div class="course"><div class="course-preview item_handle drag_handler"><div class="fontsize">Ticket</div><div class="fontsize">INC2322</div></div><div class="course-info"><div class="progress-container"><div class="rejected"></div><span class="progress-text">Rejected</span></div><h6>Summary</h6><div class="sumcontent">Email engine not working</h6><button class="btn1">View</button></div></div></div></div>'
+            },
+            
+            {
+                title:'<div class="body1"><div class="courses-container"><div class="course"><div class="course-preview item_handle drag_handler"><div class="fontsize">Ticket</div><div class="fontsize">INC2324</div></div><div class="course-info"><div class="progress-container"><div class="completed"></div><span class="progress-text">Completed</span></div><h6>Summary</h6><div class="sumcontent">Password Reset</h6><button class="btn1">View</button></div></div></div></div>'
+            },
+            {
+                title:'<div class="body1"><div class="courses-container"><div class="course"><div class="course-preview item_handle drag_handler"><div class="fontsize">Ticket</div><div class="fontsize">INC2325</div></div><div class="course-info"><div class="progress-container"><div class="new"></div><span class="progress-text">New</span></div><h6>Summary</h6><div class="sumcontent">Lan issue</h6><button class="btn1">View</button></div></div></div></div>'
+            },
+            {
+                title:'<div class="body1"><div class="courses-container"><div class="course"><div class="course-preview item_handle drag_handler"><div class="fontsize">Ticket</div><div class="fontsize">INC2326</div></div><div class="course-info"><div class="progress-container"><div class="new"></div><span class="progress-text">New</span></div><h6>Summary</h6><div class="sumcontent">Lan issue</h6><button class="btn1">View</button></div></div></div></div>'
+            },
+            {
+                title:'<div class="body1"><div class="courses-container"><div class="course"><div class="course-preview item_handle drag_handler"><div class="fontsize">Ticket</div><div class="fontsize">INC2327</div></div><div class="course-info"><div class="progress-container"><div class="new"></div><span class="progress-text">New</span></div><h6>Summary</h6><div class="sumcontent">Lan issue</h6><button class="btn1">View</button></div></div></div></div>'
+            },
+            ]
+          },
+          {
+
+            id: "_working",
+            title: "In Progress",
+            class: "warning",
+            item: [
+              {
+                title:'<div class="body1"><div class="courses-container"><div class="course"><div class="course-preview item_handle drag_handler"><div class="fontsize">Ticket</div><div class="fontsize">INC2332</div></div><div class="course-info"><div class="progress-container"><div class="progress"></div><span class="progress-text">In Progress</span></div><h6>Summary</h6><div class="sumcontent">AD locked</h6><button class="btn1">View</button></div></div></div></div>'
+              },
+              {
+                title:'<div class="body1"><div class="courses-container"><div class="course"><div class="course-preview item_handle drag_handler"><div class="fontsize">Ticket</div><div class="fontsize">INC2333</div></div><div class="course-info"><div class="progress-container"><div class="progress"></div><span class="progress-text">In Progress</span></div><h6>Summary</h6><div class="sumcontent">AD locked</h6><button class="btn1">View</button></div></div></div></div>'
+              },
+              {
+                title:'<div class="body1"><div class="courses-container"><div class="course"><div class="course-preview item_handle drag_handler"><div class="fontsize">Ticket</div><div class="fontsize">INC2324</div></div><div class="course-info"><div class="progress-container"><div class="progress"></div><span class="progress-text">In Progress</span></div><h6>Summary</h6><div class="sumcontent">AD locked</h6><button class="btn1">View</button></div></div></div></div>'
+              },
+              {
+                title:'<div class="body1"><div class="courses-container"><div class="course"><div class="course-preview item_handle drag_handler"><div class="fontsize">Ticket</div><div class="fontsize">INC2325</div></div><div class="course-info"><div class="progress-container"><div class="progress"></div><span class="progress-text">In Progress</span></div><h6>Summary</h6><div class="sumcontent">AD locked</h6><button class="btn1">View</button></div></div></div></div>'
+              },
+
+            ]
+
+          },
+          {
+            id: "_done",
+            title: "Completed/Closed",
+            class: "success",
+            dragTo: ["_working"],
+            item: [
+
+              {
+                title:'<div class="body1"><div class="courses-container"><div class="course"><div class="course-preview item_handle drag_handler"><div class="fontsize">Ticket</div><div class="fontsize">INC2323</div></div><div class="course-info"><div class="progress-container"><div class="completed"></div><span class="progress-text">Completed</span></div><h6>Summary</h6><div class="sumcontent">AD locked</h6><button class="btn1">View</button></div></div></div></div>'
+              },
+
+            ]
+          }
+        ]
+      });
+
+
+      var toDoButton = document.getElementById("addToDo");
+      toDoButton.addEventListener("click", function() {
+        
+        // var div11 = document.createElement('div');
+        // div11.innerHTML = 'Hi there!';
+
+        KanbanTest.addElement("_todo", {
+          
+          
+          title: '<div class="body1"><div class="courses-container"><div class="course"><div class="course-preview item_handle drag_handler"><div class="fontsize">Ticket</div><div class="fontsize">INC2321</div></div><div class="course-info"><div class="progress-container"><div class="progress"></div><span class="progress-text">In Progress</span></div><h6>Summary</h6><div class="sumcontent">Callbacks & Closures</h6><button class="btn1">View</button></div></div></div></div>'
+                 
+        });
+      });
+    
+      var toDoButton = document.getElementById("addToDo1");
+      toDoButton.addEventListener("click", function() {
+        
+        KanbanTest.addElement("_todo", {
+          title: "Test Add"
+      
+        });
+      });
+
+
+      var removeElement = document.getElementById("removeElement");
+      removeElement.addEventListener("click", function() {
+        KanbanTest.removeElement("_test_delete");
+      });
+
+      var allEle = KanbanTest.getBoardElements("_todo");
+      allEle.forEach(function(item, index) {
+        //console.log(item);
+      });
+
+
+
+    </script>
+      </div>
+  </body>
+</html>

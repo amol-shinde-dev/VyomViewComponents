@@ -1,0 +1,41 @@
+@import "<%= standardlibTarget %>/resources/sass/partials/core/variables";
+@import "variables";
+
+
+@import "partials/custom-css";
+/* Importing Rzslider css file, used for sliders
+https://github.com/angular-slider/angularjs-slider
+ */
+@import "rzslider.min";
+
+
+/* Importing css for "bmc-css-icons" view components */
+@import "bmc-css-icons";
+@import "partials/homepage";
+@import "partials/iframe";
+@import "partials/vycss";
+@import "partials/marquee3";
+@import "partials/call-process-js";
+@import "partials/marquee2";
+@import "partials/icon";
+@import "partials/vc13";
+@import "partials/vc11";
+@import "partials/vc17";
+@import "partials/customheight";
+@import "partials/topheader";
+@import "partials/vc19";
+@import "partials/simpleWidget";
+
+@import "partials/landing_console";
+@import "partials/landing_console_2";/* w3css */
+@import "partials/landing_console_3";/* owl-carousel */
+@import "partials/bootstrap.min";
+@import "partials/material-bootstrap-wizard";
+
+@import "partials/custom";
+@import "partials/micro-clearfix";
+@import "partials/reset-html5";
+@import "partials/stiff-chart";
+@import "partials/menubaradv";
+@import "partials/kanbanadv";
+// @import "partials/mypageadv";

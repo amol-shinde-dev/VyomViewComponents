@@ -1,0 +1,32 @@
+.custom
+{
+background-color: blue;
+text-align: center;
+}
+rx-record-grid1-design {
+	min-height: 184px;
+	display: block
+}
+
+rx-record-grid1-design>.invisible {
+	visibility: hidden
+}
+
+rx-record-grid1-design .info-text {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	text-align: center;
+	padding-top: 60px;
+	display: block
+}
+
+rx-record-grid1-design .info-text div>ul {
+	height: 182px
+}
+
+rx-record-grid1-design .rx-view-designer-item-content rx-action-button-design {
+	background-color: pink
+}
+

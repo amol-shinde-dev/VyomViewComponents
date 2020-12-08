@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>MyPage</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- Font Awesome -->
+	<link href="/com.vyom.vyomlib/resources/MyPage_Vyom1/css/font-awesome.min.css" rel="stylesheet">
+
+	<!-- NProgress -->
+	<!-- <link href="/com.vyom.vyomlib/resources/MyPage_Vyom1/css/nprogress.css" rel="stylesheet"> -->
+	<!-- iCheck -->
+	<link href="/com.vyom.vyomlib/resources/MyPage_Vyom1/css/green.css" rel="stylesheet">
+
+	<!-- bootstrap-progressbar -->
+	<link href="/com.vyom.vyomlib/resources/MyPage_Vyom1/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+	<!-- JQVMap -->
+	<link href="/com.vyom.vyomlib/resources/MyPage_Vyom1/css/jqvmap.min.css" rel="stylesheet" />
+	<!-- bootstrap-daterangepicker -->
+	<link href="/com.vyom.vyomlib/resources/MyPage_Vyom1/css/daterangepicker.css" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+	<link rel="stylesheet" href="/com.vyom.vyomlib/resources/MyPage_Vyom1/css/myPage.css">
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="widgetTable">
+				<table style="margin-left: 4%;">
+					<tr>
+						<td id="profileWidgetTD">
+							<div class="widget panelbox">
+								<div class="profile" ng-if="logedInUser">
+									<p class="profile-image" style="text-align:center;">
+										<img src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/icons/personicon.png"
+											align="middle" style="border-radius: 50%">
+									</p>
+									<h3 align="center" style="color: black;" class="name">
+										{{logedInUser[11093002]}}
+									</h3>
+									<p style="text-align:center; font-size: 12px;" class="des">
+										{{logedInUser[11093003]}}
+										<br>
+										{{logedInUser[11093004]}}
+										<br>
+										<hr>
+									</p>
+									<p style="text-align:center; font-size: 12px;" class="des">
+										Contact Info:
+										{{logedInUser[11093005]}}
+										<br>
+										{{logedInUser[8]}}
+									</p>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="widget panelbox">
+								<div class="financial">
+									<img class="img-responsive icons"
+										src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/icons/financial.png"
+										alt="" title="Finance">
+									<p class="title">
+										My Financials
+									</p>
+									<div id="myfinancials">
+										<!--Payslip HTML-->
+										<div id="quicklink">
+											<div id="Payslip_widget" class="quicklink">
+												<a data-fancybox="" data-type="iframe" id="ohrcustom"
+													href="https://soagnpc.intranet.genpact.com/widget/oraclepayroll/resources/pages/oraclePayroll.jsp?id=ND1WH%2BkWowmB7HdPPgJTow%3D%3D">
+													<img class="img-responsive"
+														src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/quicklinks/payslip.png"
+														alt="payslip">
+												</a>
+											</div>
+										</div>
+										<!--Payslip HTML-->
+										<!--Payslip HTML-->
+										<div id="quicklink">
+											<div id="Payslip_widget" class="quicklink">
+												<a data-fancybox="" data-type="iframe" id="ohrcustom"
+													href="https://soagnpc.intranet.genpact.com/widget/oraclepayroll/resources/pages/oraclePayroll.jsp?id=ND1WH%2BkWowmB7HdPPgJTow%3D%3D">
+													<img class="img-responsive"
+														src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/quicklinks/address.png"
+														alt="payslip">
+												</a>
+											</div>
+										</div>
+										<!--Payslip HTML-->
+										<!--Payslip HTML-->
+										<div id="quicklink">
+											<div id="Payslip_widget" class="quicklink">
+												<a data-fancybox="" data-type="iframe" id="ohrcustom"
+													href="https://soagnpc.intranet.genpact.com/widget/oraclepayroll/resources/pages/oraclePayroll.jsp?id=ND1WH%2BkWowmB7HdPPgJTow%3D%3D">
+													<img class="img-responsive"
+														src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/quicklinks/PF.png"
+														alt="payslip">
+												</a>
+											</div>
+										</div>
+										<!--Payslip HTML-->
+										<!--Payslip HTML-->
+										<div id="quicklink">
+											<div id="Payslip_widget" class="quicklink">
+												<a data-fancybox="" data-type="iframe" id="ohrcustom"
+													href="https://soagnpc.intranet.genpact.com/widget/oraclepayroll/resources/pages/oraclePayroll.jsp?id=ND1WH%2BkWowmB7HdPPgJTow%3D%3D">
+													<img class="img-responsive"
+														src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/quicklinks/employeement.png"
+														alt="payslip">
+												</a>
+											</div>
+										</div>
+										<!--Payslip HTML-->
+										<!--Payslip HTML-->
+										<div id="quicklink">
+											<div id="Payslip_widget" class="quicklink">
+												<a data-fancybox="" data-type="iframe" id="ohrcustom"
+													href="https://soagnpc.intranet.genpact.com/widget/oraclepayroll/resources/pages/oraclePayroll.jsp?id=ND1WH%2BkWowmB7HdPPgJTow%3D%3D">
+													<img class="img-responsive"
+														src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/quicklinks/bonus1.png"
+														alt="payslip">
+												</a>
+											</div>
+										</div>
+										<div id="quicklink">
+											<div id="Payslip_widget" class="quicklink">
+												<a data-fancybox="" data-type="iframe" id="ohrcustom"
+													href="https://soagnpc.intranet.genpact.com/widget/oraclepayroll/resources/pages/oraclePayroll.jsp?id=ND1WH%2BkWowmB7HdPPgJTow%3D%3D">
+													<img class="img-responsive"
+														src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/quicklinks/softloan.png"
+														alt="payslip">
+												</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<div class="panelbox">
+								<img alt="suggestion_icon" class="img-responsive icons"
+									src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/icons/faq.png" />
+								<p class="title" style="margin-bottom: 0px">Ask for Help</p>
+								<!--Help HTML-->
+								<div id="FAQ">
+									<a href="https://hr.genpact.com/hr/peopleFirst/?env=cpub"> <img
+											src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/chatbot.jpg"
+											class="chatbotimg">
+									</a>
+
+									<br>
+									<a href="https://genpact-myit.onbmc.com/ux/"> <img
+											src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/helpmate2.png"
+											class="helpmateimg">
+									</a>
+									<br>
+									<a href="https://genpactonline.sharepoint.com/sites/Ess-Beta/FAQDocuments/">
+										<p class="policieshelp">Vyomlabs Policies</p>
+									</a>
+									<a href="https://genpactonline.sharepoint.com/sites/ESS_QA/SitePages/Newsfeed.aspx">
+										<p class="suggestionbox">Suggestion Box</p>
+									</a>
+
+								</div>
+							</div>
+						</td>
+						<!-- <td>
+							<div id="ER1" class="panelbox ER">
+								<div class="ER-main" style="padding-left: 8px;">
+									<img alt="suggestion_icon" class="img-responsive icons"
+										src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/icons/ERicon.png">
+									<p class="title">Employee Reimbursement
+										<a id="erhelp" href="#">
+											<i class="fa fa-question-circle ERhelp" title="Ask for Help"
+												aria-hidden="true"></i>
+										</a>
+										<a id="ERReport" href="#">
+											<i class="fa fa-file-excel-o ERadmin" title="ER Reports"
+												aria-hidden="true"></i>
+										</a>
+										<a id="ERadminconsole" href="#">
+											<i class="fa fa fa-user-o ERadminconsole" title="Admin Console"
+												aria-hidden="true"></i>
+										</a>
+									</p>
+									<div id="ER">
+										<div class="ERhexbox">
+											<a href="#">
+												<div id="pendingapproval" class="pendingapproval">
+													<br>
+													<b>12</b>
+													<p>Pending for Approval</p>
+												</div>
+											</a>
+											<a href="#">
+												<div id="pendingclarification" class="pendingclarification">
+													<br>
+													<b>03</b>
+													<p>Pending Clarification</p>
+												</div>
+											</a>
+										</div>
+										<div class="ERname">
+											<div class="list-type3">
+												<ol>
+													<li id="ERapproval" class="ERli">
+														<a href="#">
+															ER Approval Form
+														</a>
+													</li>
+													<li id="myapproval" class="ERli">
+														<a href="#">
+															My Approval Requests
+														</a>
+													</li>
+													<li id="claimsubmission" class="ERli">
+														<a href="#">
+															Claim Submission
+														</a>
+													</li>
+													<li id="claimrequest" class="ERli">
+														<a href="#">
+															My Claim Requests
+														</a>
+													</li>
+													<li id="approvaldelegation" class="ERli">
+														<a href="#">
+															Delegation
+														</a>
+													</li>
+												</ol>
+											</div>
+										</div>
+									</div>
+								</div> 
+							</div>
+						</td>-->
+					</tr>
+					<tr>
+						<td>
+							<link href="/com.vyom.vyomlib/resources/MyPage_Vyom1/css/custom.min.css" rel="stylesheet">
+							<div class="nav-md">
+								<div class="container body">
+									<div class="main_container">
+										<!-- page content -->
+										<div role="main">
+											<div class="row">
+												<div class="col-md-4 col-sm-4 " style="width: 480px;height: 324px;">
+													<div class="x_panel tile fixed_height_340" style="height: 325px;">
+
+														<div class="x_title">
+															<h2 style="color: #0f548c">My Trainings</h2>
+															<ul class="nav navbar-right panel_toolbox">
+																<li><a class="collapse-link"><i
+																			class="fa fa-chevron-up"></i></a>
+																</li>
+																<li class="dropdown">
+																	<a href="#" class="dropdown-toggle"
+																		data-toggle="dropdown" role="button"
+																		aria-expanded="false"><i
+																			class="fa fa-wrench"></i></a>
+																	<div class="dropdown-menu"
+																		aria-labelledby="dropdownMenuButton">
+																		<a class="dropdown-item" href="#">Settings 1</a>
+																		<a class="dropdown-item" href="#">Settings 2</a>
+																	</div>
+																</li>
+																<li><a class="close-link"><i
+																			class="fa fa-close"></i></a>
+																</li>
+															</ul>
+															<div class="clearfix"></div>
+														</div>
+														<div class="x_content">
+															<div class="dashboard-widget-content">
+																<ul class="quick-list">
+																	<li><i class="fa fa-calendar-o"></i>
+																		<a href="#"></a>
+																	</li>
+																	<li><i class="fa fa-bars"></i>
+																		<a href="#">Java - 18%</a>
+																	</li>
+																	<li><i class="fa fa-bar-chart"></i>
+																		<a href="#">Python - 44%</a>
+																	</li>
+																	<li><i class="fa fa-line-chart"></i>
+																		<a href="#">Helix Platform - 62%</a>
+																	</li>
+																	<li><i class="fa fa-bar-chart"></i>
+																		<a href="#">On Going Trainings</a>
+																	</li>
+																	<li><i class="fa fa-line-chart"></i>
+																		<a href="#">Start New</a>
+																	</li>
+																	</li>
+																</ul>
+
+																<div class="sidebar-widget">
+																	<h4>Training Completion</h4>
+																	<canvas width="150" height="80" id="chart_gauge_01"
+																		class=""
+																		style="width: 160px; height: 100px;"></canvas>
+																	<div class="goal-wrapper">
+																		<span id="gauge-text"
+																			class="gauge-value pull-left">40%</span>
+																		<!--                          <span class="gauge-value pull-left">%</span>-->
+																		<span id="goal-text"
+																			class="goal-value pull-right">6000%</span>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+
+								<!-- jQuery -->
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.min.js"></script>
+								<!-- Bootstrap -->
+								<script
+									src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/bootstrap.bundle.min.js"></script>
+								<!-- FastClick -->
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/fastclick.js"></script>
+								<!-- Chart.js -->
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/Chart.min.js"></script>
+								<!-- gauge.js -->
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/gauge.min.js"></script>
+								<!-- bootstrap-progressbar -->
+								<script
+									src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/bootstrap-progressbar.min.js"></script>
+								<!-- iCheck -->
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/icheck.min.js"></script>
+								<!-- Skycons -->
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/skycons.js"></script>
+								<!-- Flot -->
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.js"></script>
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.pie.js"></script>
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.time.js"></script>
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.stack.js"></script>
+								<script
+									src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.resize.js"></script>
+								<!-- Flot plugins -->
+								<script
+									src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.orderBars.js"></script>
+								<script
+									src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.flot.spline.min.js"></script>
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/curvedLines.js"></script>
+								<!-- DateJS -->
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/date.js"></script>
+								<!-- JQVMap -->
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.vmap.js"></script>
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.vmap.world.js"></script>
+								<script
+									src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/jquery.vmap.sampledata.js"></script>
+								<!-- bootstrap-daterangepicker -->
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/moment.min.js"></script>
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/daterangepicker.js"></script>
+
+								<!-- Custom Theme Scripts -->
+								<script src="/com.vyom.vyomlib/resources/MyPage_Vyom1/js/custom.min.js"></script>
+								<!-- <td> -->
+							</div>
+						</td>
+						<td>
+							<div id="ER1" class="panelbox ER">
+								<!--ER HTML-->
+								<div class="ER-main">
+									<img alt="suggestion_icon" class="img-responsive icons custom-widet"
+										src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/png/016-web-management.png"
+										width="40px">
+									<p class="request-title">VmWare
+										<span class="glyphicon glyphicon-pencil glyphicon-icon"></span>
+										<a id="erhelp" href="#">
+											<i class="fa fa-question-circle ERhelp" title="Ask for Help"
+												aria-hidden="true"></i>
+										</a>
+										<a id="ERReport" href="#">
+											<i class="fa fa-file-excel-o ERadmin" title="ER Reports"
+												aria-hidden="true"></i>
+										</a>
+										<a id="ERadminconsole" href="#">
+											<i class="fa fa fa-user-o ERadminconsole" title="Admin Console"
+												aria-hidden="true"></i>
+										</a>
+									</p>
+									<hr style="height:2px; color:grey">
+									<div id="ER">
+										<div class="ERhexbox">
+											<div class="requestDetails" style="width: 378px">
+
+												<div class="description" style="height: 192px;">
+
+													<table id="Table1"
+														class="table table-striped table-hover custom-table">
+														<thead>
+															<th></th>
+															<th>Name</th>
+															<th>Description</th>
+														</thead>
+														<tbody ng-repeat="onedata in myData">
+															<tr>
+																<td><input type="checkbox" name="" /></td>
+																<td>{{onedata['11093002']}}</td>
+																<td>{{onedata['8']}}</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+
+										<div class="RequestButtons">
+											<div class="large-image">
+												<img src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/png/016-web-management.png"
+													style="margin-left: 142px">
+											</div>
+											<div class="buttons">
+												<div class="count" style="margin-left: 132px;">
+													<div class="active">
+														<b>03</b><br>Active
+													</div>
+													<br>
+													<div class="disabled">
+														<b>12</b><br>Disabled
+													</div>
+												</div>
+											</div>
+										</div>
+										<br>
+										<br>
+										<br>
+										<div class="request-button-bottom">
+											<button class="btn btn-primary" id="btnGet" ng-click="clickButton()"
+												style="margin-left: 10px;margin-right: 5px;">Request</button>
+											<button class="btn btn-warning"
+												style="margin-left: 5px;margin-right: 5px;">Refresh</button>
+											<!-- <button class="btn btn-success"
+												style="margin-left: 5px;margin-right: 5px;">Launch</button>
+											<button class="btn btn-danger"
+												style="margin-left: 5px;margin-right: 5px;">Release</button> -->
+										</div>
+									</div>
+								</div>
+								<!--ER HTML-->
+							</div>
+						</td>
+						<td>
+							<div id="ER1" class="panelbox ER" style="margin-left: 12px;">
+								<!--ER HTML-->
+								<div class="ER-main">
+									<img alt="suggestion_icon" class="img-responsive icons custom-widet"
+										src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/png/016-web-management.png"
+										width="40px">
+									<p class="request-title">VmWare
+										<span class="glyphicon glyphicon-pencil glyphicon-icon"></span>
+										<a id="erhelp" href="#">
+											<i class="fa fa-question-circle ERhelp" title="Ask for Help"
+												aria-hidden="true"></i>
+										</a>
+										<a id="ERReport" href="#">
+											<i class="fa fa-file-excel-o ERadmin" title="ER Reports"
+												aria-hidden="true"></i>
+										</a>
+										<a id="ERadminconsole" href="#">
+											<i class="fa fa fa-user-o ERadminconsole" title="Admin Console"
+												aria-hidden="true"></i>
+										</a>
+									</p>
+									<hr style="height:2px; color:grey">
+									<div id="ER">
+										<div class="ERhexbox">
+											<div class="requestDetails" style="width: 378px">
+
+												<div class="description" style="height: 250px;">
+
+													<table id="Table1"
+														class="table table-striped table-hover custom-table">
+														<thead>
+															<th>Name</th>
+															<th>Description</th>
+														</thead>
+														<tbody ng-repeat="data in checkedData">
+															<tr>
+																<td>{{data[11093002]}}</td>
+																<!-- <td>{{onedata['11093002']}}</td>
+																<td>{{onedata['8']}}</td> -->
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+
+										<!-- <div class="RequestButtons">
+											<div class="large-image">
+												<img src="/com.vyom.vyomlib/resources/MyPage_Vyom1/images1/png/016-web-management.png"
+													style="margin-left: 142px">
+											</div>
+											<div class="buttons">
+												<div class="count" style="margin-left: 132px;">
+													<div class="active">
+														<b>03</b><br>Active
+													</div>
+													<br>
+													<div class="disabled">
+														<b>12</b><br>Disabled
+													</div>
+												</div>
+											</div>
+										</div> -->
+										<!-- <br>
+										<br>
+										<br> -->
+										<div class="request-button-bottom" style="float: right; margin-right: 15px;">
+											<button class="btn btn-primary" id="btnGet" ng-click="clickButton()"
+												style="margin-left: 5px;">Request</button><br>
+											<button class="btn btn-warning"
+												style="margin-left: 5px;">Refresh</button><br>
+											<button class="btn btn-success"
+												style="margin-left: 5px;">Launch</button><br>
+											<button class="btn btn-danger" style="margin-left: 5px;">Release</button>
+										</div>
+									</div>
+								</div>
+								<!--ER HTML-->
+							</div>
+						</td>
+						<!-- </td> -->
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+#
+#Tue Mar 10 15:17:20 UTC 2020
+IgnoreRuleExecution=false
+DuplicateDataActionType=MERGE
+Name=Functional Roles
+ImportOrder=1

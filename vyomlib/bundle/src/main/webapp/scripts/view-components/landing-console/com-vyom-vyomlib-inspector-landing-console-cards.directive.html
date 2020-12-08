@@ -1,0 +1,57 @@
+<label ng-class="options.attrs.label.class">
+    <rx-tooltip tooltip="options.tooltip"></rx-tooltip>
+    {{options.label}}:
+</label>
+  
+
+<div ng-if="cards.length">
+<div ng-repeat="i in cards" style="" class="selected-options">
+   <!---->
+   
+      <div class="rx-inspector-record-grid-column-editor__container">
+          <span  title="{{i.ApplicationName}}" class="rx-inspector-record-grid-column-editor__card-title" >{{i.ApplicationName}}
+          </span>
+          
+          <span  class="action-button d-icon-left-pencil" ng-click="setObject($index);" role="button" tabindex="0">
+          </span> 
+          <span  class="action-button d-icon-left-cross" ng-click="remove($index);" role="button" tabindex="0">
+          </span>
+        </div>
+      <div  class="column-type " ng-if="i.Description">
+          <div class="rx-inspector-record-grid-column-editor__card-title">Description:</div>
+          <em>{{i.Description}}</em>
+      </div>
+    <div  class="column-type " ng-if="i.URL">
+        <div class="rx-inspector-record-grid-column-editor__card-title">URL:</div>
+        <a href="#"><em> {{i.URL}}</em></a>
+      </div>
+    <div  class="column-type " ng-if="i.Icon">
+        <div class="rx-inspector-record-grid-column-editor__card-title">Icon:</div>
+        <p class="d-icon-{{i.Icon}}"></p>
+      </div>
+    <div  class="column-type " ng-if="i.Color">
+        <div class="rx-inspector-record-grid-column-editor__card-title">Color:</div>
+        <div class="btn btn-{{i.Color}}">
+        <em> {{i.Color}}</em>
+        </div>
+      </div>
+    <div  class="column-type " ng-if="i.tooltipHeader">
+        <div class="rx-inspector-record-grid-column-editor__card-title">Tooltip Header:</div>
+        <em> {{i.tooltipHeader}}</em>
+      </div>
+    <div  class="column-type " ng-if="i.tooltipDescription">
+        <div class="rx-inspector-record-grid-column-editor__card-title">Tooltip Description:</div>
+        <em> {{i.tooltipDescription}}</em>
+      </div>
+    <div  class="column-type " ng-if="i.permissions">
+        <div class="rx-inspector-record-grid-column-editor__card-title">Permission:</div>
+        <em> {{i.permissions}}</em>
+      </div>
+   
+</div>
+</div>
+<div ng-if="!cards.length">
+    Cards not Available.
+</div>    
+    
+

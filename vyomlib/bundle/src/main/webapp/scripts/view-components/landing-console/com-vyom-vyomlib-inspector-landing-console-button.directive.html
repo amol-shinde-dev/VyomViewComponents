@@ -1,0 +1,21 @@
+<label ng-class="options.attrs.label.class">
+    <rx-tooltip tooltip="options.tooltip"></rx-tooltip>
+    {{options.label}}:
+
+<div class="input-group">
+ <span class="input-group-btn">
+        <button type="button" class="rx-editor-header__button d-button d-button_primary d-button_small"
+                ng-click="saveObject();"
+                ng-disabled="false">Add Card</button>
+    </span>
+    <span class="input-group-btn">
+        <button type="button" class="rx-editor-header__button rx-editor-header__button_save rx-editor-header__button_divider-before d-button d-button_primary d-button_small"
+                ng-click="updateObject();"
+                ng-disabled="false">Update</button>
+    </span>
+    <span class="input-group-btn">
+        <button type="button" class="rx-editor-header__button rx-editor-header__button_save rx-editor-header__button_divider-before d-button d-button_primary d-button_small"
+                ng-click="clearFields();"
+                ng-disabled="false">Clear</button>
+    </span>
+</div>

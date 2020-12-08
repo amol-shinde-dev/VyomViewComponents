@@ -1,0 +1,58 @@
+{
+    "name": "com.vyom.vyomlib",
+    "version": "1.0.0",
+    "description": "vyomlib",
+    "main": "Index.html",
+    "keywords": [
+        "vyomlib",
+        "BMC Software Inc."
+    ],
+    "author": "BMC Software Inc.",
+    "license": "Commercial",
+    "config": {
+        "standardlibTarget": "$RX_SDK_HOME/standardlib/target/web-build/webapp"
+    },
+    "engines": {
+        "node": "=10.16.0"
+    },
+    "devDependencies": {
+        "connect-livereload": "0.6.1",
+        "grunt": "1.0.3",
+        "grunt-angular-templates": "1.1.0",
+        "grunt-connect-proxy2": "2.0.0",
+        "grunt-contrib-clean": "1.1.0",
+        "grunt-contrib-concat": "1.0.1",
+        "grunt-contrib-connect": "2.0.0",
+        "grunt-contrib-copy": "1.0.0",
+        "grunt-contrib-cssmin": "3.0.0",
+        "grunt-contrib-jshint": "2.0.0",
+        "grunt-contrib-uglify": "4.0.0",
+        "grunt-chokidar": "1.0.1",
+        "grunt-html-build": "0.7.1",
+        "grunt-jsvalidate": "0.2.2",
+        "grunt-karma": "3.0.1",
+        "grunt-newer": "1.3.0",
+        "grunt-ng-annotate": "3.0.0",
+        "grunt-ngdocs": "0.2.11",
+        "grunt-open": "0.2.3",
+        "grunt-preprocess": "5.1.0",
+        "grunt-sass": "3.0.2",
+        "grunt-sync": "0.8.0",
+        "istanbul-combine": "0.3.0",
+        "jasmine-core": "3.3.0",
+        "karma": "4.0.0",
+        "karma-chrome-launcher": "2.2.0",
+        "karma-coverage": "1.1.2",
+        "karma-jasmine": "2.0.1",
+        "karma-jasmine-matchers": "4.0.1",
+        "karma-ng-html2js-preprocessor": "1.0.0",
+        "load-grunt-config": "1.0.1",
+        "lodash": "4.17.11",
+        "moment": "2.24.0",
+        "ng-html2js": "3.0.0",
+        "recursive-merge": "1.2.1",
+        "serve-static": "1.13.2",
+        "time-grunt": "2.0.0",
+        "node-sass": "4.11.0"
+    }
+}
