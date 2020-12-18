@@ -76,6 +76,11 @@
             },
 
                         {
+                            name: 'userApplicationNamedList',
+                            isConfig: true,
+            },
+
+                        {
 
                             name: 'cardActionGuid',
                             isConfig: true,
@@ -100,7 +105,6 @@
 
                             name: 'cardStatus',
                             isConfig: true,
-
                             enableExpressionEvaluation: true
 
                     },

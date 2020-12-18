@@ -11,6 +11,7 @@
                     designType: 'com-vyom-vyomlib-custom-blog-design',
                     designManagerService: 'comVyomVyomlibCustomBlogDesign',
                     bundleId: 'com.vyom.vyomlib',
+                    canBeEmbeddedInRecordEditor: true,
                     propertiesByName: [
                         {
 

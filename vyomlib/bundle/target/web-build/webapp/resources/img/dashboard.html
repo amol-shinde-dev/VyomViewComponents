@@ -1,0 +1,1124 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            .headerPage{
+                background-image: url(header.png);
+                align-content: center;
+                text-align: center;
+                padding-top: 50px;
+                padding-bottom: 20px;
+                width: 100%;
+            }
+            .form-control{
+                width: 100%;
+                height: 3%;
+            }
+            .bodyPage{
+                margin-top: 20px;
+            }
+        </style>
+        <style>
+            
+            *, *:before, *:after {
+              box-sizing: inherit;
+            }
+
+        </style>
+        <style>
+
+            .tile{float:left; margin:5px; padding:0px; }
+            .tile:hover{
+                box-shadow: 0 0 6px grey; 
+            }
+
+            /*.card {
+
+
+                transition: 0.3s;
+
+            }
+
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }*/
+
+            /*.container {
+                padding: 0px;
+                margin: 0px;
+            }*/
+            .logoFinance{
+                    width: 40px;
+                    height: 40px;
+                    margin: 0px;
+                    padding: 0px;
+                }
+            .heading{
+                padding-left: 10px;
+
+            }
+            .headerFinance{
+                margin: 0px;
+                padding: 0px;
+                /*margin-left: -15px;*/
+
+            }
+            .new{
+                max-width: 350px;
+            }
+        </style>
+  
+        <style>
+            #exTab1 .tab-content {
+              /*color : white;
+              background-color: #428bca;*/
+              padding : 5px 15px;
+            }
+
+            #exTab2 h3 {
+              /*color : white;
+              background-color: #428bca;*/
+              padding : 5px 15px;
+            }
+
+            /* remove border radius for the tab */
+
+            #exTab1 .nav-pills > li > a {
+              border-radius: 0;
+            }
+
+            /* change border radius for the tab , apply corners on top*/
+
+            #exTab3 .nav-pills > li > a {
+              border-radius: 4px 4px 0 0 ;
+            }
+
+            #exTab3 .tab-content {
+             /* color : white;*/
+             /* background-color: #428bca;*/
+              padding : 5px 15px;
+            }
+            .vertical-menu {
+                width: 200px;
+            }
+
+            .vertical-menu a {
+                display: block;
+                padding: 12px;
+                text-decoration: none;
+            }
+
+            .vertical-menu a:hover {
+                background-color: #ccc;
+            }
+            li{
+                width: 150px;
+            }
+            .tree > ul {
+				margin: 0;
+				padding: 0;
+			}
+
+			.tree > ul > li {
+				padding-bottom: 10px;
+			}
+
+			.tree > ul > li:nth-child(2n) {
+				background: #d9edf7;
+			}
+
+			.tree li {
+				list-style-type: none;
+				margin: 0;
+				padding: 0px 5px 0 5px;
+				position: relative
+			}
+
+			.tree li li li::before,
+			.tree li li li::after {
+				content: '';
+				left: -20px;
+				position: absolute;
+				right: auto
+			}
+
+			.tree li::before {
+				border-left: 1px solid #999;
+				bottom: 50px;
+				height: 100%;
+				top: 0;
+				width: 1px
+			}
+
+			.tree li::after {
+				border-top: 1px solid #999;
+				height: 20px;
+				top: 25px;
+				width: 25px
+			}
+
+			.tree li span {
+				display: inline-block;
+				padding: 3px 8px;
+				text-decoration: none
+			}
+
+			.tree li.parent_li>span {
+				cursor: pointer
+			}
+
+			.tree>ul>li::before,
+			.tree>ul>li::after {
+				border: 0
+			}
+
+			.tree li:last-child::before {
+				height: 30px
+			}
+
+			.tree li.parent_li>span:hover,
+			.tree li.parent_li>span:hover+ul li span {
+				background: #eee;
+				color: #000
+			}
+            .logoProfile{
+                width: 40px;
+                height: 40px;
+                margin: 0px;
+                padding: 0px;
+            }
+            .heading{
+                padding-left: 10px;
+
+            }
+            .headerProfile{
+                margin: 0px;
+                padding: 0px;
+                /*margin-left: -15px;*/
+
+            }
+            td{
+                font-size: 12px;
+            }
+            /*.tile{
+                float:left; 
+                margin:0 5px 0 0; 
+                padding:2px; 
+
+            }*/
+            .name{
+
+                font-size: 16px;
+                font-family: inherit;
+                margin-bottom: 0px;
+            }
+            .des{
+
+                font-size: 12px;
+                font-family: inherit;
+            }
+            .location{
+
+                font-family: inherit;
+                font-size: 12px;
+            }
+            .details{
+
+                font-family: inherit;
+                font-size: 12px;
+            }
+            .data{
+                padding-left: 15px;
+                padding-right: 15px;
+                font-size: 10px;
+                /*width: 216px;
+                height: 100px;*/
+                padding-bottom: 0px;
+            }
+            body{
+                color: grey;
+            }
+            .scrollbar
+            {
+                float: left;
+                background: #F5F5F5;
+
+                overflow-y: scroll;
+                /*                margin-bottom: 25px;*/
+            }
+            #style-7::-webkit-scrollbar-track
+            {
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+                background-color: #F5F5F5;
+                border-radius: 10px;
+            }
+
+            #style-7::-webkit-scrollbar
+            {
+                width: 10px;
+                background-color: #F5F5F5;
+            }
+
+            #style-7::-webkit-scrollbar-thumb
+            {
+                border-radius: 10px;
+                background-image: -webkit-gradient(linear,
+                left bottom,
+                left top,
+                color-stop(0.44, rgb(122,153,217)),
+                color-stop(0.72, rgb(73,125,189)),
+                color-stop(0.86, rgb(28,58,148)));
+            }
+
+
+        </style>
+        <style>
+
+            .time{
+                float:left; 
+                margin:0 5px 0 0; 
+                padding:2px; }
+
+
+            /*.card {
+
+                transition: 0.3s;
+
+            }*/
+            .name{
+                color: black;
+                font-size: 14px;
+            }
+            .des{
+                color: grey;
+                font-size: 10px;
+            }
+            .location{
+                color: grey;
+                font-size: 10px;
+            }
+            .details{
+                color: #3f82b9;
+                font-size: 10px;
+            }
+            /*.card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }*/
+
+            /*.container {
+                padding: 2px 16px;
+
+            }*/
+            /*.table-bk{
+                background-color: #D3D3D3;
+                padding-left: 15px;
+                padding-right: 15px;
+                font-size: 10px;
+            }
+            .data{
+                padding-left: 15px;
+                padding-right: 15px;
+                color: #3f82b9;
+            }*/
+
+            #grid {
+                display: flex;
+                flex-wrap: wrap;
+                width: 80%;
+                overflow: hidden;
+                font-size: 15px;
+                list-style-type: none;
+                margin-left: -20px;
+            }
+
+            .hexagon {
+                /*        position: absolute;*/
+                margin-left: -20px;
+                margin-top: -10px;
+                visibility: hidden;
+                left: 0%;
+                right: 80%;
+                
+                outline: 1px solid transparent;
+            }
+
+            .hexagon::after {
+                content: '';
+                display: block;
+                padding-bottom: 0.602%;
+            }
+
+            .inside {
+                position: absolute;
+                width: 96%;
+                padding-bottom: 110.851%;
+                /*        margin: 0 2%;*/
+                overflow: hidden;
+                text-align: center;
+                color: grey;
+                visibility: hidden;
+                outline: 1px solid transparent;
+                -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+                -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+                transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+            }
+
+            .inside * {
+                position: absolute;
+                visibility: visible;
+                text-align: center;
+                color: grey;
+                outline: 1px solid transparent;
+            }
+
+            .link1 {
+                display: block;
+                width: 100%;
+                height: 100%;
+
+                overflow: hidden;
+                background: #FFDDD1;
+                color: grey;
+                -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+                -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+                transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+            }
+            .link2 {
+                display: block;
+                width: 100%;
+                height: 100%;
+
+                overflow: hidden;
+                background: #B2E0FC;
+                color: grey;
+                -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+                -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+                transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+            }
+
+            .hexagon h1,
+            .hex p {
+                width: 20%;
+            }
+
+            .hexagon h1 {
+                bottom: 0%;
+                font-size: 1.8em;
+                color: grey;
+                left: 25%;
+                padding-top: 10px;
+                top: 4%;
+
+            }
+
+            .hexagon h1::after {
+                position: relative;
+                left: 5%;
+                width: 10%;
+                text-align: center;
+
+            }
+
+            .hexagon p {
+                top: 20%;
+                padding-bottom: 50%;
+            }
+
+
+
+            @media (min-width:1201px) {
+                #grid {
+                    padding-bottom: 4.4%
+                }
+                .hexagon {
+                    width: 100%;
+                }
+                .hexagon:nth-child(9n+6) {
+                    /*            margin-left: 10%;*/
+                }
+            }
+
+            @media (max-width: 1200px) and (min-width:901px) {
+                #grid {
+                    padding-bottom: 12.5%
+                }
+                .hexagon {
+                    width: 65%;
+                }
+                .hexagon:nth-child(7n+5) {
+                    /*            margin-left: 12.5%;*/
+                }
+            }
+
+            @media (max-width: 900px) and (min-width:601px) {
+                #grid {
+                    padding-bottom: 7.4%
+                }
+                .hexagon {
+                    width: 33.333%;
+                }
+                .hexagon:nth-child(5n+4) {
+                    /*            margin-left: 16.666%;*/
+                }
+            }
+
+            @media (max-width: 600px) {
+                #grid {
+                    padding-bottom: 11.2%
+                }
+                .hexagon {
+                    width: 50%;
+                }
+                .hexagon:nth-child(3n+3) {
+                    /*            margin-left: 25%;*/
+                }
+            }
+
+            @media (max-width: 400px) {
+                #grid {
+                    font-size: 13px;
+                }
+            }
+            .balance{
+                /*padding-top: 5px;*/
+                padding-left: 35px;
+                font-size: 12px;
+            }
+            .heading{
+                position: relative;
+
+                right: 3%;
+
+            }
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row headerPage">
+                <div class="row">
+                    <h1>May I help you?</h1>
+                </div>
+                <div class="row">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <input type="text" class="form-control" id="searchBar"/>
+                    </div>
+                    <div class="col-sm-1 ">
+                        <a href="#" class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-search"></span> Search 
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="row"></div>
+            <div class="row bodyPage">
+                <div class="col-sm-3">
+                    <div id="Profile" class="container Profile" style="float: left; width: 300px" >
+                        <div class="top row" style="padding: 0px;">
+                            <input id="idOHRID1" disabled="disabled" style="visibility: hidden">
+                            <div class="col-xs-4" style="margin-left: 10px; padding: 0px">
+                                <a href="{{URL}}"><img src="/com.vyomlabs.vyom-library/resources/img/home 1.png" style="float: left; height:40px; width:40px;margin-left: 0px"></a>
+                            </div>
+                            <div class="col-xs-4" style="padding: 0px; margin-left: -15px">
+                                <div style="padding: 20 0 0 0px;">
+                                  <img src="/com.vyomlabs.vyom-library/resources/img/{{picture}}" align="middle" style="width:90px;height:90px; border-radius: 50%"/>
+                                </div>
+                                <div style="padding: 0px">
+                                    <div class="row">
+                                        <h2 style="text-align: center; font-size: 16px; margin: 3px" class="name">{{userName}}</h2>
+                                    </div>
+                                    <div class="row">
+                                        <h6 style="text-align: center; margin: 3px; font-size: 12px;" class="des">
+                                        {{designation}}
+                                        </h6>
+                                    </div>
+                                    <div class="row">
+                                        <h6 style="text-align: center; margin: 3px; font-size: 12px;" class="des">
+                                        {{location}}
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-2" style="padding: 5 0 0 40px">
+                                <span  data-toggle="modal" data-target="#userDetails" class="glyphicon glyphicon-info-sign" style="color: #125a9c"></span>
+                            </div>
+
+                            <!-- Modal -->
+                                  <div class="modal fade" id="userDetails" role="dialog">
+                                    <div class="modal-dialog">
+
+                                      <!-- Modal content-->
+                                      <div class="modal-content">
+                                        <div class="modal-header" style="background-color: black; padding: 5px">
+                                          <div class="header row">    
+                                            <div class="col-xs-2 logo" style="float: left" >
+                                                <img src="/com.vyomlabs.vyom-library/resources/img/basic%20details.png" width="40px" height="40px" >
+                                            </div>
+
+                                            <div class="col-xs-6 heading">
+                                                <h4 style="color: #3f82b9;float: left; margin-top: 8px; ">Basic Details</h4>
+                                            </div>
+                                            <div class="col-xs-4 heading" style="padding: 0 0 0 10px">
+                                                <h6 style="color: white;float: left; margin-top: 18px; ">Last Update Date    |   13-Jun-2018</h6>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="modal-body">
+                                          <div class="container" style="width: 800px; margin: 5px">
+
+                                            <div id="exTab1" class="row" style="padding-top: 10px">
+                                                <div class="col-xs-2" style="padding: 0 0 0 15px">
+                                                    <ul  class="nav nav-pills vertical-menu">
+                                                            <li class="active">
+                                                                <a  href="#home" data-toggle="tab">Basic Details</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#profile" data-toggle="tab">Personal Details</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#managerTeam" data-toggle="tab">Manager View</a>
+                                                            </li>
+                                                            <!--<li>
+                                                                <a href="#hrmView" data-toggle="tab">HRM View</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#assignment" data-toggle="tab">Assignment History</a>
+                                                            </li>-->
+                                                    </ul>
+                                                </div>
+                                                    <div class="col-xs-5" style="padding: 0px; margin-left: 20px; border: 0.1px solid lightgrey">
+                                                        <div class="tab-content clearfix">
+                                                            <div class="tab-pane active" id="home">
+                                                                <table class="personaldetailstable" border="0.5">
+                                                                    <tr>
+                                                                        <td>Name</td>
+                                                                        <td><input id="inputName1" disabled="disabled"></td>
+                                                                    </tr>
+                                                                   <!-- <tr>
+                                                                        <td>Email</td>
+                                                                        <td><input id="inputEmail" disabled="disabled"></td>
+                                                                    </tr>-->
+                                                                    <tr>
+                                                                        <td>OHR ID</td>
+                                                                        <td><input id="idOHRID" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Date of Joining</td>
+                                                                        <td><input id="inputDOJ" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Center of Excellence</td>
+                                                                        <td><input id="inputCOE" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Service Delivery Organization</td>
+                                                                        <td><input id="inputSDO" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Band</td>
+                                                                        <td><input id="inputBand" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Designation</td>
+                                                                        <td><input id="inputDESIGNATION" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <!-- <tr>
+                                        <td>Client/Function</td>
+                                        <td><input id="inputClientFunction" disabled="disabled"></td>
+                                      </tr> -->
+                                                                    <tr>
+                                                                        <td>Supervisor Name</td>
+                                                                        <td><input id="inputSupervisorName" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <!--<tr>
+                                                                        <td>Performance History</td>
+                                                                        <td><input id="performanceHistory" disabled="disabled"></td>
+                                                                    </tr>-->
+
+                                                                </table>
+
+                                                            </div>
+                                                            <div class="tab-pane" id="profile">
+                                                                <table class="personaldetailstable" border="0.5">
+                                                                    <tr>
+                                                                        <td>Personal Email ID</td>
+                                                                        <td><input id="inputPersonalEmailID" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Emergency Contact Number</td>
+                                                                        <td><input id="inputEmergencyContactNumber" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <tr id="trPf">
+                                                                        <td>PF Account Number</td>
+                                                                        <td><input id="inputPFAccountNumber" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <tr id="trUAN">
+                                                                        <td>Universal Account Number</td>
+                                                                        <td><input id="inputUniversalAccountNumber" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Business Group</td>
+                                                                        <td><input id="inputBusinessGroup" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>LE</td>
+                                                                        <td><input id="inputLE" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Department</td>
+                                                                        <td><input id="inputDepartment" disabled="disabled"></td>
+                                                                    </tr>
+                                                                    <!--<tr>
+                                                                        <td>Address</td>
+                                                                        <td><input id="inputAddress" disabled="disabled"></td>
+                                                                    </tr>-->
+                                                                </table>
+                                                            </div>
+                                                            <div class="tab-pane" id="managerTeam">
+                                                                <div class="tree">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <ul>
+                                                                                <li>
+                                                                                    <div style="padding: 0 0 0 0px" class="container">
+                                                                                        <i class="icon-minus-sign" ></i>
+                                                                                        <div class="col-xs-1" style="padding: 0 0 0 0px">
+                                                                                            <img src=/com.vyomlabs.vyom-library/resources/img/user-icon.png width="40px" height="40px" style="border-radius: 50%; ">
+                                                                                        </div>
+                                                                                        <div class="col-xs-3" style="margin: 10 0 0 -40px">
+                                                                                            <a>Manager Name</a></div>
+                                                                                    </div>
+                                                                                    <ul>
+                                                                                        <li>
+                                                                                            <div style="padding: 0 0 10 0px" class="container">
+                                                                                                <i class="icon-leaf"></i>
+                                                                                                <div class="col-xs-1" style="padding: 0 0 0 0px">
+                                                                                                    <img src=/com.vyomlabs.vyom-library/resources/img/user-icon.png width="40px" height="40px" style="border-radius: 50%; ">
+                                                                                                </div>
+                                                                                                <div class="col-xs-3" style="margin: 10 0 0 -40px">
+                                                                                                    <a>Employee Name</a></div>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                        <li>
+                                                                                            <div style="padding: 0 0 10 0px" class="container">
+                                                                                                <i class="icon-leaf"></i>
+                                                                                                <div class="col-xs-1" style="padding: 0 0 0 0px">
+                                                                                                    <img src=/com.vyomlabs.vyom-library/resources/img/user-icon.png width="40px" height="40px" style="border-radius: 50%; ">
+                                                                                                </div>
+                                                                                                <div class="col-xs-3" style="margin: 10 0 0 -40px">
+                                                                                                    <a>Employee Name</a></div>
+                                                                                            </div>
+                                                                                        </li><li>
+                                                                                            <div style="padding: 0 0 0 0px" class="container">
+                                                                                                <i class="icon-leaf"></i>
+                                                                                                <div class="col-xs-1" style="padding: 0 0 0 0px">
+                                                                                                    <img src=/com.vyomlabs.vyom-library/resources/img/user-icon.png width="40px" height="40px" style="border-radius: 50%; ">
+                                                                                                </div>
+                                                                                                <div class="col-xs-3" style="margin: 10 0 0 -40px">
+                                                                                                    <a>Employee Name</a></div>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </li>
+
+                                                                            </ul>
+                                                                        </li>
+
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <!--<div class="tab-pane" id="4a">
+                                                                <h3>HRM View</h3>
+                                                            </div>
+                                                            <div class="tab-pane" id="assignment">
+                                                                <h3>Assignment History</h3>
+                                                            </div>-->
+                                                        </div>
+                                                    </div>
+                                              </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  </div>
+
+                        </div>
+                        <div class="row"></div>
+                        <div class="data" style="padding-left: 50px; padding-top: 10px">
+                            <div class="row" style="padding-bottom: 10px;">
+                                 <img src="/com.vyomlabs.vyom-library/resources/img/phone.png" align="middle" style="border-radius: 50%; width:20px;height:20px;">  
+                                {{primaryPhoneNumber}}
+                            </div>
+                            <div class="row" style="padding-bottom: 10px;">
+                                 <img src="/com.vyomlabs.vyom-library/resources/img/skype.png" align="middle" style="width:20px;height:20px; border-radius: 50%; padding-bottom: : 5px;">
+                                {{skypeId}}
+                            </div>
+                            <div class="row">
+                                 <img src="/com.vyomlabs.vyom-library/resources/img/phone.png" align="middle" style="border-radius: 50%; width:20px;height:20px;">  
+                                {{primaryPhoneNumber}}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="container Finance" style="width: 350px;">
+    
+                        <div class="headerFinance row new">    
+                            <div class="col-xs-2 logoFinance" style="float: left" >
+                                <img src="/com.vyomlabs.vyom-library/resources/img/my-financials-logo.png" width="40px" height="40px" >
+                            </div>
+
+                            <div class="col-xs-6 heading">
+                                <h4 style="color: #3f82b9;float: left; margin-top: 8px; ">My Financials</h4>
+                            </div>
+                        </div> 
+
+                        <div class="row new container">
+                            <div class="col-xs-3" style="padding-left: 5px">
+                                <div data-toggle="modal" data-target="#myPayroll" style="height: 90px; width: 105px; background-color:#125a9c;" class="tile card">
+
+                                    <p style="text-align:center; padding-top: 5px;margin-bottom: 5px"> 
+                                        <img src="/com.vyomlabs.vyom-library/resources/img/payroll 1.png" align="middle" style="width:40px;height:40px;">
+                                    </p>
+                                    <h6 align="center" style="color: white">My Payroll</h6>
+
+                                </div>
+                                <!-- Modal -->
+                                  <div class="modal fade" id="myPayroll" role="dialog">
+                                    <div class="modal-dialog">
+
+                                      <!-- Modal content-->
+                                      <div class="modal-content" style="width: 500px">
+                                        <div class="modal-header" style="background-color: black">
+                                          <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                                          <h4 class="modal-title" style="color: white">My Payroll</h4>
+                                        </div>
+                                        <div class="modal-body" style="height: 200px; ">
+                                            <div class="col-xs-5">
+                                                <label for="sel1">Year:</label>
+                                                <select class="form-control" id="sel1" style="height:15px">
+                                                    <option>Select Year</option>
+                                                    <option>2015</option>
+                                                    <option>2016</option>
+                                                    <option>2017</option>
+                                                    <option>2018</option>
+                                                </select><br>
+                                            </div>
+                                            <div class="row new"></div>
+                                            <div class="col-xs-5">
+                                                <label for="sel1">Month:</label>
+                                                <select class="form-control" id="sel1" style="height:15px">
+                                                    <option>Select Month</option>
+                                                    <option>Jan</option>
+                                                    <option>Feb</option>
+                                                    <option>Mar</option>
+                                                    <option>Apr</option>
+                                                </select><br>
+                                            </div>
+                                            <div class="row new"></div>
+                                            <div class="buttonBar" style="padding-left: 18px">
+                                                <a href="https://www.rit.edu/fa/controller/sites/rit.edu.fa.controller/files/files/docs/samplepayslip509.pdf" target="_blank"><button class="btn btn-success">Download</button></a>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-xs-6 ">
+                                <div class="row new" style="width:280px">
+                                    <div class="col-xs-5" style="padding: 0 0 0 15px">
+                                        <div data-toggle="modal" data-target="#salary" style="height: 40px; width: 105px; background-color:#02adcf;" class="tile card">
+
+                                            <h6 align="center" style="color: white; margin: 0px; padding-top: 10px; font-family: sans-serif;">Last Salary Revision</h6>
+
+                                        </div>
+                                        <!-- Modal -->
+                                              <div class="modal fade" id="salary" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                  <!-- Modal content-->
+                                                  <div class="modal-content">
+                                                    <div class="modal-header" style="background-color: black">
+                                                      <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                                                      <h4 class="modal-title" style="color: white">Last Salary Revision</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      <p>Some text in the modal.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                  </div>
+
+                                                </div>
+                                              </div>
+                                    </div>
+                                    <div class="col-xs-5" style="padding:0px">
+                                        <div data-toggle="modal" data-target="#salary" style="height: 40px; width: 105px; background-color:#ec2f47;" class="tile card">
+
+                                            <h6 align="center" style="color: white; margin: 0px; padding-top: 10px; font-family: sans-serif;">Bonus Letter</h6>
+
+                                        </div>
+                                        <!-- Modal -->
+                                              <div class="modal fade" id="salary1" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                  <!-- Modal content-->
+                                                  <div class="modal-content">
+                                                    <div class="modal-header" style="background-color: black">
+                                                      <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                                                      <h4 class="modal-title" style="color: white">Bonus Letter</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      <p>Some text in the modal.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                  </div>
+
+                                                </div>
+                                              </div>
+                                    </div>
+                                </div>
+                                <div class="row new"></div>
+                                <div class="row new" style="width:280px">
+                                    <div class="col-xs-5" style="padding: 0 0 0 15px">
+                                        <div data-toggle="modal" data-target="#salary" style="height: 40px; width: 105px; background-color:#ec2f47;" class="tile card">
+
+                                            <h6 align="center" style="color: white; margin: 0px; padding-top: 10px; font-family: sans-serif; ">Address Proof</h6>
+
+                                        </div>
+                                        <!-- Modal -->
+                                              <div class="modal fade" id="salary2" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                  <!-- Modal content-->
+                                                  <div class="modal-content">
+                                                    <div class="modal-header" style="background-color: black">
+                                                      <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                                                      <h4 class="modal-title" style="color: white">Address Proof</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      <p>Some text in the modal.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                  </div>
+
+                                                </div>
+                                              </div>
+                                    </div>
+                                    <div class="col-xs-5" style="padding:0px">
+                                        <div data-toggle="modal" data-target="#salary" style="height: 40px; width: 105px; background-color:#125a9c;" class="tile card">
+
+                                            <h6 align="center" style="color: white; margin: 0px; padding-top: 10px; font-family: sans-serif; ">Employment Proof</h6>
+
+                                        </div>
+                                        <!-- Modal -->
+                                              <div class="modal fade" id="salary3" role="dialog">
+                                                <div class="modal-dialog">
+
+                                                  <!-- Modal content-->
+                                                  <div class="modal-content">
+                                                    <div class="modal-header" style="background-color: black">
+                                                      <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                                                      <h4 class="modal-title" style="color: white">Employment Proof</h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                      <p>Some text in the modal.</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                  </div>
+
+                                                </div>
+                                              </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container row new" >
+                            <div class="col-xs-3" style="padding-left: 5px">
+                                <div data-toggle="modal" data-target="#myPayroll1" style="height: 90px; width: 105px; background-color:#ec2f47;" class="tile card">
+
+                                    <p style="text-align:center; padding-top: 5px;margin-bottom: 5px"> 
+                                        <img src="/com.vyomlabs.vyom-library/resources/img/Piggy bank.png" align="middle" style="width:40px;height:40px;">
+                                    </p>
+                                    <h6 align="center" style="color: white">PF</h6>
+
+                                </div>
+                                <!-- Modal -->
+                                  <div class="modal fade" id="myPayroll1" role="dialog">
+                                    <div class="modal-dialog">
+
+                                      <!-- Modal content-->
+                                      <div class="modal-content">
+                                        <div class="modal-header" style="background-color: black">
+                                          <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                                          <h4 class="modal-title" style="color: white">PF</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                          <p>Some text in the modal.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-xs-3" style="">
+                                <div data-toggle="modal" data-target="#myPayroll2" style="height: 90px; width: 105px; background-color:#125a9c;" class="tile card">
+
+                                    <p style="text-align:center; padding-top: 5px;margin-bottom: 5px"> 
+                                        <img src="/com.vyomlabs.vyom-library/resources/img/soft loan 2.png" align="middle" style="width:40px;height:40px;">
+                                    </p>
+                                    <h6 align="center" style="color: white">Soft Loan</h6>
+
+                                </div>
+                                <!-- Modal -->
+                                  <div class="modal fade" id="myPayroll2" role="dialog">
+                                    <div class="modal-dialog">
+
+                                      <!-- Modal content-->
+                                      <div class="modal-content">
+                                        <div class="modal-header" style="background-color: black">
+                                          <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                                          <h4 class="modal-title" style="color: white">Soft Loan</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                          <p>Some text in the modal.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-xs-3" style="">
+                                <div data-toggle="modal" data-target="#myPayroll3" ng-click="OpenPopupCenter()" style="height: 90px; width: 105px; background-color:#02adcf;" class="tile card">
+
+                                    <p style="text-align:center; padding-top: 5px;margin-bottom: 5px"> 
+                                        <img src="/com.vyomlabs.vyom-library/resources/img/letter 1.png" align="middle" style="width:40px;height:40px;">
+                                    </p>
+                                    <h6 align="center" style="color: white">Other Letters</h6>
+
+                                </div>
+                                <!-- Modal -->
+                                  <div class="modal fade" id="myPayroll3" role="dialog">
+                                    <div class="modal-dialog">
+
+                                      <!-- Modal content-->
+                                      <div class="modal-content">
+                                        <div class="modal-header" style="background-color: black">
+                                          <button type="button" class="close" data-dismiss="modal" style="color: white">&times;</button>
+                                          <h4 class="modal-title" style="color: white">Other Letters</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                          <p>Some text in the modal.</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div   style="width:350px ;"   class="time leave" >
+
+                        <div class="container" style="position: relative">
+                            <div class="col-xs-2 heading" >
+                                <img src="/com.vyomlabs.innovation/resources/img/calender.png" style="width:40px;height:40px;">
+                            </div>
+                            <div class="col-xs-11" style="padding-left: 30px; bottom: 40px;">
+                                <h4 style="color: #3f82b9">My HR</h4>
+                            </div>
+                        </div>
+
+                        <div class="container" style="position: relative; width: 300px;  margin-top: -15px">
+                            <div class="col-xs-6">
+                                <div>
+
+                                    <div id="container grid" >
+
+                                        <div class="col-xs-6 hexagon" style="padding-left: 0px">
+                                            <div class="inside">
+                                                <div class="link1">
+                                                    <h1 style="color: grey">12</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <p class="balance">Earned Leave<br>Balance</p>
+                                        </div>
+                                    </div>
+                                    <div class="row"></div>
+
+                                    <div id="container grid">
+
+                                        <div class="col-xs-6 hexagon" style="padding-top: 20% ; padding-left: 0px">
+                                            <div class="inside">
+                                                <div class="link2">
+                                                    <h1 style="color: grey">09</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-6"  style="padding-top: 20px; margin-left: -45px">
+                                            <p class="balance">Comp. Off<br>Balance</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-xs-3" style="margin-left: -12px">
+                                <div style="padding-top: 5px;  padding-bottom: 10px">
+                                    <a href="{{LeaveRequestURL}}" target="_blank"><button type="button" class="btn btn-primary btn-md" style="width: 145px" formtarget="_blank">Leave Request</button></a>
+                                </div>
+                                <div style="padding-bottom: 10px">
+                                    <a href="{{ApproveURL}}" target="_blank"><button type="button" class="btn btn-primary btn-md" style="width: 145px" formtarget="_blank">Approve Leave</button></a>
+                                </div>
+                                <div style="padding-bottom: 10px">
+                                    <a href="{{AttendanceRequestURL}}" target="_blank"><button type="button" class="btn btn-primary btn-md" style="width: 145px" formtarget="_blank">Attendance Request</button></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="container">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+    

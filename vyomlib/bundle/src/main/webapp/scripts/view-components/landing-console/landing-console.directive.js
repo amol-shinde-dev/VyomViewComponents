@@ -38,7 +38,7 @@
                             $scope.cardVisible = _config.cardVisible ? _config.cardVisible : "";
                             $scope.cardErrorInformation = _config.cardErrorInformation ? _config.cardErrorInformation : "";
                             $scope.cardStatusNamedList = _config.cardStatusNamedList ? _config.cardStatusNamedList : "";
-                            $scope.cardSorting = _config.cardSorting ? _config.cardSorting : "";
+                            $scope.cardSorting = _config.cardSorting ? _config.cardOrder == "true" ? "-" + _config.cardSorting : _config.cardSorting : "";
                             $scope.cardOrder = _config.cardOrder;
 
                             $scope.cardStatus = _config.cardStatus;
@@ -110,39 +110,33 @@
                             var foo = rxRecordInstanceDataPageResource.withName($scope.RecordDefinition);
                             var queryParams = {
                                 propertySelection: "1,2,3,4,5,6,7,8,179," + $scope.ApplicationName + "," + $scope.Description + "," + $scope.Color + "," + $scope.tooltipHeader + "," + $scope.Icon + "," + $scope.tooltipDescription + "," + $scope.BannerURL + "," + $scope.BannerImage + "," + $scope.Views + "," + $scope.ratingCount + "," + $scope.cardStatus + "," + $scope.cardFavourite + "," + $scope.cardScope + "," + $scope.CategoryField + "," + $scope.cardVisible + "," + $scope.cardErrorInformation,
-                                queryExpression: $scope.FilterExp ? $scope.FilterExp : ""
+                                queryExpression: $scope.FilterExp ? $scope.FilterExp : "",
+                                sortBy: $scope.cardSorting
 
                             };
 
                             foo.get(100, 0, queryParams).then(
                                 function (allRecords) {
                                     $scope.mydata = allRecords.data;
-                                    if ($scope.cardOrder == "true") {
 
-                                        $scope.cardList = $scope.mydata.sort(function (a, b) {
-                                            return b[$scope.cardSorting] - a[$scope.cardSorting];
-                                        });
-
-
-                                    } else {
-                                        $scope.cardList = _.sortBy(allRecords.data, $scope.cardSorting);
-                                    }
-
-
-                                    //.slice()
+                                    $scope.cardList = $scope.mydata;
 
                                     $scope.firstSlideImageObject = _.max($scope.cardList, function (obj) {
                                         return obj[$scope.Views];
                                     });
                                     $scope.getImage(false, $scope.firstSlideImageObject[179], "first");
 
-                                    $scope.secondSlideImageObject = _.max($scope.cardList, function (obj) {
-                                        return $scope.firstSlideImageObject[$scope.Views] > obj[$scope.Views];
+                                    //---------------
+                                    var secondCardList = _.without($scope.cardList, $scope.firstSlideImageObject);
+                                    $scope.secondSlideImageObject = _.max(secondCardList, function (obj) {
+                                        return obj[$scope.Views];
                                     });
                                     $scope.getImage(false, $scope.secondSlideImageObject[179], "second");
 
-                                    $scope.thirdSlideImageObject = _.max($scope.cardList, function (obj) {
-                                        return $scope.secondSlideImageObject[$scope.Views] > obj[$scope.Views];
+                                    // ---------------
+                                    var thirdCardList = _.without(secondCardList, $scope.secondSlideImageObject);
+                                    $scope.thirdSlideImageObject = _.max(thirdCardList, function (obj) {
+                                        return obj[$scope.Views];
                                     });
                                     $scope.getImage(false, $scope.thirdSlideImageObject[179], "third");
 
@@ -225,9 +219,13 @@
                         }
                         $scope.assignCurrentCategory = function (filterinput) {
 
-                            $scope.cardList = _.filter($scope.cardList, function (obj) {
-                                return obj[$scope.CategoryField] == filterinput;
-                            });
+                            if (filterinput == "ALL") {
+                                $scope.cardList = $scope.mydata;
+                            } else {
+                                $scope.cardList = _.filter($scope.cardList, function (obj) {
+                                    return obj[$scope.CategoryField] == filterinput;
+                                });
+                            }
                         }
 
                         $scope.hoverIn = function (item) {

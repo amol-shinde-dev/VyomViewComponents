@@ -106,6 +106,7 @@
                 <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category6" ng-click="assignCurrentCategory(Category6)">{{Category6}}</button>
                 <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category7" ng-click="assignCurrentCategory(Category7)">{{Category7}}</button>
                 <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category8" ng-click="assignCurrentCategory(Category8)">{{Category8}}</button>
+                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 10px;" ng-if="Category1" ng-click="assignCurrentCategory('ALL')">All</button>
                 <!-- switch button -->
                 <label class="switch" style="/*vertical-align: bottom;*/">
                     <input type="checkbox" ng-model="vm.isActive" ng-change="show_hide_recordGrid()">
@@ -120,7 +121,7 @@
     <div class="content hideme">
         <div class="container-fluid">
             <div class="row" id="reverse" ng-init="limit = 8">
-                <div class="selector col-lg-3 col-md-4 col-sm-4" ng-repeat="x in cardList | filter:query  | limitTo: limit as results ">
+                <div class="selector col-lg-3 col-md-4 col-sm-4" ng-repeat="x in cardList | filter:query | filter:userhaspermission | limitTo: limit as results ">
                     <div class="card card-stats w3-card-4 h-75 ">
                         <div class="card-header card-header-{{x[Color]}} card-header-icon h-75">
                             <div ng-click="setSelectedCardInstanceId(x[179]);executeAction(cardActionGuid);updateViewsCounter(x[179],x[Views])" data-toggle="modal" data-target="#portalpreviewmodal">
@@ -164,7 +165,7 @@
                             </p>
 
                             <div class="card-category togglebutton" ng-if="adminConfiguration">
-                                <em style="margin-right: 5px">Visible for All-{{x[cardVisible]}} </em>
+                                <em style="margin-right: 5px">Published -{{x[cardVisible]}} </em>
                                 <label><input type="checkbox" ng-model="x[cardVisible]" ng-change="updateCardVisibility(x[179],x[cardVisible])" ng-checked="{{x[cardVisible]}}" ng-disabled="x[cardVisible]=='ERROR'"> <span class="toggle"></span></label>
 
                                 <span ng-if="x[cardVisible]=='ERROR'" class="d-icon-exclamation_triangle" style="margin-right: 5px;font-size: 21px; color: red" rel="tooltip" data-html="true" data-placement="left" title="{{x[cardErrorInformation]}}" ng-mouseover="hoverIn('tooltip')">

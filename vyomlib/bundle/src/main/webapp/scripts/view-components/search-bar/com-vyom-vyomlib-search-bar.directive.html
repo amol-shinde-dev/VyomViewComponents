@@ -1,0 +1,749 @@
+<html>
+	<head>
+        <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		  <style>
+			.hovereffect {
+						  width: 100%;
+						  height: 100%;
+						  float: left;
+						  overflow: hidden;
+						  position: relative;
+						  text-align: center;
+						  cursor: default;
+						}
+
+						.hovereffect .overlay {
+						  width: 100%;
+						  height: 100%;
+						  position: absolute;
+						  overflow: hidden;
+						  top: 0;
+						  left: 0;
+						}
+
+						.hovereffect img {
+						  display: block;
+						  position: relative;
+						  -webkit-transition: all 0.4s ease-in;
+						  transition: all 0.4s ease-in;
+						}
+
+						.hovereffect:hover img {
+						  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0" /><feGaussianBlur stdDeviation="3" /></filter></svg>#filter');
+						  filter: grayscale(1) blur(3px);
+						  -webkit-filter: grayscale(1) blur(3px);
+						  -webkit-transform: scale(1.2);
+						  -ms-transform: scale(1.2);
+						  transform: scale(1.2);
+						}
+
+						.hovereffect h2 {
+						  text-transform: uppercase;
+						  text-align: center;
+						  position: relative;
+						  font-size: 17px;
+						  padding: 10px;
+						  background: rgba(0, 0, 0, 0.6);
+						}
+
+						.hovereffect a.info {
+						  display: inline-block;
+						  text-decoration: none;
+						  padding: 7px 14px;
+						  border: 1px solid #fff;
+						  margin: 50px 0 0 0;
+						  background-color: transparent;
+						}
+
+						.hovereffect a.info:hover {
+						  box-shadow: 0 0 5px #fff;
+						}
+
+						.hovereffect a.info, .hovereffect h2 {
+						  -webkit-transform: scale(0.7);
+						  -ms-transform: scale(0.7);
+						  transform: scale(0.7);
+						  -webkit-transition: all 0.4s ease-in;
+						  transition: all 0.4s ease-in;
+						  opacity: 0;
+						  filter: alpha(opacity=0);
+						  color: #fff;
+						  text-transform: uppercase;
+						}
+
+						.hovereffect:hover a.info, .hovereffect:hover h2 {
+						  opacity: 1;
+						  filter: alpha(opacity=100);
+						  -webkit-transform: scale(1);
+						  -ms-transform: scale(1);
+						  transform: scale(1);
+						}
+            .page{
+                padding: 0px;
+                margin: 0px;
+                margin-left: 20px;
+                /*max-width: 1920px;*/
+            }
+           /* http://sf.co.ua/12/12/wallpaper-2501763.jpg*/
+            /*https://images2.alphacoders.com/527/527942.jpg*/
+            /*https://images2.alphacoders.com/527/527942.jpg*/
+            
+            .headerPage{
+                /*background-image: url(http://hauntedstate.com/wp-content/uploads/2014/12/grunge1.jpg);*/
+                /*background-image: url(http://avante.biz/wp-content/uploads/Plain-Orange-Wallpapers/Plain-Orange-Wallpapers-005.jpg);*/
+                /*background-image: url(https://images4.alphacoders.com/166/166176.jpg);*/
+                /*background-image: url(http://marters.club/wp-content/uploads/2017/11/cement-wallpaper-on-wallpapers-and-pictures-concrete-for-mac-tablet-laptop-mobile-cement-wallpaper-uk.jpg);*/
+				 background-image: url("/com.vyom.vyomlib/resources/img/city_f.jpg");
+				 /*https://citydiscovery2.imgix.net/new_york.jpg?w=2100&h=1100&bri=-12&q=30&auto=format&crop=entropy&fit=crop*/
+                align-content: center;
+                text-align: center;
+                padding-top: 50px;
+                padding-bottom: 40px;
+                width: 100%;
+				height:480px;
+                
+                /*margin: 0px;
+                padding: 0px;*/
+                margin-bottom: 10px; 
+				
+				/*linear-gradient(
+				  rgba(40, 0, 80, 0.55), 
+				  rgba(20, 0, 50, 0.65)
+				);*/
+            }
+            .form-control{
+                width: 100%;
+                <!-- height: 9%; -->
+            }
+            .bodyPage{
+                margin-top: 20px;
+            }
+            .headerPage h3{
+                /*color: */
+            }
+            p{
+                color: #42bad2;
+            }
+            .row{
+                width: 100%;
+            }
+            .container{
+                width: 100%;
+            }
+            .service{
+                max-width: 285px;
+            }
+        </style>
+        <style>
+            body {
+              padding : 10px ;
+
+            }
+			
+			input[type="text"]{
+				padding-top: 25px;
+				padding-bottom: 25px;
+				border-radius: 4px 4px 4px 4px;				
+			}
+
+            #exTab1 .tab-content {
+              /*color : white;
+              background-color: #428bca;*/
+              padding : 5px 15px;
+            }
+
+            #exTab2 h3 {
+              /*color : white;
+              background-color: #428bca;*/
+              padding : 5px 15px;
+            }
+
+            /* remove border radius for the tab */
+
+            #exTab1 .nav-pills > li > a {
+              border-radius: 6.5px;
+            }
+
+            /* change border radius for the tab , apply corners on top*/
+
+            #exTab3 .nav-pills > li > a {
+              border-radius: 4px 4px 0 0 ;
+            }
+
+            #exTab3 .tab-content {
+             /* color : white;*/
+             /* background-color: #428bca;*/
+              padding : 5px 15px;
+            }
+            .vertical-menu {
+                width: 200px;
+				margin-left:10px;
+            }
+			
+			.vertical-menu li {
+				width: 200px;
+			}
+
+            .vertical-menu a {
+                display: block;
+                padding: 12px;
+                text-decoration: none;
+            }
+
+            .vertical-menu a:hover {
+                background-color: #ccc;
+            }
+			
+			
+			.horizontal-menu {
+                /*width: 200px;*/
+            }
+			
+			
+			.pager li>a
+			{
+				border: 0.5px lightgrey solid;
+				/*box-Shadow : 5px 10px 10px -5px rgba(0,0,0,0.5);*/
+				color:black;
+				/*padding-left: 95px;*/
+				padding-right: 25px;
+				padding-left: 25px;
+				padding-top: 15px;
+				padding-bottom: 5px
+			}
+			
+			.pager 
+			{
+				padding-left: 95px;
+			}
+
+            .horizontal-menu a {
+                display: block;
+				border: 0.5px lightgrey solid;
+				boxShadow : 5px 10px 10px -5px rgba(0,0,0,0.5);               
+                text-decoration: none;
+				text-align:center;
+				font-weight: bold;
+				color:black;
+				padding: 5px 40px;
+				padding-left: 37px;
+				padding-right: 36px;
+				padding-top: 16px;
+				padding-bottom: 17px
+            }
+					
+
+            .horizontal-menu a:hover {
+                background-color: #ccc;
+            }
+			
+			.horizontal-menu a img {
+					padding-bottom: 1px;
+					width:40px;
+					height:40px;
+				}
+				
+			.horizontal-menu li {					
+					width:90px;					
+				}
+			
+			
+            li{
+                width: 150px;
+            }
+            .tree > ul {
+				margin: 0;
+				padding: 0;
+			}
+
+			.tree > ul > li {
+				padding-bottom: 10px;
+			}
+
+			.tree > ul > li:nth-child(2n) {
+				background: #d9edf7;
+			}
+
+			.tree li {
+				list-style-type: none;
+				margin: 0;
+				padding: 0px 5px 0 5px;
+				position: relative
+			}
+
+			.tree li li li::before,
+			.tree li li li::after {
+				content: '';
+				left: -20px;
+				position: absolute;
+				right: auto
+			}
+
+			.tree li::before {
+				border-left: 1px solid #999;
+				bottom: 50px;
+				height: 100%;
+				top: 0;
+				width: 1px
+			}
+
+			.tree li::after {
+				border-top: 1px solid #999;
+				height: 20px;
+				top: 25px;
+				width: 25px
+			}
+
+			.tree li span {
+				display: inline-block;
+				padding: 3px 8px;
+				text-decoration: none
+			}
+
+			.tree li.parent_li>span {
+				cursor: pointer
+			}
+
+			.tree>ul>li::before,
+			.tree>ul>li::after {
+				border: 0
+			}
+
+			.tree li:last-child::before {
+				height: 30px
+			}
+
+			.tree li.parent_li>span:hover,
+			.tree li.parent_li>span:hover+ul li span {
+				background: #eee;
+				color: #000
+			}
+            .logo{
+                width: 40px;
+                height: 40px;
+                margin: 0px;
+                padding: 0px;
+            }
+            .heading{
+                padding-left: 10px;
+
+            }
+            .header{
+                margin: 0px;
+                padding: 0px;
+                /*margin-left: -15px;*/
+
+            }
+            td{
+                font-size: 12px;
+            }
+			@media (min-width: 768px)
+			.col-sm-offset-1 {
+				margin-left: 8.33333333%;
+			}
+			
+			.horizontal-menu li {					
+				width:90px;	
+				height:98px;
+				color:black;
+				margin-right: 27px;
+				border-radius: 4px
+			}
+        </style>
+        <script>
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                var results = regex.exec(location.search);
+				//document.write("results "+results);
+                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+            };
+            
+
+             function setSearchValue(){
+				//document.write("setSearchValue ");
+                var searchValue = getUrlParameter('searchKey');
+                document.getElementById("searchBar").value = searchValue;
+				//document.write("searchbar "+searchValue);
+                getData1();
+				//document.write("textdata "+textData);
+            }
+			//getData1();
+			//search_fun();
+        </script> 
+
+		 <script>
+			var myDate = new Date();
+			var hrs = myDate.getHours();
+
+			var greet;
+
+			if (hrs < 12)
+				greet = 'Good Morning';
+			else if (hrs >= 12 && hrs <= 17)
+				greet = 'Good Afternoon';
+			else if (hrs >= 17 && hrs <= 24)
+				greet = 'Good Evening';
+
+			document.getElementById('lblGreetings').innerHTML =
+				'<strong style="font-size: 45px;">' + greet + ' \n {{userName}}!</strong>';
+		</script>  
+		
+		<script>
+				var header1 = document.getElementsByClassName("pager");
+				var lis = document.getElementsByClassName("licls");
+				for (var i = 0; i < lis.length; i++) {
+				  lis[i].addEventListener("click", function() {
+					var current = document.getElementsByClassName("pager.active");
+					current[0].className = current[0].className.replace(" active", "");
+					this.className += " active";
+				  });
+				}
+		</script>
+		<!-- <script>
+		$( document ).ready(function() {
+			search_fun();
+		});
+		</script> -->
+		<!-- <script>
+		 function getcategory(ele) {
+			category = ele;
+			alert(ele);
+			getData2();
+		};
+		 </script> -->
+		 <script>
+		/* function clickOnAllServices($event){
+						$event='click';
+						$event.stopPropagation(); // <-- this is important
+						$timeout(function() {
+							window.location.reload(true); 
+							$('allservices').click();
+							angular.element('#allservices').trigger('click');
+							angular.element('allservices').trigger('click');
+						}, 0);
+					}*/
+		 </script>
+		 
+		<!-- <base href="https://developer6460.innovate.bmc.com/com.bmc.arsys.rx.innovationstudio/index.html#/app/view/com.vyom.app1:service"> -->
+	</head>
+	<body ng-app="" >
+		 <div class="container page" style="height:350px;">
+            <div class="row headerPage" height="470px;">
+                <div class="row" style="padding-bottom: 20px; color: #d4cccc; ">
+                    <div class="col-sm-offset-2 col-sm-7" style="padding-top: 20px; padding-right: 0px;">
+						<h1><label id="lblGreetings" style="color:white;">May I help you, {{userName}}?</label></h1>
+					</div>
+					<!-- <div class="col-sm-1" style="margin-top:0px; padding-left: 0px;">
+						<a href="#" target="_blank">
+                            <img class="chatbot" src="/com.vyom.vyomlib/resources/img/chatbot.ico" width="70px" height="70px">
+                        </a>
+					</div> -->
+                </div>
+                <div class="row" style="margin-left: 0px;padding-top: 25px;padding-bottom: 25px;background: #79707073;background-color: rgba(121, 112, 112, 0.45);">											
+					<div class="col-sm-offset-1 col-sm-4" style="margin-top:0px;padding-right: 0px;width: 115px;padding-left: 0px"><!-- <a href="https://developer6197.innovate.bmc.com/com.bmc.arsys.rx.innovationstudio/index.html#/app/view/com.vyom.MyApp:dashboard%20v4">target="_blank">
+							<button type="button" class="btn btn-primary btn-lg btn-xl" style="margin-top: 5px;padding: 10px 10px; font-size: 20px; border-width: 2px ;alignment: center;vertical-align: center;vert-align: middle;">
+							<img src="/com.vyom.vyomlib/resources/img/page1.png" style="width:55px;height:55px;"><br>
+							My Page</button>
+						</a> -->
+						<!-- <a href="https://developer6197.innovate.bmc.com/innovationsuite/index.html#/com.vyom.MyApp" class="btn btn-info btn-sm" style="height: 34px; background-color: #3993bf">
+						<span class="glyphicon glyphicon-user" style="padding-top: 4px"></span>
+						My Page</a> -->
+						
+						<!-- <button ng-click="https://developer6197.innovate.bmc.com/innovationsuite/index.html#/com.vyom.MyApp" type="button" class="btn btn-sm" style="color:white;font-size:14px; height: 34px; background-color: #3993bf;color:white">
+							<span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> My Page 
+						</button> -->
+						<!-- <a ng-click="https://developer6197.innovate.bmc.com/innovationsuite/index.html#/com.vyom.MyApp" class="btn btn-sm" style="color:white;font-size:14px; height: 34px; background-color: #3993bf;color:white">
+                            <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> My Page 
+                        </a> -->
+						 <!-- <span class="glyphicon glyphicon-user" style="padding-top: 4px;padding-left: 120px;"></span> -->
+						 <!--a href="https://developer6197.innovate.bmc.com/innovationsuite/index.html#/com.vyom.MyApp" style="color:white;font-size:15px;"> <!-- target="_blank">
+									 <button type="button" class="btn btn-sm" style="height: 35px; background-color: #3993bf;color:white;font-size:14px;">						
+										 <span class="glyphicon glyphicon-user" style="padding-top: 4px"></span>
+								 My Page</button> 
+						 </a--> 
+					</div>										
+										
+                    <div class="col-sm-offset-1 col-sm-7" style="margin-left: 15px;padding-left: 5px;padding-top: 0px;">
+						<!-- <a ng-click="https://developer6197.innovate.bmc.com/com.bmc.arsys.rx.innovationstudio/index.html#/app/view/com.vyom.MyApp:dashboard%20v4" class="btn btn-default btn-sm" style="height: 34px;background-color: #3993bf;color: white;font-weight:bold;border:none;">
+						<span class="glyphicon glyphicon-list-alt" style="padding-top: 4px;padding-right: 0.5px;"> My Page</span> 
+						</a>  -->
+						<p class="glyphicon glyphicon-search col-sm-offset-0 col-sm-3" style="margin-left: 0px;font-size: large;font-weight: bold;color: white;text-align:  left;"> &nbsp;FIND</p>
+                        <input type="text" class="form-control" id="searchBar"  placeholder="What are you looking for?" ng-model="searchText" ng-init="searchText =' '"  onfocus="if(this.value == ' ') { this.value = ''; }" style="margin-top: 0px;padding-top: 25px;padding-bottom: 25px;border-radius: 4px 4px 4px 4px;"/>
+                    </div>
+                    <div class="col-sm-1" style="padding-left: 0px; margin-left:-17px;padding-top:29px;">
+                        <a ng-click="setSearchValue()" class="btn btn-info btn-lg" style=" background-color: #29B6F6;padding-bottom: 15px;">
+                            <span class="" style="padding-top: 4px;"></span> Search 
+                        </a>
+                    </div>
+					
+                </div>
+            </div>
+            <div id="exTab1" class="row" style="padding-top: 10px;">
+                <div class="col-sm-2" style="padding: 0 0 0 15px; margin-top: 29px;">
+                    <ul  class="nav nav-pills vertical-menu">
+                            <li class="active" ng-click="getData2('All');"><!-- this.classList.add('active');this.className += ' ' + 'active';-->
+								<!-- {{category="All";""}} -->
+                                <a href="$location.absUrl()/#all"  data-toggle="tab">All Services</a>
+                            </li>
+                            <li ng-click="getArticleData()" >
+								<!-- {{category="ICT";""}} -->
+                                <a href="$location.absUrl()/#articles" data-toggle="tab" >Knowledge Articles</a>
+                            </li>												
+                            <!-- <li ng-click="getData3()">
+                                <a href="$location.absUrl()/#questions" data-toggle="tab">Policies</a>
+                            </li> -->
+							<li ng-click="getData3()">
+                                <a href="$location.absUrl()/#questions" data-toggle="tab">Questions</a>
+                            </li>
+                           
+                    </ul>
+                </div>
+				
+                    <div class="col-sm-offset-0 col-sm-8" style="padding: 0px; margin-left">
+					<!--  <div class ="row"> -->
+					
+                        <div class="tab-content clearfix" style="margin-top: -140px">
+						    <div class="tab-pane active" id="all">
+								<div class="content row" style="margin-left: 0px;margin-top: -45px;">
+									<ul  class="nav nav-pills horizontal-menu pager">
+											<li class="active" ng-click="getData2('All')" id="allservices">
+												<!-- {{category="All";""}} -->
+												<a href="$location.absUrl()/#all" data-toggle="tab">
+												<img src="/com.vyom.vyomlib/resources/img/Search Bar Icons/All.png" style="margin-right:5px;margin-left:10px;"><br>
+												All<br><br></a>
+											</li>
+											<li ng-click="getData2('ICT')" >
+												<!-- {{category="ICT";""}} -->
+												<a href="$location.absUrl()/#knowledge" data-toggle="tab" >
+												<!-- <img src="/com.vyom.vyomlib/resources/img/ICT.png" style=";margin-right:5px;"><br> -->
+												<img src="/com.vyom.vyomlib/resources/img/Search Bar Icons/ICT.png" style="margin-right:5px;margin-left:10px;"><br>
+												ICT<br><br></a>
+											</li>
+											<li ng-click="getDatahr()">
+												<!-- {{category="HR";""}} -->
+												<a href="$location.absUrl()/#knowledge" data-toggle="tab">
+												<!-- <img src="/com.vyom.vyomlib/resources/img/hr.png" style="margin-right:5px;"><br> -->
+												<img src="/com.vyom.vyomlib/resources/img/Search Bar Icons/HR.png" style="margin-right:5px;margin-left:10px;"><br>
+												HR<br><br></a>
+											</li>
+											<li ng-click="getDatapsc()">
+												<!-- {{category="P&SC";""}} -->
+												<a href="$location.absUrl()/#knowledge" data-toggle="tab">
+												<img src="/com.vyom.vyomlib/resources/img/Search Bar Icons/P&SC.png" style="margin-right:5px;margin-left:10px;"><br>
+												P&SC <br><br></a>
+											</li>
+											<li ng-click="getDatapfinance()">
+												<!-- {{category="Finance";""}} -->
+												<a href="$location.absUrl()/#knowledge" data-toggle="tab">
+												<!-- <img src="/com.vyom.vyomlib/resources/img/finance.png" style="height:30px;width:30px;margin-right:5px;"><br> -->
+												<img src="/com.vyom.vyomlib/resources/img/Search Bar Icons/Finance.png" style="margin-right:5px;margin-left:10px;"><br>
+												Finance<br><br></a>
+											</li>
+											<li >
+												<!-- {{category="BSO";""}} -->												
+												<a href="http://10.51.5.25:9091/ux/myitapp/#/catalog/home"" target="_blank">
+												<img src="/com.vyom.vyomlib/resources/img/Search Bar Icons/Service Catalog.png" style="width:40px;height:40px;"><br>
+												Service Catalog</a>					
+											</li>                    
+	   								</ul>
+								</div>
+                                <div class="content row" style="margin-left: 0px;margin-top: 40px;">
+									<div ng-repeat="text in textData | filter:searchText" class="col-sm-4 service" style="display: block;border: 0.5px lightgrey solid;padding-left: 2px;padding-right: 4px;margin-right: 4px;margin-top: 10px;width: 290px;">
+										<div style="margin-top: 10px">
+											<p style="text-align: center">
+												<a href="{{text[cfg.serviceRequestURL]}}" target="_blank"><img src="/com.vyom.vyomlib/resources/img/{{text[cfg.icon]}}" width="275px" height="80px" style="padding-left: "></a>
+											</p>
+										</div>
+										
+										<div style="margin-top: 10px">
+											<!--p style="text-align: center; font-size: 16px; margin-left: -5px">
+												{{text[cfg.textFieldID]}}
+											</p-->
+										</div>
+									</div>
+									<p ng-if="textData.length === 0">No services are available.</p>
+								</div>
+                            </div>
+                            <div class="tab-pane" id="knowledge">
+								<div class="content row" style="margin-left: 0px;margin-top: -45px;">
+									<ul  class="nav nav-pills horizontal-menu pager">
+											<li class="active licls" ng-click="getData2('All')">
+												<!-- {{category="All";""}} -->
+												<a href="$location.absUrl()/#all" data-toggle="tab">
+												<img src="/com.vyom.vyomlib/resources/img/Search Bar Icons/All.png" style="margin-right:5px;margin-left:10px;"><br>
+												All<br><br></a>
+											</li>
+											<li class="licls" ng-click="getData2('ICT')" >
+												<!-- {{category="ICT";""}} -->
+												<a href="$location.absUrl()/#knowledge" data-toggle="tab" >
+												<!-- <img src="/com.vyom.vyomlib/resources/img/ICT.png" style=";margin-right:5px;"><br> -->
+												<img src="/com.vyom.vyomlib/resources/img/Search Bar Icons/ICT.png" style="margin-right:5px;margin-left:10px;"><br>
+												ICT<br><br></a>
+											</li>
+											<li class="licls" ng-click="getDatahr()">
+												<!-- {{category="HR";""}} -->
+												<a href="$location.absUrl()/#knowledge" data-toggle="tab">
+												<!-- <img src="/com.vyom.vyomlib/resources/img/hr.png" style="margin-right:5px;"><br> -->
+												<img src="/com.vyom.vyomlib/resources/img/Search Bar Icons/HR.png" style="margin-right:5px;margin-left:10px;"><br>
+												HR<br><br></a>
+											</li>
+											<li class=" licls" ng-click="getDatapsc()">
+												<!-- {{category="P&SC";""}} -->
+												<a href="$location.absUrl()/#knowledge" data-toggle="tab">
+												<img src="/com.vyom.vyomlib/resources/img/Search Bar Icons/P&SC.png" style="margin-right:5px;margin-left:10px;"><br>
+												P&SC <br><br></a>
+											</li>
+											<li class="licls" ng-click="getDatapfinance()">
+												<!-- {{category="Finance";""}} -->
+												<a href="$location.absUrl()/#knowledge" data-toggle="tab">
+												<!-- <img src="/com.vyom.vyomlib/resources/img/finance.png" style="height:30px;width:30px;margin-right:5px;"><br> -->
+												<img src="/com.vyom.vyomlib/resources/img/Search Bar Icons/Finance.png" style="margin-right:5px;margin-left:10px;"><br>
+												Finance <br><br></a>
+											</li>
+											<li >
+												<!-- {{category="BSO";""}} -->												
+												<a href="http://10.51.5.25:9091/ux/myitapp/#/catalog/home" target="_blank">
+												<img src="/com.vyom.vyomlib/resources/img/Search Bar Icons/Service Catalog.png" style="width:40px;height:40px;"><br>
+												Service Catalog  </a>						
+											</li>                   
+	   								</ul>
+								</div>
+							
+                                <div class="content row" style="margin-left: 0px;margin-top: 40px;">
+									<div ng-repeat="text in textData | filter:searchText" class="col-sm-6 service" style="display: block;border: 0.5px lightgrey solid;padding-left: 2px;padding-right: 4px;margin-right: 4px;margin-top: 10px;width: 290px;">
+										<div style="margin-top: 10px">
+											<p style="text-align: center">
+												<a href="{{text[cfg.serviceRequestURL]}}" target="_blank"><img src="/com.vyom.vyomlib/resources/img/{{text[cfg.icon]}}" width="275px" height="80px" style="padding-left: "></a>
+											</p>
+										</div>
+										
+										<div style="margin-top: 10px">
+											<!--p style="text-align: center; font-size: 16px; margin-left: -5px">
+												{{text[cfg.textFieldID]}}
+											</p-->
+										</div>
+									</div>
+									<p ng-if="textData.length === 0">No services are available.</p>
+								</div>
+
+                            </div>
+                            <div class="tab-pane" id="questions">
+                                <div class="content row" style="margin-left: 0px">
+									<div ng-repeat="text in textData | filter:searchText" class="col-sm-4 service" style="display: block; border: 0.5px lightgrey solid; padding-left: 10px; margin-right: 10px; margin-top: 10px;width:270px;">
+										<div style="margin-top: 10px">
+											<p style="text-align: center">
+												<a href="{{text[cfg.serviceRequestURL]}}" target="_blank"><img src="/com.vyom.vyomlib/resources/img/{{text[cfg.icon]}}" width="250px" height="90px" style="padding-left: "></a>
+											</p>
+										</div>
+										<div style="margin-top: 10px">
+											<!--p style="text-align: center; font-size: 16px; margin-left: -5px">
+												{{text[cfg.textFieldID]}}
+											</p-->
+										</div>
+									</div>
+									<p ng-if="textData.length === 0">No questions are available.</p>
+								</div>
+
+                            </div>
+							
+							<div class="tab-pane" id="articles">
+                                <div class="content row" style="margin-left: 0px;margin-top: 135px;background-color: white;">
+									<div ng-repeat="text in textData | filter:searchText" class="col-sm-4 service" style="display: block; border: 0.5px lightgrey solid; padding-left: 10px; margin-right: 10px; margin-top: 10px">
+										<div style="margin-top: 10px">
+											<p style="text-align: center">
+												<a href="{{text[cfg.serviceRequestURL]}}" target="_blank"><img src="/com.vyom.vyomlib/resources/img/{{text[cfg.icon]}}" width="60px" height="60px" style="padding-left: "><br>{{text[cfg.textFieldID]}}</a>
+											</p>
+										</div>
+										<div style="margin-top: 10px">
+											<!--p style="text-align: center; font-size: 16px; margin-left: -5px">
+												{{text[cfg.textFieldID]}}
+											</p-->
+										</div><br>
+									</div><br>
+									<p ng-if="textData.length === 0">No articles are available.</p>
+								</div>
+
+                            </div>
+                        
+                            
+                        </div>
+                    
+              </div>
+			  
+			  <div class="col-sm-2" style="background-color:#ecf4f7; display: block; border: 0.5px white solid;padding: 0 0 15 15px; border-radius: 4px 4px 0 0;margin-top: 20px;">
+				    <div class=" header">
+						<div class="col-sm-1 logo" style="float: left" >
+							<img src="/com.vyom.vyomlib/resources/img/policy/insurance.png" width="42px" height="40px" >
+						</div>
+
+						<div class="col-sm-1 heading">
+							<h4 style="color: #3f82b9;float: left; margin-top: 8px; padding-left: 10px;font-weight:bold;">Policies</h4>
+						</div>
+				    </div><br><br><br>
+					<!-- <input type="text" class="form-control" id="searchPolicy"  placeholder="Search..." ng-model="searchPolicies" ng-init="searchPolicies =''"  onfocus="if(this.value == ' ') { this.value = ''; }"/> -->
+					<input type="text" class="form-control" id="searchPolicy"  placeholder="Search..."  ng-model="searchPolicies"  /><br>
+					
+					
+					
+					<div  style="margin-top: 20px;margin-bottom: 10px;padding:10px;height:420px; overflow-y: scroll;">
+							<div ng-repeat="p in policyData | filter:searchPolicies" class="service" style="margin-top: 10px padding:15px;">
+								<p style="padding:10px;margin-bottom:10px;">
+								
+									<a href="{{p[cfg.policyurl]}}" target="_blank" style="margin-bottom:10px;"> <!-- target="_blank"> -->		
+										<img src="/com.vyom.vyomlib/resources/img/policy/{{p[cfg.policyIcon]}}" width="20px" height="20px" style="padding-left: ">
+										{{p[cfg.policyname]}}
+									</a>				
+																
+									<!-- <a href="{{p[cfg.policyurl]}}" data-toggle="tab" target="_blank">
+									<!-- <span class="glyphicon glyphicon-stop" style="padding-top: 4px"></span> 
+									<img src="/com.vyom.vyomlib/resources/img/{{p[cfg.policyIcon]}}" width="20px" height="20px" style="padding-left: ">
+									{{p[cfg.policyname]}}</a> -->
+								</p>
+							</div>
+							<div style="margin-top: 10px">
+								<!--p style="text-align: center; font-size: 16px; margin-left: -5px">
+									{{text[cfg.textFieldID]}}
+								</p-->
+							</div>
+										
+						
+						
+						
+						
+						   <!--  <div ng-repeat="p in policyData | filter:searchPolicies" class="col-sm-4 service" style=" padding-left: 10px; margin-right: 10px; margin-top: 10px">
+								<ul  class="">
+										<li  ng-repeat="p in policyData | filter:searchPolicies" class="service"  style="margin-bottom: 10px;padding:10px;">
+											<!-- {{category="All";""}} 
+											<a ng-click="{{p[cfg.serviceRequestURL]}}" data-toggle="tab" target="_blank"> <img src="/com.vyom.vyomlib/resources/img/{{p[cfg.icon]}}" width="20px" height="20px" style="padding-left: ">
+											{{p[cfg.textFieldID]}}</a>
+										</li>			
+								</ul>
+							< </div> -->
+							<br>
+							<div style="margin-top: 10px"> <p ng-if="policyData.length === 0">No Policies are available.</p></div><br>
+							<a href="http://10.51.5.25:9091/ux/myitapp/#/catalog/home" target="_blank"> <!-- target="_blank"> -->							
+									<button type="button" class="btn btn-sm" style="margin-top: 5px;padding: 2px;  border-width: 0.5px ;">							
+									 More. . .</button>
+							</a>
+							
+							<!-- <a ng-if="policyData.length > 0" href="http://10.51.5.25:9091/ux/myitapp/#/catalog/home"  data-toggle="tab" target="_blank">
+							<button type="button" class="btn btn-primary btn-lg btn-xl" style="margin-top: 5px;padding: 10px 10px; font-size: px; border-width: 2px ;">
+							More. . .</button></a> -->
+					</div>
+
+        </div>
+        
+
+        <!-- Bootstrap core JavaScript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+			
+	</body>
+</html>
