@@ -30,6 +30,7 @@
                 cardVisible: componentDefinition.propertiesByName.cardVisible,
                 cardErrorInformation: componentDefinition.propertiesByName.cardErrorInformation,
                 cardStatusNamedList: componentDefinition.propertiesByName.cardStatusNamedList,
+                userApplicationNamedList: componentDefinition.propertiesByName.userApplicationNamedList,
                 cardSorting: componentDefinition.propertiesByName.cardSorting,
                 cardOrder: componentDefinition.propertiesByName.cardOrder,
                 cardStatus: componentDefinition.propertiesByName.cardStatus,
@@ -249,6 +250,17 @@
                             },
                             group: 'cardAction',
                             index: 7
+                        },
+                        userApplicationNamedList: {
+                            label: 'User Application NamedList',
+                            type: 'rx-inspector-definition-picker',
+                            definitionType: RX_DEFINITION_PICKER.definitionTypes.namedList.type,
+                            tooltip: {
+                                text: $sce.trustAsHtml("*Tip: Make Sure <br>Criteria: Current User <br>Display Value:  <em>Application Name</em><br>Stored Value: <em>Application Name</em>."),
+                                placement: "left"
+                            },
+                            group: 'cardAction',
+                            index: 8
                         },
                         BannerImage: {
                             label: 'Image',

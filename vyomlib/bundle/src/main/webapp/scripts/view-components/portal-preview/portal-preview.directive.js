@@ -160,14 +160,20 @@
 
                         }
                         $scope.getUserApplicationNamedList = function () {
-                            rxNamedListDataPageResource.get($scope.userApplicationNamedList).then(function (data) {
-                                $scope.userApplications = data.data;
-                            });
-                            console.log($scope.userApplications);
+                            if ($scope.userApplicationNamedList) {
+                                rxNamedListDataPageResource.get($scope.userApplicationNamedList).then(function (data) {
+                                    $scope.userApplications = data.data;
+                                });
+                            }
+
                         }
                         $scope.userhaspermission = function (obj) {
+                            if ($scope.userApplicationNamedList) {
+                                return _.findKey($scope.userApplications, obj[$scope.ApplicationName]);
+                            } else {
+                                return true;
+                            }
 
-                            return _.findKey($scope.userApplications, obj[$scope.ApplicationName]);
                         }
 
                         $scope.updateViewsCounter = function (RecInstanceId, views) {

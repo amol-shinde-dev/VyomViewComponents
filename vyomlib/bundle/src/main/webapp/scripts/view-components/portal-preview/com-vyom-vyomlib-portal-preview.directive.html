@@ -13,15 +13,18 @@
 <div class="wrapper">
 
     <div class="row">
-        <div class="col-4">
-            <div class="searchcontainer ">
-                <input type="text" class="searchinput w3-{{SearchColor}}" ng-model="query" placeholder="Search...">
-                <div class="search w3-{{SearchColor}}" ng-click="clearSearchContainer()"></div>
-            </div>
+        <div class="col-2">
+
         </div>
-        <div class="col-8">
-            <h1 style="font-size: 55px;" class="w3-text-{{titleColor}}">{{Greetings}} {{CurrentUserFullName}}</h1>
+        <div class="mx-auto py-3">
+            <h1 style="font-size: 34px;" class="w3-text-{{titleColor}}">{{Greetings}} {{CurrentUserFullName}}</h1>
             <p></p>
+        </div>
+        <div class="mr-5 py-3 col-3">
+            <form class="form-inline d-flex justify-content-center md-form form-sm active-{{SearchColor}}-2 mt-2">
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <input class="form-control form-control-sm ml-3 w-75" type="text" ng-model="query" placeholder="Search" aria-label="Search">
+            </form>
         </div>
 
     </div>

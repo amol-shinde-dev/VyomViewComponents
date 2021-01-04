@@ -74,6 +74,10 @@
                             name: 'cardStatusNamedList',
                             isConfig: true,
             },
+                        {
+                            name: 'userApplicationNamedList',
+                            isConfig: true,
+            },
 
                         {
 

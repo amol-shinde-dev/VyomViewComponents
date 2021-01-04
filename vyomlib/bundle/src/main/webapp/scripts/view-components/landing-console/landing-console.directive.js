@@ -38,6 +38,8 @@
                             $scope.cardVisible = _config.cardVisible ? _config.cardVisible : "";
                             $scope.cardErrorInformation = _config.cardErrorInformation ? _config.cardErrorInformation : "";
                             $scope.cardStatusNamedList = _config.cardStatusNamedList ? _config.cardStatusNamedList : "";
+                            $scope.userApplicationNamedList = _config.userApplicationNamedList ? _config.userApplicationNamedList : "";
+
                             $scope.cardSorting = _config.cardSorting ? _config.cardOrder == "true" ? "-" + _config.cardSorting : _config.cardSorting : "";
                             $scope.cardOrder = _config.cardOrder;
 
@@ -79,8 +81,13 @@
 
                             $scope.getCardList();
                             $scope.mydata = [];
+
                             $scope.getApplicationStatusNamedList();
                             $scope.cardStatusDefaultValue = []; //namedListValues 
+
+                            $scope.getUserApplicationNamedList();
+                            $scope.userApplications = []; //namedListValues 
+
                             $scope.show_hide_recordGrid();
 
 
@@ -152,6 +159,21 @@
 
                         }
 
+                        $scope.getUserApplicationNamedList = function () {
+                            if ($scope.userApplicationNamedList) {
+                                rxNamedListDataPageResource.get($scope.userApplicationNamedList).then(function (data) {
+                                    $scope.userApplications = data.data;
+                                });
+                            }
+
+                        }
+                        $scope.userhaspermission = function (obj) {
+                            if ($scope.userApplicationNamedList) {
+                                return _.findKey($scope.userApplications, obj[$scope.ApplicationName]);
+                            } else {
+                                return true;
+                            }
+                        }
                         $scope.updateViewsCounter = function (RecInstanceId, views) {
                             if ($scope.RecordDefinition) {
                                 var objectRecord = rxRecordInstanceResource.withName($scope.RecordDefinition);

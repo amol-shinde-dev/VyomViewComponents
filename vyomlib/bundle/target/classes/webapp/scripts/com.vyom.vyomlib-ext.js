@@ -627,7 +627,7 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
     "\n" +
     "        $(\"#myCarousel\").carousel();\r" +
     "\n" +
-    "    });</script><div class=\"wrapper\"><div class=\"row\"><div class=\"col-4\"><div class=\"searchcontainer\"><input type=\"text\" class=\"searchinput w3-{{SearchColor}}\" ng-model=\"query\" placeholder=\"Search...\"><div class=\"search w3-{{SearchColor}}\" ng-click=\"clearSearchContainer()\"></div></div></div><div class=\"col-8\"><h1 style=\"font-size: 40px\" class=\"w3-text-{{titleColor}}\">{{Greetings}} {{CurrentUserFullName}}</h1><p></p></div></div><div class=\"content\"><div class=\"container-fluid\"><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\" data-interval=\"{{carouselSpeed}}\"><!-- Indicators --><ol class=\"carousel-indicators\"><li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li><li data-target=\"#myCarousel\" data-slide-to=\"1\"></li><li data-target=\"#myCarousel\" data-slide-to=\"2\"></li></ol><!-- Wrapper for slides --><div class=\"carousel-inner\"><div class=\"item active\"><img src=\"{{firstSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[0][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"{{secondSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[1][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"{{thirdSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[2][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div></div><!-- Left and right controls --></div></div></div><div class=\"container-fluid\" style=\"padding-bottom: 0px; padding-top: 10px\"><div class=\"text-center\" style=\"\"><span><!-- sort-by dropdown --><label style=\"vertical-align: bottom;float: left; color:black\">Sort By:</label><select ng-model=\"selectedValue\" ng-change=\"sortByViews()\" style=\"float:left\"><option value=\"\" selected=\"selected\">-select-</option><option value=\"fav\">Favourites</option><option value=\"{{Views}}\">Max-views</option><option value=\"{{ratingCount}}\">Max-ratings</option><option value=\"status\">Active</option><option value=\"clear\">Clear</option><tbody><!----><tr><td>user_card</td><td><span class=\"bigfont d-icon-user_card\"></span></td></tr><!----><tr><td>user_check</td><td><span class=\"bigfont d-icon-user_check\"></span></td></tr><!----><tr><td>user_check_circle</td><td><span class=\"bigfont d-icon-user_check_circle\"></span></td></tr><!----></tbody></select><button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category1\" ng-click=\"assignCurrentCategory(Category1)\">{{Category1}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category2\" ng-click=\"assignCurrentCategory(Category2)\">{{Category2}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category3\" ng-click=\"assignCurrentCategory(Category3)\">{{Category3}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category4\" ng-click=\"assignCurrentCategory(Category4)\">{{Category4}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category5\" ng-click=\"assignCurrentCategory(Category5)\">{{Category5}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category6\" ng-click=\"assignCurrentCategory(Category6)\">{{Category6}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category7\" ng-click=\"assignCurrentCategory(Category7)\">{{Category7}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category8\" ng-click=\"assignCurrentCategory(Category8)\">{{Category8}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category1\" ng-click=\"assignCurrentCategory('ALL')\">All</button><!-- switch button --><label class=\"switch\" style=\"/*vertical-align: bottom;*/\"><input type=\"checkbox\" ng-model=\"vm.isActive\" ng-change=\"show_hide_recordGrid()\"> <span class=\"slider round hide-off\" style=\"padding-top: 5px;margin-bottom: 10px\"><span ng-class=\" { 'off' : !vm.isActive } \">{{vm.isActive ? 'Card' : 'List'}}</span></span></label><!-- end switch button --></span></div></div><div class=\"content hideme\"><div class=\"container-fluid\"><div class=\"row\" id=\"reverse\" ng-init=\"limit = 6\"><div class=\"selector col-lg-4 col-md-4 col-sm-4\" ng-repeat=\"x in cardList  | filter:query    | limitTo: limit as results\"><div class=\"card card-stats w3-card-4 h-75\"><div class=\"card-header card-header-{{x[Color]}} card-header-icon h-75\"><div ng-click=\"setSelectedCardInstanceId(x[179]);executeAction(cardActionGuid);updateViewsCounter(x[179],x[Views])\" data-toggle=\"modal\" data-target=\"#landingconsolemodal\"><div class=\"card-icon\"><div class=\"material-icons\"><p class=\"d-icon-{{x[Icon]}}\"></p></div></div><h5 class=\"card-title\">{{x[ApplicationName]}}</h5><p class=\"card-category\" ng-if=\"x[Views]>0\"><span class=\"d-icon-eye\"></span> <span>{{numFormatter(x[Views])}} views</span></p></div><p class=\"card-category\" ng-init=\"generateRating(x[ratingCount],x[179])\"><span ng-repeat=\"star in starsobj[x[179]] track by $index\" class=\"{{star.icon}}\" style=\"{{star.style}}\"></span> <span style=\"margin-left: 5px\"><button type=\"button\" class=\"d-button d-button_link d-button_small d-icon-left-user_star\" style=\"\" ng-click=\"setSelectedCardInstanceId(x[179]);executeAction(rateMeActionGuid)\"><span>Rate App</span></button></span></p><p class=\"card-category\" style=\"float: left;left:0;margin-left: 8px;margin-bottom: 0px;margin-top: -10px\"><span ng-if=\"x[cardStatus]\" class=\"d-icon-circle\" ng-class=\"getCardStatusCSS(x[cardStatus])\" style=\"margin-right: 5px;font-size: 21px\" rel=\"tooltip\" title=\"{{x[cardStatus]}}\" ng-mouseover=\"hoverIn('tooltip')\"></span> <span ng-if=\"x[cardFavourite]=='true' ||x[cardFavourite]=='false'\" class=\"{{getCardFavouriteClass(x[cardFavourite])}}\" style=\"margin-right: 5px;font-size:21px\" ng-click=\"updateCardFavourite(x[179],x[cardFavourite])\" rel=\"tooltip\" title=\"Favourite\" ng-mouseover=\"hoverIn('tooltip')\"></span> <span ng-if=\"x[cardScope]\" ng-class=\"getCardScopeCSS(x[cardScope])\" style=\"margin-right: 5px;font-size: 21px; color: skyblue\" rel=\"tooltip\" title=\"{{x[cardScope]=='true'?'Global':'Local'}}\" ng-mouseover=\"hoverIn('tooltip')\"></span></p><div class=\"card-category togglebutton\" ng-if=\"adminConfiguration\"><em style=\"margin-right: 5px\">Published-{{x[cardVisible]}}</em><label><input type=\"checkbox\" ng-model=\"x[cardVisible]\" ng-change=\"updateCardVisibility(x[179],x[cardVisible])\" ng-checked=\"{{x[cardVisible]}}\" ng-disabled=\"x[cardVisible]=='ERROR'\"> <span class=\"toggle\"></span></label><span ng-if=\"x[cardVisible]=='ERROR'\" class=\"d-icon-exclamation_triangle\" style=\"margin-right: 5px;font-size: 21px; color: red\" rel=\"tooltip\" data-html=\"true\" data-placement=\"left\" title=\"{{x[cardErrorInformation]}}\" ng-mouseover=\"hoverIn('tooltip')\"></span></div></div><div class=\"card-footer\"><div class=\"stats\"><div class=\"material-icons\"><p class=\"d-icon-info_circle\" rel=\"popover\" data-container=\"body\" data-original-title=\"{{x[tooltipHeader]}}\" data-color=\"primary\" data-content=\"{{x[tooltipDescription]}}\" ng-mouseover=\"hoverIn('popover')\"></p></div><a href=\"javascript:;\" style=\"color:black\"><em>{{x[Description]}}</em></a></div></div></div></div></div><div style=\"text-align: right\"><button class=\"d-button d-icon-right-angle_down d-button_secondary\" ng-hide=\"results.length === cardList.length\" ng-click=\"limit = limit +6\">show more...</button> <button class=\"d-button d-icon-right-angle_up d-button_secondary\" ng-hide=\"results.length <= 6\" ng-click=\"limit = limit -6\">show less...</button></div></div></div></div><script type=\"text/javascript\">$(document).ready(function() {\r" +
+    "    });</script><div class=\"wrapper\"><div class=\"row\"><div class=\"col-2\"></div><div class=\"mx-auto py-3\"><h1 style=\"font-size: 34px\" class=\"w3-text-{{titleColor}}\">{{Greetings}} {{CurrentUserFullName}}</h1><p></p></div><div class=\"mr-5 py-3 col-3\"><form class=\"form-inline d-flex justify-content-center md-form form-sm active-{{SearchColor}}-2 mt-2\"><i class=\"fas fa-search\" aria-hidden=\"true\"></i> <input class=\"form-control form-control-sm ml-3 w-75\" type=\"text\" ng-model=\"query\" placeholder=\"Search\" aria-label=\"Search\"></form></div></div><div class=\"content\"><div class=\"container-fluid\"><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\" data-interval=\"{{carouselSpeed}}\"><!-- Indicators --><ol class=\"carousel-indicators\"><li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li><li data-target=\"#myCarousel\" data-slide-to=\"1\"></li><li data-target=\"#myCarousel\" data-slide-to=\"2\"></li></ol><!-- Wrapper for slides --><div class=\"carousel-inner\"><div class=\"item active\"><img src=\"{{firstSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[0][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"{{secondSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[1][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"{{thirdSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[2][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div></div><!-- Left and right controls --></div></div></div><div class=\"container-fluid\" style=\"padding-bottom: 0px; padding-top: 10px\"><div class=\"text-center\" style=\"\"><span><!-- sort-by dropdown --><label style=\"vertical-align: bottom;float: left; color:black\">Sort By:</label><select ng-model=\"selectedValue\" ng-change=\"sortByViews()\" style=\"float:left\"><option value=\"\" selected=\"selected\">-select-</option><option value=\"fav\">Favourites</option><option value=\"{{Views}}\">Max-views</option><option value=\"{{ratingCount}}\">Max-ratings</option><option value=\"status\">Active</option><option value=\"clear\">Clear</option><tbody><!----><tr><td>user_card</td><td><span class=\"bigfont d-icon-user_card\"></span></td></tr><!----><tr><td>user_check</td><td><span class=\"bigfont d-icon-user_check\"></span></td></tr><!----><tr><td>user_check_circle</td><td><span class=\"bigfont d-icon-user_check_circle\"></span></td></tr><!----></tbody></select><button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category1\" ng-click=\"assignCurrentCategory(Category1)\">{{Category1}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category2\" ng-click=\"assignCurrentCategory(Category2)\">{{Category2}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category3\" ng-click=\"assignCurrentCategory(Category3)\">{{Category3}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category4\" ng-click=\"assignCurrentCategory(Category4)\">{{Category4}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category5\" ng-click=\"assignCurrentCategory(Category5)\">{{Category5}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category6\" ng-click=\"assignCurrentCategory(Category6)\">{{Category6}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category7\" ng-click=\"assignCurrentCategory(Category7)\">{{Category7}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category8\" ng-click=\"assignCurrentCategory(Category8)\">{{Category8}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category1\" ng-click=\"assignCurrentCategory('ALL')\">All</button><!-- switch button --><label class=\"switch\" style=\"/*vertical-align: bottom;*/\"><input type=\"checkbox\" ng-model=\"vm.isActive\" ng-change=\"show_hide_recordGrid()\"> <span class=\"slider round hide-off\" style=\"padding-top: 5px;margin-bottom: 10px\"><span ng-class=\" { 'off' : !vm.isActive } \">{{vm.isActive ? 'Card' : 'List'}}</span></span></label><!-- end switch button --></span></div></div><div class=\"content hideme\"><div class=\"container-fluid\"><div class=\"row\" id=\"reverse\" ng-init=\"limit = 6\"><div class=\"selector col-lg-4 col-md-4 col-sm-4\" ng-repeat=\"x in cardList  | filter:query  | filter:userhaspermission  | limitTo: limit as results\"><div class=\"card card-stats w3-card-4 h-75\"><div class=\"card-header card-header-{{x[Color]}} card-header-icon h-75\"><div ng-click=\"setSelectedCardInstanceId(x[179]);executeAction(cardActionGuid);updateViewsCounter(x[179],x[Views])\" data-toggle=\"modal\" data-target=\"#landingconsolemodal\"><div class=\"card-icon\"><div class=\"material-icons\"><p class=\"d-icon-{{x[Icon]}}\"></p></div></div><h5 class=\"card-title\">{{x[ApplicationName]}}</h5><p class=\"card-category\" ng-if=\"x[Views]>0\"><span class=\"d-icon-eye\"></span> <span>{{numFormatter(x[Views])}} views</span></p></div><p class=\"card-category\" ng-init=\"generateRating(x[ratingCount],x[179])\"><span ng-repeat=\"star in starsobj[x[179]] track by $index\" class=\"{{star.icon}}\" style=\"{{star.style}}\"></span> <span style=\"margin-left: 5px\"><button type=\"button\" class=\"d-button d-button_link d-button_small d-icon-left-user_star\" style=\"\" ng-click=\"setSelectedCardInstanceId(x[179]);executeAction(rateMeActionGuid)\"><span>Rate App</span></button></span></p><p class=\"card-category\" style=\"float: left;left:0;margin-left: 8px;margin-bottom: 0px;margin-top: -10px\"><span ng-if=\"x[cardStatus]\" class=\"d-icon-circle\" ng-class=\"getCardStatusCSS(x[cardStatus])\" style=\"margin-right: 5px;font-size: 21px\" rel=\"tooltip\" title=\"{{x[cardStatus]}}\" ng-mouseover=\"hoverIn('tooltip')\"></span> <span ng-if=\"x[cardFavourite]=='true' ||x[cardFavourite]=='false'\" class=\"{{getCardFavouriteClass(x[cardFavourite])}}\" style=\"margin-right: 5px;font-size:21px\" ng-click=\"updateCardFavourite(x[179],x[cardFavourite])\" rel=\"tooltip\" title=\"Favourite\" ng-mouseover=\"hoverIn('tooltip')\"></span> <span ng-if=\"x[cardScope]\" ng-class=\"getCardScopeCSS(x[cardScope])\" style=\"margin-right: 5px;font-size: 21px; color: skyblue\" rel=\"tooltip\" title=\"{{x[cardScope]=='true'?'Global':'Local'}}\" ng-mouseover=\"hoverIn('tooltip')\"></span></p><div class=\"card-category togglebutton\" ng-if=\"adminConfiguration\"><em style=\"margin-right: 5px\">Published-{{x[cardVisible]}}</em><label><input type=\"checkbox\" ng-model=\"x[cardVisible]\" ng-change=\"updateCardVisibility(x[179],x[cardVisible])\" ng-checked=\"{{x[cardVisible]}}\" ng-disabled=\"x[cardVisible]=='ERROR'\"> <span class=\"toggle\"></span></label><span ng-if=\"x[cardVisible]=='ERROR'\" class=\"d-icon-exclamation_triangle\" style=\"margin-right: 5px;font-size: 21px; color: red\" rel=\"tooltip\" data-html=\"true\" data-placement=\"left\" title=\"{{x[cardErrorInformation]}}\" ng-mouseover=\"hoverIn('tooltip')\"></span></div></div><div class=\"card-footer\"><div class=\"stats\"><div class=\"material-icons\"><p class=\"d-icon-info_circle\" rel=\"popover\" data-container=\"body\" data-original-title=\"{{x[tooltipHeader]}}\" data-color=\"primary\" data-content=\"{{x[tooltipDescription]}}\" ng-mouseover=\"hoverIn('popover')\"></p></div><a href=\"javascript:;\" style=\"color:black\"><em>{{x[Description]}}</em></a></div></div></div></div></div><div style=\"text-align: right\"><button class=\"d-button d-icon-right-angle_down d-button_secondary\" ng-hide=\"results.length === cardList.length\" ng-click=\"limit = limit +6\">show more...</button> <button class=\"d-button d-icon-right-angle_up d-button_secondary\" ng-hide=\"results.length <= 6\" ng-click=\"limit = limit -6\">show less...</button></div></div></div></div><script type=\"text/javascript\">$(document).ready(function() {\r" +
     "\n" +
     "\r" +
     "\n" +
@@ -761,7 +761,7 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
     "\n" +
     "        $('[data-toggle=\"popover\"]').popover()\r" +
     "\n" +
-    "    })</script><div class=\"wrapper\"><div class=\"row\"><div class=\"col-4\"><div class=\"searchcontainer\"><input type=\"text\" class=\"searchinput w3-{{SearchColor}}\" ng-model=\"query\" placeholder=\"Search...\"><div class=\"search w3-{{SearchColor}}\" ng-click=\"clearSearchContainer()\"></div></div></div><div class=\"col-8\"><h1 style=\"font-size: 55px\" class=\"w3-text-{{titleColor}}\">{{Greetings}} {{CurrentUserFullName}}</h1><p></p></div></div><div class=\"content\"><div class=\"container-fluid\"><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\" data-interval=\"{{carouselSpeed}}\"><!-- Indicators --><ol class=\"carousel-indicators\"><li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li><li data-target=\"#myCarousel\" data-slide-to=\"1\"></li><li data-target=\"#myCarousel\" data-slide-to=\"2\"></li></ol><!-- Wrapper for slides --><div class=\"carousel-inner\"><div class=\"item active\"><img src=\"{{firstSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[0][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"{{secondSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[1][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"{{thirdSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[2][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div></div><!-- Left and right controls --></div></div></div><div class=\"container-fluid\" style=\"padding-bottom: 0px; padding-top: 10px\"><div class=\"text-center\" style=\"\"><span><!-- sort-by dropdown --><label style=\"vertical-align: bottom;float: left; color:black\">Sort By:</label><select ng-model=\"selectedValue\" ng-change=\"sortByViews()\" style=\"float:left\"><option value=\"\" selected=\"selected\">-select-</option><option value=\"fav\">Favourites</option><option value=\"{{Views}}\">Max-views</option><option value=\"{{ratingCount}}\">Max-ratings</option><option value=\"status\">Active</option><option value=\"clear\">Clear</option><tbody><!----><tr><td>user_card</td><td><span class=\"bigfont d-icon-user_card\"></span></td></tr><!----><tr><td>user_check</td><td><span class=\"bigfont d-icon-user_check\"></span></td></tr><!----><tr><td>user_check_circle</td><td><span class=\"bigfont d-icon-user_check_circle\"></span></td></tr><!----></tbody></select><button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category1\" ng-click=\"assignCurrentCategory(Category1)\">{{Category1}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category2\" ng-click=\"assignCurrentCategory(Category2)\">{{Category2}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category3\" ng-click=\"assignCurrentCategory(Category3)\">{{Category3}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category4\" ng-click=\"assignCurrentCategory(Category4)\">{{Category4}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category5\" ng-click=\"assignCurrentCategory(Category5)\">{{Category5}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category6\" ng-click=\"assignCurrentCategory(Category6)\">{{Category6}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category7\" ng-click=\"assignCurrentCategory(Category7)\">{{Category7}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category8\" ng-click=\"assignCurrentCategory(Category8)\">{{Category8}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 10px\" ng-if=\"Category1\" ng-click=\"assignCurrentCategory('ALL')\">All</button><!-- switch button --><label class=\"switch\" style=\"/*vertical-align: bottom;*/\"><input type=\"checkbox\" ng-model=\"vm.isActive\" ng-change=\"show_hide_recordGrid()\"> <span class=\"slider round hide-off\" style=\"padding-top: 5px;margin-bottom: 10px\"><span ng-class=\" { 'off' : !vm.isActive } \">{{vm.isActive ? 'Card' : 'List'}}</span></span></label><!-- end switch button --></span></div></div><div class=\"content hideme\"><div class=\"container-fluid\"><div class=\"row\" id=\"reverse\" ng-init=\"limit = 8\"><div class=\"selector col-lg-3 col-md-4 col-sm-4\" ng-repeat=\"x in cardList | filter:query | filter:userhaspermission | limitTo: limit as results \"><div class=\"card card-stats w3-card-4 h-75\"><div class=\"card-header card-header-{{x[Color]}} card-header-icon h-75\"><div ng-click=\"setSelectedCardInstanceId(x[179]);executeAction(cardActionGuid);updateViewsCounter(x[179],x[Views])\" data-toggle=\"modal\" data-target=\"#portalpreviewmodal\"><div class=\"card-icon\"><div class=\"material-icons\"><p class=\"d-icon-{{x[Icon]}}\"></p></div></div><h5 class=\"card-title\">{{x[ApplicationName]}}</h5><p class=\"card-category\" ng-if=\"x[Views]>0\"><span class=\"d-icon-eye\"></span> <span>{{numFormatter(x[Views])}} views</span></p></div><p class=\"card-category\" ng-init=\"generateRating(x[ratingCount],x[179])\"><span ng-repeat=\"star in starsobj[x[179]] track by $index\" class=\"{{star.icon}}\" style=\"{{star.style}}\"></span> <span style=\"margin-left: 5px\"><button type=\"button\" class=\"d-button d-button_link d-button_small d-icon-left-user_star\" style=\"\" ng-click=\"setSelectedCardInstanceId(x[179]);executeAction(rateMeActionGuid)\"><span>Rate App</span></button></span></p><p class=\"card-category\" style=\"float: left;left:0;margin-left: 8px;margin-bottom: 0px;margin-top: -10px\"><span ng-if=\"x[cardStatus]\" class=\"d-icon-circle\" style=\"margin-right: 5px;font-size: 21px\" ng-class=\"getCardStatusCSS(x[cardStatus])\" rel=\"tooltip\" title=\"{{x[cardStatus]}}\" ng-mouseover=\"hoverIn('tooltip')\"></span> <span ng-if=\"x[cardFavourite]=='true' ||x[cardFavourite]=='false'\" class=\"{{getCardFavouriteClass(x[cardFavourite])}}\" style=\"margin-right: 5px;font-size:21px\" ng-click=\"updateCardFavourite(x[179],x[cardFavourite])\" rel=\"tooltip\" title=\"Favourite\" ng-mouseover=\"hoverIn('tooltip')\"></span> <span ng-if=\"x[cardScope]\" ng-class=\"getCardScopeCSS(x[cardScope])\" style=\"margin-right: 5px;font-size: 21px; color: skyblue\" rel=\"tooltip\" title=\"{{x[cardScope]=='true'?'Global':'Local'}}\" ng-mouseover=\"hoverIn('tooltip')\"></span></p><div class=\"card-category togglebutton\" ng-if=\"adminConfiguration\"><em style=\"margin-right: 5px\">Published -{{x[cardVisible]}}</em><label><input type=\"checkbox\" ng-model=\"x[cardVisible]\" ng-change=\"updateCardVisibility(x[179],x[cardVisible])\" ng-checked=\"{{x[cardVisible]}}\" ng-disabled=\"x[cardVisible]=='ERROR'\"> <span class=\"toggle\"></span></label><span ng-if=\"x[cardVisible]=='ERROR'\" class=\"d-icon-exclamation_triangle\" style=\"margin-right: 5px;font-size: 21px; color: red\" rel=\"tooltip\" data-html=\"true\" data-placement=\"left\" title=\"{{x[cardErrorInformation]}}\" ng-mouseover=\"hoverIn('tooltip')\"></span></div></div><div class=\"card-footer\"><div class=\"stats\"><div class=\"material-icons\"><p class=\"d-icon-info_circle\" rel=\"popover\" data-container=\"body\" data-original-title=\"{{x[tooltipHeader]}}\" data-color=\"primary\" data-content=\"{{x[tooltipDescription]}}\" ng-mouseover=\"hoverIn('popover')\"></p></div><a href=\"javascript:;\" style=\"color: black\"><em>{{x[Description]}}</em></a></div></div></div></div></div><div style=\"text-align: right\"><button class=\"d-button d-icon-right-angle_down d-button_secondary\" ng-hide=\"results.length === cardList.length\" ng-click=\"limit = limit +8\">show more...</button> <button class=\"d-button d-icon-right-angle_up d-button_secondary\" ng-hide=\"results.length <= 8\" ng-click=\"limit = limit -8\">show less...</button></div></div></div></div><script type=\"text/javascript\">$(document).ready(function() {\r" +
+    "    })</script><div class=\"wrapper\"><div class=\"row\"><div class=\"col-2\"></div><div class=\"mx-auto py-3\"><h1 style=\"font-size: 34px\" class=\"w3-text-{{titleColor}}\">{{Greetings}} {{CurrentUserFullName}}</h1><p></p></div><div class=\"mr-5 py-3 col-3\"><form class=\"form-inline d-flex justify-content-center md-form form-sm active-{{SearchColor}}-2 mt-2\"><i class=\"fas fa-search\" aria-hidden=\"true\"></i> <input class=\"form-control form-control-sm ml-3 w-75\" type=\"text\" ng-model=\"query\" placeholder=\"Search\" aria-label=\"Search\"></form></div></div><div class=\"content\"><div class=\"container-fluid\"><div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\" data-interval=\"{{carouselSpeed}}\"><!-- Indicators --><ol class=\"carousel-indicators\"><li data-target=\"#myCarousel\" data-slide-to=\"0\" class=\"active\"></li><li data-target=\"#myCarousel\" data-slide-to=\"1\"></li><li data-target=\"#myCarousel\" data-slide-to=\"2\"></li></ol><!-- Wrapper for slides --><div class=\"carousel-inner\"><div class=\"item active\"><img src=\"{{firstSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[0][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"{{secondSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[1][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div><div class=\"item\"><img src=\"{{thirdSlideImage}}\" alt=\"\" ng-click=\"redirecturl(cardList[2][BannerURL])\" style=\"width:100%;height: 400px\"><div class=\"carousel-caption\"><h3></h3><p></p></div></div></div><!-- Left and right controls --></div></div></div><div class=\"container-fluid\" style=\"padding-bottom: 0px; padding-top: 10px\"><div class=\"text-center\" style=\"\"><span><!-- sort-by dropdown --><label style=\"vertical-align: bottom;float: left; color:black\">Sort By:</label><select ng-model=\"selectedValue\" ng-change=\"sortByViews()\" style=\"float:left\"><option value=\"\" selected=\"selected\">-select-</option><option value=\"fav\">Favourites</option><option value=\"{{Views}}\">Max-views</option><option value=\"{{ratingCount}}\">Max-ratings</option><option value=\"status\">Active</option><option value=\"clear\">Clear</option><tbody><!----><tr><td>user_card</td><td><span class=\"bigfont d-icon-user_card\"></span></td></tr><!----><tr><td>user_check</td><td><span class=\"bigfont d-icon-user_check\"></span></td></tr><!----><tr><td>user_check_circle</td><td><span class=\"bigfont d-icon-user_check_circle\"></span></td></tr><!----></tbody></select><button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category1\" ng-click=\"assignCurrentCategory(Category1)\">{{Category1}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category2\" ng-click=\"assignCurrentCategory(Category2)\">{{Category2}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category3\" ng-click=\"assignCurrentCategory(Category3)\">{{Category3}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category4\" ng-click=\"assignCurrentCategory(Category4)\">{{Category4}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category5\" ng-click=\"assignCurrentCategory(Category5)\">{{Category5}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category6\" ng-click=\"assignCurrentCategory(Category6)\">{{Category6}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category7\" ng-click=\"assignCurrentCategory(Category7)\">{{Category7}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 5px\" ng-if=\"Category8\" ng-click=\"assignCurrentCategory(Category8)\">{{Category8}}</button> <button class=\"w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card\" style=\"margin-right: 10px\" ng-if=\"Category1\" ng-click=\"assignCurrentCategory('ALL')\">All</button><!-- switch button --><label class=\"switch\" style=\"/*vertical-align: bottom;*/\"><input type=\"checkbox\" ng-model=\"vm.isActive\" ng-change=\"show_hide_recordGrid()\"> <span class=\"slider round hide-off\" style=\"padding-top: 5px;margin-bottom: 10px\"><span ng-class=\" { 'off' : !vm.isActive } \">{{vm.isActive ? 'Card' : 'List'}}</span></span></label><!-- end switch button --></span></div></div><div class=\"content hideme\"><div class=\"container-fluid\"><div class=\"row\" id=\"reverse\" ng-init=\"limit = 8\"><div class=\"selector col-lg-3 col-md-4 col-sm-4\" ng-repeat=\"x in cardList | filter:query | filter:userhaspermission | limitTo: limit as results \"><div class=\"card card-stats w3-card-4 h-75\"><div class=\"card-header card-header-{{x[Color]}} card-header-icon h-75\"><div ng-click=\"setSelectedCardInstanceId(x[179]);executeAction(cardActionGuid);updateViewsCounter(x[179],x[Views])\" data-toggle=\"modal\" data-target=\"#portalpreviewmodal\"><div class=\"card-icon\"><div class=\"material-icons\"><p class=\"d-icon-{{x[Icon]}}\"></p></div></div><h5 class=\"card-title\">{{x[ApplicationName]}}</h5><p class=\"card-category\" ng-if=\"x[Views]>0\"><span class=\"d-icon-eye\"></span> <span>{{numFormatter(x[Views])}} views</span></p></div><p class=\"card-category\" ng-init=\"generateRating(x[ratingCount],x[179])\"><span ng-repeat=\"star in starsobj[x[179]] track by $index\" class=\"{{star.icon}}\" style=\"{{star.style}}\"></span> <span style=\"margin-left: 5px\"><button type=\"button\" class=\"d-button d-button_link d-button_small d-icon-left-user_star\" style=\"\" ng-click=\"setSelectedCardInstanceId(x[179]);executeAction(rateMeActionGuid)\"><span>Rate App</span></button></span></p><p class=\"card-category\" style=\"float: left;left:0;margin-left: 8px;margin-bottom: 0px;margin-top: -10px\"><span ng-if=\"x[cardStatus]\" class=\"d-icon-circle\" style=\"margin-right: 5px;font-size: 21px\" ng-class=\"getCardStatusCSS(x[cardStatus])\" rel=\"tooltip\" title=\"{{x[cardStatus]}}\" ng-mouseover=\"hoverIn('tooltip')\"></span> <span ng-if=\"x[cardFavourite]=='true' ||x[cardFavourite]=='false'\" class=\"{{getCardFavouriteClass(x[cardFavourite])}}\" style=\"margin-right: 5px;font-size:21px\" ng-click=\"updateCardFavourite(x[179],x[cardFavourite])\" rel=\"tooltip\" title=\"Favourite\" ng-mouseover=\"hoverIn('tooltip')\"></span> <span ng-if=\"x[cardScope]\" ng-class=\"getCardScopeCSS(x[cardScope])\" style=\"margin-right: 5px;font-size: 21px; color: skyblue\" rel=\"tooltip\" title=\"{{x[cardScope]=='true'?'Global':'Local'}}\" ng-mouseover=\"hoverIn('tooltip')\"></span></p><div class=\"card-category togglebutton\" ng-if=\"adminConfiguration\"><em style=\"margin-right: 5px\">Published -{{x[cardVisible]}}</em><label><input type=\"checkbox\" ng-model=\"x[cardVisible]\" ng-change=\"updateCardVisibility(x[179],x[cardVisible])\" ng-checked=\"{{x[cardVisible]}}\" ng-disabled=\"x[cardVisible]=='ERROR'\"> <span class=\"toggle\"></span></label><span ng-if=\"x[cardVisible]=='ERROR'\" class=\"d-icon-exclamation_triangle\" style=\"margin-right: 5px;font-size: 21px; color: red\" rel=\"tooltip\" data-html=\"true\" data-placement=\"left\" title=\"{{x[cardErrorInformation]}}\" ng-mouseover=\"hoverIn('tooltip')\"></span></div></div><div class=\"card-footer\"><div class=\"stats\"><div class=\"material-icons\"><p class=\"d-icon-info_circle\" rel=\"popover\" data-container=\"body\" data-original-title=\"{{x[tooltipHeader]}}\" data-color=\"primary\" data-content=\"{{x[tooltipDescription]}}\" ng-mouseover=\"hoverIn('popover')\"></p></div><a href=\"javascript:;\" style=\"color: black\"><em>{{x[Description]}}</em></a></div></div></div></div></div><div style=\"text-align: right\"><button class=\"d-button d-icon-right-angle_down d-button_secondary\" ng-hide=\"results.length === cardList.length\" ng-click=\"limit = limit +8\">show more...</button> <button class=\"d-button d-icon-right-angle_up d-button_secondary\" ng-hide=\"results.length <= 8\" ng-click=\"limit = limit -8\">show less...</button></div></div></div></div><script type=\"text/javascript\">$(document).ready(function() {\r" +
     "\n" +
     "\r" +
     "\n" +
@@ -832,388 +832,404 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
 
   $templateCache.put('scripts/view-components/search-bar/com-vyom-vyomlib-search-bar.directive.html',
     "<html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\"><script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script><script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script><style>.hovereffect {\n" +
-    "						  width: 100%;\n" +
-    "						  height: 100%;\n" +
-    "						  float: left;\n" +
-    "						  overflow: hidden;\n" +
-    "						  position: relative;\n" +
-    "						  text-align: center;\n" +
-    "						  cursor: default;\n" +
-    "						}\n" +
+    "            width: 100%;\n" +
+    "            height: 100%;\n" +
+    "            float: left;\n" +
+    "            overflow: hidden;\n" +
+    "            position: relative;\n" +
+    "            text-align: center;\n" +
+    "            cursor: default;\n" +
+    "        }\n" +
     "\n" +
-    "						.hovereffect .overlay {\n" +
-    "						  width: 100%;\n" +
-    "						  height: 100%;\n" +
-    "						  position: absolute;\n" +
-    "						  overflow: hidden;\n" +
-    "						  top: 0;\n" +
-    "						  left: 0;\n" +
-    "						}\n" +
+    "        .hovereffect .overlay {\n" +
+    "            width: 100%;\n" +
+    "            height: 100%;\n" +
+    "            position: absolute;\n" +
+    "            overflow: hidden;\n" +
+    "            top: 0;\n" +
+    "            left: 0;\n" +
+    "        }\n" +
     "\n" +
-    "						.hovereffect img {\n" +
-    "						  display: block;\n" +
-    "						  position: relative;\n" +
-    "						  -webkit-transition: all 0.4s ease-in;\n" +
-    "						  transition: all 0.4s ease-in;\n" +
-    "						}\n" +
+    "        .hovereffect img {\n" +
+    "            display: block;\n" +
+    "            position: relative;\n" +
+    "            -webkit-transition: all 0.4s ease-in;\n" +
+    "            transition: all 0.4s ease-in;\n" +
+    "        }\n" +
     "\n" +
-    "						.hovereffect:hover img {\n" +
-    "						  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"filter\"><feColorMatrix type=\"matrix\" color-interpolation-filters=\"sRGB\" values=\"0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0\" /><feGaussianBlur stdDeviation=\"3\" /></filter></svg>#filter');\n" +
-    "						  filter: grayscale(1) blur(3px);\n" +
-    "						  -webkit-filter: grayscale(1) blur(3px);\n" +
-    "						  -webkit-transform: scale(1.2);\n" +
-    "						  -ms-transform: scale(1.2);\n" +
-    "						  transform: scale(1.2);\n" +
-    "						}\n" +
+    "        .hovereffect:hover img {\n" +
+    "            filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns=\"http://www.w3.org/2000/svg\"><filter id=\"filter\"><feColorMatrix type=\"matrix\" color-interpolation-filters=\"sRGB\" values=\"0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0.2126 0.7152 0.0722 0 0 0 0 0 1 0\" /><feGaussianBlur stdDeviation=\"3\" /></filter></svg>#filter');\n" +
+    "            filter: grayscale(1) blur(3px);\n" +
+    "            -webkit-filter: grayscale(1) blur(3px);\n" +
+    "            -webkit-transform: scale(1.2);\n" +
+    "            -ms-transform: scale(1.2);\n" +
+    "            transform: scale(1.2);\n" +
+    "        }\n" +
     "\n" +
-    "						.hovereffect h2 {\n" +
-    "						  text-transform: uppercase;\n" +
-    "						  text-align: center;\n" +
-    "						  position: relative;\n" +
-    "						  font-size: 17px;\n" +
-    "						  padding: 10px;\n" +
-    "						  background: rgba(0, 0, 0, 0.6);\n" +
-    "						}\n" +
+    "        .hovereffect h2 {\n" +
+    "            text-transform: uppercase;\n" +
+    "            text-align: center;\n" +
+    "            position: relative;\n" +
+    "            font-size: 17px;\n" +
+    "            padding: 10px;\n" +
+    "            background: rgba(0, 0, 0, 0.6);\n" +
+    "        }\n" +
     "\n" +
-    "						.hovereffect a.info {\n" +
-    "						  display: inline-block;\n" +
-    "						  text-decoration: none;\n" +
-    "						  padding: 7px 14px;\n" +
-    "						  border: 1px solid #fff;\n" +
-    "						  margin: 50px 0 0 0;\n" +
-    "						  background-color: transparent;\n" +
-    "						}\n" +
+    "        .hovereffect a.info {\n" +
+    "            display: inline-block;\n" +
+    "            text-decoration: none;\n" +
+    "            padding: 7px 14px;\n" +
+    "            border: 1px solid #fff;\n" +
+    "            margin: 50px 0 0 0;\n" +
+    "            background-color: transparent;\n" +
+    "        }\n" +
     "\n" +
-    "						.hovereffect a.info:hover {\n" +
-    "						  box-shadow: 0 0 5px #fff;\n" +
-    "						}\n" +
+    "        .hovereffect a.info:hover {\n" +
+    "            box-shadow: 0 0 5px #fff;\n" +
+    "        }\n" +
     "\n" +
-    "						.hovereffect a.info, .hovereffect h2 {\n" +
-    "						  -webkit-transform: scale(0.7);\n" +
-    "						  -ms-transform: scale(0.7);\n" +
-    "						  transform: scale(0.7);\n" +
-    "						  -webkit-transition: all 0.4s ease-in;\n" +
-    "						  transition: all 0.4s ease-in;\n" +
-    "						  opacity: 0;\n" +
-    "						  filter: alpha(opacity=0);\n" +
-    "						  color: #fff;\n" +
-    "						  text-transform: uppercase;\n" +
-    "						}\n" +
+    "        .hovereffect a.info,\n" +
+    "        .hovereffect h2 {\n" +
+    "            -webkit-transform: scale(0.7);\n" +
+    "            -ms-transform: scale(0.7);\n" +
+    "            transform: scale(0.7);\n" +
+    "            -webkit-transition: all 0.4s ease-in;\n" +
+    "            transition: all 0.4s ease-in;\n" +
+    "            opacity: 0;\n" +
+    "            filter: alpha(opacity=0);\n" +
+    "            color: #fff;\n" +
+    "            text-transform: uppercase;\n" +
+    "        }\n" +
     "\n" +
-    "						.hovereffect:hover a.info, .hovereffect:hover h2 {\n" +
-    "						  opacity: 1;\n" +
-    "						  filter: alpha(opacity=100);\n" +
-    "						  -webkit-transform: scale(1);\n" +
-    "						  -ms-transform: scale(1);\n" +
-    "						  transform: scale(1);\n" +
-    "						}\n" +
-    "            .page{\n" +
-    "                padding: 0px;\n" +
-    "                margin: 0px;\n" +
-    "                margin-left: 20px;\n" +
-    "                /*max-width: 1920px;*/\n" +
-    "            }\n" +
-    "           /* http://sf.co.ua/12/12/wallpaper-2501763.jpg*/\n" +
-    "            /*https://images2.alphacoders.com/527/527942.jpg*/\n" +
-    "            /*https://images2.alphacoders.com/527/527942.jpg*/\n" +
-    "            \n" +
-    "            .headerPage{\n" +
-    "                /*background-image: url(http://hauntedstate.com/wp-content/uploads/2014/12/grunge1.jpg);*/\n" +
-    "                /*background-image: url(http://avante.biz/wp-content/uploads/Plain-Orange-Wallpapers/Plain-Orange-Wallpapers-005.jpg);*/\n" +
-    "                /*background-image: url(https://images4.alphacoders.com/166/166176.jpg);*/\n" +
-    "                /*background-image: url(http://marters.club/wp-content/uploads/2017/11/cement-wallpaper-on-wallpapers-and-pictures-concrete-for-mac-tablet-laptop-mobile-cement-wallpaper-uk.jpg);*/\n" +
-    "				 background-image: url(\"/com.vyom.vyomlib/resources/img/city_f.jpg\");\n" +
-    "				 /*https://citydiscovery2.imgix.net/new_york.jpg?w=2100&h=1100&bri=-12&q=30&auto=format&crop=entropy&fit=crop*/\n" +
-    "                align-content: center;\n" +
-    "                text-align: center;\n" +
-    "                padding-top: 50px;\n" +
-    "                padding-bottom: 40px;\n" +
-    "                width: 100%;\n" +
-    "				height:480px;\n" +
-    "                \n" +
-    "                /*margin: 0px;\n" +
+    "        .hovereffect:hover a.info,\n" +
+    "        .hovereffect:hover h2 {\n" +
+    "            opacity: 1;\n" +
+    "            filter: alpha(opacity=100);\n" +
+    "            -webkit-transform: scale(1);\n" +
+    "            -ms-transform: scale(1);\n" +
+    "            transform: scale(1);\n" +
+    "        }\n" +
+    "\n" +
+    "        .page {\n" +
+    "            padding: 0px;\n" +
+    "            margin: 0px;\n" +
+    "            margin-left: 20px;\n" +
+    "            /*max-width: 1920px;*/\n" +
+    "        }\n" +
+    "\n" +
+    "        /* http://sf.co.ua/12/12/wallpaper-2501763.jpg*/\n" +
+    "        /*https://images2.alphacoders.com/527/527942.jpg*/\n" +
+    "        /*https://images2.alphacoders.com/527/527942.jpg*/\n" +
+    "\n" +
+    "        .headerPage {\n" +
+    "            /*background-image: url(http://hauntedstate.com/wp-content/uploads/2014/12/grunge1.jpg);*/\n" +
+    "            /*background-image: url(http://avante.biz/wp-content/uploads/Plain-Orange-Wallpapers/Plain-Orange-Wallpapers-005.jpg);*/\n" +
+    "            /*background-image: url(https://images4.alphacoders.com/166/166176.jpg);*/\n" +
+    "            /*background-image: url(http://marters.club/wp-content/uploads/2017/11/cement-wallpaper-on-wallpapers-and-pictures-concrete-for-mac-tablet-laptop-mobile-cement-wallpaper-uk.jpg);*/\n" +
+    "            background-image: url(\"/com.vyom.vyomlib/resources/img/city_f.jpg\");\n" +
+    "            /*https://citydiscovery2.imgix.net/new_york.jpg?w=2100&h=1100&bri=-12&q=30&auto=format&crop=entropy&fit=crop*/\n" +
+    "            align-content: center;\n" +
+    "            text-align: center;\n" +
+    "            padding-top: 50px;\n" +
+    "            padding-bottom: 40px;\n" +
+    "            width: 100%;\n" +
+    "            height: 480px;\n" +
+    "\n" +
+    "            /*margin: 0px;\n" +
     "                padding: 0px;*/\n" +
-    "                margin-bottom: 10px; \n" +
-    "				\n" +
-    "				/*linear-gradient(\n" +
+    "            margin-bottom: 10px;\n" +
+    "\n" +
+    "            /*linear-gradient(\n" +
     "				  rgba(40, 0, 80, 0.55), \n" +
     "				  rgba(20, 0, 50, 0.65)\n" +
     "				);*/\n" +
-    "            }\n" +
-    "            .form-control{\n" +
-    "                width: 100%;\n" +
-    "                <!-- height: 9%; -->\n" +
-    "            }\n" +
-    "            .bodyPage{\n" +
-    "                margin-top: 20px;\n" +
-    "            }\n" +
-    "            .headerPage h3{\n" +
-    "                /*color: */\n" +
-    "            }\n" +
-    "            p{\n" +
-    "                color: #42bad2;\n" +
-    "            }\n" +
-    "            .row{\n" +
-    "                width: 100%;\n" +
-    "            }\n" +
-    "            .container{\n" +
-    "                width: 100%;\n" +
-    "            }\n" +
-    "            .service{\n" +
-    "                max-width: 285px;\n" +
-    "            }</style><style>body {\n" +
-    "              padding : 10px ;\n" +
+    "        }\n" +
     "\n" +
-    "            }\n" +
-    "			\n" +
-    "			input[type=\"text\"]{\n" +
-    "				padding-top: 25px;\n" +
-    "				padding-bottom: 25px;\n" +
-    "				border-radius: 4px 4px 4px 4px;				\n" +
-    "			}\n" +
+    "        .form-control {\n" +
+    "            width: 100%;\n" +
+    "            < !-- height: 9%;\n" +
+    "            -->\n" +
+    "        }\n" +
     "\n" +
-    "            #exTab1 .tab-content {\n" +
-    "              /*color : white;\n" +
+    "        .bodyPage {\n" +
+    "            margin-top: 20px;\n" +
+    "        }\n" +
+    "\n" +
+    "        .headerPage h3 {\n" +
+    "            /*color: */\n" +
+    "        }\n" +
+    "\n" +
+    "        p {\n" +
+    "            color: #42bad2;\n" +
+    "        }\n" +
+    "\n" +
+    "        .row {\n" +
+    "            width: 100%;\n" +
+    "        }\n" +
+    "\n" +
+    "        .container {\n" +
+    "            width: 100%;\n" +
+    "        }\n" +
+    "\n" +
+    "        .service {\n" +
+    "            max-width: 285px;\n" +
+    "        }</style><style>body {\n" +
+    "            padding: 10px;\n" +
+    "\n" +
+    "        }\n" +
+    "\n" +
+    "        input[type=\"text\"] {\n" +
+    "            padding-top: 25px;\n" +
+    "            padding-bottom: 25px;\n" +
+    "            border-radius: 4px 4px 4px 4px;\n" +
+    "        }\n" +
+    "\n" +
+    "        #exTab1 .tab-content {\n" +
+    "            /*color : white;\n" +
     "              background-color: #428bca;*/\n" +
-    "              padding : 5px 15px;\n" +
-    "            }\n" +
+    "            padding: 5px 15px;\n" +
+    "        }\n" +
     "\n" +
-    "            #exTab2 h3 {\n" +
-    "              /*color : white;\n" +
+    "        #exTab2 h3 {\n" +
+    "            /*color : white;\n" +
     "              background-color: #428bca;*/\n" +
-    "              padding : 5px 15px;\n" +
-    "            }\n" +
+    "            padding: 5px 15px;\n" +
+    "        }\n" +
     "\n" +
-    "            /* remove border radius for the tab */\n" +
+    "        /* remove border radius for the tab */\n" +
     "\n" +
-    "            #exTab1 .nav-pills > li > a {\n" +
-    "              border-radius: 6.5px;\n" +
-    "            }\n" +
+    "        #exTab1 .nav-pills>li>a {\n" +
+    "            border-radius: 6.5px;\n" +
+    "        }\n" +
     "\n" +
-    "            /* change border radius for the tab , apply corners on top*/\n" +
+    "        /* change border radius for the tab , apply corners on top*/\n" +
     "\n" +
-    "            #exTab3 .nav-pills > li > a {\n" +
-    "              border-radius: 4px 4px 0 0 ;\n" +
-    "            }\n" +
+    "        #exTab3 .nav-pills>li>a {\n" +
+    "            border-radius: 4px 4px 0 0;\n" +
+    "        }\n" +
     "\n" +
-    "            #exTab3 .tab-content {\n" +
-    "             /* color : white;*/\n" +
-    "             /* background-color: #428bca;*/\n" +
-    "              padding : 5px 15px;\n" +
-    "            }\n" +
-    "            .vertical-menu {\n" +
-    "                width: 200px;\n" +
-    "				margin-left:10px;\n" +
-    "            }\n" +
-    "			\n" +
-    "			.vertical-menu li {\n" +
-    "				width: 200px;\n" +
-    "			}\n" +
+    "        #exTab3 .tab-content {\n" +
+    "            /* color : white;*/\n" +
+    "            /* background-color: #428bca;*/\n" +
+    "            padding: 5px 15px;\n" +
+    "        }\n" +
     "\n" +
-    "            .vertical-menu a {\n" +
-    "                display: block;\n" +
-    "                padding: 12px;\n" +
-    "                text-decoration: none;\n" +
-    "            }\n" +
+    "        .vertical-menu {\n" +
+    "            width: 200px;\n" +
+    "            margin-left: 10px;\n" +
+    "        }\n" +
     "\n" +
-    "            .vertical-menu a:hover {\n" +
-    "                background-color: #ccc;\n" +
-    "            }\n" +
-    "			\n" +
-    "			\n" +
-    "			.horizontal-menu {\n" +
-    "                /*width: 200px;*/\n" +
-    "            }\n" +
-    "			\n" +
-    "			\n" +
-    "			.pager li>a\n" +
-    "			{\n" +
-    "				border: 0.5px lightgrey solid;\n" +
-    "				/*box-Shadow : 5px 10px 10px -5px rgba(0,0,0,0.5);*/\n" +
-    "				color:black;\n" +
-    "				/*padding-left: 95px;*/\n" +
-    "				padding-right: 25px;\n" +
-    "				padding-left: 25px;\n" +
-    "				padding-top: 15px;\n" +
-    "				padding-bottom: 5px\n" +
-    "			}\n" +
-    "			\n" +
-    "			.pager \n" +
-    "			{\n" +
-    "				padding-left: 95px;\n" +
-    "			}\n" +
+    "        .vertical-menu li {\n" +
+    "            width: 200px;\n" +
+    "        }\n" +
     "\n" +
-    "            .horizontal-menu a {\n" +
-    "                display: block;\n" +
-    "				border: 0.5px lightgrey solid;\n" +
-    "				boxShadow : 5px 10px 10px -5px rgba(0,0,0,0.5);               \n" +
-    "                text-decoration: none;\n" +
-    "				text-align:center;\n" +
-    "				font-weight: bold;\n" +
-    "				color:black;\n" +
-    "				padding: 5px 40px;\n" +
-    "				padding-left: 37px;\n" +
-    "				padding-right: 36px;\n" +
-    "				padding-top: 16px;\n" +
-    "				padding-bottom: 17px\n" +
-    "            }\n" +
-    "					\n" +
+    "        .vertical-menu a {\n" +
+    "            display: block;\n" +
+    "            padding: 12px;\n" +
+    "            text-decoration: none;\n" +
+    "        }\n" +
     "\n" +
-    "            .horizontal-menu a:hover {\n" +
-    "                background-color: #ccc;\n" +
-    "            }\n" +
-    "			\n" +
-    "			.horizontal-menu a img {\n" +
-    "					padding-bottom: 1px;\n" +
-    "					width:40px;\n" +
-    "					height:40px;\n" +
-    "				}\n" +
-    "				\n" +
-    "			.horizontal-menu li {					\n" +
-    "					width:90px;					\n" +
-    "				}\n" +
-    "			\n" +
-    "			\n" +
-    "            li{\n" +
-    "                width: 150px;\n" +
-    "            }\n" +
-    "            .tree > ul {\n" +
-    "				margin: 0;\n" +
-    "				padding: 0;\n" +
-    "			}\n" +
+    "        .vertical-menu a:hover {\n" +
+    "            background-color: #ccc;\n" +
+    "        }\n" +
     "\n" +
-    "			.tree > ul > li {\n" +
-    "				padding-bottom: 10px;\n" +
-    "			}\n" +
     "\n" +
-    "			.tree > ul > li:nth-child(2n) {\n" +
-    "				background: #d9edf7;\n" +
-    "			}\n" +
+    "        .horizontal-menu {\n" +
+    "            /*width: 200px;*/\n" +
+    "        }\n" +
     "\n" +
-    "			.tree li {\n" +
-    "				list-style-type: none;\n" +
-    "				margin: 0;\n" +
-    "				padding: 0px 5px 0 5px;\n" +
-    "				position: relative\n" +
-    "			}\n" +
     "\n" +
-    "			.tree li li li::before,\n" +
-    "			.tree li li li::after {\n" +
-    "				content: '';\n" +
-    "				left: -20px;\n" +
-    "				position: absolute;\n" +
-    "				right: auto\n" +
-    "			}\n" +
+    "        .pager li>a {\n" +
+    "            border: 0.5px lightgrey solid;\n" +
+    "            /*box-Shadow : 5px 10px 10px -5px rgba(0,0,0,0.5);*/\n" +
+    "            color: black;\n" +
+    "            /*padding-left: 95px;*/\n" +
+    "            padding-right: 25px;\n" +
+    "            padding-left: 25px;\n" +
+    "            padding-top: 15px;\n" +
+    "            padding-bottom: 5px\n" +
+    "        }\n" +
     "\n" +
-    "			.tree li::before {\n" +
-    "				border-left: 1px solid #999;\n" +
-    "				bottom: 50px;\n" +
-    "				height: 100%;\n" +
-    "				top: 0;\n" +
-    "				width: 1px\n" +
-    "			}\n" +
+    "        .pager {\n" +
+    "            padding-left: 95px;\n" +
+    "        }\n" +
     "\n" +
-    "			.tree li::after {\n" +
-    "				border-top: 1px solid #999;\n" +
-    "				height: 20px;\n" +
-    "				top: 25px;\n" +
-    "				width: 25px\n" +
-    "			}\n" +
+    "        .horizontal-menu a {\n" +
+    "            display: block;\n" +
+    "            border: 0.5px lightgrey solid;\n" +
+    "            boxShadow: 5px 10px 10px -5px rgba(0, 0, 0, 0.5);\n" +
+    "            text-decoration: none;\n" +
+    "            text-align: center;\n" +
+    "            font-weight: bold;\n" +
+    "            color: black;\n" +
+    "            padding: 5px 40px;\n" +
+    "            padding-left: 37px;\n" +
+    "            padding-right: 36px;\n" +
+    "            padding-top: 16px;\n" +
+    "            padding-bottom: 17px\n" +
+    "        }\n" +
     "\n" +
-    "			.tree li span {\n" +
-    "				display: inline-block;\n" +
-    "				padding: 3px 8px;\n" +
-    "				text-decoration: none\n" +
-    "			}\n" +
     "\n" +
-    "			.tree li.parent_li>span {\n" +
-    "				cursor: pointer\n" +
-    "			}\n" +
+    "        .horizontal-menu a:hover {\n" +
+    "            background-color: #ccc;\n" +
+    "        }\n" +
     "\n" +
-    "			.tree>ul>li::before,\n" +
-    "			.tree>ul>li::after {\n" +
-    "				border: 0\n" +
-    "			}\n" +
+    "        .horizontal-menu a img {\n" +
+    "            padding-bottom: 1px;\n" +
+    "            width: 40px;\n" +
+    "            height: 40px;\n" +
+    "        }\n" +
     "\n" +
-    "			.tree li:last-child::before {\n" +
-    "				height: 30px\n" +
-    "			}\n" +
+    "        .horizontal-menu li {\n" +
+    "            width: 90px;\n" +
+    "        }\n" +
     "\n" +
-    "			.tree li.parent_li>span:hover,\n" +
-    "			.tree li.parent_li>span:hover+ul li span {\n" +
-    "				background: #eee;\n" +
-    "				color: #000\n" +
-    "			}\n" +
-    "            .logo{\n" +
-    "                width: 40px;\n" +
-    "                height: 40px;\n" +
-    "                margin: 0px;\n" +
-    "                padding: 0px;\n" +
-    "            }\n" +
-    "            .heading{\n" +
-    "                padding-left: 10px;\n" +
     "\n" +
-    "            }\n" +
-    "            .header{\n" +
-    "                margin: 0px;\n" +
-    "                padding: 0px;\n" +
-    "                /*margin-left: -15px;*/\n" +
+    "        li {\n" +
+    "            width: 150px;\n" +
+    "        }\n" +
     "\n" +
-    "            }\n" +
-    "            td{\n" +
-    "                font-size: 12px;\n" +
-    "            }\n" +
-    "			@media (min-width: 768px)\n" +
-    "			.col-sm-offset-1 {\n" +
-    "				margin-left: 8.33333333%;\n" +
-    "			}\n" +
-    "			\n" +
-    "			.horizontal-menu li {					\n" +
-    "				width:90px;	\n" +
-    "				height:98px;\n" +
-    "				color:black;\n" +
-    "				margin-right: 27px;\n" +
-    "				border-radius: 4px\n" +
-    "			}</style><script>function getUrlParameter(name) {\n" +
-    "                name = name.replace(/[\\[]/, '\\\\[').replace(/[\\]]/, '\\\\]');\n" +
-    "                var regex = new RegExp('[\\\\?&]' + name + '=([^&#]*)');\n" +
-    "                var results = regex.exec(location.search);\n" +
-    "				//document.write(\"results \"+results);\n" +
-    "                return results === null ? '' : decodeURIComponent(results[1].replace(/\\+/g, ' '));\n" +
-    "            };\n" +
-    "            \n" +
+    "        .tree>ul {\n" +
+    "            margin: 0;\n" +
+    "            padding: 0;\n" +
+    "        }\n" +
     "\n" +
-    "             function setSearchValue(){\n" +
-    "				//document.write(\"setSearchValue \");\n" +
-    "                var searchValue = getUrlParameter('searchKey');\n" +
-    "                document.getElementById(\"searchBar\").value = searchValue;\n" +
-    "				//document.write(\"searchbar \"+searchValue);\n" +
-    "                getData1();\n" +
-    "				//document.write(\"textdata \"+textData);\n" +
-    "            }\n" +
-    "			//getData1();\n" +
-    "			//search_fun();</script><script>var myDate = new Date();\n" +
-    "			var hrs = myDate.getHours();\n" +
+    "        .tree>ul>li {\n" +
+    "            padding-bottom: 10px;\n" +
+    "        }\n" +
     "\n" +
-    "			var greet;\n" +
+    "        .tree>ul>li:nth-child(2n) {\n" +
+    "            background: #d9edf7;\n" +
+    "        }\n" +
     "\n" +
-    "			if (hrs < 12)\n" +
-    "				greet = 'Good Morning';\n" +
-    "			else if (hrs >= 12 && hrs <= 17)\n" +
-    "				greet = 'Good Afternoon';\n" +
-    "			else if (hrs >= 17 && hrs <= 24)\n" +
-    "				greet = 'Good Evening';\n" +
+    "        .tree li {\n" +
+    "            list-style-type: none;\n" +
+    "            margin: 0;\n" +
+    "            padding: 0px 5px 0 5px;\n" +
+    "            position: relative\n" +
+    "        }\n" +
     "\n" +
-    "			document.getElementById('lblGreetings').innerHTML =\n" +
-    "				'<strong style=\"font-size: 45px;\">' + greet + ' \\n {{userName}}!</strong>';</script><script>var header1 = document.getElementsByClassName(\"pager\");\n" +
-    "				var lis = document.getElementsByClassName(\"licls\");\n" +
-    "				for (var i = 0; i < lis.length; i++) {\n" +
-    "				  lis[i].addEventListener(\"click\", function() {\n" +
-    "					var current = document.getElementsByClassName(\"pager.active\");\n" +
-    "					current[0].className = current[0].className.replace(\" active\", \"\");\n" +
-    "					this.className += \" active\";\n" +
-    "				  });\n" +
-    "				}</script><!-- <script>\n" +
+    "        .tree li li li::before,\n" +
+    "        .tree li li li::after {\n" +
+    "            content: '';\n" +
+    "            left: -20px;\n" +
+    "            position: absolute;\n" +
+    "            right: auto\n" +
+    "        }\n" +
+    "\n" +
+    "        .tree li::before {\n" +
+    "            border-left: 1px solid #999;\n" +
+    "            bottom: 50px;\n" +
+    "            height: 100%;\n" +
+    "            top: 0;\n" +
+    "            width: 1px\n" +
+    "        }\n" +
+    "\n" +
+    "        .tree li::after {\n" +
+    "            border-top: 1px solid #999;\n" +
+    "            height: 20px;\n" +
+    "            top: 25px;\n" +
+    "            width: 25px\n" +
+    "        }\n" +
+    "\n" +
+    "        .tree li span {\n" +
+    "            display: inline-block;\n" +
+    "            padding: 3px 8px;\n" +
+    "            text-decoration: none\n" +
+    "        }\n" +
+    "\n" +
+    "        .tree li.parent_li>span {\n" +
+    "            cursor: pointer\n" +
+    "        }\n" +
+    "\n" +
+    "        .tree>ul>li::before,\n" +
+    "        .tree>ul>li::after {\n" +
+    "            border: 0\n" +
+    "        }\n" +
+    "\n" +
+    "        .tree li:last-child::before {\n" +
+    "            height: 30px\n" +
+    "        }\n" +
+    "\n" +
+    "        .tree li.parent_li>span:hover,\n" +
+    "        .tree li.parent_li>span:hover+ul li span {\n" +
+    "            background: #eee;\n" +
+    "            color: #000\n" +
+    "        }\n" +
+    "\n" +
+    "        .logo {\n" +
+    "            width: 40px;\n" +
+    "            height: 40px;\n" +
+    "            margin: 0px;\n" +
+    "            padding: 0px;\n" +
+    "        }\n" +
+    "\n" +
+    "        .heading {\n" +
+    "            padding-left: 10px;\n" +
+    "\n" +
+    "        }\n" +
+    "\n" +
+    "        .header {\n" +
+    "            margin: 0px;\n" +
+    "            padding: 0px;\n" +
+    "            /*margin-left: -15px;*/\n" +
+    "\n" +
+    "        }\n" +
+    "\n" +
+    "        td {\n" +
+    "            font-size: 12px;\n" +
+    "        }\n" +
+    "\n" +
+    "        @media (min-width: 768px) .col-sm-offset-1 {\n" +
+    "            margin-left: 8.33333333%;\n" +
+    "        }\n" +
+    "\n" +
+    "        .horizontal-menu li {\n" +
+    "            width: 90px;\n" +
+    "            height: 98px;\n" +
+    "            color: black;\n" +
+    "            margin-right: 27px;\n" +
+    "            border-radius: 4px\n" +
+    "        }</style><script>function getUrlParameter(name) {\n" +
+    "            name = name.replace(/[\\[]/, '\\\\[').replace(/[\\]]/, '\\\\]');\n" +
+    "            var regex = new RegExp('[\\\\?&]' + name + '=([^&#]*)');\n" +
+    "            var results = regex.exec(location.search);\n" +
+    "            //document.write(\"results \"+results);\n" +
+    "            return results === null ? '' : decodeURIComponent(results[1].replace(/\\+/g, ' '));\n" +
+    "        };\n" +
+    "\n" +
+    "\n" +
+    "        function setSearchValue() {\n" +
+    "            //document.write(\"setSearchValue \");\n" +
+    "            var searchValue = getUrlParameter('searchKey');\n" +
+    "            document.getElementById(\"searchBar\").value = searchValue;\n" +
+    "            //document.write(\"searchbar \"+searchValue);\n" +
+    "            getData1();\n" +
+    "            //document.write(\"textdata \"+textData);\n" +
+    "        }\n" +
+    "        //getData1();\n" +
+    "        //search_fun();</script><script>var myDate = new Date();\n" +
+    "        var hrs = myDate.getHours();\n" +
+    "\n" +
+    "        var greet;\n" +
+    "\n" +
+    "        if (hrs < 12)\n" +
+    "            greet = 'Good Morning';\n" +
+    "        else if (hrs >= 12 && hrs <= 17)\n" +
+    "            greet = 'Good Afternoon';\n" +
+    "        else if (hrs >= 17 && hrs <= 24)\n" +
+    "            greet = 'Good Evening';\n" +
+    "\n" +
+    "        document.getElementById('lblGreetings').innerHTML =\n" +
+    "            '<strong style=\"font-size: 45px;\">' + greet + ' \\n {{userName}}!</strong>';</script><script>var header1 = document.getElementsByClassName(\"pager\");\n" +
+    "        var lis = document.getElementsByClassName(\"licls\");\n" +
+    "        for (var i = 0; i < lis.length; i++) {\n" +
+    "            lis[i].addEventListener(\"click\", function() {\n" +
+    "                var current = document.getElementsByClassName(\"pager.active\");\n" +
+    "                current[0].className = current[0].className.replace(\" active\", \"\");\n" +
+    "                this.className += \" active\";\n" +
+    "            });\n" +
+    "        }</script><!-- <script>\n" +
     "		$( document ).ready(function() {\n" +
     "			search_fun();\n" +
     "		});\n" +
@@ -1232,7 +1248,7 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
     "							angular.element('#allservices').trigger('click');\n" +
     "							angular.element('allservices').trigger('click');\n" +
     "						}, 0);\n" +
-    "					}*/</script><!-- <base href=\"https://developer6460.innovate.bmc.com/com.bmc.arsys.rx.innovationstudio/index.html#/app/view/com.vyom.app1:service\"> --></head><body ng-app=\"\"><div class=\"container page\" style=\"height:350px\"><div class=\"row headerPage\" height=\"470px;\"><div class=\"row\" style=\"padding-bottom: 20px; color: #d4cccc\"><div class=\"col-sm-offset-2 col-sm-7\" style=\"padding-top: 20px; padding-right: 0px\"><h1><label id=\"lblGreetings\" style=\"color:white\">May I help you, {{userName}}?</label></h1></div><!-- <div class=\"col-sm-1\" style=\"margin-top:0px; padding-left: 0px;\">\n" +
+    "					}*/</script><!-- <base href=\"https://developer6460.innovate.bmc.com/com.bmc.arsys.rx.innovationstudio/index.html#/app/view/com.vyom.app1:service\"> --></head><body ng-app=\"\"><div class=\"container page\" style=\"height:350px\"><div class=\"row headerPage\" height=\"470px;\" style=\"background-image: url('https://source.unsplash.com/2000x800/?nature')\"><div class=\"row\" style=\"padding-bottom: 20px; color: #d4cccc\"><div class=\"col-sm-offset-2 col-sm-7\" style=\"padding-top: 20px; padding-right: 0px\"><h1><label id=\"lblGreetings\" style=\"color:white\">May I help you, {{userName}}?</label></h1></div><!-- <div class=\"col-sm-1\" style=\"margin-top:0px; padding-left: 0px;\">\n" +
     "						<a href=\"#\" target=\"_blank\">\n" +
     "                            <img class=\"chatbot\" src=\"/com.vyom.vyomlib/resources/img/chatbot.ico\" width=\"70px\" height=\"70px\">\n" +
     "                        </a>\n" +
@@ -1254,7 +1270,7 @@ angular.module('com.bmc.arsys.rx.standardlib.utils').run(['$templateCache', func
     "						<span class=\"glyphicon glyphicon-list-alt\" style=\"padding-top: 4px;padding-right: 0.5px;\"> My Page</span> \n" +
     "						</a>  --><p class=\"glyphicon glyphicon-search col-sm-offset-0 col-sm-3\" style=\"margin-left: 0px;font-size: large;font-weight: bold;color: white;text-align:  left\">&nbsp;FIND</p><input type=\"text\" class=\"form-control\" id=\"searchBar\" placeholder=\"What are you looking for?\" ng-model=\"searchText\" ng-init=\"searchText =' '\" onfocus=\"if(this.value == ' ') { this.value = ''; }\" style=\"margin-top: 0px;padding-top: 25px;padding-bottom: 25px;border-radius: 4px 4px 4px 4px\"></div><div class=\"col-sm-1\" style=\"padding-left: 0px; margin-left:-17px;padding-top:29px\"><a ng-click=\"setSearchValue()\" class=\"btn btn-info btn-lg\" style=\"background-color: #29B6F6;padding-bottom: 15px\"><span class=\"\" style=\"padding-top: 4px\"></span> Search</a></div></div></div><div id=\"exTab1\" class=\"row\" style=\"padding-top: 10px\"><div class=\"col-sm-2\" style=\"padding: 0 0 0 15px; margin-top: 29px\"><ul class=\"nav nav-pills vertical-menu\"><li class=\"active\" ng-click=\"getData2('All');\"><!-- this.classList.add('active');this.className += ' ' + 'active';--><!-- {{category=\"All\";\"\"}} --> <a href=\"$location.absUrl()/#all\" data-toggle=\"tab\">All Services</a></li><li ng-click=\"getArticleData()\"><!-- {{category=\"ICT\";\"\"}} --> <a href=\"$location.absUrl()/#articles\" data-toggle=\"tab\">Knowledge Articles</a></li><!-- <li ng-click=\"getData3()\">\n" +
     "                                <a href=\"$location.absUrl()/#questions\" data-toggle=\"tab\">Policies</a>\n" +
-    "                            </li> --><li ng-click=\"getData3()\"><a href=\"$location.absUrl()/#questions\" data-toggle=\"tab\">Questions</a></li></ul></div><div class=\"col-sm-offset-0 col-sm-8\" style=\"padding: 0px; margin-left\"><!--  <div class =\"row\"> --><div class=\"tab-content clearfix\" style=\"margin-top: -140px\"><div class=\"tab-pane active\" id=\"all\"><div class=\"content row\" style=\"margin-left: 0px;margin-top: -45px\"><ul class=\"nav nav-pills horizontal-menu pager\"><li class=\"active\" ng-click=\"getData2('All')\" id=\"allservices\"><!-- {{category=\"All\";\"\"}} --> <a href=\"$location.absUrl()/#all\" data-toggle=\"tab\"><img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/All.png\" style=\"margin-right:5px;margin-left:10px\"><br>All<br><br></a></li><li ng-click=\"getData2('ICT')\"><!-- {{category=\"ICT\";\"\"}} --> <a href=\"$location.absUrl()/#knowledge\" data-toggle=\"tab\"><!-- <img src=\"/com.vyom.vyomlib/resources/img/ICT.png\" style=\";margin-right:5px;\"><br> --> <img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/ICT.png\" style=\"margin-right:5px;margin-left:10px\"><br>ICT<br><br></a></li><li ng-click=\"getDatahr()\"><!-- {{category=\"HR\";\"\"}} --> <a href=\"$location.absUrl()/#knowledge\" data-toggle=\"tab\"><!-- <img src=\"/com.vyom.vyomlib/resources/img/hr.png\" style=\"margin-right:5px;\"><br> --> <img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/HR.png\" style=\"margin-right:5px;margin-left:10px\"><br>HR<br><br></a></li><li ng-click=\"getDatapsc()\"><!-- {{category=\"P&SC\";\"\"}} --> <a href=\"$location.absUrl()/#knowledge\" data-toggle=\"tab\"><img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/P&SC.png\" style=\"margin-right:5px;margin-left:10px\"><br>P&SC<br><br></a></li><li ng-click=\"getDatapfinance()\"><!-- {{category=\"Finance\";\"\"}} --> <a href=\"$location.absUrl()/#knowledge\" data-toggle=\"tab\"><!-- <img src=\"/com.vyom.vyomlib/resources/img/finance.png\" style=\"height:30px;width:30px;margin-right:5px;\"><br> --> <img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/Finance.png\" style=\"margin-right:5px;margin-left:10px\"><br>Finance<br><br></a></li><li><!-- {{category=\"BSO\";\"\"}} --> <a href=\"http://10.51.5.25:9091/ux/myitapp/#/catalog/home\" target=\"_blank\"><img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/Service Catalog.png\" style=\"width:40px;height:40px\"><br>Service Catalog</a></li></ul></div><div class=\"content row\" style=\"margin-left: 0px;margin-top: 40px\"><div ng-repeat=\"text in textData | filter:searchText\" class=\"col-sm-4 service\" style=\"display: block;border: 0.5px lightgrey solid;padding-left: 2px;padding-right: 4px;margin-right: 4px;margin-top: 10px;width: 290px\"><div style=\"margin-top: 10px\"><p style=\"text-align: center\"><a href=\"{{text[cfg.serviceRequestURL]}}\" target=\"_blank\"><img src=\"/com.vyom.vyomlib/resources/img/{{text[cfg.icon]}}\" width=\"275px\" height=\"80px\" style=\"padding-left:\"></a></p></div><div style=\"margin-top: 10px\"><!--p style=\"text-align: center; font-size: 16px; margin-left: -5px\">\n" +
+    "                            </li> --><li ng-click=\"getData3()\"><a href=\"$location.absUrl()/#questions\" data-toggle=\"tab\">Questions</a></li></ul></div><div class=\"col-sm-offset-0 col-sm-8\" style=\"padding: 0px; margin-left\"><!--  <div class =\"row\"> --><div class=\"tab-content clearfix\" style=\"margin-top: -140px\"><div class=\"tab-pane active\" id=\"all\"><div class=\"content row\" style=\"margin-left: 0px;margin-top: -45px\"><ul class=\"nav nav-pills horizontal-menu pager\"><li class=\"active\" ng-click=\"getData2('All')\" id=\"allservices\"><!-- {{category=\"All\";\"\"}} --> <a href=\"$location.absUrl()/#all\" data-toggle=\"tab\"><img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/All.png\" style=\"margin-right:5px;margin-left:10px\"><br>All<br><br></a></li><li ng-click=\"getData2('ICT')\"><!-- {{category=\"ICT\";\"\"}} --> <a href=\"$location.absUrl()/#knowledge\" data-toggle=\"tab\"><!-- <img src=\"/com.vyom.vyomlib/resources/img/ICT.png\" style=\";margin-right:5px;\"><br> --> <img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/ICT.png\" style=\"margin-right:5px;margin-left:10px\"><br>ICT<br><br></a></li><li ng-click=\"getDatahr()\"><!-- {{category=\"HR\";\"\"}} --> <a href=\"$location.absUrl()/#knowledge\" data-toggle=\"tab\"><!-- <img src=\"/com.vyom.vyomlib/resources/img/hr.png\" style=\"margin-right:5px;\"><br> --> <img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/HR.png\" style=\"margin-right:5px;margin-left:10px\"><br>HR<br><br></a></li><li ng-click=\"getDatapsc()\"><!-- {{category=\"P&SC\";\"\"}} --> <a href=\"$location.absUrl()/#knowledge\" data-toggle=\"tab\"><img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/P&SC.png\" style=\"margin-right:5px;margin-left:10px\"><br>P&SC<br><br></a></li><li ng-click=\"getDatapfinance()\"><!-- {{category=\"Finance\";\"\"}} --> <a href=\"$location.absUrl()/#knowledge\" data-toggle=\"tab\"><!-- <img src=\"/com.vyom.vyomlib/resources/img/finance.png\" style=\"height:30px;width:30px;margin-right:5px;\"><br> --> <img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/Finance.png\" style=\"margin-right:5px;margin-left:10px\"><br>Finance<br><br></a></li><li><!-- {{category=\"BSO\";\"\"}} --> <a href=\"http://10.51.5.25:9091/ux/myitapp/#/catalog/home\" target=\" _blank\"><img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/Service Catalog.png\" style=\"width:40px;height:40px\"><br>Service Catalog</a></li></ul></div><div class=\"content row\" style=\"margin-left: 0px;margin-top: 40px\"><div ng-repeat=\"text in textData | filter:searchText\" class=\"col-sm-4 service\" style=\"display: block;border: 0.5px lightgrey solid;padding-left: 2px;padding-right: 4px;margin-right: 4px;margin-top: 10px;width: 290px\"><div style=\"margin-top: 10px\"><p style=\"text-align: center\"><a href=\"{{text[cfg.serviceRequestURL]}}\" target=\"_blank\"><img src=\"/com.vyom.vyomlib/resources/img/{{text[cfg.icon]}}\" width=\"275px\" height=\"80px\" style=\"padding-left:\"></a></p></div><div style=\"margin-top: 10px\"><!--p style=\"text-align: center; font-size: 16px; margin-left: -5px\">\n" +
     "												{{text[cfg.textFieldID]}}\n" +
     "											</p--></div></div><p ng-if=\"textData.length === 0\">No services are available.</p></div></div><div class=\"tab-pane\" id=\"knowledge\"><div class=\"content row\" style=\"margin-left: 0px;margin-top: -45px\"><ul class=\"nav nav-pills horizontal-menu pager\"><li class=\"active licls\" ng-click=\"getData2('All')\"><!-- {{category=\"All\";\"\"}} --> <a href=\"$location.absUrl()/#all\" data-toggle=\"tab\"><img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/All.png\" style=\"margin-right:5px;margin-left:10px\"><br>All<br><br></a></li><li class=\"licls\" ng-click=\"getData2('ICT')\"><!-- {{category=\"ICT\";\"\"}} --> <a href=\"$location.absUrl()/#knowledge\" data-toggle=\"tab\"><!-- <img src=\"/com.vyom.vyomlib/resources/img/ICT.png\" style=\";margin-right:5px;\"><br> --> <img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/ICT.png\" style=\"margin-right:5px;margin-left:10px\"><br>ICT<br><br></a></li><li class=\"licls\" ng-click=\"getDatahr()\"><!-- {{category=\"HR\";\"\"}} --> <a href=\"$location.absUrl()/#knowledge\" data-toggle=\"tab\"><!-- <img src=\"/com.vyom.vyomlib/resources/img/hr.png\" style=\"margin-right:5px;\"><br> --> <img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/HR.png\" style=\"margin-right:5px;margin-left:10px\"><br>HR<br><br></a></li><li class=\"licls\" ng-click=\"getDatapsc()\"><!-- {{category=\"P&SC\";\"\"}} --> <a href=\"$location.absUrl()/#knowledge\" data-toggle=\"tab\"><img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/P&SC.png\" style=\"margin-right:5px;margin-left:10px\"><br>P&SC<br><br></a></li><li class=\"licls\" ng-click=\"getDatapfinance()\"><!-- {{category=\"Finance\";\"\"}} --> <a href=\"$location.absUrl()/#knowledge\" data-toggle=\"tab\"><!-- <img src=\"/com.vyom.vyomlib/resources/img/finance.png\" style=\"height:30px;width:30px;margin-right:5px;\"><br> --> <img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/Finance.png\" style=\"margin-right:5px;margin-left:10px\"><br>Finance<br><br></a></li><li><!-- {{category=\"BSO\";\"\"}} --> <a href=\"http://10.51.5.25:9091/ux/myitapp/#/catalog/home\" target=\"_blank\"><img src=\"/com.vyom.vyomlib/resources/img/Search Bar Icons/Service Catalog.png\" style=\"width:40px;height:40px\"><br>Service Catalog</a></li></ul></div><div class=\"content row\" style=\"margin-left: 0px;margin-top: 40px\"><div ng-repeat=\"text in textData | filter:searchText\" class=\"col-sm-6 service\" style=\"display: block;border: 0.5px lightgrey solid;padding-left: 2px;padding-right: 4px;margin-right: 4px;margin-top: 10px;width: 290px\"><div style=\"margin-top: 10px\"><p style=\"text-align: center\"><a href=\"{{text[cfg.serviceRequestURL]}}\" target=\"_blank\"><img src=\"/com.vyom.vyomlib/resources/img/{{text[cfg.icon]}}\" width=\"275px\" height=\"80px\" style=\"padding-left:\"></a></p></div><div style=\"margin-top: 10px\"><!--p style=\"text-align: center; font-size: 16px; margin-left: -5px\">\n" +
     "												{{text[cfg.textFieldID]}}\n" +
