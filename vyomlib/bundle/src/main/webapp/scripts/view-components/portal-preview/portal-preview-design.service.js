@@ -17,6 +17,9 @@
             var defaultBannerScrollSpeed = _.find(componentDescriptor.propertiesByName, {
                 name: 'BannerScrollSpeed'
             }).defaultValue;
+            var defaultadminConfigurationLabel = _.find(componentDescriptor.propertiesByName, {
+                name: 'adminConfigurationLabel'
+            }).defaultValue;
 
 
             return {
@@ -30,6 +33,7 @@
                 ratingCount: componentDefinition.propertiesByName.ratingCount,
                 cardActionGuid: componentDefinition.propertiesByName.cardActionGuid,
                 adminConfiguration: (componentDefinition.propertiesByName.adminConfiguration == 'true') ? true : false,
+                adminConfigurationLabel: componentDefinition.propertiesByName.adminConfigurationLabel || defaultadminConfigurationLabel,
                 cardVisible: componentDefinition.propertiesByName.cardVisible,
                 cardErrorInformation: componentDefinition.propertiesByName.cardErrorInformation,
                 cardStatusNamedList: componentDefinition.propertiesByName.cardStatusNamedList,
@@ -225,17 +229,23 @@
                             group: 'cardAction',
                             index: 4
                         },
+                        adminConfigurationLabel: {
+                            label: 'Admins Only - Label',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'cardAction',
+                            index: 5
+                        },
                         cardVisible: {
                             label: 'Card Visible',
                             type: 'com-vyom-vyomlib-inspector-portal-preview-fields',
                             group: 'cardAction',
-                            index: 5
+                            index: 6
                         },
                         cardErrorInformation: {
                             label: 'Error Information',
                             type: 'com-vyom-vyomlib-inspector-portal-preview-fields',
                             group: 'cardAction',
-                            index: 6
+                            index: 7
                         },
                         cardStatusNamedList: {
                             label: 'Application Status NamedList',
@@ -246,7 +256,7 @@
                                 placement: "left"
                             },
                             group: 'cardAction',
-                            index: 7
+                            index: 8
                         },
                         userApplicationNamedList: {
                             label: 'User Application NamedList',
@@ -257,7 +267,7 @@
                                 placement: "left"
                             },
                             group: 'cardAction',
-                            index: 8
+                            index: 9
                         },
                         BannerImage: {
                             label: 'Image',

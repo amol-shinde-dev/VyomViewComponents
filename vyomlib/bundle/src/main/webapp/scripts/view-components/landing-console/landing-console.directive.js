@@ -35,6 +35,7 @@
                             $scope.recordFlag = 'false';
                             $scope.cardActionGuid = _config.cardActionGuid;
                             $scope.adminConfiguration = _config.adminConfiguration;
+                            $scope.adminConfigurationLabel = _config.adminConfigurationLabel;
                             $scope.cardVisible = _config.cardVisible ? _config.cardVisible : "";
                             $scope.cardErrorInformation = _config.cardErrorInformation ? _config.cardErrorInformation : "";
                             $scope.cardStatusNamedList = _config.cardStatusNamedList ? _config.cardStatusNamedList : "";
@@ -356,14 +357,20 @@
 
                         $scope.updateCardVisibility = function (RecInstanceId, isCardVisible) {
 
-                            console.log(isCardVisible);
+
 
                             if ($scope.RecordDefinition) {
+                                var currentCardVisible = _.find($scope.cardList, {
+                                    '179': RecInstanceId
+                                });
+
+                                currentCardVisible[$scope.cardVisible] = isCardVisible ? false : true;
+
                                 var objectRecord = rxRecordInstanceResource.withName($scope.RecordDefinition);
                                 objectRecord.get(RecInstanceId).then(
                                     function (record) {
 
-                                        record.setValue($scope.cardVisible, isCardVisible);
+                                        record.setValue($scope.cardVisible, currentCardVisible[$scope.cardVisible]);
                                         record.put();
 
                                         rxNotificationMessage.success("Saved Successfully!!");

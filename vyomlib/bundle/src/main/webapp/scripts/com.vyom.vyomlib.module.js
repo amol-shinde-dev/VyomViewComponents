@@ -28,6 +28,7 @@
        'com.vyom.vyomlib.view-components.dashboard1',
        'com.vyom.vyomlib.view-components.comment-box',
         'com.vyom.vyomlib.view-components.chatbot',
+        'com.vyom.vyomlib.view-components.chatbot1',
         'com.vyom.vyomlib.view-components.search-bar',
 
 

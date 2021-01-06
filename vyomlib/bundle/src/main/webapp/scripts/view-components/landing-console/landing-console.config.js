@@ -63,6 +63,13 @@
                             enableExpressionEvaluation: true
             },
                         {
+                            name: 'adminConfigurationLabel',
+                            type: "string",
+                            isConfig: true,
+                            defaultValue: '"Published"',
+                            enableExpressionEvaluation: true
+            },
+                        {
                             name: 'cardVisible',
                             isConfig: true,
             },

@@ -36,6 +36,7 @@
                             $scope.Views = _config.Views;
                             $scope.recordFlag = 'false';
                             $scope.adminConfiguration = _config.adminConfiguration;
+                            $scope.adminConfigurationLabel = _config.adminConfigurationLabel;
                             $scope.cardVisible = _config.cardVisible ? _config.cardVisible : "";
                             $scope.cardErrorInformation = _config.cardErrorInformation ? _config.cardErrorInformation : "";
                             $scope.cardStatusNamedList = _config.cardStatusNamedList ? _config.cardStatusNamedList : "";
@@ -128,24 +129,16 @@
                                     $scope.mydata = allRecords.data;
 
                                     $scope.cardList = $scope.mydata;
-                                    $scope.firstSlideImageObject = _.max($scope.cardList, function (obj) {
-                                        return obj[$scope.Views];
-                                    });
-                                    $scope.getImage(false, $scope.firstSlideImageObject[179], "first");
+                                    $scope.getImage(false, $scope.cardList[0][179], "first");
+
 
                                     //---------------
-                                    var secondCardList = _.without($scope.cardList, $scope.firstSlideImageObject);
-                                    $scope.secondSlideImageObject = _.max(secondCardList, function (obj) {
-                                        return obj[$scope.Views];
-                                    });
-                                    $scope.getImage(false, $scope.secondSlideImageObject[179], "second");
+                                    $scope.getImage(false, $scope.cardList[1][179], "second");
 
-                                    // ---------------
-                                    var thirdCardList = _.without(secondCardList, $scope.secondSlideImageObject);
-                                    $scope.thirdSlideImageObject = _.max(thirdCardList, function (obj) {
-                                        return obj[$scope.Views];
-                                    });
-                                    $scope.getImage(false, $scope.thirdSlideImageObject[179], "third");
+
+                                    // --------------
+                                    $scope.getImage(false, $scope.cardList[2][179], "third");
+
 
 
                                 }
@@ -361,14 +354,19 @@
 
                         $scope.updateCardVisibility = function (RecInstanceId, isCardVisible) {
 
-                            console.log(isCardVisible);
-
                             if ($scope.RecordDefinition) {
+
+                                var currentCardVisible = _.find($scope.cardList, {
+                                    '179': RecInstanceId
+                                });
+
+                                currentCardVisible[$scope.cardVisible] = isCardVisible ? false : true;
+
                                 var objectRecord = rxRecordInstanceResource.withName($scope.RecordDefinition);
                                 objectRecord.get(RecInstanceId).then(
                                     function (record) {
 
-                                        record.setValue($scope.cardVisible, isCardVisible);
+                                        record.setValue($scope.cardVisible, currentCardVisible[$scope.cardVisible]);
                                         record.put();
 
                                         rxNotificationMessage.success("Saved Successfully!!");
@@ -376,6 +374,7 @@
                                     }
                                 );
                             }
+
 
                         };
 

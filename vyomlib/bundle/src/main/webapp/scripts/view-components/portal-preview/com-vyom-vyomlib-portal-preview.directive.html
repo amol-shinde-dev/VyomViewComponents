@@ -13,7 +13,7 @@
 <div class="wrapper">
 
     <div class="row">
-        <div class="col-2">
+        <div class="col-3">
 
         </div>
         <div class="mx-auto py-3">
@@ -22,14 +22,14 @@
         </div>
         <div class="mr-5 py-3 col-3">
             <form class="form-inline d-flex justify-content-center md-form form-sm active-{{SearchColor}}-2 mt-2">
-                <i class="fas fa-search" aria-hidden="true"></i>
+                <i class="fas fa-search w3-xlarge" aria-hidden="true"></i>
                 <input class="form-control form-control-sm ml-3 w-75" type="text" ng-model="query" placeholder="Search" aria-label="Search">
             </form>
         </div>
 
     </div>
 
-    <div class="content">
+    <div class="content" ng-hide="adminConfiguration">
         <div class="container-fluid">
 
             <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="{{carouselSpeed}}">
@@ -71,53 +71,58 @@
     <div class="container-fluid" style="padding-bottom: 0px; padding-top: 10px">
             <div class="text-center" style="">
             <span>
-                <!-- sort-by dropdown -->
-                <label style="vertical-align: bottom;float: left; color:black;"> Sort By: </label>
-                <select ng-model="selectedValue" ng-change="sortByViews()" style="float:left;">
-                    <option value="" selected="selected">-select-</option>
-                    <option value="fav">Favourites</option>
-                    <option value={{Views}}>Max-views</option>
-                    <option value={{ratingCount}}>Max-ratings</option>
-                    <option value="status">Active</option>
-                    <option value="clear">Clear</option>
-                    <tbody>
-                        <!---->
-                        <tr>
-                            <td>user_card</td>
-                            <td><span class="bigfont d-icon-user_card"></span></td>
-                        </tr>
-                        <!---->
-                        <tr>
-                            <td>user_check</td>
-                            <td><span class="bigfont d-icon-user_check"></span></td>
-                        </tr>
-                        <!---->
-                        <tr>
-                            <td>user_check_circle</td>
-                            <td><span class="bigfont d-icon-user_check_circle"></span></td>
-                        </tr>
+                <span style="float:left;">
+                    <!-- sort-by dropdown -->
+                    <label style="vertical-align: bottom;float: left; color:black;"> Sort By: </label>
+                    <select ng-model="selectedValue" ng-change="sortByViews()">
+                        <option value="" selected="selected">-select-</option>
+                        <option value="fav">Favourites</option>
+                        <option value={{Views}}>Max-views</option>
+                        <option value={{ratingCount}}>Max-ratings</option>
+                        <option value="status">Active</option>
+                        <option value="clear">Clear</option>
+                        <tbody>
+                            <!---->
+                            <tr>
+                                <td>user_card</td>
+                                <td><span class="bigfont d-icon-user_card"></span></td>
+                            </tr>
+                            <!---->
+                            <tr>
+                                <td>user_check</td>
+                                <td><span class="bigfont d-icon-user_check"></span></td>
+                            </tr>
+                            <!---->
+                            <tr>
+                                <td>user_check_circle</td>
+                                <td><span class="bigfont d-icon-user_check_circle"></span></td>
+                            </tr>
 
-                        <!---->
-                    </tbody>
-                </select>
-
-                <button class="w3-button w3-hover-purple w3-round-xxlarge  w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category1" ng-click="assignCurrentCategory(Category1)">{{Category1}}</button>
-                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category2" ng-click="assignCurrentCategory(Category2)">{{Category2}}</button>
-                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category3" ng-click="assignCurrentCategory(Category3)">{{Category3}}</button>
-                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category4" ng-click="assignCurrentCategory(Category4)">{{Category4}}</button>
-                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category5" ng-click="assignCurrentCategory(Category5)">{{Category5}}</button>
-                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category6" ng-click="assignCurrentCategory(Category6)">{{Category6}}</button>
-                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category7" ng-click="assignCurrentCategory(Category7)">{{Category7}}</button>
-                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category8" ng-click="assignCurrentCategory(Category8)">{{Category8}}</button>
-                <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 10px;" ng-if="Category1" ng-click="assignCurrentCategory('ALL')">All</button>
-                <!-- switch button -->
-                <label class="switch" style="/*vertical-align: bottom;*/">
-                    <input type="checkbox" ng-model="vm.isActive" ng-change="show_hide_recordGrid()">
-                    <span class="slider round hide-off" style="padding-top: 5px;margin-bottom: 10px">
-                        <span ng-class=" { 'off' : !vm.isActive } ">{{vm.isActive ? 'Card' : 'List'}}</span>
-                    </span>
-                </label>
-                <!-- end switch button -->
+                            <!---->
+                        </tbody>
+                    </select>
+                </span>
+                <span class="w3-center" style="margin-left: -200px">
+                    <button class="w3-button w3-hover-purple w3-round-xxlarge  w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category1" ng-click="assignCurrentCategory(Category1)">{{Category1}}</button>
+                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category2" ng-click="assignCurrentCategory(Category2)">{{Category2}}</button>
+                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category3" ng-click="assignCurrentCategory(Category3)">{{Category3}}</button>
+                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category4" ng-click="assignCurrentCategory(Category4)">{{Category4}}</button>
+                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category5" ng-click="assignCurrentCategory(Category5)">{{Category5}}</button>
+                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category6" ng-click="assignCurrentCategory(Category6)">{{Category6}}</button>
+                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category7" ng-click="assignCurrentCategory(Category7)">{{Category7}}</button>
+                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category8" ng-click="assignCurrentCategory(Category8)">{{Category8}}</button>
+                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 10px;" ng-if="Category1" ng-click="assignCurrentCategory('ALL')">All</button>
+                </span>
+                <span style="float: right;">
+                    <!-- switch button -->
+                    <label class="switch">
+                        <input type="checkbox" ng-model="vm.isActive" ng-change="show_hide_recordGrid()">
+                        <span class="slider round hide-off" style="padding-top: 5px;margin-bottom: 10px">
+                            <span ng-class=" { 'off' : !vm.isActive } ">{{vm.isActive ? 'Card' : 'List'}}</span>
+                        </span>
+                    </label>
+                    <!-- end switch button -->
+                </span>
             </span>
         </div>
     </div>
@@ -168,8 +173,8 @@
                             </p>
 
                             <div class="card-category togglebutton" ng-if="adminConfiguration">
-                                <em style="margin-right: 5px">Published -{{x[cardVisible]}} </em>
-                                <label><input type="checkbox" ng-model="x[cardVisible]" ng-change="updateCardVisibility(x[179],x[cardVisible])" ng-checked="{{x[cardVisible]}}" ng-disabled="x[cardVisible]=='ERROR'"> <span class="toggle"></span></label>
+                                <em style="margin-right: 5px">{{adminConfigurationLabel}} </em>
+                                <label><input type="checkbox" ng-model="x[cardVisible]" ng-click="updateCardVisibility(x[179],x[cardVisible])" value="{{x[cardVisible]}}" ng-checked="{{x[cardVisible]}}" ng-disabled="x[cardVisible]=='ERROR'"> <span class="toggle"></span></label>
 
                                 <span ng-if="x[cardVisible]=='ERROR'" class="d-icon-exclamation_triangle" style="margin-right: 5px;font-size: 21px; color: red" rel="tooltip" data-html="true" data-placement="left" title="{{x[cardErrorInformation]}}" ng-mouseover="hoverIn('tooltip')">
                                 </span>
