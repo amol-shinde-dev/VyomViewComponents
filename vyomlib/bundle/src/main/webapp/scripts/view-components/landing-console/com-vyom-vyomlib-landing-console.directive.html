@@ -18,7 +18,7 @@
             <p></p>
         </div>
         <div class="mr-5 py-3 col-3">
-            <form class="form-inline d-flex justify-content-center md-form form-sm active-{{SearchColor}}-2 mt-2">
+            <form class="form-inline d-flex justify-content-center md-form form-sm  mt-2">
                 <i class="fas fa-search w3-xlarge" aria-hidden="true"></i>
                 <input class="form-control form-control-sm ml-3 w-75" type="text" ng-model="query" placeholder="Search" aria-label="Search">
             </form>
@@ -70,8 +70,8 @@
             <span>
                 <span style="float:left;">
                     <!-- sort-by dropdown -->
-                    <label style="vertical-align: bottom;float: left; color:black;"> Sort By: </label>
-                    <select ng-model="selectedValue" ng-change="sortByViews()">
+                    <label class="hideme" style="vertical-align: bottom;float: left; color:black;"> Sort By: </label>
+                    <select class="hideme" style="margin-left: 10px" ng-model="selectedValue" ng-change="sortByViews()">
                         <option value="" selected="selected">-select-</option>
                         <option value="fav">Favourites</option>
                         <option value={{Views}}>Max-views</option>

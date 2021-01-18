@@ -139,12 +139,7 @@
                     },
 
 
-                        {
 
-                            name: 'SearchColor',
-                            isConfig: true,
-
-                    },
                         {
 
                             name: 'Greetings',

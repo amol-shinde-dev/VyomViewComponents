@@ -129,7 +129,7 @@
 
                         },
                         approveActionGUID: {
-                            label: 'Edit Action GUID (Approve btn)',
+                            label: 'Edit Action GUID (Reject btn)',
                             type: 'rx-inspector-expression-node-field',
                             group: 'TableBody',
                             index: 8

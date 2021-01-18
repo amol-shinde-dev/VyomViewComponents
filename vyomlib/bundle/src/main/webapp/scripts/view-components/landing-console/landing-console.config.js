@@ -137,12 +137,6 @@
 
                         {
 
-                            name: 'SearchColor',
-                            isConfig: true,
-
-                    },
-                        {
-
                             name: 'Greetings',
                             isConfig: true,
                             enableExpressionEvaluation: true

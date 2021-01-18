@@ -14,6 +14,7 @@
 
                     link: function ($scope, $element) {
                         var _config;
+                        var attachmentsResource = rxRecordInstanceAttachmentResource.withName("com.bmc.arsys.rx.foundation:Person");
 
                         var init = function () {
                             _config = $scope.rxConfiguration.propertiesByName;
@@ -24,14 +25,14 @@
                             $scope.ApplicationName = _config.CommentInstanceId ? _config.CommentInstanceId : _config.ApplicationName;
                             $scope.ApplicationNameField = _config.ApplicationNameField;
 
-
+                            $scope.defaultImage = "/com.vyom.vyomlib/resources/commentBox/user.png";
                             $scope.personRecord = "com.bmc.arsys.rx.foundation:Person";
                             $scope.personImageField = "304411861";
-                            $scope.defaultImage = "/com.vyom.vyomlib/resources/commentBox/defaultFace.png";
                             $scope.personData = []; //DPQ
                             $scope.usersArray = []; //CDPQ
-                            $scope.getCurrentUserImage();
-                            $scope.afterEncodingImage = "";
+                            $scope.getUsersArray();
+
+
                             $scope.CurrentUserFullName = rxCurrentUser.get().fullName;
                             $scope.CurrentUserLoginName = rxCurrentUser.get().loginName;
                             $scope.CurrentUserGuid = rxCurrentUser.get().personInstanceId;
@@ -58,7 +59,7 @@
                                     return data;
                                 }
                                 $('#comments-container').comments({
-                                    profilePictureURL: $scope.defaultImage,
+                                    profilePictureURL: attachmentsResource.getUrl($scope.CurrentUserGuid, $scope.personImageField),
                                     currentUserId: $scope.CurrentUserGuid,
                                     roundProfilePictures: true,
                                     textareaRows: 1,
@@ -78,7 +79,7 @@
                                     getComments: function (success, error) {
 
                                         setTimeout(function () {
-                                            console.log($scope.commentsArray);
+
                                             success($scope.commentsArray);
 
                                         }, 6000);
@@ -90,7 +91,7 @@
                                             $scope.commentsArray.push(data);
                                             $scope.updateComments($scope.commentsArray);
 
-                                            console.log(data);
+
                                         }, 500);
                                     },
                                     putComment: function (data, success, error) {
@@ -100,7 +101,7 @@
                                             });
                                             var requiredKeys = _.pick(currentCommentObj, 'upvote_count', 'user_has_upvoted', 'users');
                                             var updatedComment = _.defaults(requiredKeys, data);
-                                            console.log(updatedComment);
+
                                             for (var i in $scope.commentsArray) {
                                                 if ($scope.commentsArray[i].id == data.id) {
                                                     $scope.commentsArray[i] = updatedComment;
@@ -179,7 +180,7 @@
                                     $scope.commentsArray = JSON.parse(record.getValue($scope.CommentField) ? record.getValue($scope.CommentField) : []);
 
                                     for (var i in $scope.commentsArray) {
-                                        $scope.commentsArray[i].upvote_count = _.size(_.where($scope.commentsArray[i].users, {
+                                        $scope.commentsArray[i].upvote_count = _.size(_.filter($scope.commentsArray[i].users, {
                                             user_has_upvoted: true
 
                                         }));
@@ -220,10 +221,11 @@
 
 
 
-                        $scope.getCurrentUserImage = function () {
+                        $scope.getUsersArray = function () {
                             // var qualification = "'4'=$USER$";
                             var qualification = "1=1";
                             var foo = rxRecordInstanceDataPageResource.withName($scope.personRecord);
+
                             var queryParams = {
                                 propertySelection: "1,2,3,4,5,6,7,179,1000000017,1000000048,304411861," + $scope.personImageField,
                                 queryExpression: qualification
@@ -234,17 +236,16 @@
                             foo.get(100, 0, queryParams).then(
                                 function (allRecords) {
                                     $scope.personData = allRecords.data; //.slice()
-
                                     $scope.usersArray = _.map($scope.personData, function (obj) {
                                         return _.assign({}, {
-                                            id: obj[179],
+                                            id: obj[1],
                                             fullname: obj[1000000017],
                                             email: obj[1000000048],
-                                            profile_picture_url: $scope.defaultImage
+                                            profile_picture_url: attachmentsResource.getUrl(obj[179], $scope.personImageField)
                                         })
                                     });
 
-                                    //$scope.getEncodedImage();
+
 
 
                                 }
@@ -253,30 +254,16 @@
 
 
 
-                        $scope.getEncodedImage = function () {
-                            var attachmentsResource = rxRecordInstanceAttachmentResource.withName($scope.personRecord);
-
-                            attachmentsResource.get($scope.personData[0][179], ($scope.personImageField).toString()).then(function (fileStream) {
-                                if (fileStream) {
-
-                                    var arrayBufferView = new Uint8Array(fileStream.data);
-                                    var file = new Blob([arrayBufferView], {
-                                        type: fileStream.headers('content-type')
-                                    });
-
-                                    var reader = new FileReader();
-                                    reader.readAsDataURL(file);
-                                    reader.onloadend = function () {
-                                        $scope.afterEncodingImage = reader.result;
-                                        console.log($scope.afterEncodingImage);
-                                    }
+                        $scope.getCurrrentUserImage = function () {
 
 
-
-                                }
+                            attachmentsResource.get($scope.CurrentUserGuid, $scope.personImageField).then(function (fileStream) {
+                                $scope.defaultImage = attachmentsResource.getUrl($scope.CurrentUserGuid, $scope.personImageField);
                             }, function (error) {
-                                console.log(error);
+                                $scope.defaultImage = "/com.vyom.vyomlib/resources/commentBox/user.png";
                             });
+
+
                         }
 
 

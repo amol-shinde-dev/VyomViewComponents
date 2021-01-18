@@ -31,6 +31,8 @@
                 "scripts": [ 
                     
                     "lib/landing-console/bootstrap.min",
+                    "lib/comment-box/jquery.textcomplete",
+                    "lib/comment-box/jquery-comments",
                     "lib/table-resize/custom",
                     "lib/marquee/marquee",
                     "lib/rzslider-5.8.7/rzslider.min",

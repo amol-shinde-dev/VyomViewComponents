@@ -51,7 +51,7 @@
                 Color: componentDefinition.propertiesByName.Color,
                 tooltipDescription: componentDefinition.propertiesByName.tooltipDescription,
                 FilterExp: componentDefinition.propertiesByName.FilterExp,
-                SearchColor: componentDefinition.propertiesByName.SearchColor,
+
                 BannerImage: componentDefinition.propertiesByName.BannerImage,
                 BannerURL: componentDefinition.propertiesByName.BannerURL,
                 BannerScrollSpeed: componentDefinition.propertiesByName.BannerScrollSpeed || defaultBannerScrollSpeed,
@@ -78,25 +78,19 @@
             return {
                 inputs: {
                     rxData: {
-                        SearchColor: {
-                            label: 'Search Icon Color',
-                            type: 'com-vyom-vyomlib-inspector-landing-console-bgcolor',
-                            group: 'CardHeader',
-                            index: 1
-                        },
 
                         Greetings: {
                             label: 'Greetings',
                             type: 'rx-inspector-expression-node-field',
                             group: 'CardHeader',
-                            index: 2
+                            index: 1
                         },
 
                         titleColor: {
                             label: 'titleColor',
                             type: 'com-vyom-vyomlib-inspector-portal-preview-bgcolor',
                             group: 'CardHeader',
-                            index: 3
+                            index: 2
                         },
                         recordDefinitionFullName: {
                             label: 'Record Definition Name',
@@ -385,7 +379,7 @@
                         index: 4
                     },
                     CardHeader: {
-                        label: 'Header',
+                        label: 'Card Header',
                         closed: true,
                         index: 5
                     },

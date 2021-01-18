@@ -54,7 +54,7 @@
 
 
                             //search
-                            $scope.SearchColor = _config.SearchColor;
+
                             $scope.titleColor = _config.titleColor;
                             $scope.Greetings = _config.Greetings;
 
@@ -124,7 +124,7 @@
 
                             };
 
-                            foo.get(100, 0, queryParams).then(
+                            foo.get(-1, 0, queryParams).then(
                                 function (allRecords) {
                                     $scope.mydata = allRecords.data;
 
@@ -162,6 +162,7 @@
                         }
                         $scope.userhaspermission = function (obj) {
                             if ($scope.userApplicationNamedList) {
+
                                 return _.findKey($scope.userApplications, obj[$scope.ApplicationName]);
                             } else {
                                 return true;

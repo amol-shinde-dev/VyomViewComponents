@@ -17,6 +17,7 @@
         'com.vyom.vyomlib.view-components.topheader', //customheader
         'com.vyom.vyomlib.view-components.topheader-param', //customheader with exp editor
         'com.vyom.vyomlib.view-components.marquee3', //Simple Marquee
+        'com.vyom.vyomlib.view-components.marquee4', //Simple Marquee v2
         'com.vyom.vyomlib.view-components.vc19', //Approval Central
        'com.vyom.vyomlib.view-components.landing-console',
        'com.vyom.vyomlib.view-components.hierarchy',

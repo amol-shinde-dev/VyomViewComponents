@@ -47,6 +47,7 @@
                         name: 'expression',
                         isConfig: true, // Input parameter
                         isRequired: false, //  required
+                        enableExpressionEvaluation: true,
                         type: 'string'
           },
                     {

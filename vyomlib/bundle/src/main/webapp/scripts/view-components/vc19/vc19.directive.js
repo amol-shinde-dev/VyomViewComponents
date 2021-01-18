@@ -160,7 +160,7 @@
 
                             };
 
-                            foo.get(100, 0, queryParams).then(
+                            foo.get(-1, 0, queryParams).then(
                                 function (allRecords) {
                                     $scope.mydata = allRecords.data; //.slice()
 

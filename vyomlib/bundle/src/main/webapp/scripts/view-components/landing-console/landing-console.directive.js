@@ -53,7 +53,7 @@
 
 
                             //search
-                            $scope.SearchColor = _config.SearchColor;
+
                             $scope.titleColor = _config.titleColor;
                             $scope.Greetings = _config.Greetings;
 
@@ -123,30 +123,23 @@
 
                             };
 
-                            foo.get(100, 0, queryParams).then(
+                            foo.get(-1, 0, queryParams).then(
                                 function (allRecords) {
                                     $scope.mydata = allRecords.data;
 
                                     $scope.cardList = $scope.mydata;
 
-                                    $scope.firstSlideImageObject = _.max($scope.cardList, function (obj) {
-                                        return obj[$scope.Views];
-                                    });
-                                    $scope.getImage(false, $scope.firstSlideImageObject[179], "first");
+                                    $scope.getImage(false, $scope.cardList[0][179], "first");
+
 
                                     //---------------
-                                    var secondCardList = _.without($scope.cardList, $scope.firstSlideImageObject);
-                                    $scope.secondSlideImageObject = _.max(secondCardList, function (obj) {
-                                        return obj[$scope.Views];
-                                    });
-                                    $scope.getImage(false, $scope.secondSlideImageObject[179], "second");
+                                    $scope.getImage(false, $scope.cardList[1][179], "second");
 
-                                    // ---------------
-                                    var thirdCardList = _.without(secondCardList, $scope.secondSlideImageObject);
-                                    $scope.thirdSlideImageObject = _.max(thirdCardList, function (obj) {
-                                        return obj[$scope.Views];
-                                    });
-                                    $scope.getImage(false, $scope.thirdSlideImageObject[179], "third");
+
+                                    // --------------
+                                    $scope.getImage(false, $scope.cardList[2][179], "third");
+
+
 
                                 }
                             );
