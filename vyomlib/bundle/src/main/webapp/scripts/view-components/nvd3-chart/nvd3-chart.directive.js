@@ -27,13 +27,8 @@
             colorName,
             colorArr = [],
             height,
-            XPos,
-            YPos,
             groupByFieldID,
             expression,
-            parentInstanceID,
-            AssociationName,
-            node,
             recordDefinition,
             fieldList,
             selectionValues = {},
@@ -69,41 +64,21 @@
             _config = $scope.rxConfiguration.propertiesByName;
             recordDefinitionName = _config.recordDefinitionName;
             height = _config.height;
-            XPos = _config.XPos;
-            YPos = _config.YPos;
             groupByFieldID = _config.groupByFieldID;
             expression = _config.expression;
-            parentInstanceID = _config.parentInstanceID;
-            AssociationName = _config.AssociationName;
-            node = _config.node === 'nodeA' || _config.node === 'nodeB' ? _config.node : 'nodeB';
 
-            var isAssociationUsed = recordDefinitionName && parentInstanceID && AssociationName && groupByFieldID;
 
             $scope.pieChartConfiguration.title = _config.title;
             colorName = _config.color;
             colorArr = colorName.split(',');
 
             // LMA:: TODO:: Name is not good...
-            fetchDataAndDrawChart(isAssociationUsed);
-          }
-
-          // Getting associated data.
-          function fetchAssociatedData() {
-            rxAssociationInstanceDataPageResource
-              .get(null, null, {
-                associationDefinition: _config.AssociationName,
-                nodeToQuery: RX_ASSOCIATED_RECORD_NODE_SIDES[node].value,
-                propertySelection: groupByFieldID,
-                associatedRecordInstanceId: _config.parentInstanceID
-              })
-              .then(function (associatedData) {
-                requestData = associatedData.data;
-                prepareDataForChart();
-              });
+            // fetchDataAndDrawChart(isAssociationUsed);
+            fetchDataAndDrawChart();
           }
 
           // Getting the record definition to get the selection values.
-          function fetchDataAndDrawChart(isAssociationUsed) {
+          function fetchDataAndDrawChart() {
             // Get record definition
             rxDesignerCache.getRecordDefinition(recordDefinitionName)
               .then(function (recordDefinitionObject) {
@@ -117,12 +92,8 @@
                     selectionValues[value.id] = value.optionNamesById;
                   }
                 });
+                fetchRecordDefinitionData();
 
-                if (isAssociationUsed) {
-                  fetchAssociatedData();
-                } else {
-                  fetchRecordDefinitionData();
-                }
               });
           }
 
@@ -131,17 +102,13 @@
 
             var queryParams = {
               propertySelection: groupByFieldID,
-              // queryExpression: "'7' = 0"//Status is not rejected
-              // queryExpression: "'Description' = \"first\" "
-              queryExpression: expression
+              queryExpression: expression   //"'Description' = \"first\" "
             };
 
             var foo = rxRecordInstanceDataPageResource.withName(recordDefinitionName);
             foo.get(100, 0, queryParams).then(
               function (recordData) {
                 requestData = recordData.data;
-                console.log("data");
-                console.log(requestData);
                 prepareDataForChart();
               }
             );
@@ -169,7 +136,6 @@
               if (!data.hasOwnProperty(value[groupByFieldID])) {
                 data[value[groupByFieldID]] = 0;
               }
-
               data[value[groupByFieldID]]++;
             });
 
@@ -179,7 +145,6 @@
                 value: count
               })
             });
-
             drawPieChart();
           }
 
@@ -188,14 +153,7 @@
             // In this case we call the drawing function later.
             if (angular.element('.' + $scope.pieChartConfiguration.className).length + ' svg') {
               // Trying to determine the viewbox proportions using the parent initial proportions.
-              var parentObject = angular.element('.container-' + $scope.pieChartConfiguration.className),
-                svgX = parentObject[0].offsetWidth,
-                svgY = parentObject[0].offsetHeight;
-
-              // var width = 350,
-              //   height = 100;
-
-              console.log("svg:" + svgX, svgY)
+              // var parentObject = angular.element('.container-' + $scope.pieChartConfiguration.className);
 
               nvD3Chart = nv.addGraph(function () {
                 var nvChart = nv.models.pieChart()
@@ -207,6 +165,9 @@
                     return d.value
                   })
                   .showLabels(true)
+                  .labelType(function (d) {
+                    return d.value
+                  })
                   .donut(true)
                   .color(colorArr)
                   .donutRatio(0.35);
@@ -222,28 +183,28 @@
 
               // This is done due to a known issue in nvd3, we force a resize:
               // https://github.com/krispo/angular-nvd3/issues/40
-              if (nvD3Chart && _.isfunction(nvD3Chart.update)) {
-                nv.utils.windowResize(nvD3Chart.update);
-              }
+              // if (nvD3Chart && _.isfunction(nvD3Chart.update)) {
+              //   nv.utils.windowResize(nvD3Chart.update);
+              // }
 
               // Other workaround (see above).
-              $timeout(forceRedraw);
+              // $timeout(forceRedraw);
             } else {
-              $timeout(drawPieChart, 100);
+              // $timeout(drawPieChart, 100);
             }
           }
 
           // This is done due to a known issue in nvd3, we force a resize:
           // https://github.com/krispo/angular-nvd3/issues/40
-          function forceRedraw() {
-            $timeout(function () {
-              $window.dispatchEvent(new Event('resize'));
+          // function forceRedraw() {
+          //   $timeout(function () {
+          //     $window.dispatchEvent(new Event('resize'));
 
-              if (nvD3Chart && _.isfunction(nvD3Chart.update)) {
-                nv.utils.windowResize(nvD3Chart.update);
-              }
-            }, 0);
-          }
+          //     if (nvD3Chart && _.isfunction(nvD3Chart.update)) {
+          //       nv.utils.windowResize(nvD3Chart.update);
+          //     }
+          //   }, 0);
+          // }
 
           $scope.$watch('rxConfiguration.propertiesByName.parentInstanceID', initialize);
         }

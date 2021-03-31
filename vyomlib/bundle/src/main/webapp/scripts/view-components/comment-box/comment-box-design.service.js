@@ -22,7 +22,8 @@
                 CommentField: componentDefinition.propertiesByName.CommentField,
                 ApplicationName: componentDefinition.propertiesByName.ApplicationName,
                 ApplicationNameField: componentDefinition.propertiesByName.ApplicationNameField,
-                CommentInstanceId: componentDefinition.propertiesByName.CommentInstanceId
+                CommentInstanceId: componentDefinition.propertiesByName.CommentInstanceId,
+                cssClasses: componentDefinition.propertiesByName.cssClasses
 
 
 
@@ -68,7 +69,13 @@
                             type: 'rx-inspector-expression-node-field',
                             group: 'General',
                             index: 6
-                        }
+                        },
+                        cssClasses: {
+                            label: 'CSS Classes',
+                            type: 'rx-inspector-tag-input',
+                            group: 'General',
+                            index: 7
+                        },
 
                     }
                 },

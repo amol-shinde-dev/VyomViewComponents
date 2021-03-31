@@ -45,6 +45,10 @@
                         URL1: {
                             label: 'URL',
                             type: 'rx-inspector-expression-node-field',
+                            tooltip: {
+                                text: "Enter URL with protocol eg.(http:// OR https:// )",
+                                placement: "left"
+                            },
                             group: 'firstActivity',
                             index: 1
                         },
@@ -69,6 +73,10 @@
                         URL2: {
                             label: 'URL',
                             type: 'rx-inspector-expression-node-field',
+                            tooltip: {
+                                text: "Enter URL with protocol eg.(http:// OR https:// )",
+                                placement: "left"
+                            },
                             group: 'secondActivity',
                             index: 1
                         },
@@ -94,6 +102,10 @@
                         URL3: {
                             label: 'URL',
                             type: 'rx-inspector-expression-node-field',
+                            tooltip: {
+                                text: "Enter URL with protocol eg.(http:// OR https:// )",
+                                placement: "left"
+                            },
                             group: 'thirdActivity',
                             index: 1
                         },

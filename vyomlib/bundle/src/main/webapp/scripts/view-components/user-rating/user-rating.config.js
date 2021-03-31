@@ -46,6 +46,12 @@
                         defaultValue: '#000000'
                     },
                     {
+                        name: 'cssClasses',
+                        isConfig: true,
+
+                    },
+
+                    {
                         name: 'selectedStarValue',
                         isProperty: true //Output parameter
                     }

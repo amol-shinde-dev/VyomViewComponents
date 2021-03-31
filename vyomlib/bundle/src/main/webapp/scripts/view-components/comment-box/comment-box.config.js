@@ -53,7 +53,32 @@
                             isConfig: true,
                             enableExpressionEvaluation: true
 
-                    }
+                    },
+                        {
+
+                            name: 'CurrentUser',
+                            isProperty: true
+
+                    },
+                        {
+
+                            name: 'Operation',
+                            isProperty: true
+
+                    },
+                        {
+
+                            name: 'Ping',
+                            isProperty: true
+
+                    },
+                        {
+
+                            name: 'cssClasses',
+                            isConfig: true,
+
+
+                    },
 
 
                 ]

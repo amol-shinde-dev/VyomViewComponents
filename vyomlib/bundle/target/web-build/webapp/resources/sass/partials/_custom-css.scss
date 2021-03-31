@@ -490,6 +490,7 @@
         height: 50px;
         box-shadow: 0 2px 0px 0px;
         margin-bottom: 10px;
+        
     }
 
     .rx-tab_selected::before {
@@ -535,9 +536,135 @@
 
     .nav-tabs>li.active>a {
         background-color: black;
+        
     }
 }
+.com-vyom-vyomlib-container-black-v2-border {
+    border-bottom: 3px solid black;
+    margin-top: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
 
+    .nav-tabs.nav-justified>li>a {
+        color: black;
+        font-weight: 800;
+        border-bottom: 2px solid black;
+        height: 50px;
+        box-shadow: 0 2px 0px 0px;
+        margin-bottom: 10px;
+        font-size:15px;
+    }
+
+    .rx-tab_selected::before {
+        content: "\f0d7";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 25px;
+        font-weight: 700;
+        color: black;
+        margin: 5px auto;
+        position: absolute;
+        bottom: -27px;
+        left: 0;
+        right: 0;
+    }
+
+    .rx-tab_selected::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: white;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s ease 0s;
+    }
+
+    .rx-tab {
+        color: white;
+        background-color: white;
+    }
+
+    .rx-tab_selected {
+        background-color: black;
+        color: white !important;
+    }
+
+    .rx-tab_selected:focus {
+        background-color: black !important;
+        box-shadow: 0 0 8px gray;
+    }
+
+    .nav-tabs>li.active>a {
+        background-color: black;
+        
+    }
+}
+.com-vyom-vyomlib-container-black-v3-border {
+    border-bottom: 3px solid black;
+    margin-top: 10px;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+
+    .nav-tabs.nav-justified>li>a {
+        color: black;
+        font-weight: 800;
+        border-bottom: 2px solid black;
+        height: 50px;
+        box-shadow: 0 2px 0px 0px;
+        margin-bottom: 10px;
+        font-size:20px;
+    }
+
+    .rx-tab_selected::before {
+        content: "\f0d7";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        font-size: 25px;
+        font-weight: 700;
+        color: black;
+        margin: 5px auto;
+        position: absolute;
+        bottom: -27px;
+        left: 0;
+        right: 0;
+    }
+
+    .rx-tab_selected::after {
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: white;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        z-index: -1;
+        transition: all 0.3s ease 0s;
+    }
+
+    .rx-tab {
+        color: white;
+        background-color: white;
+    }
+
+    .rx-tab_selected {
+        background-color: black;
+        color: white !important;
+    }
+
+    .rx-tab_selected:focus {
+        background-color: black !important;
+        box-shadow: 0 0 8px gray;
+    }
+
+    .nav-tabs>li.active>a {
+        background-color: black;
+        
+    }
+}
 .com-vyom-vyomlib-container-ericlightblue-border {
     border-bottom: 3px solid #2196f3;
     margin-top: 10px;

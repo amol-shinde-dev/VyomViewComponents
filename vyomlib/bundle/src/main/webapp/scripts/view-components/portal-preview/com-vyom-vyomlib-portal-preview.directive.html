@@ -10,58 +10,115 @@
 </script>
 
 
-<div class="wrapper">
+<div class="wrapper {{cssClasses}}">
 
-    <div class="row">
-        <div class="col-3">
 
-        </div>
-        <div class="mx-auto py-3">
-            <h1 style="font-size: 34px;" class="w3-text-{{titleColor}}">{{Greetings}} {{CurrentUserFullName}}</h1>
-            <p></p>
-        </div>
-        <div class="mr-5 py-3 col-3">
-            <form class="form-inline d-flex justify-content-center md-form form-sm  mt-2">
-                <i class="fas fa-search w3-xlarge" aria-hidden="true"></i>
-                <input class="form-control form-control-sm ml-3 w-75" type="text" ng-model="query" placeholder="Search" aria-label="Search">
-            </form>
-        </div>
 
-    </div>
+    <div class="content" ng-if="BannerRecordDefinition">
+        <div class="container-fluid mt-3">
 
-    <div class="content" ng-hide="adminConfiguration">
-        <div class="container-fluid">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="{{carouselSpeed}}">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="{{firstSlideImage}}" alt="" ng-click="redirecturl(cardList[0][BannerURL])" style="width:100%;height: 400px">
-                        <div class="carousel-caption">
-                            <h3></h3>
-                            <p></p>
+                        <img src="{{bannerGeneratedImage}}" alt="" ng-click="redirecturl(BannerURL)" style="width:100%;height: 400px">
+                        <div class="carousel-caption" style="top:28%;right:-18%;left: 8%;">
+
+                            <div class="row com-ericsson-hilda-medium">
+                                <div class="col-3">
+                                    <h1 style="font-size: 38px;" class="w3-text-{{titleColor}} com-ericsson-hilda-medium">{{Greetings}}<br><br>
+                                        {{CurrentUserFullName}}</h1>
+                                    <p></p>
+                                </div>
+                                <div class="col-8">
+                                    <form class="form-inline d-flex justify-content-center md-form form-sm mt-2">
+                                        <!--<i class="fas fa-search w3-xxlarge" aria-hidden="true"></i>-->
+                                        <input class="w3-input w-75" type="text" ng-model="query" ng-keyup="filterCurrentCategoryOrSearchText(query,'Search')" placeholder={{search}} aria-label="Search">
+                                    </form>
+
+                                    <!--    Modal-->
+                                    <div class="portalmodalcontainer" style="display: none; max-height: 187px;color: black;text-shadow: none;">
+                                        <div class="portalmodalinner w3-card-2" style="overflow-y: auto;height: auto;max-height: inherit">
+                                            <div class="container">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active">
+                                                        <a href="#portal1" data-toggle="tab">Applications</a>
+                                                    </li>
+                                                    <li><a href="#portal2" data-toggle="tab" ng-if="firstdataset">{{DataSet1Label}}</a>
+                                                    </li>
+                                                    <li><a href="#portal3" data-toggle="tab" ng-if="seconddataset">{{DataSet2Label}}</a>
+                                                    </li>
+                                                </ul>
+
+                                                <div class="tab-content ">
+
+                                                    <div class="tab-pane active" id="portal1">
+                                                        <ul class="portalmodallistul">
+                                                            <li class="portalmodallistli" ng-repeat="p in mydata | filter:filtersearchboxapplication">
+                                                                <div class="portalmodalliinner" ng-click="intializesearch(p[ApplicationName])">
+                                                                    <span class="d-icon-search portalmodallisearchicon"></span>
+                                                                    <div class="portalmodalliinnertextcontainer">
+                                                                        <div class="portalmodalliinnertext">
+                                                                            <a> {{p[ApplicationName]}}</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                    <div class="tab-pane" id="portal2">
+                                                        <ul class="portalmodallistul">
+                                                            <li class="portalmodallistli" id="portalmodallistli" ng-repeat="q in firstdataset | filter:filtersearchboxdataset1">
+                                                                <div class="portalmodalliinner" ng-click="intializesearch(q[dataset1searchfield])">
+                                                                    <span class="d-icon-search portalmodallisearchicon"></span>
+                                                                    <div class="portalmodalliinnertextcontainer" id="portalsearchanchor">
+                                                                        <div class="portalmodalliinnertext">
+                                                                            <a> {{q[dataset1displayfield]}}
+                                                                                <br>
+                                                                                <span style="font-size: small"><em>{{q[dataset1searchfield]}}</em></span>
+                                                                            </a></div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                    <div class="tab-pane" id="portal3">
+                                                        <ul class="portalmodallistul">
+                                                            <li class="portalmodallistli" id="portalmodallistli" ng-repeat="r in seconddataset | filter:filtersearchboxdataset2">
+                                                                <div class="portalmodalliinner" ng-click="intializesearch(r[dataset2searchfield])">
+                                                                    <span class="d-icon-search portalmodallisearchicon"></span>
+                                                                    <div class="portalmodalliinnertextcontainer">
+                                                                        <div class="portalmodalliinnertext">
+                                                                            <a id="portalsearchanchor"> {{r[dataset1displayfield]}}<br>
+                                                                                <span style="font-size: small"><em>{{r[dataset2searchfield]}}</em></span>
+                                                                            </a></div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- end Modal--->
+                                    <span style="display: block;max-width: 80%;margin: 0 auto;line-height: 1.2;overflow: hidden;text-overflow: ellipsis">
+                                        <h3>{{BannerCaption}}</h3>
+                                        <p><em>{{BannerSubCaption}}</em></p>
+                                    </span>
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
-                    <div class="item">
-                        <img src="{{secondSlideImage}}" alt="" ng-click="redirecturl(cardList[1][BannerURL])" style="width:100%;height: 400px">
-                        <div class="carousel-caption">
-                            <h3></h3>
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="{{thirdSlideImage}}" alt="" ng-click="redirecturl(cardList[2][BannerURL])" style="width:100%;height: 400px">
-                        <div class="carousel-caption">
-                            <h3></h3>
-                            <p></p>
-                        </div>
-                    </div>
+
                 </div>
                 <!-- Left and right controls -->
             </div>
@@ -69,67 +126,72 @@
         </div>
     </div>
     <div class="container-fluid" style="padding-bottom: 0px; padding-top: 10px">
-            <div class="text-center" style="">
-            <span>
-                <span style="float:left;">
-                    <!-- sort-by dropdown -->
-                    <label class="hideme" style="vertical-align: bottom;float: left; color:black;"> Sort By: </label>
-                    <select class="hideme" style="margin-left: 10px" ng-model="selectedValue" ng-change="sortByViews()">
-                        <option value="" selected="selected">-select-</option>
-                        <option value="fav">Favourites</option>
-                        <option value={{Views}}>Max-views</option>
-                        <option value={{ratingCount}}>Max-ratings</option>
-                        <option value="status">Active</option>
-                        <option value="clear">Clear</option>
-                        <tbody>
-                            <!---->
-                            <tr>
-                                <td>user_card</td>
-                                <td><span class="bigfont d-icon-user_card"></span></td>
-                            </tr>
-                            <!---->
-                            <tr>
-                                <td>user_check</td>
-                                <td><span class="bigfont d-icon-user_check"></span></td>
-                            </tr>
-                            <!---->
-                            <tr>
-                                <td>user_check_circle</td>
-                                <td><span class="bigfont d-icon-user_check_circle"></span></td>
-                            </tr>
+           <div class="d-flex flex-row" style="justify-content: space-between;">
 
-                            <!---->
-                        </tbody>
-                    </select>
-                </span>
-                <span class="w3-center" style="margin-left: -200px">
-                    <button class="w3-button w3-hover-purple w3-round-xxlarge  w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category1" ng-click="assignCurrentCategory(Category1)">{{Category1}}</button>
-                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category2" ng-click="assignCurrentCategory(Category2)">{{Category2}}</button>
-                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category3" ng-click="assignCurrentCategory(Category3)">{{Category3}}</button>
-                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category4" ng-click="assignCurrentCategory(Category4)">{{Category4}}</button>
-                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category5" ng-click="assignCurrentCategory(Category5)">{{Category5}}</button>
-                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category6" ng-click="assignCurrentCategory(Category6)">{{Category6}}</button>
-                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category7" ng-click="assignCurrentCategory(Category7)">{{Category7}}</button>
-                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 5px;" ng-if="Category8" ng-click="assignCurrentCategory(Category8)">{{Category8}}</button>
-                    <button class="w3-button w3-hover-purple w3-round-xxlarge w3-{{CategoryColor}} w3-card" style="margin-right: 10px;" ng-if="Category1" ng-click="assignCurrentCategory('ALL')">All</button>
-                </span>
-                <span style="float: right;">
-                    <!-- switch button -->
-                    <label class="switch">
-                        <input type="checkbox" ng-model="vm.isActive" ng-change="show_hide_recordGrid()">
-                        <span class="slider round hide-off" style="padding-top: 5px;margin-bottom: 10px">
-                            <span ng-class=" { 'off' : !vm.isActive } ">{{vm.isActive ? 'Card' : 'List'}}</span>
+            <div class="p-2 bd-highlight">
+                <!-- sort-by dropdown -->
+                <label class="hideme" style="color:black;"> Sort Applications By:
+                </label>
+                <select class="hideme" ng-model="selectedValue" ng-change="sortByViews()" style="margin-left: 10px;">
+                    <option value="" selected="selected">-select-</option>
+                    <option value={{Views}}>Max-views</option>
+                    <option value={{ratingCount}}>Max-ratings</option>
+                    <!--<option value="status">Active</option>-->
+                    <option value="published" ng-if="adminConfiguration">Published</option>
+                    <option value="clear">Clear</option>
+                    <tbody>
+                        <!---->
+                        <tr>
+                            <td>user_card</td>
+                            <td><span class="bigfont d-icon-user_card"></span></td>
+                        </tr>
+                        <!---->
+                        <tr>
+                            <td>user_check</td>
+                            <td><span class="bigfont d-icon-user_check"></span></td>
+                        </tr>
+                        <!---->
+                        <tr>
+                            <td>user_check_circle</td>
+                            <td><span class="bigfont d-icon-user_check_circle"></span></td>
+                        </tr>
+
+                        <!---->
+                    </tbody>
+                </select>
+            </div>
+            <div class="p-2 bd-highlight">
+                <span class="d-button_link d-icon-triangle_left" style="margin-right: 10px;font-size: 30px;" ng-click="catbegin = catbegin-3;" ng-hide="catbegin < 3"></span>
+            </div>
+            <div class="p-2 bd-highlight" style="" ng-init="catlimit = 3;catbegin=0;">
+                <div style="white-space: nowrap;overflow: hidden;display: inline-flex;" id="portalcategorycontainer">
+                    <span ng-repeat="cat in CategoryData | limitTo: catlimit:catbegin ">
+                        <span ng-repeat="(k,v) in cat">
+                            <button class="w3-button w3-hover-black w3-round-xxlarge  w3-{{CategoryColor}} w3-card mb-3" style="margin-right: 5px;" ng-click="filterCurrentCategoryOrSearchText(v,'Category')">{{k}}</button>
                         </span>
-                    </label>
-                    <!-- end switch button -->
-                </span>
-            </span>
+                    </span>
+
+                    <button class="w3-button w3-hover-black w3-round-xxlarge w3-{{CategoryColor}} w3-card mb-3" style="margin-right: 5px;" ng-click="filterCurrentCategoryOrSearchText('ALL','Category')">All</button>
+                </div>
+
+            </div>
+            <div class="p-2 bd-highlight">
+                <span class="d-button_link d-icon-triangle_right" style="margin-right: 10px;font-size: 30px;" ng-click="catbegin=catbegin+3;" ng-hide="catbegin === CategoryData.length"></span>
+            </div>
+            <div class="p-2 bd-highlight" style="text-align-last: right">
+                <span class="d-button_link d-icon-heart w3-hover-text-black" ng-class="toggle ? 'w3-text-red' : ''" ng-click="toggle = !toggle; sortByFav();" style="margin-right: 10px;font-size: 30px"></span>
+                <span class="d-button_link d-icon-tiles w3-hover-text-black" ng-click="show_hide_recordGrid('false');" style="margin-right: 10px;font-size: 28px"></span>
+                <span class="d-button_link d-icon-list w3-hover-text-black" ng-click="show_hide_recordGrid('true');" style="margin-right: 5px;font-size: 30px"></span>
+
+            </div>
         </div>
     </div>
+
     <div class="content hideme">
         <div class="container-fluid">
             <div class="row" id="reverse" ng-init="limit = 8">
-                <div class="selector col-lg-3 col-md-4 col-sm-4" ng-repeat="x in cardList | filter:query | filter:userhaspermission | limitTo: limit as results ">
+                <div class="selector col-lg-3 col-md-4 col-sm-4" ng-repeat="x in cardList | filter:userhaspermission | limitTo: limit as results ">
+
                     <div class="card card-stats w3-card-4 h-75 ">
                         <div class="card-header card-header-{{x[Color]}} card-header-icon h-75">
                             <div ng-click="setSelectedCardInstanceId(x[179]);executeAction(cardActionGuid);updateViewsCounter(x[179],x[Views])" data-toggle="modal" data-target="#portalpreviewmodal">
@@ -163,7 +225,7 @@
                                 <span ng-if="x[cardStatus]" class="d-icon-circle" style="margin-right: 5px;font-size: 21px" ng-class="getCardStatusCSS(x[cardStatus])" rel="tooltip" title="{{x[cardStatus]}}" ng-mouseover="hoverIn('tooltip')">
                                 </span>
 
-                                <span ng-if="x[cardFavourite]=='true' ||x[cardFavourite]=='false'" class="{{getCardFavouriteClass(x[cardFavourite])}}" style="margin-right: 5px;font-size:21px" ng-click="updateCardFavourite(x[179],x[cardFavourite])" rel="tooltip" title="Favourite" ng-mouseover="hoverIn('tooltip')">
+                                <span class="{{getCardFavouriteClass(x[cardFavourite])}}" style="margin-right: 5px;font-size:21px" ng-click="updateCardFavourite(x[179],x[cardFavourite])" rel="tooltip" title="Favourite" ng-mouseover="hoverIn('tooltip')">
                                 </span>
 
                                 <span ng-if="x[cardScope]" ng-class="getCardScopeCSS(x[cardScope])" style="margin-right: 5px;font-size: 21px; color: skyblue" rel="tooltip" title="{{x[cardScope]=='true'?'Global':'Local'}}" ng-mouseover="hoverIn('tooltip')">
@@ -174,7 +236,7 @@
 
                             <div class="card-category togglebutton" ng-if="adminConfiguration">
                                 <em style="margin-right: 5px">{{adminConfigurationLabel}} </em>
-                                <label><input type="checkbox" ng-model="x[cardVisible]" ng-click="updateCardVisibility(x[179],x[cardVisible])" value="{{x[cardVisible]}}" ng-checked="{{x[cardVisible]}}" ng-disabled="x[cardVisible]=='ERROR'"> <span class="toggle"></span></label>
+                                <label><input type="checkbox" ng-model="x[cardVisible]" ng-click="updateCardVisibility(x[179],x[cardVisible])" value="{{x[cardVisible]}}" ng-checked="{{x[cardVisible]}}"> <span class="toggle"></span></label>
 
                                 <span ng-if="x[cardVisible]=='ERROR'" class="d-icon-exclamation_triangle" style="margin-right: 5px;font-size: 21px; color: red" rel="tooltip" data-html="true" data-placement="left" title="{{x[cardErrorInformation]}}" ng-mouseover="hoverIn('tooltip')">
                                 </span>
@@ -183,53 +245,29 @@
                         </div>
                         <div class="card-footer">
                             <div class="stats">
-
-                                <div class="material-icons">
-
-                                    <p class="d-icon-info_circle" rel="popover" data-container="body" data-original-title="{{x[tooltipHeader]}}" data-color="primary" data-content="{{x[tooltipDescription]}}" ng-mouseover="hoverIn('popover')">
-
-                                    </p>
-
-
-
+                                <div class="">
+                                    <a href="javascript:;" style="color:black;white-space: inherit;display: block;display: -webkit-box;max-width: 100%;height: 68px;margin: 0 auto;-webkit-line-clamp: 4;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;word-break: break-word"><em>{{x[Description]}}</em></a>
                                 </div>
-                                <a href="javascript:;" style="color: black"><em>{{x[Description]}}</em></a>
+                            </div>
+                            <div ng-if="cardBottomActionGuid" class="stats">
+                                <span class="d-button d-button_link d-icon-left-pencil" ng-click="setSelectedCardInstanceId(x[179]);executeAction(cardBottomActionGuid)"></span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
             <div style="text-align: right">
-                <button class="d-button d-icon-right-angle_down d-button_secondary" ng-hide="results.length === cardList.length" ng-click="limit = limit +8">show more...</button>
-                <button class="d-button d-icon-right-angle_up d-button_secondary" ng-hide="results.length <= 8" ng-click="limit = limit -8">show less...</button>
+                <span>
+                    <button class="d-button d-icon-right-angle_up d-button_secondary" ng-hide="results.length <= 8" ng-click="limit = limit -8">show less...</button>
+                    <button class="d-button d-icon-right-angle_down d-button_secondary" ng-hide="results.length === (cardList | filter:userhaspermission).length" ng-click="limit = limit +8">show more...</button>
+                </span>
 
             </div>
 
         </div>
     </div>
+
+
 </div>
-
-<script type="text/javascript">
-    $(document).ready(function() {
-
-        $(".switch input").on("change", function(e) {
-            const isOn = e.currentTarget.checked;
-
-            //show/hide div
-            if (isOn) {
-                $(".hideme").hide();
-            } else {
-                $(".hideme").show();
-            }
-        });
-
-        //toggle text inside switch button
-        let vm = this;
-        vm.isActive = false;
-
-        vm.toggle = function() {
-            vm.isActive = !vm.isActive;
-        }
-    });
-
-</script>

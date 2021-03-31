@@ -22,7 +22,8 @@
                     {
                         name: 'color',
                         type: 'string',
-                        isConfig: true
+                        isConfig: true, // Input parameter
+                        isRequired: true //  required
           },
                     {
                         name: 'height',
@@ -31,7 +32,6 @@
                         isRequired: false, //  required
                         defaultValue: '300'
           },
-
                     {
                         name: 'recordDefinitionName',
                         type: 'string',
@@ -46,27 +46,9 @@
                     {
                         name: 'expression',
                         isConfig: true, // Input parameter
-                        isRequired: false, //  required
-                        enableExpressionEvaluation: true,
+                        isRequired: false,
+                        enableExpressionEvaluation: true, //  required
                         type: 'string'
-          },
-                    {
-                        name: 'parentInstanceID',
-                        type: 'string',
-                        isConfig: true,
-                        enableExpressionEvaluation: true
-          },
-                    {
-                        name: 'AssociationName',
-                        type: 'string',
-                        isConfig: true,
-                        enableExpressionEvaluation: true
-          },
-                    {
-                        name: 'node',
-                        type: 'string',
-                        isConfig: true,
-                        enableExpressionEvaluation: true
           },
                     {
                         // You need at least one Output variable to have a custom

@@ -27,6 +27,249 @@ com-vyom-vyomlib-portal-preview {
             box-sizing: border-box;
         }
     }
+    
+
+//custom css for portal-preview
+
+.com-vyom-hilda-regular {
+  .container-fluid {
+  font-family: "EricssonHildaRegular", Arial, sans-serif !important;
+  }
+  .card-stats .card-header.card-header-icon .card-title,
+    .card-stats .card-header.card-header-text .card-title,
+    .card-stats .card-header.card-header-icon .card-category,
+    .card-stats .card-header.card-header-text .card-category{
+  font-family: "EricssonHildaRegular", Arial, sans-serif !important;
+  }
+  
+  h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+  font-family: "EricssonHildaRegular", Arial, sans-serif !important;
+  }
+}
+.com-vyom-hilda-light {
+  .container-fluid {
+  font-family: "EricssonHildaLight", Arial, sans-serif !important;
+  }
+  .card-stats .card-header.card-header-icon .card-title,
+    .card-stats .card-header.card-header-text .card-title,
+    .card-stats .card-header.card-header-icon .card-category,
+    .card-stats .card-header.card-header-text .card-category{
+  font-family: "EricssonHildaLight", Arial, sans-serif !important;
+  }
+  
+  h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+  font-family: "EricssonHildaLight", Arial, sans-serif !important;
+  }
+}
+
+.com-vyom-hilda-medium {
+  .container-fluid {
+  font-family: "EricssonHildaMedium", Arial, sans-serif !important;
+  }
+  .card-stats .card-header.card-header-icon .card-title,
+    .card-stats .card-header.card-header-text .card-title,
+    .card-stats .card-header.card-header-icon .card-category,
+    .card-stats .card-header.card-header-text .card-category{
+  font-family: "EricssonHildaMedium", Arial, sans-serif !important;
+  }
+   h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+  font-family: "EricssonHildaMedium", Arial, sans-serif !important;
+  }
+}
+
+.com-vyom-hilda-bold {
+  .container-fluid {
+  font-family: "EricssonHildaBold", Arial, sans-serif !important;
+  }
+  .card-stats .card-header.card-header-icon .card-title,
+    .card-stats .card-header.card-header-text .card-title,
+    .card-stats .card-header.card-header-icon .card-category,
+    .card-stats .card-header.card-header-text .card-category{
+  font-family: "EricssonHildaBold", Arial, sans-serif !important;
+  }
+  
+  h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+  font-family: "EricssonHildaBold", Arial, sans-serif !important;
+  }
+}
+
+    
+//search text
+
+.portalmodalcontainer {
+    position: absolute;
+    width: 100%;
+    text-align: left;
+    margin-top: -1px;
+    z-index: 989;
+    cursor: default;
+    -webkit-user-select: none;
+}
+.portalmodalinner {
+    background: #fff;
+    //box-shadow: 0 9px 8px -3px rgb(64 60 67 / 24%), 8px 0 8px -7px rgb(64 60 67 / 24%), -8px 0 8px -7px rgb(64 60 67 / 24%);
+    
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin: 0 19rem;
+    padding: 0;
+    border: 0;
+    border-radius: 12px 12px 24px 24px;
+    padding-bottom: 4px;
+    overflow: hidden;
+}
+.portalmodallistul {
+    flex: auto;
+    padding-bottom: 16px;
+}
+.portalmodallistli {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    max-height: none;
+    padding: 0;
+}
+.portalmodallisearchicon
+{
+display: flex;
+    align-items: center;
+    margin-right: 14px;
+    background-size: 20px;
+    min-height: 20px;
+    min-width: 20px;
+    height: 20px;
+    width: 20px;
+}
+.portalmodalliinner{
+    flex: auto;
+    display: flex;
+    align-items: center;
+    margin: 0 20px 0 14px;
+}
+.portalmodalliinnertextcontainer {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    min-width: 0;
+    max-height: none;
+    padding: 6px 0;
+}
+.portalmodalliinnertext {
+    display: flex;
+    font-size: 16px;
+   // color: #212121;
+    flex: auto;
+    align-items: center;
+    word-break: break-word;
+    padding-right: 8px;
+}
+
+#portalmodallistli{
+display:block;
+}
+#portalmodallistli:first-child { margin-top: -1px }
+
+#portalmodallistli:first-child:before, #portalmodallistli:first-child:after {
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    margin-left: -5px;
+    border: 5px outset transparent;
+}
+
+#portalmodallistli:first-child:before {
+    border-bottom: 5px solid #c4c7d7;
+    top: -11px;
+}
+
+#portalmodallistli:first-child:after {
+    border-bottom: 5px solid #fdfdfd;
+    top: -10px;
+}
+
+#portalmodallistli:first-child:hover:before, #portalmodallistli:first-child:hover:after { display: none }
+
+#portalmodallistli:last-child { margin-bottom: -1px }
+
+#portalsearchanchor {
+    display: block;
+    position: relative;
+    margin: 0 -1px;
+    padding: 6px 40px 6px 10px;
+    color: #808394;
+    font-weight: 500;
+    text-shadow: 0 1px #fff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+#portalsearchanchor span { font-weight: 200 }
+
+#portalsearchanchor:before {
+    content: '';
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -9px;
+    background: url("https://cssdeck.com/uploads/media/items/7/7BNkBjd.png") 0 0 no-repeat;
+}
+
+#portalsearchanchor:hover {
+    text-decoration: none;
+    color: #fff;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.3);
+    border-color: #2380dd #2179d5 #1a60aa;
+    background-color: #338cdf;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #59aaf4), color-stop(100%, #338cdf));
+    background-image: -webkit-linear-gradient(top, #59aaf4, #338cdf);
+    background-image: -moz-linear-gradient(top, #59aaf4, #338cdf);
+    background-image: -ms-linear-gradient(top, #59aaf4, #338cdf);
+    background-image: -o-linear-gradient(top, #59aaf4, #338cdf);
+    background-image: linear-gradient(top, #59aaf4, #338cdf);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
+    -ms-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
+    -o-box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), 0 1px rgba(0, 0, 0, 0.08);
+}
+
+#portalsearchanchor
+{
+color:#1e7ad3;
+text-decoration:none;
+}
+#portalsearchanchor:hover{
+text-decoration:underline;
+}
+//End search text 
+
+ 
 //filter dropdown
 select {
   width: 150px;
@@ -18095,7 +18338,7 @@ select {
 
     .card-stats .card-header + .card-footer {
         border-top: 1px solid #eee;
-        margin-top: 20px;
+        margin-top: 10px;
     }
 
     .card-stats .card-header.card-header-icon i {

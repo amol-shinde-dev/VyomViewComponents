@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "EricssonHildaRegular";
+  src: url("../../resources/fonts/EricssonHilda-Regular.ttf") format("truetype"); }
+
+.com-ericsson-hilda-regular {
+  font-family: "EricssonHildaRegular", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "EricssonHildaLight";
+  src: url("../../resources/fonts/EricssonHilda-Light.ttf") format("truetype"); }
+
+.com-ericsson-hilda-light {
+  font-family: "EricssonHildaLight", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "EricssonHildaMedium";
+  src: url("../../resources/fonts/EricssonHilda-Medium.ttf") format("truetype"); }
+
+.com-ericsson-hilda-medium {
+  font-family: "EricssonHildaMedium", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "EricssonHildaBold";
+  src: url("../../resources/fonts/EricssonHilda-Bold.ttf") format("truetype"); }
+
+.com-ericsson-hilda-bold {
+  font-family: "EricssonHildaBold", Arial, sans-serif;
+}
+
+
+.com-ericsson-ericssonlib-record-grid-purple{
+    background-color: purple;
+    border: solid green 2px;
+} 
+

@@ -9,6 +9,7 @@
         'com.vyom.vyomlib.view-components.custom-card',
         'com.vyom.vyomlib.view-components.vc5', //Productive Widget
         'com.vyom.vyomlib.view-components.vc11', //homepage4
+        'com.vyom.vyomlib.view-components.card-view', //homepage4
         'com.vyom.vyomlib.view-components.vc17', //Footer Panel  
         'com.vyom.vyomlib.view-components.vc18', //icoană
         'com.vyom.vyomlib.view-components.vc15', //onWindowsLoad-action
@@ -28,11 +29,11 @@
        'com.vyom.vyomlib.view-components.nvd3-chart',
        'com.vyom.vyomlib.view-components.dashboard1',
        'com.vyom.vyomlib.view-components.comment-box',
-        'com.vyom.vyomlib.view-components.chatbot',
-        'com.vyom.vyomlib.view-components.chatbot1',
         'com.vyom.vyomlib.view-components.search-bar',
-
-
+        'com.vyom.vyomlib.view-components.embedded-chatbot',
+        //26
+        
+          
 
        //action
         'com.vyom.vyomlib.actions.download-excel',

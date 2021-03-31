@@ -38,7 +38,8 @@ The factory is defined in the 'config.js':
                 maxAmountOfStars: componentDefinition.propertiesByName.maxAmountOfStars || defaultMaxAmountOfStars,
                 defaultValueStars: componentDefinition.propertiesByName.defaultValueStars || defaultDefaultValueStars,
                 colorStarsSelected: componentDefinition.propertiesByName.colorStarsSelected || defaultColorStarsSelected,
-                colorStarsNotSelected: componentDefinition.propertiesByName.colorStarsNotSelected || defaultColorStarsNotSelected
+                colorStarsNotSelected: componentDefinition.propertiesByName.colorStarsNotSelected || defaultColorStarsNotSelected,
+                cssClasses: componentDefinition.propertiesByName.cssClasses
             };
         }
 
@@ -77,7 +78,13 @@ The factory is defined in the 'config.js':
                             type: 'com-vyom-vyomlib-inspector-user-rating-color-picker-select',
                             group: 'general',
                             index: 5
-                        }
+                        },
+                        cssClasses: {
+                            label: 'CSS Classes',
+                            type: 'rx-inspector-tag-input',
+                            group: 'general',
+                            index: 6
+                        },
                     }
                 },
                 groups: {

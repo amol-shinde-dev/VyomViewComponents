@@ -14,6 +14,7 @@
                 var config = $scope.rxConfiguration.propertiesByName;
                 $scope.starSelectedColor = "";
                 $scope.starNotSelectedColor = "";
+                $scope.cssClasses = config.cssClasses;
 
                 // create event manager
                 var eventManager = rxViewComponentEventManager.getInstance($scope);

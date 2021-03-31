@@ -59,7 +59,11 @@
                         });
 
 
-
+                        $scope.ifUrlBlank = function (data) {
+                            if (data == null || data == "") {
+                                return 'w3-cursor_default';
+                            }
+                        }
 
                         init();
 

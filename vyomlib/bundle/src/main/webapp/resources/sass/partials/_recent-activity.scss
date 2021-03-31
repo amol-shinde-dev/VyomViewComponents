@@ -47,27 +47,39 @@ com-vyom-vyomlib-recent-activity
 
 
 
-
-.timeline-badge.primary {
-    background-color: #2e6da4 !important;
+// .timeline-badge.primary {
+//   background-color: #2e6da4 !important;
+// }
+.w3-primary {
+  background: linear-gradient(60deg, #26c6da, #00acc1) !important;
 }
 
-.timeline-badge.success {
-    background-color: #3f903f !important;
+// .timeline-badge.success {
+// background-color: #3f903f !important;    
+// }
+.w3-success {
+  background: linear-gradient(60deg, #66bb6a, #43a047) !important;
 }
 
-.timeline-badge.warning {
-    background-color: #f0ad4e !important;
+// .timeline-badge.warning {
+//     // background-color: #f0ad4e !important;
+// }
+.w3-warning {
+  background: linear-gradient(60deg, #ffa726, #fb8c00) !important;
 }
 
-.timeline-badge.danger {
-    background-color: #d9534f !important;
+// .timeline-badge.danger {
+//      background-color: #d9534f !important;
+//     }
+.w3-danger {
+  background: linear-gradient(60deg, #ef5350, #e53935) !important;
 }
-
-.timeline-badge.info {
-    background-color: #5bc0de !important;
+//.timeline-badge.info {
+//   background-color: #5bc0de !important;
+//}
+.w3-info {
+  background: linear-gradient(60deg, #26c6da, #00acc1) !important;
 }
-
 .timeline > li > .timeline-panel {
            /* width: 100%;*/
             float: left;
@@ -388,6 +400,11 @@ border-color: #d7d7d7 ;
 {
 color: #fff !important;
 background-color:#022461 !important;
+}	
+ 
+.w3-cursor_default
+{
+cursor: default;
 }	
  
 	

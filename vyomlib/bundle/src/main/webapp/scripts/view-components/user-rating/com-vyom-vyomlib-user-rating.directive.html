@@ -1,3 +1,3 @@
-<div ng-click="onStarSelectHandler($event)">
+<div ng-click="onStarSelectHandler($event)" class="{{cssClasses}}">
     <span ng-repeat="star in stars track by $index" class="{{star.icon}}" style="{{star.style}}"></span>
 </div>

@@ -14,9 +14,7 @@
 
         function getRxData(componentDefinition, componentDescriptor) {
 
-            var defaultBannerScrollSpeed = _.find(componentDescriptor.propertiesByName, {
-                name: 'BannerScrollSpeed'
-            }).defaultValue;
+
             var defaultadminConfigurationLabel = _.find(componentDescriptor.propertiesByName, {
                 name: 'adminConfigurationLabel'
             }).defaultValue;
@@ -35,6 +33,7 @@
                 cardErrorInformation: componentDefinition.propertiesByName.cardErrorInformation,
                 cardStatusNamedList: componentDefinition.propertiesByName.cardStatusNamedList,
                 userApplicationNamedList: componentDefinition.propertiesByName.userApplicationNamedList,
+                cardBottomActionGuid: componentDefinition.propertiesByName.cardBottomActionGuid,
                 cardSorting: componentDefinition.propertiesByName.cardSorting,
                 cardOrder: componentDefinition.propertiesByName.cardOrder,
                 cardStatus: componentDefinition.propertiesByName.cardStatus,
@@ -42,6 +41,7 @@
                 cardScope: componentDefinition.propertiesByName.cardScope,
                 Greetings: componentDefinition.propertiesByName.Greetings,
                 titleColor: componentDefinition.propertiesByName.titleColor,
+                search: componentDefinition.propertiesByName.search,
 
                 rateMeActionGuid: componentDefinition.propertiesByName.rateMeActionGuid,
                 ratingCount: componentDefinition.propertiesByName.ratingCount,
@@ -52,9 +52,12 @@
                 tooltipDescription: componentDefinition.propertiesByName.tooltipDescription,
                 FilterExp: componentDefinition.propertiesByName.FilterExp,
 
+                BannerRecordDefinition: componentDefinition.propertiesByName.BannerRecordDefinition,
+                BannerInstanceId: componentDefinition.propertiesByName.BannerInstanceId,
                 BannerImage: componentDefinition.propertiesByName.BannerImage,
                 BannerURL: componentDefinition.propertiesByName.BannerURL,
-                BannerScrollSpeed: componentDefinition.propertiesByName.BannerScrollSpeed || defaultBannerScrollSpeed,
+                BannerCaption: componentDefinition.propertiesByName.BannerCaption,
+                BannerSubCaption: componentDefinition.propertiesByName.BannerSubCaption,
 
                 Views: componentDefinition.propertiesByName.Views,
 
@@ -67,7 +70,19 @@
                 Category6: componentDefinition.propertiesByName.Category6,
                 Category7: componentDefinition.propertiesByName.Category7,
                 Category8: componentDefinition.propertiesByName.Category8,
-                CategoryColor: componentDefinition.propertiesByName.CategoryColor
+                CategoryColor: componentDefinition.propertiesByName.CategoryColor,
+
+                DataSet1Label: componentDefinition.propertiesByName.DataSet1Label,
+                DataSet1: componentDefinition.propertiesByName.DataSet1,
+                DataSet1Field: componentDefinition.propertiesByName.DataSet1Field,
+                dataset1searchfield: componentDefinition.propertiesByName.dataset1searchfield,
+                dataset1displayfield: componentDefinition.propertiesByName.dataset1displayfield,
+
+                DataSet2Label: componentDefinition.propertiesByName.DataSet2Label,
+                DataSet2: componentDefinition.propertiesByName.DataSet2,
+                DataSet2Field: componentDefinition.propertiesByName.DataSet2Field,
+                dataset2searchfield: componentDefinition.propertiesByName.dataset2searchfield,
+                dataset2displayfield: componentDefinition.propertiesByName.dataset2displayfield,
 
 
             };
@@ -91,6 +106,12 @@
                             type: 'com-vyom-vyomlib-inspector-portal-preview-bgcolor',
                             group: 'CardHeader',
                             index: 2
+                        },
+                        search: {
+                            label: 'Search bar placeholder',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'CardHeader',
+                            index: 3
                         },
                         recordDefinitionFullName: {
                             label: 'Record Definition Name',
@@ -207,7 +228,7 @@
                             index: 2
                         },
                         cardOrder: {
-                            label: 'Initial Sort',
+                            label: 'Order(Ascending/Descending)',
                             type: 'rx-inspector-optional-select',
                             options: [{
                                 value: false,
@@ -265,24 +286,53 @@
                             group: 'cardAction',
                             index: 9
                         },
-                        BannerImage: {
-                            label: 'Image',
-                            type: 'com-vyom-vyomlib-inspector-landing-console-attachment',
+                        cardBottomActionGuid: {
+                            label: 'Action Button Guid (Bottom)',
+                            type: 'rx-inspector-expression-node-field',
+                            tooltip: {
+                                text: "This button will be available in admin view (bottom of card).",
+                                placement: "left"
+                            },
+                            group: 'cardAction',
+                            index: 10
+                        },
+                        BannerRecordDefinition: {
+                            label: 'Record Definition Name',
+                            type: 'rx-inspector-expression-node-field',
                             group: 'Banner',
                             index: 1
                         },
-                        BannerURL: {
-                            label: 'URL',
-                            type: 'com-vyom-vyomlib-inspector-landing-console-fields',
+                        BannerInstanceId: {
+                            label: 'Record Instance Id',
+                            type: 'rx-inspector-expression-node-field',
                             group: 'Banner',
                             index: 2
                         },
-                        BannerScrollSpeed: {
-                            label: 'Banner Scroll Speed',
+                        BannerImage: {
+                            label: 'Image Field ID',
                             type: 'rx-inspector-expression-node-field',
                             group: 'Banner',
                             index: 3
                         },
+                        BannerURL: {
+                            label: 'URL',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'Banner',
+                            index: 4
+                        },
+                        BannerCaption: {
+                            label: 'Caption',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'Banner',
+                            index: 5
+                        },
+                        BannerSubCaption: {
+                            label: 'Sub-Caption',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'Banner',
+                            index: 6
+                        },
+
                         CategoryField: {
                             label: 'Category Field',
                             type: 'com-vyom-vyomlib-inspector-landing-console-fields',
@@ -353,7 +403,75 @@
                             type: 'com-vyom-vyomlib-inspector-landing-console-bgcolor',
                             group: 'Category',
                             index: 10
-                        }
+                        },
+                        DataSet1Label: {
+                            label: 'Data Set 1-Label',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet',
+                            index: 1
+                        },
+                        DataSet1: {
+                            label: 'Data Set 1',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet',
+                            index: 2
+                        },
+                        DataSet1Field: {
+                            label: 'Field Ids',
+                            type: 'rx-inspector-expression-node-field',
+                            tooltip: {
+                                text: "Enter custom field ids seprated by comma(,).",
+                                placement: "left"
+                            },
+                            group: 'DataSet',
+                            index: 3
+                        },
+                        dataset1searchfield: {
+                            label: 'search by field id (Application Name)',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet',
+                            index: 4
+                        },
+                        dataset1displayfield: {
+                            label: 'display value field id',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet',
+                            index: 5
+                        },
+                        DataSet2Label: {
+                            label: 'Data Set 2-Label',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet',
+                            index: 6
+                        },
+                        DataSet2: {
+                            label: 'Data Set 2',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet',
+                            index: 7
+                        },
+                        DataSet2Field: {
+                            label: 'Field Ids',
+                            tooltip: {
+                                text: "Enter custom field ids seprated by comma(,).",
+                                placement: "left"
+                            },
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet',
+                            index: 8
+                        },
+                        dataset2searchfield: {
+                            label: 'search by field id (Application Name)',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet',
+                            index: 9
+                        },
+                        dataset2displayfield: {
+                            label: 'display value field id',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet',
+                            index: 10
+                        },
 
                     }
                 },
@@ -387,6 +505,11 @@
                         label: 'Category',
                         closed: true,
                         index: 6
+                    },
+                    DataSet: {
+                        label: 'Data Set',
+                        closed: true,
+                        index: 7
                     }
 
                 },

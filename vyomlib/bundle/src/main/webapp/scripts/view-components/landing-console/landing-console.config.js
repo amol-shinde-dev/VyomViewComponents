@@ -85,6 +85,10 @@
                             name: 'userApplicationNamedList',
                             isConfig: true,
             },
+                        {
+                            name: 'cardBottomActionGuid',
+                            isConfig: true,
+            },
 
                         {
 
@@ -149,24 +153,51 @@
 
                     },
                         {
+                            name: 'search',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+            },
+                        {
 
-                            name: 'BannerURL',
+                            name: 'BannerRecordDefinition',
                             isConfig: true,
 
+                            enableExpressionEvaluation: true
+
                     },
+                        {
+
+                            name: 'BannerInstanceId',
+                            isConfig: true,
+
+                            enableExpressionEvaluation: true
+
+                    },
+
                         {
 
                             name: 'BannerImage',
                             isConfig: true,
 
+                            enableExpressionEvaluation: true
                     },
                         {
 
-                            name: 'BannerScrollSpeed',
+                            name: 'BannerURL',
                             isConfig: true,
-                            enableExpressionEvaluation: true,
-                            defaultValue: "6000"
+                            enableExpressionEvaluation: true
+                    },
+                        {
 
+                            name: 'BannerCaption',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+                    },
+                        {
+
+                            name: 'BannerSubCaption',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
                     },
                         {
 
@@ -261,6 +292,78 @@
                             isConfig: true
 
                     },
+
+                        {
+
+                            name: 'DataSet1Label',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    }, {
+
+                            name: 'DataSet1',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    }, {
+
+                            name: 'DataSet1Field',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
+                        {
+
+                            name: 'dataset1searchfield',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
+                        {
+
+                            name: 'dataset1displayfield',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
+
+                        {
+
+                            name: 'DataSet2Label',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    }, {
+
+                            name: 'DataSet2',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    }, {
+
+                            name: 'DataSet2Field',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
+
+                        {
+
+                            name: 'dataset2searchfield',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
+                        {
+
+                            name: 'dataset2displayfield',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
+
+
+
 
 
                 ]

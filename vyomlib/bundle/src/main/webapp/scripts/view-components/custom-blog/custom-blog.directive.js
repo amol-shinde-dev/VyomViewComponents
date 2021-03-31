@@ -48,12 +48,14 @@
 
                                 CKEDITOR.plugins.addExternal('codesnippet', '/com.vyom.vyomlib/resources/ckeditor-4.11.1/plugins/codesnippet_4.15.0/', 'plugin.js');
                                 CKEDITOR.plugins.addExternal('chart', '/com.vyom.vyomlib/resources/ckeditor-4.11.1/plugins/chart_1.0.2/', 'plugin.js');
+                                CKEDITOR.plugins.addExternal('tabletools', '/com.vyom.vyomlib/resources/ckeditor-4.11.1/plugins/tabletools/', 'plugin.js');
+                                CKEDITOR.plugins.addExternal('table', '/com.vyom.vyomlib/resources/ckeditor-4.11.1/plugins/table/', 'plugin.js');
                                 $scope.editor = CKEDITOR.inline($scope.editorID, {
 
                                     autoGrow_onStartup: false,
                                     resize_enabled: false,
                                     height: '500px',
-                                    extraPlugins: ['image', 'find', 'sharedspace', 'base64image', 'wsc', 'imagepaste', 'codesnippet', 'chart', 'sourcedialog'],
+                                    extraPlugins: ['image', 'find', 'sharedspace', 'base64image', 'wsc', 'imagepaste', 'codesnippet', 'chart', 'sourcedialog', 'tabletools', 'table'],
                                     startupFocus: false,
                                     disableAutoInline: true,
 
@@ -84,18 +86,20 @@
                         // <!----------- buit in functions------------------>
 
                         $scope.updateHTML = function () {
-                            $scope.editorData = $scope.editor.getData();
+                            $scope.editorData = $scope.editor.getData() == "" ? "<br>" : $scope.editor.getData();
+
 
                             if ($scope.editorData && $scope.RecordDefinition) {
                                 var objectRecord = rxRecordInstanceResource.withName($scope.RecordDefinition);
                                 objectRecord.get($scope.RecInstanceId).then(
                                     function (record) {
+
                                         record.setValue($scope.HTMLField, $scope.editorData);
                                         record.put();
-                                        getHTML();
                                         $scope.toggleReadOnly(true);
 
-                                        rxNotificationMessage.success("Successfully Saved!!");
+                                        rxNotificationMessage.info("Saving your data... Please click refresh icon to reload changes.");
+                                        rxNotificationMessage.warning("Image or large data may take upto 5 seconds to load.");
 
                                     }
                                 );
