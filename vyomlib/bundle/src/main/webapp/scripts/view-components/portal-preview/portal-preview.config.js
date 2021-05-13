@@ -87,11 +87,16 @@
                             name: 'userApplicationNamedList',
                             isConfig: true,
             },
+
+
                         {
                             name: 'cardBottomActionGuid',
                             isConfig: true,
             },
-
+                        {
+                            name: 'perRowCardLength',
+                            isConfig: true,
+            },
                         {
 
                             name: 'cardActionGuid',
@@ -139,7 +144,6 @@
 
                             name: 'FilterExp',
                             isConfig: true,
-
                     },
 
 
@@ -198,7 +202,7 @@
                             name: 'BannerURL',
                             isConfig: true,
                             enableExpressionEvaluation: true
-                    },
+                        },
                         {
 
                             name: 'BannerCaption',
@@ -208,6 +212,13 @@
                         {
 
                             name: 'BannerSubCaption',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+                    },
+                        {
+
+                            name: 'BannerHeight',
+                            defaultValue: 400,
                             isConfig: true,
                             enableExpressionEvaluation: true
                     },
@@ -254,74 +265,7 @@
                             isConfig: true
 
                     },
-                        {
 
-                            name: 'DataSet1Label',
-                            isConfig: true,
-                            enableExpressionEvaluation: true
-
-                    }, {
-
-                            name: 'DataSet1',
-                            isConfig: true,
-                            enableExpressionEvaluation: true
-
-                    }, {
-
-                            name: 'DataSet1Field',
-                            isConfig: true,
-                            enableExpressionEvaluation: true
-
-                    },
-                        {
-
-                            name: 'dataset1searchfield',
-                            isConfig: true,
-                            enableExpressionEvaluation: true
-
-                    },
-                        {
-
-                            name: 'dataset1displayfield',
-                            isConfig: true,
-                            enableExpressionEvaluation: true
-
-                    },
-
-                        {
-
-                            name: 'DataSet2Label',
-                            isConfig: true,
-                            enableExpressionEvaluation: true
-
-                    }, {
-
-                            name: 'DataSet2',
-                            isConfig: true,
-                            enableExpressionEvaluation: true
-
-                    }, {
-
-                            name: 'DataSet2Field',
-                            isConfig: true,
-                            enableExpressionEvaluation: true
-
-                    },
-
-                        {
-
-                            name: 'dataset2searchfield',
-                            isConfig: true,
-                            enableExpressionEvaluation: true
-
-                    },
-                        {
-
-                            name: 'dataset2displayfield',
-                            isConfig: true,
-                            enableExpressionEvaluation: true
-
-                    },
 
 
 

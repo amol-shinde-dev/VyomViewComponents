@@ -3,7 +3,7 @@
 
   angular.module('com.vyom.vyomlib.view-components.nvd3-chart')
     .factory('comVyomVyomlibNvd3ChartModel', function (rxDesignerCache,
-      rxRecordDefinitionResource,
+      // rxRecordDefinitionResource,
       rxViewComponentModel) {
       return rxViewComponentModel.extend({
         initialize: function () {

@@ -18,6 +18,10 @@
             var defaultadminConfigurationLabel = _.find(componentDescriptor.propertiesByName, {
                 name: 'adminConfigurationLabel'
             }).defaultValue;
+            var defaultBannerHeight = _.find(componentDescriptor.propertiesByName, {
+                name: 'BannerHeight'
+            }).defaultValue;
+
 
 
             return {
@@ -36,7 +40,9 @@
                 cardErrorInformation: componentDefinition.propertiesByName.cardErrorInformation,
                 cardStatusNamedList: componentDefinition.propertiesByName.cardStatusNamedList,
                 userApplicationNamedList: componentDefinition.propertiesByName.userApplicationNamedList,
+
                 cardBottomActionGuid: componentDefinition.propertiesByName.cardBottomActionGuid,
+                perRowCardLength: componentDefinition.propertiesByName.perRowCardLength,
                 cardSorting: componentDefinition.propertiesByName.cardSorting,
                 cardOrder: componentDefinition.propertiesByName.cardOrder,
                 cardStatus: componentDefinition.propertiesByName.cardStatus,
@@ -59,6 +65,7 @@
                 BannerURL: componentDefinition.propertiesByName.BannerURL,
                 BannerCaption: componentDefinition.propertiesByName.BannerCaption,
                 BannerSubCaption: componentDefinition.propertiesByName.BannerSubCaption,
+                BannerHeight: componentDefinition.propertiesByName.BannerHeight || defaultBannerHeight,
 
 
                 Views: componentDefinition.propertiesByName.Views,
@@ -66,18 +73,6 @@
                 CategoryNamedList: componentDefinition.propertiesByName.CategoryNamedList,
                 CategoryColor: componentDefinition.propertiesByName.CategoryColor,
 
-
-                DataSet1Label: componentDefinition.propertiesByName.DataSet1Label,
-                DataSet1: componentDefinition.propertiesByName.DataSet1,
-                DataSet1Field: componentDefinition.propertiesByName.DataSet1Field,
-                dataset1searchfield: componentDefinition.propertiesByName.dataset1searchfield,
-                dataset1displayfield: componentDefinition.propertiesByName.dataset1displayfield,
-
-                DataSet2Label: componentDefinition.propertiesByName.DataSet2Label,
-                DataSet2: componentDefinition.propertiesByName.DataSet2,
-                DataSet2Field: componentDefinition.propertiesByName.DataSet2Field,
-                dataset2searchfield: componentDefinition.propertiesByName.dataset2searchfield,
-                dataset2displayfield: componentDefinition.propertiesByName.dataset2displayfield,
             };
         }
 
@@ -289,6 +284,8 @@
                             group: 'cardAction',
                             index: 9
                         },
+
+
                         cardBottomActionGuid: {
                             label: 'Action Button Guid (Bottom)',
                             type: 'rx-inspector-expression-node-field',
@@ -298,6 +295,20 @@
                             },
                             group: 'cardAction',
                             index: 10
+                        },
+                        perRowCardLength: {
+                            label: 'Row Wise Cards',
+                            type: 'rx-inspector-optional-select',
+                            options: [{
+                                value: "col-lg-4 col-md-5 col-sm-5",
+                                content: "Three Cards"
+                                }, {
+                                value: "col-lg-3 col-md-4 col-sm-4",
+                                content: "four Cards"
+                                }],
+                            defaultValue: "col-lg-3 col-md-4 col-sm-4",
+                            group: 'cardAction',
+                            index: 11
                         },
                         BannerRecordDefinition: {
                             label: 'Record Definition Name',
@@ -335,7 +346,12 @@
                             group: 'Banner',
                             index: 6
                         },
-
+                        BannerHeight: {
+                            label: 'Height (pixel)',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'Banner',
+                            index: 7
+                        },
                         CategoryField: {
                             label: 'Category Field',
                             type: 'com-vyom-vyomlib-inspector-portal-preview-fields',
@@ -371,74 +387,7 @@
                             group: 'Category',
                             index: 3
                         },
-                        DataSet1Label: {
-                            label: 'Data Set 1-Label',
-                            type: 'rx-inspector-expression-node-field',
-                            group: 'DataSet',
-                            index: 1
-                        },
-                        DataSet1: {
-                            label: 'Data Set 1',
-                            type: 'rx-inspector-expression-node-field',
-                            group: 'DataSet',
-                            index: 2
-                        },
-                        DataSet1Field: {
-                            label: 'Field Ids',
-                            type: 'rx-inspector-expression-node-field',
-                            tooltip: {
-                                text: "Enter custom field ids seprated by comma(,).",
-                                placement: "left"
-                            },
-                            group: 'DataSet',
-                            index: 3
-                        },
-                        dataset1searchfield: {
-                            label: 'search by field id (Application Name)',
-                            type: 'rx-inspector-expression-node-field',
-                            group: 'DataSet',
-                            index: 4
-                        },
-                        dataset1displayfield: {
-                            label: 'display value field id',
-                            type: 'rx-inspector-expression-node-field',
-                            group: 'DataSet',
-                            index: 5
-                        },
-                        DataSet2Label: {
-                            label: 'Data Set 2-Label',
-                            type: 'rx-inspector-expression-node-field',
-                            group: 'DataSet',
-                            index: 6
-                        },
-                        DataSet2: {
-                            label: 'Data Set 2',
-                            type: 'rx-inspector-expression-node-field',
-                            group: 'DataSet',
-                            index: 7
-                        },
-                        DataSet2Field: {
-                            label: 'Field Ids',
-                            tooltip: {
-                                text: "Enter custom field ids seprated by comma(,).",
-                                placement: "left"
-                            },
-                            type: 'rx-inspector-expression-node-field',
-                            group: 'DataSet',
-                            index: 8
-                        },
-                        dataset2searchfield: {
-                            label: 'search by field id (Application Name)',
-                            type: 'rx-inspector-expression-node-field',
-                            group: 'DataSet',
-                            index: 9
-                        },
-                        dataset2displayfield: {
-                            label: 'display value field id',
-                            type: 'rx-inspector-expression-node-field',
-                            group: 'DataSet',
-                            index: 10
-                        },
+
 
                     }
                 },

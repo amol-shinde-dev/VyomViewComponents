@@ -141,7 +141,7 @@
                                                         });
                                                     }
 
-                                                    console.log($scope.commentsArray);
+
                                                     $scope.updateComments($scope.commentsArray);
                                                 }
                                             }

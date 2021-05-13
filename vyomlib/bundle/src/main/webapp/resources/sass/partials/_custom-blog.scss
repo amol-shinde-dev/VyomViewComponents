@@ -1,6 +1,38 @@
-com-vyom-vyomlib-custom-blog
-{
+com-vyom-vyomlib-custom-blog{
 
+// width for table resizing
+.bodyCard {
+  width: 400px !important;
+}
+
+.bodyCard1 {
+  width: 500px !important;
+}
+
+.bodyCard2 {
+  width: 600px !important;
+}
+
+.bodyCard3 {
+  width: 650px !important;
+}
+
+.bodyCard4 {
+  width: 700px !important;
+}
+
+.bodyCard5 {
+  width: 800px !important;
+}
+
+.bodyCard6 {
+  width: 900px !important;
+}
+
+.bodyCard7 {
+  width: 1000px !important;
+}
+// END
 .customeditor
 {
 
@@ -8,7 +40,6 @@ box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 100%;
 }
-
 
 
 /*!
@@ -634,8 +665,9 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -7.5px;
-  margin-left: -7.5px;
+  // margin-right: -7.5px;
+  // margin-left: -7.5px;
+  margin: 0;
 }
 
 .no-gutters {
@@ -658,7 +690,7 @@ pre code {
   position: relative;
   width: 100%;
   padding-right: 7.5px;
-  padding-left: 7.5px;
+  // padding-left: 7.5px;
 }
 
 .col {
@@ -768,8 +800,10 @@ pre code {
 
 .col-10 {
   -ms-flex: 0 0 83.333333%;
-  flex: 0 0 83.333333%;
-  max-width: 83.333333%;
+  // flex: 0 0 83.333333%;
+  flex: 0 0 100%;
+  // max-width: 83.333333%;
+  max-width:87%
 }
 
 .col-11 {

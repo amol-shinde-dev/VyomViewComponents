@@ -28,7 +28,11 @@
                 RecInstanceId: componentDefinition.propertiesByName.RecInstanceId,
                 editorInstance: componentDefinition.guid || rxGUID.generate(),
                 enableEditButton: componentDefinition.propertiesByName.enableEditButton || defaultEnableEditButton,
-                enableEditPane: componentDefinition.propertiesByName.enableEditPane == 'true' ? true : false
+                enableEditPane: componentDefinition.propertiesByName.enableEditPane == 'true' ? true : false,
+                headerNote: componentDefinition.propertiesByName.headerNote,
+                tableWidth: componentDefinition.propertiesByName.tableWidth
+
+
 
 
             };
@@ -84,7 +88,48 @@
                             group: 'General',
                             index: 6
 
-                        }
+                        },
+                        headerNote: {
+                            label: 'Custom blog header note',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'General',
+                            index: 7
+                        },
+
+                        tableWidth: {
+                            label: 'Table width',
+                            type: 'rx-inspector-select',
+                            options: [{
+                                value: "bodyCard",
+                                content: "400px"
+                            }, {
+                                value: "bodyCard1",
+                                content: "500px"
+                            }, {
+                                value: "bodyCard2",
+                                content: "600px"
+                            }, {
+                                value: "bodyCard3",
+                                content: "650px"
+                            }, {
+                                value: "bodyCard4",
+                                content: "700px"
+                            }, {
+                                value: "bodyCard5",
+                                content: "800px"
+                            }, {
+                                value: "bodyCard6",
+                                content: "900px"
+                            }, {
+                                value: "bodyCard7",
+                                content: "1000px"
+                            }, {
+                                value: " ",
+                                content: "default"
+                            }],
+                            group: 'General',
+                            index: 8
+                        },
 
 
                     }

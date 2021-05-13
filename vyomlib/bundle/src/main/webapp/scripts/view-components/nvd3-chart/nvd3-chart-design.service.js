@@ -6,16 +6,16 @@
       function (comVyomVyomlibNvd3ChartModel,
         rxGUID,
         RX_DEFINITION_PICKER) {
-        function getRxConfig(componentDefinition, componentDescriptor) {
+        function getRxConfig(componentDefinition) {
           return {
             id: componentDefinition.guid || rxGUID.generate(),
             type: componentDefinition.type,
-            rxData: getRxData(componentDefinition, componentDescriptor),
+            rxData: getRxData(componentDefinition),
             rxInspector: getRxInspector()
           };
         }
 
-        function getRxData(componentDefinition, componentDescriptor) {
+        function getRxData(componentDefinition) {
           return {
             recordDefinitionName: componentDefinition.propertiesByName.recordDefinitionName,
             title: componentDefinition.propertiesByName.title,

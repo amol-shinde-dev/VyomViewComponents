@@ -61,12 +61,25 @@
 
                     },
                         {
+                            name: 'headerNote',
+                            isConfig: true,
+                            enableExpressionEvaluation: true,
+                  },
+                        {
+                            name: 'tableWidth',
+                            isConfig: true,
+
+                  },
+
+                        {
 
                             name: 'isRefresh',
                             isProperty: true,
 
 
-}
+                        },
+
+
 
 
 

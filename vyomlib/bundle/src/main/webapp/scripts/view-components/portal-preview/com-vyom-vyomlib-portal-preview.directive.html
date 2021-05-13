@@ -22,8 +22,8 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="{{bannerGeneratedImage}}" alt="" ng-click="redirecturl(BannerURL)" style="width:100%;height: 400px">
-                        <div class="carousel-caption" style="top:28%;right:-18%;left: 8%;">
+                        <img ng-src="/api/rx/application/record/attachment/{{BannerRecordDefinition}}/{{BannerInstanceId}}/{{BannerImage}}" alt="" ng-click="redirecturl(BannerURL)" style="cursor: default;width:100%;height: {{BannerHeight}}px">
+                        <div class="carousel-caption" style="top:auto;right:-18%;left: 8%;">
 
                             <div class="row com-ericsson-hilda-medium">
                                 <div class="col-3">
@@ -34,7 +34,7 @@
                                 <div class="col-8">
                                     <form class="form-inline d-flex justify-content-center md-form form-sm mt-2">
                                         <!--<i class="fas fa-search w3-xxlarge" aria-hidden="true"></i>-->
-                                        <input class="w3-input w-75" type="text" ng-model="query" ng-keyup="filterCurrentCategoryOrSearchText(query,'Search')" placeholder={{search}} aria-label="Search">
+                                        <input class="w3-input w-75" type="text" ng-model="query" ng-keyup="filterCurrentCategoryOrSearchText(query,'search')" placeholder={{search}} aria-label="Search">
                                     </form>
 
                                     <!--    Modal-->
@@ -133,31 +133,9 @@
                 <label class="hideme" style="color:black;"> Sort Applications By:
                 </label>
                 <select class="hideme" ng-model="selectedValue" ng-change="sortByViews()" style="margin-left: 10px;">
-                    <option value="" selected="selected">-select-</option>
-                    <option value={{Views}}>Max-views</option>
-                    <option value={{ratingCount}}>Max-ratings</option>
-                    <!--<option value="status">Active</option>-->
-                    <option value="published" ng-if="adminConfiguration">Published</option>
-                    <option value="clear">Clear</option>
-                    <tbody>
-                        <!---->
-                        <tr>
-                            <td>user_card</td>
-                            <td><span class="bigfont d-icon-user_card"></span></td>
-                        </tr>
-                        <!---->
-                        <tr>
-                            <td>user_check</td>
-                            <td><span class="bigfont d-icon-user_check"></span></td>
-                        </tr>
-                        <!---->
-                        <tr>
-                            <td>user_check_circle</td>
-                            <td><span class="bigfont d-icon-user_check_circle"></span></td>
-                        </tr>
-
-                        <!---->
-                    </tbody>
+                    <option value="{{Views}}">Max-views</option>
+                    <option value="{{ratingCount}}">Max-ratings</option>
+                    <option value="{{cardVisible}}" ng-if="adminConfiguration">Published</option>
                 </select>
             </div>
             <div class="p-2 bd-highlight">
@@ -167,7 +145,7 @@
                 <div style="white-space: nowrap;overflow: hidden;display: inline-flex;" id="portalcategorycontainer">
                     <span ng-repeat="cat in CategoryData | limitTo: catlimit:catbegin ">
                         <span ng-repeat="(k,v) in cat">
-                            <button class="w3-button w3-hover-black w3-round-xxlarge  w3-{{CategoryColor}} w3-card mb-3" style="margin-right: 5px;" ng-click="filterCurrentCategoryOrSearchText(v,'Category')">{{k}}</button>
+                            <button class="w3-button w3-hover-black w3-round-xxlarge  w3-{{CategoryColor}} w3-card mb-3" style="margin-right: 5px;" ng-click="filterCurrentCategoryOrSearchText(v,'category')">{{k}}</button>
                         </span>
                     </span>
 
@@ -189,8 +167,8 @@
 
     <div class="content hideme">
         <div class="container-fluid">
-            <div class="row" id="reverse" ng-init="limit = 8">
-                <div class="selector col-lg-3 col-md-4 col-sm-4" ng-repeat="x in cardList | filter:userhaspermission | limitTo: limit as results ">
+            <div class="row" id="reverse" cg-busy="{promise:cardListDataPromise, delay:200}" ng-init="limit">
+                <div class="selector {{perRowCardLength}}" ng-repeat="x in cardList  | limitTo: limit as results ">
 
                     <div class="card card-stats w3-card-4 h-75 ">
                         <div class="card-header card-header-{{x[Color]}} card-header-icon h-75">
@@ -260,8 +238,8 @@
 
             <div style="text-align: right">
                 <span>
-                    <button class="d-button d-icon-right-angle_up d-button_secondary" ng-hide="results.length <= 8" ng-click="limit = limit -8">show less...</button>
-                    <button class="d-button d-icon-right-angle_down d-button_secondary" ng-hide="results.length === (cardList | filter:userhaspermission).length" ng-click="limit = limit +8">show more...</button>
+                    <button class="d-button d-icon-right-angle_up d-button_secondary" ng-hide="results.length <= cardlimit" ng-click="limit = limit - cardlimit">show less...</button>
+                    <button class="d-button d-icon-right-angle_down d-button_secondary" ng-hide="results.length === (cardList | filter:userhaspermission).length" ng-click="limit = limit + cardlimit">show more...</button>
                 </span>
 
             </div>

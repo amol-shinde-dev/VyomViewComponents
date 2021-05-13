@@ -14,7 +14,9 @@
 
                     link: function ($scope, $element) {
                         var _config,
+                            applicationNamedListQuery,
                             eventManager = rxViewComponentEventManager.getInstance($scope);
+
 
                         var init = function () {
                             _config = $scope.rxConfiguration.propertiesByName;
@@ -33,16 +35,28 @@
                             $scope.ratingCount = _config.ratingCount;
                             $scope.starsobj = [];
 
-                            $scope.FilterExp = _config.FilterExp;
-                            $scope.Views = _config.Views;
-                            $scope.recordFlag = 'false';
+                            //if admin then append query else nly filter
                             $scope.adminConfiguration = _config.adminConfiguration;
                             $scope.adminConfigurationLabel = _config.adminConfigurationLabel;
+                            $scope.userApplicationNamedList = _config.userApplicationNamedList;
+
+                            //$scope.getUserApplicationQuery();
+                            //$scope.userapplicationlist = [];
+                            $scope.applicationNamedListQuery = applicationNamedListQuery;
+                            $scope.FilterExp = $scope.adminConfiguration ? _config.FilterExp ? "(" + $scope.applicationNamedListQuery + "AND(" + _config.FilterExp + "))" : $scope.applicationNamedListQuery : _config.FilterExp ? "(" + _config.FilterExp + ")" : "";
+
+                            $scope.Views = _config.Views;
+                            $scope.selectedValue = _config.Views; //SortBYApplicationDefaultValue
+                            $scope.recordFlag = 'false';
                             $scope.cardVisible = _config.cardVisible ? _config.cardVisible : "";
                             $scope.cardErrorInformation = _config.cardErrorInformation ? _config.cardErrorInformation : "";
                             $scope.cardStatusNamedList = _config.cardStatusNamedList ? _config.cardStatusNamedList : "";
-                            $scope.userApplicationNamedList = _config.userApplicationNamedList ? _config.userApplicationNamedList : ""; //namedlist
                             $scope.cardBottomActionGuid = _config.cardBottomActionGuid;
+
+
+                            $scope.perRowCardLength = _config.perRowCardLength ? _config.perRowCardLength : "col-lg-3 col-md-4 col-sm-4";
+                            $scope.limit = _config.perRowCardLength == "col-lg-3 col-md-4 col-sm-4" ? 8 : 6;
+                            $scope.cardlimit = _config.perRowCardLength == "col-lg-3 col-md-4 col-sm-4" ? 8 : 6;
 
                             $scope.cardActionGuid = _config.cardActionGuid;
                             $scope.cardSorting = _config.cardSorting ? _config.cardOrder == "true" ? "-" + _config.cardSorting : _config.cardSorting : "";
@@ -69,6 +83,7 @@
                             $scope.BannerURL = _config.BannerURL;
                             $scope.BannerCaption = _config.BannerCaption;
                             $scope.BannerSubCaption = _config.BannerSubCaption;
+                            $scope.BannerHeight = _config.BannerHeight;
 
 
                             //Category
@@ -80,28 +95,14 @@
 
                             //DataSets
                             $scope.query = "";
-                            $scope.DataSet1Label = _config.DataSet1Label;
-                            $scope.DataSet1 = _config.DataSet1;
-                            $scope.DataSet1Field = _config.DataSet1Field;
-                            $scope.dataset1searchfield = _config.dataset1searchfield;
-                            $scope.dataset1displayfield = _config.dataset1displayfield;
-                            $scope.firstdataset = [];
-                            $scope.getDataSet($scope.DataSet1, $scope.DataSet1Field, 'first');
-                            $scope.DataSet2Label = _config.DataSet2Label;
-                            $scope.DataSet2 = _config.DataSet2;
-                            $scope.DataSet2Field = _config.DataSet2Field;
-                            $scope.dataset2searchfield = _config.dataset2searchfield;
-                            $scope.dataset2displayfield = _config.dataset2displayfield;
-                            $scope.seconddataset = [];
-                            $scope.getDataSet($scope.DataSet2, $scope.DataSet2Field, 'second');
+
 
                             //User
                             $scope.CurrentUserFullName = rxCurrentUser.get().fullName;
                             $scope.CurrentUserLoginName = rxCurrentUser.get().loginName;
                             $scope.RecDef = "com.bmc.arsys.rx.foundation:Person";
 
-                            $scope.getImage(); //banner image
-                            $scope.bannerGeneratedImage = "";
+
 
                             $scope.getCardList();
                             $scope.mydata = [];
@@ -109,20 +110,13 @@
                             $scope.getApplicationStatusNamedList();
                             $scope.cardStatusDefaultValue = []; //card status namedListValues 
 
-                            $scope.getUserApplicationNamedList();
-                            $scope.userApplications = []; //namedListValues 
-
-
                             $scope.show_hide_recordGrid('false');
 
 
 
 
-
                         };
-                        $scope.setUrlTOModal = function (indexurl) {
-                            $scope.SetModalURL = indexurl;
-                        }
+
 
                         $scope.trustSrc = function (url) {
 
@@ -138,22 +132,23 @@
 
 
                         $scope.getCardList = function () {
-                            var foo = rxRecordInstanceDataPageResource.withName($scope.RecordDefinition);
-
-                            var queryParams = {
+                            $scope.queryParams = {
                                 propertySelection: "1,2,3,4,5,6,7,8,179," + $scope.ApplicationName + "," + $scope.Description + "," + $scope.Color + "," + $scope.tooltipHeader + "," + $scope.Icon + "," + $scope.tooltipDescription + "," + $scope.Views + "," + $scope.ratingCount + "," + $scope.cardStatus + "," + $scope.cardFavourite + "," + $scope.cardScope + "," + $scope.CategoryField + "," + $scope.cardVisible + "," + $scope.cardErrorInformation,
                                 queryExpression: $scope.FilterExp ? $scope.FilterExp : "",
                                 sortBy: $scope.cardSorting
 
                             };
 
-                            foo.get(-1, 0, queryParams).then(
+
+                            $scope.cardListDataPromise = rxRecordInstanceDataPageResource.withName($scope.RecordDefinition).get(200, 0, $scope.queryParams).then(
                                 function (allRecords) {
                                     $scope.mydata = allRecords.data;
                                     $scope.cardList = $scope.mydata;
 
                                 }
                             );
+
+
 
                         }
 
@@ -165,7 +160,7 @@
                                     propertySelection: "1,2,3,4,5,6,7,8,179," + fieldvalues,
                                 };
 
-                                foo.get(-1, 0, queryParams).then(
+                                foo.get(200, 0, queryParams).then(
                                     function (allRecords) {
                                         if (datasetflag === 'first') {
                                             $scope.firstdataset = allRecords.data;
@@ -184,14 +179,7 @@
                             });
 
                         }
-                        $scope.getUserApplicationNamedList = function () {
-                            if ($scope.userApplicationNamedList) {
-                                rxNamedListDataPageResource.get($scope.userApplicationNamedList).then(function (data) {
-                                    $scope.userApplications = data.data;
-                                });
-                            }
 
-                        }
                         $scope.getCategoryNamedList = function () {
                             if ($scope.CategoryNamedList) {
                                 rxNamedListDataPageResource.get($scope.CategoryNamedList).then(function (data) {
@@ -200,15 +188,30 @@
                             }
 
                         }
-                        $scope.userhaspermission = function (obj) {
-                            if ($scope.userApplicationNamedList) {
-                                var actualApplicationName = obj[$scope.ApplicationName];
-                                var lowerApplicationName = obj[$scope.ApplicationName] == undefined ? "" : obj[$scope.ApplicationName].toLowerCase();
-                                return _.findKey($scope.userApplications, actualApplicationName) || _.findKey($scope.userApplications, lowerApplicationName);
-                            } else {
-                                return true;
-                            }
+                        $scope.getUserApplicationQuery = function () {
+                            if ($scope.rxConfiguration.propertiesByName.adminConfiguration) {
+                                if ($scope.rxConfiguration.propertiesByName.userApplicationNamedList) {
+                                    var qualification = "";
+                                    var userapplicationlist = [];
+                                    rxNamedListDataPageResource.get($scope.rxConfiguration.propertiesByName.userApplicationNamedList).then(function (data) {
+                                        userapplicationlist = data.data;
+                                        for (var i in userapplicationlist) {
+                                            for (var j in userapplicationlist[i]) {
+                                                qualification += "'" + $scope.rxConfiguration.propertiesByName.ApplicationName + "'=" + '"' + userapplicationlist[i][j] + '"';
+                                                qualification += userapplicationlist.length - 1 > i ? "OR" : "";
+                                            }
+                                        }
 
+                                        return qualification ? "(" + qualification + ")" : "('1'=\"\")";
+                                    }).then(function (qual) {
+                                        applicationNamedListQuery = qual;
+                                        init();
+                                    });
+
+                                }
+                            } else {
+                                init();
+                            }
                         }
 
                         $scope.updateViewsCounter = function (RecInstanceId, views) {
@@ -237,36 +240,7 @@
                             }
                         }
 
-                        $scope.getImage = function () {
 
-                            var save_picture = false;
-                            if ($scope.BannerRecordDefinition) {
-
-                                var attachmentsResource = rxRecordInstanceAttachmentResource.withName($scope.BannerRecordDefinition);
-
-                                attachmentsResource.get($scope.BannerInstanceId, ($scope.BannerImage).toString()).then(function (fileStream) {
-                                    if (fileStream) {
-
-                                        var arrayBufferView = new Uint8Array(fileStream.data); //  eslint-disable-line  no-undef
-                                        var file = new Blob([arrayBufferView], {
-                                            type: fileStream.headers('content-type')
-                                        });
-                                        var urlCreator = window.URL || window.webkitURL;
-                                        $scope.bannerGeneratedImage = urlCreator.createObjectURL(file);
-
-                                        debugger;
-
-
-                                        //  function from file-saver.js library
-                                        if (save_picture) {
-                                            $scope.fileName = fileStream.headers('Content-Disposition').split('filename=')[1];
-                                            saveAs(file, $scope.fileName); //  eslint-disable-line  no-undef
-                                        }
-                                    }
-                                });
-                            }
-
-                        }
 
 
 
@@ -301,25 +275,31 @@
                         }
 
 
-                        $scope.filterCurrentCategoryOrSearchText = function (filterinput, type) {
 
-                            if (type === 'Category') {
-                                if (filterinput == "ALL") {
-                                    $scope.cardList = $scope.mydata;
-                                } else {
-                                    $scope.cardList = _.filter($scope.mydata, function (obj) {
-                                        return obj[$scope.CategoryField] == filterinput;
-                                    });
-                                }
+                        $scope.filterCurrentCategoryOrSearchText = function (filterinput, filtertype) {
+
+                            var cardQueryExpression = filtertype == "search" ? "'" + $scope.ApplicationName + "' LIKE \"%" + filterinput + "%\"" : "'" + $scope.CategoryField + "' LIKE \"%" + filterinput + "%\"";
+                            var cardFilterExpression = $scope.FilterExp ? $scope.FilterExp + "AND (" + cardQueryExpression + ")" : cardQueryExpression;
+
+                            var queryParams = {
+                                propertySelection: "1,2,3,4,5,6,7,8,179," + $scope.ApplicationName + "," + $scope.Description + "," + $scope.Color + "," + $scope.tooltipHeader + "," + $scope.Icon + "," + $scope.tooltipDescription + "," + $scope.Views + "," + $scope.ratingCount + "," + $scope.cardStatus + "," + $scope.cardFavourite + "," + $scope.cardScope + "," + $scope.CategoryField + "," + $scope.cardVisible + "," + $scope.cardErrorInformation,
+                                queryExpression: cardFilterExpression,
+                                sortBy: $scope.cardSorting
+
+                            };
+
+                            if (filterinput == "ALL" || filterinput == "" || filterinput == null) {
+                                $scope.getCardList();
                             } else {
-                                if (filterinput == "" || filterinput == null) {
-                                    $scope.cardList = $scope.mydata;
-                                } else {
-                                    $scope.cardList = _.filter($scope.mydata, function (obj) {
-                                        return (obj[$scope.ApplicationName]).toLowerCase().match(filterinput.toLowerCase());
-                                    });
-                                }
+                                rxRecordInstanceDataPageResource.withName($scope.RecordDefinition).get(100, 0, queryParams).then(
+                                    function (allRecords) {
+                                        $scope.cardList = allRecords.data;
+
+
+                                    }
+                                );
                             }
+
                         }
 
                         $scope.hoverIn = function (item) {
@@ -410,24 +390,19 @@
                         };
 
                         $scope.updatedbfav = function (RecInstanceId, isFavourite) {
-                            var currentCard = _.find($scope.cardList, {
-                                '179': RecInstanceId
-                            });
-
-                            currentCard[$scope.cardFavourite] = isFavourite;
                             if ($scope.RecordDefinition) {
                                 var objectRecord = rxRecordInstanceResource.withName($scope.RecordDefinition);
                                 objectRecord.get(RecInstanceId).then(
                                     function (record) {
-
                                         record.setValue($scope.cardFavourite, angular.toJson(isFavourite));
                                         record.put();
+                                        $scope.getCardList();
+                                        $scope.getCardList();
                                         rxNotificationMessage.success("Saved Successfully!!");
 
 
 
-                                    }
-                                );
+                                    });
                             }
                         }
 
@@ -435,19 +410,14 @@
 
                             if ($scope.RecordDefinition) {
 
-                                var currentCardVisible = _.find($scope.cardList, {
-                                    '179': RecInstanceId
-                                });
-
-                                currentCardVisible[$scope.cardVisible] = isCardVisible == "true" ? "false" : "true";
 
                                 var objectRecord = rxRecordInstanceResource.withName($scope.RecordDefinition);
                                 objectRecord.get(RecInstanceId).then(
                                     function (record) {
 
-                                        record.setValue($scope.cardVisible, currentCardVisible[$scope.cardVisible]);
+                                        record.setValue($scope.cardVisible, isCardVisible == "true" ? "false" : "true");
                                         record.put();
-
+                                        $scope.getCardList();
                                         rxNotificationMessage.success("Saved Successfully!!");
 
                                     }
@@ -481,41 +451,49 @@
                         }
 
 
-
                         $scope.sortByViews = function () {
 
+                            var queryParams = {
+                                propertySelection: "1,2,3,4,5,6,7,8,179," + $scope.ApplicationName + "," + $scope.Description + "," + $scope.Color + "," + $scope.tooltipHeader + "," + $scope.Icon + "," + $scope.tooltipDescription + "," + $scope.Views + "," + $scope.ratingCount + "," + $scope.cardStatus + "," + $scope.cardFavourite + "," + $scope.cardScope + "," + $scope.CategoryField + "," + $scope.cardVisible + "," + $scope.cardErrorInformation,
+                                queryExpression: $scope.FilterExp ? $scope.FilterExp : "",
+                                sortBy: "-" + $scope.selectedValue
 
-                            if ($scope.selectedValue == "clear") {
-                                $scope.limit = 8;
-                                $(".selector").show();
-                                $scope.cardList = $scope.mydata;
+                            };
 
-                            }
-                            if ($scope.selectedValue == "published") {
+                            $scope.cardListDataPromise = rxRecordInstanceDataPageResource.withName($scope.RecordDefinition).get(-1, 0, queryParams).then(
+                                function (allRecords) {
+                                    $scope.cardList = allRecords.data;
 
-                                $scope.cardList = _.filter($scope.mydata, function (obj) {
-                                    return obj[$scope.cardVisible] === "true";
-                                });
-                            } else {
-                                $scope.cardList = $scope.mydata.sort(function (a, b) {
-                                    return b[$scope.selectedValue] - a[$scope.selectedValue];
-                                });
-                            }
+
+                                }
+                            );
                         }
 
                         var toggle = false;
                         $scope.sortByFav = function () {
                             toggle = toggle === false ? true : false;
+                            var portalFavouriteApplicationQuery = "'" + $scope.cardFavourite + "' LIKE " + '"%{""username"":""' + $scope.CurrentUserLoginName + '"",""isfavourite"":""true""}%"';
+                            var prefixFavouriteApplicationQuery = $scope.FilterExp ? $scope.FilterExp + "AND(" + portalFavouriteApplicationQuery + ")" : portalFavouriteApplicationQuery;
+
+                            var queryParams = {
+                                propertySelection: "1,2,3,4,5,6,7,8,179," + $scope.ApplicationName + "," + $scope.Description + "," + $scope.Color + "," + $scope.tooltipHeader + "," + $scope.Icon + "," + $scope.tooltipDescription + "," + $scope.Views + "," + $scope.ratingCount + "," + $scope.cardStatus + "," + $scope.cardFavourite + "," + $scope.cardScope + "," + $scope.CategoryField + "," + $scope.cardVisible + "," + $scope.cardErrorInformation,
+                                queryExpression: prefixFavouriteApplicationQuery,
+                                sortBy: $scope.cardSorting
+
+
+                            };
+
                             if (toggle) {
-                                $scope.cardList = _.filter($scope.mydata, function (obj) {
-                                    var PARSEDFAVOBJECT = [];
-                                    PARSEDFAVOBJECT = angular.fromJson(obj[$scope.cardFavourite]);
-                                    return _.find(PARSEDFAVOBJECT, function (obj2) {
-                                        return obj2.username == $scope.CurrentUserLoginName && obj2.isfavourite == 'true';
-                                    })
-                                })
+
+                                $scope.cardListDataPromise = rxRecordInstanceDataPageResource.withName($scope.RecordDefinition).get(100, 0, queryParams).then(
+                                    function (allRecords) {
+                                        $scope.cardList = allRecords.data;
+
+
+                                    }
+                                );
                             } else {
-                                $scope.cardList = $scope.mydata;
+                                $scope.getCardList();
                             }
                         }
 
@@ -574,8 +552,7 @@
                             newValue: $scope.rxConfiguration.api
                         });
 
-
-                        init();
+                        $scope.getUserApplicationQuery();
 
                     }
 

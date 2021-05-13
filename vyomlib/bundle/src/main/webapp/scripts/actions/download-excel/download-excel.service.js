@@ -34,7 +34,8 @@
                     CSV += row + '\r\n';
                 }
                 rxRecordDefinitionResource.get(recordDefinitionName).then(function (recordDefinition) {
-
+                    console.log(arrData);
+                    console.log(recordDefinition.fieldDefinitions);
                     for (var i = 0; i < arrData.length; i++) {
                         var row = "";
 
@@ -50,6 +51,7 @@
                                 if (_.find(recordDefinition.fieldDefinitions, {
                                         name: index
                                     }).resourceType == RX_RECORD_DEFINITION.dataTypes.selection.resourceType) {
+
                                     strKey = _.find(recordDefinition.fieldDefinitions, {
                                         name: index
                                     }).optionNamesById[arrData[i][index]]

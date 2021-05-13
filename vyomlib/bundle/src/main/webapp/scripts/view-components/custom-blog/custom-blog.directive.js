@@ -26,18 +26,18 @@
                             $scope.HTMLField = _config.HTMLField;
                             $scope.RecInstanceId = _config.RecInstanceId;
                             $scope.enableEditButton = _config.enableEditButton;
+                            $scope.headerNote = _config.headerNote;
+                            $scope.tableWidth = _config.tableWidth;
+
+
                             $scope.staticHtml = "";
                             $scope.enableEditButton == 'true' ? $element.find('#edit').show() : $element.find('#edit').hide();
+
                             $scope.enableEditPane = _config.enableEditPane;
                             $scope.enableEditPane ? $element.find('.card-header').show() : $element.find('.card-header').hide();
 
 
-
                             $scope.CurrentUserFullName = rxCurrentUser.get().fullName;
-
-
-
-
 
                             //get unique instamce id for editor
                             $scope.editorID = _config.editorInstance.split("-").join("_");
@@ -80,7 +80,26 @@
 
                         };
 
+                        // Used to set default value in dialog
+                        CKEDITOR.on('dialogDefinition', function (ev) {
 
+                            try {
+                                var dialogName = ev.data.name;
+                                var dialogDefinition = ev.data.definition;
+                                if (dialogName == 'link') {
+                                    var informationTab = dialogDefinition.getContents('target');
+                                    var targetField = informationTab.get('linkTargetType');
+                                    targetField['default'] = '_blank';
+
+                                }
+
+                            } catch (exception) {
+
+                                console.log('Error ' + ev.message);
+
+                            }
+
+                        });
 
 
                         // <!----------- buit in functions------------------>
@@ -112,6 +131,9 @@
                                 function (record) {
                                     $scope.staticHtml = $sce.trustAsHtml(record.getValue($scope.HTMLField));
                                     $scope.editor.setData(record.getValue($scope.HTMLField));
+                                    angular.element(document).ready(function () {
+                                        angular.element('#CustomBlogEditor').find('table').addClass($scope.tableWidth);
+                                    })
                                 }
                             );
 
