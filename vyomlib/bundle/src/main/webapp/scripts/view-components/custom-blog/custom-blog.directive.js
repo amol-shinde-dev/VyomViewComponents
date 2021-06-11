@@ -132,7 +132,7 @@
                                     $scope.staticHtml = $sce.trustAsHtml(record.getValue($scope.HTMLField));
                                     $scope.editor.setData(record.getValue($scope.HTMLField));
                                     angular.element(document).ready(function () {
-                                        angular.element('#CustomBlogEditor').find('table').addClass($scope.tableWidth);
+                                        angular.element('#CustomBlogEditor_' + $scope.editorID).find('table').addClass($scope.tableWidth);
                                     })
                                 }
                             );
@@ -159,10 +159,10 @@
                             if (isReadOnly) {
                                 $scope.editor.setReadOnly(isReadOnly);
                                 $element.find("#" + $scope.editorID).hide();
-                                $element.find("#CustomBlogEditor").show();
+                                $element.find('#CustomBlogEditor_' + $scope.editorID).show();
                                 $element.find(".card-footer").hide();
                             } else {
-                                $element.find("#CustomBlogEditor").hide();
+                                $element.find('#CustomBlogEditor_' + $scope.editorID).hide();
                                 $element.find("#" + $scope.editorID).show();
                                 $scope.editor.setReadOnly(isReadOnly);
                                 $element.find(".card-footer").show();
@@ -194,6 +194,9 @@
                             $scope.RecInstanceId = RecInstanceId;
                         });
 
+                        $scope.$watch("rxConfiguration.propertiesByName.enableEditButton", function (flag) {
+                            flag == 'true' ? $element.find('#edit').show() : $element.find('#edit').hide();
+                        });
 
                         init();
 

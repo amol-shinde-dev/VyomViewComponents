@@ -1,0 +1,169 @@
+<script>
+    $(document).ready(function() {
+
+        $("#myCarousel").carousel();
+    });
+    $(function() {
+        $('[data-toggle="popover"]').popover()
+    })
+
+</script>
+
+
+<div class="wrapper {{cssClasses}}">
+
+    <div class="content" ng-if="BannerRecordDefinition">
+        <div class="container-fluid mt-3">
+
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img ng-src="/api/rx/application/record/attachment/{{BannerRecordDefinition}}/{{BannerInstanceId}}/{{BannerImage}}" alt="" ng-click="redirecturl(BannerURL)" style="cursor: default;width:100%;height: {{BannerHeight}}px">
+                        <div class="carousel-caption" style="top:auto;right:-18%;left: 8%;">
+
+                            <div class="row com-ericsson-hilda-medium">
+                                <div class="col-3">
+                                    <h1 style="font-size: 38px;" class="w3-text-{{titleColor}} com-ericsson-hilda-medium">{{greetings}}<br><br>
+                                        {{CurrentUserFullName}}</h1>
+                                    <p></p>
+                                </div>
+                                <div class="col-8">
+                                    <form class="form-inline d-flex justify-content-center md-form form-sm mt-2">
+                                        <!--<i class="fas fa-search w3-xxlarge" aria-hidden="true"></i>-->
+                                        <input class="w3-input w-75" type="text" ng-model="searchQuery" ng-keyup="filterCurrentCategoryOrSearchText('search',searchQuery)" placeholder="{{searchPlaceholder}}" aria-label="Search">
+                                    </form>
+
+
+                                    <span style="display: block;max-width: 80%;margin: 0 auto;line-height: 1.2;overflow: hidden;text-overflow: ellipsis">
+                                        <h3>{{BannerCaption}}</h3>
+                                        <p><em>{{BannerSubCaption}}</em></p>
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Left and right controls -->
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container-fluid " style="padding-bottom: 5px; padding-top: 10px">
+         
+        <div class="d-flex flex-row" style="justify-content: center;">
+            <div class="p-2 bd-highlight">
+                Supplier Name: <select ng-model="selectedValue1" ng-change="filterCurrentCategoryOrSearchText('dropdown','')" style="margin-left: 10px;width:auto;margin-right: 10px;">
+                    <option value="" selected>Select Supplier</option>
+                    <option value="{{d1[firstDropDownDisplayField]}}" ng-repeat="d1 in dropDownDataSet.supplierData">{{d1[firstDropDownDisplayField]}}</option>
+                </select>
+
+                Region Name: <select ng-model="selectedValue2" ng-change="filterCurrentCategoryOrSearchText('dropdown','')" style="margin-left: 10px;width: auto;margin-right: 10px;">
+                    <option value="" selected>Select Region</option>
+                    <option value="{{d2[secondDropDownDisplayField]}}" ng-repeat="d2 in dropDownDataSet.regionData">{{d2[secondDropDownDisplayField]}}</option>
+                </select>
+
+                Delivery Method: <select ng-model="selectedValue3" ng-change="filterCurrentCategoryOrSearchText('dropdown','')" style="margin-left: 10px;width: auto;margin-right: 10px;">
+                    <option value="" selected>Select Delivery Method</option>
+                    <option value="{{d3[thirdDropDownDisplayField]}}" ng-repeat="d3 in dropDownDataSet.deliveryData">{{d3[thirdDropDownDisplayField]}}</option>
+                </select>
+
+                Supplier Rating: <select ng-model="selectedValue4" ng-change="filterCurrentCategoryOrSearchText('dropdown','')" style="margin-left: 10px;width: auto;margin-right: 10px;">
+                    <option value="" selected>Select Supplier Rating</option>
+                    <option value="{{d4[fourthDropDownDisplayField]}}" ng-repeat="d4 in dropDownDataSet.supplierRating">{{d4[fourthDropDownDisplayField]}}</option>
+                </select>
+
+                Course Rating: <select ng-model="selectedValue5" ng-change="filterCurrentCategoryOrSearchText('dropdown','')" style="margin-left: 10px;width: auto;margin-right: 10px;">
+                    <option value="" selected>Select Course Rating</option>
+                    <option value="{{d5[fifthDropDownDisplayField]}}" ng-repeat="d5 in dropDownDataSet.courseRating">{{d5[fifthDropDownDisplayField]}}</option>
+                </select>
+
+                Sort By: <select ng-model="selectedValue6" ng-change="filterCurrentCategoryOrSearchText('dropdown','')" style="margin-left: 10px;width: auto;margin-right: 10px;">
+                    <option value="" selected>Select Sort</option>
+                    <option value="{{d6[sixthDropDownStoredField]}}" ng-repeat="d6 in dropDownDataSet.courseSorting">{{d6[sixthDropDownDisplayField]}}</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="content hideme">
+        <div class="container-fluid">
+            <div class="row" id="reverse" cg-busy="{promise:cardListDataPromise, delay:200}" ng-init="limit">
+                <div class="selector {{perRowCardLength}}" ng-repeat="x in cardList  | limitTo: limit as results ">
+
+                    <div class="card card-stats w3-card-4 h-75 ">
+                        <div class="card-header  card-header-icon h-75">
+                            <div ng-click="setSelectedCardInstanceId(x[179]);executeAction(cardActionGuid)">
+                                <div class="">
+                                    <div class="material-icons">
+
+                                        <p class=""></p>
+
+                                    </div>
+                                </div>
+
+                                <h5 class="card-title">{{x[courseName]}}</h5>
+
+
+                                <p class="card-category">
+                                    <span class="d-icon-users"></span>
+                                    <span>{{x[supplierName]}}</span>
+                                </p>
+
+                            </div>
+
+                            <p class="card-category" style="" ng-if="x[cost]">
+                                $ {{x[cost]}}
+                            </p>
+
+
+
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                <div class="card-category">
+                                    <span class="d-icon-star" style="color: orange"></span>
+                                    <span class="d-icon-star" style="color: orange"></span>
+                                    <span class="d-icon-star" style="color: orange"></span>
+                                    <span class="d-icon-star" style=""></span>
+                                    <span class="d-icon-star" style=""></span>
+                                    <a class="d-button_link">(Course Rating)</a>
+                                </div>
+                            </div>
+                            <div class="stats">
+                                <div class="card-category">
+                                    <span class="d-icon-star" style="color: orange"></span>
+                                    <span class="d-icon-star" style="color: orange"></span>
+                                    <span class="d-icon-star" style="color: orange"></span>
+                                    <span class="d-icon-star" style=""></span>
+                                    <span class="d-icon-star" style=""></span>
+                                    <a class="d-button_link">(Supplier Rating)</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="text-align: right">
+                <span>
+                    <button class="d-button d-icon-right-angle_up d-button_secondary" ng-hide="results.length <= cardlimit" ng-click="limit = limit - cardlimit">show less...</button>
+                    <button class="d-button d-icon-right-angle_down d-button_secondary" ng-hide="results.length === (cardList | filter:userhaspermission).length" ng-click="limit = limit + cardlimit">show more...</button>
+                </span>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

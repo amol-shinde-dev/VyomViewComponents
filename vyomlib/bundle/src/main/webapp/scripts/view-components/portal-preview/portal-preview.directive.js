@@ -222,7 +222,7 @@
                                         record.setValue($scope.Views, views + 1);
                                         record.put();
 
-                                        $scope.getCardList();
+
 
                                     }
                                 );

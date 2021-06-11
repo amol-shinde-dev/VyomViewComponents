@@ -20,6 +20,7 @@
         'com.vyom.vyomlib.view-components.marquee3', //Simple Marquee
         'com.vyom.vyomlib.view-components.marquee4', //Simple Marquee v2
         'com.vyom.vyomlib.view-components.vc19', //Approval Central
+        'com.vyom.vyomlib.view-components.learning-portal',
        'com.vyom.vyomlib.view-components.landing-console',
        'com.vyom.vyomlib.view-components.hierarchy',
        'com.vyom.vyomlib.view-components.custom-blog',
@@ -31,6 +32,8 @@
        'com.vyom.vyomlib.view-components.comment-box',
         'com.vyom.vyomlib.view-components.search-bar',
         'com.vyom.vyomlib.view-components.embedded-chatbot',
+        'com.vyom.vyomlib.view-components.service-health-dashboard',
+        
         //26
         
 
