@@ -1,0 +1,27 @@
+<label ng-class="options.attrs.label.class">
+    <rx-tooltip tooltip="options.tooltip"></rx-tooltip>
+    {{options.label}}:
+
+</label>
+<div ng-if="arr.length" >
+<div ng-repeat="field in arr " style="" class="selected-options">
+   <!---->
+   
+      <div class="rx-inspector-record-grid-column-editor__container">
+          <span  title="{{field.name}}" class="rx-inspector-record-grid-column-editor__card-title" >{{field.name}}
+          </span>
+           
+          <span  class="action-button d-icon-left-cross" ng-click="remove($index);" role="button" tabindex="0">
+          </span>
+        </div>
+      <div  class="column-type">
+         {{field.id}}
+      </div>
+   
+</div>
+</div>
+<div ng-if="!arr.length">
+    No field selected.
+</div>
+    
+

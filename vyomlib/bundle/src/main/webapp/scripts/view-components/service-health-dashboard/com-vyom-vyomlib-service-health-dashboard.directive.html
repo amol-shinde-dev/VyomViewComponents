@@ -1,0 +1,131 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Service health Dashboard</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/com.vyom.vyomlib/resources/service health dashboard/style.css">
+
+  <link rel="stylesheet" href="/com.vyom.vyomlib/resources/service health dashboard/responsive.css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+  <style>
+    .bar-step {
+      position: absolute;
+      z-index: 1;
+      font-size: 12px;
+    }
+
+    .label-line {
+      margin-top: 3px;
+      float: right;
+      background: red;
+      height: 8px;
+      width: 5px;
+    }
+
+    .label-percent {
+      float: right;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+  <!-- Start Welcome area -->
+  <div class="all-content-wrapper">
+    <div class="analytics-sparkle-area">
+      <div class="row" style="display: flex;">
+        <div class="left-panel" style="flex: 2;">
+          <div class="container-fluid">
+            <div class="row progressId">
+              <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" ng-repeat="x in textData" style="padding: 1px 1px;">
+                <div class="analytics-sparkle-line reso-mg-b-30" ng-click="getData2(x[cardName])" type="button"
+                  class="btn btn-demo" data-toggle="modal" data-target="#myModal2">
+                  <div class="analytics-content" id="xxx">
+                    <h5>
+                      <span class="counter">{{x[cardName]}}</span>
+                      <span class="tuition-fees">{{x[status]}}</span>
+                      <span class=" d-icon-circle"
+                        ng-style="{color: x[status] === 'Available' ? 'green' : 'red'}"></span>
+                    </h5>
+                    <h2><span class="counter">This month</span><span class="tuition-fees">Since change</span></h2>
+                    <h1><span class="counter">50</span>% <span class="tuition-fees">84 Hours</span></h1>
+                    <span style="margin-top: 5%; display: inline-block">Monthly overview</span>
+                    <div ng-repeat="y in textData3| filter: x[cardName]">
+                      <div id="{{y[11093002]}}" class="bar-step" style="left: {{y[11093005]}}%;"
+                        ng-style="{{getStyle(y[3])}}">
+                        <div class="label-line"></div>
+                      </div>
+                    </div>
+                    <div class="bar-step" style="left: 25%">
+                      <div class="label-line"></div>
+                    </div>
+                    <progress max="31" value="28" style="display: flex;
+                    width: -webkit-fill-available;">
+                    </progress>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal right fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+          <div class="modal-dialog" role="document" data-keyboard="false" data-backdrop="static">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+              </div>
+              <div class="modal-body" style="color: white;" ng-repeat="inc in textData2">
+                <h2>INC Number:{{inc[11093002]}}</h2>
+                <p style="color: #ffffffb5;">INC Status:{{inc[11093003]}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    var progress = document.getElementsByTagName('progress');
+    var today = new Date();
+    var cdate = today.getDate();
+    console.log(cdate);
+    console.log(new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate())
+    var range = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+
+    var progress = document.getElementsByTagName('progress');
+
+    for (var i = 0; i < progress.length; i++) {
+      document.getElementsByTagName('progress')[i].value = cdate
+      if (document.getElementsByTagName('progress')[i].value > range + 1) {
+        document.getElementsByTagName('progress')[i].value = 1;
+      }
+    }
+
+    // var incidentStyle = document.querySelector('.bar-step');
+    // incidentStyle.style.left = setLeft();
+
+    // function setLeft() {
+
+    // }
+  </script>
+</body>
+
+</html>

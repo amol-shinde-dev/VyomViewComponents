@@ -1,0 +1,75 @@
+<head>
+    
+    <style>
+        .button {
+
+            border: none;
+            padding: 40px 80px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+    </style>
+
+    <style>
+        .c {
+            background-color: {
+                    {
+                    btnColor
+                }
+            }
+
+            ;
+
+            color: {
+                    {
+                    btnTextColor
+                }
+            }
+
+            ;
+
+            font-size: {
+                    {
+                    btSize
+                }
+            }
+
+            ;
+
+            font-family: {
+                    {
+                    btnFontFamily
+                }
+            }
+        }
+
+        .d-button:hover {
+            opacity: 0.6
+        }
+
+        .d-button:ng-click {
+            opacity: 1;
+            transition: 0.3s;
+        }
+
+        .vy-custom-width {
+            contain: content;
+        }
+
+        .vy-custom-margin {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+    </style>
+    <!--padding-left: 14px;padding-right: 14px;padding-top: 7px;padding-bottom: 7px; -->
+</head>
+
+<div class="vy-custom-width">
+
+    <button type="button" ng-click="clickButton()" class="d-button {{buttonStyle.icon | lowercase}} vy-custom-margin w3-{{buttonColor}}" ng-class="buttonClasses" style="{{buttonStyle.style}}"> <span>{{buttonlabel}}</span><span class="rx-action-button-content"></span></button>
+</div>

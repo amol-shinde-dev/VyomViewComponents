@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link href="/com.vyom.vyomlib/resources/homepage/css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="page-container">
+    <div class="mother-grid-inner">
+
+      <div class="inner-block" style="padding-top: 20px;padding-bottom: 20px" ng-style="{'width':innerBlockWidthstyle}">
+
+        <div class="market-updates">
+
+          <div class="col-md-4 market-update-gd" id="subscriberW1" style="padding-left: 0px;">
+            <div class="market-update-block clr-block-1 w3-{{Color1}}" ng-click="callAction('Saction')">
+              <div class="col-md-8 market-update-left">
+                <h3>{{rxConfiguration.propertiesByName.count1 | comVyomVyomlibMyFilter}}</h3>
+                <h4>{{header1}}</h4>
+                <p>{{note1}}</p>
+              </div>
+              <div class="col-md-4 market-update-right">
+                <img class="img-avatar" style="
+                width: 140px;
+                height: 110px;
+                background-repeat: no-repeat;
+                background-size: 100% 100%" src="{{pictureData1}}">
+                <p class="d-icon-info_circle" style="font-size: small;">
+                  <span class="tooltiptext">{{tooltip1}}</span>
+                </p>
+                <!-- <i class="fa fa-envelope-o" style="font-size:48px;"> </i> -->
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 market-update-gd" id="incidentW1">
+            <div class="market-update-block clr-block-2 w3-{{Color2}}" ng-click="callAction('Iaction')">
+              <div class="col-md-8 market-update-left">
+                <h3>{{rxConfiguration.propertiesByName.count2 | comVyomVyomlibMyFilter}}</h3>
+                <h4>{{header2}}</h4>
+                <p>{{note2}}</p>
+              </div>
+              <div class="col-md-4 market-update-right">
+                <!-- <i class="fa fa-file-text-o"> </i> -->
+                <img class="img-avatar" style="
+                width: 140px;
+                height: 110px;
+                background-repeat: no-repeat;
+                background-size: 100% 100%" src="{{pictureData2}}">
+                <p class="d-icon-info_circle" style="font-size: small;">
+                  <span class="tooltiptext">{{tooltip2}}</span>
+                </p>
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 market-update-gd" id="changeW1" style="padding-right: 0px;">
+            <div class="market-update-block clr-block-3 w3-{{Color3}}" ng-click="callAction('Caction')">
+              <div class="col-md-8 market-update-left">
+                <h3>{{rxConfiguration.propertiesByName.count3 | comVyomVyomlibMyFilter}}</h3>
+                <h4>{{header3}}</h4>
+                <p>{{note3}} </p>
+              </div>
+              <div class="col-md-4 market-update-right">
+                <img class="img-avatar" style="
+                width: 140px;
+                height: 110px;
+                background-repeat: no-repeat;
+                background-size: 100% 100%" src="{{pictureData3}}">
+                <p class="d-icon-info_circle" style="font-size: small;">
+                  <span class="tooltiptext">{{tooltip3}}</span>
+                </p>
+                <!-- <i class="fa fa-desktop" style="font-size:48px;"> </i> -->
+              </div>
+              <div class="clearfix"> </div>
+            </div>
+          </div>
+
+          <div class="clearfix"> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

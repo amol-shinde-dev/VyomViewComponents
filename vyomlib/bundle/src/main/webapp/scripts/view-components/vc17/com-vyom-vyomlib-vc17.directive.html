@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+    <style>
+        i.glyphicon {
+            display: block;
+            text-align: center;
+            margin-bottom: -0.5em;
+            font-size: 1.5em;
+            color: #337AB7;
+        }
+
+        .centered {
+            position: absolute;
+            top: 149px;
+            left: 135px;
+            transform: translate(-50%, -50%);
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="page-container" style="top:12px">
+
+        <div class="mother-grid-inner">
+            <div class="blockwidth inner-block" style="padding-top: 20px;padding-bottom: 20px">
+
+                <div class="climate">
+                    <div class="col-md-4 climate-grids" style="padding-bottom: 0px;">
+                        <div class="boost-icons-list">
+                            <ul>
+                                <li ng-click="redirecturl(Url1)"><br> <i class="glyphicon glyphicon-{{Icon1}}" aria-hidden="true"></i><br>
+                                    <a href="" target="_blank">{{Title1}}</a></li>
+                                <li ng-click="redirecturl(Url2)"><br><i class="glyphicon glyphicon-{{Icon2}}" aria-hidden="true"></i> <br> <a href="{{Url2}}" target="_blank">{{Title2}}</a></li>
+                                <li ng-click="redirecturl(Url3)"><br><i class="glyphicon glyphicon-{{Icon3}}" aria-hidden="true"></i><br>
+                                    <a href="{{Url3}}" target="_blank">{{Title3}}</a></li>
+                                <li ng-click="redirecturl(Url4)"> <br><i class="glyphicon glyphicon-{{Icon4}}" aria-hidden="true"></i><br>
+                                    <a href="{{Url4}}" target="_blank">{{Title4}}</a></li>
+                            </ul>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 climate-grids">
+                        <div class="climate-grid3">
+                            <div class="popular-brand">
+
+                                <div class="col-md-6 popular-bran-left" style="padding-bottom: 1px;height: 156.8px;">
+
+
+                                    <h4>{{Slot1Title}}</h4>
+                                    <br>
+                                    <h6>{{Slot1Notes}}</h6>
+
+                                </div>
+                                <div class="col-md-6 popular-bran-right w3-{{Slot1ClickBGColor}}">
+                                    <a href="{{Slot1ClickURL}}">
+                                        <h3>Click</h3>
+                                    </a>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="popular-follow" style="height:140px">
+                                <div class="col-md-6 popular-follo-left w3-{{Slot2NotesBGColor}}" style="height: 112px;padding-top: 22px;height: 140.6px;">
+                                    <p>{{Slot2Notes}} </p>
+                                </div>
+                                <div class="col-md-6 popular-follo-right">
+                                    <h4>{{Slot2Title}}</h4>
+                                    <h5>{{rxConfiguration.propertiesByName.Slot2Followers | comVyomVyomlibMyFilter}}</h5>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4 climate-grids">
+                        <div class="climate-grid3" style="margin-top:100px">
+                            <a href="{{URL}}">
+                                <img src="/com.vyom.vyomlib/resources/homepage/images/EricIcon.png" style="width: 270px;">
+
+                            </a>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix"> </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

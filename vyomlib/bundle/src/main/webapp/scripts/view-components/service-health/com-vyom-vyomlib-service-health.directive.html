@@ -1,0 +1,109 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Service health Dashboard</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/com.vyom.vyomlib/resources/service health dashboard/style.css">
+
+    <link rel="stylesheet" href="/com.vyom.vyomlib/resources/service health dashboard/responsive.css">
+
+    <style>
+        .bar-step {
+            position: absolute;
+            z-index: 1;
+            font-size: 12px;
+        }
+        
+        .label-line-orange {
+            margin-top: 3px;
+            /* float: right; */
+            background: rgba(238, 98, 5, 0.952);
+            height: 7px;
+            width: 5px;
+            border-radius: 80%;
+        }
+        
+        .label-line-red {
+            margin-top: 3px;
+            /* float: right; */
+            background: red;
+            height: 7px;
+            width: 5px;
+            border-radius: 80%;
+        }
+        
+        .label-percent {
+            float: right;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+    <!-- Start Welcome area -->
+    <div class="all-content-wrapper">
+        <div class="analytics-sparkle-area">
+            <div class="row" style="display: flex;">
+                <div class="left-panel" style="flex: 2;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" ng-repeat="service in textData" style="padding: 1px 1px;">
+                                <div class=" analytics-sparkle-line reso-mg-b-30" ng-click="setSelectedCardInstanceId(service[179]);executeAction(cardActionGuid);">
+                                    <div class="analytics-content">
+                                        <h5>
+                                            <span class="counter">{{service[cardName]}}</span>
+                                            <span class="tuition-fees">{{service[status]}}</span>
+                                            <span class="d-icon-circle" ng-style="{color: service[status] === 'Available' ? '#10c510' : 'red'}"></span>
+                                        </h5>
+                                        <h2><span class="counter">Since change</span><span class="tuition-fees">{{service[time]}}hr</span></h2>
+                                        <span style="margin-bottom:5%; display: inline-block; color: #ffffffde;">Monthly overview</span>
+
+                                        <div ng-repeat="incident in textData3| filter: service[cardName]">
+                                            <div id="{{incident[incNumber]}}" class="bar-step" style="left: {{incident[progressPercentage]}}%" ng-style="{{getStyle(incident[3])}}">
+                                                <div class="label-line-orange"></div>
+                                            </div>
+                                        </div>
+                                        <div ng-repeat="change in textData2| filter: service[cardName]">
+                                            <div id="{{change[incNumber]}}" class="bar-step" style="left: {{change[progressPercentage]}}%" ng-style="{{getStyle(change[3])}}">
+                                                <div class="label-line-red"></div>
+                                            </div>
+                                        </div>
+
+                                        <progress max="31" value="28" style="display: flex; width: -webkit-fill-available;"> </progress>
+                                        <span class="text-success percentage">% Complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var today = new Date();
+        var cdate = today.getDate();
+        var range = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+
+        var progress = document.getElementsByTagName('progress');
+        var progress = document.getElementsByTagName('progress');
+
+        for (var i = 0; i < progress.length; i++) {
+            document.getElementsByTagName('progress')[i].value = cdate
+            if (document.getElementsByTagName('progress')[i].value > range + 1) {
+                document.getElementsByTagName('progress')[i].value = 1;
+            }
+        }
+        document.getElementsByClassName('percentage')[0].innerHTML = Math.round((cdate * 100) / range) + "% Completed";
+    </script>
+</body>
+
+</html>

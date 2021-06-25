@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @font-face {
+            font-family: 'Ericfont';
+            src: url('/com.vyom.vyomlib/resources/Fonts/UTM Ericsson Capital.ttf') format('woff'),
+                /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+                url('/com.vyom.vyomlib/resources/Fonts/UTM Ericsson Capital.ttf') format('truetype');
+            /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+        }
+
+        /* Style the buttons inside the tab */
+        .tab button {
+            background-color: #022461;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 4px 12px;
+            transition: 0.3s;
+            font-size: 30px;
+            color: white;
+
+            /*  font-family:Comic Sans MS;*/
+            font-family: {
+                    {
+                    cfg.font
+                }
+            }
+
+            ;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="tab w3-{{bgcolor}} w3-{{headerSize}}">
+        <button class="tablinks w3-{{bgcolor}} w3-{{headerSize}}" ng-if="cfg.toggleicon=== '1' ? false : true"><img src="/com.vyom.vyomlib/resources/images/img/eric4.png" class="tablinks" alt=""></button>
+        <button class="tablinks w3-{{bgcolor}} w3-{{headerSize}}">{{cfg.text}}</button>
+        <button class="tablinks w3-{{bgcolor}} w3-{{headerSize}}">
+            <button1 class="w3-{{bgcolor}} w3-{{headerSize}}"><a href="{{cfg.hyperlink}}">{{cfg.appname}}</a></button1>
+
+        </button>
+
+    </div>
+</body>
+
+</html>

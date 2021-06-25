@@ -1,0 +1,511 @@
+<html>
+
+
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+    <link rel="stylesheet" href="/com.vyom.vyomlib/resources/css/myPage.css">
+
+    <script>
+        function DragNSort(config) {
+            this.$activeItem = null;
+            this.$container = config.container;
+            this.$items = this.$container.querySelectorAll('.' + config.itemClass);
+            this.dragStartClass = config.dragStartClass;
+            this.dragEnterClass = config.dragEnterClass;
+        }
+
+        DragNSort.prototype.removeClasses = function() {
+            [].forEach.call(this.$items, function($item) {
+                $item.classList.remove(this.dragStartClass, this.dragEnterClass);
+            }.bind(this));
+        };
+
+        DragNSort.prototype.on = function(elements, eventType, handler) {
+            [].forEach.call(elements, function(element) {
+                element.addEventListener(eventType, handler.bind(element, this), false);
+            }.bind(this));
+        };
+
+        DragNSort.prototype.onDragStart = function(_this, event) {
+            _this.$activeItem = this;
+
+            this.classList.add(_this.dragStartClass);
+            event.dataTransfer.effectAllowed = 'move';
+            event.dataTransfer.setData('text/html', this.innerHTML);
+        };
+
+        DragNSort.prototype.onDragEnd = function(_this) {
+            this.classList.remove(_this.dragStartClass);
+        };
+
+        DragNSort.prototype.onDragEnter = function(_this) {
+            this.classList.add(_this.dragEnterClass);
+        };
+
+        DragNSort.prototype.onDragLeave = function(_this) {
+            this.classList.remove(_this.dragEnterClass);
+        };
+
+        DragNSort.prototype.onDragOver = function(_this, event) {
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+
+            event.dataTransfer.dropEffect = 'move';
+
+            return false;
+        };
+
+        DragNSort.prototype.onDrop = function(_this, event) {
+            if (event.stopPropagation) {
+                event.stopPropagation();
+            }
+
+            if (_this.$activeItem !== this) {
+                _this.$activeItem.innerHTML = this.innerHTML;
+                this.innerHTML = event.dataTransfer.getData('text/html');
+            }
+
+            _this.removeClasses();
+
+            return false;
+        };
+
+        DragNSort.prototype.bind = function() {
+            this.on(this.$items, 'dragstart', this.onDragStart);
+            this.on(this.$items, 'dragend', this.onDragEnd);
+            this.on(this.$items, 'dragover', this.onDragOver);
+            this.on(this.$items, 'dragenter', this.onDragEnter);
+            this.on(this.$items, 'dragleave', this.onDragLeave);
+            this.on(this.$items, 'drop', this.onDrop);
+        };
+
+        DragNSort.prototype.init = function() {
+            this.bind();
+        };
+
+        // Instantiate
+        var draggable = new DragNSort({
+            container: document.querySelector('.drag-list'),
+            itemClass: 'drag-item',
+            dragStartClass: 'drag-start',
+            dragEnterClass: 'drag-enter'
+        });
+        draggable.init();
+
+    </script>
+
+
+</head>
+
+
+
+<body>
+
+    <!-----------------temp table------->
+    <div class="container">
+        <div class="row">
+            <div class="widgetTable">
+                <!--class="grid-table"-->
+                <table id="mytable" class="drag-list" style="table-layout: fixed; width: 100%">
+                    <tr>
+                        <td class="drag-item" draggable="true">
+                            <div id="Profile">
+                                <div id="profileWidgetTD">
+                                    <div class="widget panelbox">
+                                        <div class="profile">
+
+                                            <p class="profile-image" style="text-align:center;">
+                                                <img src="/com.vyom.vyomlib/resources/images/icons/personicon.png" align="middle" style="border-radius: 50%">
+
+                                            </p>
+                                            <h3 align="center" style="color: black;" class="name">{{CurrentUserFullName}}</h3>
+                                            <p style="text-align:center; font-size: 10px;" class="des">
+                                                Software Engineer
+                                                <br>
+                                                Delhi Gurgaon
+                                            </p>
+                                            <p class="profile-details" style="text-align:center; font-size: 11px;">
+                                                <b>Email: </b> {{rxCurrentUser.getemailAddress()}}
+                                                <br>
+                                                <b>Phone: </b> 9865785432
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+                        <td class="drag-item" draggable="true">
+                            <div id="VmWare">
+
+                                <div id="ER1" class="panelbox ER">
+                                    <!--ER HTML-->
+                                    <div class="ER-main">
+                                        <img alt="suggestion_icon" class="img-responsive icons custom-widet" src="/com.vyom.vyomlib/resources/images/png/016-web-management.png" width="40px">
+                                        <p class="request-title">VmWare
+
+                                            <a id="ERReport" href="#">
+                                                <i class="fa fa-file-excel-o ERadmin" title="ER Reports" aria-hidden="true"></i>
+                                            </a>
+                                            <a id="ERadminconsole" href="#">
+                                                <i class="fa fa fa-user-o ERadminconsole" title="Admin Console" aria-hidden="true"></i>
+                                            </a>
+                                        </p>
+                                        <hr style="height:2px; color:grey">
+                                        <div id="ER">
+                                            <div class="ERhexbox">
+                                                <div class="requestDetails">
+                                                    <b class="b">Details:</b>
+
+                                                    <div class="description">
+
+                                                        <table class="table table-striped table-hover custom-table">
+                                                            <thead>
+                                                                <th>ID</th>
+                                                                <th>Name</th>
+                                                                <th>Description</th>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr ng-repeat="m in vmData">
+                                                                    <td>{{$index+1}}</td>
+                                                                    <td><a href="">{{m[vmNameId]}}</a></td>
+                                                                    <td>{{m[vmDescId]}}</td>
+                                                                </tr>
+
+                                                            </tbody>
+                                                        </table>
+
+
+                                                    </div>
+
+                                                    <div class="request-button-bottom">
+
+                                                        <button class="btn btn-primary" style="margin-left: 10px;margin-right: 5px;">Request</button>
+                                                        <button class="btn btn-warning" style="margin-left: 5px;margin-right: 5px;">Refresh</button>
+                                                        <button class="btn btn-success" style="margin-left: 5px;margin-right: 5px;">Launch</button>
+                                                        <button class="btn btn-danger" style="margin-left: 5px;margin-right: 5px;">Release</button>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="RequestButtons">
+                                                <div class="large-image">
+                                                    <img src="/com.vyom.vyomlib/resources/images/png/016-web-management.png">
+                                                </div>
+                                                <div class="buttons">
+                                                    <div class="count">
+                                                        <div class="active">
+                                                            <b>03</b><br>Active
+                                                        </div>
+                                                        <br>
+                                                        <div class="disabled">
+                                                            <b>12</b><br>Disabled
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!--ER HTML-->
+                                </div>
+                            </div>
+
+                        </td>
+                        <td class="drag-item" draggable="true">
+                            <div id="Shared Folder Access">
+
+                                <div id="ER1" class="panelbox ER">
+                                    <!--ER HTML-->
+                                    <div class="ER-main">
+
+                                        <img alt="suggestion_icon" class="img-responsive icons custom-widet" src="/com.vyom.vyomlib/resources/images/png/024-ads.png" width="40px">
+                                        <p class="request-title">Shared Folder Access
+
+                                            <a id="ERReport" href="#">
+                                                <i class="fa fa-file-excel-o ERadmin" title="ER Reports" aria-hidden="true"></i>
+                                            </a>
+                                            <a id="ERadminconsole" href="#">
+                                                <i class="fa fa fa-user-o ERadminconsole" title="Admin Console" aria-hidden="true"></i>
+                                            </a>
+                                        </p>
+
+                                        <hr style="height:2px; color:grey">
+                                        <div id="ER">
+                                            <div class="ERhexbox">
+                                                <div class="requestDetails">
+                                                    <b class="b">Folder Name:</b>
+                                                    <a href="#">
+                                                        <p class="description1">
+                                                            Unix
+                                                        </p>
+                                                    </a>
+                                                    <b class="b">Type:</b>
+                                                    <p>
+                                                        public
+                                                    </p>
+                                                    <div class="request-keywords">
+                                                        <b class="b">Description:</b>
+                                                        <br>
+                                                        <p>
+                                                            Unable to access
+                                                        </p>
+
+                                                    </div>
+                                                    <div class="request-keywords">
+
+                                                        <b class="b">Access Type:</b>
+                                                        <p>
+                                                            classic
+                                                        </p>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="RequestButtons">
+
+                                                <div class="large-image">
+                                                    <img src="/com.vyom.vyomlib/resources/images/png/024-ads.png">
+                                                </div>
+                                                <div class="buttons">
+                                                    <button class="btn btn-success">Release</button>
+                                                    <br>
+                                                    <button class="btn btn-success">Backup</button>
+                                                    <br>
+                                                    <button class="btn btn-success">Share</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--ER HTML-->
+                                </div>
+
+                            </div>
+
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="drag-item" draggable="true">
+                            <div id="Jira">
+
+                                <div id="ER1" class="panelbox ER">
+                                    <!--ER HTML-->
+                                    <div class="ER-main">
+                                        <img alt="suggestion_icon" class="img-responsive icons custom-widet" src="/com.vyom.vyomlib/resources/images/png/jira.png" width="40px">
+                                        <p class="request-title">Jira
+
+                                            <a id="ERReport" href="#">
+                                                <i class="fa fa-file-excel-o ERadmin" title="ER Reports" aria-hidden="true"></i>
+                                            </a>
+                                            <a id="ERadminconsole" href="#">
+                                                <i class="fa fa fa-user-o ERadminconsole" title="Admin Console" aria-hidden="true"></i>
+                                            </a>
+                                        </p>
+                                        <hr style="height:2px; color:grey">
+                                        <div id="ER">
+                                            <div class="ERhexbox">
+                                                <div class="requestDetails">
+                                                    <b class="b">Projects assigned:</b>
+                                                    <div class="description1 project-assigned">
+                                                        <ul class="poject-assigned">
+                                                            <a href="#">
+                                                                <li>Windows Phone App</li>
+                                                            </a>
+                                                            <a href="#">
+                                                                <li>New Web Applicaion</li>
+                                                            </a>
+                                                            <a href="#">
+                                                                <li>Android Resrvation</li>
+                                                            </a>
+                                                            <a href="#">
+                                                                <li>Project 4</li>
+                                                            </a>
+                                                        </ul>
+                                                    </div>
+                                                    <b class="b">Issues assigned:</b>
+                                                    <div class="description1 project-assigned">
+                                                        <ul class="poject-assigned">
+                                                            <a href="#">
+                                                                <li>Email Exchange Server</li>
+                                                            </a>
+                                                            <a href="#">
+                                                                <li>Database Down</li>
+                                                            </a>
+                                                            <a href="#">
+                                                                <li>Unable to access folder</li>
+                                                            </a>
+                                                            <a href="#">
+                                                                <li>Issue 4</li>
+                                                            </a>
+                                                        </ul>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="RequestButtons">
+                                                <div class="large-image">
+                                                    <img src="/com.vyom.vyomlib/resources/images/png/jira.png">
+                                                </div>
+                                                <div class="buttons">
+                                                    <button class="btn btn-success">Request</button>
+                                                    <br>
+                                                    <button class="btn btn-success">Assign</button>
+                                                    <br>
+                                                    <button class="btn btn-success">Launch</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--ER HTML-->
+                                </div>
+
+                            </div>
+
+                        </td>
+                        <td class="drag-item" draggable="true">
+                            <div id="Box Enterprise">
+
+                                <div id="ER1" class="panelbox ER">
+                                    <!--ER HTML-->
+                                    <div class="ER-main">
+                                        <img alt="suggestion_icon" class="img-responsive icons custom-widet" src="/com.vyom.vyomlib/resources/images/png/008-marketing-strategy.png" width="40px">
+                                        <p class="request-title">Box Enterprise
+                                            <!--                            <span class="glyphicon glyphicon-pencil glyphicon-icon"></span>-->
+                                            <!--
+                            <a id="erhelp" href="#" >
+                                <i class="fa fa-question-circle ERhelp" title="Ask for Help" aria-hidden="true"></i>
+                            </a>
+-->
+                                            <a id="ERReport" href="#">
+                                                <i class="fa fa-file-excel-o ERadmin" title="ER Reports" aria-hidden="true"></i>
+                                            </a>
+                                            <a id="ERadminconsole" href="#">
+                                                <i class="fa fa fa-user-o ERadminconsole" title="Admin Console" aria-hidden="true"></i>
+                                            </a>
+                                        </p>
+                                        <hr style="height:2px; color:grey">
+                                        <div id="ER">
+                                            <div class="ERhexbox">
+                                                <div class="requestDetails">
+                                                    <b class="b">Details:</b>
+                                                    <p class="description1">
+                                                        Description and Details of the Service will appear in this section of the widget.
+                                                    </p>
+                                                    <b class="b">Status:</b>
+                                                    <p>
+                                                        Scheduled for Approval
+                                                    </p>
+                                                    <div class="request-keywords">
+                                                        <b class="b">Keywords:</b>
+                                                        <br>
+                                                        <button class="btn btn-primary" style="margin-left: 10px;">VmWare</button>
+                                                        <button class="btn btn-success">VirtualBox</button>
+                                                        <button class="btn btn-warning">Virtual</button>
+                                                        <button class="btn btn-danger">VM</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="RequestButtons">
+                                                <div class="large-image">
+                                                    <img src="/com.vyom.vyomlib/resources/images/png/008-marketing-strategy.png">
+                                                </div>
+                                                <div class="buttons">
+                                                    <button class="btn btn-success">Request</button>
+                                                    <br>
+                                                    <button class="btn btn-success">Release</button>
+                                                    <br>
+                                                    <button class="btn btn-success">Launch</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--ER HTML-->
+                                </div>
+
+                            </div>
+
+                        </td>
+                        <td class="drag-item" draggable="true">
+                            <div id="Widget 1">
+
+                                <div id="ER1" class="panelbox ER">
+                                    <!--ER HTML-->
+                                    <div class="ER-main">
+                                        <img alt="suggestion_icon" class="img-responsive icons custom-widet" src="/com.vyom.vyomlib/resources/images/png/023-target-1.png" width="40px">
+                                        <p class="request-title">Widget 1
+
+                                            <a id="ERReport" href="#">
+                                                <i class="fa fa-file-excel-o ERadmin" title="ER Reports" aria-hidden="true"></i>
+                                            </a>
+                                            <a id="ERadminconsole" href="#">
+                                                <i class="fa fa fa-user-o ERadminconsole" title="Admin Console" aria-hidden="true"></i>
+                                            </a>
+                                        </p>
+                                        <hr style="height:2px; color:grey">
+                                        <div id="ER">
+                                            <div class="ERhexbox">
+                                                <div class="requestDetails">
+                                                    <b class="b">Details:</b>
+                                                    <p class="description1">
+                                                        Description and Details of the Service will appear in this section of the widget.
+
+                                                    </p>
+                                                    <b class="b">Status:</b>
+                                                    <p>
+                                                        Scheduled for Approval
+                                                    </p>
+                                                    <div class="request-keywords">
+                                                        <b class="b">Keywords:</b>
+                                                        <br>
+                                                        <button class="btn btn-primary" style="margin-left: 10px;">VmWare</button>
+                                                        <button class="btn btn-success">VirtualBox</button>
+                                                        <button class="btn btn-warning">Virtual</button>
+                                                        <button class="btn btn-danger">VM</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="RequestButtons">
+                                                <div class="large-image">
+                                                    <img src="/com.vyom.vyomlib/resources/images/png/023-target-1.png">
+                                                </div>
+                                                <div class="buttons">
+                                                    <button class="btn btn-success">Request</button>
+                                                    <br>
+                                                    <button class="btn btn-success">Release</button>
+                                                    <br>
+                                                    <button class="btn btn-success">Launch</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--ER HTML-->
+                                </div>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

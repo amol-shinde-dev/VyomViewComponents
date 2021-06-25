@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+
+
+
+    <div align="{{MAllignment}}">
+        <marquee width="{{MWidth}}" direction="{{MDirection}}" direction="{{MDirection}}" scrollamount="{{MSpeed}}" behavior="{{MBehavior}}" loop="infinite" class="vy_silver w3-container w3-{{MBGColor}}" scrolldelay="100" onmouseover="this.stop();" onmouseout="this.start();">
+            <table height="{{MHeight}}" class="w3-text-white">
+                <tr>
+                    <td ng-repeat='x in mydata'>
+
+                        <span ng-if="FieldID1Title||x[FieldID1]">{{FieldID1Title}}: {{fromhtml(FieldID1,x[FieldID1])}} </span>
+                        <span ng-if="(FieldID1Title||x[FieldID1])&&(FieldID2Title||x[FieldID2])">,</span><!-- {{fromhtml(FieldID2,x[FieldID2])}} -->
+                        <span ng-if="FieldID2Title||x[FieldID2]">{{FieldID2Title}}: {{fromhtml(FieldID2,x[FieldID2])}}</span>
+                        <span ng-if="((FieldID1Title||x[FieldID1])||(FieldID2Title||x[FieldID2]))&&(FieldID3Title||x[FieldID3])">,</span>
+                        <span ng-if="FieldID3Title||x[FieldID3]">{{FieldID3Title}}: {{fromhtml(FieldID3,x[FieldID3])}}</span>
+                        <span ng-if="((FieldID1Title||x[FieldID1])||(FieldID2Title||x[FieldID2])||(FieldID3Title||x[FieldID3]))&&(FieldID4Title||x[FieldID4])">,</span>
+                        <span ng-if="FieldID4Title||x[FieldID4]">{{FieldID4Title}}: {{fromhtml(FieldID4,x[FieldID4])}}</span>
+                        <span style="margin-left: 10px;margin-right: 10px">{{Separator}}</span>
+
+
+                    </td>
+                </tr>
+            </table>
+        </marquee>
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

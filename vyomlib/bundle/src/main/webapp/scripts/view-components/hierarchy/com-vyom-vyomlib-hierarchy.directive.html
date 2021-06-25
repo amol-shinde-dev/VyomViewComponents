@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+
+    <style>
+        body {
+            background-color: #fafafa;
+            font-family: 'Roboto';
+        }
+
+        button {
+            background-color: #fafafa;
+            font-family: 'Roboto';
+        }
+
+        button:active,
+        button.onclick {
+            background-color: #3498db;
+            font-family: 'Roboto';
+        }
+
+        button {
+            outline: 0px;
+            border: 0px;
+        }
+
+        .ilearnright {
+            /*width: 34%;*/
+            /*margin-right: 15%;*/
+            float: right;
+        }
+
+        .ilearnleft {
+            /*width: 66%;*/
+            float: left;
+            padding-top: 10px;
+        }
+
+        .overlay {
+            bottom: 0;
+            left: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            background-color: #000;
+            opacity: .45;
+        }
+
+        .titletext {
+            font-size: 25px;
+            padding: 12px 20px 12px 40px;
+            color: #b8860b;
+            /*!Important*/
+        }
+
+    </style>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            /*background-color:#ffffff47;*/
+        }
+
+        #myTable th {
+            cursor: pointer;
+        }
+
+        #myTable th,
+        #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable th {
+            background-color: #005293;
+            /*#3498db;*/
+            color: white;
+            background-clip: none;
+            border-top-color: #005293;
+            border-right-color: initial;
+            border-left-color: initial;
+        }
+
+        #myTable td:last-child {
+            border-bottom-right-radius: 8px;
+        }
+
+        #myTable th:last-child {
+            border-top-right-radius: 8px;
+        }
+
+        #myTable th:nth-child(1) {
+            border-top-left-radius: 8px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        #myTable tr.header,
+        #myTable tr:hover {
+            background-color: #f1f1f1;
+        }
+
+    </style>
+    <script>
+        function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("myTable");
+            switching = true;
+            //Set the sorting direction to ascending:
+            dir = "asc";
+            /*Make a loop that will continue until
+            no switching has been done:*/
+            while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                    //start by saying there should be no switching:
+                    shouldSwitch = false;
+                    /*Get the two elements you want to compare,
+                    one from current row and one from the next:*/
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    /*check if the two rows should switch place,
+                    based on the direction, asc or desc:*/
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            //if so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            //if so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    /*If a switch has been marked, make the switch
+                    and mark that a switch has been done:*/
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    //Each time a switch is done, increase this count by 1:
+                    switchcount++;
+                } else {
+                    /*If no switching has been done AND the direction is "asc",
+                    set the direction to "desc" and run the while loop again.*/
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+
+<body style="background-color: white">
+    <div class="row">
+        <div class="col-sm-12">
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+            <script src="/com.vyom.vyomlib/resources/hierarchy-resources/stiffchart.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('#your-chart-name').stiffChart({
+
+                    });
+                });
+
+            </script>
+
+            <script type="text/javascript">
+                var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-36251023-1']);
+                _gaq.push(['_setDomainName', 'jqueryscript.net']);
+                _gaq.push(['_trackPageview']);
+
+                (function() {
+                    var ga = document.createElement('script');
+                    ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+                })();
+
+            </script>
+
+
+
+            <div class="chart-container">
+                <div id="your-chart-name">
+                    <div class="stiff-chart-inner">
+
+                        <div class="stiff-chart-level" data-level="01">
+                            <div class="stiff-main-parent">
+                                <ul>
+
+                                    <li data-parent="a">
+                                        <div id="coma" class="the-chart" onclick="document.getElementById('piechartdefault').innerHTML='';document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            <!-- onclick="selectcompany(this.id)"> -->
+                                            <img src="../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/stats_area_chart.png" alt=""><br>
+                                            <p style="font-size: 18px; font-family:sans-serif">Bahrain Credit</p>
+                                        </div>
+                                    </li>
+                                    <li data-parent="b">
+                                        <div id="comb" class="the-chart" onclick="document.getElementById('piechartdefault').innerHTML='';document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            <img src="../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/3d_file.png" alt=""><br>
+                                            <p style="font-size: 18px; font-family:sans-serif">TAC</p>
+                                        </div>
+                                    </li>
+                                    <li data-parent="c">
+                                        <div id="comc" class="the-chart" onclick="document.getElementById('piechartdefault').innerHTML='';document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            <img src="../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/service_waste_disposal.png" alt=""><br>
+                                            <p style="font-size: 18px; font-family:sans-serif">TCL</p>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="02">
+                            <div class="stiff-child" data-child-from="a">
+                                <ul>
+
+                                    <li data-parent="a01" id="deptInitiatives">
+                                        <div class="the-chart" id="Initiatives" onclick="selectcompany(this.id,'Initiatives')">
+                                            <p style="font-size:17px; font-family: sans-serif;">Initiatives &nbsp;
+                                                <img src="../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/calendar1.png" alt="Initiatives"> </p>
+                                        </div>
+                                    </li>
+                                    <li data-parent="a02">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            <p style="font-size:17px; font-family: sans-serif;">Projects &nbsp;
+                                                <img src="../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/deal.png" alt=""></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="02">
+                            <div class="stiff-child" data-child-from="b">
+                                <ul>
+                                    <li data-parent="b01">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            Dept 1
+                                        </div>
+                                    </li>
+                                    <li data-parent="b02">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            Dept 2
+                                        </div>
+                                    </li>
+                                    <li data-parent="b03">
+                                        <div class="the-chart">
+                                            Dept 3
+                                        </div>
+                                    </li>
+                                    <li data-parent="b04">
+                                        <div class="the-chart">
+                                            Dept 4
+                                        </div>
+                                    </li>
+                                    <li data-parent="b05">
+                                        <div class="the-chart">
+                                            Dept 5
+                                        </div>
+                                    </li>
+                                    <li data-parent="b06">
+                                        <div class="the-chart">
+                                            Dept 6
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="02">
+                            <div class="stiff-child" data-child-from="c">
+                                <ul>
+
+                                    <li data-parent="c01">
+                                        <div class="the-chart" id="comcdept1" onclick="selectcompany(this.id,'change')">
+                                            Dept 1
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="03">
+                            <div class="stiff-child" data-child-from="a01">
+                                <ul>
+
+                                    <li data-parent="a0101">
+                                        <div class="the-chart" id="InitiativesNewBuilding" onclick="selectcompany(this.id,'InitiativesNewBuilding')">
+                                            <p style="font-size:14px; font-family: sans-serif;">New Building &nbsp;
+                                                <img src="../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/bank.png" alt="Initiatives"> </p>
+                                        </div>
+                                    </li>
+                                    <li data-parent="a0102">
+                                        <div class="the-chart" id="InitiativesNewBranch" onclick="selectcompany(this.id,'InitiativesNewBranch')">
+                                            <p style="font-size:14px; font-family: sans-serif;">New Branch &nbsp;
+                                                <img src="../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/key.png" alt="New Branch"> </p>
+                                        </div>
+                                    </li>
+                                    <li data-parent="a0103">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            <p style="font-size:14px; font-family: sans-serif;">Credit Card &nbsp; &nbsp;&nbsp;&nbsp;
+                                                <img src="../../com.vyomlabs.new/resources/images/Hierarchy/credit-card.png" alt="New Credit Card"> </p>
+                                        </div>
+                                    </li>
+                                    <li data-parent="a0104">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            <p style="font-size:14px; font-family: sans-serif;">System &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <img src="../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/settings.png" alt="System Replacement"> </p>
+                                        </div>
+                                    </li>
+                                    <li data-parent="a0105">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            <p style="font-size:14px; font-family: sans-serif;">TISCO &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <img src="../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/earth-globe.png" alt="TISCO"> </p>
+                                        </div>
+                                    </li>
+                                    <li data-parent="a0106">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            <p style="font-size:14px; font-family: sans-serif;">NMC &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                                                <img src="../../com.vyom.vyomlib/resources/hierarchy-resources/Hierarchy/download.png" alt="NMC"> </p>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="04">
+                            <div class="stiff-child" data-child-from="a0101">
+                                <ul>
+                                    <li data-parent="a010101">
+                                        <div class="the-chart" id="InitiativesNewBuildingMeetings" onclick="selectcompany(this.id,'InitiativesNewBuildingMeetings')">
+                                            Meetings
+                                        </div>
+                                    </li>
+                                    <li data-parent="a010102">
+                                        <div class="the-chart" id="InitiativesNewBuildingMinutesOfMeetings" onclick="selectcompany(this.id,'InitiativesNewBuildingMinutesOfMeetings')">
+                                            Minutes of Meetings
+                                        </div>
+                                    </li>
+                                    <li data-parent="a010103">
+                                        <div class="the-chart" id="InitiativesNewBuildingProjects" onclick="selectcompany(this.id,'InitiativesNewBuildingProjects')">
+                                            Projects
+                                        </div>
+                                    </li>
+                                    <li data-parent="a010104">
+                                        <div class="the-chart" id="InitiativesNewBuildingApprovals" onclick="selectcompany(this.id,'InitiativesNewBuildingApprovals')">
+                                            Approvals
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="03">
+                            <div class="stiff-child" data-child-from="a02">
+                                <ul>
+
+                                    <li data-parent="a0201">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            New Building
+                                        </div>
+                                    </li>
+                                    <li data-parent="a0202">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            New Building DC-IT
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="04">
+                            <div class="stiff-child" data-child-from="a010103">
+                                <ul>
+                                    <li data-parent="a020101">
+                                        <div class="the-chart" id="InitiativesNewBuildingProjectsNewbuildingAdmin" onclick="selectcompany(this.id,'InitiativesNewBuildingProjectsNewbuildingAdmin')">
+                                            New Building Admin
+                                        </div>
+                                    </li>
+                                    <li data-parent="a020102">
+                                        <a style="text-decoration: none;color: inherit;" href="https://201911080406190633.my.salesforce.com/a652v000000Ptke" target="_blank">
+                                            <div class="the-chart" id="InitiativesNewBuildingProjectsNewBuldingDCIT" onclick="selectcompany(this.id,'InitiativesNewBuildingProjectsNewBuldingDCIT')">
+                                                New Building DC-IT
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li data-parent="a020103">
+                                        <div class="the-chart" id="InitiativesNewBuildingProjectsNewBuildingemployeesHR" onclick="selectcompany(this.id,'InitiativesNewBuildingProjectsNewBuildingemployeesHR')">
+                                            New Building Employees-HR
+                                        </div>
+                                    </li>
+                                    <li data-parent="a020104">
+                                        <div class="the-chart" id="InitiativesNewBuildingProjectsNewBuildingInfoSecurity" onclick="selectcompany(this.id,'InitiativesNewBuildingProjectsNewBuildingInfoSecurity')">
+                                            New Building Security-Information Security
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="04">
+                            <div class="stiff-child" data-child-from="a020102">
+                                <ul>
+                                    <li data-parent="a020201">
+                                        <div class="the-chart" id="InitiativesNewBranchProjectsNewBranchITProjectPlan" onclick="selectcompany(this.id,'InitiativesNewBranchProjectsNewBranchITProjectPlan')">
+                                            Project Plan
+                                        </div>
+                                    </li>
+                                    <li data-parent="a020202">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            Project Tasks
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="05">
+                            <div class="stiff-child" data-child-from="a020201">
+                                <ul>
+                                    <li data-parent="a02020101">
+                                        <div class="the-chart" id="ProjectTasks1" onclick="selectcompany(this.id,'task')">
+                                            Project Tasks
+                                        </div>
+                                    </li>
+                                    <li data-parent="a02020102">
+                                        <div class="the-chart" id="ChangeRequests1" onclick="selectcompany(this.id,'change')">
+                                            Change Requests
+                                        </div>
+                                    </li>
+                                    <li data-parent="a02020103">
+                                        <div class="the-chart" id="HelpDeskTickets1" onclick="selectcompany(this.id,'incident')">
+                                            Help Desk Tickets
+                                        </div>
+                                    </li>
+                                    <li data-parent="a02020104">
+                                        <div class="the-chart" id="Incidentsreporting1" onclick="selectcompany(this.id,'incident')">
+                                            Incident Reporting
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="04">
+                            <div class="stiff-child" data-child-from="a0102">
+                                <ul>
+                                    <li data-parent="a010201">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            Meetings
+                                        </div>
+                                    </li>
+                                    <li data-parent="a010202">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            Minutes of Meetings
+                                        </div>
+                                    </li>
+                                    <li data-parent="a010203">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            Projects
+                                        </div>
+                                    </li>
+                                    <li data-parent="a010204">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            Approvals
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="04">
+                            <div class="stiff-child" data-child-from="a010203">
+                                <ul>
+                                    <li data-parent="a01020301">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            New Branch Admin
+                                        </div>
+                                    </li>
+                                    <li data-parent="a01020302">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            New Branch-IT
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="04">
+                            <div class="stiff-child" data-child-from="a01020302">
+                                <ul>
+                                    <li data-parent="a0102030201">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            Project Plan
+                                        </div>
+                                    </li>
+                                    <li data-parent="a0102030202">
+                                        <div class="the-chart" onclick="document.getElementById('piechart').innerHTML='';document.getElementById('json').innerHTML='';">
+                                            Project Tasks
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="05">
+                            <div class="stiff-child" data-child-from="a0102030201">
+                                <ul>
+                                    <li data-parent="a010203020101">
+                                        <div class="the-chart" id="ProjectTasks2" onclick="selectcompany(this.id,'task')">
+                                            Project Tasks
+                                        </div>
+                                    </li>
+                                    <li data-parent="a010203020102">
+                                        <div class="the-chart" id="ChangeRequests2" onclick="selectcompany(this.id,'change')">
+                                            Change Requests
+                                        </div>
+                                    </li>
+                                    <li data-parent="a010203020103">
+                                        <div class="the-chart" id="HelpDeskTickets2" onclick="selectcompany(this.id,'incident')">
+                                            Help Desk Tickets
+                                        </div>
+                                    </li>
+                                    <li data-parent="a010203020104">
+                                        <div class="the-chart" id="Incidentsreporting2" onclick="selectcompany(this.id,'incident')">
+                                            Incident Reporting
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="stiff-chart-level" data-level="03">
+                            <div class="stiff-child" data-child-from="b01">
+                                <ul>
+
+                                    <li data-parent="b0101">
+                                        <div class="the-chart" id="combdept1" onclick="selectcompany(this.id,'task')">
+                                            Dept 1
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
