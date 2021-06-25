@@ -1,0 +1,4 @@
+com\vyom\rest\getUserInfos\UserAdditionalInformation.class
+com\vyom\rest\getUserInfos\RestGetUserInfos.class
+com\vyom\rest\getUserInfos\UserInfos.class
+com\vyom\bundle\MyLibrary.class

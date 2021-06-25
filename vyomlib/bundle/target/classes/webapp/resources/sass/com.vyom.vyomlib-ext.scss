@@ -1,0 +1,46 @@
+@import "<%= standardlibTarget %>/resources/sass/partials/core/variables";
+@import "<%= standardlibTarget %>/resources/sass/partials/core/mixins";
+
+
+@import "partials/custom-css";
+/* Importing Rzslider css file, used for sliders
+https://github.com/angular-slider/angularjs-slider
+https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons
+ */
+@import "rzslider.min";
+
+
+/* Importing css for "bmc-css-icons" view components */
+@import "bmc-css-icons";
+@import "partials/homepage";
+@import "partials/iframe";
+@import "partials/vycss";
+@import "partials/marquee3";
+@import "partials/call-process-js";
+@import "partials/icon";
+@import "partials/vc13";
+@import "partials/vc11";
+@import "partials/vc17";
+@import "partials/customheight";
+@import "partials/topheader";
+@import "partials/topheader_param";
+@import "partials/vc19";
+@import "partials/vc19_2";
+@import "partials/landing_console";
+@import "partials/landing_console_2";/* w3css */
+ @import "partials/custom-card"; 
+@import "partials/vc18"; 
+@import "partials/custom-blog";
+@import "partials/hierarchy";
+@import "partials/recent-activity";
+@import "partials/portal_preview";
+@import "partials/portal_preview_2";
+@import "partials/daterangepicker";
+@import "partials/green";
+@import "partials/myPage";
+@import "partials/comment-box";
+@import "partials/embedded-chatbot";
+@import "partials/ericsson_custom_classes";
+@import "partials/card-view";
+@import "partials/learning_portal";
+@import "partials/learning_portal_2";
