@@ -18,29 +18,47 @@
             z-index: 1;
             font-size: 12px;
         }
-        
+
         .label-line-orange {
-            margin-top: 3px;
-            /* float: right; */
+            margin-top: 3.5px;
+            float: right;
             background: rgba(238, 98, 5, 0.952);
             height: 7px;
             width: 5px;
             border-radius: 80%;
         }
-        
+
         .label-line-red {
-            margin-top: 3px;
-            /* float: right; */
+            margin-top: 3.5px;
+            float: right;
             background: red;
             height: 7px;
             width: 5px;
             border-radius: 80%;
         }
-        
+
         .label-percent {
             float: right;
             margin-left: 5px;
         }
+
+        .progress-bar {
+            position: relative;
+            width: 100%;
+            height: 20px;
+            max-width: 200px;
+            background: gray;
+        }
+
+        /* .bar {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			height: 100%;
+			background: lightblue;
+		} */
+
     </style>
 </head>
 
@@ -49,37 +67,37 @@
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
     <!-- Start Welcome area -->
+
+
     <div class="all-content-wrapper">
         <div class="analytics-sparkle-area">
-            <div class="row" style="display: flex;">
-                <div class="left-panel" style="flex: 2;">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" ng-repeat="service in textData" style="padding: 1px 1px;">
-                                <div class=" analytics-sparkle-line reso-mg-b-30" ng-click="setSelectedCardInstanceId(service[179]);executeAction(cardActionGuid);">
-                                    <div class="analytics-content">
-                                        <h5>
-                                            <span class="counter">{{service[cardName]}}</span>
-                                            <span class="tuition-fees">{{service[status]}}</span>
-                                            <span class="d-icon-circle" ng-style="{color: service[status] === 'Available' ? '#10c510' : 'red'}"></span>
-                                        </h5>
-                                        <h2><span class="counter">Since change</span><span class="tuition-fees">{{service[time]}}hr</span></h2>
-                                        <span style="margin-bottom:5%; display: inline-block; color: #ffffffde;">Monthly overview</span>
+            <div class="container-fluid" style="padding: 0;">
+                <div class="row" style="display: flex;flex-wrap: wrap;">
 
-                                        <div ng-repeat="incident in textData3| filter: service[cardName]">
-                                            <div id="{{incident[incNumber]}}" class="bar-step" style="left: {{incident[progressPercentage]}}%" ng-style="{{getStyle(incident[3])}}">
-                                                <div class="label-line-orange"></div>
-                                            </div>
-                                        </div>
-                                        <div ng-repeat="change in textData2| filter: service[cardName]">
-                                            <div id="{{change[incNumber]}}" class="bar-step" style="left: {{change[progressPercentage]}}%" ng-style="{{getStyle(change[3])}}">
-                                                <div class="label-line-red"></div>
-                                            </div>
-                                        </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12" ng-repeat="service in textData" style="padding: 1px 1px;display: flex;">
+                        <div class="analytics-sparkle-line reso-mg-b-30" ng-click="setSelectedCardInstanceId(service[179]);executeAction(cardActionGuid);" style="flex:1">
+                            <div class="analytics-content" style="display: flex; flex-direction: column;">
+                                <h5 class="serviceName" style="height:78%;">
+                                    <span>{{service[cardName]}}</span>
+                                    <span class="tuition-fees">{{service[status]}}</span>
+                                    <span class="d-icon-circle" ng-style="{color: service[status] === 'Available' ? '#10c510' : 'red'}"> </span>
+                                </h5>
+                                <h2><span></span>This month</span><span class="tuition-fees" style="font-weight: 700;">Since Last Outage</span></h2>
+                                <h1><span>{{service[availablePercent]}}</span>% <span class="tuition-fees" style="font-weight: 700;">{{service[time]}}</span></h1>
 
-                                        <progress max="31" value="28" style="display: flex; width: -webkit-fill-available;"> </progress>
-                                        <span class="text-success percentage">% Complete</span>
+                                <span style="margin-top:5%; display: inline-block; color: #ffffffde;">Monthly overview</span>
+                                <div style="flex-grow: 1;">
+                                    <div ng-repeat="incident in textData3| filter: service[cardName]">
+                                        <div id="{{incident[incNumber]}}" class="bar-step" style="left: {{incident[progressPercentage]}}%" ng-style="{{getStyle(incident[3])}}">
+                                            <div class="label-line-orange"></div>
+                                        </div>
                                     </div>
+                                    <div ng-repeat="change in textData2| filter: service[cardName]">
+                                        <div id="{{change[incNumber]}}" class="bar-step" style="left: {{change[changeProgressPercentage]}}%" ng-style="{{getStyle(change[3])}}">
+                                            <div class="label-line-red"></div>
+                                        </div>
+                                    </div>
+                                    <progress max="" value="" style="width: -webkit-fill-available;"> </progress>
                                 </div>
                             </div>
                         </div>
@@ -88,21 +106,28 @@
             </div>
         </div>
     </div>
+
     <script>
         var today = new Date();
         var cdate = today.getDate();
         var range = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+        console.log(today);
+        console.log(cdate);
+        console.log(range);
 
         var progress = document.getElementsByTagName('progress');
         var progress = document.getElementsByTagName('progress');
 
         for (var i = 0; i < progress.length; i++) {
             document.getElementsByTagName('progress')[i].value = cdate
+            document.getElementsByTagName('progress')[i].max = range
             if (document.getElementsByTagName('progress')[i].value > range + 1) {
                 document.getElementsByTagName('progress')[i].value = 1;
             }
         }
-        document.getElementsByClassName('percentage')[0].innerHTML = Math.round((cdate * 100) / range) + "% Completed";
+
+        // document.getElementsByClassName('bar')[0].style.width = Math.round((cdate * 100) / range) + "px";
+
     </script>
 </body>
 

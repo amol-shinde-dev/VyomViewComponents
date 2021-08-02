@@ -50,6 +50,11 @@
                         isConfig: true,
 
                     },
+                    {
+                        name: 'readOnly',
+                        isConfig: true,
+
+                    },
 
                     {
                         name: 'selectedStarValue',

@@ -42,6 +42,14 @@
     border: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0px;
+}
 
 /*   CSS INDEX
   1. Common
@@ -286,7 +294,7 @@ ul {
 .social-media-edu {
     padding: 10px;
     min-height: 140px;
-    background: #031b33eb !important;
+    background: black !important;
 }
 
 
@@ -1338,7 +1346,7 @@ span.d-icon-circle {
     margin-right: 5px;
     float: right;
     font-size: 10px;
-    margin-top: 8px;
+    /* margin-top: 8px; */
 }
 
 .payment-inner-pro i {
@@ -4474,10 +4482,6 @@ td.text-right.mail-date {
     text-transform: uppercase;
 }
 
-.content-error .counter {
-    color: #006DF0;
-}
-
 .content-error {
     text-align: center;
     margin: 0px 20px;
@@ -5084,7 +5088,7 @@ div#sparklinehome canvas {
 .analytics-sparkle-line .analytics-content .tuition-fees {
     font-size: 14px;
     float: right;
-    margin-top: 8px;
+    /* margin-top: 8px; */
     color: #ffffffde;
     font-weight: 300;
 }
@@ -6397,6 +6401,7 @@ div#sparklinehome canvas {
     .right-panel {
         display: none;
     }
+
     .left-panel {
         flex-grow: 1;
     }

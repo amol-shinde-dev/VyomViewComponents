@@ -1,11 +1,11 @@
 // This code is run at "design" phase, in Vyomlib Studio.
 // The factory is declared in the "config.js".
-(function() {
+(function () {
     'use strict';
 
     angular.module('com.vyom.vyomlib.view-components.service-health')
         .factory('comVyomVyomlibServiceHealthDesign',
-            function(comVyomVyomlibServiceHealthModel, rxGUID, RX_DEFINITION_PICKER) {
+            function (comVyomVyomlibServiceHealthModel, rxGUID, RX_DEFINITION_PICKER) {
                 function getRxConfig(componentDefinition, componentDescriptor) {
                     return {
                         id: componentDefinition.guid || rxGUID.generate(),
@@ -25,6 +25,8 @@
                         recordDefinitionName: componentDefinition.propertiesByName.recordDefinitionName,
                         cardName: componentDefinition.propertiesByName.cardName,
                         status: componentDefinition.propertiesByName.status,
+                        time: componentDefinition.propertiesByName.time,
+                        availablePercent: componentDefinition.propertiesByName.availablePercent,
                         //incident
                         incidentRecordDefinition: componentDefinition.propertiesByName.incidentRecordDefinition,
                         incNumber: componentDefinition.propertiesByName.incNumber,
@@ -74,6 +76,12 @@
                                     type: 'com-vyom-vyomlib-inspector-service-health-fields',
                                     group: 'service',
                                     index: 4
+                                },
+                                availablePercent: {
+                                    label: 'Calculated availability',
+                                    type: 'com-vyom-vyomlib-inspector-service-health-fields',
+                                    group: 'service',
+                                    index: 5
                                 },
                                 // Incident Record
                                 incidentRecordDefinition: {
@@ -153,7 +161,7 @@
 
                 return {
                     //  should return a model instance
-                    getModel: function(componentDefinition, componentDescriptor) {
+                    getModel: function (componentDefinition, componentDescriptor) {
                         return new comVyomVyomlibServiceHealthModel(getRxConfig(componentDefinition, componentDescriptor));
                     }
                 };

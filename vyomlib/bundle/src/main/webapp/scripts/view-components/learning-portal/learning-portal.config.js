@@ -53,19 +53,38 @@
 
                     },
                         {
+                            name: 'costPerHours',
+                            isProperty: true,
+                       },
+                        {
 
                             name: 'totalCostPerHoursSuffix',
                             enableExpressionEvaluation: true,
                             isConfig: true,
 
                     },
+                        {
+                            name: 'totalCostPerHours',
+                            isProperty: true,
+                     },
+                        {
+
+                            name: 'durationSuffix',
+                            enableExpressionEvaluation: true,
+                            isConfig: true,
+
+                    },
+                        {
+                            name: 'duration',
+                            isProperty: true,
+                     },
 
                         {
                             name: 'perRowCardLength',
                             isConfig: true,
             },
                         {
-                            name: 'cssClassesd',
+                            name: 'cssClasses',
                             isConfig: true,
             },
                         {
@@ -187,6 +206,13 @@
                         {
 
                             name: 'firstDropDownRecordDefinition',
+                            enableExpressionEvaluation: true,
+                            isConfig: true
+
+                    },
+                        {
+
+                            name: 'firstDropDownSortingField',
                             enableExpressionEvaluation: true,
                             isConfig: true
 

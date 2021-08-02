@@ -130,19 +130,19 @@
 
             <div class="p-2 bd-highlight">
                 <!-- sort-by dropdown -->
-                <label class="hideme" style="color:black;"> Sort Applications By:
+                <label class="hideme" style="color:black;font-size: 84%"> Sort Applications By:
                 </label>
-                <select class="hideme" ng-model="selectedValue" ng-change="sortByViews()" style="margin-left: 10px;">
+                <select class="hideme" ng-model="selectedValue" ng-change="sortByViews()" style="margin-left: 10px;font-size: 84%;">
                     <option value="{{Views}}">Max-views</option>
                     <option value="{{ratingCount}}">Max-ratings</option>
                     <option value="{{cardVisible}}" ng-if="adminConfiguration">Published</option>
                 </select>
             </div>
             <div class="p-2 bd-highlight">
-                <span class="d-button_link d-icon-triangle_left" style="margin-right: 10px;font-size: 30px;" ng-click="catbegin = catbegin-3;" ng-hide="catbegin < 3"></span>
+                <span class="d-button_link d-icon-triangle_left" style="margin-right: 10px;font-size: 23px;" ng-click="catbegin = catbegin-3;" ng-hide="catbegin < 3"></span>
             </div>
             <div class="p-2 bd-highlight" style="" ng-init="catlimit = 3;catbegin=0;">
-                <div style="white-space: nowrap;overflow: hidden;display: inline-flex;" id="portalcategorycontainer">
+                <div style="white-space: nowrap;overflow: hidden;display: inline-flex;font-size: 65%;" id="portalcategorycontainer">
                     <span ng-repeat="cat in CategoryData | limitTo: catlimit:catbegin ">
                         <span ng-repeat="(k,v) in cat">
                             <button class="w3-button w3-hover-black w3-round-xxlarge  w3-{{CategoryColor}} w3-card mb-3" style="margin-right: 5px;" ng-click="filterCurrentCategoryOrSearchText(v,'category')">{{k}}</button>
@@ -154,12 +154,12 @@
 
             </div>
             <div class="p-2 bd-highlight">
-                <span class="d-button_link d-icon-triangle_right" style="margin-right: 10px;font-size: 30px;" ng-click="catbegin=catbegin+3;" ng-hide="catbegin === CategoryData.length"></span>
+                <span class="d-button_link d-icon-triangle_right" style="margin-right: 10px;font-size: 23px;" ng-click="catbegin=catbegin+3;" ng-hide="catbegin === CategoryData.length"></span>
             </div>
             <div class="p-2 bd-highlight" style="text-align-last: right">
-                <span class="d-button_link d-icon-heart w3-hover-text-black" ng-class="toggle ? 'w3-text-red' : ''" ng-click="toggle = !toggle; sortByFav();" style="margin-right: 10px;font-size: 30px"></span>
-                <span class="d-button_link d-icon-tiles w3-hover-text-black" ng-click="show_hide_recordGrid('false');" style="margin-right: 10px;font-size: 28px"></span>
-                <span class="d-button_link d-icon-list w3-hover-text-black" ng-click="show_hide_recordGrid('true');" style="margin-right: 5px;font-size: 30px"></span>
+                <span class="d-button_link d-icon-heart w3-hover-text-black" ng-class="toggle ? 'w3-text-red' : ''" ng-click="toggle = !toggle; sortByFav();" style="margin-right: 10px;font-size: 22px"></span>
+                <span class="d-button_link d-icon-tiles w3-hover-text-black" ng-click="show_hide_recordGrid('false');" style="margin-right: 10px;font-size: 21px"></span>
+                <span class="d-button_link d-icon-list w3-hover-text-black" ng-click="show_hide_recordGrid('true');" style="margin-right: 5px;font-size: 25px"></span>
 
             </div>
         </div>

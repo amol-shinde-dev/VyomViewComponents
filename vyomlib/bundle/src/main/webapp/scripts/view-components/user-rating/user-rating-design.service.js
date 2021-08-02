@@ -39,7 +39,8 @@ The factory is defined in the 'config.js':
                 defaultValueStars: componentDefinition.propertiesByName.defaultValueStars || defaultDefaultValueStars,
                 colorStarsSelected: componentDefinition.propertiesByName.colorStarsSelected || defaultColorStarsSelected,
                 colorStarsNotSelected: componentDefinition.propertiesByName.colorStarsNotSelected || defaultColorStarsNotSelected,
-                cssClasses: componentDefinition.propertiesByName.cssClasses
+                cssClasses: componentDefinition.propertiesByName.cssClasses,
+                readOnly: (componentDefinition.propertiesByName.readOnly == 'true') ? true : false
             };
         }
 
@@ -84,6 +85,12 @@ The factory is defined in the 'config.js':
                             type: 'rx-inspector-tag-input',
                             group: 'general',
                             index: 6
+                        },
+                        readOnly: {
+                            label: 'Read Only',
+                            type: 'rx-inspector-toggle-field',
+                            group: 'general',
+                            index: 7
                         },
                     }
                 },

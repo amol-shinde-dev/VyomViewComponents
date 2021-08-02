@@ -15,6 +15,7 @@
                 $scope.starSelectedColor = "";
                 $scope.starNotSelectedColor = "";
                 $scope.cssClasses = config.cssClasses;
+                $scope.readOnly = config.readOnly;
 
                 // create event manager
                 var eventManager = rxViewComponentEventManager.getInstance($scope);
@@ -22,17 +23,19 @@
                 $scope.stars = [];
 
                 $scope.onStarSelectHandler = function (event) {
-                    var selectedIndex = _.indexOf($element.find('span'), event.target);
+                    if ($scope.readOnly == 'false') {
+                        var selectedIndex = _.indexOf($element.find('span'), event.target);
 
-                    if (selectedIndex !== -1) {
-                        $scope.stars = buildStarsConfiguration(selectedIndex);
+                        if (selectedIndex !== -1) {
+                            $scope.stars = buildStarsConfiguration(selectedIndex);
 
-                        // trigger the change property event
-                        eventManager.propertyChanged({
-                            property: 'selectedStarValue', // name of the property that changed
-                            newValue: selectedIndex
-                        });
+                            // trigger the change property event
+                            eventManager.propertyChanged({
+                                property: 'selectedStarValue', // name of the property that changed
+                                newValue: selectedIndex
+                            });
 
+                        }
                     }
                 };
 

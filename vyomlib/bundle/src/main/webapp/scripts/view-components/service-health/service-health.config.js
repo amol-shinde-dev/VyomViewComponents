@@ -1,8 +1,8 @@
-(function() {
+(function () {
     'use strict';
 
     angular.module('com.vyom.vyomlib.view-components.service-health')
-        .config(function(rxViewComponentProvider) {
+        .config(function (rxViewComponentProvider) {
             rxViewComponentProvider.registerComponent([{
                 name: 'Service Health',
                 group: 'vyomlib',
@@ -12,54 +12,60 @@
                 designManagerService: 'comVyomVyomlibServiceHealthDesign',
                 bundleId: 'com.vyom.vyomlib',
                 propertiesByName: [{
-                    name: 'recordDefinitionName',
-                    isConfig: true,
-                    type: "string",
-                    isRequired: true
+                        name: 'recordDefinitionName',
+                        isConfig: true,
+                        type: "string",
+                        isRequired: true
                 }, {
-                    name: 'incidentRecordDefinition',
-                    isConfig: true,
-                    type: "string",
-                    isRequired: true
+                        name: 'incidentRecordDefinition',
+                        isConfig: true,
+                        type: "string",
+                        isRequired: true
                 }, {
-                    name: 'changeRecordDefinition',
-                    isConfig: true,
-                    type: "string",
-                    isRequired: true
+                        name: 'changeRecordDefinition',
+                        isConfig: true,
+                        type: "string",
+                        isRequired: true
                 }, {
-                    name: 'cardName',
-                    isConfig: true,
+                        name: 'cardName',
+                        isConfig: true,
                 }, {
-                    name: 'status',
-                    isConfig: true,
+                        name: 'status',
+                        isConfig: true,
                 }, {
-                    name: 'CardInstanceId',
-                    isProperty: true,
+                        name: 'CardInstanceId',
+                        isProperty: true,
                 }, {
-                    name: 'cardActionGuid',
-                    isConfig: true,
+                        name: 'cardActionGuid',
+                        isConfig: true,
                 }, {
-                    name: 'incNumber',
-                    isConfig: true,
+                        name: 'incNumber',
+                        isConfig: true,
                 }, {
-                    name: 'progressPercentage',
-                    isConfig: true,
+                        name: 'progressPercentage',
+                        isConfig: true,
                 }, {
-                    name: 'incServiceName',
-                    isConfig: true,
+                        name: 'incServiceName',
+                        isConfig: true,
                 }, {
-                    name: 'changeNumber',
-                    isConfig: true,
+                        name: 'changeNumber',
+                        isConfig: true,
                 }, {
-                    name: 'changeProgressPercentage',
-                    isConfig: true,
+                        name: 'changeProgressPercentage',
+                        isConfig: true,
                 }, {
-                    name: 'changeServiceName',
-                    isConfig: true,
+                        name: 'changeServiceName',
+                        isConfig: true,
                 }, {
-                    name: 'time',
-                    isConfig: true,
-                }, ]
+                        name: 'time',
+                        isConfig: true,
+                },
+                    {
+                        name: 'availablePercent',
+                        isConfig: true,
+                },
+
+                                  ]
             }]);
         });
 })();

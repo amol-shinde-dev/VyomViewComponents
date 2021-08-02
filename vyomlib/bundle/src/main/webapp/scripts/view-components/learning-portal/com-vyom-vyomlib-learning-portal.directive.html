@@ -32,7 +32,7 @@
                                 <div class="col-8">
                                     <form class="form-inline d-flex justify-content-center md-form form-sm mt-2">
                                         <!--<i class="fas fa-search w3-xxlarge" aria-hidden="true"></i>-->
-                                        <input class="w3-input w-75" type="text" ng-model="searchQuery" ng-keyup="filterCurrentCategoryOrSearchText('search',searchQuery)" placeholder="{{searchPlaceholder}}" aria-label="Search">
+                                        <input class="w3-input w-75" type="text" ng-model="searchObject.searchQuery" ng-keyup="filterCurrentCategoryOrSearchText()" placeholder="{{searchPlaceholder}}" aria-label="Search" autocomplete="off">
                                     </form>
 
 
@@ -58,112 +58,164 @@
     <div class="container-fluid " style="padding-bottom: 5px; padding-top: 10px">
          
         <div class="d-flex flex-row" style="justify-content: center;">
-            <div class="p-2 bd-highlight">
-                Supplier Name: <select ng-model="selectedValue1" ng-change="filterCurrentCategoryOrSearchText('dropdown','');selectedValue4='';" ng-init="" style="margin-left: 10px;width:auto;margin-right: 10px;">
-                    <option value="" selected>Select Supplier</option>
-                    <option value="{{d1[firstDropDownDisplayField]}}" ng-repeat="d1 in dropDownDataSet.supplierData">{{d1[firstDropDownDisplayField]}}</option>
-                </select>
 
-                Geography : <select ng-model="selectedValue2" ng-change="filterCurrentCategoryOrSearchText('dropdown','')" style="margin-left: 10px;width: auto;margin-right: 10px;">
-                    <option value="" selected>Select Geography</option>
-                    <option value="{{d2[secondDropDownDisplayField]}}" ng-repeat="d2 in dropDownDataSet.regionData">{{d2[secondDropDownDisplayField]}}</option>
-                </select>
+            <div class="p-2 bd-highlight dropdown">
+                <span style="display: inline-block">
+                    <label style="display: block">Supplier Name:</label>
 
-                Delivery Method: <select ng-model="selectedValue3" ng-change="filterCurrentCategoryOrSearchText('dropdown','')" style="margin-left: 10px;width: auto;margin-right: 10px;">
-                    <option value="" selected>Select Delivery Method</option>
-                    <option value="{{d3[thirdDropDownDisplayField]}}" ng-repeat="d3 in dropDownDataSet.deliveryData">{{d3[thirdDropDownDisplayField]}}</option>
-                </select>
+                    <input type="text" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Supplier Name" ng-model="dropdown.selectedValue1" ng-change="getSupplierDropDownData(dropdown.selectedValue1);dropdown.selectedDisplayValue4='';" ng-keyup="getSupplierDropDownData(dropdown.selectedValue1);dropdown.selectedDisplayValue4='';" ng-disabled="dropdown.selectedDisplayValue4" autocomplete="off">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: 10px;width:auto;margin-right: 10px;max-height: 150px;overflow: auto;">
 
-                Supplier Rating: <select ng-model="selectedValue4" ng-disabled="selectedValue1" ng-change="filterCurrentCategoryOrSearchText('dropdown','')" style="margin-left: 10px;width: auto;margin-right: 10px;">
-                    <option value="" selected>Select Supplier Rating</option>
-                    <option value="{{d4[fourthDropDownStoredField]}}" ng-repeat="d4 in dropDownDataSet.supplierRating">{{d4[fourthDropDownDisplayField]}}</option>
-                </select>
+                        <li class="">
 
-                Course Rating: <select ng-model="selectedValue5" ng-change="filterCurrentCategoryOrSearchText('dropdown','')" style="margin-left: 10px;width: auto;margin-right: 10px;">
-                    <option value="" selected>Select Course Rating</option>
-                    <option value="{{d5[fifthDropDownStoredField]}}" ng-repeat="d5 in dropDownDataSet.courseRating">{{d5[fifthDropDownDisplayField]}}</option>
-                </select>
+                            <a href ng-click="dropdown.selectedValue1 = d1[firstDropDownDisplayField];filterCurrentCategoryOrSearchText();" ng-repeat="d1 in dropDownDataSet.supplierData" class="w3-small w3-hover-black">{{d1[firstDropDownDisplayField]}}</a>
+                        </li>
 
-                Sort By: <select ng-model="selectedValue6" ng-change="filterCurrentCategoryOrSearchText('dropdown','')" style="margin-left: 10px;width: auto;margin-right: 10px;">
-                    <option value="" selected>Select Sort</option>
-                    <option value="{{d6[sixthDropDownStoredField]}}" ng-repeat="d6 in dropDownDataSet.courseSorting">{{d6[sixthDropDownDisplayField]}}</option>
-                </select>
+
+                    </ul>
+                </span>
             </div>
 
+            <div class="p-2 bd-highlight dropdown">
+                <span style="display: inline-block">
+                    <label style="display: block">Market Area:</label>
+                    <input type="text" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Market Area" ng-model="dropdown.selectedValue2" ng-change="filterCurrentCategoryOrSearchText('dropdown','')" autocomplete="off">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2" ng-init="" style="margin-left: 10px;width:auto;margin-right: 10px;max-height: 150px;overflow: auto;">
+                        <li class="">
+                            <a href ng-click="dropdown.selectedValue2=d2[secondDropDownDisplayField];filterCurrentCategoryOrSearchText();" ng-repeat="d2 in dropDownDataSet.regionData " class="w3-small w3-hover-black">{{d2[secondDropDownDisplayField]}}
+                            </a>
+                        </li>
+
+                    </ul>
+                </span>
+            </div>
+
+            <div class="p-2 bd-highlight dropdown">
+                <span style="display: inline-block">
+                    <label style="display: block">Delivery Method:</label>
+                    <input type="text" id="dropdownMenuButton3" ng-model="dropdown.selectedValue3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Delivery Method" autocomplete="off">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3" style="margin-left: 10px;width:auto;margin-right: 10px;max-height: 150px;overflow: auto;">
+                        <li class="">
+                            <a href ng-click="dropdown.selectedValue3=d3[thirdDropDownDisplayField];filterCurrentCategoryOrSearchText();" ng-repeat="d3 in dropDownDataSet.deliveryData " class="w3-small w3-hover-black">{{d3[thirdDropDownDisplayField]}}</a>
+                        </li>
+
+                    </ul>
+                </span>
+            </div>
+
+            <div class="p-2 bd-highlight dropdown">
+                <span style="display: inline-block">
+                    <label style="display: block">Supplier Rating:</label>
+                    <input type="text" ng-model="dropdown.selectedDisplayValue4" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Supplier Rating" ng-disabled="dropdown.selectedValue1" autocomplete="off">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4" style="margin-left: 10px;width:auto;margin-right: 10px;max-height: 150px;overflow: auto;">
+                        <li class="">
+                            <a href ng-click="dropdown.selectedValue4=d4[fourthDropDownStoredField];dropdown.selectedDisplayValue4=d4[fourthDropDownDisplayField];filterCurrentCategoryOrSearchText();" ng-repeat="d4 in dropDownDataSet.supplierRating " class="w3-small w3-hover-black">{{d4[fourthDropDownDisplayField]}}</a>
+                        </li>
+
+                    </ul>
+                </span>
+            </div>
+
+            <div class="p-2 bd-highlight dropdown">
+                <span style="display: inline-block">
+                    <label style="display: block">Course Rating:</label>
+                    <input type="text" id="dropdownMenuButton5" ng-model="dropdown.selectedDisplayValue5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Course Rating" autocomplete="off">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5" style="margin-left: 10px;width:auto;margin-right: 10px;max-height: 150px;overflow: auto;">
+                        <li class="">
+                            <a href ng-click="dropdown.selectedValue5=d5[fifthDropDownStoredField];dropdown.selectedDisplayValue5=d5[fifthDropDownDisplayField];filterCurrentCategoryOrSearchText();" ng-repeat="d5 in dropDownDataSet.courseRating " class="w3-small w3-hover-black">{{d5[fifthDropDownDisplayField]}}</a>
+                        </li>
+
+                    </ul>
+                </span>
+            </div>
+
+            <div class="p-2 bd-highlight dropdown">
+                <span style="display: inline-block">
+                    <label style="display: block">Sort By:</label>
+                    <input type="text" ng-model="dropdown.selectedDisplayValue6" id="dropdownMenuButton6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Sort By" autocomplete="off">
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton6" style="margin-left: 10px;width:auto;margin-right: 10px;max-height: 150px;overflow: auto;">
+                        <li class="">
+                            <a href ng-click="dropdown.selectedValue6=d6[sixthDropDownStoredField];dropdown.selectedDisplayValue6=d6[sixthDropDownDisplayField];filterCurrentCategoryOrSearchText();" ng-repeat="d6 in dropDownDataSet.courseSorting " class="w3-small w3-hover-black">{{d6[sixthDropDownDisplayField]}}</a>
+                            <a href ng-if="dropdown.selectedValue2 && dropdown.selectedValue3" ng-click="dropdown.selectedValue6=getFieldIdFromName(dropdown.selectedValue2+'-'+dropdown.selectedValue3+''+totalCostPerHoursSuffix);dropdown.selectedDisplayValue6='Cost Low To High';filterCurrentCategoryOrSearchText();" class="w3-small w3-hover-black">Cost Low To High</a>
+                            <a href ng-if="dropdown.selectedValue2 && dropdown.selectedValue3" ng-click="dropdown.selectedValue6=-getFieldIdFromName(dropdown.selectedValue2+'-'+dropdown.selectedValue3+''+totalCostPerHoursSuffix);dropdown.selectedDisplayValue6='Cost High To Low';filterCurrentCategoryOrSearchText();" class="w3-small w3-hover-black">Cost High To Low</a>
+                        </li>
+                    </ul>
+                </span>
+            </div>
+
+
+
+            <button type="button" class="btn btn-link d-icon-left-cross_circle w3-medium" style="margin-top: 25px" ng-click="clearDropDowns()"><span>Clear Filters</span></button>
         </div>
+
     </div>
+</div>
 
-    <div class="content hideme">
-        <div class="container-fluid">
-            <div class="row" id="reverse" cg-busy="{promise:cardListDataPromise, delay:200}" ng-init="limit">
-                <div class="selector {{perRowCardLength}}" ng-repeat="x in cardList  | limitTo: limit as results ">
+<div class="content hideme">
+    <div class="container-fluid">
+        <div class="row" id="reverse" cg-busy="{promise:cardListDataPromise, delay:200}" ng-init="limit">
+            <div class="selector {{perRowCardLength}}" ng-repeat="x in cardList  | limitTo: limit as results ">
 
-                    <div class="card card-stats w3-card-4 h-75 ">
-                        <div class="card-header  card-header-icon h-75">
-                            <div ng-click="setSelectedCardInstanceId(x[179]);executeAction(cardActionGuid)">
-                                <div class="">
-                                    <div class="material-icons">
+                <div class="card card-stats w3-card-4 h-75 ">
+                    <div class="card-header  card-header-icon h-75">
+                        <div ng-click="setSelectedCardInstanceId(x[179]);setOutput(x);executeAction(cardActionGuid);">
+                            <div class="">
+                                <div class="material-icons">
 
-                                        <p class=""></p>
+                                    <p class=""></p>
 
-                                    </div>
                                 </div>
-
-                                <h5 class="card-title">{{x[courseName]}}</h5>
-
-
-                                <p class="card-category">
-                                    <span class="d-icon-users"></span>
-                                    <span>{{x[supplierName]}}</span>
-                                </p>
-
                             </div>
 
-                            <p class="card-category" style="" ng-if="x[getFieldIdFromName(selectedValue2+'-'+selectedValue3+''+totalCostPerHoursSuffix)]">
-                                $ {{x[getFieldIdFromName(selectedValue2+'-'+selectedValue3+''+totalCostPerHoursSuffix)]}}
+                            <h5 class="card-title">{{x[courseName]}}</h5>
+
+
+                            <p class="card-category">
+                                <span class="d-icon-users"></span>
+                                <span>{{x[supplierName]}}</span>
                             </p>
 
-
-
                         </div>
-                        <div class="card-footer">
-                            <div class="stats">
-                                <div class="card-category">
-                                    <span class="d-icon-star" style="color: orange"></span>
-                                    <span class="d-icon-star" style="color: orange"></span>
-                                    <span class="d-icon-star" style="color: orange"></span>
-                                    <span class="d-icon-star" style=""></span>
-                                    <span class="d-icon-star" style=""></span>
-                                    <a class="d-button_link">(Course Rating)</a>
-                                </div>
-                            </div>
-                            <div class="stats">
-                                <div class="card-category">
-                                    <span class="d-icon-star" style="color: orange"></span>
-                                    <span class="d-icon-star" style="color: orange"></span>
-                                    <span class="d-icon-star" style="color: orange"></span>
-                                    <span class="d-icon-star" style=""></span>
-                                    <span class="d-icon-star" style=""></span>
-                                    <a class="d-button_link">(Supplier Rating)</a>
-                                </div>
+
+                        <p class="card-category" style="" ng-if="x[getFieldIdFromName(dropdown.selectedValue2+'-'+dropdown.selectedValue3+''+totalCostPerHoursSuffix)]">
+                            $ {{x[getFieldIdFromName(dropdown.selectedValue2+'-'+dropdown.selectedValue3+''+totalCostPerHoursSuffix)]}}
+                        </p>
+
+
+
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <div class="card-category" ng-init="generateRating(x[supplierRating],x[179],'supplier')">
+                                <span ng-repeat="star in supplierRatingObj[x[179]] track by $index" class="{{star.icon}}" style="{{star.style}}"></span>
+                                <a class="d-button_link">(Supplier Rating)</a>
                             </div>
 
                         </div>
+
+                        <div class="stats">
+                            <div class="card-category" ng-init="generateRating(x[courseRating],x[179],'course')">
+                                <span ng-repeat="star in courseRatingObj[x[179]] track by $index" class="{{star.icon}}" style="{{star.style}}"></span>
+                                <a class="d-button_link">(Course Rating)</a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
+        </div>
 
 
-            <div style="text-align: right">
-                <span>
-                    <button class="d-button d-icon-right-angle_up d-button_secondary" ng-hide="results.length <= cardlimit" ng-click="limit = limit - cardlimit">show less...</button>
-                    <button class="d-button d-icon-right-angle_down d-button_secondary" ng-hide="results.length === (cardList | filter:userhaspermission).length" ng-click="limit = limit + cardlimit">show more...</button>
-                </span>
-
-            </div>
+        <div style="text-align: right">
+            <span>
+                <button class="d-button d-icon-right-angle_up d-button_secondary" ng-hide="results.length <= cardlimit" ng-click="limit = limit - cardlimit">show less...</button>
+                <button class="d-button d-icon-right-angle_down d-button_secondary" ng-hide="results.length === (cardList | filter:userhaspermission).length" ng-click="limit = limit + cardlimit">show more...</button>
+            </span>
 
         </div>
+
     </div>
+</div>
 
 
 </div>

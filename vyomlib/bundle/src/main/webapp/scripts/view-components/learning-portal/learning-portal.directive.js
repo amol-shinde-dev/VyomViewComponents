@@ -30,6 +30,7 @@
                             $scope.courseRating = _config.courseRating;
                             $scope.costPerHoursSuffix = _config.costPerHoursSuffix ? _config.costPerHoursSuffix : "";
                             $scope.totalCostPerHoursSuffix = _config.totalCostPerHoursSuffix ? _config.totalCostPerHoursSuffix : "";
+                            $scope.durationSuffix = _config.durationSuffix ? _config.durationSuffix : "";
                             $scope.FilterExp = _config.FilterExp ? _config.FilterExp : "";
 
                             //card layout
@@ -54,7 +55,8 @@
                             $scope.searchPlaceholder = _config.searchPlaceholder;
 
                             //DATASET
-                            $scope.searchQuery = "";
+                            $scope.searchObject = {};
+
 
 
                             //User
@@ -69,7 +71,8 @@
                             $scope.getCardListResource();
                             $scope.mydataResource = [];
 
-
+                            $scope.courseRatingObj = [];
+                            $scope.supplierRatingObj = [];
 
                             // dropdown
                             $scope.dropDownDataSet = {
@@ -80,11 +83,22 @@
                                 "courseRating": [],
                                 "courseSorting": []
                             };
-
+                            $scope.dropdown = {
+                                selectedValue1: "",
+                                selectedValue2: "",
+                                selectedValue3: "",
+                                selectedValue4: "",
+                                selectedValue5: "",
+                                selectedValue6: "",
+                                selectedDisplayValue4: "",
+                                selectedDisplayValue5: "",
+                                selectedDisplayValue6: "",
+                            };
 
                             $scope.firstDropDownRecordDefinition = _config.firstDropDownRecordDefinition;
                             $scope.firstDropDownDisplayField = _config.firstDropDownDisplayField;
-                            $scope.getDropDownData("supplierData", $scope.firstDropDownRecordDefinition, $scope.firstDropDownDisplayField);
+                            $scope.firstDropDownSortingField = _config.firstDropDownSortingField;
+                            $scope.getSupplierDropDownData('');
                             $scope.secondDropDownRecordDefinition = _config.secondDropDownRecordDefinition;
                             $scope.secondDropDownDisplayField = _config.secondDropDownDisplayField;
                             $scope.getDropDownData("regionData", $scope.secondDropDownRecordDefinition, $scope.secondDropDownDisplayField);
@@ -111,7 +125,7 @@
                         $scope.getDropDownData = function (typeofdata, recordedef, fieldid) {
                             if (recordedef) {
                                 rxRecordInstanceDataPageResource.withName(recordedef).get(200, 0, {
-                                    queryExpression: "'" + fieldid + "'!=" + '""'
+                                    queryExpression: ""
                                 }).then(
                                     function (allRecords) {
                                         $scope.dropDownDataSet[typeofdata] = allRecords.data;
@@ -122,7 +136,21 @@
                             }
                         }
 
+                        $scope.getSupplierDropDownData = function (query) {
+                            var supplierNameQuery = query ? "'" + $scope.firstDropDownDisplayField + "'LIKE \"%" + query + '%" AND \'' + $scope.firstDropDownDisplayField + "' != " + '""' : "";
+                            if ($scope.firstDropDownRecordDefinition) {
+                                rxRecordInstanceDataPageResource.withName($scope.firstDropDownRecordDefinition).get(200, 0, {
+                                    queryExpression: supplierNameQuery,
+                                    sortBy: $scope.firstDropDownSortingField
+                                }).then(
+                                    function (allRecords) {
+                                        $scope.dropDownDataSet["supplierData"] = allRecords.data;
 
+
+                                    }
+                                );
+                            }
+                        }
 
                         $scope.getCardList = function () {
                             $scope.queryParams = {
@@ -174,6 +202,28 @@
 
                         }
 
+                        $scope.setOutput = function (obj) {
+                            // trigger the change property event
+
+                            if ($scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3) {
+                                eventManager.propertyChanged({
+                                    property: 'costPerHours', // name of the property that changed
+                                    newValue: obj[$scope.getFieldIdFromName($scope.dropdown.selectedValue2 + "-" + $scope.dropdown.selectedValue3 + "" + $scope.costPerHoursSuffix)]
+                                });
+
+                                eventManager.propertyChanged({
+                                    property: 'totalCostPerHours', // name of the property that changed
+                                    newValue: obj[$scope.getFieldIdFromName($scope.dropdown.selectedValue2 + "-" + $scope.dropdown.selectedValue3 + "" + $scope.totalCostPerHoursSuffix)]
+                                });
+
+                                eventManager.propertyChanged({
+                                    property: 'duration', // name of the property that changed
+                                    newValue: obj[$scope.getFieldIdFromName($scope.dropdown.selectedValue3 + "" + $scope.durationSuffix)]
+                                });
+
+                            }
+                        }
+
                         $scope.executeAction = function (guid) {
 
                             $timeout(function () {
@@ -193,34 +243,48 @@
                             });
                         }
 
+                        $scope.generateRating = function (starCount, guid, objecttype) {
 
 
-                        $scope.filterCurrentCategoryOrSearchText = function (searchtype, searchtext) {
+                            $scope.stars = [];
+
+
+                            $scope.starSelectedColor = "color:orange";
+                            $scope.starNotSelectedColor = "";
+
+                            for (var i = 1; i <= 5; i++) {
+                                $scope.stars[i] = {
+                                    icon: i <= starCount ? 'd-icon-star ' : 'd-icon-star_o ',
+                                    style: i <= starCount ? $scope.starSelectedColor : $scope.starNotSelectedColor
+                                };
+                            }
+
+                            objecttype == 'course' ? $scope.courseRatingObj[guid] = $scope.stars : $scope.supplierRatingObj[guid] = $scope.stars;
+
+
+
+                        }
+
+                        $scope.filterCurrentCategoryOrSearchText = function () {
 
                             var cardQueryExpression = "";
                             var cardQueryExpression2 = "";
                             var courseSorting = "";
-                            courseSorting = $scope.selectedValue6 ? $scope.selectedValue6 : $scope.cardSorting;
+
+                            courseSorting = $scope.dropdown.selectedValue6 ? $scope.dropdown.selectedValue6 : $scope.cardSorting;
+
+                            cardQueryExpression += $scope.dropdown.selectedValue1 ? "'" + $scope.supplierName + "'=\"" + $scope.dropdown.selectedValue1 + '" AND' : "";
+                            cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? "'" + $scope.dropdown.selectedValue2 + "-" + $scope.dropdown.selectedValue3 + "" + $scope.totalCostPerHoursSuffix + "' != \"\" AND" : "";
+                            cardQueryExpression += $scope.dropdown.selectedValue4 ? "'" + $scope.supplierRating + "'" + $scope.dropdown.selectedValue4 + ' AND' : "";
+                            cardQueryExpression += $scope.dropdown.selectedValue5 ? "'" + $scope.courseRating + "'" + $scope.dropdown.selectedValue5 + ' AND' : "";
+
+                            cardQueryExpression += $scope.searchObject.searchQuery ? "'" + $scope.courseName + "' LIKE \"%" + $scope.searchObject.searchQuery + '%" AND' : "";
+
+                            cardQueryExpression2 = cardQueryExpression.substring(0, cardQueryExpression.lastIndexOf("AND"));
 
 
-                            if (searchtype == 'search') {
-                                if (searchtext) {
-                                    cardQueryExpression2 += "'" + $scope.courseName + "' LIKE \"%" + searchtext + '%"';
 
-                                } else {
-                                    $scope.getCardList();
-                                }
-                            } else {
-                                cardQueryExpression += $scope.selectedValue1 ? "'" + $scope.supplierName + "'=\"" + $scope.selectedValue1 + '" AND' : "";
-                                cardQueryExpression += $scope.selectedValue2 && $scope.selectedValue3 ? "'" + $scope.selectedValue2 + "-" + $scope.selectedValue3 + "" + $scope.totalCostPerHoursSuffix + "' != \"\" AND" : "";
-                                cardQueryExpression += $scope.selectedValue4 ? "'" + $scope.supplierRating + "'" + $scope.selectedValue4 + ' AND' : "";
-                                cardQueryExpression += $scope.selectedValue5 ? "'" + $scope.courseRating + "'" + $scope.selectedValue5 + ' AND' : "";
-
-                                cardQueryExpression2 = cardQueryExpression.substring(0, cardQueryExpression.lastIndexOf("AND"));
-
-                            }
-
-                            var cardFilterExpression = $scope.FilterExp ? $scope.FilterExp + "AND (" + cardQueryExpression2 + ")" : cardQueryExpression2;
+                            var cardFilterExpression = $scope.FilterExp ? cardQueryExpression2 ? "(" + $scope.FilterExp + ")AND (" + cardQueryExpression2 + ")" : $scope.FilterExp : cardQueryExpression2;
 
                             var queryParams = {
 
@@ -243,7 +307,21 @@
 
 
 
+                        $scope.clearDropDowns = function () {
 
+                            $scope.dropdown.selectedValue1 = "";
+                            $scope.dropdown.selectedValue2 = "";
+                            $scope.dropdown.selectedValue3 = "";
+                            $scope.dropdown.selectedValue4 = "";
+                            $scope.dropdown.selectedValue5 = "";
+                            $scope.dropdown.selectedValue6 = "";
+                            //extra
+                            $scope.dropdown.selectedDisplayValue4 = "";
+                            $scope.dropdown.selectedDisplayValue5 = "";
+                            $scope.dropdown.selectedDisplayValue6 = "";
+
+                            $scope.getCardList();
+                        }
 
 
 

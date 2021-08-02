@@ -27,6 +27,7 @@
        'com.vyom.vyomlib.view-components.portal-preview', //
        'com.vyom.vyomlib.view-components.recent-activity',
        'com.vyom.vyomlib.view-components.user-rating',
+       'com.vyom.vyomlib.view-components.star-rating',
        'com.vyom.vyomlib.view-components.nvd3-chart',
        'com.vyom.vyomlib.view-components.dashboard1',
        'com.vyom.vyomlib.view-components.comment-box',
