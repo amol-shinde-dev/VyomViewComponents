@@ -1,0 +1,11 @@
+<style>
+    .checked {
+        color: orange;
+    }
+</style>
+
+
+<div ng-repeat="data in stars">
+    <div style="font-size:{{font}}">{{starData[$index][ratingName]}}</div>
+    <span ng-repeat="star in data track by $index" class="{{star.icon}}"></span>
+</div>

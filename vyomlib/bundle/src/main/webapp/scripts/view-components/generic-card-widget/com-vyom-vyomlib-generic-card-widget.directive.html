@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Generic Card widget View</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+  <div class="all-content-wrapper" style="display: flex;flex-wrap: wrap">
+
+    <div class="{{perRowCardLength}} col-xs-12" style="padding: 1px;display: flex;" ng-repeat="x in textData">
+      <div class="analytics-sparkle-line reso-mg-b-30 w3-{{Color}}" style="display: flex;flex-direction: column;flex:1" tabindex="0">
+        <div class="analytics-content" style="display: flex;justify-content: space-between;gap: 5px;" ng-click="setSelectedCardInstanceId(x[179]);executeAction(actionguid);" role="button">
+          <div style="display: flex;flex-direction: column;flex: 1;">
+            <h3 style="font-size: 1.2em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{x[count]}}</h3>
+            <h4 style="font-size: 1.5em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{x[header]}}</h4>
+            <p>{{x[note]}}</p>
+          </div>
+          <div style="display: flex;flex-direction: column;" ng-init="fetchPicture(x[179])">
+            <img style="height: 110px;" src="{{pictureData[x[179]]}}">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div style="text-align: right">
+      <span>
+        <button class="d-button d-icon-right-angle_up d-button_secondary" style="color: #333; border-color: #999; background-color: #fff;" ng-hide="9 <= 3" ng-click="3 = 3 - 3">show less...</button>
+        <button class="d-button d-icon-right-angle_down d-button_secondary" style="color: #333; border-color: #999; background-color: #fff;" ng-hide="9=== 3 " ng-click="limit = limit + cardlimit">show more...</button>
+      </span>
+    </div> -->
+    <div class="clearfix"></div>
+  </div>
+</body>
+
+</html>

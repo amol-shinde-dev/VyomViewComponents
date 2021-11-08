@@ -227,7 +227,21 @@
                     },
                         {
 
+                            name: 'secondDropDownStoredField',
+                            enableExpressionEvaluation: true,
+                            isConfig: true
+
+                    },
+                        {
+
                             name: 'secondDropDownRecordDefinition',
+                            enableExpressionEvaluation: true,
+                            isConfig: true
+
+                    },
+                        {
+
+                            name: 'secondDropDownSortingField',
                             enableExpressionEvaluation: true,
                             isConfig: true
 
@@ -312,6 +326,14 @@
                             isConfig: true
 
                     },
+                        {
+                            name: 'countryName',
+                            isProperty: true
+                        },
+                        {
+                            name: 'deliveryMethod',
+                            isProperty: true
+                        }
 
 
                 ]

@@ -29,13 +29,18 @@
        'com.vyom.vyomlib.view-components.user-rating',
        'com.vyom.vyomlib.view-components.star-rating',
        'com.vyom.vyomlib.view-components.nvd3-chart',
+       'com.vyom.vyomlib.view-components.nvd3-barchart',
        'com.vyom.vyomlib.view-components.dashboard1',
        'com.vyom.vyomlib.view-components.comment-box',
         'com.vyom.vyomlib.view-components.search-bar',
         'com.vyom.vyomlib.view-components.embedded-chatbot',
         'com.vyom.vyomlib.view-components.service-health-dashboard',
         'com.vyom.vyomlib.view-components.service-health',
-        
+        'com.vyom.vyomlib.view-components.card-widget',
+        'com.vyom.vyomlib.view-components.d3-gauge',
+        'com.vyom.vyomlib.view-components.dynamic-star-rating',
+        'com.vyom.vyomlib.view-components.ppttoimg',
+        'com.vyom.vyomlib.view-components.generic-card-widget',
         //26
         
 

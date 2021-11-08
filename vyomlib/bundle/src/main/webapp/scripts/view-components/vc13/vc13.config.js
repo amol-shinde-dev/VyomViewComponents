@@ -10,7 +10,9 @@
                     type: 'com-vyom-vyomlib-vc13',
                     designType: 'com-vyom-vyomlib-vc13-design',
                     designManagerService: 'comVyomVyomlibVc13Design',
+                    canBeEmbeddedInRecordEditor: true,
                     bundleId: 'com.vyom.vyomlib',
+
                     propertiesByName: [
 
                         {

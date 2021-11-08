@@ -54,6 +54,8 @@
                 firstDropDownSortingField: componentDefinition.propertiesByName.firstDropDownSortingField,
                 secondDropDownRecordDefinition: componentDefinition.propertiesByName.secondDropDownRecordDefinition,
                 secondDropDownDisplayField: componentDefinition.propertiesByName.secondDropDownDisplayField,
+                secondDropDownStoredField: componentDefinition.propertiesByName.secondDropDownStoredField,
+                secondDropDownSortingField: componentDefinition.propertiesByName.secondDropDownSortingField,
                 thirdDropDownRecordDefinition: componentDefinition.propertiesByName.thirdDropDownRecordDefinition,
                 thirdDropDownDisplayField: componentDefinition.propertiesByName.thirdDropDownDisplayField,
                 fourthDropDownRecordDefinition: componentDefinition.propertiesByName.fourthDropDownRecordDefinition,
@@ -272,73 +274,85 @@
                             index: 3
                         },
                         secondDropDownRecordDefinition: {
-                            label: 'secondDropDownRecordDefinition (Region)',
+                            label: 'Country RecordDefinition (Region)',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
                             index: 4
                         },
 
                         secondDropDownDisplayField: {
-                            label: 'secondDropDownDisplayField',
+                            label: 'Country Dropdown Display Field',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
                             index: 5
+                        },
+                        secondDropDownStoredField: {
+                            label: 'Country Dropdown Stored Field',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DropDown',
+                            index: 6
+                        },
+                        secondDropDownSortingField: {
+                            label: 'Country Dropdown Sorting Field',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DropDown',
+                            index: 7
                         },
                         thirdDropDownRecordDefinition: {
                             label: 'thirdDropDownRecordDefinition (Delivery Method)',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 6
+                            index: 8
                         },
 
                         thirdDropDownDisplayField: {
                             label: 'thirdDropDownDisplayField',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 7
+                            index: 9
                         },
                         fourthDropDownRecordDefinition: {
                             label: 'Supplier Rating Record Definition (Supplier Rating)',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 8
+                            index: 10
                         },
                         fourthDropDownDisplayField: {
                             label: 'Supplier Rating DisplayField',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 9
+                            index: 11
                         },
                         fourthDropDownStoredField: {
                             label: 'Supplier Rating StoredField',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 10
+                            index: 12
                         },
                         fifthDropDownRecordDefinition: {
                             label: 'Course Rating Record Definition (Course Rating)',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 11
+                            index: 13
                         },
 
                         fifthDropDownDisplayField: {
                             label: 'Course Rating DisplayField',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 12
+                            index: 14
                         },
                         fifthDropDownStoredField: {
                             label: 'Course Rating StoredField',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 13
+                            index: 15
                         },
                         sixthDropDownRecordDefinition: {
                             label: 'Sort By RecordDefinition (Sort By)',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 14
+                            index: 16
                         },
 
                         sixthDropDownDisplayField: {
@@ -349,7 +363,7 @@
                                 placement: "left"
                             },
                             group: 'DropDown',
-                            index: 15
+                            index: 17
                         },
                         sixthDropDownStoredField: {
                             label: 'Sort By Stored Value Field',
@@ -359,7 +373,7 @@
                                 placement: "left"
                             },
                             group: 'DropDown',
-                            index: 16
+                            index: 18
                         },
                     }
                 },

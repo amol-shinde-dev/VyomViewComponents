@@ -47,7 +47,7 @@
                         recordDefinitionFullName: {
                             label: 'Record Definition Name',
                             type: 'rx-inspector-definition-picker',
-                            definitionType: RX_DEFINITION_PICKER.definitionTypes.regularRecord.type,
+                            definitionType: RX_DEFINITION_PICKER.definitionTypes.record.type,
                             group: 'General',
                             index: 1
                         },

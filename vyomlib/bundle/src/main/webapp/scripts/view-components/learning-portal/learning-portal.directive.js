@@ -84,12 +84,13 @@
                                 "courseSorting": []
                             };
                             $scope.dropdown = {
-                                selectedValue1: "",
-                                selectedValue2: "",
-                                selectedValue3: "",
-                                selectedValue4: "",
-                                selectedValue5: "",
-                                selectedValue6: "",
+                                selectedValue1: "", //supplier name
+                                selectedValue2: "", //country OR Region
+                                selectedValue3: "", //Delivery Method
+                                selectedValue4: "", //Supplier Rating
+                                selectedValue5: "", //Course Rating
+                                selectedValue6: "", //Sort By
+                                selectedDisplayValue2: "",
                                 selectedDisplayValue4: "",
                                 selectedDisplayValue5: "",
                                 selectedDisplayValue6: "",
@@ -101,7 +102,9 @@
                             $scope.getSupplierDropDownData('');
                             $scope.secondDropDownRecordDefinition = _config.secondDropDownRecordDefinition;
                             $scope.secondDropDownDisplayField = _config.secondDropDownDisplayField;
-                            $scope.getDropDownData("regionData", $scope.secondDropDownRecordDefinition, $scope.secondDropDownDisplayField);
+                            $scope.secondDropDownStoredField = _config.secondDropDownStoredField;
+                            $scope.secondDropDownSortingField = _config.secondDropDownSortingField;
+                            $scope.getRegionDropDownData('');
                             $scope.thirdDropDownRecordDefinition = _config.thirdDropDownRecordDefinition;
                             $scope.thirdDropDownDisplayField = _config.thirdDropDownDisplayField;
                             $scope.getDropDownData("deliveryData", $scope.thirdDropDownRecordDefinition, $scope.thirdDropDownDisplayField);
@@ -124,7 +127,7 @@
 
                         $scope.getDropDownData = function (typeofdata, recordedef, fieldid) {
                             if (recordedef) {
-                                rxRecordInstanceDataPageResource.withName(recordedef).get(200, 0, {
+                                rxRecordInstanceDataPageResource.withName(recordedef).get(800, 0, {
                                     queryExpression: ""
                                 }).then(
                                     function (allRecords) {
@@ -139,12 +142,29 @@
                         $scope.getSupplierDropDownData = function (query) {
                             var supplierNameQuery = query ? "'" + $scope.firstDropDownDisplayField + "'LIKE \"%" + query + '%" AND \'' + $scope.firstDropDownDisplayField + "' != " + '""' : "";
                             if ($scope.firstDropDownRecordDefinition) {
-                                rxRecordInstanceDataPageResource.withName($scope.firstDropDownRecordDefinition).get(200, 0, {
+                                rxRecordInstanceDataPageResource.withName($scope.firstDropDownRecordDefinition).get(800, 0, {
                                     queryExpression: supplierNameQuery,
                                     sortBy: $scope.firstDropDownSortingField
                                 }).then(
                                     function (allRecords) {
                                         $scope.dropDownDataSet["supplierData"] = allRecords.data;
+
+
+                                    }
+                                );
+                            }
+                        }
+
+                        $scope.getRegionDropDownData = function (query) {
+                            var regionNameQuery = query ? "'" + $scope.secondDropDownDisplayField + "'LIKE \"%" + query + '%" AND \'' + $scope.secondDropDownDisplayField + "' != " + '""' : "";
+                            if ($scope.secondDropDownRecordDefinition) {
+                                $scope.RegionDropDownDataPromise = rxRecordInstanceDataPageResource.withName($scope.secondDropDownRecordDefinition).get(800, 0, {
+                                    queryExpression: regionNameQuery,
+                                    sortBy: $scope.secondDropDownSortingField
+
+                                }).then(
+                                    function (allRecords) {
+                                        $scope.dropDownDataSet["regionData"] = allRecords.data;
 
 
                                     }
@@ -160,7 +180,7 @@
                             };
 
 
-                            $scope.cardListDataPromise = rxRecordInstanceDataPageResource.withName($scope.RecordDefinition).get(200, 0, $scope.queryParams).then(
+                            $scope.cardListDataPromise = rxRecordInstanceDataPageResource.withName($scope.RecordDefinition).get(800, 0, $scope.queryParams).then(
                                 function (allRecords) {
                                     $scope.mydata = allRecords.data;
                                     $scope.cardList = $scope.mydata;
@@ -220,8 +240,33 @@
                                     property: 'duration', // name of the property that changed
                                     newValue: obj[$scope.getFieldIdFromName($scope.dropdown.selectedValue3 + "" + $scope.durationSuffix)]
                                 });
+                            } else {
+                                eventManager.propertyChanged({
+                                    property: 'costPerHours', // name of the property that changed
+                                    newValue: ""
+                                });
 
+                                eventManager.propertyChanged({
+                                    property: 'totalCostPerHours', // name of the property that changed
+                                    newValue: ""
+                                });
+
+                                eventManager.propertyChanged({
+                                    property: 'duration', // name of the property that changed
+                                    newValue: ""
+                                });
                             }
+                            eventManager.propertyChanged({
+                                property: 'countryName', // name of the property that changed
+                                newValue: $scope.dropdown.selectedDisplayValue2
+                            });
+
+                            eventManager.propertyChanged({
+                                property: 'deliveryMethod', // name of the property that changed
+                                newValue: $scope.dropdown.selectedValue3
+                            });
+
+
                         }
 
                         $scope.executeAction = function (guid) {
@@ -294,7 +339,7 @@
                             };
 
 
-                            rxRecordInstanceDataPageResource.withName($scope.RecordDefinition).get(100, 0, queryParams).then(
+                            $scope.cardListDataPromise = rxRecordInstanceDataPageResource.withName($scope.RecordDefinition).get(800, 0, queryParams).then(
                                 function (allRecords) {
                                     $scope.cardList = allRecords.data;
 
@@ -316,6 +361,7 @@
                             $scope.dropdown.selectedValue5 = "";
                             $scope.dropdown.selectedValue6 = "";
                             //extra
+                            $scope.dropdown.selectedDisplayValue2 = "";
                             $scope.dropdown.selectedDisplayValue4 = "";
                             $scope.dropdown.selectedDisplayValue5 = "";
                             $scope.dropdown.selectedDisplayValue6 = "";
@@ -324,8 +370,23 @@
                         }
 
 
+                        $scope.ifNoSearchResult = function () {
 
+                            if ($scope.searchObject.searchQuery) {
 
+                                $element.find(".no-search-result").html('<span class="w3-xlarge">No courses are available for your search. Please refine your search further to view results.</span>');
+                            }
+                        }
+
+                        $scope.onKeyDown = function (obj) {
+
+                            if (13 === obj.keyCode) {
+                                $scope.filterCurrentCategoryOrSearchText();
+                                $scope.$watch("cardList", function () {
+                                    $scope.ifNoSearchResult();
+                                });
+                            }
+                        }
 
                         function refreshCards(params) {
 

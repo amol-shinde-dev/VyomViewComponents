@@ -29,7 +29,11 @@
 
             "app": {
                 "scripts": [ 
-                    
+                
+                    "lib/ppttoimg/divs2slides",
+                    "lib/ppttoimg/jszip.min",
+                    "lib/ppttoimg/filereader",
+                    "lib/ppttoimg/pptxjs",
                     "lib/landing-console/bootstrap.min",
                     "lib/comment-box/jquery.textcomplete",
                     "lib/comment-box/jquery-comments",
