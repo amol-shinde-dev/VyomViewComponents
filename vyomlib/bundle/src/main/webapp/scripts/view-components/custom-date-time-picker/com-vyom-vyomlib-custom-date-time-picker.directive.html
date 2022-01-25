@@ -1,0 +1,25 @@
+<div class="d-textfield" ng-class="rxConfiguration.propertiesByName.styles">
+
+    <span class="d-textfield__item">{{rxConfiguration.propertiesByName.label}}</span>
+
+    <div class="rx-date-time">
+        <div class="date-field">
+            <div class="input-group">
+                <input type="text" name="dt" class="form-control" uib-datepicker-popup ng-model="data.date" is-open="status.opened" datepicker-options="dateOptions" ng-required="fieldDefinition.fieldOption == 'REQUIRED'" show-button-bar="false" ng-change="setOutput()" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open($event)">
+                        <i class="d-icon-calendar"></i>
+                    </button>
+                </span>
+
+
+            </div>
+        </div>
+        <div class="time-field">
+            <div class="input-group">
+                <uib-timepicker ng-model="data.date" ng-change="changed();setOutput()" hour-step="1" minute-step="1" show-meridian="true" class="d-timepicker d-timepicker__no-label" ng-disabled="rxConfiguration.propertiesByName.timeDisabled" ng-hide="rxConfiguration.propertiesByName.timeHidden"></uib-timepicker>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -24,7 +24,7 @@
        'com.vyom.vyomlib.view-components.landing-console',
        'com.vyom.vyomlib.view-components.hierarchy',
        'com.vyom.vyomlib.view-components.custom-blog',
-       'com.vyom.vyomlib.view-components.portal-preview', //
+       'com.vyom.vyomlib.view-components.portal-preview', 
        'com.vyom.vyomlib.view-components.recent-activity',
        'com.vyom.vyomlib.view-components.user-rating',
        'com.vyom.vyomlib.view-components.star-rating',
@@ -41,6 +41,8 @@
         'com.vyom.vyomlib.view-components.dynamic-star-rating',
         'com.vyom.vyomlib.view-components.ppttoimg',
         'com.vyom.vyomlib.view-components.generic-card-widget',
+        'com.vyom.vyomlib.view-components.custom-date-time-picker',
+        
         //26
         
 

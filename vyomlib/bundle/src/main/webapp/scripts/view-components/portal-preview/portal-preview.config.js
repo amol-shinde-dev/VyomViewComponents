@@ -265,8 +265,77 @@
                             isConfig: true
 
                     },
+//dataset
+                        {
 
+                            name: 'dataSet1Label',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
 
+                    }, {
+
+                            name: 'dataset1',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
+                        {
+
+                            name: 'dataset1searchfield',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
+                        {
+
+                            name: 'dataset1displayfield',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
+                        {
+
+                            name: 'dataset1urlfield',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                        },
+
+                        {
+
+                            name: 'dataSet2Label',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    }, {
+
+                            name: 'dataset2',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
+
+                        {
+
+                            name: 'dataset2searchfield',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
+                        {
+
+                            name: 'dataset2displayfield',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
+{
+
+                            name: 'dataset2urlfield',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
 
 
 

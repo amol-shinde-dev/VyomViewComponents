@@ -32,6 +32,10 @@
 
               $scope.header = _config.header;
 
+              $scope.tooltip = _config.tooltip;
+
+              $scope.tooltipConfig = _config.tooltipConfig;
+
               $scope.perRowCardLength = _config.perRowCardLength ? _config.perRowCardLength : "col-lg-4 col-md-4 col-sm-4";
 
               $scope.pictureData = [];
@@ -44,7 +48,7 @@
             function getData() {
 
               var queryParams = {
-                propertySelection: "1,2,3,4,5,6,7,8,179," + $scope.count + "," + $scope.header + "," + $scope.note
+                propertySelection: "1,2,3,4,5,6,7,8,179," + $scope.count + "," + $scope.header + "," + $scope.note + "," + $scope.tooltip
               };
 
               var foo = rxRecordInstanceDataPageResource.withName($scope.cfg.recordDefinition);

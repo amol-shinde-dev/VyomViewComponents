@@ -73,6 +73,17 @@
                 CategoryNamedList: componentDefinition.propertiesByName.CategoryNamedList,
                 CategoryColor: componentDefinition.propertiesByName.CategoryColor,
 
+                dataSet1Label: componentDefinition.propertiesByName.dataSet1Label,
+                dataset1: componentDefinition.propertiesByName.dataset1,
+                dataset1searchfield: componentDefinition.propertiesByName.dataset1searchfield,
+                dataset1displayfield: componentDefinition.propertiesByName.dataset1displayfield,
+                dataset1urlfield: componentDefinition.propertiesByName.dataset1urlfield,
+
+                dataSet2Label: componentDefinition.propertiesByName.dataSet2Label,
+                dataset2: componentDefinition.propertiesByName.dataset2,
+                dataset2searchfield: componentDefinition.propertiesByName.dataset2searchfield,
+                dataset2displayfield: componentDefinition.propertiesByName.dataset2displayfield,
+                dataset2urlfield: componentDefinition.propertiesByName.dataset2urlfield
             };
         }
 
@@ -388,6 +399,70 @@
                             index: 3
                         },
 
+                        //dataset
+                        dataSet1Label: {
+                            label: 'first data set label',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet1',
+                            index: 1
+                        },
+                        dataset1: {
+                            label: 'first data set name',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet1',
+                            index: 2
+                        },
+
+                        dataset1searchfield: {
+                            label: 'search by field id (Application Name)',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet1',
+                            index: 3
+                        },
+                        dataset1displayfield: {
+                            label: 'display value field id',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet1',
+                            index: 4
+                        },
+                        dataset1urlfield: {
+                            label: 'URL field id',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet1',
+                            index: 5
+                        },
+                        dataSet2Label: {
+                            label: 'second data set label',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet2',
+                            index: 1
+                        },
+                        dataset2: {
+                            label: 'second data set name',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet2',
+                            index: 2
+                        },
+
+                        dataset2searchfield: {
+                            label: 'search by field id (Application Name)',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet2',
+                            index: 3
+                        },
+                        dataset2displayfield: {
+                            label: 'display value field id',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet2',
+                            index: 4
+                        },
+                        dataset2urlfield: {
+                            label: 'URL field id',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DataSet2',
+                            index: 5
+                        },
+
 
                     }
                 },
@@ -422,10 +497,15 @@
                         closed: true,
                         index: 6
                     },
-                    DataSet: {
-                        label: 'Data Set',
+                    DataSet1: {
+                        label: 'Data Set1',
                         closed: true,
                         index: 7
+                    },
+                    DataSet2: {
+                        label: 'Data Set2',
+                        closed: true,
+                        index: 8
                     }
 
 

@@ -28,6 +28,10 @@
                             $scope.supplierName = _config.supplierName;
                             $scope.supplierRating = _config.supplierRating;
                             $scope.courseRating = _config.courseRating;
+                            $scope.country = _config.country;
+                            $scope.userCountRatedForSupplier = _config.userCountRatedForSupplier;
+                            $scope.userCountRatedForCourse = _config.userCountRatedForCourse;
+                            $scope.costAvailableOnDemand = _config.costAvailableOnDemand;
                             $scope.costPerHoursSuffix = _config.costPerHoursSuffix ? _config.costPerHoursSuffix : "";
                             $scope.totalCostPerHoursSuffix = _config.totalCostPerHoursSuffix ? _config.totalCostPerHoursSuffix : "";
                             $scope.durationSuffix = _config.durationSuffix ? _config.durationSuffix : "";
@@ -66,7 +70,7 @@
 
 
 
-                            $scope.getCardList();
+                            // $scope.getCardList();
                             $scope.mydata = [];
                             $scope.getCardListResource();
                             $scope.mydataResource = [];
@@ -107,6 +111,7 @@
                             $scope.getRegionDropDownData('');
                             $scope.thirdDropDownRecordDefinition = _config.thirdDropDownRecordDefinition;
                             $scope.thirdDropDownDisplayField = _config.thirdDropDownDisplayField;
+                            $scope.deliveryMethodInfoGuid = _config.thirdDropDownInfoGuid;
                             $scope.getDropDownData("deliveryData", $scope.thirdDropDownRecordDefinition, $scope.thirdDropDownDisplayField);
                             $scope.fourthDropDownRecordDefinition = _config.fourthDropDownRecordDefinition;
                             $scope.fourthDropDownDisplayField = _config.fourthDropDownDisplayField;
@@ -184,12 +189,23 @@
                                 function (allRecords) {
                                     $scope.mydata = allRecords.data;
                                     $scope.cardList = $scope.mydata;
+                                    $scope.totalSize = allRecords.totalSize;
 
                                 }
                             );
 
 
 
+                        }
+
+                        $scope.numFormatter = function (num) {
+                            if (num > 999 && num < 1000000) {
+                                return (num / 1000).toFixed(1) + 'K'; // convert to K for number from > 1000 < 1 million 
+                            } else if (num > 1000000) {
+                                return (num / 1000000).toFixed(1) + 'M'; // convert to M for number from > 1 million 
+                            } else if (num < 1000) {
+                                return num; // if value < 1000, nothing to do
+                            }
                         }
 
                         $scope.getCardListResource = function () {
@@ -266,6 +282,10 @@
                                 newValue: $scope.dropdown.selectedValue3
                             });
 
+                            eventManager.propertyChanged({
+                                property: 'costAvailableOnDemandFlag', // name of the property that changed
+                                newValue: obj[$scope.costAvailableOnDemand]
+                            });
 
                         }
 
@@ -319,6 +339,8 @@
                             courseSorting = $scope.dropdown.selectedValue6 ? $scope.dropdown.selectedValue6 : $scope.cardSorting;
 
                             cardQueryExpression += $scope.dropdown.selectedValue1 ? "'" + $scope.supplierName + "'=\"" + $scope.dropdown.selectedValue1 + '" AND' : "";
+                            cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? $scope.country ? "(('" + $scope.country + "'=\"" + $scope.dropdown.selectedDisplayValue2 + '") OR ' : "" : "";
+                            cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? $scope.country ? "('" + $scope.country + "' = $null$)) AND" : "" : "";
                             cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? "'" + $scope.dropdown.selectedValue2 + "-" + $scope.dropdown.selectedValue3 + "" + $scope.totalCostPerHoursSuffix + "' != \"\" AND" : "";
                             cardQueryExpression += $scope.dropdown.selectedValue4 ? "'" + $scope.supplierRating + "'" + $scope.dropdown.selectedValue4 + ' AND' : "";
                             cardQueryExpression += $scope.dropdown.selectedValue5 ? "'" + $scope.courseRating + "'" + $scope.dropdown.selectedValue5 + ' AND' : "";
@@ -341,8 +363,10 @@
 
                             $scope.cardListDataPromise = rxRecordInstanceDataPageResource.withName($scope.RecordDefinition).get(800, 0, queryParams).then(
                                 function (allRecords) {
-                                    $scope.cardList = allRecords.data;
 
+                                    $scope.cardList = allRecords.data;
+                                    $scope.totalSize = allRecords.totalSize;
+                                    $scope.ifNoSearchResult();
 
                                 }
                             );
@@ -365,8 +389,14 @@
                             $scope.dropdown.selectedDisplayValue4 = "";
                             $scope.dropdown.selectedDisplayValue5 = "";
                             $scope.dropdown.selectedDisplayValue6 = "";
+                            $scope.getRegionDropDownData("");
+                            $scope.getSupplierDropDownData("");
+                            $scope.cardList = [];
 
-                            $scope.getCardList();
+                            if ($scope.searchObject.searchQuery) {
+                                $scope.filterCurrentCategoryOrSearchText();
+                            }
+
                         }
 
 
@@ -375,18 +405,34 @@
                             if ($scope.searchObject.searchQuery) {
 
                                 $element.find(".no-search-result").html('<span class="w3-xlarge">No courses are available for your search. Please refine your search further to view results.</span>');
+
+                            } else if (($scope.dropdown.selectedValue1 == "" || $scope.dropdown.selectedValue1 == null) && ($scope.dropdown.selectedValue2 == "" || $scope.dropdown.selectedValue2 == null) && ($scope.dropdown.selectedValue3 == "" || $scope.dropdown.selectedValue3 == null) && ($scope.dropdown.selectedValue4 == "" || $scope.dropdown.selectedValue4 == null) && ($scope.dropdown.selectedValue5 == "" || $scope.dropdown.selectedValue5 == null) &&
+                                ($scope.searchObject.searchQuery == "" || $scope.searchObject.searchQuery == null)) {
+                                $scope.cardList = [];
+                                $element.find(".no-search-result").empty();
                             }
                         }
 
                         $scope.onKeyDown = function (obj) {
 
                             if (13 === obj.keyCode) {
+                                $scope.limit = _config.perRowCardLength == "col-lg-3 col-md-4 col-sm-4" ? 8 : 6;
                                 $scope.filterCurrentCategoryOrSearchText();
-                                $scope.$watch("cardList", function () {
-                                    $scope.ifNoSearchResult();
-                                });
+
+
                             }
                         }
+
+                        $scope.getLimit = function () {
+
+                            if ($scope.limit > $scope.totalSize) {
+                                return $scope.totalSize;
+                            } else {
+                                return $scope.limit;
+                            }
+                        }
+
+
 
                         function refreshCards(params) {
 

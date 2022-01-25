@@ -34,80 +34,10 @@
                                 <div class="col-8">
                                     <form class="form-inline d-flex justify-content-center md-form form-sm mt-2">
                                         <!--<i class="fas fa-search w3-xxlarge" aria-hidden="true"></i>-->
-                                        <input class="w3-input w-75" type="text" ng-model="query" ng-keyup="filterCurrentCategoryOrSearchText(query,'search')" placeholder={{search}} aria-label="Search">
+                                        <input class="w3-input w-75" type="text" ng-model="searchbox.query" ng-keyup="filterCurrentCategoryOrSearchText(searchbox.query,'search');" placeholder={{search}} aria-label="Search">
                                     </form>
 
-                                    <!--    Modal-->
-                                    <div class="portalmodalcontainer" style="display: none; max-height: 187px;color: black;text-shadow: none;">
-                                        <div class="portalmodalinner w3-card-2" style="overflow-y: auto;height: auto;max-height: inherit">
-                                            <div class="container">
-                                                <ul class="nav nav-tabs">
-                                                    <li class="active">
-                                                        <a href="#portal1" data-toggle="tab">Applications</a>
-                                                    </li>
-                                                    <li><a href="#portal2" data-toggle="tab" ng-if="firstdataset">{{DataSet1Label}}</a>
-                                                    </li>
-                                                    <li><a href="#portal3" data-toggle="tab" ng-if="seconddataset">{{DataSet2Label}}</a>
-                                                    </li>
-                                                </ul>
 
-                                                <div class="tab-content ">
-
-                                                    <div class="tab-pane active" id="portal1">
-                                                        <ul class="portalmodallistul">
-                                                            <li class="portalmodallistli" ng-repeat="p in mydata | filter:filtersearchboxapplication">
-                                                                <div class="portalmodalliinner" ng-click="intializesearch(p[ApplicationName])">
-                                                                    <span class="d-icon-search portalmodallisearchicon"></span>
-                                                                    <div class="portalmodalliinnertextcontainer">
-                                                                        <div class="portalmodalliinnertext">
-                                                                            <a> {{p[ApplicationName]}}</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-
-                                                        </ul>
-                                                    </div>
-                                                    <div class="tab-pane" id="portal2">
-                                                        <ul class="portalmodallistul">
-                                                            <li class="portalmodallistli" id="portalmodallistli" ng-repeat="q in firstdataset | filter:filtersearchboxdataset1">
-                                                                <div class="portalmodalliinner" ng-click="intializesearch(q[dataset1searchfield])">
-                                                                    <span class="d-icon-search portalmodallisearchicon"></span>
-                                                                    <div class="portalmodalliinnertextcontainer" id="portalsearchanchor">
-                                                                        <div class="portalmodalliinnertext">
-                                                                            <a> {{q[dataset1displayfield]}}
-                                                                                <br>
-                                                                                <span style="font-size: small"><em>{{q[dataset1searchfield]}}</em></span>
-                                                                            </a></div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-
-                                                        </ul>
-                                                    </div>
-                                                    <div class="tab-pane" id="portal3">
-                                                        <ul class="portalmodallistul">
-                                                            <li class="portalmodallistli" id="portalmodallistli" ng-repeat="r in seconddataset | filter:filtersearchboxdataset2">
-                                                                <div class="portalmodalliinner" ng-click="intializesearch(r[dataset2searchfield])">
-                                                                    <span class="d-icon-search portalmodallisearchicon"></span>
-                                                                    <div class="portalmodalliinnertextcontainer">
-                                                                        <div class="portalmodalliinnertext">
-                                                                            <a id="portalsearchanchor"> {{r[dataset1displayfield]}}<br>
-                                                                                <span style="font-size: small"><em>{{r[dataset2searchfield]}}</em></span>
-                                                                            </a></div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-
-                                                        </ul>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <!-- end Modal--->
                                     <span style="display: block;max-width: 80%;margin: 0 auto;line-height: 1.2;overflow: hidden;text-overflow: ellipsis">
                                         <h3>{{BannerCaption}}</h3>
                                         <p><em>{{BannerSubCaption}}</em></p>
@@ -125,6 +55,66 @@
 
         </div>
     </div>
+
+    <!--    Modal-->
+    <div class="container-fluid">
+        <div class="content">
+            <div class="portalmodalcontainer" style="display: none; ">
+                <div class="portalmodalinner w3-card-2" style="overflow-y: auto;height: auto;max-height: inherit">
+                    <div class="container">
+                        <ul class="nav nav-tabs">
+
+                            <li class="active"><a href="#portal2" data-toggle="tab" ng-if="suggestionData.first">{{dataSet1Label}}</a>
+                            </li>
+                            <li><a href="#portal3" data-toggle="tab" ng-if="suggestionData.second">{{dataSet2Label}}</a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content ">
+
+
+                            <div class="tab-pane active" id="portal2">
+                                <ul class="portalmodallistul">
+                                    <li class="portalmodallistli" id="portalmodallistli" ng-repeat="q in suggestionData.first">
+                                        <div class="portalmodalliinner" ng-click="intializesearch(q[dataset1searchfield],q[dataset1urlfield])">
+                                            <span class="d-icon-search portalmodallisearchicon"></span>
+                                            <div class="portalmodalliinnertextcontainer" id="portalsearchanchor">
+                                                <div class="portalmodalliinnertext">
+                                                    <a> {{q[dataset1displayfield]}}
+                                                        <br>
+                                                        <span style="font-size: small"><em>{{q[dataset1searchfield]}}</em></span>
+                                                    </a></div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="tab-pane" id="portal3">
+                                <ul class="portalmodallistul">
+                                    <li class="portalmodallistli" id="portalmodallistli" ng-repeat="r in suggestionData.second">
+                                        <div class="portalmodalliinner" ng-click="intializesearch(r[dataset2searchfield],r[dataset2urlfield])">
+                                            <span class="d-icon-search portalmodallisearchicon"></span>
+                                            <div class="portalmodalliinnertextcontainer">
+                                                <div class="portalmodalliinnertext">
+                                                    <a id="portalsearchanchor"> {{r[dataset2displayfield]}}<br>
+                                                        <span style="font-size: small"><em>{{r[dataset2searchfield]}}</em></span>
+                                                    </a></div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end Modal--->
 
     <div class="container-fluid" style="padding-bottom: 0px; padding-top: 10px">
            <div class="d-flex flex-row" style="justify-content: space-between;">

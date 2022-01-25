@@ -1,0 +1,25 @@
+<div class="d-textfield">
+
+    <span class="d-textfield__item">{{rxConfiguration.label}}</span>
+
+    <div class="rx-date-time">
+        <div class="date-field">
+            <div class="input-group">
+                <input type="text" name="dt" class="form-control" ng-disabled="true" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-disabled="true">
+                        <i class="d-icon-calendar"></i>
+                    </button>
+                </span>
+
+
+            </div>
+        </div>
+        <div class="time-field">
+            <div class="input-group">
+                <uib-timepicker hour-step="1" ng-model="time" minute-step="1" show-meridian="true" ng-disabled="true" class="d-timepicker d-timepicker__no-label"></uib-timepicker>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -47,6 +47,37 @@
                     },
                         {
 
+                            name: 'country',
+                            isConfig: true,
+
+                    },
+                        {
+
+                            name: 'userCountRatedForSupplier',
+                            isConfig: true,
+
+                    },
+                        {
+
+                            name: 'userCountRatedForCourse',
+                            isConfig: true,
+
+                    },
+                        {
+
+                            name: 'costAvailableOnDemand',
+                            isConfig: true,
+
+                    },
+                        {
+
+                            name: 'costAvailableOnDemandFlag',
+                            isProperty: true,
+
+                    },
+
+                        {
+
                             name: 'costPerHoursSuffix',
                             enableExpressionEvaluation: true,
                             isConfig: true,
@@ -256,6 +287,13 @@
                         {
 
                             name: 'thirdDropDownRecordDefinition',
+                            enableExpressionEvaluation: true,
+                            isConfig: true
+
+                    },
+                        {
+
+                            name: 'thirdDropDownInfoGuid',
                             enableExpressionEvaluation: true,
                             isConfig: true
 

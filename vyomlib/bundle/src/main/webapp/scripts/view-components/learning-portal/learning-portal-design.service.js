@@ -28,6 +28,10 @@
                 supplierName: componentDefinition.propertiesByName.supplierName,
                 supplierRating: componentDefinition.propertiesByName.supplierRating,
                 courseRating: componentDefinition.propertiesByName.courseRating,
+                country: componentDefinition.propertiesByName.country,
+                userCountRatedForSupplier: componentDefinition.propertiesByName.userCountRatedForSupplier,
+                userCountRatedForCourse: componentDefinition.propertiesByName.userCountRatedForCourse,
+                costAvailableOnDemand: componentDefinition.propertiesByName.costAvailableOnDemand,
                 costPerHoursSuffix: componentDefinition.propertiesByName.costPerHoursSuffix,
                 totalCostPerHoursSuffix: componentDefinition.propertiesByName.totalCostPerHoursSuffix,
                 durationSuffix: componentDefinition.propertiesByName.durationSuffix,
@@ -58,6 +62,7 @@
                 secondDropDownSortingField: componentDefinition.propertiesByName.secondDropDownSortingField,
                 thirdDropDownRecordDefinition: componentDefinition.propertiesByName.thirdDropDownRecordDefinition,
                 thirdDropDownDisplayField: componentDefinition.propertiesByName.thirdDropDownDisplayField,
+                thirdDropDownInfoGuid: componentDefinition.propertiesByName.thirdDropDownInfoGuid,
                 fourthDropDownRecordDefinition: componentDefinition.propertiesByName.fourthDropDownRecordDefinition,
                 fourthDropDownDisplayField: componentDefinition.propertiesByName.fourthDropDownDisplayField,
                 fourthDropDownStoredField: componentDefinition.propertiesByName.fourthDropDownStoredField,
@@ -110,6 +115,30 @@
                             group: 'Card',
                             index: 5
                         },
+                        country: {
+                            label: 'Country',
+                            type: 'com-vyom-vyomlib-inspector-learning-portal-fields',
+                            group: 'Card',
+                            index: 6
+                        },
+                        userCountRatedForSupplier: {
+                            label: 'User Count Who Rated For Supplier',
+                            type: 'com-vyom-vyomlib-inspector-learning-portal-fields',
+                            group: 'Card',
+                            index: 7
+                        },
+                        userCountRatedForCourse: {
+                            label: 'User Count Who Rated For Course',
+                            type: 'com-vyom-vyomlib-inspector-learning-portal-fields',
+                            group: 'Card',
+                            index: 8
+                        },
+                        costAvailableOnDemand: {
+                            label: 'Cost Available On Demand',
+                            type: 'com-vyom-vyomlib-inspector-learning-portal-fields',
+                            group: 'Card',
+                            index: 9
+                        },
                         costPerHoursSuffix: {
                             label: 'Cost Per Hours Suffix',
                             type: 'rx-inspector-expression-node-field',
@@ -118,7 +147,7 @@
                                 placement: "left"
                             },
                             group: 'Card',
-                            index: 6
+                            index: 10
                         },
                         totalCostPerHoursSuffix: {
                             label: 'Total Cost Per Hours Suffix',
@@ -128,7 +157,7 @@
                                 placement: "left"
                             },
                             group: 'Card',
-                            index: 7
+                            index: 11
                         },
                         durationSuffix: {
                             label: 'Duration Suffix',
@@ -138,13 +167,13 @@
                                 placement: "left"
                             },
                             group: 'Card',
-                            index: 8
+                            index: 12
                         },
                         FilterExp: {
                             label: 'Filter',
                             type: 'rx-inspector-expression-node-field',
                             group: 'Card',
-                            index: 9
+                            index: 13
                         },
 
 
@@ -299,60 +328,66 @@
                             index: 7
                         },
                         thirdDropDownRecordDefinition: {
-                            label: 'thirdDropDownRecordDefinition (Delivery Method)',
+                            label: 'Delivery Method RecordDefinition',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
                             index: 8
                         },
 
                         thirdDropDownDisplayField: {
-                            label: 'thirdDropDownDisplayField',
+                            label: 'Delivery Method DisplayField',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
                             index: 9
+                        },
+                        thirdDropDownInfoGuid: {
+                            label: 'Delivery Method Info (button guid)',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DropDown',
+                            index: 10
                         },
                         fourthDropDownRecordDefinition: {
                             label: 'Supplier Rating Record Definition (Supplier Rating)',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 10
+                            index: 11
                         },
                         fourthDropDownDisplayField: {
                             label: 'Supplier Rating DisplayField',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 11
+                            index: 12
                         },
                         fourthDropDownStoredField: {
                             label: 'Supplier Rating StoredField',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 12
+                            index: 13
                         },
                         fifthDropDownRecordDefinition: {
                             label: 'Course Rating Record Definition (Course Rating)',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 13
+                            index: 14
                         },
 
                         fifthDropDownDisplayField: {
                             label: 'Course Rating DisplayField',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 14
+                            index: 15
                         },
                         fifthDropDownStoredField: {
                             label: 'Course Rating StoredField',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 15
+                            index: 16
                         },
                         sixthDropDownRecordDefinition: {
                             label: 'Sort By RecordDefinition (Sort By)',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 16
+                            index: 17
                         },
 
                         sixthDropDownDisplayField: {
@@ -363,7 +398,7 @@
                                 placement: "left"
                             },
                             group: 'DropDown',
-                            index: 17
+                            index: 18
                         },
                         sixthDropDownStoredField: {
                             label: 'Sort By Stored Value Field',
@@ -373,7 +408,7 @@
                                 placement: "left"
                             },
                             group: 'DropDown',
-                            index: 18
+                            index: 19
                         },
                     }
                 },

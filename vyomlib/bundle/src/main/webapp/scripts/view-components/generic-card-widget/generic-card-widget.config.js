@@ -18,18 +18,16 @@
               type: 'string',
               isConfig: true,
               isProperty: false,
-              enableExpressionEvaluation: false,
+              // enableExpressionEvaluation: false,
             }, {
               name: 'fieldId',
               type: 'string',
               isConfig: true,
               isProperty: false,
-              enableExpressionEvaluation: true
             }, {
               name: 'count',
               isConfig: true,
               type: "string",
-              enableExpressionEvaluation: true,
               defaultValue: '0'
             }, {
               name: 'actionguid',
@@ -38,7 +36,6 @@
               name: 'note',
               isConfig: true,
               type: "string",
-              enableExpressionEvaluation: true
             }, {
               name: 'Color',
               isRequired: true,
@@ -46,7 +43,12 @@
             }, {
               name: 'header',
               isConfig: true,
-              enableExpressionEvaluation: true,
+            }, {
+              name: 'tooltip',
+              isConfig: true,
+            }, {
+              name: 'tooltipConfig',
+              isConfig: true,
             }, {
               name: 'perRowCardLength',
               isConfig: true,

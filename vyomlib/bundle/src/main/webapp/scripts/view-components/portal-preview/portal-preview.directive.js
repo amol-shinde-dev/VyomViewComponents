@@ -94,7 +94,20 @@
                             $scope.CategoryColor = _config.CategoryColor;
 
                             //DataSets
-                            $scope.query = "";
+                            $scope.searchbox = {};
+
+                            $scope.suggestionData = [];
+                            $scope.dataSet1Label = _config.dataSet1Label;
+                            $scope.dataset1 = _config.dataset1; // rec def
+                            $scope.dataset1searchfield = _config.dataset1searchfield;
+                            $scope.dataset1displayfield = _config.dataset1displayfield;
+                            $scope.dataset1urlfield = _config.dataset1urlfield;
+                            $scope.dataSet2Label = _config.dataSet2Label;
+                            $scope.dataset2 = _config.dataset2; //recdef
+                            $scope.dataset2searchfield = _config.dataset2searchfield;
+                            $scope.dataset2displayfield = _config.dataset2displayfield;
+                            $scope.dataset2urlfield = _config.dataset2urlfield;
+
 
 
                             //User
@@ -152,21 +165,19 @@
 
                         }
 
-                        $scope.getDataSet = function (datasetname, fieldvalues, datasetflag) {
-                            var fieldvalues = fieldvalues == undefined ? "" : fieldvalues;
-                            if (datasetname) {
-                                var foo = rxRecordInstanceDataPageResource.withName(datasetname);
-                                var queryParams = {
-                                    propertySelection: "1,2,3,4,5,6,7,8,179," + fieldvalues,
-                                };
+                        $scope.getDataSet = function (datasetrecname, datasetobjectname, datasetsearchfield) {
+                            console.log(datasetrecname + "," + datasetobjectname + "," + datasetsearchfield);
+                            if (datasetrecname) {
+                                var foo = rxRecordInstanceDataPageResource.withName(datasetrecname);
+                                var queryParams = {};
 
-                                foo.get(200, 0, queryParams).then(
+                                foo.get(200, 0, {
+                                    queryExpression: "'" + datasetsearchfield + "' LIKE " + '"%' + $scope.searchbox.query + '%"'
+                                }).then(
                                     function (allRecords) {
-                                        if (datasetflag === 'first') {
-                                            $scope.firstdataset = allRecords.data;
-                                        } else {
-                                            $scope.seconddataset = allRecords.data;
-                                        }
+
+                                        $scope.suggestionData[datasetobjectname] = allRecords.data;
+                                        console.log($scope.suggestionData);
 
                                     }
                                 );
@@ -416,8 +427,12 @@
                                     function (record) {
 
                                         record.setValue($scope.cardVisible, isCardVisible == "true" ? "false" : "true");
-                                        record.put();
-                                        $scope.getCardList();
+                                        record.put().then(function () {
+                                            $scope.getCardList();
+
+                                        });
+
+
                                         rxNotificationMessage.success("Saved Successfully!!");
 
                                     }
@@ -514,27 +529,25 @@
                         $scope.opensearchmodal = function (value) {
                             if (value == "" || value == null) {
                                 $element.find(".portalmodalcontainer").hide();
+                            } else if (value == "closed") {
+                                $element.find(".portalmodalcontainer").hide();
                             } else {
                                 $element.find(".portalmodalcontainer").show();
                             }
                         }
 
-                        $scope.intializesearch = function (searchtext) {
-                            $scope.query = searchtext;
-                            $scope.filterCurrentCategoryOrSearchText($scope.query, 'Search');
+                        $scope.intializesearch = function (searchtext, dataseturl) {
+                            dataseturl ? window.open(dataseturl, '_blank') : "";
+                            $scope.searchbox.query = searchtext;
+                            $scope.filterCurrentCategoryOrSearchText($scope.searchbox.query, 'Search');
+                            $scope.opensearchmodal("closed");
                         }
 
                         $scope.filtersearchboxapplication = function (obj) {
                             return (obj[$scope.ApplicationName]).toLowerCase().match($scope.query.toLowerCase());
                         }
 
-                        $scope.filtersearchboxdataset1 = function (obj) {
 
-                            return (obj[$scope.dataset1searchfield] == undefined ? "" : obj[$scope.dataset1searchfield]).toLowerCase().match($scope.query.toLowerCase());
-                        }
-                        $scope.filtersearchboxdataset2 = function (obj) {
-                            return (obj[$scope.dataset2searchfield] == undefined ? "" : obj[$scope.dataset2searchfield]).toLowerCase().match($scope.query.toLowerCase());
-                        }
 
                         function refreshCards(params) {
 
@@ -551,7 +564,7 @@
                             property: 'api',
                             newValue: $scope.rxConfiguration.api
                         });
-
+                        //ng-change="getDataSet(dataset1, 'first',dataset1searchfield);getDataSet(dataset2, 'second',dataset2searchfield);opensearchmodal(searchbox.query)"
                         $scope.getUserApplicationQuery();
 
                     }

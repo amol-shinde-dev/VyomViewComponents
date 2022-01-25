@@ -13,7 +13,7 @@
 <body>
   <div class="all-content-wrapper" style="display: flex;flex-wrap: wrap">
 
-    <div class="{{perRowCardLength}} col-xs-12" style="padding: 1px;display: flex;" ng-repeat="x in textData">
+    <div class="{{perRowCardLength}} col-xs-12" style="padding: 3px;display: flex;" ng-repeat="x in textData">
       <div class="analytics-sparkle-line reso-mg-b-30 w3-{{Color}}" style="display: flex;flex-direction: column;flex:1" tabindex="0">
         <div class="analytics-content" style="display: flex;justify-content: space-between;gap: 5px;" ng-click="setSelectedCardInstanceId(x[179]);executeAction(actionguid);" role="button">
           <div style="display: flex;flex-direction: column;flex: 1;">
@@ -24,6 +24,11 @@
           <div style="display: flex;flex-direction: column;" ng-init="fetchPicture(x[179])">
             <img style="height: 110px;" src="{{pictureData[x[179]]}}">
           </div>
+        </div>
+        <div class="analytics-content" ng-style="{display: tooltipConfig === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: auto">
+          <p class="d-icon-info_circle" style="font-size: small;margin: 5px;">
+            <span class="col-lg-10 col-md-9 col-xs-9 tooltiptext">{{x[tooltip]}}</span>
+          </p>
         </div>
       </div>
     </div>

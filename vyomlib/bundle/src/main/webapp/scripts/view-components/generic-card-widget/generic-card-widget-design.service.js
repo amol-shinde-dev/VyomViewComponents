@@ -22,12 +22,13 @@
           recordDefinition: componentDefinition.propertiesByName.recordDefinition,
           fieldId: componentDefinition.propertiesByName.fieldId,
           count: componentDefinition.propertiesByName.count,
-
           actionguid: componentDefinition.propertiesByName.actionguid,
 
           note: componentDefinition.propertiesByName.note,
           Color: componentDefinition.propertiesByName.Color,
           header: componentDefinition.propertiesByName.header,
+          tooltipConfig: componentDefinition.propertiesByName.tooltipConfig,
+          tooltip: componentDefinition.propertiesByName.tooltip,
           perRowCardLength: componentDefinition.propertiesByName.perRowCardLength,
           recordInstanceId1: componentDefinition.propertiesByName.recordInstanceId1,
         };
@@ -42,44 +43,56 @@
                 label: 'Record Definition Name',
                 type: 'rx-inspector-definition-picker',
                 definitionType: RX_DEFINITION_PICKER.definitionTypes.regularRecord.type,
-                group: 'General',
+                group: 'filed',
                 index: 1
               },
               fieldId: {
-                label: 'Attachment Field',
+                label: 'Image',
                 type: 'com-vyom-vyomlib-inspector-generic-card-widget-attachment',
-                group: 'General',
+                group: 'filed',
                 index: 2
               },
               header: {
-                label: 'header',
+                label: 'Header',
                 type: 'com-vyom-vyomlib-inspector-generic-card-widget-fields',
-                group: 'General',
+                group: 'filed',
                 index: 3
               },
               count: {
-                label: 'count',
+                label: 'Count',
                 type: 'com-vyom-vyomlib-inspector-generic-card-widget-fields',
-                group: 'General',
+                group: 'filed',
                 index: 4
               },
               note: {
-                label: 'note',
+                label: 'Note',
                 type: 'com-vyom-vyomlib-inspector-generic-card-widget-fields',
-                group: 'General',
+                group: 'filed',
                 index: 5
+              },
+              tooltip: {
+                label: 'Tooltip',
+                type: 'com-vyom-vyomlib-inspector-generic-card-widget-fields',
+                group: 'filed',
+                index: 5
+              },
+              tooltipConfig: {
+                label: 'Tooltip',
+                type: 'com-vyom-vyomlib-inspector-generic-card-widget-tooltip',
+                group: 'General',
+                inedex: 1
               },
               Color: {
                 label: 'Color',
                 type: 'com-vyom-vyomlib-inspector-generic-card-widget-bgcolor',
                 group: 'General',
-                index: 6
+                index: 2
               },
               actionguid: {
                 label: 'Action Button Guid',
                 type: 'rx-inspector-expression-node-field',
                 group: 'General',
-                index: 7
+                index: 3
               },
               perRowCardLength: {
                 label: 'Row Wise Cards',
@@ -99,7 +112,7 @@
                 }],
                 defaultValue: "col-lg-4 col-md-4 col-sm-4",
                 group: 'General',
-                index: 8
+                index: 4
               },
             }
           },
@@ -108,6 +121,10 @@
               label: 'General',
               index: 1
             },
+            filed: {
+              lable: 'Field Configuration',
+              index: 2
+            }
           }
         };
       }

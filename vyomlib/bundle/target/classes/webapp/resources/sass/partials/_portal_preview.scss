@@ -118,9 +118,14 @@ com-vyom-vyomlib-portal-preview {
 
 .portalmodalcontainer {
     position: absolute;
-    width: 100%;
+    width: 75%;
+    max-height: 300px;
+    color: black;
+    text-shadow: none;
+    margin-top: -15rem;
+    margin-left: 34%;
     text-align: left;
-    margin-top: -1px;
+    
     z-index: 989;
     cursor: default;
     -webkit-user-select: none;

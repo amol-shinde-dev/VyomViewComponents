@@ -4,7 +4,7 @@
         $("#myCarousel").carousel();
     });
     $(function() {
-        $('[data-toggle="popover"]').popover()
+        $('[data-toggle="tooltip"]').tooltip()
     })
 
 </script>
@@ -55,6 +55,7 @@
     </div>
 
 
+
     <div class="container-fluid " style="padding-bottom: 5px; padding-top: 10px">
          
         <div class="d-flex flex-row" style="justify-content: center;">
@@ -62,7 +63,7 @@
             <div class="p-2 bd-highlight dropdown">
                 <span style="display: inline-block">
                     <label style="display: block" class="w3-text-black">Country:</label>
-                    <input type="text" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Country" ng-model="dropdown.selectedDisplayValue2" ng-change="getRegionDropDownData(dropdown.selectedDisplayValue2)" ng-keyup="getRegionDropDownData(dropdown.selectedDisplayValue2)" autocomplete="off">
+                    <input type="text" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Country" ng-model="dropdown.selectedDisplayValue2" ng-change="getRegionDropDownData(dropdown.selectedDisplayValue2)" ng-keyup="getRegionDropDownData(dropdown.selectedDisplayValue2)" ng-click="getRegionDropDownData('')" autocomplete="dropdownMenuButton2">
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2" style="margin-left: 10px;width:auto;margin-right: 10px;max-height: 150px;overflow: auto;">
                         <li class="">
                             <a href ng-click="dropdown.selectedValue2=d2[secondDropDownStoredField];dropdown.selectedDisplayValue2=d2[secondDropDownDisplayField];filterCurrentCategoryOrSearchText();" ng-repeat="d2 in dropDownDataSet.regionData " class="w3-small w3-hover-black" style="height: 3rem;">{{d2[secondDropDownDisplayField]}}
@@ -71,12 +72,16 @@
 
                     </ul>
                 </span>
+
             </div>
 
             <div class="p-2 bd-highlight dropdown">
                 <span style="display: inline-block">
-                    <label style="display: block" class="w3-text-black">Delivery Method:</label>
-                    <input type="text" id="dropdownMenuButton3" ng-model="dropdown.selectedValue3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Delivery Method" autocomplete="off">
+                    <label style="display: block" class="w3-text-black">Delivery Method:
+                        <!--                        <span class="d-icon-question_circle_o" tooltip-append-to-body="true" tooltip-placement="right" uib-tooltip-html="deliveryMethodInfo.text"></span>-->
+                        <span class="d-icon-question_circle_o" ng-click="executeAction(deliveryMethodInfoGuid);"></span>
+                    </label>
+                    <input type="text" id="dropdownMenuButton3" ng-model="dropdown.selectedValue3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Delivery Method" autocomplete="dropdownMenuButton3">
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3" style="margin-left: 10px;width:auto;margin-right: 10px;max-height: 150px;overflow: auto;">
                         <li class="">
                             <a href ng-click="dropdown.selectedValue3=d3[thirdDropDownDisplayField];filterCurrentCategoryOrSearchText();" ng-repeat="d3 in dropDownDataSet.deliveryData " class="w3-small w3-hover-black" style="height: 3rem;">{{d3[thirdDropDownDisplayField]}}</a>
@@ -84,6 +89,7 @@
 
                     </ul>
                 </span>
+
             </div>
 
             <div class="p-2 bd-highlight dropdown">
@@ -97,6 +103,7 @@
 
                     </ul>
                 </span>
+
             </div>
 
             <div class="p-2 bd-highlight dropdown">
@@ -110,13 +117,14 @@
 
                     </ul>
                 </span>
+
             </div>
 
             <div class="p-2 bd-highlight dropdown">
                 <span style="display: inline-block">
                     <label style="display: block" class="w3-text-black">Supplier Name:</label>
 
-                    <input type="text" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Supplier Name" ng-model="dropdown.selectedValue1" ng-change="getSupplierDropDownData(dropdown.selectedValue1);dropdown.selectedDisplayValue4='';" ng-keyup="getSupplierDropDownData(dropdown.selectedValue1);dropdown.selectedDisplayValue4='';" ng-disabled="dropdown.selectedDisplayValue4" autocomplete="off">
+                    <input type="text" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Supplier Name" ng-model="dropdown.selectedValue1" ng-change="getSupplierDropDownData(dropdown.selectedValue1);dropdown.selectedDisplayValue4='';" ng-keyup="getSupplierDropDownData(dropdown.selectedValue1);dropdown.selectedDisplayValue4='';" ng-disabled="dropdown.selectedDisplayValue4" ng-click="getSupplierDropDownData('')" autocomplete="off">
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="margin-left: 10px;width:auto;margin-right: 10px;max-height: 150px;overflow: auto;">
 
                         <li class="">
@@ -127,6 +135,7 @@
 
                     </ul>
                 </span>
+
             </div>
 
 
@@ -143,6 +152,7 @@
                         </li>
                     </ul>
                 </span>
+
             </div>
 
 
@@ -151,8 +161,11 @@
         </div>
 
     </div>
-
-
+    <div ng-if="cardList.length" class="container-fluid">
+        <div class="w3-right">
+            <span>showing 1 - {{getLimit()}} out of {{totalSize}} results</span>
+        </div>
+    </div>
     <div class="content hideme">
         <div class="container-fluid">
             <div class="row" id="reverse" cg-busy="{promise:cardListDataPromise, delay:200}" ng-init="limit">
@@ -176,11 +189,26 @@
                                     <span class="d-icon-users"></span>
                                     <span>{{x[supplierName]}}</span>
                                 </p>
-
+                                <!-- scopes-->
+                                <p ng-if="x[country]" class="card-category">
+                                    <span class="d-icon-mapmarker"></span>
+                                    <span>{{x[country]}}</span>
+                                </p>
+                                <p ng-if="!x[country]" class="card-category">
+                                    <span class="d-icon-internet"></span>
+                                    <span>Global</span>
+                                </p>
+                                <!-- end scope-->
                             </div>
 
                             <p class="card-category" style="" ng-if="x[getFieldIdFromName(dropdown.selectedValue2+'-'+dropdown.selectedValue3+''+totalCostPerHoursSuffix)]">
-                                $ {{x[getFieldIdFromName(dropdown.selectedValue2+'-'+dropdown.selectedValue3+''+totalCostPerHoursSuffix)]}}
+                                <span ng-if="!x[costAvailableOnDemand]">
+                                    {{x[getFieldIdFromName(dropdown.selectedValue2+'-'+dropdown.selectedValue3+''+totalCostPerHoursSuffix)] | currency}}
+                                </span>
+                                <span ng-if="x[costAvailableOnDemand]">
+                                    <span class="d-icon-service_desk" style="margin-right: 5px"></span>
+                                    <span>{{x[costAvailableOnDemand]}}</span>
+                                </span>
                             </p>
 
 
@@ -190,7 +218,7 @@
                             <div class="stats">
                                 <div class="card-category" ng-init="generateRating(x[supplierRating],x[179],'supplier')">
                                     <span ng-repeat="star in supplierRatingObj[x[179]] track by $index" class="{{star.icon}}" style="{{star.style}}"></span>
-                                    <a class="d-button_link">(Supplier Rating)</a>
+                                    <a class="d-button_link">Supplier Rating <em ng-if="x[userCountRatedForSupplier]">({{numFormatter(x[userCountRatedForSupplier])}})</em></a>
                                 </div>
 
                             </div>
@@ -198,7 +226,7 @@
                             <div class="stats">
                                 <div class="card-category" ng-init="generateRating(x[courseRating],x[179],'course')">
                                     <span ng-repeat="star in courseRatingObj[x[179]] track by $index" class="{{star.icon}}" style="{{star.style}}"></span>
-                                    <a class="d-button_link">(Course Rating)</a>
+                                    <a class="d-button_link">Course Rating <em ng-if="x[userCountRatedForCourse]">({{numFormatter(x[userCountRatedForCourse])}})</em></a>
                                 </div>
                             </div>
 

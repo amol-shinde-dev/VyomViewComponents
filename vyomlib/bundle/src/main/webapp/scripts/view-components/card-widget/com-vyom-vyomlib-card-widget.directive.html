@@ -4,13 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Card View</title>
+  <title>Card widget View</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!--<link rel="stylesheet" href="/com.vyom.vyomlib/resources/service health dashboard/style.css">
-
-<link rel="stylesheet" href="/com.vyom.vyomlib/resources/service health dashboard/responsive.css">-->
 </head>
 
 <body>
@@ -18,16 +15,16 @@
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding: 1px;display: flex;">
       <div class="analytics-sparkle-line reso-mg-b-30 w3-{{Color1}}" style="display: flex;flex-direction: column;flex:1" tabindex="0">
         <div class="analytics-content" style="display: flex;flex-direction: row;justify-content: space-between" ng-click="callAction('Saction')" role="button">
-          <div style="display: flex;flex-direction: column;">
-            <h3 style="font-size: 1.2em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{rxConfiguration.propertiesByName.count1 | comVyomVyomlibMyFilter}}</h3>
+          <div style="display: flex;flex-direction: column;flex: 1;">
+            <h3 style="font-size:{{countSize}}em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{rxConfiguration.propertiesByName.count1 | comVyomVyomlibMyFilter}}</h3>
             <h4 style="font-size: 1.5em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{header1}}</h4>
             <p>{{note1}}</p>
           </div>
-          <div style="display: flex;flex-direction: column;">
-            <img class="w3-image" style="height: 110px;" src="{{pictureData1}}">
+          <div style="display: flex;flex-direction: column;flex: 0 0 120px;">
+            <img style="height: {{imageHeight}}px;width: {{imageWidth}}px" src="{{pictureData1}}">
           </div>
         </div>
-        <div class="analytics-content" style="display: flex;flex-direction: row;margin-top: auto">
+        <div class="analytics-content" ng-style="{display: tooltip === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: auto">
           <p class="d-icon-info_circle" style="font-size: small;margin: 5px;">
             <span class="col-lg-11 col-md-10 col-xs-10 tooltiptext">{{tooltip1}}</span>
           </p>
@@ -37,16 +34,16 @@
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding: 1px;display: flex;">
       <div class="analytics-sparkle-line reso-mg-b-30 w3-{{Color2}}" style="display: flex;flex-direction: column;flex:1" tabindex="0">
         <div class="analytics-content" style="display: flex;flex-direction: row;justify-content: space-between" ng-click="callAction('Iaction')" role="button">
-          <div style="display: flex;flex-direction: column;">
-            <h3 style="font-size: 1.2em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{rxConfiguration.propertiesByName.count2 | comVyomVyomlibMyFilter}}</h3>
+          <div style="display: flex;flex-direction: column;flex: 1;">
+            <h3 style="font-size:{{countSize}}em;color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{rxConfiguration.propertiesByName.count2 | comVyomVyomlibMyFilter}}</h3>
             <h4 style="font-size: 1.5em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{header2}}</h4>
             <p>{{note2}}</p>
           </div>
-          <div style="display: flex;flex-direction: column;">
-            <img class="w3-image" style="height: 110px;" src="{{pictureData2}}">
+          <div style="display: flex;flex-direction: column;flex: 0 0 120px;">
+            <img style="height: {{imageHeight}}px;width: {{imageWidth}}px" src="{{pictureData2}}">
           </div>
         </div>
-        <div class="analytics-content" style="display: flex;flex-direction: row;margin-top: auto">
+        <div class="analytics-content" ng-style="{display: tooltip === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: auto">
           <p class="d-icon-info_circle" style="font-size: small;margin: 5px;">
             <span class="col-lg-11 col-md-10 col-xs-10 tooltiptext">{{tooltip2}}</span>
           </p>
@@ -56,16 +53,16 @@
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding: 1px;display: flex;">
       <div class="analytics-sparkle-line reso-mg-b-30 w3-{{Color3}}" style="display: flex;flex-direction: column;flex:1" tabindex="0">
         <div class="analytics-content" style="display: flex;flex-direction: row;justify-content: space-between" ng-click="callAction('Caction')" role="button">
-          <div style="display: flex;flex-direction: column;">
-            <h3 style="font-size: 1.2em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{rxConfiguration.propertiesByName.count3 | comVyomVyomlibMyFilter}}</h3>
+          <div style="display: flex;flex-direction: column;flex: 1;">
+            <h3 style="font-size:{{countSize}}em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{rxConfiguration.propertiesByName.count3 | comVyomVyomlibMyFilter}}</h3>
             <h4 style="font-size: 1.5em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{header3}}</h4>
             <p>{{note3}}</p>
           </div>
-          <div style="display: flex;flex-direction: column;">
-            <img class="w3-image" style="height: 110px;" src="{{pictureData3}}">
+          <div style="display: flex;flex-direction: column;flex: 0 0 120px;">
+            <img style="height: {{imageHeight}}px;width: {{imageWidth}}px" src="{{pictureData3}}">
           </div>
         </div>
-        <div class="analytics-content" style="display: flex;flex-direction: row;margin-top: auto">
+        <div class="analytics-content" ng-style="{display: tooltip === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: auto">
           <p class="d-icon-info_circle" style="font-size: small;margin: 5px;">
             <span class="col-lg-11 col-md-10 col-xs-10 tooltiptext">{{tooltip3}}</span>
           </p>

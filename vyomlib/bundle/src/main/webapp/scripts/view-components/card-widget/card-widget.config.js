@@ -4,9 +4,9 @@
     .config(function (rxViewComponentProvider) {
       rxViewComponentProvider.registerComponent([
         {
-          name: 'Card Widget',
+          name: 'Responsive Card Widget',
           group: 'vyomlib',
-          icon: 'layout_preview',
+          icon: 'widget',
           type: 'com-vyom-vyomlib-card-widget',
           designType: 'com-vyom-vyomlib-card-widget-design',
           designManagerService: 'comVyomVyomlibCardWidgetDesign',
@@ -14,6 +14,13 @@
           canBeEmbeddedInRecordEditor: true,
           propertiesByName: [
             {
+              name: 'countSize',
+              // isProperty: true,
+              isConfig: true,
+              type: "number",
+              enableExpressionEvaluation: true,
+              defaultValue: 1
+            }, {
               name: 'count1',
               isProperty: true,
               isConfig: true,
@@ -39,8 +46,7 @@
               isConfig: true,
               type: "string",
               enableExpressionEvaluation: true
-            },
-            {
+            }, {
               name: 'actionguid2',
               isConfig: true,
               type: "string",
@@ -50,20 +56,20 @@
               isConfig: true,
               type: "string",
               enableExpressionEvaluation: true
-            },
-            {
+            }, {
+              name: 'tooltip',
+              isConfig: true,
+            }, {
               name: 'tooltip1',
               isConfig: true,
               type: "string",
               enableExpressionEvaluation: true,
-            },
-            {
+            }, {
               name: 'tooltip2',
               isConfig: true,
               type: "string",
               enableExpressionEvaluation: true,
-            },
-            {
+            }, {
               name: 'tooltip3',
               isConfig: true,
               type: "string",
@@ -116,29 +122,39 @@
               isConfig: true,
               isProperty: false,
               enableExpressionEvaluation: false,
-            },
-            {
+            }, {
               name: 'fieldId',
               type: 'string',
               isConfig: true,
               isProperty: false,
               enableExpressionEvaluation: true
-            },
-            {
+            }, {
+              name: 'imageHeight',
+              type: 'number',
+              isConfig: true,
+              isProperty: false,
+              enableExpressionEvaluation: true,
+              defaultValue: 100
+            }, {
+              name: 'imageWidth',
+              type: 'number',
+              isConfig: true,
+              isProperty: false,
+              enableExpressionEvaluation: true,
+              defaultValue: 100
+            }, {
               name: 'recordInstanceId1',
               type: 'string',
               isConfig: true,
               isProperty: false,
               enableExpressionEvaluation: true
-            },
-            {
+            }, {
               name: 'recordInstanceId2',
               type: 'string',
               isConfig: true,
               isProperty: false,
               enableExpressionEvaluation: true
-            },
-            {
+            }, {
               name: 'recordInstanceId3',
               type: 'string',
               isConfig: true,

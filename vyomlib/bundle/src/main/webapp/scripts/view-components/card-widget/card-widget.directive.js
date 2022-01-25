@@ -17,11 +17,11 @@
 
             var init = function () {
               _config = $scope.rxConfiguration.propertiesByName;
-              // $scope.recordDefinition = _config.recordDefinition;
-              // $scope.fieldId = _config.fieldId;
+
               $scope.recordInstanceId1 = _config.recordInstanceId1;
               $scope.recordInstanceId2 = _config.recordInstanceId2;
               $scope.recordInstanceId3 = _config.recordInstanceId3;
+              $scope.countSize = _config.countSize;
               $scope.count1 = _config.count1;
               $scope.count2 = _config.count2;
               $scope.count3 = _config.count3;
@@ -38,13 +38,20 @@
               $scope.header2 = _config.header2;
               $scope.header3 = _config.header3;
 
+              $scope.tooltip = _config.tooltip;
               $scope.tooltip1 = _config.tooltip1,
                 $scope.tooltip2 = _config.tooltip2,
                 $scope.tooltip3 = _config.tooltip3,
 
+                $scope.imageHeight = _config.imageHeight,
+                $scope.imageWidth = _config.imageWidth,
                 $scope.pictureData1 = '';
               $scope.pictureData2 = '';
               $scope.pictureData3 = '';
+
+              $scope.myObj = {
+                "font-size": $scope.countSize,
+              }
 
               var fetchPicture = function (instanceId, imageNumber) {
                 var _configuration = $scope.rxConfiguration.propertiesByName;
