@@ -74,6 +74,10 @@
                             return b;
                         }
 
+                        $scope.$watch("rxConfiguration.propertiesByName.buttonlabel", function (obj) {
+                            $scope.buttonlabel = obj;
+                        })
+
                         init();
 
                     }

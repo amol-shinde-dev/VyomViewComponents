@@ -39,6 +39,7 @@ designManagerService: 'comVyomVyomlibStarRatingsDesign',
                     stars: componentDefinition.propertiesByName.stars || Number(defaultStarCount),
                     size: componentDefinition.propertiesByName.size || Number(defaultStarSize),
                     font: componentDefinition.propertiesByName.font || Number(defaultFontSize),
+                    expression: componentDefinition.propertiesByName.expression
                 };
             }
 
@@ -86,7 +87,13 @@ designManagerService: 'comVyomVyomlibStarRatingsDesign',
                                 type: 'number', //  set number as editor for stars
                                 group: 'general',
                                 index: 6
-                            }
+                            },
+                            expression: {
+                                label: 'Filter Expression For Data',
+                                type: 'rx-inspector-expression-node-field',
+                                group: 'general',
+                                index: 7
+                            },
                         }
                     },
                     groups: {

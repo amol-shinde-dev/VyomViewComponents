@@ -21,7 +21,7 @@
             cursor: pointer;
             padding: 4px 12px;
             transition: 0.3s;
-            font-size: 30px;
+            /* font-size: 30px; */
             color: white;
 
             /*  font-family:Comic Sans MS;*/
@@ -32,9 +32,23 @@
             }
 
             ;
-
         }
 
+        @media screen and (min-width : 0px) {
+            button.tablinks {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (min-width : 700px) {
+            button.tablinks {
+                font-size: 20px;
+            }
+        }
+
+        .button_hidden {
+            display: none;
+        }
     </style>
 
 </head>
@@ -44,11 +58,11 @@
     <div class="tab w3-{{bgcolor}} w3-{{headerSize}}">
         <button class="tablinks w3-{{bgcolor}} w3-{{headerSize}}" ng-if="cfg.toggleicon=== '1' ? false : true"><img src="/com.vyom.vyomlib/resources/images/img/eric4.png" class="tablinks" alt=""></button>
         <button class="tablinks w3-{{bgcolor}} w3-{{headerSize}}">{{cfg.text}}</button>
-        <button class="tablinks w3-{{bgcolor}} w3-{{headerSize}}">
-            <button1 class="w3-{{bgcolor}} w3-{{headerSize}}"><a href="{{cfg.hyperlink}}">{{cfg.appname}}</a></button1>
-
-        </button>
-
+        <div ng-hide="!cfg.appname">
+            <button class="tablinks w3-{{bgcolor}} w3-{{headerSize}}">
+                <button1 class="w3-{{bgcolor}} w3-{{headerSize}}"><a href="{{cfg.hyperlink}}">{{cfg.appname}}</a></button1>
+            </button>
+        </div>
     </div>
 </body>
 

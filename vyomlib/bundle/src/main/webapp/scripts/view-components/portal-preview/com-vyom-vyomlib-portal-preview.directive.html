@@ -27,7 +27,7 @@
 
                             <div class="row com-ericsson-hilda-medium">
                                 <div class="col-3">
-                                    <h1 style="font-size: 24px;" class="w3-text-{{titleColor}} com-ericsson-hilda-medium">{{Greetings}}<br><br>
+                                    <h1 style="font-size: 24px;" class="w3-text-{{titleColor}} com-ericsson-hilda-medium">{{Greetings}}<br class="brclass"><br>
                                         {{CurrentUserFullName}}</h1>
                                     <p></p>
                                 </div>
@@ -40,7 +40,7 @@
 
                                     <span style="display: block;max-width: 80%;margin: 0 auto;line-height: 1.2;overflow: hidden;text-overflow: ellipsis">
                                         <h3>{{BannerCaption}}</h3>
-                                        <p><em>{{BannerSubCaption}}</em></p>
+                                       <p class="banner-subcaption-para"><em>{{BannerSubCaption}}</em></p>
                                     </span>
                                 </div>
 
@@ -123,7 +123,7 @@
             <div class="p-2 bd-highlight">
                 <span class="d-button_link d-icon-triangle_left" style="margin-right: 10px;font-size: 28px;" ng-click="catbegin = catbegin-6;" ng-hide="catbegin < 6"></span>
             </div>
-            <div class="p-2 bd-highlight" style="" ng-init="catlimit = 6;catbegin=0;">
+            <div class="p-2 bd-highlight" style="display: contents;" ng-init="catlimit = 6;catbegin=0;">
                 <div style="white-space: nowrap;overflow: hidden;display: inline-flex;" id="portalcategorycontainer">
                     <span ng-repeat="cat in CategoryData | limitTo: catlimit:catbegin ">
                         <span ng-repeat="(k,v) in cat">
@@ -140,7 +140,7 @@
             </div>
 
         </div>
-        <div class="d-flex flex-row" style="justify-content: space-between;">
+        <div class="d-flex flex-row" style="justify-content: space-between;margin: 5px;">
 
             <div class="p-2 bd-highlight">
                 <!-- sort-by dropdown -->
@@ -154,16 +154,16 @@
             </div>
 
 
-            <div class="p-2 bd-highlight" style="text-align-last: right">
-                <span class="d-button_link d-icon-heart w3-hover-text-black" ng-class="toggle ? 'w3-text-red' : ''" ng-click="toggle = !toggle; sortByFav();" style="margin-right: 10px;font-size: 22px"></span>
-                <span class="d-button_link d-icon-lines_vertical w3-hover-text-black" ng-click="show_hide_recordGrid('false');" style="margin-right: 10px;font-size: 21px"></span>
-                <span class="d-button_link d-icon-lines w3-hover-text-black" ng-click="show_hide_recordGrid('true');" style="margin-right: 5px;font-size: 21px"></span>
+            <div class="p-2 bd-highlight" style="text-align-last: right;display: flex;">
+                <span class="d-button_link d-icon-heart w3-hover-text-black" ng-class="toggle ? 'w3-text-red' : ''" ng-click="toggle = !toggle; sortByFav();" style="padding: 5px;margin-right: 10px;font-size: 22px"></span>
+                <span class="d-button_link d-icon-lines_vertical w3-hover-text-black" ng-click="show_hide_recordGrid('false');" style="padding: 5px;margin-right: 10px;font-size: 21px"></span>
+                <span class="d-button_link d-icon-lines w3-hover-text-black" ng-click="show_hide_recordGrid('true');" style="padding: 5px;margin-right: 5px;font-size: 21px"></span>
 
             </div>
         </div>
     </div>
 
-    <div class="content hideme">
+    <div class="content hideme" style="margin: 5px;">
         <div class="container-fluid">
             <div class="row" id="reverse" cg-busy="{promise:cardListDataPromise, delay:200}" ng-init="limit">
                 <div class="selector {{perRowCardLength}}" ng-repeat="x in cardList  | limitTo: limit as results ">

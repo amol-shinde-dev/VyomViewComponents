@@ -102,6 +102,13 @@
               isConfig: true,
               isRequired: true
             }, {
+              name: 'headerFontSize',
+              type: 'number',
+              isConfig: true,
+              isProperty: false,
+              enableExpressionEvaluation: true,
+              defaultValue: 24
+            }, {
               name: 'header1',
               isConfig: true,
               enableExpressionEvaluation: true,
@@ -142,6 +149,20 @@
               isProperty: false,
               enableExpressionEvaluation: true,
               defaultValue: 100
+            }, {
+              name: 'imagePosition',
+              type: 'String',
+              isConfig: true,
+              isProperty: false,
+              // enableExpressionEvaluation: true,
+              defaultValue: "center"
+            }, {
+              name: 'noteFontSize',
+              type: 'number',
+              isConfig: true,
+              isProperty: false,
+              enableExpressionEvaluation: true,
+              defaultValue: 12
             }, {
               name: 'recordInstanceId1',
               type: 'string',

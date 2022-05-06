@@ -14,57 +14,59 @@
   <div class="all-content-wrapper" style="display: flex;flex-wrap: wrap">
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding: 1px;display: flex;">
       <div class="analytics-sparkle-line reso-mg-b-30 w3-{{Color1}}" style="display: flex;flex-direction: column;flex:1" tabindex="0">
-        <div class="analytics-content" style="display: flex;flex-direction: row;justify-content: space-between" ng-click="callAction('Saction')" role="button">
-          <div style="display: flex;flex-direction: column;flex: 1;">
-            <h3 style="font-size:{{countSize}}em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{rxConfiguration.propertiesByName.count1 | comVyomVyomlibMyFilter}}</h3>
-            <h4 style="font-size: 1.5em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{header1}}</h4>
-            <p>{{note1}}</p>
+        <div class="analytics-content" style="display: flex;flex-direction: row;justify-content: space-between; margin: 5px;flex-grow: 1;" ng-click="callAction('Saction')" role="button">
+          <div style="display: flex;flex-direction: column;flex: 1;padding-right:10px;">
+            <h3 style="font-size:{{countSize}}em; margin: 0.1em 0em;color: #fff;font-family: 'Carrois Gothic', sans-serif;">{{rxConfiguration.propertiesByName.count1 | comVyomVyomlibMyFilter}}</h3>
+            <h4 style="font-size: {{headerFontSize}}px; color: #fff;margin: 0.1em 0em;font-family: 'Carrois Gothic', sans-serif;">{{header1}}</h4>
+            <p style="font-size: {{noteFontSize}}px;">{{note1}}</p>
+
           </div>
-          <div style="display: flex;flex-direction: column;flex: 0 0 120px;">
-            <img style="height: {{imageHeight}}px;width: {{imageWidth}}px" src="{{pictureData1}}">
+          <div style="display: flex;flex-direction: column;align-items: center;margin-right:8px;justify-content: {{imagePosition}};">
+            <img style="height: {{imageHeight}}px;width: {{imageWidth}}px;" src="{{pictureData1}}">
           </div>
         </div>
-        <div class="analytics-content" ng-style="{display: tooltip === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: auto">
-          <p class="d-icon-info_circle" style="font-size: small;margin: 5px;">
-            <span class="col-lg-11 col-md-10 col-xs-10 tooltiptext">{{tooltip1}}</span>
+        <div class="analytics-content" ng-style="{display: tooltip === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: -20px">
+          <p class="d-icon-info_circle" style="font-size: small;margin: 0px 5px 5px 5px;">
+            <span class="col-lg-10 col-md-10 col-xs-10 tooltiptext">{{tooltip1}}</span>
           </p>
         </div>
       </div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding: 1px;display: flex;">
       <div class="analytics-sparkle-line reso-mg-b-30 w3-{{Color2}}" style="display: flex;flex-direction: column;flex:1" tabindex="0">
-        <div class="analytics-content" style="display: flex;flex-direction: row;justify-content: space-between" ng-click="callAction('Iaction')" role="button">
-          <div style="display: flex;flex-direction: column;flex: 1;">
-            <h3 style="font-size:{{countSize}}em;color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{rxConfiguration.propertiesByName.count2 | comVyomVyomlibMyFilter}}</h3>
-            <h4 style="font-size: 1.5em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{header2}}</h4>
-            <p>{{note2}}</p>
+        <div class="analytics-content" style="display: flex;flex-direction: row;justify-content: space-between; margin: 5px;flex-grow: 1;" ng-click="callAction('Iaction')" role="button">
+          <div style="display: flex;flex-direction: column;flex: 1;padding-right:10px;">
+            <h3 style="font-size:{{countSize}}em;color: #fff;margin: 0.1em 0em;font-family: 'Carrois Gothic', sans-serif;">{{rxConfiguration.propertiesByName.count2 | comVyomVyomlibMyFilter}}</h3>
+            <h4 style="font-size: {{headerFontSize}}px; color: #fff;margin: 0.1em 0em;font-family: 'Carrois Gothic', sans-serif;">{{header2}}</h4>
+            <p style="font-size: {{noteFontSize}}px;">{{note2}}</p>
+
           </div>
-          <div style="display: flex;flex-direction: column;flex: 0 0 120px;">
+          <div style="display: flex;flex-direction: column;align-items: center;margin-right:8px;justify-content: {{imagePosition}};">
             <img style="height: {{imageHeight}}px;width: {{imageWidth}}px" src="{{pictureData2}}">
           </div>
         </div>
-        <div class="analytics-content" ng-style="{display: tooltip === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: auto">
-          <p class="d-icon-info_circle" style="font-size: small;margin: 5px;">
-            <span class="col-lg-11 col-md-10 col-xs-10 tooltiptext">{{tooltip2}}</span>
+        <div class="analytics-content" ng-style="{display: tooltip === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: -20px">
+          <p class="d-icon-info_circle" style="font-size: small;margin: 0px 5px 5px 5px;">
+            <span class="col-lg-10 col-md-10 col-xs-10 tooltiptext">{{tooltip2}}</span>
           </p>
         </div>
       </div>
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="padding: 1px;display: flex;">
       <div class="analytics-sparkle-line reso-mg-b-30 w3-{{Color3}}" style="display: flex;flex-direction: column;flex:1" tabindex="0">
-        <div class="analytics-content" style="display: flex;flex-direction: row;justify-content: space-between" ng-click="callAction('Caction')" role="button">
-          <div style="display: flex;flex-direction: column;flex: 1;">
-            <h3 style="font-size:{{countSize}}em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{rxConfiguration.propertiesByName.count3 | comVyomVyomlibMyFilter}}</h3>
-            <h4 style="font-size: 1.5em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{header3}}</h4>
-            <p>{{note3}}</p>
+        <div class="analytics-content" style="display: flex;flex-direction: row;justify-content: space-between; margin: 5px;flex-grow: 1;" ng-click="callAction('Caction')" role="button">
+          <div style="display: flex;flex-direction: column;flex: 1;padding-right:10px ;">
+            <h3 style="font-size:{{countSize}}em; color: #fff;margin: 0.1em 0em;font-family: 'Carrois Gothic', sans-serif;">{{rxConfiguration.propertiesByName.count3 | comVyomVyomlibMyFilter}}</h3>
+            <h4 style="font-size: {{headerFontSize}}px; color: #fff;margin: 0.1em 0em;font-family: 'Carrois Gothic', sans-serif;">{{header3}}</h4>
+            <p style="font-size: {{noteFontSize}}px;">{{note3}}</p>
           </div>
-          <div style="display: flex;flex-direction: column;flex: 0 0 120px;">
+          <div style="display: flex;flex-direction: column;align-items: center;margin-right:8px;justify-content: {{imagePosition}};">
             <img style="height: {{imageHeight}}px;width: {{imageWidth}}px" src="{{pictureData3}}">
           </div>
         </div>
-        <div class="analytics-content" ng-style="{display: tooltip === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: auto">
-          <p class="d-icon-info_circle" style="font-size: small;margin: 5px;">
-            <span class="col-lg-11 col-md-10 col-xs-10 tooltiptext">{{tooltip3}}</span>
+        <div class="analytics-content" ng-style="{display: tooltip === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: -20px">
+          <p class="d-icon-info_circle" style="font-size: small;margin: 0px 5px 5px 5px;">
+            <span class="col-lg-10 col-md-10 col-xs-10 tooltiptext">{{tooltip3}}</span>
           </p>
         </div>
       </div>

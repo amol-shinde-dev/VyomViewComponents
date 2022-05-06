@@ -61,11 +61,23 @@
                 },
                     {
 
+                        name: 'isRequiredField',
+                        isConfig: true,
+
+                },
+                    {
+
                         name: 'dateOutput',
                         isProperty: true,
 
                 },
-                    
+                    {
+
+                        name: 'currentTimezone',
+                        isProperty: true,
+
+                }
+
                 ]
             };
 

@@ -16,7 +16,7 @@
 
 
 
-                $scope.names = ["blue", "red", "green", "orange", "lime", "gray", "black", "pink", "brown", "dark-grey", "purple", "deep-purple", "indigo", "light-blue", "cyan", "teal", "light-green", "khaki", "yellow", "amber", "deep-orange", "blue-grey", "light-grey"];
+                $scope.names = ["blue", "blue1", "red", "green", "orange", "lime", "gray", "gray1", "gray2", "black", "pink", "brown", "dark-grey", "purple", "deep-purple", "indigo", "light-blue", "cyan", "teal", "light-green", "khaki", "yellow", "amber", "deep-orange", "blue-grey", "light-grey"];
 
 
 

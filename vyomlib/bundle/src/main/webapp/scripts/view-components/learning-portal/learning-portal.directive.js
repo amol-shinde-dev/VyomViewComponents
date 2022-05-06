@@ -338,12 +338,13 @@
 
                             courseSorting = $scope.dropdown.selectedValue6 ? $scope.dropdown.selectedValue6 : $scope.cardSorting;
 
-                            cardQueryExpression += $scope.dropdown.selectedValue1 ? "'" + $scope.supplierName + "'=\"" + $scope.dropdown.selectedValue1 + '" AND' : "";
-                            cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? $scope.country ? "(('" + $scope.country + "'=\"" + $scope.dropdown.selectedDisplayValue2 + '") OR ' : "" : "";
-                            cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? $scope.country ? "('" + $scope.country + "' = $null$)) AND" : "" : "";
-                            cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? "'" + $scope.dropdown.selectedValue2 + "-" + $scope.dropdown.selectedValue3 + "" + $scope.totalCostPerHoursSuffix + "' != \"\" AND" : "";
-                            cardQueryExpression += $scope.dropdown.selectedValue4 ? "'" + $scope.supplierRating + "'" + $scope.dropdown.selectedValue4 + ' AND' : "";
-                            cardQueryExpression += $scope.dropdown.selectedValue5 ? "'" + $scope.courseRating + "'" + $scope.dropdown.selectedValue5 + ' AND' : "";
+                            cardQueryExpression += $scope.dropdown.selectedValue1 ? "'" + $scope.supplierName + "'=\"" + $scope.dropdown.selectedValue1 + '" AND ' : "";
+                            cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? $scope.country ? "('" + $scope.country + "'=\"" + $scope.dropdown.selectedDisplayValue2 + '" OR ' : "" : "";
+                            cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? $scope.country ? "'" + $scope.country + "' = $null$ OR '" + $scope.country + "' = \"\") AND " : "" : "";
+                            cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? "'" + $scope.dropdown.selectedValue2 + "-" + $scope.dropdown.selectedValue3 + "" + $scope.totalCostPerHoursSuffix + "' != \"\" AND " : "";
+
+                            cardQueryExpression += $scope.dropdown.selectedValue4 ? "'" + $scope.supplierRating + "'" + $scope.dropdown.selectedValue4 + ' AND ' : "";
+                            cardQueryExpression += $scope.dropdown.selectedValue5 ? "'" + $scope.courseRating + "'" + $scope.dropdown.selectedValue5 + ' AND ' : "";
 
                             cardQueryExpression += $scope.searchObject.searchQuery ? "'" + $scope.courseName + "' LIKE \"%" + $scope.searchObject.searchQuery + '%" AND' : "";
 

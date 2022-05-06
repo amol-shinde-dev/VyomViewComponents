@@ -6,23 +6,28 @@
       function (comVyomVyomlibNvd3ChartModel,
         rxGUID,
         RX_DEFINITION_PICKER) {
-        function getRxConfig(componentDefinition) {
+        function getRxConfig(componentDefinition, componentDescriptor) {
           return {
             id: componentDefinition.guid || rxGUID.generate(),
             type: componentDefinition.type,
-            rxData: getRxData(componentDefinition),
+            rxData: getRxData(componentDefinition, componentDescriptor),
             rxInspector: getRxInspector()
           };
         }
 
-        function getRxData(componentDefinition) {
+        function getRxData(componentDefinition, componentDescriptor) {
+          var defaultlabeltype = _.find(componentDescriptor.propertiesByName, {
+            name: 'labeltype'
+          }).defaultValue;
           return {
+
             recordDefinitionName: componentDefinition.propertiesByName.recordDefinitionName,
             title: componentDefinition.propertiesByName.title,
             color: componentDefinition.propertiesByName.color,
             height: componentDefinition.propertiesByName.height,
             groupByFieldID: componentDefinition.propertiesByName.groupByFieldID,
             expression: componentDefinition.propertiesByName.expression,
+            labeltype: componentDefinition.propertiesByName.labeltype || defaultlabeltype
           };
         }
 
@@ -70,6 +75,19 @@
                   type: 'rx-inspector-expression-node-field',
                   group: 'general',
                   index: 6
+                },
+                labeltype: {
+                  label: 'Label Type',
+                  type: 'select',
+                  options: [{
+                    value: "number",
+                    content: "Number of records"
+                  }, {
+                    value: "percentage",
+                    content: "Percentage value"
+                  }],
+                  group: 'general',
+                  index: 7
                 },
               }
             },

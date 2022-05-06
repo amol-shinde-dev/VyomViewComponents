@@ -19,7 +19,7 @@
                         name: 'text',
                         isConfig: true,
                         type: "string"
-                },
+                    },
 
 
                     {
@@ -55,8 +55,14 @@
 
                     },
                     {
+
                         name: 'headerSize',
-                        isConfig: true
+                        type: 'string',
+                        isConfig: true,
+                        isProperty: false,
+
+                        defaultValue: "medium"
+
 
 
 

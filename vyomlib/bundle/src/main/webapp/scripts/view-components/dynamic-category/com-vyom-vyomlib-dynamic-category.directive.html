@@ -1,0 +1,26 @@
+<html>
+
+<body>
+
+	 <div style="display: flex;	flex-direction: row; justify-content: space-between;">
+
+		<div class="p-2 bd-highlight">
+			<span class="d-button_link d-icon-triangle_left" style="margin-right: 10px;font-size: {{navHeight}}px;" ng-click="catbegin = catbegin-6;" ng-hide="catbegin < 6"></span>
+		</div>
+		<div ng-init="catlimit = 6;catbegin=0;">
+			<div style="white-space: nowrap;display: inline-flex;flex-wrap: wrap;">
+				<span ng-repeat="data in textData | limitTo: catlimit:catbegin" style="margin: 2px;">
+					<button class="w3-button w3-hover-black w3-round-xxlarge w3-{{CategoryColor}} w3-card mb-3" style="height:100%;max-width: 230px;display: block;white-space: normal;" ng-click="setSelectedCategory(data[CategoryField]);executeAction(actionguid);">{{data[CategoryField]}}</button>
+				</span>
+
+				<button class="w3-button w3-hover-black w3-round-xxlarge w3-{{CategoryColor}} w3-card mb-3" style="height:{{}}px;box-shadow: 2px 0px 0px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%); margin: 2px;" ng-click="setSelectedCategory('All');executeAction(actionguid)">All</button>
+			</div>
+
+		</div>
+		<div class="p-2 bd-highlight">
+			<span class="d-button_link d-icon-triangle_right" style="margin-right: 10px;font-size: {{navHeight}}px;" ng-click="catbegin=catbegin+6;" ng-hide="textData.length <= catbegin"></span>
+		</div>
+	</div>
+</body>
+
+</html>

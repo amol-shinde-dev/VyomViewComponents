@@ -17,7 +17,8 @@
                     var _config;
                     _config = $scope.rxConfiguration.propertiesByName;
                     var eventManager = rxViewComponentEventManager.getInstance($scope);
-                    
+                    var timezone = new Date().getTimezoneOffset();
+                    $scope.isRequiredField = _config.isRequiredField ? "d-textfield_required" : "";
 
                     $scope.data = {
                         date: ""
@@ -92,7 +93,10 @@
                             newValue: new Date($scope.data.date).toISOString()
                         });
 
-                       
+                        eventManager.propertyChanged({
+                            property: 'currentTimezone', // name of the property that changed
+                            newValue: timezone
+                        });
                     }
 
                     //end

@@ -44,8 +44,15 @@
         var defaultImageWidth = _.find(componentDescriptor.propertiesByName, {
           name: 'imageWidth'
         }).defaultValue;
-
-
+        var defaultImagePosition = _.find(componentDescriptor.propertiesByName, {
+          name: 'imagePosition'
+        }).defaultValue;
+        var defaultNoteFontSize = _.find(componentDescriptor.propertiesByName, {
+          name: 'noteFontSize'
+        }).defaultValue;
+        var defaultHeaderFontSize = _.find(componentDescriptor.propertiesByName, {
+          name: 'headerFontSize'
+        }).defaultValue;
         return {
           countSize: componentDefinition.propertiesByName.countSize || defaultcountSize,
           count1: componentDefinition.propertiesByName.count1 || defaultcount1,
@@ -75,6 +82,9 @@
           fieldId: componentDefinition.propertiesByName.fieldId,
           imageHeight: componentDefinition.propertiesByName.imageHeight || defaultImageHeight,
           imageWidth: componentDefinition.propertiesByName.imageWidth || defaultImageWidth,
+          imagePosition: componentDefinition.propertiesByName.imagePosition || defaultImagePosition,
+          noteFontSize: componentDefinition.propertiesByName.noteFontSize || defaultNoteFontSize,
+          headerFontSize: componentDefinition.propertiesByName.headerFontSize || defaultHeaderFontSize,
           recordInstanceId1: componentDefinition.propertiesByName.recordInstanceId1,
           recordInstanceId2: componentDefinition.propertiesByName.recordInstanceId2,
           recordInstanceId3: componentDefinition.propertiesByName.recordInstanceId3
@@ -112,19 +122,47 @@
                 group: 'general',
                 index: 4
               },
+              headerFontSize: {
+                label: 'Header Font size (in px)',
+                type: 'rx-inspector-expression-node-field',
+                group: 'general',
+                index: 5
+              },
+              noteFontSize: {
+                label: 'Note Font size (in px)',
+                type: 'rx-inspector-expression-node-field',
+                group: 'general',
+                index: 6
+              },
               imageHeight: {
                 label: 'Image height (in px)',
                 type: 'rx-inspector-expression-node-field',
                 group: 'general',
-                index: 5
+                index: 7
               },
               imageWidth: {
                 label: 'Image width (in px)',
                 type: 'rx-inspector-expression-node-field',
                 group: 'general',
-                index: 6
+                index: 8
               },
-
+              imagePosition: {
+                label: 'Image position',
+                type: 'rx-inspector-optional-select',
+                options: [{
+                  value: "start",
+                  content: "Start"
+                }, {
+                  value: "center",
+                  content: "Center"
+                }, {
+                  value: "end",
+                  content: "End"
+                }],
+                defaultValue: "center",
+                group: 'general',
+                index: 9
+              },
 
               header1: {
                 label: 'Header 1',

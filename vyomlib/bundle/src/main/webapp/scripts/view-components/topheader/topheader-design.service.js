@@ -13,7 +13,9 @@
 
 
         function getRxData(componentDefinition, componentDescriptor) {
-
+            var defaultHeaderSize = _.find(componentDescriptor.propertiesByName, {
+                name: 'headerSize'
+            }).defaultValue;
 
             return {
 
@@ -23,7 +25,7 @@
                 toggleicon: componentDefinition.propertiesByName.toggleicon,
                 togglefont: componentDefinition.propertiesByName.togglefont,
                 bgcolor: componentDefinition.propertiesByName.bgcolor,
-                headerSize: componentDefinition.propertiesByName.headerSize
+                headerSize: componentDefinition.propertiesByName.headerSize || defaultHeaderSize,
             };
         }
 
@@ -75,30 +77,34 @@
                             label: 'Size',
                             type: 'select',
                             options: [{
+                                value: "",
+                                content: "Default(Clear)"
+                            }, {
                                 value: "tiny",
                                 content: "Tiny"
-                                }, {
+                            }, {
                                 value: "small",
                                 content: "Small"
-                                }, {
+                            }, {
                                 value: "medium",
-                                content: "Medium (Default)"
-                                }, {
+                                content: "Medium"
+                            }, {
                                 value: "large",
                                 content: "Large"
-                                }, {
+                            }, {
                                 value: "xlarge",
                                 content: "Extra Large"
-                                }, {
+                            }, {
                                 value: "xxlarge",
                                 content: "Extra Extra Large"
-                                }, {
+                            }, {
                                 value: "xxxlarge",
                                 content: "Extra Extra Extra Large"
-                                }, {
+                            }, {
                                 value: "jumbo",
                                 content: "Jumbo"
-                                }],
+                            }],
+                            defaultValue: "medium",
                             group: 'general',
                             index: 7
                         }

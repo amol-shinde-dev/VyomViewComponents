@@ -18,7 +18,6 @@
               type: 'string',
               isConfig: true,
               isProperty: false,
-              // enableExpressionEvaluation: false,
             }, {
               name: 'fieldId',
               type: 'string',
@@ -55,7 +54,55 @@
             }, {
               name: 'CardInstanceId',
               isProperty: true,
+            }, {
+              name: 'imageHeight',
+              type: 'number',
+              isConfig: true,
+              isProperty: false,
+              enableExpressionEvaluation: true,
+              defaultValue: 100
+            }, {
+              name: 'imageWidth',
+              type: 'number',
+              isConfig: true,
+              isProperty: false,
+              enableExpressionEvaluation: true,
+              defaultValue: 100
+            }, {
+              name: 'imagePosition',
+              type: 'String',
+              isConfig: true,
+              isProperty: false,
+              defaultValue: "center"
             },
+            {
+              name: 'headerFontSize',
+              type: 'number',
+              isConfig: true,
+              isProperty: false,
+              enableExpressionEvaluation: true,
+              defaultValue: 24
+            },
+            {
+              name: 'noteFontSize',
+              type: 'number',
+              isConfig: true,
+              isProperty: false,
+              enableExpressionEvaluation: true,
+              defaultValue: 13
+            }, {
+              name: 'borderRadius',
+              type: 'number',
+              isConfig: true,
+              isProperty: false,
+              enableExpressionEvaluation: true,
+              defaultValue: 0
+            }, {
+              name: 'categoryFilter',
+              isConfig: true,
+              isProperty: false,
+              enableExpressionEvaluation: true,
+            }
           ]
         }
       ]);

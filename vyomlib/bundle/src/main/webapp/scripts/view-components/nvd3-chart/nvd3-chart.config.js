@@ -52,12 +52,16 @@
               enableExpressionEvaluation: true
             },
             {
-              // You need at least one Output variable to have a custom
-              // refresh method, even if this is not used later in the code.
               name: 'testFlag',
               type: 'string',
               isProperty: true,
               enableExpressionEvaluation: true
+            },
+            {
+              name: 'labeltype',
+              type: 'string',
+              isConfig: true,     // Input parameter
+              defaultValue: 'number'
             }
           ]
         }

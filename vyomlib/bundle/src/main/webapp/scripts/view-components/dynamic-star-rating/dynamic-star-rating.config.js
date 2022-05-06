@@ -14,33 +14,39 @@
                 canBeEmbeddedInRecordEditor: true,
                 // define component properties
                 propertiesByName: [{
-                    name: 'recordDefinitionName',
-                    isConfig: true,
-                    isRequired: true
+                        name: 'recordDefinitionName',
+                        isConfig: true,
+                        isRequired: true
                 }, {
-                    name: 'ratingName',
-                    isConfig: true,
-                    isRequired: true,
-                    enableExpressionEvaluation: true //  the property will be automatically evaluated at runtime and passed to the runtime directive
+                        name: 'ratingName',
+                        isConfig: true,
+                        isRequired: true,
+                        enableExpressionEvaluation: true //  the property will be automatically evaluated at runtime and passed to the runtime directive
                 }, {
-                    name: 'fieldId',
-                    isConfig: true,
-                    isRequired: true
+                        name: 'fieldId',
+                        isConfig: true,
+                        isRequired: true
                 }, {
-                    name: 'stars',
-                    isConfig: true,
-                    isProperty: true, // property will be available for building expressions
-                    isRequired: true,
-                    defaultValue: '5'
+                        name: 'stars',
+                        isConfig: true,
+                        isProperty: true, // property will be available for building expressions
+                        isRequired: true,
+                        defaultValue: '5'
                 }, {
-                    name: 'size',
-                    isConfig: true,
-                    defaultValue: 'fa-3x'
+                        name: 'size',
+                        isConfig: true,
+                        defaultValue: 'fa-3x'
                 }, {
-                    name: 'font',
-                    isConfig: true,
-                    defaultValue: '18'
-                }
+                        name: 'font',
+                        isConfig: true,
+                        defaultValue: '18'
+                },
+                    {
+                        name: 'expression',
+                        isConfig: true,
+                        type: 'string',
+                        enableExpressionEvaluation: true
+                },
                 ]
             };
 

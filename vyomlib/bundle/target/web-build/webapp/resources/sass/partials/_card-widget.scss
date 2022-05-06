@@ -1,5 +1,5 @@
 com-vyom-vyomlib-card-widget,com-vyom-vyomlib-inspector-card-widget-bgcolor,
-com-vyom-vyomlib-generic-card-widget,com-vyom-vyomlib-inspector-generic-card-widget-bgcolor{
+com-vyom-vyomlib-generic-card-widget{
     //media-query
     @media (max-width: 1200px) {
         .analytics-content {
@@ -7517,5 +7517,15 @@ border-color: #d7d7d7 ;
 color: #fff !important;
 background-color:#022461 !important;
 }	
+
+.w3-Gray1{
+color: #fff !important;
+background-color:#242424 !important;
+}
+
+.w3-Gray2{
+color: #fff !important;
+background-color:#767676 !important;
+}
     
 }

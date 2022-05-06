@@ -17,6 +17,24 @@
       // Getting configuration defined in Innovation Studio parameters.
       // We can also setup default values.
       function getRxData(componentDefinition, componentDescriptor) {
+        var defaultImageHeight = _.find(componentDescriptor.propertiesByName, {
+          name: 'imageHeight'
+        }).defaultValue;
+        var defaultImageWidth = _.find(componentDescriptor.propertiesByName, {
+          name: 'imageWidth'
+        }).defaultValue;
+        var defaultImagePosition = _.find(componentDescriptor.propertiesByName, {
+          name: 'imagePosition'
+        }).defaultValue;
+        var defaultHeaderFontSize = _.find(componentDescriptor.propertiesByName, {
+          name: 'headerFontSize'
+        }).defaultValue;
+        var defaultNoteFontSize = _.find(componentDescriptor.propertiesByName, {
+          name: 'noteFontSize'
+        }).defaultValue;
+        var defaultBorderRadius = _.find(componentDescriptor.propertiesByName, {
+          name: 'borderRadius'
+        }).defaultValue;
 
         return {
           recordDefinition: componentDefinition.propertiesByName.recordDefinition,
@@ -27,10 +45,18 @@
           note: componentDefinition.propertiesByName.note,
           Color: componentDefinition.propertiesByName.Color,
           header: componentDefinition.propertiesByName.header,
+          categoryFilter: componentDefinition.propertiesByName.categoryFilter,
           tooltipConfig: componentDefinition.propertiesByName.tooltipConfig,
           tooltip: componentDefinition.propertiesByName.tooltip,
           perRowCardLength: componentDefinition.propertiesByName.perRowCardLength,
           recordInstanceId1: componentDefinition.propertiesByName.recordInstanceId1,
+
+          imageHeight: componentDefinition.propertiesByName.imageHeight || defaultImageHeight,
+          imageWidth: componentDefinition.propertiesByName.imageWidth || defaultImageWidth,
+          imagePosition: componentDefinition.propertiesByName.imagePosition || defaultImagePosition,
+          headerFontSize: componentDefinition.propertiesByName.headerFontSize || defaultHeaderFontSize,
+          noteFontSize: componentDefinition.propertiesByName.noteFontSize || defaultNoteFontSize,
+          borderRadius: componentDefinition.propertiesByName.borderRadius || defaultBorderRadius,
         };
       }
 
@@ -39,43 +65,7 @@
         return {
           inputs: {
             rxData: {
-              recordDefinition: {
-                label: 'Record Definition Name',
-                type: 'rx-inspector-definition-picker',
-                definitionType: RX_DEFINITION_PICKER.definitionTypes.regularRecord.type,
-                group: 'filed',
-                index: 1
-              },
-              fieldId: {
-                label: 'Image',
-                type: 'com-vyom-vyomlib-inspector-generic-card-widget-attachment',
-                group: 'filed',
-                index: 2
-              },
-              header: {
-                label: 'Header',
-                type: 'com-vyom-vyomlib-inspector-generic-card-widget-fields',
-                group: 'filed',
-                index: 3
-              },
-              count: {
-                label: 'Count',
-                type: 'com-vyom-vyomlib-inspector-generic-card-widget-fields',
-                group: 'filed',
-                index: 4
-              },
-              note: {
-                label: 'Note',
-                type: 'com-vyom-vyomlib-inspector-generic-card-widget-fields',
-                group: 'filed',
-                index: 5
-              },
-              tooltip: {
-                label: 'Tooltip',
-                type: 'com-vyom-vyomlib-inspector-generic-card-widget-fields',
-                group: 'filed',
-                index: 5
-              },
+
               tooltipConfig: {
                 label: 'Tooltip',
                 type: 'com-vyom-vyomlib-inspector-generic-card-widget-tooltip',
@@ -109,20 +99,117 @@
                 }, {
                   value: "col-lg-3 col-md-3 col-sm-3",
                   content: "Four Cards"
+                }, {
+                  value: "col-lg-2 col-md-2 col-sm-2",
+                  content: "Six Cards"
+                }, {
+                  value: "col-lg-1 col-md-1 col-sm-1",
+                  content: "Twelve Cards"
                 }],
                 defaultValue: "col-lg-4 col-md-4 col-sm-4",
                 group: 'General',
                 index: 4
               },
+              imageHeight: {
+                label: 'Image height (in px)',
+                type: 'rx-inspector-expression-node-field',
+                group: 'General',
+                index: 5
+              },
+              imageWidth: {
+                label: 'Image width (in px)',
+                type: 'rx-inspector-expression-node-field',
+                group: 'General',
+                index: 6
+              },
+              imagePosition: {
+                label: 'Image position (For mobile view)',
+                type: 'select',
+                options: [{
+                  value: "start",
+                  content: "Left"
+                }, {
+                  value: "center",
+                  content: "Center"
+                }, {
+                  value: "end",
+                  content: "Right"
+                }],
+                defaultValue: "center",
+                group: 'General',
+                index: 7
+              },
+              headerFontSize: {
+                label: 'Header Font size (in px)',
+                type: 'rx-inspector-expression-node-field',
+                group: 'General',
+                index: 8
+              },
+              noteFontSize: {
+                label: 'Note Font size (in px)',
+                type: 'rx-inspector-expression-node-field',
+                group: 'General',
+                index: 9
+              }, borderRadius: {
+                label: 'Card Border Radius in px',
+                type: 'rx-inspector-expression-node-field',
+                group: 'General',
+                index: 10
+              }, categoryFilter: {
+                label: 'Category filter',
+                type: 'rx-inspector-expression-node-field',
+                group: 'General',
+                index: 11
+              },
+
+              //fields
+              recordDefinition: {
+                label: 'Record Definition Name',
+                type: 'rx-inspector-definition-picker',
+                definitionType: RX_DEFINITION_PICKER.definitionTypes.regularRecord.type,
+                group: 'fields',
+                index: 1
+              },
+              fieldId: {
+                label: 'Image',
+                type: 'com-vyom-vyomlib-inspector-generic-card-widget-attachment',
+                group: 'fields',
+                index: 2
+              },
+              header: {
+                label: 'Header',
+                type: 'com-vyom-vyomlib-inspector-generic-card-widget-fields',
+                group: 'fields',
+                index: 3
+              },
+              count: {
+                label: 'Count',
+                type: 'com-vyom-vyomlib-inspector-generic-card-widget-fields',
+                group: 'fields',
+                index: 4
+              },
+              note: {
+                label: 'Note',
+                type: 'com-vyom-vyomlib-inspector-generic-card-widget-fields',
+                group: 'fields',
+                index: 5
+              },
+              tooltip: {
+                label: 'Tooltip',
+                type: 'com-vyom-vyomlib-inspector-generic-card-widget-fields',
+                group: 'fields',
+                index: 5
+              },
             }
+
           },
           groups: {
             general: {
               label: 'General',
               index: 1
             },
-            filed: {
-              lable: 'Field Configuration',
+            fields: {
+              lable: 'Fields Configuration',
               index: 2
             }
           }

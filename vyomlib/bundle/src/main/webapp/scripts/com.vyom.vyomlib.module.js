@@ -42,6 +42,7 @@
         'com.vyom.vyomlib.view-components.ppttoimg',
         'com.vyom.vyomlib.view-components.generic-card-widget',
         'com.vyom.vyomlib.view-components.custom-date-time-picker',
+        'com.vyom.vyomlib.view-components.dynamic-category',
         
         //26
         

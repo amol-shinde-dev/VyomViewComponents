@@ -23,7 +23,8 @@
                 timeHidden: (componentDefinition.propertiesByName.timeHidden == 'true') ? true : false,
                 styles: componentDefinition.propertiesByName.styles,
                 minDate: componentDefinition.propertiesByName.minDate,
-                maxDate: componentDefinition.propertiesByName.maxDate
+                maxDate: componentDefinition.propertiesByName.maxDate,
+                isRequiredField: (componentDefinition.propertiesByName.isRequiredField == 'true') ? true : false
 
             };
         }
@@ -49,14 +50,14 @@
                         },
                         timeDisabled: {
                             label: "Time Disabled",
-                            type: "rx-inspector-optional-expression",
+                            type: "rx-inspector-toggle-field",
                             group: "general",
                             index: 3,
 
                         },
                         timeHidden: {
                             label: "Time Hidden",
-                            type: "rx-inspector-optional-expression",
+                            type: "rx-inspector-toggle-field",
                             group: "general",
                             index: 4
                         },
@@ -82,6 +83,12 @@
                             tooltip: "format(yyyy-MM-dd HH:mm:ss)",
                             group: "general",
                             index: 7
+                        },
+                        isRequiredField: {
+                            label: "Is Required",
+                            type: "rx-inspector-toggle-field",
+                            group: "general",
+                            index: 8
                         },
                     }
                 },

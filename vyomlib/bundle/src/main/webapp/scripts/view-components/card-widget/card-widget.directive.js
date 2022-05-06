@@ -45,6 +45,9 @@
 
                 $scope.imageHeight = _config.imageHeight,
                 $scope.imageWidth = _config.imageWidth,
+                $scope.imagePosition = _config.imagePosition,
+                $scope.noteFontSize = _config.noteFontSize,
+                $scope.headerFontSize = _config.headerFontSize,
                 $scope.pictureData1 = '';
               $scope.pictureData2 = '';
               $scope.pictureData3 = '';
@@ -76,19 +79,19 @@
                           $scope.pictureData = urlCreator.createObjectURL(file);
                           if (imageNumber == "first") {
 
-                            console.log("first Id" + instanceId);
+                            // console.log("first Id" + instanceId);
                             $scope.pictureData1 = urlCreator.createObjectURL(file);
-                            console.log("Picture data 1" + $scope.pictureData1);
+                            // console.log("Picture data 1" + $scope.pictureData1);
                           } else if (imageNumber == "second") {
 
-                            console.log("Second Id" + instanceId);
+                            // console.log("Second Id" + instanceId);
                             $scope.pictureData2 = urlCreator.createObjectURL(file);
-                            console.log("Picture data 2" + $scope.pictureData2);
+                            // console.log("Picture data 2" + $scope.pictureData2);
                           } else if (imageNumber == "third") {
 
-                            console.log("Third Id" + instanceId);
+                            // console.log("Third Id" + instanceId);
                             $scope.pictureData3 = urlCreator.createObjectURL(file);
-                            console.log("Picture data 3" + $scope.pictureData3);
+                            // console.log("Picture data 3" + $scope.pictureData3);
                           }
                         } else {
                           $scope.pictureData1 = '';
@@ -99,7 +102,7 @@
                     });
                 }
               };
-              console.log("id 1:" + $scope.recordInstanceId1);
+              // console.log("id 1:" + $scope.recordInstanceId1);
               $scope.$watch('rxConfiguration.propertiesByName.recordInstanceId1', fetchPicture($scope.recordInstanceId1, "first"));
               $scope.$watch('rxConfiguration.propertiesByName.recordInstanceId2', fetchPicture($scope.recordInstanceId2, "second"));
               $scope.$watch('rxConfiguration.propertiesByName.recordInstanceId3', fetchPicture($scope.recordInstanceId3, "third"));

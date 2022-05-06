@@ -26,6 +26,7 @@
                             $scope.ratingName = _config.ratingName;
                             $scope.size = _config.size;
                             $scope.font = _config.font + "px";
+                            $scope.expression = _config.expression;
 
                             getData();
                         }
@@ -33,7 +34,8 @@
                         function getData() {
 
                             var queryParams = {
-                                propertySelection: $scope.ratingName + "," + $scope.fieldId
+                                queryExpression: $scope.expression,
+
                             };
 
                             var foo = rxRecordInstanceDataPageResource.withName($scope.cfg.recordDefinitionName);

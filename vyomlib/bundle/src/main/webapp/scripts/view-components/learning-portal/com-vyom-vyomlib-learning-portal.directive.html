@@ -218,7 +218,7 @@
                             <div class="stats">
                                 <div class="card-category" ng-init="generateRating(x[supplierRating],x[179],'supplier')">
                                     <span ng-repeat="star in supplierRatingObj[x[179]] track by $index" class="{{star.icon}}" style="{{star.style}}"></span>
-                                    <a class="d-button_link">Supplier Rating <em ng-if="x[userCountRatedForSupplier]">({{numFormatter(x[userCountRatedForSupplier])}})</em></a>
+                                    <a class="d-button_link">Supplier Rating <!--<em ng-if="x[userCountRatedForSupplier]">({{numFormatter(x[userCountRatedForSupplier])}})</em>--></a>
                                 </div>
 
                             </div>
@@ -226,7 +226,7 @@
                             <div class="stats">
                                 <div class="card-category" ng-init="generateRating(x[courseRating],x[179],'course')">
                                     <span ng-repeat="star in courseRatingObj[x[179]] track by $index" class="{{star.icon}}" style="{{star.style}}"></span>
-                                    <a class="d-button_link">Course Rating <em ng-if="x[userCountRatedForCourse]">({{numFormatter(x[userCountRatedForCourse])}})</em></a>
+                                    <a class="d-button_link">Course Rating <!--<em ng-if="x[userCountRatedForCourse]">({{numFormatter(x[userCountRatedForCourse])}})</em>--></a>
                                 </div>
                             </div>
 

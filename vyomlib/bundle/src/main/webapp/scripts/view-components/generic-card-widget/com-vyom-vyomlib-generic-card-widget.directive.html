@@ -11,33 +11,27 @@
 </head>
 
 <body>
-  <div class="all-content-wrapper" style="display: flex;flex-wrap: wrap">
+  <div class="all-content-wrapper" style="display: flex;flex-wrap: wrap" ng-model="categoryFilter">
 
-    <div class="{{perRowCardLength}} col-xs-12" style="padding: 3px;display: flex;" ng-repeat="x in textData">
-      <div class="analytics-sparkle-line reso-mg-b-30 w3-{{Color}}" style="display: flex;flex-direction: column;flex:1" tabindex="0">
-        <div class="analytics-content" style="display: flex;justify-content: space-between;gap: 5px;" ng-click="setSelectedCardInstanceId(x[179]);executeAction(actionguid);" role="button">
-          <div style="display: flex;flex-direction: column;flex: 1;">
-            <h3 style="font-size: 1.2em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{x[count]}}</h3>
-            <h4 style="font-size: 1.5em; color: #fff;margin: 0.3em 0em;font-family: 'Carrois Gothic', sans-serif;">{{x[header]}}</h4>
-            <p>{{x[note]}}</p>
+    <div class="{{perRowCardLength}} col-xs-12" style="padding: 3px;display: flex;" ng-repeat="x in textData | filter:categoryFilter">
+      <div class="analytics-sparkle-line reso-mg-b-30 w3-{{Color}}" style="display: flex;flex-direction: column;flex:1;border: 1px solid; border-radius: {{borderRadius}}px;" tabindex="0">
+        <div class="analytics-content" style="display: flex;justify-content: space-between;flex-wrap: wrap;align-content: space-evenly;flex-grow: 1;" ng-click="setSelectedCardInstanceId(x[179]);executeAction(actionguid);" role="button">
+          <div style="display: flex;flex-direction: column;flex: 1;justify-content: center;">
+            <p style="font-size: 1.2em; font-family: 'Carrois Gothic', sans-serif;">{{x[count]}}</p>
+            <p style="font-size: {{headerFontSize}}px; font-family: 'Carrois Gothic', sans-serif; word-break: break-word;margin-bottom:inherit; ">{{x[header]}}</p>
+            <p style="font-size: {{noteFontSize}}px; word-break: break-word;margin-bottom:inherit; ">{{x[note]}}</p>
           </div>
-          <div style="display: flex;flex-direction: column;" ng-init="fetchPicture(x[179])">
-            <img style="height: 110px;" src="{{pictureData[x[179]]}}">
+          <div style="display: flex;flex-direction: column;justify-content: center;align-items: {{imagePosition}};" ng-init="fetchPicture(x[179])">
+            <img style="height: {{imageHeight}}px; width: {{imageWidth}}px; " src="{{pictureData[x[179]]}}">
           </div>
         </div>
-        <div class="analytics-content" ng-style="{display: tooltipConfig === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: auto">
+        <div class="analytics-content" ng-style="{display: tooltipConfig === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: -20px;">
           <p class="d-icon-info_circle" style="font-size: small;margin: 5px;">
-            <span class="col-lg-10 col-md-9 col-xs-9 tooltiptext">{{x[tooltip]}}</span>
+            <span class="col-lg-10 col-md-9 col-xs-9 tooltiptext" style="word-break: break-word;">{{x[tooltip]}}</span>
           </p>
         </div>
       </div>
     </div>
-    <!-- <div style="text-align: right">
-      <span>
-        <button class="d-button d-icon-right-angle_up d-button_secondary" style="color: #333; border-color: #999; background-color: #fff;" ng-hide="9 <= 3" ng-click="3 = 3 - 3">show less...</button>
-        <button class="d-button d-icon-right-angle_down d-button_secondary" style="color: #333; border-color: #999; background-color: #fff;" ng-hide="9=== 3 " ng-click="limit = limit + cardlimit">show more...</button>
-      </span>
-    </div> -->
     <div class="clearfix"></div>
   </div>
 </body>

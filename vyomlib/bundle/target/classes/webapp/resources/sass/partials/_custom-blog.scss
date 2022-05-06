@@ -31266,4 +31266,9 @@ a.text-muted:hover {
 }
 /*# sourceMappingURL=adminlte.css.map */
 
+@media (max-width: 480px){
+  .card-body{
+    overflow-x: scroll;
+  }
+}
 }

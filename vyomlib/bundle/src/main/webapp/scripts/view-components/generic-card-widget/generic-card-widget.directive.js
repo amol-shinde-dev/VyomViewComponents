@@ -20,26 +20,30 @@
 
               $scope.cfg = {};
               $scope.cfg.recordDefinition = _config.recordDefinition;
-              // $scope.recordInstanceId1 = _config.recordInstanceId1;
-
               $scope.actionguid = _config.actionguid;
 
               $scope.count = _config.count;
-
               $scope.Color = _config.Color;
+              // $scope.colorObj = angular.fromJson(_config.Color);
+              // $scope.Color = $scope.colorObj.value;
 
               $scope.note = _config.note;
 
               $scope.header = _config.header;
 
               $scope.tooltip = _config.tooltip;
+              $scope.categoryFilter = _config.categoryFilter;
+              $scope.borderRadius = _config.borderRadius;
 
               $scope.tooltipConfig = _config.tooltipConfig;
-
+              $scope.headerFontSize = _config.headerFontSize;
+              $scope.noteFontSize = _config.noteFontSize;
+              $scope.imagePosition = _config.imagePosition;
+              $scope.imageHeight = _config.imageHeight;
+              $scope.imageWidth = _config.imageWidth;
               $scope.perRowCardLength = _config.perRowCardLength ? _config.perRowCardLength : "col-lg-4 col-md-4 col-sm-4";
 
               $scope.pictureData = [];
-
 
               getData();
             };
@@ -60,8 +64,8 @@
             }
 
             $scope.fetchPicture = function (instanceId) {
-              console.log("fetch picture called: " + instanceId);
-              console.log($scope.pictureData);
+              // console.log("fetch picture called: " + instanceId);
+              // console.log($scope.pictureData);
               var _configuration = $scope.rxConfiguration.propertiesByName;
 
               if (_configuration.recordDefinition && instanceId && _configuration.fieldId) {
@@ -80,12 +84,8 @@
                           type: attachmentContent.headers('content-type')
                         });
 
-                        // $scope.pictureData = urlCreator.createObjectURL(file);
-
                         $scope.pictureData[instanceId] = urlCreator.createObjectURL(file);
 
-                        console.log("$scope.pictureData");
-                        console.log($scope.pictureData);
                       } else {
                         $scope.pictureData = [];
                       }
@@ -128,6 +128,19 @@
                 }
               });
             }
+
+            $scope.$watch('rxConfiguration.propertiesByName.categoryFilter', function (obj) {
+              if (obj === 'All') {
+                console.log("function called");
+                $scope.categoryFilter = "";
+                getData();
+              } else {
+                console.log("function2 called");
+                $scope.categoryFilter = obj;
+                getData();
+              }
+            }
+              , true);
             init();
           }
         };
