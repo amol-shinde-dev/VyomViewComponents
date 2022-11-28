@@ -34,13 +34,13 @@
                                 <div class="col-8">
                                     <form class="form-inline d-flex justify-content-center md-form form-sm mt-2">
                                         <!--<i class="fas fa-search w3-xxlarge" aria-hidden="true"></i>-->
-                                        <input class="w3-input w-75" type="text" ng-model="searchbox.query" ng-keyup="filterCurrentCategoryOrSearchText(searchbox.query,'search');" placeholder={{search}} aria-label="Search">
+                                        <input class="w3-input w-75" type="text" ng-model="searchbox.query" ng-keyup="filterCurrentCategoryOrSearchText(searchbox.query,'search');" ng-change="getDataSet(dataset1, 'first',dataset1searchfield);getDataSet(dataset2, 'second',dataset2searchfield);opensearchmodal(searchbox.query)" placeholder={{search}} aria-label="Search">
                                     </form>
 
 
                                     <span style="display: block;max-width: 80%;margin: 0 auto;line-height: 1.2;overflow: hidden;text-overflow: ellipsis">
                                         <h3>{{BannerCaption}}</h3>
-                                       <p class="banner-subcaption-para"><em>{{BannerSubCaption}}</em></p>
+                                        <p class="banner-subcaption-para"><em>{{BannerSubCaption}}</em></p>
                                     </span>
                                 </div>
 
@@ -95,9 +95,9 @@
                                     <li class="portalmodallistli" id="portalmodallistli" ng-repeat="r in suggestionData.second">
                                         <div class="portalmodalliinner" ng-click="intializesearch(r[dataset2searchfield],r[dataset2urlfield])">
                                             <span class="d-icon-search portalmodallisearchicon"></span>
-                                            <div class="portalmodalliinnertextcontainer">
+                                            <div class="portalmodalliinnertextcontainer" id="portalsearchanchor">
                                                 <div class="portalmodalliinnertext">
-                                                    <a id="portalsearchanchor"> {{r[dataset2displayfield]}}<br>
+                                                    <a> {{r[dataset2displayfield]}}<br>
                                                         <span style="font-size: small"><em>{{r[dataset2searchfield]}}</em></span>
                                                     </a></div>
                                             </div>
@@ -149,13 +149,16 @@
                 <select class="hideme" ng-model="selectedValue" ng-change="sortByViews()" style="margin-left: 10px;font-size: 84%;">
                     <option value="{{Views}}">Max-views</option>
                     <option value="{{ratingCount}}">Max-ratings</option>
+                    <option value="{{createdDate}}">Created Date - Ascending</option>
+                    <option value="-{{createdDate}}">Created Date - Descending</option>
+                    <option value="{{cardStatus}}">Application Status</option>
                     <option value="{{cardVisible}}" ng-if="adminConfiguration">Published</option>
                 </select>
             </div>
 
 
             <div class="p-2 bd-highlight" style="text-align-last: right;display: flex;">
-                <span class="d-button_link d-icon-heart w3-hover-text-black" ng-class="toggle ? 'w3-text-red' : ''" ng-click="toggle = !toggle; sortByFav();" style="padding: 5px;margin-right: 10px;font-size: 22px"></span>
+                <span class="d-button_link d-icon-heart w3-hover-text-black" ng-class="toggle ? 'w3-text-red' : ''" ng-click="toggle = !toggle; sortByFav();" style="padding: 5px;margin-right: 10px;font-size: 22px" rel="tooltip" title="{{favouriteTooltipText}}" ng-mouseover="hoverIn('tooltip')"></span>
                 <span class="d-button_link d-icon-lines_vertical w3-hover-text-black" ng-click="show_hide_recordGrid('false');" style="padding: 5px;margin-right: 10px;font-size: 21px"></span>
                 <span class="d-button_link d-icon-lines w3-hover-text-black" ng-click="show_hide_recordGrid('true');" style="padding: 5px;margin-right: 5px;font-size: 21px"></span>
 
@@ -245,5 +248,8 @@
         </div>
     </div>
 
+    <div ng-show="totalSize == '0' && selectedCategory != ''" id="no-search-result" style="display: flex;position: relative;width: 100%;height: 100%;justify-content: center;padding: 5em 4em;" class="no-search-result">
+        {{noSearchResultText}}
+    </div>
 
 </div>

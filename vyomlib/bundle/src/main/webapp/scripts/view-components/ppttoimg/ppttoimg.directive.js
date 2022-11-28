@@ -3,7 +3,7 @@
     angular.module('com.vyom.vyomlib.view-components.ppttoimg')
         .directive('comVyomVyomlibPpttoimg',
 
-            function (rxNotificationMessage, rxRecordInstanceDataPageResource, rxRecordInstanceResource, rxGUID, $window, rxCurrentUser, $sce, rxViewComponentEventManager) {
+            function (rxNotificationMessage, rxRecordInstanceDataPageResource, rxRecordInstanceResource, rxGUID, $window, rxCurrentUser, $sce, rxViewComponentEventManager, rxRecordInstanceAttachmentResource) {
                 return {
                     restrict: 'E',
                     templateUrl: 'scripts/view-components/ppttoimg/com-vyom-vyomlib-ppttoimg.directive.html',
@@ -26,6 +26,7 @@
                             $scope.pptField = _config.pptField;
                             $scope.RecInstanceId = _config.RecInstanceId;
                             $scope.slideNumber = _config.slideNumber ? _config.slideNumber : 1;
+                            $scope.image = "";
 
 
                         };

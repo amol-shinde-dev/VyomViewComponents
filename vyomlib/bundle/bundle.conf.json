@@ -29,7 +29,8 @@
 
             "app": {
                 "scripts": [ 
-                
+                    "lib/event-calendar/full-calendar",
+                    
                     "lib/ppttoimg/divs2slides",
                     "lib/ppttoimg/jszip.min",
                     "lib/ppttoimg/filereader",

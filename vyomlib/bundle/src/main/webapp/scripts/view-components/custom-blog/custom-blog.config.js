@@ -70,6 +70,11 @@
                             isConfig: true,
 
                   },
+                        {
+                            name: 'cssClasses',
+                            isConfig: true,
+
+                  },
 
                         {
 

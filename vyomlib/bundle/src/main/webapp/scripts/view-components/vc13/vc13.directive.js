@@ -12,7 +12,7 @@
                         rxConfiguration: '='
                     },
 
-                    link: function ($scope) {
+                    link: function ($scope, $element) {
                         var _config;
 
                         var init = function () {
@@ -20,6 +20,7 @@
                             $scope.buttonGuid = _config.buttonGuid;
                             $scope.buttonlabel = _config.buttonlabel;
                             $scope.buttonColor = _config.buttonColor;
+
 
                             $scope.buttonTextColor = ";color:" + _config.buttonTextColor;
                             $scope.buttonIcon = "d-icon-" + _config.IconAllignment + "-" + _config.buttonIcon;
@@ -60,6 +61,13 @@
                                 }
                             });
                         };
+
+                        $scope.hoverIn = function (item) {
+                            if (item == "popover") {
+                                $('[rel="popover"]').popover();
+                            }
+                            $('[rel="tooltip"]').tooltip();
+                        }
 
                         function buttonStyle() {
                             var b = {};

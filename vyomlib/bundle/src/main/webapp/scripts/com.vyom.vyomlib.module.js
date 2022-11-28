@@ -12,6 +12,7 @@
         'com.vyom.vyomlib.view-components.card-view', //homepage4
         'com.vyom.vyomlib.view-components.vc17', //Footer Panel  
         'com.vyom.vyomlib.view-components.vc18', //icoană
+        'com.vyom.vyomlib.view-components.icona-v2', //icoană v2
         'com.vyom.vyomlib.view-components.vc15', //onWindowsLoad-action
         'com.vyom.vyomlib.view-components.vc12', //onWindowsLoad-multipleprocess
         'com.vyom.vyomlib.view-components.vc13', //custom action button
@@ -41,9 +42,11 @@
         'com.vyom.vyomlib.view-components.dynamic-star-rating',
         'com.vyom.vyomlib.view-components.ppttoimg',
         'com.vyom.vyomlib.view-components.generic-card-widget',
+        'com.vyom.vyomlib.view-components.generic-card-widget-v2',
         'com.vyom.vyomlib.view-components.custom-date-time-picker',
         'com.vyom.vyomlib.view-components.dynamic-category',
-        
+        'com.vyom.vyomlib.view-components.event-calendar',
+        'com.vyom.vyomlib.view-components.info-card',
         //26
         
 

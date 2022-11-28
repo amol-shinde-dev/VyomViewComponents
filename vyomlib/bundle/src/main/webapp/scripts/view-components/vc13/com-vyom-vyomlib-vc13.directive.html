@@ -1,5 +1,14 @@
 <head>
-    
+    <script>
+        $(document).ready(function() {
+
+            $("#myCarousel").carousel();
+        });
+        $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+
+    </script>
     <style>
         .button {
 
@@ -72,4 +81,5 @@
 <div class="vy-custom-width">
 
     <button type="button" ng-click="clickButton()" class="d-button {{buttonStyle.icon | lowercase}} vy-custom-margin w3-{{buttonColor}}" ng-class="buttonClasses" style="{{buttonStyle.style}}"> <span>{{buttonlabel}}</span><span class="rx-action-button-content"></span></button>
+
 </div>

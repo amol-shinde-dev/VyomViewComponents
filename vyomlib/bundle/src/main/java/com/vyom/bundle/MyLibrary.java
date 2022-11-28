@@ -10,6 +10,7 @@ package com.vyom.bundle;
 import com.bmc.arsys.rx.services.common.RxBundle;
 import com.bmc.arsys.rx.services.common.domain.WebResourceDefinition;
 import com.vyom.rest.getUserInfos.RestGetUserInfos;
+import com.vyom.service.conversion.DataConversionService;
 
 /**
  * Rx Web Activator class.
@@ -24,10 +25,14 @@ public class MyLibrary extends RxBundle {
         //
         // TODO: Register static web resources and framework extensions.
         //
-        // registerService(new MyService());
+        
         //
         registerRestfulResource(new RestGetUserInfos());
+        // Registering Services.
+        registerService(new DataConversionService());
 
         registerStaticWebResource(String.format("/%s", getId()), "/webapp");
+        
+        
     }
 }

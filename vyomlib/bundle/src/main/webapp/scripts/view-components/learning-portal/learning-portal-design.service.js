@@ -35,6 +35,7 @@
                 costPerHoursSuffix: componentDefinition.propertiesByName.costPerHoursSuffix,
                 totalCostPerHoursSuffix: componentDefinition.propertiesByName.totalCostPerHoursSuffix,
                 durationSuffix: componentDefinition.propertiesByName.durationSuffix,
+                additionalSort: componentDefinition.propertiesByName.additionalSort,
 
                 cardActionGuid: componentDefinition.propertiesByName.cardActionGuid,
                 perRowCardLength: componentDefinition.propertiesByName.perRowCardLength,
@@ -42,6 +43,7 @@
                 cardSorting: componentDefinition.propertiesByName.cardSorting,
                 cardOrder: componentDefinition.propertiesByName.cardOrder,
                 FilterExp: componentDefinition.propertiesByName.FilterExp,
+                noResultText: componentDefinition.propertiesByName.noResultText,
 
                 BannerRecordDefinition: componentDefinition.propertiesByName.BannerRecordDefinition,
                 BannerInstanceId: componentDefinition.propertiesByName.BannerInstanceId,
@@ -66,9 +68,11 @@
                 fourthDropDownRecordDefinition: componentDefinition.propertiesByName.fourthDropDownRecordDefinition,
                 fourthDropDownDisplayField: componentDefinition.propertiesByName.fourthDropDownDisplayField,
                 fourthDropDownStoredField: componentDefinition.propertiesByName.fourthDropDownStoredField,
+                fourthDropDownInfoGuid: componentDefinition.propertiesByName.fourthDropDownInfoGuid,
                 fifthDropDownRecordDefinition: componentDefinition.propertiesByName.fifthDropDownRecordDefinition,
                 fifthDropDownDisplayField: componentDefinition.propertiesByName.fifthDropDownDisplayField,
                 fifthDropDownStoredField: componentDefinition.propertiesByName.fifthDropDownStoredField,
+                fifthDropDownInfoGuid: componentDefinition.propertiesByName.fifthDropDownInfoGuid,
                 sixthDropDownRecordDefinition: componentDefinition.propertiesByName.sixthDropDownRecordDefinition,
                 sixthDropDownDisplayField: componentDefinition.propertiesByName.sixthDropDownDisplayField,
                 sixthDropDownStoredField: componentDefinition.propertiesByName.sixthDropDownStoredField,
@@ -176,7 +180,12 @@
                             index: 13
                         },
 
-
+                        additionalSort: {
+                            label: 'Additional Sort',
+                            type: 'com-vyom-vyomlib-inspector-learning-portal-fields',
+                            group: 'Card',
+                            index: 14
+                        },
 
                         cardActionGuid: {
                             label: 'Action button Guid',
@@ -227,6 +236,13 @@
                             },
                             group: 'cardAction',
                             index: 5
+                        },
+
+                        noResultText: {
+                            label: 'No Result Text',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'cardAction',
+                            index: 6
                         },
                         BannerRecordDefinition: {
                             label: 'Record Definition Name',
@@ -364,30 +380,42 @@
                             group: 'DropDown',
                             index: 13
                         },
+                        fourthDropDownInfoGuid: {
+                            label: 'Supplier Rating Info (button guid)',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DropDown',
+                            index: 14
+                        },
                         fifthDropDownRecordDefinition: {
                             label: 'Course Rating Record Definition (Course Rating)',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 14
+                            index: 15
                         },
 
                         fifthDropDownDisplayField: {
                             label: 'Course Rating DisplayField',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 15
+                            index: 16
                         },
                         fifthDropDownStoredField: {
                             label: 'Course Rating StoredField',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 16
+                            index: 17
+                        },
+                        fifthDropDownInfoGuid: {
+                            label: 'Course Rating Info (button guid)',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'DropDown',
+                            index: 18
                         },
                         sixthDropDownRecordDefinition: {
                             label: 'Sort By RecordDefinition (Sort By)',
                             type: 'rx-inspector-expression-node-field',
                             group: 'DropDown',
-                            index: 17
+                            index: 19
                         },
 
                         sixthDropDownDisplayField: {
@@ -398,7 +426,7 @@
                                 placement: "left"
                             },
                             group: 'DropDown',
-                            index: 18
+                            index: 20
                         },
                         sixthDropDownStoredField: {
                             label: 'Sort By Stored Value Field',
@@ -408,7 +436,7 @@
                                 placement: "left"
                             },
                             group: 'DropDown',
-                            index: 19
+                            index: 21
                         },
                     }
                 },

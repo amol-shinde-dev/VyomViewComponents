@@ -30,7 +30,8 @@
                 enableEditButton: componentDefinition.propertiesByName.enableEditButton || defaultEnableEditButton,
                 enableEditPane: componentDefinition.propertiesByName.enableEditPane == 'true' ? true : false,
                 headerNote: componentDefinition.propertiesByName.headerNote,
-                tableWidth: componentDefinition.propertiesByName.tableWidth
+                tableWidth: componentDefinition.propertiesByName.tableWidth,
+                cssClasses: componentDefinition.propertiesByName.cssClasses
 
 
 
@@ -130,7 +131,12 @@
                             group: 'General',
                             index: 8
                         },
-
+                        cssClasses: {
+                            label: 'CSS Classes',
+                            type: 'rx-inspector-tag-input',
+                            group: 'General',
+                            index: 9
+                        },
 
                     }
                 },

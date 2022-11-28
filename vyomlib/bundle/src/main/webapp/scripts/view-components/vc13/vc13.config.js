@@ -58,7 +58,8 @@
                             name: 'fontFamily',
                             isConfig: true
 
-                        }
+                        },
+
 
 
 

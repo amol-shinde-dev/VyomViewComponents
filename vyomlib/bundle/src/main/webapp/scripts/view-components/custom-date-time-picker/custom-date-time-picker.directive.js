@@ -18,7 +18,8 @@
                     _config = $scope.rxConfiguration.propertiesByName;
                     var eventManager = rxViewComponentEventManager.getInstance($scope);
                     var timezone = new Date().getTimezoneOffset();
-                    $scope.isRequiredField = _config.isRequiredField ? "d-textfield_required" : "";
+
+                    $scope.isRequiredField = _config.isRequiredField == 'true' ? "d-textfield_required" : "";
 
                     $scope.data = {
                         date: ""
@@ -86,10 +87,18 @@
                     });
 
                     $scope.setOutput = function () {
-
+                        var selectedYear = new Date($scope.data.date).getFullYear();
+                        var selectedMonth = new Date($scope.data.date).getMonth();
+                        var nextMonth = selectedMonth + 1;
+                        var selectedDate = new Date($scope.data.date).getDate();
 
                         eventManager.propertyChanged({
                             property: 'dateOutput', // name of the property that changed
+                            newValue: moment(selectedYear + "-" + nextMonth + "-" + selectedDate).format("YYYY-MM-DD")
+                        });
+
+                        eventManager.propertyChanged({
+                            property: 'dateTimeOutput', // name of the property that changed
                             newValue: new Date($scope.data.date).toISOString()
                         });
 

@@ -106,6 +106,12 @@
 
                     },
                         {
+
+                            name: 'additionalSort',
+                            isConfig: true,
+
+                    },
+                        {
                             name: 'duration',
                             isProperty: true,
                      },
@@ -199,6 +205,14 @@
 
                             name: 'cardOrder',
 
+                            isConfig: true,
+
+
+},
+                        {
+
+                            name: 'noResultText',
+                            enableExpressionEvaluation: true,
                             isConfig: true,
 
 
@@ -320,7 +334,13 @@
                             isConfig: true
 
                     },
+                        {
 
+                            name: 'fourthDropDownInfoGuid',
+                            enableExpressionEvaluation: true,
+                            isConfig: true
+
+                    },
                         {
 
                             name: 'fifthDropDownRecordDefinition',
@@ -342,7 +362,13 @@
                             isConfig: true
 
                     },
+                        {
 
+                            name: 'fifthDropDownInfoGuid',
+                            enableExpressionEvaluation: true,
+                            isConfig: true
+
+                    },
                         {
 
                             name: 'sixthDropDownRecordDefinition',

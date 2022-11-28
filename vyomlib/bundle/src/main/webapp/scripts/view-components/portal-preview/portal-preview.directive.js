@@ -33,6 +33,7 @@
                             $scope.tooltipDescription = _config.tooltipDescription;
                             $scope.rateMeActionGuid = _config.rateMeActionGuid;
                             $scope.ratingCount = _config.ratingCount;
+                            $scope.createdDate = _config.createdDate;
                             $scope.starsobj = [];
 
                             //if admin then append query else nly filter
@@ -74,7 +75,8 @@
                             $scope.Greetings = _config.Greetings;
                             $scope.search = _config.search;
                             $scope.cssClasses = _config.cssClasses;
-
+                            $scope.favouriteTooltipText = _config.favouriteTooltipText ? _config.favouriteTooltipText : "View all your favourites";
+                            $scope.noSearchResultText = _config.noSearchResultText;
 
                             //Images fields
                             $scope.BannerRecordDefinition = _config.BannerRecordDefinition;
@@ -145,8 +147,9 @@
 
 
                         $scope.getCardList = function () {
+                            $scope.selectedCategory = "";
                             $scope.queryParams = {
-                                propertySelection: "1,2,3,4,5,6,7,8,179," + $scope.ApplicationName + "," + $scope.Description + "," + $scope.Color + "," + $scope.tooltipHeader + "," + $scope.Icon + "," + $scope.tooltipDescription + "," + $scope.Views + "," + $scope.ratingCount + "," + $scope.cardStatus + "," + $scope.cardFavourite + "," + $scope.cardScope + "," + $scope.CategoryField + "," + $scope.cardVisible + "," + $scope.cardErrorInformation,
+
                                 queryExpression: $scope.FilterExp ? $scope.FilterExp : "",
                                 sortBy: $scope.cardSorting
 
@@ -166,7 +169,7 @@
                         }
 
                         $scope.getDataSet = function (datasetrecname, datasetobjectname, datasetsearchfield) {
-                            console.log(datasetrecname + "," + datasetobjectname + "," + datasetsearchfield);
+
                             if (datasetrecname) {
                                 var foo = rxRecordInstanceDataPageResource.withName(datasetrecname);
                                 var queryParams = {};
@@ -289,6 +292,9 @@
 
                         $scope.filterCurrentCategoryOrSearchText = function (filterinput, filtertype) {
 
+                            // to make no result text container visible on category selection
+                            $scope.selectedCategory = filtertype == "category" ? filterinput : "";
+
                             var cardQueryExpression = filtertype == "search" ? "'" + $scope.ApplicationName + "' LIKE \"%" + filterinput + "%\"" : "'" + $scope.CategoryField + "' LIKE \"%" + filterinput + "%\"";
                             var cardFilterExpression = $scope.FilterExp ? $scope.FilterExp + "AND (" + cardQueryExpression + ")" : cardQueryExpression;
 
@@ -305,7 +311,7 @@
                                 rxRecordInstanceDataPageResource.withName($scope.RecordDefinition).get(100, 0, queryParams).then(
                                     function (allRecords) {
                                         $scope.cardList = allRecords.data;
-
+                                        $scope.totalSize = allRecords.totalSize;
 
                                     }
                                 );
@@ -469,9 +475,9 @@
                         $scope.sortByViews = function () {
 
                             var queryParams = {
-                                propertySelection: "1,2,3,4,5,6,7,8,179," + $scope.ApplicationName + "," + $scope.Description + "," + $scope.Color + "," + $scope.tooltipHeader + "," + $scope.Icon + "," + $scope.tooltipDescription + "," + $scope.Views + "," + $scope.ratingCount + "," + $scope.cardStatus + "," + $scope.cardFavourite + "," + $scope.cardScope + "," + $scope.CategoryField + "," + $scope.cardVisible + "," + $scope.cardErrorInformation,
+
                                 queryExpression: $scope.FilterExp ? $scope.FilterExp : "",
-                                sortBy: "-" + $scope.selectedValue
+                                sortBy: $scope.selectedValue
 
                             };
 
@@ -527,18 +533,22 @@
 
 
                         $scope.opensearchmodal = function (value) {
-                            if (value == "" || value == null) {
-                                $element.find(".portalmodalcontainer").hide();
-                            } else if (value == "closed") {
-                                $element.find(".portalmodalcontainer").hide();
+                            if ($scope.dataset1 || $scope.dataset2) {
+                                if (value == "" || value == null) {
+                                    $element.find(".portalmodalcontainer").hide();
+                                } else if (value == "closed") {
+                                    $element.find(".portalmodalcontainer").hide();
+                                } else {
+                                    $element.find(".portalmodalcontainer").show();
+                                }
                             } else {
-                                $element.find(".portalmodalcontainer").show();
+                                $element.find(".portalmodalcontainer").hide();
                             }
                         }
 
                         $scope.intializesearch = function (searchtext, dataseturl) {
                             dataseturl ? window.open(dataseturl, '_blank') : "";
-                            $scope.searchbox.query = searchtext;
+
                             $scope.filterCurrentCategoryOrSearchText($scope.searchbox.query, 'Search');
                             $scope.opensearchmodal("closed");
                         }

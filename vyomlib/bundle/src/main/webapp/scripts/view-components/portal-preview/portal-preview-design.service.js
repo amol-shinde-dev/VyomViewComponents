@@ -52,12 +52,15 @@
                 titleColor: componentDefinition.propertiesByName.titleColor,
                 search: componentDefinition.propertiesByName.search,
                 cssClasses: componentDefinition.propertiesByName.cssClasses,
+                favouriteTooltipText: componentDefinition.propertiesByName.favouriteTooltipText,
+                noSearchResultText: componentDefinition.propertiesByName.noSearchResultText,
 
                 Icon: componentDefinition.propertiesByName.Icon,
                 tooltipHeader: componentDefinition.propertiesByName.tooltipHeader,
                 Color: componentDefinition.propertiesByName.Color,
                 tooltipDescription: componentDefinition.propertiesByName.tooltipDescription,
                 FilterExp: componentDefinition.propertiesByName.FilterExp,
+                createdDate: componentDefinition.propertiesByName.createdDate,
 
                 BannerRecordDefinition: componentDefinition.propertiesByName.BannerRecordDefinition,
                 BannerInstanceId: componentDefinition.propertiesByName.BannerInstanceId,
@@ -121,6 +124,18 @@
                             },
                             group: 'CardHeader',
                             index: 4
+                        },
+                        favouriteTooltipText: {
+                            label: 'Favourite Tooltip Text',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'CardHeader',
+                            index: 5
+                        },
+                        noSearchResultText: {
+                            label: 'No Search Result Text',
+                            type: 'rx-inspector-expression-node-field',
+                            group: 'CardHeader',
+                            index: 6
                         },
                         recordDefinitionFullName: {
                             label: 'Record Definition Name',
@@ -222,7 +237,12 @@
                             index: 14
                         },
 
-
+                        createdDate: {
+                            label: 'Created Date',
+                            type: 'com-vyom-vyomlib-inspector-portal-preview-fields',
+                            group: 'Card',
+                            index: 15
+                        },
 
                         cardActionGuid: {
                             label: 'Action button Guid',

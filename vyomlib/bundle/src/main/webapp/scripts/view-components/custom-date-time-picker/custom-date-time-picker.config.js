@@ -73,6 +73,12 @@
                 },
                     {
 
+                        name: 'dateTimeOutput',
+                        isProperty: true,
+
+                },
+                    {
+
                         name: 'currentTimezone',
                         isProperty: true,
 

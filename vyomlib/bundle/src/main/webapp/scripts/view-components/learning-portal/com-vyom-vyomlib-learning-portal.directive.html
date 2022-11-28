@@ -11,7 +11,12 @@
 
 
 <div class="wrapper {{cssClasses}}">
+    <div class="row com-ericsson-hilda-medium">
+        <div class="container" style="text-align: center">
+            <h1 style="font-size: 30px;" class="w3-text-{{titleColor}} com-ericsson-hilda-medium">{{greetings}}</h1>
 
+        </div>
+    </div>
     <div class="content" ng-if="BannerRecordDefinition">
         <div class="container-fluid mt-3">
 
@@ -21,30 +26,7 @@
                 <div class="carousel-inner">
                     <div class="item active">
                         <img ng-src="/api/rx/application/record/attachment/{{BannerRecordDefinition}}/{{BannerInstanceId}}/{{BannerImage}}" alt="" ng-click="redirecturl(BannerURL)" style="cursor: default;width:100%;height: {{BannerHeight}}px">
-                        <div class="carousel-caption" style="top:auto;right:-18%;left: 8%;">
 
-                            <div class="row com-ericsson-hilda-medium">
-                                <div class="col-3">
-                                    <h1 style="font-size: 24px;" class="w3-text-{{titleColor}} com-ericsson-hilda-medium">{{greetings}}<br><br>
-                                        {{CurrentUserFullName}}</h1>
-                                    <p></p>
-                                </div>
-                                <div class="col-8">
-                                    <form class="form-inline d-flex justify-content-center md-form form-sm mt-2">
-                                        <!--<i class="fas fa-search w3-xxlarge" aria-hidden="true"></i>-->
-                                        <input class="w3-input w-75" type="text" ng-model="searchObject.searchQuery" ng-keydown="onKeyDown($event)" placeholder="{{searchPlaceholder}}" aria-label="Search" autocomplete="off">
-                                    </form>
-
-
-                                    <span style="display: block;max-width: 80%;margin: 0 auto;line-height: 1.2;overflow: hidden;text-overflow: ellipsis">
-                                        <h3>{{BannerCaption}}</h3>
-                                        <p><em>{{BannerSubCaption}}</em></p>
-                                    </span>
-                                </div>
-
-                            </div>
-
-                        </div>
                     </div>
 
                 </div>
@@ -54,7 +36,25 @@
         </div>
     </div>
 
+    <div class="wrapper com-ericsson-hilda-medium">
 
+        <div class="content">
+            <div class="container-fluid mt-3">
+                <form class="">
+                    <!--<i class="fas fa-search w3-xxlarge" aria-hidden="true"></i>-->
+                    <input class="" type="text" ng-model="searchObject.searchQuery" ng-keydown="onKeyDown($event)" placeholder="{{searchPlaceholder}}" aria-label="Search" autocomplete="off">
+                </form>
+
+
+                <span style="display: block;margin: 0 auto;line-height: 1.2;overflow: hidden;text-overflow: ellipsis">
+                    <h3>{{BannerCaption}}</h3>
+                    <span><b>{{BannerSubCaption}}</b></span>
+                    <hr>
+                </span>
+            </div>
+        </div>
+
+    </div>
 
     <div class="container-fluid " style="padding-bottom: 5px; padding-top: 10px">
          
@@ -94,7 +94,7 @@
 
             <div class="p-2 bd-highlight dropdown">
                 <span style="display: inline-block">
-                    <label style="display: block" class="w3-text-black">Course Rating:</label>
+                    <label style="display: block" class="w3-text-black">Course Rating: <span class="d-icon-question_circle_o" ng-click="executeAction(fifthDropDownInfoGuid);"></span></label>
                     <input type="text" id="dropdownMenuButton5" ng-model="dropdown.selectedDisplayValue5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Course Rating" autocomplete="off">
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5" style="margin-left: 10px;width:auto;margin-right: 10px;max-height: 150px;overflow: auto;">
                         <li class="">
@@ -108,7 +108,7 @@
 
             <div class="p-2 bd-highlight dropdown">
                 <span style="display: inline-block">
-                    <label style="display: block" class="w3-text-black">Supplier Rating:</label>
+                    <label style="display: block" class="w3-text-black">Supplier Rating: <span class="d-icon-question_circle_o" ng-click="executeAction(fourthDropDownInfoGuid);"></span></label>
                     <input type="text" ng-model="dropdown.selectedDisplayValue4" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" placeholder="Supplier Rating" ng-disabled="dropdown.selectedValue1" autocomplete="off">
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4" style="margin-left: 10px;width:auto;margin-right: 10px;max-height: 150px;overflow: auto;">
                         <li class="">
@@ -217,16 +217,20 @@
                         <div class="card-footer">
                             <div class="stats">
                                 <div class="card-category" ng-init="generateRating(x[supplierRating],x[179],'supplier')">
-                                    <span ng-repeat="star in supplierRatingObj[x[179]] track by $index" class="{{star.icon}}" style="{{star.style}}"></span>
-                                    <a class="d-button_link">Supplier Rating <!--<em ng-if="x[userCountRatedForSupplier]">({{numFormatter(x[userCountRatedForSupplier])}})</em>--></a>
+                                    <a class="d-button_link">Supplier Rating
+                                        <!--<em ng-if="x[userCountRatedForSupplier]">({{numFormatter(x[userCountRatedForSupplier])}})</em>--></a>
+                                    <span ng-if="x[supplierRating]" ng-repeat="star in supplierRatingObj[x[179]] track by $index" class="{{star.icon}}" style="{{star.style}}"></span>
+                                    <span ng-if="!x[supplierRating]">(Not Yet Rated)</span>
                                 </div>
 
                             </div>
 
                             <div class="stats">
                                 <div class="card-category" ng-init="generateRating(x[courseRating],x[179],'course')">
-                                    <span ng-repeat="star in courseRatingObj[x[179]] track by $index" class="{{star.icon}}" style="{{star.style}}"></span>
-                                    <a class="d-button_link">Course Rating <!--<em ng-if="x[userCountRatedForCourse]">({{numFormatter(x[userCountRatedForCourse])}})</em>--></a>
+                                    <a class="d-button_link">Course Rating
+                                        <!--<em ng-if="x[userCountRatedForCourse]">({{numFormatter(x[userCountRatedForCourse])}})</em>--></a>
+                                    <span ng-if="x[courseRating]" ng-repeat="star in courseRatingObj[x[179]] track by $index" class="{{star.icon}}" style="{{star.style}}"></span>
+                                    <span ng-if="!x[courseRating]">(Not Yet Rated)</span>
                                 </div>
                             </div>
 
@@ -247,7 +251,7 @@
         </div>
     </div>
 
-    <div ng-if="!cardList.length" id="no-search-result" style="display: flex;position: absolute;width: 100%;height: 100%;justify-content: center;padding: 5em 4em;" class="no-search-result">
+    <div ng-show="totalSize == '0'" id="no-search-result" style="display: flex;position: relative;width: 100%;height: 100%;justify-content: center;padding: 5em 4em;" class="no-search-result">
 
     </div>
 </div>

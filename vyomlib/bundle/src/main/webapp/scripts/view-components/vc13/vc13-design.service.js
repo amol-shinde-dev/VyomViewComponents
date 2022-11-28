@@ -41,7 +41,8 @@
 
                 fontFamily: componentDefinition.propertiesByName.fontFamily,
                 buttonIcon: componentDefinition.propertiesByName.buttonIcon,
-                IconAllignment: componentDefinition.propertiesByName.IconAllignment || defaultIconAllignment
+                IconAllignment: componentDefinition.propertiesByName.IconAllignment || defaultIconAllignment,
+
 
 
             };
@@ -95,7 +96,8 @@
                             type: 'com-vyom-vyomlib-inspector-vc13-bfont',
                             group: 'general',
                             index: 8
-                        }
+                        },
+
 
                     }
                 },

@@ -74,6 +74,7 @@
                             name: 'cardVisible',
                             isConfig: true,
             },
+
                         {
                             name: 'cardErrorInformation',
                             isConfig: true,
@@ -146,7 +147,10 @@
                             isConfig: true,
                     },
 
-
+                        {
+                            name: 'createdDate',
+                            isConfig: true,
+            },
 
                         {
 
@@ -172,7 +176,20 @@
                             isConfig: true,
 
                     },
+                        {
 
+                            name: 'favouriteTooltipText',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    }, 
+{
+
+                            name: 'noSearchResultText',
+                            isConfig: true,
+                            enableExpressionEvaluation: true
+
+                    },
                         {
 
                             name: 'BannerRecordDefinition',
@@ -329,7 +346,7 @@
                             enableExpressionEvaluation: true
 
                     },
-{
+                        {
 
                             name: 'dataset2urlfield',
                             isConfig: true,

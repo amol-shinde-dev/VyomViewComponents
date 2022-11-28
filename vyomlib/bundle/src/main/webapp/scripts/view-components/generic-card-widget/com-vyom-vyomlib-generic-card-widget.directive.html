@@ -2,38 +2,38 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Generic Card widget View</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Generic Card widget View</title>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 
 <body>
-  <div class="all-content-wrapper" style="display: flex;flex-wrap: wrap" ng-model="categoryFilter">
+    <div class="all-content-wrapper" style="display: flex;flex-wrap: wrap" ng-model="categoryFilter">
 
-    <div class="{{perRowCardLength}} col-xs-12" style="padding: 3px;display: flex;" ng-repeat="x in textData | filter:categoryFilter">
-      <div class="analytics-sparkle-line reso-mg-b-30 w3-{{Color}}" style="display: flex;flex-direction: column;flex:1;border: 1px solid; border-radius: {{borderRadius}}px;" tabindex="0">
-        <div class="analytics-content" style="display: flex;justify-content: space-between;flex-wrap: wrap;align-content: space-evenly;flex-grow: 1;" ng-click="setSelectedCardInstanceId(x[179]);executeAction(actionguid);" role="button">
-          <div style="display: flex;flex-direction: column;flex: 1;justify-content: center;">
-            <p style="font-size: 1.2em; font-family: 'Carrois Gothic', sans-serif;">{{x[count]}}</p>
-            <p style="font-size: {{headerFontSize}}px; font-family: 'Carrois Gothic', sans-serif; word-break: break-word;margin-bottom:inherit; ">{{x[header]}}</p>
-            <p style="font-size: {{noteFontSize}}px; word-break: break-word;margin-bottom:inherit; ">{{x[note]}}</p>
-          </div>
-          <div style="display: flex;flex-direction: column;justify-content: center;align-items: {{imagePosition}};" ng-init="fetchPicture(x[179])">
-            <img style="height: {{imageHeight}}px; width: {{imageWidth}}px; " src="{{pictureData[x[179]]}}">
-          </div>
+        <div class="{{perRowCardLength}} col-xs-12" style="padding: 3px;display: flex;" ng-repeat="x in textData | filter:categoryFilter">
+            <div class="analytics-sparkle-line reso-mg-b-30 w3-{{Color}}" style="display: flex;flex-direction: column;flex:1;border: 1px solid; border-radius: {{borderRadius}}px;" tabindex="0">
+                <div class="analytics-content" style="display: flex;justify-content: space-between;flex-wrap: wrap;align-content: space-evenly;flex-grow: 1;" ng-click="setSelectedCardInstanceId(x[179]);executeAction(actionguid);" role="button">
+                    <div style="display: flex;flex-direction: column;flex: 1;justify-content: center;">
+                        <p style="font-size: 1.2em; font-family: 'Carrois Gothic', sans-serif;">{{x[count]}}</p>
+                        <p style="font-size: {{headerFontSize}}px; font-family: 'Carrois Gothic', sans-serif; word-break: break-word;margin-bottom:inherit; ">{{x[header]}}</p>
+                        <p style="font-size: {{noteFontSize}}px; word-break: break-word;margin-bottom:inherit; ">{{x[note]}}</p>
+                    </div>
+                    <div style="display: flex;flex-direction: column;justify-content: center;align-items: {{imagePosition}};" ng-init="fetchPicture(x[179])">
+                        <img style="height: {{imageHeight}}px; width: {{imageWidth}}px; " src="{{pictureData[x[179]]}}">
+                    </div>
+                </div>
+                <div class="analytics-content" ng-style="{display: tooltipConfig === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: -20px;">
+                    <p class="d-icon-info_circle" style="font-size: small;margin: 5px;">
+                        <span class="col-lg-10 col-md-9 col-xs-9 tooltiptext" style="word-break: break-word;">{{x[tooltip]}}</span>
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="analytics-content" ng-style="{display: tooltipConfig === 'Show' ? 'flex' : 'none'}" style="flex-direction: row;margin-top: -20px;">
-          <p class="d-icon-info_circle" style="font-size: small;margin: 5px;">
-            <span class="col-lg-10 col-md-9 col-xs-9 tooltiptext" style="word-break: break-word;">{{x[tooltip]}}</span>
-          </p>
-        </div>
-      </div>
+        <div class="clearfix"></div>
     </div>
-    <div class="clearfix"></div>
-  </div>
 </body>
 
 </html>

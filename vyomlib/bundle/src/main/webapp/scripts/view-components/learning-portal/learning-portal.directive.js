@@ -36,6 +36,7 @@
                             $scope.totalCostPerHoursSuffix = _config.totalCostPerHoursSuffix ? _config.totalCostPerHoursSuffix : "";
                             $scope.durationSuffix = _config.durationSuffix ? _config.durationSuffix : "";
                             $scope.FilterExp = _config.FilterExp ? _config.FilterExp : "";
+                            $scope.additionalSort = _config.additionalSort ? _config.additionalSort + "," : "";
 
                             //card layout
                             $scope.perRowCardLength = _config.perRowCardLength ? _config.perRowCardLength : "col-lg-3 col-md-4 col-sm-4";
@@ -46,6 +47,7 @@
                             $scope.cssClasses = _config.cssClasses;
                             $scope.cardSorting = _config.cardSorting ? _config.cardOrder == "true" ? "-" + _config.cardSorting : _config.cardSorting : "";
                             $scope.cardOrder = _config.cardOrder;
+                            $scope.noResultText = _config.noResultText;
 
                             //Images fields
                             $scope.BannerRecordDefinition = _config.BannerRecordDefinition;
@@ -116,10 +118,12 @@
                             $scope.fourthDropDownRecordDefinition = _config.fourthDropDownRecordDefinition;
                             $scope.fourthDropDownDisplayField = _config.fourthDropDownDisplayField;
                             $scope.fourthDropDownStoredField = _config.fourthDropDownStoredField;
+                            $scope.fourthDropDownInfoGuid = _config.fourthDropDownInfoGuid;
                             $scope.getDropDownData("supplierRating", $scope.fourthDropDownRecordDefinition, $scope.fourthDropDownDisplayField);
                             $scope.fifthDropDownRecordDefinition = _config.fifthDropDownRecordDefinition;
                             $scope.fifthDropDownDisplayField = _config.fifthDropDownDisplayField;
                             $scope.fifthDropDownStoredField = _config.fifthDropDownStoredField;
+                            $scope.fifthDropDownInfoGuid = _config.fifthDropDownInfoGuid;
                             $scope.getDropDownData("courseRating", $scope.fifthDropDownRecordDefinition, $scope.fifthDropDownDisplayField);
                             //sorting
                             $scope.sixthDropDownRecordDefinition = _config.sixthDropDownRecordDefinition;
@@ -338,6 +342,7 @@
 
                             courseSorting = $scope.dropdown.selectedValue6 ? $scope.dropdown.selectedValue6 : $scope.cardSorting;
 
+
                             cardQueryExpression += $scope.dropdown.selectedValue1 ? "'" + $scope.supplierName + "'=\"" + $scope.dropdown.selectedValue1 + '" AND ' : "";
                             cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? $scope.country ? "('" + $scope.country + "'=\"" + $scope.dropdown.selectedDisplayValue2 + '" OR ' : "" : "";
                             cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? $scope.country ? "'" + $scope.country + "' = $null$ OR '" + $scope.country + "' = \"\") AND " : "" : "";
@@ -357,7 +362,7 @@
                             var queryParams = {
 
                                 queryExpression: cardFilterExpression,
-                                sortBy: courseSorting
+                                sortBy: $scope.additionalSort + "" + courseSorting
 
                             };
 
@@ -405,7 +410,7 @@
 
                             if ($scope.searchObject.searchQuery) {
 
-                                $element.find(".no-search-result").html('<span class="w3-xlarge">No courses are available for your search. Please refine your search further to view results.</span>');
+                                $element.find(".no-search-result").html('<span class="w3-medium w3-center">' + $scope.noResultText + '</span>');
 
                             } else if (($scope.dropdown.selectedValue1 == "" || $scope.dropdown.selectedValue1 == null) && ($scope.dropdown.selectedValue2 == "" || $scope.dropdown.selectedValue2 == null) && ($scope.dropdown.selectedValue3 == "" || $scope.dropdown.selectedValue3 == null) && ($scope.dropdown.selectedValue4 == "" || $scope.dropdown.selectedValue4 == null) && ($scope.dropdown.selectedValue5 == "" || $scope.dropdown.selectedValue5 == null) &&
                                 ($scope.searchObject.searchQuery == "" || $scope.searchObject.searchQuery == null)) {

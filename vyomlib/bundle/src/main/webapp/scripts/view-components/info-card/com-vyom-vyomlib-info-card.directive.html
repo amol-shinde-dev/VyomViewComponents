@@ -1,0 +1,21 @@
+ <!--Program Grade Level Start-->
+ <section class="lrnhub-gry-bg">
+     <div class="container-fluid">
+
+
+         <div class="row">
+             <div class="{{perRowCardLength}}" ng-repeat="x in myData">
+                 <div class="lrnhub-wht-crd" style="min-height: {{descriptionContainerHeight}}px">
+                     <img ng-src="/api/rx/application/record/attachment/{{recordDefinition}}/{{x[179]}}/{{imageId}}" class="img-responsive p-0" style="width: 100%;height: {{imageHeight}}px; ">
+                     <div class="lrnhub-txt-pad">
+                         <h3 class="lrnhub-h3-txt" style="font-size: {{headerFontSize}}px">{{x[headerId]}}</h3>
+                         <p class="lrn-textoverflow">{{x[descriptionId]}}</p>
+                         <button type="button" ng-if="x[buttonVisibilityFlag] == 'button'" ng-click="setSelectedCardInstanceId(x[179]);executeAction(buttonActionGuid);" class="lrnhub-btn lrnhub-btn-primary lrnhub-btn-wdth2 w3-{{buttonColor}}">{{x[buttonLabel]}}</button>
+                         <p ng-if="x[buttonVisibilityFlag] == 'text'" class="lrnhub-cmngson-txt w3-text-{{buttonColor}}" style="position: absolute;bottom: 28px;">{{x[buttonLabel]}}</p>
+                     </div>
+                 </div>
+             </div>
+
+         </div>
+     </div>
+ </section>

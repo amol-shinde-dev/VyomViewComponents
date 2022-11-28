@@ -28,6 +28,7 @@
                             $scope.enableEditButton = _config.enableEditButton;
                             $scope.headerNote = _config.headerNote;
                             $scope.tableWidth = _config.tableWidth;
+                            $scope.cssClasses = _config.cssClasses;
 
 
                             $scope.staticHtml = "";
