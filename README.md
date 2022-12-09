@@ -1,2 +1,1 @@
-TEST
-Test 1
+BMC Helix View Components
