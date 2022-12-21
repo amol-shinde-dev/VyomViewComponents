@@ -397,6 +397,10 @@
                         {
                             name: 'deliveryMethod',
                             isProperty: true
+                        },
+                        {
+                            name: 'searchText',
+                            isProperty: true
                         }
 
 

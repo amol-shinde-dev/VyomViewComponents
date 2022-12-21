@@ -74,6 +74,12 @@
 
                         $scope.cfg = {};
                         $scope.cfg.recordDefinitionName = _config.recordDefinitionName;
+                        $scope.filterExpression = _config.filterExpression;
+                        $scope.userName = _config.userName;
+                        $scope.userDesignation = _config.userDesignation;
+                        $scope.userAddress = _config.userAddress;
+                        $scope.userMobileNumber = _config.userMobileNumber;
+                        $scope.userEmailID = _config.userEmailID;
 
                         $scope.skills = [];
                         $scope.myData = [];
@@ -90,7 +96,7 @@
                     $scope.get = function () {
                         //record of selected technology name
                         var queryParams = {
-                            propertySelection: "1,11093002"
+
                             // propertySelection: "1,10740003" //checked Training
                         };
 
@@ -105,7 +111,7 @@
                     function getData() {
                         //record of technology
                         var queryParams = {
-                            propertySelection: "379,8,11093002," + + $scope.attachmentFieldId,
+
                             // propertySelection: "379,8,10740010," + + $scope.attachmentFieldId, //My Training Record
                         };
 
@@ -121,14 +127,14 @@
                         );
 
                         // record of loged in user
-                        var data = "'11093002' == $USER$";
+
                         // var data = "'10740003' == $USER$";
                         var loginDetails = rxRecordInstanceDataPageResource.withName($scope.User);
 
                         var query = {
-                            propertySelection: "8,379,11093002,11093003,11093004,11093005",
+
                             // propertySelection: "8,379,10740003,10740004,10740005,10740006", //User Record
-                            queryExpression: data
+                            queryExpression: $scope.filterExpression
                         };
 
                         loginDetails.get(10, 0, query).then(
@@ -225,8 +231,7 @@
                                 button1.click();
                             } else if (button2) {
                                 button2.click();
-                            }
-                            else {
+                            } else {
                                 rxNotificationMessage.error('Cannot find button ' + $scope.buttonGuid1);
                             }
                         });
@@ -242,8 +247,7 @@
 
                             if (button2) {
                                 button2.click();
-                            }
-                            else {
+                            } else {
                                 rxNotificationMessage.error('Cannot find button ' + $scope.buttonGuid1);
                             }
                         });

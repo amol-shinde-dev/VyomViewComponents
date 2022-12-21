@@ -19,6 +19,12 @@
                 function getRxData(componentDefinition) {
                     return {
                         recordDefinitionName: componentDefinition.propertiesByName.recordDefinitionName,
+                        filterExpression: componentDefinition.propertiesByName.filterExpression,
+                        userName: componentDefinition.propertiesByName.userName,
+                        userAddress: componentDefinition.propertiesByName.userAddress,
+                        userDesignation: componentDefinition.propertiesByName.userDesignation,
+                        userMobileNumber: componentDefinition.propertiesByName.userMobileNumber,
+                        userEmailID: componentDefinition.propertiesByName.userEmailID,
                         User: componentDefinition.propertiesByName.User,
                         trainingName: componentDefinition.propertiesByName.trainingName,
                         skillId: componentDefinition.propertiesByName.skillId,
@@ -80,7 +86,42 @@
                                     group: 'block1',
                                     index: 1
                                 },
-
+                                filterExpression: {
+                                    label: 'filterExpression',
+                                    type: 'rx-inspector-expression-node-field',
+                                    group: 'block1',
+                                    index: 2
+                                },
+                                userName: {
+                                    label: 'userName',
+                                    type: 'rx-inspector-expression-node-field',
+                                    group: 'block1',
+                                    index: 3
+                                },
+                                userDesignation: {
+                                    label: 'userDesignation',
+                                    type: 'rx-inspector-expression-node-field',
+                                    group: 'block1',
+                                    index: 4
+                                },
+                                userAddress: {
+                                    label: 'userAddress',
+                                    type: 'rx-inspector-expression-node-field',
+                                    group: 'block1',
+                                    index: 5
+                                },
+                                userMobileNumber: {
+                                    label: 'userMobileNumber',
+                                    type: 'rx-inspector-expression-node-field',
+                                    group: 'block1',
+                                    index: 6
+                                },
+                                userEmailID: {
+                                    label: 'userEmailID',
+                                    type: 'rx-inspector-expression-node-field',
+                                    group: 'block1',
+                                    index: 7
+                                },
                                 // --------Block 2----------//
                                 secondCardTitle: {
                                     label: 'Second Card Title',

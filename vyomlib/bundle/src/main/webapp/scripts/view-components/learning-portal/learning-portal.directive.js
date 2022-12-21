@@ -60,7 +60,7 @@
                             $scope.greetings = _config.greetings;
                             $scope.searchPlaceholder = _config.searchPlaceholder;
 
-                            //DATASET
+                            //search query
                             $scope.searchObject = {};
 
 
@@ -89,6 +89,7 @@
                                 "courseRating": [],
                                 "courseSorting": []
                             };
+                            //To set the selected values from the dropdown
                             $scope.dropdown = {
                                 selectedValue1: "", //supplier name
                                 selectedValue2: "", //country OR Region
@@ -102,12 +103,17 @@
                                 selectedDisplayValue6: "",
                             };
 
+                            //To get the dropdown values
                             $scope.firstDropDownRecordDefinition = _config.firstDropDownRecordDefinition;
+                            // The Field that will be used to show the data in the dropdown.
                             $scope.firstDropDownDisplayField = _config.firstDropDownDisplayField;
+                            // First dropdown will be sorted based upon the value present in the "firstDropDownSortingField" field.
                             $scope.firstDropDownSortingField = _config.firstDropDownSortingField;
                             $scope.getSupplierDropDownData('');
                             $scope.secondDropDownRecordDefinition = _config.secondDropDownRecordDefinition;
+                            // The Field that will be used to show the options in the dropdown.
                             $scope.secondDropDownDisplayField = _config.secondDropDownDisplayField;
+                            // The Field that will be used as internal values for the options of the second(region) dropdown.
                             $scope.secondDropDownStoredField = _config.secondDropDownStoredField;
                             $scope.secondDropDownSortingField = _config.secondDropDownSortingField;
                             $scope.getRegionDropDownData('');
@@ -201,7 +207,7 @@
 
 
                         }
-
+                        // To show the numbers as (k) thousand,(M)million on the view.
                         $scope.numFormatter = function (num) {
                             if (num > 999 && num < 1000000) {
                                 return (num / 1000).toFixed(1) + 'K'; // convert to K for number from > 1000 < 1 million 
@@ -212,13 +218,14 @@
                             }
                         }
 
+                        //To get the metadata of the Record Definition (Cards) 
                         $scope.getCardListResource = function () {
                             rxRecordDefinitionResource.get($scope.RecordDefinition).then(function (recordDefinitionResource) {
                                 $scope.mydataResource = recordDefinitionResource.fieldDefinitions;
 
                             });
                         }
-
+                        // To get the field id based on the provided field name
                         $scope.getFieldIdFromName = function (fieldlabel) {
 
                             var fieldObject = _.find($scope.mydataResource, {
@@ -231,7 +238,7 @@
 
 
 
-
+                        //Set the instance id of the selected card as output.
                         $scope.setSelectedCardInstanceId = function (recInstanceID) {
                             // trigger the change property event
                             eventManager.propertyChanged({
@@ -242,6 +249,17 @@
 
                         }
 
+                        //To set the keyword enter in the search as output
+                        $scope.setSearchTextOutput = function () {
+                            // trigger the change property event
+                            eventManager.propertyChanged({
+                                property: 'searchText', // name of the property that changed
+                                newValue: $scope.searchObject.searchQuery
+                            });
+
+
+                        }
+                        //To set the selected dropdown options as output
                         $scope.setOutput = function (obj) {
                             // trigger the change property event
 
@@ -292,7 +310,7 @@
                             });
 
                         }
-
+                        // It takes the GUID of the ootb button to execute set of actions present provided actio button as input
                         $scope.executeAction = function (guid) {
 
                             $timeout(function () {
@@ -312,6 +330,7 @@
                             });
                         }
 
+                        // To show the ratings in the form of stars on the card
                         $scope.generateRating = function (starCount, guid, objecttype) {
 
 
@@ -333,16 +352,16 @@
 
 
                         }
-
+                        // to filter the cards based on the selected dropdowns
                         $scope.filterCurrentCategoryOrSearchText = function () {
 
                             var cardQueryExpression = "";
                             var cardQueryExpression2 = "";
                             var courseSorting = "";
-
+                            //cards will get sort based upon the value selected in "sort By" else will sort based on default sort field
                             courseSorting = $scope.dropdown.selectedValue6 ? $scope.dropdown.selectedValue6 : $scope.cardSorting;
 
-
+                            // preparing the query based upon selected dropdowns & text enter in the search 
                             cardQueryExpression += $scope.dropdown.selectedValue1 ? "'" + $scope.supplierName + "'=\"" + $scope.dropdown.selectedValue1 + '" AND ' : "";
                             cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? $scope.country ? "('" + $scope.country + "'=\"" + $scope.dropdown.selectedDisplayValue2 + '" OR ' : "" : "";
                             cardQueryExpression += $scope.dropdown.selectedValue2 && $scope.dropdown.selectedValue3 ? $scope.country ? "'" + $scope.country + "' = $null$ OR '" + $scope.country + "' = \"\") AND " : "" : "";
@@ -356,7 +375,7 @@
                             cardQueryExpression2 = cardQueryExpression.substring(0, cardQueryExpression.lastIndexOf("AND"));
 
 
-
+                            // final query = default/configured query expresion + prepared query
                             var cardFilterExpression = $scope.FilterExp ? cardQueryExpression2 ? "(" + $scope.FilterExp + ")AND (" + cardQueryExpression2 + ")" : $scope.FilterExp : cardQueryExpression2;
 
                             var queryParams = {
@@ -381,7 +400,7 @@
                         }
 
 
-
+                        // Clear ALL button from ui
                         $scope.clearDropDowns = function () {
 
                             $scope.dropdown.selectedValue1 = "";
@@ -405,7 +424,7 @@
 
                         }
 
-
+                        //to show the "result not found" container on the view
                         $scope.ifNoSearchResult = function () {
 
                             if ($scope.searchObject.searchQuery) {
@@ -419,16 +438,18 @@
                             }
                         }
 
+                        //To execute the functions after clicking the enter
                         $scope.onKeyDown = function (obj) {
 
                             if (13 === obj.keyCode) {
                                 $scope.limit = _config.perRowCardLength == "col-lg-3 col-md-4 col-sm-4" ? 8 : 6;
                                 $scope.filterCurrentCategoryOrSearchText();
-
+                                $scope.setSearchTextOutput();
 
                             }
                         }
 
+                        //to  get the end of the page
                         $scope.getLimit = function () {
 
                             if ($scope.limit > $scope.totalSize) {
@@ -439,14 +460,14 @@
                         }
 
 
-
+                        //function will get triggered on the refresh action present in ootb button.
                         function refreshCards(params) {
 
                             $scope.getCardList();
                         }
 
                         // Overriding the view component refresh method to use our own
-                        // to refresh the custom blog.
+                        // to refresh the view.
                         $scope.rxConfiguration.api = {
                             refresh: refreshCards.bind(null, true)
                         };

@@ -7,7 +7,7 @@
                 name: 'Know Me',
                 group: 'vyomlib',
                 icon: 'cloud_user',
-                type: 'com-vyom-vyomlib-dashboard1',  // the name of runtime directive
+                type: 'com-vyom-vyomlib-dashboard1', // the name of runtime directive
                 designType: 'com-vyom-vyomlib-dashboard1-design', // register design directive
                 designManagerService: 'comVyomVyomlibDashboard1Design',
                 bundleId: 'com.vyom.vyomlib',
@@ -17,20 +17,56 @@
                     {
                         name: 'recordDefinitionName',
                         type: 'string',
-                        isConfig: true,     // Input parameter
-                        isRequired: true,  // required
+                        isConfig: true, // Input parameter
+                        isRequired: true, // required
+                    },
+                    {
+                        name: 'filterExpression',
+                        enableExpressionEvaluation: true,
+                        isConfig: true, // Input parameter
+                        // required
+                    },
+                    {
+                        name: 'userName',
+                        enableExpressionEvaluation: true,
+                        isConfig: true, // Input parameter
+                        // required
+                    },
+                    {
+                        name: 'userDesignation',
+                        enableExpressionEvaluation: true,
+                        isConfig: true, // Input parameter
+                        // required
+                    },
+                    {
+                        name: 'userAddress',
+                        enableExpressionEvaluation: true,
+                        isConfig: true, // Input parameter
+                        // required
+                    },
+                    {
+                        name: 'userEmailID',
+                        enableExpressionEvaluation: true,
+                        isConfig: true, // Input parameter
+                        // required
+                    },
+                    {
+                        name: 'userMobileNumber',
+                        enableExpressionEvaluation: true,
+                        isConfig: true, // Input parameter
+                        // required
                     },
                     {
                         name: 'User',
                         type: 'string',
-                        isConfig: true,     // Input parameter
-                        isRequired: true,  // required
+                        isConfig: true, // Input parameter
+                        isRequired: true, // required
                     },
                     {
                         name: 'CheckedTraining',
                         type: 'string',
-                        isConfig: true,     // Input parameter
-                        isRequired: true,  // required
+                        isConfig: true, // Input parameter
+                        isRequired: true, // required
                     }, {
                         name: 'trainingName',
                         isProperty: true, //Output parameter

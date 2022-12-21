@@ -22,7 +22,7 @@
 
 
             return {
-
+                //cards details
                 recordDefinitionFullName: componentDefinition.propertiesByName.recordDefinitionFullName,
                 courseName: componentDefinition.propertiesByName.courseName,
                 supplierName: componentDefinition.propertiesByName.supplierName,
@@ -37,6 +37,7 @@
                 durationSuffix: componentDefinition.propertiesByName.durationSuffix,
                 additionalSort: componentDefinition.propertiesByName.additionalSort,
 
+                //card actions
                 cardActionGuid: componentDefinition.propertiesByName.cardActionGuid,
                 perRowCardLength: componentDefinition.propertiesByName.perRowCardLength,
                 cssClasses: componentDefinition.propertiesByName.cssClasses,
@@ -45,6 +46,7 @@
                 FilterExp: componentDefinition.propertiesByName.FilterExp,
                 noResultText: componentDefinition.propertiesByName.noResultText,
 
+                //Banner
                 BannerRecordDefinition: componentDefinition.propertiesByName.BannerRecordDefinition,
                 BannerInstanceId: componentDefinition.propertiesByName.BannerInstanceId,
                 BannerImage: componentDefinition.propertiesByName.BannerImage,
@@ -55,6 +57,7 @@
                 greetings: componentDefinition.propertiesByName.greetings,
                 searchPlaceholder: componentDefinition.propertiesByName.searchPlaceholder,
 
+                //dropdowns
                 firstDropDownRecordDefinition: componentDefinition.propertiesByName.firstDropDownRecordDefinition,
                 firstDropDownDisplayField: componentDefinition.propertiesByName.firstDropDownDisplayField,
                 firstDropDownSortingField: componentDefinition.propertiesByName.firstDropDownSortingField,
