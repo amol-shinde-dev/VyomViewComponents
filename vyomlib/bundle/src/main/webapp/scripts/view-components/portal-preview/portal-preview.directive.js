@@ -145,7 +145,7 @@
                         };
 
 
-
+                        //To get the application list/ cards from backend
                         $scope.getCardList = function () {
                             $scope.selectedCategory = "";
                             $scope.queryParams = {
@@ -167,7 +167,7 @@
 
 
                         }
-
+                        // get the dataset/enhanced serach/suggestion data based on the configuration
                         $scope.getDataSet = function (datasetrecname, datasetobjectname, datasetsearchfield) {
 
                             if (datasetrecname) {
@@ -186,14 +186,14 @@
                                 );
                             }
                         }
-
+                        //To get the data from the namedlist eg. "{'color1':'application status1','color2':'application status 2'}"
                         $scope.getApplicationStatusNamedList = function () {
                             rxNamedListDataPageResource.get($scope.cardStatusNamedList).then(function (data) {
                                 $scope.cardStatusDefaultValue = data.data;
                             });
 
                         }
-
+                        //To get the data from the namedlist eg. "{'category display name1':'category stored name1','category display name2':'category stored name2'}"
                         $scope.getCategoryNamedList = function () {
                             if ($scope.CategoryNamedList) {
                                 rxNamedListDataPageResource.get($scope.CategoryNamedList).then(function (data) {
@@ -202,6 +202,8 @@
                             }
 
                         }
+
+                        // Check the namedlist which has list of the applications assigned for current user & show those applications on UI.
                         $scope.getUserApplicationQuery = function () {
                             if ($scope.rxConfiguration.propertiesByName.adminConfiguration) {
                                 if ($scope.rxConfiguration.propertiesByName.userApplicationNamedList) {
@@ -227,7 +229,7 @@
                                 init();
                             }
                         }
-
+                        // Increased the views count on every click on the card.
                         $scope.updateViewsCounter = function (RecInstanceId, views) {
                             if ($scope.RecordDefinition) {
                                 var objectRecord = rxRecordInstanceResource.withName($scope.RecordDefinition);
@@ -243,7 +245,7 @@
                             }
 
                         };
-
+                        // To display the numbers as thousand as (k) or millions (m)
                         $scope.numFormatter = function (num) {
                             if (num > 999 && num < 1000000) {
                                 return (num / 1000).toFixed(0) + 'K'; // convert to K for number from > 1000 < 1 million 
@@ -258,7 +260,7 @@
 
 
 
-
+                        //set selected card instance or guid as output
                         $scope.setSelectedCardInstanceId = function (recInstanceID) {
                             // trigger the change property event
                             eventManager.propertyChanged({
@@ -268,7 +270,7 @@
 
 
                         }
-
+                        // t trigger the action oadded on the ootb acion buttion
                         $scope.executeAction = function (guid) {
 
                             $timeout(function () {
@@ -289,7 +291,7 @@
                         }
 
 
-
+                        //filter the cards based upon the selected category/search
                         $scope.filterCurrentCategoryOrSearchText = function (filterinput, filtertype) {
 
                             // to make no result text container visible on category selection
@@ -335,6 +337,8 @@
                             }
 
                         }
+
+                        // show the application status in differnt colors
                         $scope.getCardStatusCSS = function (storedStatus) {
 
                             //{color: status}
@@ -349,7 +353,7 @@
 
                         }
 
-
+                        // ratings in the form of stars
                         $scope.generateRating = function (starCount, guid) {
 
 
@@ -370,6 +374,7 @@
 
 
                         }
+                        //change the favourite on click
                         $scope.updateCardFavourite = function (RecInstanceId, favObject) {
                             var isFavourite = angular.fromJson(favObject);
 
@@ -422,7 +427,7 @@
                                     });
                             }
                         }
-
+                        //set true or false based upon the selected toggle in admin view
                         $scope.updateCardVisibility = function (RecInstanceId, isCardVisible) {
 
                             if ($scope.RecordDefinition) {
@@ -449,7 +454,7 @@
                         };
 
 
-
+                        // switched the css of the faviourite "heart" based on the clicks
                         $scope.getCardFavouriteClass = function (currentfavcssobject) {
 
                             var FavouriteCardCSSObject = angular.fromJson(currentfavcssobject);
@@ -471,7 +476,7 @@
 
                         }
 
-
+                        // changed the order of the cards to be shhown on the view
                         $scope.sortByViews = function () {
 
                             var queryParams = {
@@ -531,7 +536,7 @@
                         };
 
 
-
+                        // data set container UI
                         $scope.opensearchmodal = function (value) {
                             if ($scope.dataset1 || $scope.dataset2) {
                                 if (value == "" || value == null) {
@@ -546,6 +551,7 @@
                             }
                         }
 
+                        // reset the search text input field after clicking on the dataset value
                         $scope.intializesearch = function (searchtext, dataseturl) {
                             dataseturl ? window.open(dataseturl, '_blank') : "";
 
@@ -558,14 +564,14 @@
                         }
 
 
-
+                        // refresh the vc by ootb refresh action
                         function refreshCards(params) {
 
                             $scope.getCardList();
                         }
 
                         // Overriding the view component refresh method to use our own
-                        // to refresh the custom blog.
+                        // to refresh the portal vc.
                         $scope.rxConfiguration.api = {
                             refresh: refreshCards.bind(null, true)
                         };
